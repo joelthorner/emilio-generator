@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+
+	<title>Emilio generatort</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Emilio generator</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- <div class="collapse navbar-collapse" id="navbarColor01"> -->
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="emailListOption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Mails orderBy
+					</a>
+					<div class="dropdown-menu" aria-labelledby="emailListOption">
+						<a class="dropdown-item active" href="?orderBy=id">Id</a>
+						<a class="dropdown-item" href="?orderBy=name">Name (es)</a>
+						<!-- <a class="dropdown-item" href="#">Something else here</a> -->
+					</div>
+				</li>
+			</ul>
+			<!-- <form class="form-inline my-2 my-lg-0">
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+					<label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+					<label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+				</div>
+			</form> -->
+			<!-- </div> -->
+		</nav>
+
+		<div id="container" class="container-fluid">
+			<div class="row">
+
+				<div id="data-tabs-cont" class="col-8">
+					<div class="row">
+						<div class="col-2" id="output-tabs">
+							<div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical"></div>
+						</div>
+						<div class="col-10" id="output-tabs-cont">
+							<div class="tab-content"></div>
+						</div>
+					</div>
+				</div><!-- data-tabs-cont -->
+
+				<div id="actions" class="col-2">
+					<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg"><i class="material-icons">done</i> Generar script</button>
+					<button id="instructions" type="button" class="btn btn-block btn-light"><i class="material-icons">help</i> Instructions</button>
+					<button id="preview" type="button" class="btn btn-block btn-light"><i class="material-icons">play_arrow</i> Preview</button>
+					<button id="send-change" type="button" class="btn btn-block btn-light"><i class="material-icons">bug_report</i> Send change</button>
+
+					<div id="credits">
+						<a href="https://github.com/joelthorner" target="_blank" title="@joelthorner" data-toggle="tooltip" data-placement="top">
+							<svg id="icon-github-alt" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
+						</a>
+					</div>
+				</div><!-- actions -->
+
+				<div id="params" class="col-2">
+					<div class="h4">Params</div>
+					<div class="content">
+						%prise%
+					</div>
+				</div><!-- params -->
+
+			</div><!-- row -->
+		</div><!-- container -->
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js" integrity="sha256-NLPE2EQpOtxTAUB/jxjM97jsGmVQopiX8ceHySHhXs8=" crossorigin="anonymous"></script>
+		<script src="js/script-generator.js"></script>
+		<script src="js/data.js"></script>
+
+		<!-- LANGS -->
+		<script src="languages/es.js"></script>
+		<script src="languages/en.js"></script>
+		<script src="languages/ca.js"></script>
+		<!-- END LANGS -->
+
+		<script src="js/app.js"></script>
+
+	</body>
+	</html>

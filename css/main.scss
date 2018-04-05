@@ -1,0 +1,149 @@
+@function rem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+html, body{
+	height: 100%;
+	overflow: hidden;
+}
+
+#container{
+	height: calc(100% - #{rem(72px)});
+	// height: 100%;	
+	padding-left: 0;
+	padding-right: 0;
+
+	> .row{
+		height: 100%;
+		margin-left: 0;
+		margin-right: 0;
+
+		> [class*="col-"]{
+			height: 100%;
+
+			&:first-child{
+				padding-left: 0;
+			}
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+	}
+}
+#data-tabs-cont{
+	> .row, > .row > [class*="col-"], 
+	.tab-content, 
+	.tab-pane, .tab-pane > .row, .tab-pane > .row > [class*="col-"], .scrollable{
+		height: 100%;
+	}
+	.nav-link{
+		position: relative;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		&:first-child{
+			border-top-right-radius: 0;
+		}
+		&:not(.active) .badge{
+			color: #fff;
+			background-color: #007bff;
+		}
+
+		.badge{
+			position: absolute;
+			right: 1rem;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	#output-tabs, .scrollable{
+		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+}
+
+#output-tabs{
+	// padding-left: 0;
+	padding-right: 0;
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 10%;
+	flex: 0 0 10%;
+	max-width: 10%;
+}
+
+#output-tabs-cont{
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 90%;
+	flex: 0 0 90%;
+	max-width: 90%;
+
+	.block-mail {
+		margin-bottom: rem(8px);
+
+		&:first-child .btn{
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+	}
+	.btn-block{
+		text-align: left;
+		position: relative;
+
+		.badge{
+			position: absolute;
+			right: .75rem;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 3.75em;
+		}
+	}
+	.card-body{
+		padding: 0;
+		border-left: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+
+		pre{
+			margin: 0;
+		}
+	}
+}
+
+.editor{
+	height: 250px;
+}
+
+.btn:not(.n-i-a){
+	position: relative;
+
+	.material-icons{
+		position: absolute;
+		left: .75rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+#credits{
+	a{
+		svg{
+			fill: #007bff;
+			width: rem(200px);
+			height: rem(200px);
+		}
+		width: rem(200px);
+		height: rem(200px);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+}
+
+.navbar{
+	height: rem(56px);
+	margin-bottom: rem(16px);
+}
