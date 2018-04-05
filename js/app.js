@@ -142,7 +142,8 @@ APP.editors = {
 
 APP.appVisual = {
 	init : function() {
-		$('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip();
+		$('#passwordModal').modal('show');
 	}
 }
 
