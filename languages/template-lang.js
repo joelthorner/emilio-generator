@@ -1,6 +1,6 @@
 // language file v2.0.2
 
-DATA.ca = {
+DATA._LANG_ = {
 
 	header : `
 TEXTHERE

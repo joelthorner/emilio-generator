@@ -1,16 +1,16 @@
 // language file v2.0.2
 
-DATA.ca = {
+DATA.zho = {
 
-	header : `
+  header : `
 TEXTHERE
 `,
 
-	footer : `
+  footer : `
 TEXTHERE
 `,
 
-	mails : {
+  mails : {
 
   1 : {
     subject : "",
@@ -250,5 +250,5 @@ TEXTHERE
 `
   }, // end 39
 
-	} // end emails
+  } // end emails
 };

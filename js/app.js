@@ -31,7 +31,7 @@ APP.fillData = {
 
 				$output.append(`
 					<a class="nav-link ${_active}" id="tab-lang-${langId}" data-toggle="pill" href="#tab-lang-c-${langId}" role="tab" aria-controls="tab-lang-c-${langId}" aria-selected="${_selected}" data-lang-id="${langId}">
-						<strong>${langKey}</strong> <code class="badge badge-light">id ${langId}</code>
+						${langKey} <code class="badge badge-light">id ${langId}</code>
 					</a>
 				`);
 				counter++;
@@ -80,8 +80,9 @@ APP.fillData = {
 				`;
 
 				// Loop per cada mail del lang
-				$.each(langData.mails, function(idMail, contMail) {
-					var _contMail = APP.utils.safe_tags_replace(contMail),
+				$.each(langData.mails, function(idMail, dataMail) {
+					var _contMail = APP.utils.safe_tags_replace(dataMail.html),
+						 _subject = dataMail.subject,
 						 _emailNameES = DATA.mails[idMail];
 
 					HTML_mails_lang += `
@@ -91,7 +92,10 @@ APP.fillData = {
 							</button>
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
-									<div class="editor">${_contMail}</div>
+									<div class="card-title-custom">Html</div>
+									<div class="editor editor-cont">${_contMail}</div>
+									<div class="card-title-custom">Subject</div>
+									<input type="text" class="form-control subject" value="${_subject}" placeholder="Subject">
 								</div>
 							</div>
 						</div>
