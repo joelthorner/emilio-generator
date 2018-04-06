@@ -1,6 +1,10 @@
 // language file v2.0.2
 
+<<<<<<< HEAD
 DATA._LANG_ = {
+=======
+DATA.es = {
+>>>>>>> b48e7c2dfd7d1175a31ec315e7f09be191e59c19
 
 	header : `
 TEXTHERE

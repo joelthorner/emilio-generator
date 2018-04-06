@@ -46,6 +46,7 @@ console.log(log);
 17||Verificación de correo
 
 */
+<<<<<<< HEAD
 
 // js for set data into one mail
 // js for set data into one mail
@@ -129,3 +130,5 @@ setTimeout(function(){
 		
 	}
 }, T1);
+=======
+>>>>>>> b48e7c2dfd7d1175a31ec315e7f09be191e59c19
