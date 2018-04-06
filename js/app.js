@@ -26,12 +26,13 @@ APP.fillData = {
 		$.each(DATA.langs, function(langId, langKey) {
 			if (DATA[langKey.toLowerCase()]) {
 				var _active = counter == 0 ? 'active' : '',
-					 _selected = counter == 0 ? true : false;
+					 _selected = counter == 0 ? true : false,
+					 _langKey = langKey.toLowerCase();
 					 // _colorBadge = counter == 0 ? 'light' : 'primary';
 
 				$output.append(`
 					<a class="nav-link ${_active}" id="tab-lang-${langId}" data-toggle="pill" href="#tab-lang-c-${langId}" role="tab" aria-controls="tab-lang-c-${langId}" aria-selected="${_selected}" data-lang-id="${langId}">
-						${langKey} <code class="badge badge-light">id ${langId}</code>
+						${_langKey} <code class="badge badge-light">id ${langId}</code>
 					</a>
 				`);
 				counter++;
@@ -55,9 +56,11 @@ APP.fillData = {
 			var langData = DATA[langKey.toLowerCase()];
 
 			if (langData) {
-				var _langDataHeader = APP.utils.safe_tags_replace(langData.header);
+				var _langDataHeader = APP.utils.safe_tags_replace(langData.header),
+					 _btnType = APP.fillData.getBtnState("HEADER", _langDataHeader);
+
 				HTML_header_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H" data-id="H">
+					<button class="btn ${_btnType} btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H" data-id="H">
 						Header <code class="badge badge-secondary">id H</code>
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_H">
@@ -67,9 +70,11 @@ APP.fillData = {
 					</div>
 				`;
 
-				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer);
+				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer),
+					 _btnType = APP.fillData.getBtnState("FOOTER", _langDataFooter);
+
 				HTML_footer_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F" data-id="F">
+					<button class="btn ${_btnType} btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F" data-id="F">
 						Footer <code class="badge badge-secondary">id F</code>
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_F">
@@ -83,11 +88,13 @@ APP.fillData = {
 				$.each(langData.mails, function(idMail, dataMail) {
 					var _contMail = APP.utils.safe_tags_replace(dataMail.html),
 						 _subject = dataMail.subject,
-						 _emailNameES = DATA.mails[idMail];
+						 _emailNameES = DATA.mails[idMail],
+						 _btnType = APP.fillData.getBtnState(_subject, _contMail),
+						 _isValid = _btnType == "btn-danger" ? false : true;
 
 					HTML_mails_lang += `
-						<div class="block-mail">
-							<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
+						<div class="block-mail" data-valid="${_isValid}">
+							<button class="btn collapsed ${_btnType} btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
 								${_emailNameES} <code class="badge badge-secondary">id ${idMail}</code>
 							</button>
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
@@ -120,6 +127,15 @@ APP.fillData = {
 				counter++;
 			}
 		});
+	},
+
+	getBtnState : function(subject, contentMail) {
+		var _return = "btn-light";
+
+		if (!$.trim(subject).length) _return = "btn-warning";
+		if (contentMail.indexOf('TEXTHERE') !== -1) _return = "btn-danger";
+
+		return _return;
 	}
 };
 
@@ -147,7 +163,7 @@ APP.editors = {
 APP.appVisual = {
 	init : function() {
 		$('[data-toggle="tooltip"]').tooltip();
-		$('#passwordModal').modal('show');
+		$('#scriptGenerated').modal('show');
 	}
 }
 
@@ -156,6 +172,8 @@ APP.main = {
 		APP.fillData.init();
 		APP.editors.init();
 		APP.appVisual.init();
+
+		APP.scriptGenerator.init();
 	}
 };
 

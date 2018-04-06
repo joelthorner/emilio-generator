@@ -2,10 +2,18 @@
 	$remSize: $size / 16px;
 	@return #{$remSize}rem;
 }
+@function remVal($size) {
+	$remSize: $size / 16px;
+	@return $remSize;
+}
 
 html, body{
 	height: 100%;
 	overflow: hidden;
+}
+
+.btn.focus, .btn:focus{
+	box-shadow: none !important;
 }
 
 #container{
@@ -47,7 +55,7 @@ html, body{
 		}
 		&:not(.active) .badge{
 			color: #fff;
-			background-color: #007bff;
+			background-color: var(--blue);
 		}
 
 		.badge{
@@ -81,10 +89,16 @@ html, body{
 
 	.block-mail {
 		margin-bottom: rem(8px);
-
+		.btn{
+			// transition: all 350ms ease;
+		}
+		.btn:not(.collapsed){
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
 		&:first-child .btn{
-			border-top-left-radius: 0;
-			border-top-right-radius: 0;
+			// border-top-left-radius: 0;
+			// border-top-right-radius: 0;
 		}
 	}
 	.btn-block{
@@ -101,7 +115,7 @@ html, body{
 	}
 	.card-body{
 		padding: 0;
-		border-left: 0;
+		// border-left: 0;
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 
@@ -129,7 +143,7 @@ html, body{
 #credits{
 	a{
 		svg{
-			fill: #007bff;
+			fill: var(--blue);
 			width: rem(200px);
 			height: rem(200px);
 		}
@@ -146,4 +160,37 @@ html, body{
 .navbar{
 	height: rem(56px);
 	margin-bottom: rem(16px);
+
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+	padding-left: #{(remVal(30px) + 0.5)}rem;
+	position: relative;
+
+	i{
+		position: absolute;
+		left: 0.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.modal-title{
+	padding-left: rem(35px);
+	position: relative;
+	i{
+		color: var(--blue);
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.card-pre{
+	font-family: var(--font-family-monospace);
+	font-size: small;
+}
+
+.card-p-0{
+	padding: 0;
 }
