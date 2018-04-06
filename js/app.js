@@ -80,8 +80,9 @@ APP.fillData = {
 				`;
 
 				// Loop per cada mail del lang
-				$.each(langData.mails, function(idMail, contMail) {
-					var _contMail = APP.utils.safe_tags_replace(contMail),
+				$.each(langData.mails, function(idMail, dataMail) {
+					var _contMail = APP.utils.safe_tags_replace(dataMail.html),
+						 _subject = dataMail.subject,
 						 _emailNameES = DATA.mails[idMail];
 
 					HTML_mails_lang += `
@@ -91,7 +92,10 @@ APP.fillData = {
 							</button>
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
-									<div class="editor">${_contMail}</div>
+									<div class="card-title-custom">Html</div>
+									<div class="editor editor-cont">${_contMail}</div>
+									<div class="card-title-custom">Subject</div>
+									<input type="text" class="form-control subject" value="${_subject}" placeholder="Subject">
 								</div>
 							</div>
 						</div>
