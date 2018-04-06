@@ -1,4 +1,4 @@
-// language file v2.0.0
+// language file v2.0.1
 
 DATA.es = {
 
@@ -102,6 +102,13 @@ TEXTHERE
 TEXTHERE
 `
     }, // end 10
+
+    25  : {
+      subject : "",
+      html : `
+TEXTHERE
+`
+    }, // end 25
 
 		9	: {
       subject : "",
@@ -214,6 +221,13 @@ TEXTHERE
 TEXTHERE
 `
     }, // end 5
+
+    20  : {
+      subject : "",
+      html : `
+TEXTHERE
+`
+    }, // end 20
 
 		17	: {
       subject : "",
