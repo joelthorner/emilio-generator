@@ -3,51 +3,121 @@
 DATA.es = {
 
 	header : 
-`<style>
-  html{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#000000;text-align:left;}
- table{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:12px;color:#000000;border:none; padding:0px; margin:0px;}a{text-decoration:none;}
-</style>
-<table border="0" cellpadding="0" cellspacing="0" width="500">
- <tr>
+`<table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" class="principalTable" style="padding:25px;background-color:#eee;padding-bottom:0px;">
+
+  <tr>
     <td>
-      <a href="%%ecommerceURL%%">
-       <img src="%%imagesURL%%/images/logoEmails.jpg" border="0" align="left" />
-      </a>
-    </td>
-  </tr>`,
+   <!--[if (gte mso 9)|(IE)]>
+    <table width="600" align="center" cellpadding="0" cellspacing="0" border="0" class="principalTable">
+      <tr>
+       <td>
+       <![endif]-->     
+       <table bgcolor="#ffffff" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="width: 100%;max-width: 600px;">
+
+        <tr>
+          <td bgcolor="#fff" class="header" style="padding: 20px;">
+            <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center;">  
+              <tr>
+                <td style="">
+                  <a href="%%ecommerceURL%%">
+                    <img class="fix" src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="" style="height: auto;">
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>`,
 
 	footer : 
-`<tr>
-   <td style="padding-bottom: 5px; padding-left: 0px; padding-right: 5px; background: #000000; padding-top: 5px">
-     <table border="0" cellspacing="0" cellpadding="0" align="right">
-     <tbody>
-          <tr>
-            <td style="float: left; color: #b2b2b2; font-size: 10px">© %%ecommerceName%%</td>
-            <td style="padding-bottom: 0px; padding-left: 4px; padding-right: 4px; float: left; color: #b2b2b2; font-size: 10px; padding-top: 0px">|</td>
-            <td style="float: left"><a style="color: #b2b2b2; font-size: 10px" href="%%ecommerceURL%%/ecommerce/pages/page.cfm?id=1&languageId=1">Aviso legal</a></td>
-            </tr>
-        </tbody>
-  </table>
-    </td>
-  </tr>
+`
+        <tr>
+          <td class="footer" bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">    
+              <tr>
+                <td align="center" style="">
+                  <table border="0" cellspacing="10" cellpadding="0">
+                    <tr>
+                      %%Pages-501-Loop%%
+                      <td style="text-align: center;">
+                        <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
+                      </td>
+                      %%/Pages-501-Loop%%
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding: 12px 0 12px 0px;">
+                  <table border="0" cellspacing="8" cellpadding="0">
+                    <tr>
+                      %%Banners-502-Loop%% 
+                      <td width="30" style="text-align: center; ">
+                        <a href="%%BannerLink%%" target="">
+                          <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                        </a>
+                      </td>
+                      %%/Banners-502-Loop%%
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="">
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      %%Pages-503-Loop%% 
+                      <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                        <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                          %%pageContent%%
+                        </span>
+                      </td>
+                      %%/Pages-503-Loop%%
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+
+                %%Pages-504-Loop%% 
+                <td align="center" class="footercopy" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
+                  %%pageContent%%
+                </td>
+                %%/Pages-504-Loop%%  
+
+              </tr>
+              <tr>
+                <td align="center" heigth="50" class="footercopy" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
+                  Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </table>
+   <!--[if (gte mso 9)|(IE)]>
+       </td>
+      </tr>
+   </table>
+ <![endif]-->
+</td>
+</tr>
+<tr>
+  <td align="center" class="footercopy" style="font-family: sans-serif;font-size: 14px;color: #ffffff;">   
+    <span class="hide" style="color:#000;font-size:10px;">&nbsp; </span>
+  </td>
+</tr>
 </table>`,
 
 	mails : {
 
 		36	: 
-`Hola, %%firstName%% %%lastName%%:<br /><br />
-Te confirmamos que tu contraseña ha sido modificada.<br /><br />
-Asegúrate de anotar tus credenciales en un lugar seguro para futuras referencias.<br /><br />
-Esperamos verte pronto en <a href="%%ecommerceURL%%" style="font-weight:bold">%%ecommerceName%%</a><br /><br />
-Saludos,<br /><br />El equipo de %%ecommerceName%%`, 
+``, 
 // end 36
 
 		37	: 
-`Hola, %%firstName%% %%lastName%%:<br /><br />
-Te confirmamos que tu contraseña ha sido modificada.<br /><br />
-Asegúrate de anotar tus credenciales en un lugar seguro para futuras referencias.<br /><br />
-Esperamos verte pronto en <a href="%%ecommerceURL%%" style="font-weight:bold">%%ecommerceName%%</a><br /><br />
-Saludos,<br /><br />El equipo de %%ecommerceName%%`, 
+``, 
 // end 37
 
 		12	: 
