@@ -1,4 +1,4 @@
-// language file v2.0.0
+// language file v2.0.1
 
 DATA.es = {
 
@@ -447,6 +447,20 @@ TEXTHERE
 `
     }, // end 10
 
+    25  : {
+      subject : "Suscripción de stock",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Suscripción de stock del producto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
+    <span style="font-size:15px;">Hola,<br/><br/>Te has suscrito a los avisos de stock de %name%</span>
+    %productOptions%<br/>
+    <span style="font-size:15px;">En caso de que volvamos a recibir este artículo te avisaremos de inmediato para que no se te escape.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
+  </td>
+</tr>
+`
+    }, // end 25
+
 		9	: {
       subject : "Consulta sobre producto de %%ecommerceName%%",
       html : `
@@ -769,6 +783,19 @@ HERE_TEXT
 </tr>
 `
     }, // end 5
+
+    20  : {
+      subject : "Stock disponible",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Stock disponible del producto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br/><br>
+    <span style="font-size:15px;">Hola,<br/><br/>El artículo que tanto querías ya está disponible!</span>
+    <span style="font-size:15px;">Queremos recordarte que este email aporta información orientativa sobre la disponibilidad de este artículo y depende de muchos factores (personas interesadas, unidades disponibles). Hemos enviado este email a todos los clientes interesados en este artículo, por lo que es posible que se agote muy pronto.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
+  </td>
+</tr>
+`
+    }, // end 20
 
 		17	: {
       subject : "Verificación de correo - %%ecommerceName%%",
