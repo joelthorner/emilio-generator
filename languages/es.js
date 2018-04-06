@@ -623,7 +623,7 @@ DATA.es = {
     16 : {
       subject : "Notificación transportista",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 16
 
@@ -757,42 +757,42 @@ TEXTHERE
     26 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 26
 
     27 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 27
 
     32 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 32
 
     33 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 33
 
     34 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 34
 
     35 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 35
 
@@ -813,14 +813,14 @@ TEXTHERE
     38 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 38
 
     39 : {
       subject : "",
       html : `
-HERE_TEXT
+TEXTHERE
 `
     }, // end 39
 
