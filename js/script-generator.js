@@ -109,111 +109,106 @@ APP.scriptGenerator = {
 
 				var i = 0;
 
-				function myLoop () {
-				   setTimeout(function () {
-
+				
+				   var SI_MAIN = setInterval(function () {
 				      
-						var ID_TEMPLATE = arrMailIds[i];
-						var SUBJECT_VALUE = arrMailSubjects[i];
-						var HTML_VALUE = arrMailConts[i];
+				      if(i<arrMailIds.length){
+							var ID_TEMPLATE = arrMailIds[i];
+							var SUBJECT_VALUE = arrMailSubjects[i];
+							var HTML_VALUE = arrMailConts[i];
 
-				   	clearTimeout(ST_T1);
-				   	clearTimeout(ST_T2);
-				   	clearTimeout(ST_T3);
-				   	clearTimeout(ST_T4);
+					   	clearTimeout(ST_T1);
+					   	clearTimeout(ST_T2);
+					   	clearTimeout(ST_T3);
+					   	clearTimeout(ST_T4);
 
-						if(document.querySelectorAll('[ondblclick*="editMailType(' + ID_TEMPLATE + '"]').length){
-							try{
-								editMailType(ID_TEMPLATE);
-							}catch(e){
-								console.error('[ERROR] Fail open window template id-' + ID_TEMPLATE + '. Pls send report!', e);
-							}
-
-							ST_T1 = setTimeout(function(){
-								var windowForm = document.querySelectorAll('input[name="mailId"][type="hidden"][value="'+ID_TEMPLATE+'"]');
-								
-								if(windowForm[0]){
-									windowForm = windowForm[0].parentElement;
-									var allSubjects = windowForm.querySelectorAll('input[name*="subject_"]');
-									for (var i = 0; i < allSubjects.length; i++) {
-										if (!allSubjects[i].value.length) {
-											allSubjects[i].value = " ";
-										}
-									}
-
-									var img = windowForm.querySelectorAll('.languageTabsContainer div.tab img.previewWindowTab[onclick*="languageId=' + LANG + '\\');"]');
-									if(img[0]){
-										var tab = img[0].parentElement;
-										tab.click();
-										/* SET DATA */
-										try{
-											ST_T2 = setTimeout(function(){
-												var contentTab = windowForm.querySelectorAll('.tabsContent .tabContent:not([style*="none"])');
-												if(contentTab[0]){
-													var editorsToPlain = contentTab[0].querySelectorAll('._viewPlain');
-													for (var i = 0; i < editorsToPlain.length; i++) {
-														editorsToPlain[i].click();
-													}
-													/* set subject */
-													var subject = contentTab[0].querySelectorAll('input[name="subject_' + LANG + '"][type="text"]');
-													if(subject[0]){
-														subject[0].setAttribute('value', SUBJECT_VALUE);
-													}
-													/* set header */
-													var header = contentTab[0].querySelectorAll('textarea[name="header_' + LANG + '"]');
-													if(header[0]){
-														header[0].value = HEADER_VALUE;
-													}
-													/* set footer */
-													var footer = contentTab[0].querySelectorAll('textarea[name="footer_' + LANG + '"]');
-													if(footer[0]){
-														footer[0].value = FOOTER_VALUE;
-													}
-													/* set htmlcontent */
-													var body = contentTab[0].querySelectorAll('textarea[name="body_' + LANG + '"]');
-													if(body[0]){
-														body[0].value = HTML_VALUE;
-													}
-
-													/* SAVE TEMPLATE AND CLOSE */
-													ST_T3 = setTimeout(function(){
-														var save = windowForm.querySelectorAll('[type="submit"]');
-														if (save[0]) {
-															save[0].click();
-
-															ST_T4 = setTimeout(function(){
-																var close = windowForm.querySelectorAll('[ls="common.cancel"]');
-																if (close[0]) {
-																	close[0].click();
-																}
-															}, T4);
-														}
-													}, T3);
-												}
-											}, T2);
-
-											console.log('[OK] Success save template id-' + ID_TEMPLATE + ' time: ' + (T1+T2+T3+T4) + 'ms');
-										}catch(e){
-											console.error('[ERROR] Fail save template id-' + ID_TEMPLATE + '. Pls send report!', e);
-										}
-									}
-									
+							if(document.querySelectorAll('[ondblclick*="editMailType(' + ID_TEMPLATE + '"]').length){
+								try{
+									editMailType(ID_TEMPLATE);
+								}catch(e){
+									console.error('[ERROR] Fail open window template id-' + ID_TEMPLATE + '. Pls send report!', e);
 								}
-							}, T1);
-						};
 
-				      i++;
-				      if (i < arrMailIds.length) {
-				         myLoop();
-				      }
+								ST_T1 = setTimeout(function(){
+									var windowForm = document.querySelectorAll('input[name="mailId"][type="hidden"][value="'+ID_TEMPLATE+'"]');
+									
+									if(windowForm[0]){
+										windowForm = windowForm[0].parentElement;
+										var allSubjects = windowForm.querySelectorAll('input[name*="subject_"]');
+										for (var i = 0; i < allSubjects.length; i++) {
+											if (!allSubjects[i].value.length) {
+												allSubjects[i].value = " ";
+											}
+										}
+
+										var img = windowForm.querySelectorAll('.languageTabsContainer div.tab img.previewWindowTab[onclick*="languageId=' + LANG + '\\');"]');
+										if(img[0]){
+											var tab = img[0].parentElement;
+											tab.click();
+											/* SET DATA */
+											try{
+												ST_T2 = setTimeout(function(){
+													var contentTab = windowForm.querySelectorAll('.tabsContent .tabContent:not([style*="none"])');
+													if(contentTab[0]){
+														var editorsToPlain = contentTab[0].querySelectorAll('._viewPlain');
+														for (var i = 0; i < editorsToPlain.length; i++) {
+															editorsToPlain[i].click();
+														}
+														/* set subject */
+														var subject = contentTab[0].querySelectorAll('input[name="subject_' + LANG + '"][type="text"]');
+														if(subject[0]){
+															subject[0].setAttribute('value', SUBJECT_VALUE);
+														}
+														/* set header */
+														var header = contentTab[0].querySelectorAll('textarea[name="header_' + LANG + '"]');
+														if(header[0]){
+															header[0].value = HEADER_VALUE;
+														}
+														/* set footer */
+														var footer = contentTab[0].querySelectorAll('textarea[name="footer_' + LANG + '"]');
+														if(footer[0]){
+															footer[0].value = FOOTER_VALUE;
+														}
+														/* set htmlcontent */
+														var body = contentTab[0].querySelectorAll('textarea[name="body_' + LANG + '"]');
+														if(body[0]){
+															body[0].value = HTML_VALUE;
+														}
+
+														/* SAVE TEMPLATE AND CLOSE */
+														ST_T3 = setTimeout(function(){
+															var save = windowForm.querySelectorAll('[type="submit"]');
+															if (save[0]) {
+																save[0].click();
+
+																ST_T4 = setTimeout(function(){
+																	var close = windowForm.querySelectorAll('[ls="common.cancel"]');
+																	if (close[0]) {
+																		close[0].click();
+																	}
+																}, T4);
+															}
+														}, T3);
+													}
+												}, T2);
+
+												console.log('[OK] Success save template id-' + ID_TEMPLATE + ' time: ' + (T1+T2+T3+T4) + 'ms');
+											}catch(e){
+												console.error('[ERROR] Fail save template id-' + ID_TEMPLATE + '. Pls send report!', e);
+											}
+										}
+										
+									}
+								}, T1);
+							};
+
+							i++;
+						}else{
+							clearInterval(SI_MAIN);
+						}
+
 				   }, T1+T2+T3+T4 + 5000)
-				}
-
-				myLoop();
-
-				/*for(var i=0;i<arrMailIds.length;i++){
-					
-				};*/
+				
 			`;
 		// });
 
