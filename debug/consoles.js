@@ -1,6 +1,6 @@
-/* GET INFO ALL MAILS only system */
 var els = $$('.view2 .nameContent .mail');
 var log = "";
+console.log(els.length);
 for(i=0;i<els.length;i++){
   var data =  JSON.parse(els[i].get('data'));
 // console.log(data);
@@ -10,7 +10,7 @@ console.log(log);
 
 
 /*
-05/04/2018
+06/04/2018 (32)
 
 36||Activación Two Factor Auth
 37||Activación Two Factor Auth
@@ -25,6 +25,7 @@ console.log(log);
 23||Blog - Notificación de Nuevo Comentario
 4||Cambio de contraseña
 10||Confirmación de pedido
+25||Confirmar suscripción de Stock
 9||Consulta de producto
 8||Contacto general
 18||Cuenta activada
@@ -41,6 +42,7 @@ console.log(log);
 6||Recomendación de wishlist
 3||Recordarios de contraseña
 5||Registro de newsletter
+20||Stock disponible
 17||Verificación de correo
 
 */
