@@ -1,8 +1,8 @@
-// language file v2.0.1
+// language file v2.0.2
 
 DATA.es = {
 
-	header : `
+  header : `
 <table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" class="principalTable" style="padding:25px;background-color:#eee;padding-bottom:0px;">
   <tr>
     <td>
@@ -28,7 +28,7 @@ DATA.es = {
         </tr>
 `,
 
-	footer : `
+  footer : `
       <tr>
         <td class="footer" bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">    
@@ -106,65 +106,21 @@ DATA.es = {
 </table>
 `,
 
-	mails : {
+  mails : {
 
-		36	: {
-      subject : "",
-      html : `
-TEXTHERE
-`
-    }, // end 36
-
-		37	: {
-      subject : "",
-      html : `
-TEXTHERE
-`
-    }, // end 37
-
-		12	: {
-      subject : "Tu amigo te quiere apadrinar",
+    1 : {
+      subject : "Gracias por darte de alta en %%ecommerceName%%",
       html : `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Solicitud de apadrinamiento</strong><br><br>
-    <span>Hola,<br><br>%%firstName%% te invita a unirte a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>Hazte socio y regístrate aquí: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>Gracias por tu apoyo.<br><br>Atentamente, el equipo de %%ecommerceName%%
+    <strong>¡Bienvenido a %%ecommerceName%%!</strong><br><br>
+    <span style="font-size:15px;">Hola  %firstName% %lastName%, <br><br>Nos complace confirmarte la creación de tu cuenta de cliente en %%ecommerceURL%%.<br><br>Gracias a tu cuenta de cliente podrás actualizar tu perfil y contraseña, consultar tu historial de pedidos y otra información de tu interés.<br><br>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 12
-
-		13	: {
-      subject : "Tu apadrinado ha realizado una compra: disfruta de tu descuento.",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
-    <strong>Apadrinamiento completado</strong><br><br>
-    <span>Hola,<br/><br/>Uno de tus amigos acaba de hacer una compra en nuestra tienda de más de XX (€) de valor, por lo tanto, te ofrecemos un descuento de XX en tu próximo pedido.<br/><br/>El descuento entrará automáticamente en vigor en tu próximo pedido. <br/><br/>Gracias por tu apoyo.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
-  </td>
-</tr>
-`
-    }, // end 13
-
-		19	: {
-      subject : "",
-      html : `
-`
-    }, // end 19
-
-		11	: {
-      subject : "Baja de la newsletter de %%ecommerceName%%",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Confirmación de la baja de la newsletter</strong><br><br>
-    <span style="font-size:15px;">Hola<br><br>Has sido dado de baja con éxito de nuestra newsletter.<br><br>Atentamente, el equipo de %%ecommerceName%%</span>
-  </td>
-</tr>   
-`
-    }, // end 11
-
-		2	: {
+    }, // end 1
+    
+    2 : {
       subject : "Baja en %%ecommerceName%%",
       html : `
 <tr>
@@ -176,88 +132,19 @@ TEXTHERE
 `
     }, // end 2
 
-		1	: {
-      subject : "Gracias por darte de alta en %%ecommerceName%%",
+    3 : {
+      subject : "Recordar contraseña de %%ecommerceName%%",
       html : `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>¡Bienvenido a %%ecommerceName%%!</strong><br><br>
-    <span style="font-size:15px;">Hola  %firstName% %lastName%, <br><br>Nos complace confirmarte la creación de tu cuenta de cliente en %%ecommerceURL%%.<br><br>Gracias a tu cuenta de cliente podrás actualizar tu perfil y contraseña, consultar tu historial de pedidos y otra información de tu interés.<br><br>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>Atentamente, el equipo de %%ecommerceName%%</span>
+    <strong>Recordar contraseña</strong><br><br>
+    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Conforme a lo solicitado durante tu reciente visita a %%ecommerceName%%, aquí tienes tu dirección de acceso a la zona de recuperación de contraseña:<br /><br /><a href="%%lostPasswordLink%%" style="color:#000">Click aquí para recuperar contraseña</a><br /><br />Este enlace solamente será válido durante las 24 horas siguientes al momento de su envío.<br /><br />Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 1
+    }, // end 3
 
-		24	: {
-      subject : "¡Bienvenido a %%blogName%%!",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>¡Welcome to <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br/><br/>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Gracias por suscribirte a nuestro blog. Pronto recibirás los nuevos artículos por email, información sobre descuentos, promociones, regalos y datos de interés relativos a la actividad de la tienda online.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
-  </td>
-</tr>
-`
-    }, // end 24
-
-		22	: {
-      subject : "%%postName%% - %%blogName%%",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    A continuación puedes leer los últimos artículos publicados en <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br/><br/>
-    <strong><a href="%%postUrl%%" style="color:#000;font-size:18px;text-decoration:none;">%%postName%%</a></strong>
-  </td>
-</tr>
-<tr>
-  <td align="center" style="">
-    <table border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="30" style="text-align: center; ">
-          <a href="%%postUrl%%" style="color:#000;">
-            <img class="fix" src="%%postSmallImage%%" height="auto" width="115" border="0" style="height: auto;" alt="%%postName%%">
-          </a>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br/><br/><a href="%%postUrl%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
-  </td>
-</tr>
-`
-    }, // end 22
-
-		23	: {
-      subject : "Nuevo comentario en %%postName%% - %%blogName%%",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    Alguien acaba de responder el artículo "<a href="%%postUrl%%" style="color:#000">%%postName%%</a>.<br/><br/>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <table border="0" cellspacing="10" cellpadding="0" width="100%">
-      <tr>
-        <td style="text-align:right;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="30%">
-          <img class="fix" src="%%commentGravatar%%?d=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fuser-23%2F512%2FUser_Thief.png&s=75" width="75" border="0" height="75">
-        </td>
-        <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
-          <a style="color:#000;text-decoration:none;" href="%%postUrl%%#comment%%commentId%%">%%commentNick%%</a><br/>
-                  %%commentContent%%<br/><br/>
-          <span style="font-size:15px;"><a href="%%postUrl%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-`
-    }, // end 23
-
-		4	: {
+    4 : {
       subject : "Cambio contraseña de %%ecommerceName%%",
       html : `
 <tr>
@@ -269,7 +156,186 @@ TEXTHERE
 `
     }, // end 4
 
-		10	: {
+    5 : {
+      subject : "Subscripción a la newsletter en %%ecommerceName%%",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Subscripción a la newsletter</strong><br><br>
+    <span style="font-size:15px;">Hola<br/><br/>Gracias por suscribirte a nuestro boletín de noticias. Pronto recibirás información sobre actividades, noticias sobre nuestra empresa y novedades en productos y promociones.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
+  </td>
+</tr>
+`
+    }, // end 5
+
+    6 : {
+      subject : "%%anonymousName%% te recomienda sus productos favoritos de %%ecommerceName%%",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Recomendación de wishlist</strong><br /><br />
+    <span style="font-size:15px;"> Tu amigo/a %%anonymousName%% (%%anonymousEmail%%) te envía este producto que puede resultarte de interés.<br /><br />Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br /><br />Atentamente, el equipo de  %%ecommerceName%%</span>
+  </td>
+</tr>
+<tr>
+  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
+    <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
+      <tbody>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Productos recomendados</span></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td width="" style="vertical-align: top">
+            <div style="padding: 0 0">
+              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
+                    
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
+                  </tr>
+                  %loop%
+                  <tr class="productRow">
+                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
+                          </td> 
+                          <td style="padding: 10px 0px;">
+                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          </td>
+                        </tr>
+                      </table>        
+                    </td>
+                    
+                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                  </tr>
+                  %/loop%
+                  
+                </tbody>
+              </table>
+              
+            </div>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td>
+            <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+              <tr>
+                <td>
+                  <strong style="">Mensaje de tu amigo/a:</strong><br/>
+                  %%comments%% 
+                  
+                </td>
+              </tr>
+            </table>        
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+`
+    }, // end 6
+
+    7 : {
+      subject : "%%anonymousName%% te recomienda un producto de %%ecommerceName%%",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Recomendación de producto</strong><br /><br />
+    <span style="font-size:15px;"> Tu amigo/a %%anonymousName%% (%%anonymousEmail%%) te envía este producto que puede resultarte de interés.<br /><br />Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br /><br />Atentamente, el equipo de  %%ecommerceName%%</span>
+  </td>
+</tr>
+<tr>
+  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
+    <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
+      <tbody>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Productos recomendados</span></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td width="" style="vertical-align: top">
+            <div style="padding: 0 0">
+              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
+                    
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
+                  </tr>
+                  
+                  <tr class="productRow">
+                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
+                          </td> 
+                          <td style="padding: 10px 0px;">
+                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          </td>
+                        </tr>
+                      </table>        
+                    </td>
+                    
+                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td>
+            <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+              <tr>
+                <td>
+                  <strong style="">Mensaje de tu amigo/a:</strong><br/>
+                  %%comments%% 
+                </td>
+              </tr>
+            </table>        
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+`
+    }, // end 7
+
+    8 : {
+      subject : "Formulario de contacto de %%ecommerceName%%",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Formulario de contacto</strong><br><br>
+    <span style="font-size:15px;">Nombre: %%anonymousFirstName%%<br />Email: %%anonymousEmail%%<br />Teléfono: %%anonymousPhone%%<br />Motivo de consulta:  %%queryMotive%%<br />Mensaje: %%comments%%</span>
+  </td>
+</tr>
+`
+    }, // end 8
+
+    9 : {
+      subject : "Consulta sobre producto de %%ecommerceName%%",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Consulta sobre producto</strong><br><br>
+    <span style="font-size:15px;">Nombre: %%anonymousFirstName%%<br />Apellidos: %%anonymousLastName%%<br />Email: %%anonymousEmail%%<br />Teléfono: %%anonymousPhone%%<br />Mensaje: %%comments%%<br /><br />Nombre Producto: %%name%%<br />Referencia Producto: %%sku%%</span>
+  </td>
+</tr>
+`
+    }, // end 9
+
+    10 : {
       subject : "Confirmación de pedido - %%orderNumber%% - %%ecommerceName%%",
       html : `
 <style type="text/css">
@@ -447,106 +513,55 @@ TEXTHERE
 `
     }, // end 10
 
-    25  : {
-      subject : "Suscripción de stock",
+    11 : {
+      subject : "Baja de la newsletter de %%ecommerceName%%",
       html : `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Suscripción de stock del producto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Hola,<br/><br/>Te has suscrito a los avisos de stock de %name%</span>
-    %productOptions%<br/>
-    <span style="font-size:15px;">En caso de que volvamos a recibir este artículo te avisaremos de inmediato para que no se te escape.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
+    <strong>Confirmación de la baja de la newsletter</strong><br><br>
+    <span style="font-size:15px;">Hola<br><br>Has sido dado de baja con éxito de nuestra newsletter.<br><br>Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
-</tr>
+</tr>   
 `
-    }, // end 25
+    }, // end 11
 
-		9	: {
-      subject : "Consulta sobre producto de %%ecommerceName%%",
+    12 : {
+      subject : "Tu amigo te quiere apadrinar",
       html : `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Consulta sobre producto</strong><br><br>
-    <span style="font-size:15px;">Nombre: %%anonymousFirstName%%<br />Apellidos: %%anonymousLastName%%<br />Email: %%anonymousEmail%%<br />Teléfono: %%anonymousPhone%%<br />Mensaje: %%comments%%<br /><br />Nombre Producto: %%name%%<br />Referencia Producto: %%sku%%</span>
+    <strong>Solicitud de apadrinamiento</strong><br><br>
+    <span>Hola,<br><br>%%firstName%% te invita a unirte a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>Hazte socio y regístrate aquí: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>Gracias por tu apoyo.<br><br>Atentamente, el equipo de %%ecommerceName%%
   </td>
 </tr>
 `
-    }, // end 9
+    }, // end 12
 
-		8	: {
-      subject : "Formulario de contacto de %%ecommerceName%%",
+    13 : {
+      subject : "Tu apadrinado ha realizado una compra: disfruta de tu descuento.",
       html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Formulario de contacto</strong><br><br>
-    <span style="font-size:15px;">Nombre: %%anonymousFirstName%%<br />Email: %%anonymousEmail%%<br />Teléfono: %%anonymousPhone%%<br />Motivo de consulta:  %%queryMotive%%<br />Mensaje: %%comments%%</span>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+    <strong>Apadrinamiento completado</strong><br><br>
+    <span>Hola,<br/><br/>Uno de tus amigos acaba de hacer una compra en nuestra tienda de más de XX (€) de valor, por lo tanto, te ofrecemos un descuento de XX en tu próximo pedido.<br/><br/>El descuento entrará automáticamente en vigor en tu próximo pedido. <br/><br/>Gracias por tu apoyo.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 8
+    }, // end 13
 
-		18	: {
-      subject : "Activación de cuenta - %%ecommerceName%%",
+    14 : {
+      subject : "Petición de devolución %%ecommerceName%%",
       html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Activación de cuenta</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Te notificamos que tu cuenta en %%ecommerceURL%% ha sido activada correctamente.<br /><br />Para ver tus datos y toda la información referente a tu cuenta accede a través del panel de control: <a href="%%ecommerceURL%%" style="color:#000">Editar tu perfil</a><br /><br />Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />Atentamente, el equipo de %%ecommerceName%%</span>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Información de la petición de devolución</strong><br /><br />
+    <span style="font-size:15px;">Hola %firstName% %lastName%, <br /><br />Nos complace confirmarte la petición de tu devolución.<br/><br/>Número de pedido: %%orderNumber%%<br/><br/>Atentamente, el equipo %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 18
+    }, // end 14
 
-		33	: {
-      subject : "",
-      html : `
-HERE_TEXT
-`
-    }, // end 33
-
-		34	: {
-      subject : "",
-      html : `
-HERE_TEXT
-`
-    }, // end 34
-
-		35	: {
-      subject : "",
-      html : `
-HERE_TEXT
-`
-    }, // end 35
-
-		32	: {
-      subject : "",
-      html : `
-HERE_TEXT
-`
-    }, // end 32
-
-		38	: {
-      subject : "",
-      html : `
-HERE_TEXT
-`
-    }, // end 38
-
-		16	: {
-      subject : "Notificación transportista",
-      html : `
-HERE_TEXT
-`
-    }, // end 16
-
-		39	: {
-      subject : "",
-      html : `
-HERE_TEXT
-`
-    }, // end 39
-
-		15	: {
+    15 : {
       subject : "Pedido incompleto de %%ecommerceName%%",
       html : `
 <tr>
@@ -605,186 +620,45 @@ HERE_TEXT
 `
     }, // end 15
 
-		14	: {
-      subject : "Petición de devolución %%ecommerceName%%",
+    16 : {
+      subject : "Notificación transportista",
       html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Información de la petición de devolución</strong><br /><br />
-    <span style="font-size:15px;">Hola %firstName% %lastName%, <br /><br />Nos complace confirmarte la petición de tu devolución.<br/><br/>Número de pedido: %%orderNumber%%<br/><br/>Atentamente, el equipo %%ecommerceName%%</span>
-  </td>
-</tr>
+HERE_TEXT
 `
-    }, // end 14
+    }, // end 16
 
-		7	: {
-      subject : "%%anonymousName%% te recomienda un producto de %%ecommerceName%%",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recomendación de producto</strong><br /><br />
-    <span style="font-size:15px;"> Tu amigo/a %%anonymousName%% (%%anonymousEmail%%) te envía este producto que puede resultarte de interés.<br /><br />Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br /><br />Atentamente, el equipo de  %%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
-    <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
-      <tbody>
-        <tr><td>&nbsp;</td></tr>
-        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Productos recomendados</span></td></tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td width="" style="vertical-align: top">
-            <div style="padding: 0 0">
-              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
-                <tbody>
-                  <tr>
-                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
-                    
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
-                  </tr>
-                  
-                  <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
-                        <tr>
-                          <td style="padding: 10px 0px;">
-                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
-                          </td> 
-                          <td style="padding: 10px 0px;">
-                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
-                          </td>
-                        </tr>
-                      </table>        
-                    </td>
-                    
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
-                  </tr>
-                </tbody>
-              </table>
-              
-            </div>
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td>
-            <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
-              <tr>
-                <td>
-                  <strong style="">Mensaje de tu amigo/a:</strong><br/>
-                  %%comments%% 
-                </td>
-              </tr>
-            </table>        
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-      </tbody>
-    </table>
-  </td>
-</tr>
-`
-    }, // end 7
-
-		6	: {
-      subject : "%%anonymousName%% te recomienda sus productos favoritos de %%ecommerceName%%",
-      html : `
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recomendación de wishlist</strong><br /><br />
-    <span style="font-size:15px;"> Tu amigo/a %%anonymousName%% (%%anonymousEmail%%) te envía este producto que puede resultarte de interés.<br /><br />Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br /><br />Atentamente, el equipo de  %%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
-    <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
-      <tbody>
-        <tr><td>&nbsp;</td></tr>
-        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Productos recomendados</span></td></tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td width="" style="vertical-align: top">
-            <div style="padding: 0 0">
-              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
-                <tbody>
-                  <tr>
-                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
-                    
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
-                  </tr>
-                  %loop%
-                  <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
-                        <tr>
-                          <td style="padding: 10px 0px;">
-                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
-                          </td> 
-                          <td style="padding: 10px 0px;">
-                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
-                          </td>
-                        </tr>
-                      </table>        
-                    </td>
-                    
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
-                  </tr>
-                  %/loop%
-                  
-                </tbody>
-              </table>
-              
-            </div>
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td>
-            <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
-              <tr>
-                <td>
-                  <strong style="">Mensaje de tu amigo/a:</strong><br/>
-                  %%comments%% 
-                  
-                </td>
-              </tr>
-            </table>        
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-      </tbody>
-    </table>
-  </td>
-</tr>
-`
-    }, // end 6
-
-		3	: {
-      subject : "Recordar contraseña de %%ecommerceName%%",
+    17 : {
+      subject : "Verificación de correo - %%ecommerceName%%",
       html : `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recordar contraseña</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Conforme a lo solicitado durante tu reciente visita a %%ecommerceName%%, aquí tienes tu dirección de acceso a la zona de recuperación de contraseña:<br /><br /><a href="%%lostPasswordLink%%" style="color:#000">Click aquí para recuperar contraseña</a><br /><br />Este enlace solamente será válido durante las 24 horas siguientes al momento de su envío.<br /><br />Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />Atentamente, el equipo de %%ecommerceName%%</span>
+    <strong>Verificación de correo</strong><br /><br />
+    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Gracias por registrarte en %%ecommerceURL%%. Por favor activa tu cuenta clicando <a href="%verifyLink%"  style="color:#000;">aquí</a>.<br /><br />Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br /><br />Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 3
+    }, // end 17
 
-		5	: {
-      subject : "Subscripción a la newsletter en %%ecommerceName%%",
+    18 : {
+      subject : "Activación de cuenta - %%ecommerceName%%",
       html : `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Subscripción a la newsletter</strong><br><br>
-    <span style="font-size:15px;">Hola<br/><br/>Gracias por suscribirte a nuestro boletín de noticias. Pronto recibirás información sobre actividades, noticias sobre nuestra empresa y novedades en productos y promociones.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
+    <strong>Activación de cuenta</strong><br><br>
+    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Te notificamos que tu cuenta en %%ecommerceURL%% ha sido activada correctamente.<br /><br />Para ver tus datos y toda la información referente a tu cuenta accede a través del panel de control: <a href="%%ecommerceURL%%" style="color:#000">Editar tu perfil</a><br /><br />Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 5
+    }, // end 18
 
-    20  : {
+    19 : {
+      subject : "",
+      html : `
+TEXTHERE
+`
+    }, // end 19
+
+    20 : {
       subject : "Stock disponible",
       html : `
 <tr>
@@ -797,17 +671,158 @@ HERE_TEXT
 `
     }, // end 20
 
-		17	: {
-      subject : "Verificación de correo - %%ecommerceName%%",
+    22 : {
+      subject : "%%postName%% - %%blogName%%",
       html : `
 <tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
+    A continuación puedes leer los últimos artículos publicados en <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br/><br/>
+    <strong><a href="%%postUrl%%" style="color:#000;font-size:18px;text-decoration:none;">%%postName%%</a></strong>
+  </td>
+</tr>
+<tr>
+  <td align="center" style="">
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="30" style="text-align: center; ">
+          <a href="%%postUrl%%" style="color:#000;">
+            <img class="fix" src="%%postSmallImage%%" height="auto" width="115" border="0" style="height: auto;" alt="%%postName%%">
+          </a>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Verificación de correo</strong><br /><br />
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Gracias por registrarte en %%ecommerceURL%%. Por favor activa tu cuenta clicando <a href="%verifyLink%"  style="color:#000;">aquí</a>.<br /><br />Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br /><br />Atentamente, el equipo de %%ecommerceName%%</span>
+    <span style="font-size:15px;">%%postShortText%%<br/><br/><a href="%%postUrl%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
   </td>
 </tr>
 `
-    }, // end 17
+    }, // end 22
 
-	} // end emails
+    23 : {
+      subject : "Nuevo comentario en %%postName%% - %%blogName%%",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
+    Alguien acaba de responder el artículo "<a href="%%postUrl%%" style="color:#000">%%postName%%</a>.<br/><br/>
+  </td>
+</tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <table border="0" cellspacing="10" cellpadding="0" width="100%">
+      <tr>
+        <td style="text-align:right;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="30%">
+          <img class="fix" src="%%commentGravatar%%?d=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fuser-23%2F512%2FUser_Thief.png&s=75" width="75" border="0" height="75">
+        </td>
+        <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
+          <a style="color:#000;text-decoration:none;" href="%%postUrl%%#comment%%commentId%%">%%commentNick%%</a><br/>
+                  %%commentContent%%<br/><br/>
+          <span style="font-size:15px;"><a href="%%postUrl%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+`
+    }, // end 23
+
+    24 : {
+      subject : "¡Bienvenido a %%blogName%%!",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>¡Welcome to <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br/><br/>
+    <span style="font-size:15px;">Hola %firstName% %lastName%,<br/><br/>Gracias por suscribirte a nuestro blog. Pronto recibirás los nuevos artículos por email, información sobre descuentos, promociones, regalos y datos de interés relativos a la actividad de la tienda online.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
+  </td>
+</tr>
+`
+    }, // end 24
+
+    25 : {
+      subject : "Suscripción de stock",
+      html : `
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>Suscripción de stock del producto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
+    <span style="font-size:15px;">Hola,<br/><br/>Te has suscrito a los avisos de stock de %name%</span>
+    %productOptions%<br/>
+    <span style="font-size:15px;">En caso de que volvamos a recibir este artículo te avisaremos de inmediato para que no se te escape.<br/><br/>Atentamente, el equipo de %%ecommerceName%%</span>
+  </td>
+</tr>
+`
+    }, // end 25
+
+    26 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 26
+
+    27 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 27
+
+    32 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 32
+
+    33 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 33
+
+    34 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 34
+
+    35 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 35
+
+    36 : {
+      subject : "",
+      html : `
+TEXTHERE
+`
+    }, // end 36
+
+    37 : {
+      subject : "",
+      html : `
+TEXTHERE
+`
+    }, // end 37
+
+    38 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 38
+
+    39 : {
+      subject : "",
+      html : `
+HERE_TEXT
+`
+    }, // end 39
+
+  } // end emails
 };
