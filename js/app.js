@@ -99,10 +99,10 @@ APP.fillData = {
 							</button>
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
-									<div class="card-title-custom">Html</div>
+									<label class="card-title-custom">Html</label>
 									<div class="editor editor-cont">${_contMail}</div>
-									<div class="card-title-custom">Subject</div>
-									<input type="text" class="form-control subject" value="${_subject}" placeholder="Subject">
+									<label class="card-title-custom">Subject</label>
+									<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
 								</div>
 							</div>
 						</div>
@@ -163,7 +163,7 @@ APP.editors = {
 APP.appVisual = {
 	init : function() {
 		$('[data-toggle="tooltip"]').tooltip();
-		$('#scriptGenerated').modal('show');
+		// $('#scriptGenerated').modal('show');
 	}
 }
 
