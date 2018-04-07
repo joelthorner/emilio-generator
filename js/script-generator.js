@@ -10,35 +10,62 @@ APP.scriptGenerator = {
 	
 	LANGUAGE_ID : 1,
 	VALID_MAILS_IDS : [],
+	
+	totalTimeScript : 0,
+	T1 : 0,
+	T2 : 0,
+	T3 : 0,
+	T4 : 0,
+	T_MAIL : 0,
 
 	init : function () {
 		this.saveInfo();
-
+		this.changeLang();
 		this.openModal();
 	},
 
-	saveInfo : function() {
-		APP.scriptGenerator.VALID_MAILS_IDS = [];
-		APP.scriptGenerator.LANGUAGE_ID = $('#data-tabs-cont .nav-link.active').data('lang-id');	
+	changeLang : function() {
+		$('#data-tabs-cont .nav-link').on('shown.bs.tab', function(event) {
+			APP.scriptGenerator.saveInfo();
+		});
+	},
 
-		$('#tab-lang-c-' + APP.scriptGenerator.LANGUAGE_ID + ' [data-valid="true"]').find('[data-id]')
+	saveInfo : function() {
+		var SG = APP.scriptGenerator;
+
+		SG.VALID_MAILS_IDS = [];
+		SG.LANGUAGE_ID = $('#data-tabs-cont .nav-link.active').data('lang-id');
+		SG.T1 = 1000;
+		SG.T2 = 100;
+		SG.T3 = 500;
+		SG.T4 = 500;
+		SG.T_MAIL = 5000;
+
+		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"]').find('[data-id]')
 			.each(function(index, el) {
-				APP.scriptGenerator.VALID_MAILS_IDS.push($(el).data('id'))
+				SG.VALID_MAILS_IDS.push($(el).data('id'))
 			});
+
+		SG.totalTimeScript = ((SG.T1+SG.T2+SG.T3+SG.T4+SG.T_MAIL) * SG.VALID_MAILS_IDS.length);
 	},
 
 	openModal : function() {
+		var SG = APP.scriptGenerator;
+
 		$('#scriptGenerated').on('shown.bs.modal', function(event) {
-			var $modal = $(this);
+			var $modal = $(this), seconds = (SG.totalTimeScript / 1000);
 			
-			$modal.find('.data-mails .arr').text(APP.scriptGenerator.VALID_MAILS_IDS);
-			$modal.find('.data-mails .badge').text(APP.scriptGenerator.VALID_MAILS_IDS.length + '/' + Object.size(DATA.mails));
-			$modal.find('.data-lang .badge').text(APP.scriptGenerator.LANGUAGE_ID);
+			$modal.find('.data-mails .arr').text(SG.VALID_MAILS_IDS);
+			$modal.find('.data-mails .badge').text(SG.VALID_MAILS_IDS.length + '/' + Object.size(DATA.mails));
+			$modal.find('.data-lang .badge').text(SG.LANGUAGE_ID);
+			$modal.find('.data-lang .text-initials').text(DATA.langs[SG.LANGUAGE_ID]);
+			$modal.find('.data-time .badge').text( Math.round(seconds) + 's');
+			$modal.find('.data-time .time-desglose').text( Math.round((seconds / SG.VALID_MAILS_IDS.length)) + 's x ' + SG.VALID_MAILS_IDS.length + ' mails');
 			
 			var editor = ace.edit($modal.find('.editor')[0]);
 			editor.session.setOption("wrap", true);
 			editor.session.setMode("ace/mode/javascript");
-			editor.setValue(APP.scriptGenerator.getScript());
+			editor.setValue(SG.getScript());
 		});
 	},
 
@@ -49,7 +76,11 @@ APP.scriptGenerator = {
 		var arrMailsIds_OK = APP.scriptGenerator.VALID_MAILS_IDS;
 		var languageID_OK = APP.scriptGenerator.LANGUAGE_ID;
 
-		var T1 = 1000, T2 = 100, T3 = 500, T4 = 500;
+		var T1 = APP.scriptGenerator.T1, 
+			 T2 = APP.scriptGenerator.T2, 
+			 T3 = APP.scriptGenerator.T3, 
+			 T4 = APP.scriptGenerator.T4, 
+			 T_MAIL = APP.scriptGenerator.T_MAIL;
 
 		var _arrMailIds = '[' + arrMailsIds_OK.join(', ') + ']';
 		var langInitial = DATA.langs[languageID_OK].toLocaleLowerCase();
@@ -81,9 +112,10 @@ APP.scriptGenerator = {
 			var arrMailSubjects = ${_arrMailSubjects};
 			var HEADER_VALUE = ${_HEADER};
 			var FOOTER_VALUE = ${_FOOTER};
-	      var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4};
+	      var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL};
 	      var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
 			var LANG = ${languageID_OK};
+			var mailTimeSeconds = (T1+T2+T3+T4+T_MAIL) / 1000;
 
 			var i = 0;
 
@@ -170,7 +202,8 @@ APP.scriptGenerator = {
 												}
 											}, T2);
 
-											console.log('[OK] Success save template id-' + ID_TEMPLATE + ' time: ' + (T1+T2+T3+T4) + 'ms');
+											console.log('[OK] Success save template id-' + ID_TEMPLATE + ' time: ' + mailTimeSeconds + 's');
+											mailTimeSeconds +=mailTimeSeconds;
 										}catch(e){
 											console.error('[ERROR] Fail save template id-' + ID_TEMPLATE + '. Pls send report!', e);
 										}
@@ -185,7 +218,7 @@ APP.scriptGenerator = {
 						clearInterval(SI_MAIN);
 					}
 
-			   }, T1+T2+T3+T4 + 5000)
+			   }, T1+T2+T3+T4 + T_MAIL)
 			
 		`;
 

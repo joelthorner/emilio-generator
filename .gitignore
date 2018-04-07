@@ -16,6 +16,7 @@ node_modules/**/*
 *.msp
 
 *_old*
+debug/_*
 
 # Windows shortcuts
 *.lnk
