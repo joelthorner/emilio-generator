@@ -25,14 +25,15 @@ APP.fillData = {
 
 		$.each(DATA.langs, function(langId, langKey) {
 			if (DATA[langKey.toLowerCase()]) {
+				
 				var _active = counter == 0 ? 'active' : '',
 					 _selected = counter == 0 ? true : false,
+					 _langId = langId,
 					 _langKey = langKey.toLowerCase();
-					 // _colorBadge = counter == 0 ? 'light' : 'primary';
 
 				$output.append(`
-					<a class="nav-link ${_active}" id="tab-lang-${langId}" data-toggle="pill" href="#tab-lang-c-${langId}" role="tab" aria-controls="tab-lang-c-${langId}" aria-selected="${_selected}" data-lang-id="${langId}">
-						${_langKey} <code class="badge badge-light">id ${langId}</code>
+					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}">
+						${_langKey} <code class="badge badge-light">id ${_langId}</code>
 					</a>
 				`);
 				counter++;
@@ -46,8 +47,7 @@ APP.fillData = {
 		// Loop for arr langs
 		$.each(DATA.langs, function(langId, langKey) {
 
-			var _active = counter == 0 ? 'show active' : '',
-				 _selected = counter == 0 ? true : false;
+			var _active = counter == 0 ? 'show active' : '';
 
 			var HTML_mails_lang = '', 
 				 HTML_header_lang = '',
@@ -57,11 +57,15 @@ APP.fillData = {
 
 			if (langData) {
 				var _langDataHeader = APP.utils.safe_tags_replace(langData.header),
-					 _btnType = APP.fillData.getBtnState("HEADER", _langDataHeader);
+					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
-					<button class="btn ${_btnType} btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H" data-id="H">
-						Header <code class="badge badge-secondary">id H</code>
+					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H" data-id="H">
+						Header
+						<div class="badges">
+							${_validBlockData.badge}
+							<code class="badge badge-secondary">id H</code>
+						</div>
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_H">
 						<div class="card card-body">
@@ -71,11 +75,15 @@ APP.fillData = {
 				`;
 
 				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer),
-					 _btnType = APP.fillData.getBtnState("FOOTER", _langDataFooter);
+					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
-					<button class="btn ${_btnType} btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F" data-id="F">
-						Footer <code class="badge badge-secondary">id F</code>
+					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F" data-id="F">
+						Footer
+						<div class="badges">
+							${_validBlockData.badge}
+							<code class="badge badge-secondary">id F</code>
+						</div>
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_F">
 						<div class="card card-body">
@@ -89,13 +97,16 @@ APP.fillData = {
 					var _contMail = APP.utils.safe_tags_replace(dataMail.html),
 						 _subject = dataMail.subject,
 						 _emailNameES = DATA.mails[idMail],
-						 _btnType = APP.fillData.getBtnState(_subject, _contMail),
-						 _isValid = _btnType == "btn-danger" ? false : true;
+						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
 
 					HTML_mails_lang += `
-						<div class="block-mail" data-valid="${_isValid}">
-							<button class="btn collapsed ${_btnType} btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
-								${_emailNameES} <code class="badge badge-secondary">id ${idMail}</code>
+						<div class="block-mail" data-valid="${_validBlockData.valid}">
+							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
+								${_emailNameES}
+								<div class="badges">
+									${_validBlockData.badge}
+									<code class="badge badge-secondary">id ${idMail}</code>
+								</div>
 							</button>
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
@@ -129,11 +140,21 @@ APP.fillData = {
 		});
 	},
 
-	getBtnState : function(subject, contentMail) {
-		var _return = "btn-light";
+	getValidBlockData : function(subject, contentMail) {
+		var _return = {
+			valid : true,
+			badge : ''
+		};
 
-		if (!$.trim(subject).length) _return = "btn-warning";
-		if (contentMail.indexOf('TEXTHERE') !== -1) _return = "btn-danger";
+		if (!$.trim(subject).length){	
+			_return.valid = true;
+			_return.badge += '<code class="badge badge-warning">No sbj</code>';
+		}
+
+		if ($.trim(contentMail).indexOf('TEXTHERE') !== -1 || $.trim(contentMail).length == 0){	
+			_return.valid = false;
+			_return.badge += '<code class="badge badge-danger">Empty</code>';
+		}
 
 		return _return;
 	}
@@ -162,10 +183,19 @@ APP.editors = {
 
 APP.appVisual = {
 	init : function() {
+		this.initsBT();
+		this.fakeLogin();
+	},
+
+	initsBT : function() {
 		$('[data-toggle="tooltip"]').tooltip();
-		// $('#scriptGenerated').modal('show');
+	},
+
+	fakeLogin : function() {
+		$('#passwordModal').modal('show');
+		
 	}
-}
+};
 
 APP.main = {
 	init : function () {

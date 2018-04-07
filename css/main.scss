@@ -123,12 +123,20 @@ body{
 		text-align: left;
 		position: relative;
 
-		.badge{
+		.badges{
 			position: absolute;
+			// width: 3.75em;
+			// float: right;
 			right: .75rem;
 			top: 50%;
 			transform: translateY(-50%);
-			width: 3.75em;
+			.badge{
+				float: left;
+				top: 0;
+				position: static;
+				margin-left: rem(5px);
+				width: rem(50px);
+			}
 		}
 	}
 	.card-body{
@@ -156,7 +164,11 @@ body{
 
 .editor{
 	height: 250px;
-	margin-bottom: rem(16px);
+
+	&.editor-cont{
+		margin-bottom: rem(16px);
+	}
+	border-radius: .25rem;
 }
 
 .btn:not(.n-i-a){
