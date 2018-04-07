@@ -192,8 +192,16 @@ APP.appVisual = {
 	},
 
 	fakeLogin : function() {
-		$('#passwordModal').modal('show');
-		
+		var logged = localStorage.getItem("logged"),
+			 $passwordModal = $('#passwordModal');
+
+		if (logged != "true") {
+			$passwordModal.modal('show');
+		}
+
+		var _0xbcde=["\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x6D\x6F\x64\x61\x6C","\x6C\x6F\x67\x67\x65\x64","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];$(_0xbcde[12])[_0xbcde[11]](function(_0xda35x1){if($(_0xbcde[1])[_0xbcde[0]]()== _0xbcde[2]){$passwordModal[_0xbcde[4]](_0xbcde[3]);localStorage[_0xbcde[6]](_0xbcde[5],true)}else {$passwordModal[_0xbcde[10]](_0xbcde[9])[_0xbcde[8]](_0xbcde[7])}})
+
+		// $passwordModal.
 	}
 };
 

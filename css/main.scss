@@ -84,7 +84,7 @@ body{
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background: var(--gray);
+			background: #e8e8e8;
 			border-radius: 1px;
 		}
 	}
@@ -182,22 +182,22 @@ body{
 	}
 }
 
-#credits{
-	a{
-		svg{
-			fill: var(--blue);
-			width: rem(200px);
-			height: rem(200px);
-		}
-		width: rem(200px);
-		height: rem(200px);
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-	}
-}
+// #credits{
+// 	a{
+// 		svg{
+// 			fill: var(--blue);
+// 			width: rem(200px);
+// 			height: rem(200px);
+// 		}
+// 		width: rem(200px);
+// 		height: rem(200px);
+// 		position: absolute;
+// 		bottom: 0;
+// 		left: 0;
+// 		right: 0;
+// 		margin: auto;
+// 	}
+// }
 
 .navbar{
 	height: rem(56px);
