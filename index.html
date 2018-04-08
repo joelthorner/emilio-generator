@@ -53,10 +53,10 @@
 
 			<div id="actions" class="col-2">
 				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generar script</button>
-				<button id="instructions" type="button" class="btn btn-block btn-light"><i class="material-icons">help</i> Instructions</button>
+				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
 				<!-- <button id="preview" type="button" class="btn btn-block btn-light"><i class="material-icons">play_arrow</i> Preview</button> -->
-				<button id="send-content" type="button" class="btn btn-block btn-light"><i class="material-icons">create</i> Send content</button>
-				<button id="send-bug" type="button" class="btn btn-block btn-warning"><i class="material-icons">bug_report</i> Send bug</button>
+				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
+				<button id="send-bug" type="button" class="btn btn-block btn-pink" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
 				
 				<br><br>
 				<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -65,11 +65,13 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-
-				<div id="credits">
-					<!-- <a href="https://github.com/joelthorner" target="_blank" title="@joelthorner" data-toggle="tooltip" data-placement="top">
-						<svg id="icon-github-alt" aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
-					</a> -->
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin [empty] i alhora existeixin al Logicommerce.
+					<br>
+					Tampoc machaca altres idiomes
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
 				</div>
 			</div><!-- actions -->
 
@@ -78,18 +80,15 @@
 				<div class="list-group">
 					<a class="list-group-item list-group-item-action" href="http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines" target="_blank">Comodins</a>
 					<!-- <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a> -->
-					<!-- <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a> -->
-					<!-- <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a> -->
-					<!-- <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a> -->
 				</div>
 				<br><br>
 				<div class="h4">Credits</div>
 				<div class="list-group">
-					<a class="list-group-item list-group-item-action" href="https://github.com/joelthorner" target="_blank">@joelthorner</a>
+					<a class="list-group-item list-group-item-action" href="https://github.com/joelthorner" target="_blank">
+						<h6>@joelthorner</h6>
+						<small class="text-muted">For help and bugs</small>
+					</a>
 					<!-- <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a> -->
-					<!-- <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a> -->
-					<!-- <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a> -->
-					<!-- <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a> -->
 				</div>
 			</div><!-- params -->
 
@@ -98,14 +97,14 @@
 
 	<!-- Modal -->
 	<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
-		<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel"><i class="material-icons">verified_user</i> Login</h5>
 				</div>
 				<div class="modal-body">
 					<div class="form-label-group">
-						<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+						<input type="email" id="inputEmail" class="form-control" placeholder="Intranet user" required="" autofocus="">
 						<label for="inputEmail">Intranet user</label>
 					</div>
 
@@ -161,6 +160,88 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="sendContentModal" tabindex="-1" role="dialog" aria-labelledby="sendContentModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="sendContentModalLabel"><i class="material-icons">send</i>Send content</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- <div class="form-group">
+						<label for="selectSendContentLang">Id language</label>
+						<select name="selectSendContentLang" id="selectSendContentLang" class="form-control"></select>
+						<small class="form-text text-muted">Text que queda com guay aqui en gris.</small>
+					</div>
+					<div class="form-group">
+						<label for="selectSendContent">Mail template</label>
+						<select name="selectSendContent" id="selectSendContent" class="form-control"></select>
+						<small class="form-text text-muted">Text que queda com guay aqui en gris.</small>
+					</div>
+					<div class="form-group">
+						<label for="asuntu">Asuntu</label>
+						<input name="asuntu" id="asuntu" type="text" class="form-control" placeholder="Que pacha">
+						<small class="form-text text-muted">Exemple: Error html en la plantilla tal</small>
+					</div>
+					<div class="form-group">
+						<label for="mailcontSend">Asuntu</label>
+						<textarea name="mailcontSend" id="mailcontSend" cols="30" rows="10" class="form-control" placeholder="Diganme"></textarea>
+						<small class="form-text text-muted">Exemple: &lt;tr&gt; &lt;td class="abc"&gt;...</small>
+					</div> -->
+					<p class="text-center">
+						<small>joel.torner@tlgcommerce.com</small>
+					</p>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="instructionsModalLabel"><i class="material-icons">list</i>Instruccions</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+					<div class="list-group">
+						<span class="list-group-item list-group-item-action flex-column align-items-start">
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1">Copiar mails en un idioma</h5>
+								<small>09/04/2018</small>
+							</div>
+							<ol class="mb-1">
+								<li>Triar idioma</li>
+								<li>Editar (o no) mails del idioma i header o footer del idioma. Si no es toquen s'ompliran amb els predefinits de la <i title="Assosiació d'Afectats per Mails de TLG" data-toggle="tooltip" data-placement="top">A.A.M.T</i></li>
+								<li>Donar-li al boto generar script i copiar el script generat.</li>
+								<li>En la Consola (Dev) del Logicommerce exnganxar i executar</li>
+								<li>Pot trigar, anirá surtint per consola els mails omplerts i si falla o no (mai falla)</li>
+								<li>Mentres s'executa no toquis el Logicommerce, canvia de pestanya i ves fes un riu o un café</li>
+								<li>Quan acabi la moguda per consola veuras un missatge.</li>
+							</ol>
+							<!-- <small>Donec id elit non mi porta.</small> -->
+						</span>
+					</div>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
