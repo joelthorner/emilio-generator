@@ -55,12 +55,18 @@ APP.scriptGenerator = {
 		$('#scriptGenerated').on('shown.bs.modal', function(event) {
 			var $modal = $(this), seconds = (SG.totalTimeScript / 1000);
 			
-			$modal.find('.data-mails .arr').text(SG.VALID_MAILS_IDS);
-			$modal.find('.data-mails .badge').text(SG.VALID_MAILS_IDS.length + '/' + Object.size(DATA.mails));
-			$modal.find('.data-lang .badge').text(SG.LANGUAGE_ID);
-			$modal.find('.data-lang .text-initials').text(DATA.langs[SG.LANGUAGE_ID]);
-			$modal.find('.data-time .badge').text( Math.round(seconds) + 's');
-			$modal.find('.data-time .time-desglose').text( Math.round((seconds / SG.VALID_MAILS_IDS.length)) + 's x ' + SG.VALID_MAILS_IDS.length + ' mails');
+			$modal.find('.data-mails .arr')
+				.text(SG.VALID_MAILS_IDS);
+			$modal.find('.data-mails .badge')
+				.text(SG.VALID_MAILS_IDS.length + '/' + Object.size(DATA.mails));
+			$modal.find('.data-lang .badge')
+				.text(SG.LANGUAGE_ID);
+			$modal.find('.data-lang .text-initials')
+				.text(DATA.langs[SG.LANGUAGE_ID]);
+			$modal.find('.data-time .badge')
+				.text( Math.round(seconds) + 's');
+			$modal.find('.data-time .time-desglose')
+				.text( Math.round((seconds / SG.VALID_MAILS_IDS.length)) + 's x ' + SG.VALID_MAILS_IDS.length + ' mails');
 			
 			var editor = ace.edit($modal.find('.editor')[0]);
 			editor.session.setOption("wrap", true);

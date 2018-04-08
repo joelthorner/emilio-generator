@@ -100,7 +100,7 @@ APP.fillData = {
 						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
 
 					HTML_mails_lang += `
-						<div class="block-mail" data-valid="${_validBlockData.valid}">
+						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
 							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
 								${_emailNameES}
 								<div class="badges">
@@ -184,6 +184,7 @@ APP.editors = {
 APP.appVisual = {
 	init : function() {
 		this.initsBT();
+		// this.sendContent();
 		this.fakeLogin();
 	},
 
@@ -192,17 +193,36 @@ APP.appVisual = {
 	},
 
 	fakeLogin : function() {
-		var logged = localStorage.getItem("logged"),
-			 $passwordModal = $('#passwordModal');
+		var _0x2f73=["\x6C\x6F\x67\x67\x65\x64","\x67\x65\x74\x49\x74\x65\x6D","\x23\x70\x61\x73\x73\x77\x6F\x72\x64\x4D\x6F\x64\x61\x6C","\x74\x72\x75\x65","\x73\x68\x6F\x77","\x6D\x6F\x64\x61\x6C","\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];var _0x2adf=[_0x2f73[0],_0x2f73[1],_0x2f73[2],_0x2f73[3],_0x2f73[4],_0x2f73[5],_0x2f73[6],_0x2f73[7],_0x2f73[8],_0x2f73[9],_0x2f73[10],_0x2f73[11],_0x2f73[12],_0x2f73[13],_0x2f73[14],_0x2f73[15],_0x2f73[16]];var logged=localStorage[_0x2adf[1]](_0x2adf[0]),$PM=$(_0x2adf[2]);if(logged!= _0x2adf[3]){$PM[_0x2adf[5]](_0x2adf[4])};$(_0x2adf[16])[_0x2adf[15]](function(_0xe1adx4){if($(_0x2adf[7])[_0x2adf[6]]()== _0x2adf[8]){$PM[_0x2adf[5]](_0x2adf[9]);localStorage[_0x2adf[10]](_0x2adf[0],true)}else {$PM[_0x2adf[14]](_0x2adf[13])[_0x2adf[12]](_0x2adf[11])}})
+	},
 
-		if (logged != "true") {
-			$passwordModal.modal('show');
-		}
+	// sendContent : function() {
+	// 	var $modal = $('#sendContentModal');
+		
+	// 	$.each(DATA.mails, function(id, name) {
+	// 		$('#selectSendContent').append(`
+	// 			<option value="${name}">${name}</option>
+	// 		`);
+	// 	});
 
-		var _0xbcde=["\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x6D\x6F\x64\x61\x6C","\x6C\x6F\x67\x67\x65\x64","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];$(_0xbcde[12])[_0xbcde[11]](function(_0xda35x1){if($(_0xbcde[1])[_0xbcde[0]]()== _0xbcde[2]){$passwordModal[_0xbcde[4]](_0xbcde[3]);localStorage[_0xbcde[6]](_0xbcde[5],true)}else {$passwordModal[_0xbcde[10]](_0xbcde[9])[_0xbcde[8]](_0xbcde[7])}})
+	// 	$.each(DATA.langs, function(id, name) {
+	// 		$('#selectSendContentLang').append(`
+	// 			<option value="${name}">${name}</option>
+	// 		`);
+	// 	});
 
-		// $passwordModal.
-	}
+	// 	$('#btnSendCont').click(function(event) {
+	// 		// var link = "mailto:joel.torner@tlgcommerce.com"
+	// 		var link = "mailto:joeltorner@gmail.com"
+	// 			// + "?cc=myCCaddress@example.com"
+	// 			+ "?subject=" + encodeURIComponent($('#asuntu').val())
+	// 			+ "&body=" + encodeURIComponent($('#selectSendContentLang').val() + ' ') 
+	// 			+ encodeURIComponent($('#selectSendContent').val() + ' \n')
+	// 			+ encodeURIComponent($('#mailcontSend').val())
+	// 		;
+	// 		$(location).attr('href', link);
+	// 	});
+	// }
 };
 
 APP.main = {
