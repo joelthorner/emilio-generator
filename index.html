@@ -103,16 +103,18 @@
 					<h5 class="modal-title" id="exampleModalLabel"><i class="material-icons">verified_user</i> Login</h5>
 				</div>
 				<div class="modal-body">
-					<div class="form-label-group">
-						<input type="email" id="inputEmail" class="form-control" placeholder="Intranet user" required="" autofocus="">
-						<label for="inputEmail">Intranet user</label>
-					</div>
+					<form action="/" id="loginForm">
+						<div class="form-label-group">
+							<input type="text" id="inputEmail" class="form-control" placeholder="Intranet user" required="" autofocus="">
+							<label for="inputEmail">Intranet user</label>
+						</div>
 
-					<div class="form-label-group">
-						<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-						<label for="inputPassword">TLG Password</label>
-					</div>
-					<button class="btn btn-lg btn-primary btn-block" type="button" id="signin">Sign in</button>
+						<div class="form-label-group">
+							<input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+							<label for="inputPassword">TLG Password</label>
+						</div>
+						<button class="btn btn-lg btn-primary btn-block" type="submit" id="signin">Sign in</button>
+					</form>
 				</div>
 			</div>
 		</div>
