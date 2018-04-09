@@ -20,15 +20,7 @@ APP.scriptGenerator = {
 	TIMEOPENPLANTS : 0,
 
 	init : function () {
-		this.saveInfo();
-		this.changeLang();
 		this.openModal();
-	},
-
-	changeLang : function() {
-		$('#data-tabs-cont .nav-link').on('shown.bs.tab', function(event) {
-			APP.scriptGenerator.saveInfo();
-		});
 	},
 
 	saveInfo : function() {
@@ -43,18 +35,38 @@ APP.scriptGenerator = {
 		SG.T_MAIL = 4500;
 		SG.TIMEOPENPLANTS = 1000;
 
+		// save session editors DATA
+		$('#output-tabs-cont #tab-lang-c-' + SG.LANGUAGE_ID + ' .editor')
+			.each(function(index, el) {
+				var editor = ace.edit(el);
+				var code = editor.getValue();
+				var id = $(el).data('id');
+				var langInitial = DATA.langs[SG.LANGUAGE_ID].toLowerCase();
+
+				if (!isNaN(id)) {
+					DATA[langInitial].mails[id].html = code;
+					DATA[langInitial].mails[id].subject = $(el).parents('.block-mail').find('.subject').val();
+				}else{
+					if (id == 'H') DATA[langInitial].header = code;
+					if (id == 'F') DATA[langInitial].footer = code;
+				}
+			});
+
 		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"]').find('[data-id]')
 			.each(function(index, el) {
 				SG.VALID_MAILS_IDS.push($(el).data('id'))
 			});
-
+			
 		SG.totalTimeScript = (SG.T_MAIL * SG.VALID_MAILS_IDS.length) + SG.TIMEOPENPLANTS;
 	},
 
 	openModal : function() {
 		var SG = APP.scriptGenerator;
 
+
 		$('#scriptGenerated').on('shown.bs.modal', function(event) {
+			SG.saveInfo();
+
 			var $modal = $(this), seconds = (SG.totalTimeScript / 1000);
 			
 			$modal.find('.data-mails .arr')
@@ -92,7 +104,7 @@ APP.scriptGenerator = {
 			 TIMEOPENPLANTS = APP.scriptGenerator.TIMEOPENPLANTS;
 
 		var _arrMailIds = '[' + arrMailsIds_OK.join(', ') + ']';
-		var langInitial = DATA.langs[languageID_OK].toLocaleLowerCase();
+		var langInitial = DATA.langs[languageID_OK].toLowerCase();
 		
 		var _arrMailConts = `[\``;
 		$.each(arrMailsIds_OK, function(index, arrID) {

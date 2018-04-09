@@ -60,7 +60,7 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H" data-id="H">
+					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
 						Header
 						<div class="badges">
 							${_validBlockData.badge}
@@ -69,7 +69,7 @@ APP.fillData = {
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_H">
 						<div class="card card-body">
-							<div class="editor">${_langDataHeader}</div>
+							<div class="editor" data-id="H">${_langDataHeader}</div>
 						</div>
 					</div>
 				`;
@@ -78,7 +78,7 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F" data-id="F">
+					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
 						Footer
 						<div class="badges">
 							${_validBlockData.badge}
@@ -87,7 +87,7 @@ APP.fillData = {
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_F">
 						<div class="card card-body">
-							<div class="editor">${_langDataFooter}</div>
+							<div class="editor" data-id="F">${_langDataFooter}</div>
 						</div>
 					</div>
 				`;
@@ -101,7 +101,7 @@ APP.fillData = {
 
 					HTML_mails_lang += `
 						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
-							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
+							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
 								${_emailNameES}
 								<div class="badges">
 									${_validBlockData.badge}
@@ -111,7 +111,7 @@ APP.fillData = {
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
 									<label class="card-title-custom">Html</label>
-									<div class="editor editor-cont">${_contMail}</div>
+									<div class="editor editor-cont" data-id="${idMail}">${_contMail}</div>
 									<label class="card-title-custom">Subject</label>
 									<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
 								</div>
