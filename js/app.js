@@ -56,7 +56,7 @@ APP.fillData = {
 			var langData = DATA[langKey.toLowerCase()];
 
 			if (langData) {
-				var _langDataHeader = APP.utils.safe_tags_replace(langData.header),
+				var _langDataHeader = APP.utils.safe_tags_replace(langData.header).replace('\n', ''),
 					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
@@ -74,7 +74,7 @@ APP.fillData = {
 					</div>
 				`;
 
-				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer),
+				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer).replace('\n', ''),
 					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
@@ -94,7 +94,7 @@ APP.fillData = {
 
 				// Loop per cada mail del lang
 				$.each(langData.mails, function(idMail, dataMail) {
-					var _contMail = APP.utils.safe_tags_replace(dataMail.html),
+					var _contMail = APP.utils.safe_tags_replace(dataMail.html).replace('\n', ''),
 						 _subject = dataMail.subject,
 						 _emailNameES = DATA.mails[idMail],
 						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
@@ -124,7 +124,7 @@ APP.fillData = {
 					<div class="tab-pane fade ${_active}" id="tab-lang-c-${langId}" role="tabpanel" aria-labelledby="tab-lang-${langId}">
 						<div class="row">
 							<div class="col-7">
-								<div class="scrollable">${HTML_mails_lang}</div>
+								<div class="scrollable mails">${HTML_mails_lang}</div>
 							</div>
 							<div class="col-5">
 								<div class="scrollable">
