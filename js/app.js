@@ -69,7 +69,7 @@ APP.fillData = {
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_H">
 						<div class="card card-body">
-							<div class="editor" data-id="H">${_langDataHeader}</div>
+							<div class="editor" id="editor-${langId}_H" data-id="H">${_langDataHeader}</div>
 						</div>
 					</div>
 				`;
@@ -87,7 +87,7 @@ APP.fillData = {
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_F">
 						<div class="card card-body">
-							<div class="editor" data-id="F">${_langDataFooter}</div>
+							<div class="editor" id="editor-${langId}_F" data-id="F">${_langDataFooter}</div>
 						</div>
 					</div>
 				`;
@@ -111,7 +111,7 @@ APP.fillData = {
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
 									<label class="card-title-custom">Html</label>
-									<div class="editor editor-cont" data-id="${idMail}">${_contMail}</div>
+									<div class="editor editor-cont" data-id="${idMail}" id="editor-${langId}_${idMail}">${_contMail}</div>
 									<label class="card-title-custom">Subject</label>
 									<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
 								</div>
@@ -177,15 +177,32 @@ APP.editors = {
 				showPrintMargin: false,
 				useWorker:false
 			});
+
+			editor.on("change", function(event, editor) {
+				var $self = $(editor.container);
+				var $blockMail = $self.parents('.block-mail');
+				var subject = $blockMail.find('.subject').val();
+
+				// var editor = ace.edit($blockMail.find('.editor')[0]);
+				var contentMail = editor.getValue();
+
+				var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
+				console.log(validBlockData);
+
+				$blockMail.data('valid', validBlockData.valid)
+				$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
+				$blockMail.find('.badges')
+					.prepend(validBlockData.badge);
+			});
 		}
 	}
 };
 
-APP.appVisual = {
+APP.frontEnd = {
 	init : function() {
 		this.initsBT();
-		// this.sendContent();
 		this.fakeLogin();
+		this.badgesSession();
 	},
 
 	initsBT : function() {
@@ -195,6 +212,23 @@ APP.appVisual = {
 	fakeLogin : function() {
 		var _0xd5b8=["\x45\x6D\x47\x65\x6E\x5F\x6C\x6F\x67\x67\x65\x64","\x67\x65\x74\x49\x74\x65\x6D","\x23\x70\x61\x73\x73\x77\x6F\x72\x64\x4D\x6F\x64\x61\x6C","\x74\x72\x75\x65","\x73\x68\x6F\x77","\x6D\x6F\x64\x61\x6C","\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];var logged=localStorage[_0xd5b8[1]](_0xd5b8[0]),$passwordModal=$(_0xd5b8[2]);if(logged!= _0xd5b8[3]){$passwordModal[_0xd5b8[5]](_0xd5b8[4])};$(_0xd5b8[16])[_0xd5b8[15]](function(_0xdcf7x3){if($(_0xd5b8[7])[_0xd5b8[6]]()== _0xd5b8[8]){$passwordModal[_0xd5b8[5]](_0xd5b8[9]);localStorage[_0xd5b8[10]](_0xd5b8[0],true)}else {$passwordModal[_0xd5b8[14]](_0xd5b8[13])[_0xd5b8[12]](_0xd5b8[11])}})
 	},
+
+	badgesSession : function() {
+		$('.subject').keyup(function(event) {
+			var $blockMail = $(this).parents('.block-mail');
+			var subject = $(this).val();
+
+			var editor = ace.edit($blockMail.find('.editor')[0]);
+			var contentMail = editor.getValue();
+
+			var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
+
+			$blockMail.data('valid', validBlockData.valid)
+			$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
+			$blockMail.find('.badges')
+				.prepend(validBlockData.badge);
+		});
+	}
 
 	// sendContent : function() {
 	// 	var $modal = $('#sendContentModal');
@@ -229,7 +263,7 @@ APP.main = {
 	init : function () {
 		APP.fillData.init();
 		APP.editors.init();
-		APP.appVisual.init();
+		APP.frontEnd.init();
 
 		APP.scriptGenerator.init();
 	}
