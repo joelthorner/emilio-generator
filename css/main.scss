@@ -18,6 +18,7 @@ body{
 
 ::-webkit-scrollbar {
 	width: rem(5px);
+	height: rem(5px);
 }
 ::-webkit-scrollbar-track {
 	background: var(--light); 

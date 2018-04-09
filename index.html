@@ -11,14 +11,14 @@
 	<link rel="stylesheet" href="css/floating-labels.css">
 	<link rel="stylesheet" href="css/main.css">
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<title>Emilio generatort</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator <span class="badge">v1.1.0</span></a>
+		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.3</small></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -58,7 +58,7 @@
 				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
 				<!-- <button id="preview" type="button" class="btn btn-block btn-light"><i class="material-icons">play_arrow</i> Preview</button> -->
 				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
-				<button id="send-bug" type="button" class="btn btn-block btn-pink" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
+				<button id="send-bug" type="button" class="btn btn-block btn-light" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
 				
 				<br><br>
 				<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -90,6 +90,10 @@
 						<h6>@joelthorner</h6>
 						<small class="text-muted">For help and bugs</small>
 					</a>
+					<span class="list-group-item list-group-item-action">
+						<h6>A.A.M.T</h6>
+						<small class="text-muted">Assosiació d'Afectats per Mails de TLG</small>
+					</span>
 					<!-- <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a> -->
 				</div>
 			</div><!-- params -->
@@ -159,7 +163,7 @@
 					</ul>
 					<br>
 					<div class="card card-body card-p-0">
-						<div class="editor"></div>
+						<div class="editor" id="editor-getscript"></div>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -235,7 +239,7 @@
 								<li>Editar (o no) mails del idioma i header o footer del idioma. Si no es toquen s'ompliran amb els predefinits de la <i title="Assosiació d'Afectats per Mails de TLG" data-toggle="tooltip" data-placement="top">A.A.M.T</i></li>
 								<li>Donar-li al boto generar script i copiar el script generat.</li>
 								<li>En la Consola (Dev) del Logicommerce exnganxar i executar</li>
-								<li>Pot trigar, anirá surtint per consola els mails omplerts i si falla o no (mai falla)</li>
+								<li>Pot trigar (1.5-3min), anirá surtint per consola els mails omplerts i si falla o no (mai falla)</li>
 								<li>Mentres s'executa no toquis el Logicommerce, canvia de pestanya i ves fes un riu o un café</li>
 								<li>Quan acabi la moguda per consola veuras un missatge.</li>
 							</ol>
