@@ -56,11 +56,11 @@ APP.fillData = {
 			var langData = DATA[langKey.toLowerCase()];
 
 			if (langData) {
-				var _langDataHeader = APP.utils.safe_tags_replace(langData.header),
+				var _langDataHeader = APP.utils.safe_tags_replace(langData.header).replace('\n', ''),
 					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H" data-id="H">
+					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
 						Header
 						<div class="badges">
 							${_validBlockData.badge}
@@ -69,16 +69,16 @@ APP.fillData = {
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_H">
 						<div class="card card-body">
-							<div class="editor">${_langDataHeader}</div>
+							<div class="editor" data-id="H">${_langDataHeader}</div>
 						</div>
 					</div>
 				`;
 
-				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer),
+				var _langDataFooter = APP.utils.safe_tags_replace(langData.footer).replace('\n', ''),
 					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F" data-id="F">
+					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
 						Footer
 						<div class="badges">
 							${_validBlockData.badge}
@@ -87,21 +87,21 @@ APP.fillData = {
 					</button>
 					<div class="collapse show in" id="mail-cont-${langId}_F">
 						<div class="card card-body">
-							<div class="editor">${_langDataFooter}</div>
+							<div class="editor" data-id="F">${_langDataFooter}</div>
 						</div>
 					</div>
 				`;
 
 				// Loop per cada mail del lang
 				$.each(langData.mails, function(idMail, dataMail) {
-					var _contMail = APP.utils.safe_tags_replace(dataMail.html),
+					var _contMail = APP.utils.safe_tags_replace(dataMail.html).replace('\n', ''),
 						 _subject = dataMail.subject,
 						 _emailNameES = DATA.mails[idMail],
 						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
 
 					HTML_mails_lang += `
 						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
-							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}" data-id="${idMail}">
+							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
 								${_emailNameES}
 								<div class="badges">
 									${_validBlockData.badge}
@@ -111,7 +111,7 @@ APP.fillData = {
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
 									<label class="card-title-custom">Html</label>
-									<div class="editor editor-cont">${_contMail}</div>
+									<div class="editor editor-cont" data-id="${idMail}">${_contMail}</div>
 									<label class="card-title-custom">Subject</label>
 									<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
 								</div>
@@ -124,7 +124,7 @@ APP.fillData = {
 					<div class="tab-pane fade ${_active}" id="tab-lang-c-${langId}" role="tabpanel" aria-labelledby="tab-lang-${langId}">
 						<div class="row">
 							<div class="col-7">
-								<div class="scrollable">${HTML_mails_lang}</div>
+								<div class="scrollable mails">${HTML_mails_lang}</div>
 							</div>
 							<div class="col-5">
 								<div class="scrollable">
@@ -193,7 +193,7 @@ APP.appVisual = {
 	},
 
 	fakeLogin : function() {
-		var _0x2f73=["\x6C\x6F\x67\x67\x65\x64","\x67\x65\x74\x49\x74\x65\x6D","\x23\x70\x61\x73\x73\x77\x6F\x72\x64\x4D\x6F\x64\x61\x6C","\x74\x72\x75\x65","\x73\x68\x6F\x77","\x6D\x6F\x64\x61\x6C","\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];var _0x2adf=[_0x2f73[0],_0x2f73[1],_0x2f73[2],_0x2f73[3],_0x2f73[4],_0x2f73[5],_0x2f73[6],_0x2f73[7],_0x2f73[8],_0x2f73[9],_0x2f73[10],_0x2f73[11],_0x2f73[12],_0x2f73[13],_0x2f73[14],_0x2f73[15],_0x2f73[16]];var logged=localStorage[_0x2adf[1]](_0x2adf[0]),$PM=$(_0x2adf[2]);if(logged!= _0x2adf[3]){$PM[_0x2adf[5]](_0x2adf[4])};$(_0x2adf[16])[_0x2adf[15]](function(_0xe1adx4){if($(_0x2adf[7])[_0x2adf[6]]()== _0x2adf[8]){$PM[_0x2adf[5]](_0x2adf[9]);localStorage[_0x2adf[10]](_0x2adf[0],true)}else {$PM[_0x2adf[14]](_0x2adf[13])[_0x2adf[12]](_0x2adf[11])}})
+		var _0xd5b8=["\x45\x6D\x47\x65\x6E\x5F\x6C\x6F\x67\x67\x65\x64","\x67\x65\x74\x49\x74\x65\x6D","\x23\x70\x61\x73\x73\x77\x6F\x72\x64\x4D\x6F\x64\x61\x6C","\x74\x72\x75\x65","\x73\x68\x6F\x77","\x6D\x6F\x64\x61\x6C","\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];var logged=localStorage[_0xd5b8[1]](_0xd5b8[0]),$passwordModal=$(_0xd5b8[2]);if(logged!= _0xd5b8[3]){$passwordModal[_0xd5b8[5]](_0xd5b8[4])};$(_0xd5b8[16])[_0xd5b8[15]](function(_0xdcf7x3){if($(_0xd5b8[7])[_0xd5b8[6]]()== _0xd5b8[8]){$passwordModal[_0xd5b8[5]](_0xd5b8[9]);localStorage[_0xd5b8[10]](_0xd5b8[0],true)}else {$passwordModal[_0xd5b8[14]](_0xd5b8[13])[_0xd5b8[12]](_0xd5b8[11])}})
 	},
 
 	// sendContent : function() {

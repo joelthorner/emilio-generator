@@ -107,7 +107,7 @@ body{
 	-ms-flex: 0 0 calc(100% - #{rem(140px)});
 	flex: 0 0 calc(100% - #{rem(140px)});
 	max-width: calc(100% - #{rem(140px)});
-	.scrollable{
+	.scrollable.mails{
 		display: flex;
 		flex-wrap: wrap;
 	}
