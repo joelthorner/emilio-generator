@@ -27,8 +27,8 @@ DATA.mails = {
 	23	: "Blog - Notificación de Nuevo Comentario",
 	24	: "Blog - Email de Bienvenida",
 	25	: "Confirmar suscripción de Stock",
-	26	: "SocialCurrency - Socialización",					// new
-	27	: "SocialCurrency - Notificación incentivos",	// new
+	26	: "SocialCurrency - Socialización",
+	27	: "SocialCurrency - Notificación incentivos",
 	
 	32	: "Documento de pedido",
 	33	: "Documento de albarán de entrega",
