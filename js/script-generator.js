@@ -17,6 +17,7 @@ APP.scriptGenerator = {
 	T3 : 0,
 	T4 : 0,
 	T_MAIL : 0,
+	TIMEOPENPLANTS : 0,
 
 	init : function () {
 		this.saveInfo();
@@ -39,14 +40,15 @@ APP.scriptGenerator = {
 		SG.T2 = 100;
 		SG.T3 = 500;
 		SG.T4 = 500;
-		SG.T_MAIL = 5000;
+		SG.T_MAIL = 4500;
+		SG.TIMEOPENPLANTS = 1000;
 
 		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"]').find('[data-id]')
 			.each(function(index, el) {
 				SG.VALID_MAILS_IDS.push($(el).data('id'))
 			});
 
-		SG.totalTimeScript = ((SG.T1+SG.T2+SG.T3+SG.T4+SG.T_MAIL) * SG.VALID_MAILS_IDS.length);
+		SG.totalTimeScript = (SG.T_MAIL * SG.VALID_MAILS_IDS.length) + SG.TIMEOPENPLANTS;
 	},
 
 	openModal : function() {
@@ -86,7 +88,8 @@ APP.scriptGenerator = {
 			 T2 = APP.scriptGenerator.T2, 
 			 T3 = APP.scriptGenerator.T3, 
 			 T4 = APP.scriptGenerator.T4, 
-			 T_MAIL = APP.scriptGenerator.T_MAIL;
+			 T_MAIL = APP.scriptGenerator.T_MAIL,
+			 TIMEOPENPLANTS = APP.scriptGenerator.TIMEOPENPLANTS;
 
 		var _arrMailIds = '[' + arrMailsIds_OK.join(', ') + ']';
 		var langInitial = DATA.langs[languageID_OK].toLocaleLowerCase();
@@ -113,30 +116,36 @@ APP.scriptGenerator = {
 		var _FOOTER = `\`` + DATA[langInitial].footer + `\``;
 
 		__SCRIPT__ += `
+			console.log('%c[START] --- Executing script --- ','font-weight:bold;');
+
+			openMailTypes();
+
 			var arrMailIds = ${_arrMailIds};
 			var arrMailConts = ${_arrMailConts};
 			var arrMailSubjects = ${_arrMailSubjects};
 			var HEADER_VALUE = ${_HEADER};
 			var FOOTER_VALUE = ${_FOOTER};
-	      var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL};
-	      var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
+			var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL}, TIMEOPENPLANTS = ${TIMEOPENPLANTS};
+			var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
 			var LANG = ${languageID_OK};
-			var mailTimeSeconds = (T1+T2+T3+T4+T_MAIL) / 1000;
+			var mailTimeSeconds = T_MAIL / 1000;
 
-			var i = 0;
+			var i_1 = 0;
 
-			
-			   var SI_MAIN = setInterval(function () {
-			      
-			      if(i<arrMailIds.length){
-						var ID_TEMPLATE = arrMailIds[i];
-						var SUBJECT_VALUE = arrMailSubjects[i];
-						var HTML_VALUE = arrMailConts[i];
+			setTimeout(function(){
 
-				   	clearTimeout(ST_T1);
-				   	clearTimeout(ST_T2);
-				   	clearTimeout(ST_T3);
-				   	clearTimeout(ST_T4);
+				
+				var SI_MAIN = setInterval(function () {
+					
+					if(i_1<arrMailIds.length){
+						var ID_TEMPLATE = arrMailIds[i_1];
+						var SUBJECT_VALUE = arrMailSubjects[i_1];
+						var HTML_VALUE = arrMailConts[i_1];
+
+						clearTimeout(ST_T1);
+						clearTimeout(ST_T2);
+						clearTimeout(ST_T3);
+						clearTimeout(ST_T4);
 
 						if(document.querySelectorAll('[ondblclick*="editMailType(' + ID_TEMPLATE + '"]').length){
 							try{
@@ -151,9 +160,9 @@ APP.scriptGenerator = {
 								if(windowForm[0]){
 									windowForm = windowForm[0].parentElement;
 									var allSubjects = windowForm.querySelectorAll('input[name*="subject_"]');
-									for (var i = 0; i < allSubjects.length; i++) {
-										if (!allSubjects[i].value.length) {
-											allSubjects[i].value = " ";
+									for (var i_2 = 0; i_2 < allSubjects.length; i_2++) {
+										if (!allSubjects[i_2].value.length) {
+											allSubjects[i_2].value = " ";
 										}
 									}
 
@@ -167,8 +176,8 @@ APP.scriptGenerator = {
 												var contentTab = windowForm.querySelectorAll('.tabsContent .tabContent:not([style*="none"])');
 												if(contentTab[0]){
 													var editorsToPlain = contentTab[0].querySelectorAll('._viewPlain');
-													for (var i = 0; i < editorsToPlain.length; i++) {
-														editorsToPlain[i].click();
+													for (var i_3= 0; i_3 < editorsToPlain.length; i_3++) {
+														editorsToPlain[i_3].click();
 													}
 													/* set subject */
 													var subject = contentTab[0].querySelectorAll('input[name="subject_' + LANG + '"][type="text"]');
@@ -208,27 +217,34 @@ APP.scriptGenerator = {
 												}
 											}, T2);
 
-											console.log('[OK] Success save template id-' + ID_TEMPLATE + ' time: ' + mailTimeSeconds + 's');
-											mailTimeSeconds +=mailTimeSeconds;
+											console.log('%c[OK] Success save template id-' + ID_TEMPLATE + ' time: ' + mailTimeSeconds + 's [' + i_1 + '/' + arrMailIds.length + ']', 'color:green;background:#e2f5e2');
+											mailTimeSeconds += (T_MAIL / 1000);
 										}catch(e){
 											console.error('[ERROR] Fail save template id-' + ID_TEMPLATE + '. Pls send report!', e);
 										}
 									}
-									
 								}
 							}, T1);
-						};
+						}else{
+							console.warn('Template id-' + ID_TEMPLATE + ' not found in LC. [' + (i_1 + 1) + '/' + arrMailIds.length + ']');
+						}
 
-						i++;
+						i_1++;
+
+						if (i_1 == arrMailIds.length) {
+							console.log('%c[END] --- Executing script --- ', 'font-weight:bold;');
+						}
 					}else{
 						clearInterval(SI_MAIN);
 					}
 
-			   }, T1+T2+T3+T4 + T_MAIL)
+				}, T1+T2+T3+T4 + T_MAIL);
 			
+			}, TIMEOPENPLANTS);
+
 		`;
 
-		__SCRIPT__ = __SCRIPT__.replace(/[\t\n]/g, '');
+		// __SCRIPT__ = __SCRIPT__.replace(/[\t\n]/g, '');
 
 		if (!arrMailsIds_OK.length) __SCRIPT__ = "";
 
