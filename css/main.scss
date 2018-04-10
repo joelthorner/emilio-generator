@@ -270,3 +270,16 @@ body{
 .btn-block+.btn-block{
 	margin-top: rem(15px);
 }
+
+.m_btn{
+	margin-top: rem(15px);	
+	margin-bottom: rem(15px);	
+}
+
+.custom-select:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+#data-tabs-cont .nav-link.disabled {
+    opacity: 0.5;
+}

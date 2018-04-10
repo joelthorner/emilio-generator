@@ -18,6 +18,17 @@ APP.fillData = {
 	init : function () {
 		this.insertTabPills();
 		this.insertTabConts();
+		this.insertSelectLangsFO();
+		this.disableTabPills();
+	},
+
+	insertSelectLangsFO : function() {
+		$.each(DATA.langs, function(idLang, initLang) {
+			initLang = initLang.toLowerCase();
+			$('#selectLangsFO').append(`
+				<option value="${idLang}">${initLang}</option>
+			`);
+		});
 	},
 
 	insertTabPills : function () {
@@ -41,6 +52,25 @@ APP.fillData = {
 		});
 	},
 
+	disableTabPills : function() {
+		// disable the langs without content
+		$('#data-tabs-cont .nav-link').each(function(index, el) {
+			var $tab = $(this);
+			var id = $tab.attr('href');
+			var $cont = $(id);
+			var invalids = 0;
+			$cont.find('.block-mail').each(function(index, el) {
+				// console.log($(this));
+				if ($(this).data('valid') == false) invalids++;
+			});
+			// console.log($tab);
+			console.log($cont.find('.block-mail').length, invalids);
+			if ($cont.find('.block-mail').length-2 == invalids) {
+				$tab.addClass('disabled');
+			}
+		});
+	},
+
 	insertTabConts : function () {
 		var $output = $('#output-tabs-cont .tab-content'), counter = 0;
 
@@ -60,14 +90,14 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
+					<button class="btn btn-light btn-block collapsed" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
 						Header
 						<div class="badges">
 							${_validBlockData.badge}
 							<code class="badge badge-secondary">id H</code>
 						</div>
 					</button>
-					<div class="collapse show in" id="mail-cont-${langId}_H">
+					<div class="collapse" id="mail-cont-${langId}_H">
 						<div class="card card-body">
 							<div class="editor" id="editor-${langId}_H" data-id="H">${_langDataHeader}</div>
 						</div>
@@ -78,14 +108,14 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
-					<button class="btn btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
+					<button class="btn btn-light btn-block collapsed" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
 						Footer
 						<div class="badges">
 							${_validBlockData.badge}
 							<code class="badge badge-secondary">id F</code>
 						</div>
 					</button>
-					<div class="collapse show in" id="mail-cont-${langId}_F">
+					<div class="collapse" id="mail-cont-${langId}_F">
 						<div class="card card-body">
 							<div class="editor" id="editor-${langId}_F" data-id="F">${_langDataFooter}</div>
 						</div>

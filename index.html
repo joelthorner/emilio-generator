@@ -18,7 +18,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.3</small></a>
+		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.4</small></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -54,7 +54,29 @@
 			</div><!-- data-tabs-cont -->
 
 			<div id="actions" class="col-2">
-				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generar script</button>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<label class="input-group-text" for="selectLangsFO">Destination lang</label>
+					</div>
+					<select class="custom-select" id="selectLangsFO">
+					</select>
+				</div>
+
+				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
+				
+				<!-- <div class="input-group m_btn">
+					<div class="input-group-prepend">
+						<button class="btn btn-primary" type="button"><i class="material-icons">done</i> Generate script for</button>
+					</div>
+					<select class="custom-select" id="selectLangsFO" name="selectLangsFO">
+					</select>
+					<small id="passwordHelpBlock" class="form-text text-muted">
+						Generar script per un altre idioma diferent
+					</small>
+				</div> -->
+
+				<!-- <br> -->
+
 				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
 				<!-- <button id="preview" type="button" class="btn btn-block btn-light"><i class="material-icons">play_arrow</i> Preview</button> -->
 				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
@@ -149,7 +171,17 @@
 						<li class="list-group-item d-flex align-items-start justify-content-between lh-condensed data-lang">
 							<div>
 								<h6 class="my-0">Idioma</h6>
-								<small class="text-muted text-initials"></small>
+
+								<p>
+									<small class="text-muted">Contingut dels mails en: </small><span class="text-initials"></span><br>
+									<small class="text-muted">Al idioma de destí: </small><span class="text-initials-2"></span>
+								</p>
+								
+								<div>
+									<a href="#" id="editFinalLCLang">
+										<small><i class="material-icons" style="font-size: 16px;vertical-align: text-top;">edit</i> Editar idioma de destí</small>
+									</a>
+								</div>
 							</div>
 							<span class="badge badge-primary">0</span>
 						</li>
@@ -243,8 +275,22 @@
 								<li>Mentres s'executa no toquis el Logicommerce, canvia de pestanya i ves fes un riu o un café</li>
 								<li>Quan acabi la moguda per consola veuras un missatge.</li>
 							</ol>
-							<!-- <small>Donec id elit non mi porta.</small> -->
 						</span>
+						<!-- <span class="list-group-item list-group-item-action flex-column align-items-start">
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1">Copiar mails en un idioma per a un altre</h5>
+								<small>10/04/2018</small>
+							</div>
+							<div class="mb-1 text-muted small">
+								Si vols mails en angles per al italia (per exemple) perque no els tenim en italià
+							</div>
+							<ol class="mb-1">
+								<li>Triar idioma</li>
+								<li>Editarlos o no tal...</li>
+								<li>En comptes d'apretar el boto generar script grós, just a sota triar l'idioma i generar script al botó petit.</li>
+								<li>Copiar script i tal...</li>
+							</ol>
+						</span> -->
 					</div>
 					
 				</div>

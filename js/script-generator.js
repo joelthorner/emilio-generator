@@ -9,6 +9,7 @@ Object.size = function(obj) {
 APP.scriptGenerator = {
 	
 	LANGUAGE_ID : 1,
+	LANGUAGE_ID_TO : null,
 	VALID_MAILS_IDS : [],
 	
 	totalTimeScript : 0,
@@ -21,6 +22,21 @@ APP.scriptGenerator = {
 
 	init : function () {
 		this.openModal();
+		this.changeDestinationLang();
+	},
+
+	changeDestinationLang : function() {
+		$('#editFinalLCLang').click(function(event) {
+			event.preventDefault();
+			$('#scriptGenerated').modal('hide')
+				.on('hidden.bs.modal', function(event) {
+					$('#selectLangsFO').focus();
+				});
+		});
+
+		$('#output-tabs .nav-link').on('click', function(event) {
+			$('#selectLangsFO').val($(this).data('lang-id'))
+		});
 	},
 
 	saveInfo : function() {
@@ -28,6 +44,7 @@ APP.scriptGenerator = {
 
 		SG.VALID_MAILS_IDS = [];
 		SG.LANGUAGE_ID = $('#data-tabs-cont .nav-link.active').data('lang-id');
+		SG.LANGUAGE_ID_TO = $('#selectLangsFO').val();
 		SG.T1 = 1000;
 		SG.T2 = 100;
 		SG.T3 = 500;
@@ -77,6 +94,8 @@ APP.scriptGenerator = {
 				.text(SG.LANGUAGE_ID);
 			$modal.find('.data-lang .text-initials')
 				.text(DATA.langs[SG.LANGUAGE_ID]);
+			$modal.find('.data-lang .text-initials-2')
+				.text(DATA.langs[SG.LANGUAGE_ID_TO]);
 			$modal.find('.data-time .badge')
 				.text( Math.round(seconds) + 's');
 			$modal.find('.data-time .time-desglose')
@@ -90,11 +109,11 @@ APP.scriptGenerator = {
 	},
 
 	// AQUI VE EL TEMA
-	// falta agafa el que editi el user
 	getScript : function(){
 		var __SCRIPT__ = "";
 		var arrMailsIds_OK = APP.scriptGenerator.VALID_MAILS_IDS;
 		var languageID_OK = APP.scriptGenerator.LANGUAGE_ID;
+		var languageID_OK_DESTI = APP.scriptGenerator.LANGUAGE_ID_TO;
 
 		var T1 = APP.scriptGenerator.T1, 
 			 T2 = APP.scriptGenerator.T2, 
@@ -139,7 +158,7 @@ APP.scriptGenerator = {
 			var FOOTER_VALUE = ${_FOOTER};
 			var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL}, TIMEOPENPLANTS = ${TIMEOPENPLANTS};
 			var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
-			var LANG = ${languageID_OK};
+			var LANG_DESTI = ${languageID_OK_DESTI};
 			var mailTimeSeconds = T_MAIL / 1000;
 
 			var i_1 = 0;
@@ -178,7 +197,7 @@ APP.scriptGenerator = {
 										}
 									}
 
-									var img = windowForm.querySelectorAll('.languageTabsContainer div.tab img.previewWindowTab[onclick*="languageId=' + LANG + '\\');"]');
+									var img = windowForm.querySelectorAll('.languageTabsContainer div.tab img.previewWindowTab[onclick*="languageId=' + LANG_DESTI + '\\');"]');
 									if(img[0]){
 										var tab = img[0].parentElement;
 										tab.click();
@@ -192,22 +211,22 @@ APP.scriptGenerator = {
 														editorsToPlain[i_3].click();
 													}
 													/* set subject */
-													var subject = contentTab[0].querySelectorAll('input[name="subject_' + LANG + '"][type="text"]');
+													var subject = contentTab[0].querySelectorAll('input[name="subject_' + LANG_DESTI + '"][type="text"]');
 													if(subject[0]){
 														subject[0].setAttribute('value', SUBJECT_VALUE);
 													}
 													/* set header */
-													var header = contentTab[0].querySelectorAll('textarea[name="header_' + LANG + '"]');
+													var header = contentTab[0].querySelectorAll('textarea[name="header_' + LANG_DESTI + '"]');
 													if(header[0]){
 														header[0].value = HEADER_VALUE;
 													}
 													/* set footer */
-													var footer = contentTab[0].querySelectorAll('textarea[name="footer_' + LANG + '"]');
+													var footer = contentTab[0].querySelectorAll('textarea[name="footer_' + LANG_DESTI + '"]');
 													if(footer[0]){
 														footer[0].value = FOOTER_VALUE;
 													}
 													/* set htmlcontent */
-													var body = contentTab[0].querySelectorAll('textarea[name="body_' + LANG + '"]');
+													var body = contentTab[0].querySelectorAll('textarea[name="body_' + LANG_DESTI + '"]');
 													if(body[0]){
 														body[0].value = HTML_VALUE;
 													}
