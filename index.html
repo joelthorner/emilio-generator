@@ -18,7 +18,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.4</small></a>
+		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.5</small></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -54,6 +54,17 @@
 			</div><!-- data-tabs-cont -->
 
 			<div id="actions" class="col-2">
+				<div class="mb-3">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
+						<label class="custom-control-label" for="deelayNormal"><small>Normal Deelay</small></label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="deelayHigh" name="deelay" class="custom-control-input" value="10000">
+						<label class="custom-control-label" for="deelayHigh"><small>For china LC deelay</small></label>
+					</div>
+				</div>
+
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
 						<label class="input-group-text" for="selectLangsFO">Destination lang</label>
