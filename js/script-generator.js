@@ -49,7 +49,7 @@ APP.scriptGenerator = {
 		SG.T2 = 100;
 		SG.T3 = 500;
 		SG.T4 = 500;
-		SG.T_MAIL = 4500;
+		SG.T_MAIL = parseInt($('[name="deelay"]:checked').val());
 		SG.TIMEOPENPLANTS = 1000;
 
 		// save session editors DATA
