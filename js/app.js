@@ -60,11 +60,8 @@ APP.fillData = {
 			var $cont = $(id);
 			var invalids = 0;
 			$cont.find('.block-mail').each(function(index, el) {
-				// console.log($(this));
 				if ($(this).data('valid') == false) invalids++;
 			});
-			// console.log($tab);
-			console.log($cont.find('.block-mail').length, invalids);
 			if ($cont.find('.block-mail').length-2 == invalids) {
 				$tab.addClass('disabled');
 			}
@@ -217,7 +214,6 @@ APP.editors = {
 				var contentMail = editor.getValue();
 
 				var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
-				console.log(validBlockData);
 
 				$blockMail.data('valid', validBlockData.valid)
 				$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
