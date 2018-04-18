@@ -83,7 +83,7 @@ DATA.chi = {
             </tr>
             <tr>
               <td align="center" heigth="50" class="footercopy" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                For more information , see our %%privacy%% and  %%termsOfUse%%.
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
               </td>
             </tr>
           </table>
