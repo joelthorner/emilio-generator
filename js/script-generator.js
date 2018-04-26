@@ -110,7 +110,7 @@ APP.scriptGenerator = {
 
 	// AQUI VE EL TEMA
 	getScript : function(){
-		var __SCRIPT__ = "";
+		var __SCRIPT__ = "", __SCRIPT__1 = "", __SCRIPT__2 = "";
 		var arrMailsIds_OK = APP.scriptGenerator.VALID_MAILS_IDS;
 		var languageID_OK = APP.scriptGenerator.LANGUAGE_ID;
 		var languageID_OK_DESTI = APP.scriptGenerator.LANGUAGE_ID_TO;
@@ -146,7 +146,7 @@ APP.scriptGenerator = {
 		var _HEADER = `\`` + DATA[langInitial].header + `\``;
 		var _FOOTER = `\`` + DATA[langInitial].footer + `\``;
 
-		__SCRIPT__ += `
+		__SCRIPT__1 = `
 			console.log('%c[START] --- Executing script --- ','font-weight:bold;');
 
 			openMailTypes();
@@ -160,9 +160,9 @@ APP.scriptGenerator = {
 			var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
 			var LANG_DESTI = ${languageID_OK_DESTI};
 			var mailTimeSeconds = T_MAIL / 1000;
-
 			var i_1 = 0;
-
+		`;
+		__SCRIPT__2 = `
 			setTimeout(function(){
 
 				
@@ -262,10 +262,9 @@ APP.scriptGenerator = {
 
 						i_1++;
 
-						if (i_1 == arrMailIds.length) {
-							console.log('%c[END] --- Executing script --- ', 'font-weight:bold;');
-						}
+						/*if (i_1 == arrMailIds.length) {}*/
 					}else{
+						console.log('%c[END] --- Executing script --- ', 'font-weight:bold;');
 						clearInterval(SI_MAIN);
 					}
 
@@ -275,6 +274,7 @@ APP.scriptGenerator = {
 
 		`;
 
+		__SCRIPT__ = __SCRIPT__1 + __SCRIPT__2.replace(/[\t\n]/g, '');
 		// __SCRIPT__ = __SCRIPT__.replace(/[\t\n]/g, '');
 
 		if (!arrMailsIds_OK.length) __SCRIPT__ = "";
