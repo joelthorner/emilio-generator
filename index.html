@@ -18,25 +18,10 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.5</small></a>
+		<a class="navbar-brand" href="#">Emilio generator <small class="badge badge-pill badge-warning">v1.0.6</small></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-
-		<ul class="navbar-nav">
-			<!-- <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="emailListOption" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<i class="material-icons">filter_list</i> Mails orderBy
-				</a>
-				<div class="dropdown-menu" aria-labelledby="emailListOption">
-					<a class="dropdown-item active" href="?orderBy=id">Id</a>
-					<a class="dropdown-item" href="?orderBy=name">Name (es)</a>
-				</div>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#"><i class="material-icons">label</i> Open tiket lvl2</a>
-			</li> -->
-		</ul>
 	</nav>
 
 	<div id="container" class="container-fluid">
@@ -75,21 +60,9 @@
 
 				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
 				
-				<!-- <div class="input-group m_btn">
-					<div class="input-group-prepend">
-						<button class="btn btn-primary" type="button"><i class="material-icons">done</i> Generate script for</button>
-					</div>
-					<select class="custom-select" id="selectLangsFO" name="selectLangsFO">
-					</select>
-					<small id="passwordHelpBlock" class="form-text text-muted">
-						Generar script per un altre idioma diferent
-					</small>
-				</div> -->
-
-				<!-- <br> -->
 
 				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
-				<!-- <button id="preview" type="button" class="btn btn-block btn-light"><i class="material-icons">play_arrow</i> Preview</button> -->
+
 				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
 				<button id="send-bug" type="button" class="btn btn-block btn-light" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
 				
@@ -127,7 +100,6 @@
 						<h6>A.A.M.T</h6>
 						<small class="text-muted">Assosiació d'Afectats per Mails de TLG</small>
 					</span>
-					<!-- <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a> -->
 				</div>
 			</div><!-- params -->
 
@@ -227,26 +199,6 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<!-- <div class="form-group">
-						<label for="selectSendContentLang">Id language</label>
-						<select name="selectSendContentLang" id="selectSendContentLang" class="form-control"></select>
-						<small class="form-text text-muted">Text que queda com guay aqui en gris.</small>
-					</div>
-					<div class="form-group">
-						<label for="selectSendContent">Mail template</label>
-						<select name="selectSendContent" id="selectSendContent" class="form-control"></select>
-						<small class="form-text text-muted">Text que queda com guay aqui en gris.</small>
-					</div>
-					<div class="form-group">
-						<label for="asuntu">Asuntu</label>
-						<input name="asuntu" id="asuntu" type="text" class="form-control" placeholder="Que pacha">
-						<small class="form-text text-muted">Exemple: Error html en la plantilla tal</small>
-					</div>
-					<div class="form-group">
-						<label for="mailcontSend">Asuntu</label>
-						<textarea name="mailcontSend" id="mailcontSend" cols="30" rows="10" class="form-control" placeholder="Diganme"></textarea>
-						<small class="form-text text-muted">Exemple: &lt;tr&gt; &lt;td class="abc"&gt;...</small>
-					</div> -->
 					<p class="text-center">
 						<small>joel.torner@tlgcommerce.com</small>
 					</p>
@@ -287,21 +239,6 @@
 								<li>Quan acabi la moguda per consola veuras un missatge.</li>
 							</ol>
 						</span>
-						<!-- <span class="list-group-item list-group-item-action flex-column align-items-start">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">Copiar mails en un idioma per a un altre</h5>
-								<small>10/04/2018</small>
-							</div>
-							<div class="mb-1 text-muted small">
-								Si vols mails en angles per al italia (per exemple) perque no els tenim en italià
-							</div>
-							<ol class="mb-1">
-								<li>Triar idioma</li>
-								<li>Editarlos o no tal...</li>
-								<li>En comptes d'apretar el boto generar script grós, just a sota triar l'idioma i generar script al botó petit.</li>
-								<li>Copiar script i tal...</li>
-							</ol>
-						</span> -->
 					</div>
 					
 				</div>
