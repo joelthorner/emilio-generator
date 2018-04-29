@@ -134,6 +134,9 @@ APP.fillData = {
 									${_validBlockData.badge}
 									<code class="badge badge-secondary">id ${idMail}</code>
 								</div>
+								<div class="preview" title="Basic preview" data-toggle="tooltip">
+									<i class="material-icons">visibility</i>
+								</div>
 							</button>
 							<div class="collapse" id="mail-cont-${langId}_${idMail}">
 								<div class="card card-body">
@@ -209,9 +212,12 @@ APP.editors = {
 				var $self = $(editor.container);
 				var $blockMail = $self.parents('.block-mail');
 				var subject = $blockMail.find('.subject').val();
-
-				// var editor = ace.edit($blockMail.find('.editor')[0]);
 				var contentMail = editor.getValue();
+
+				// bug fix on edit headr and footer
+				if ($blockMail.is('.block-header') || $blockMail.is('.block-footer')) {
+					subject = "NON_EMPT_STRING";
+				}
 
 				var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
 
@@ -229,6 +235,26 @@ APP.frontEnd = {
 		this.initsBT();
 		this.fakeLogin();
 		this.badgesSession();
+		this.preview();
+	},
+
+	preview : function () {
+		$('.preview').click(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+			var $editor = $(this).parents('.block-mail').find('.editor');
+
+			var editor = ace.edit($editor[0]);
+			var code = editor.getValue();
+			var name = DATA.mails[$editor.data('id')];
+			var header = ace.edit( $('#editor-'+APP.scriptGenerator.LANGUAGE_ID+'_H')[0] ).getValue();
+			var footer = ace.edit( $('#editor-'+APP.scriptGenerator.LANGUAGE_ID+'_F')[0] ).getValue();
+
+
+			var win = window.open("", "Emilio generator preview - " + name, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=850,top=0,left=0");
+			win.document.body.innerHTML = header + code + footer;
+		});
 	},
 
 	initsBT : function() {
