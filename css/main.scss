@@ -77,9 +77,10 @@ body{
 
 		.badge{
 			position: absolute;
-			right: 1rem;
+			right: 0.75rem;
 			top: 50%;
 			transform: translateY(-50%);
+			width: 2.7rem;
 		}
 	}
 	#output-tabs, .scrollable{
@@ -127,16 +128,39 @@ body{
 				border-color: #f9f9f9;
 			}
 		}
+		&.block-footer .badges,
+		&.block-header .badges{
+			right: .75rem;
+		}
 	}
 	.btn-block{
 		text-align: left;
 		position: relative;
 
+		.preview{
+			position: absolute;
+			right: .75rem;
+			top: 50%;
+			height: 100%;
+			width: 24px;
+			transform: translateY(-50%);
+			i{
+				left: auto;
+				color: var(--gray);
+				opacity: .5;
+				transition: all 350ms ease-in-out;
+			}
+			&:hover i{
+				opacity: 1;
+				color: var(--blue);
+			}
+		}
+
 		.badges{
 			position: absolute;
 			// width: 3.75em;
 			// float: right;
-			right: .75rem;
+			right: 2.9rem;
 			top: 50%;
 			transform: translateY(-50%);
 			.badge{
@@ -281,5 +305,5 @@ body{
 }
 
 #data-tabs-cont .nav-link.disabled {
-    opacity: 0.5;
+	opacity: 0.5;
 }
