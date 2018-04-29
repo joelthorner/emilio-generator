@@ -120,7 +120,14 @@ DATA.en = {
     <span style="font-size:15px;">Hello  %firstName% %lastName%, <br><br>We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully created.<br><br>Thanks to your customer account now you can update your profile and password, view your order history and other details that may be of your interest.<br><br>
       We hope to see you soon in <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>The %%ecommerceName%% Team</span>
   </td>
-</tr> 
+</tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
+    </span>
+  </td>
+</tr>
 `
   }, // end 1
 
@@ -546,6 +553,13 @@ DATA.en = {
 
     <strong>Newsletter unsubscribe</strong><br><br>
     <span style="font-size:15px;">Hello<br><br>You have been unsubscribed successfully.<br><br>The %%ecommerceName%% Team</span>
+  </td>
+</tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
+    </span>
   </td>
 </tr>
 `

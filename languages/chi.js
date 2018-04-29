@@ -83,7 +83,7 @@ DATA.chi = {
             </tr>
             <tr>
               <td align="center" heigth="50" class="footercopy" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                For more information , see our %%privacy%% and  %%termsOfUse%%.
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
               </td>
             </tr>
           </table>
@@ -115,6 +115,20 @@ DATA.chi = {
     <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
         <span style="font-size:15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
 我们期待能在 <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>%%ecommerceName%%</span>    
+  </td>
+</tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
+    </span>
+  </td>
+</tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+    </span>
   </td>
 </tr>
 `
@@ -532,6 +546,13 @@ DATA.chi = {
         
     <strong>资讯退订</strong><br><br>
     <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
+  </td>
+</tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+    </span>
   </td>
 </tr>
 `
