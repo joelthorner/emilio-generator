@@ -43,7 +43,7 @@ APP.fillData = {
 					 _langKey = langKey.toLowerCase();
 
 				$output.append(`
-					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}">
+					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
 						${_langKey} <code class="badge badge-light">id ${_langId}</code>
 					</a>
 				`);
@@ -129,10 +129,13 @@ APP.fillData = {
 					HTML_mails_lang += `
 						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
 							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
-								${_emailNameES}
+								<small>${_emailNameES}</small>
 								<div class="badges">
 									${_validBlockData.badge}
 									<code class="badge badge-secondary">id ${idMail}</code>
+								</div>
+								<div class="download" title="Download .html" data-toggle="tooltip">
+									<i class="material-icons">save</i>
 								</div>
 								<div class="preview" title="Basic preview" data-toggle="tooltip">
 									<i class="material-icons">visibility</i>
@@ -236,6 +239,37 @@ APP.frontEnd = {
 		this.fakeLogin();
 		this.badgesSession();
 		this.preview();
+		this.generateMailsFile();
+	},
+
+	generateMailsFile : function() {
+		$('.download').click(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+
+			var $editor = $(this).parents('.block-mail').find('.editor');
+
+			var editor = ace.edit($editor[0]);
+			var code = editor.getValue();
+			var name = DATA.mails[$editor.data('id')];
+			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+
+
+			var a = window.document.createElement('a');
+			a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+			a.download = name + '_' + actualLangKey + '.html';
+
+			// Append anchor to body.
+			document.body.appendChild(a);
+			a.click();
+
+			// Remove anchor from body
+			document.body.removeChild(a);
+		});
 	},
 
 	preview : function () {

@@ -137,9 +137,9 @@ body{
 		text-align: left;
 		position: relative;
 
-		.preview{
+		.preview, .download{
 			position: absolute;
-			right: .75rem;
+			right: .5rem;
 			top: 50%;
 			height: 100%;
 			width: 24px;
@@ -156,11 +156,15 @@ body{
 			}
 		}
 
+		.download{
+			right: 2.5rem;
+		}
+
 		.badges{
 			position: absolute;
 			// width: 3.75em;
 			// float: right;
-			right: 2.9rem;
+			right: 4.75rem;
 			top: 50%;
 			transform: translateY(-50%);
 			.badge{
@@ -168,7 +172,7 @@ body{
 				top: 0;
 				position: static;
 				margin-left: rem(5px);
-				width: rem(50px);
+				width: 3rem;
 			}
 		}
 	}
