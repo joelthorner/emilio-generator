@@ -525,16 +525,16 @@ DATA.en = {
           %%/ifComments%%
           <tr><td>&nbsp;</td></tr>
           <tr>
-            <td bgColor="#f4f4f4">
-              <table width="96%" align="center" class="paymentSystem" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
-                <tr>
-                  <td>
-                    %%textToEmail%%
-                  </td>
-                </tr>
-              </table>            
-            </td>
-          </tr>
+          <td bgColor="#f4f4f4">
+            <table width="88%" align="center" class="paymentSystem" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="padding: 15px 0px 15px 0px;">
+                  %%textToEmail%%
+                </td>
+              </tr>
+            </table>            
+          </td>
+        </tr>
         </tbody>
       </table>
     </td>
