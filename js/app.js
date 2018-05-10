@@ -252,10 +252,43 @@ APP.frontEnd = {
 			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
+			var data = APP.frontEnd.getPreviewData(header, code, footer);
+			var resetCss = '<style>body{margin: 0;}</style>'
 
-			var win = window.open("", "Emilio generator preview - " + name, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=850,top=0,left=0");
-			win.document.body.innerHTML = header + code + footer;
+			var win = window.open("", "Emilio generator preview - " + name, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=650,height=850,top=0,left=0");
+			win.document.body.innerHTML = resetCss + data.header + data.code + data.footer;
 		});
+	},
+
+	getPreviewData : function(header, code, footer) {
+
+		// logo
+		var emailLogo = $('#data-emailLogo').val().length ? $('#data-emailLogo').val() : 'http://via.placeholder.com/210x100/';
+		header = header.replace(new RegExp('[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)', 'g'), emailLogo);
+		
+		// clear intra tables ifs and simple loops
+		var regexp = '[%]{1,2}\/?(if[A-Za-z0-9]{1,}|loop)[%]{1,2}';
+		header = header.replace(new RegExp(regexp, 'g'), '');
+		code = code.replace(new RegExp(regexp, 'g'), '');
+		footer = footer.replace(new RegExp(regexp, 'g'), '');
+
+		// clear intra pages and banners
+		var regexp = '[%]{1,2}\/?((Pages|pages)|(Banners|banners))-[0-9]{1,}-(Loop|loop)[%]{1,2}';
+		header = header.replace(new RegExp(regexp, 'g'), '');
+		code = code.replace(new RegExp(regexp, 'g'), '');
+		footer = footer.replace(new RegExp(regexp, 'g'), '');
+
+		// footer default banners
+		var emailSocial = $('#data-emailSocial').val().length ? $('#data-emailSocial').val() : 'http://via.placeholder.com/30x30/';
+		footer = footer.replace(new RegExp('%%BannerImage%%', 'g'), emailSocial);
+
+		var data = {
+			header : header,
+			code : code,
+			footer : footer
+		};
+
+		return data;
 	},
 
 	initsBT : function() {
@@ -323,3 +356,8 @@ APP.main = {
 };
 
 $(document).ready(APP.main.init);
+
+// window.onbeforeunload = confirmExit;
+// function confirmExit() {
+// 	return "Ieep vols sortir?";
+// }

@@ -18,7 +18,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator&nbsp;&nbsp;<small class="badge badge-pill badge-warning">v1.0.7</small></a>
+		<a class="navbar-brand" href="#">Emilio generator&nbsp;&nbsp;<small class="badge badge-pill badge-warning">v1.0.8</small></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -39,6 +39,8 @@
 			</div><!-- data-tabs-cont -->
 
 			<div id="actions" class="col-2">
+				<div class="h4">Controls</div>
+
 				<div class="mb-3">
 					<div class="custom-control custom-radio custom-control-inline">
 						<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
@@ -65,21 +67,16 @@
 
 				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
 				<button id="send-bug" type="button" class="btn btn-block btn-light" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
-				
 				<br><br>
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong>Warning!</strong> Si recarregues la app es perdrán els canvius.
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+
+				<div class="h4">Preview data</div>
+				<div class="form-group">
+					<label for="data-emailLogo"><small>Default email logo</small></label>
+					<input type="text" class="form-control form-control-sm" id="data-emailLogo" placeholder="cdn/file.extension" value="http://via.placeholder.com/210x100">
 				</div>
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin [empty] i alhora existeixin al Logicommerce.
-					<br>
-					Tampoc machaca altres idiomes
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+				<div class="form-group">
+					<label for="data-emailSocial"><small>Default social banners</small></label>
+					<input type="text" class="form-control form-control-sm" id="data-emailSocial" placeholder="cdn/file.extension" value="http://via.placeholder.com/30x30">
 				</div>
 			</div><!-- actions -->
 
@@ -100,6 +97,21 @@
 						<h6>A.A.M.T</h6>
 						<small class="text-muted">Assosiació d'Afectats per Mails de TLG</small>
 					</span>
+				</div>
+				<br><br>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>Warning!</strong> Si recarregues la app es perdrán els canvius.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="alert alert-warning alert-dismissible fade show" role="alert">
+					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin [empty] i alhora existeixin al Logicommerce.
+					<br>
+					Tampoc machaca altres idiomes
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
 				</div>
 			</div><!-- params -->
 
