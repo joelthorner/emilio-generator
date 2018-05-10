@@ -43,7 +43,7 @@ APP.fillData = {
 					 _langKey = langKey.toLowerCase();
 
 				$output.append(`
-					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}">
+					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
 						${_langKey} <code class="badge badge-light">id ${_langId}</code>
 					</a>
 				`);
@@ -129,10 +129,13 @@ APP.fillData = {
 					HTML_mails_lang += `
 						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
 							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
-								${_emailNameES}
+								<small>${_emailNameES}</small>
 								<div class="badges">
 									${_validBlockData.badge}
 									<code class="badge badge-secondary">id ${idMail}</code>
+								</div>
+								<div class="download" title="Download .html" data-toggle="tooltip">
+									<i class="material-icons">save</i>
 								</div>
 								<div class="preview" title="Basic preview" data-toggle="tooltip">
 									<i class="material-icons">visibility</i>
@@ -236,6 +239,37 @@ APP.frontEnd = {
 		this.fakeLogin();
 		this.badgesSession();
 		this.preview();
+		this.generateMailsFile();
+	},
+
+	generateMailsFile : function() {
+		$('.download').click(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+
+
+			var $editor = $(this).parents('.block-mail').find('.editor');
+
+			var editor = ace.edit($editor[0]);
+			var code = editor.getValue();
+			var name = DATA.mails[$editor.data('id')];
+			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+
+
+			var a = window.document.createElement('a');
+			a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+			a.download = name + '_' + actualLangKey + '.html';
+
+			// Append anchor to body.
+			document.body.appendChild(a);
+			a.click();
+
+			// Remove anchor from body
+			document.body.removeChild(a);
+		});
 	},
 
 	preview : function () {
@@ -248,13 +282,47 @@ APP.frontEnd = {
 			var editor = ace.edit($editor[0]);
 			var code = editor.getValue();
 			var name = DATA.mails[$editor.data('id')];
-			var header = ace.edit( $('#editor-'+APP.scriptGenerator.LANGUAGE_ID+'_H')[0] ).getValue();
-			var footer = ace.edit( $('#editor-'+APP.scriptGenerator.LANGUAGE_ID+'_F')[0] ).getValue();
+			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
+			var data = APP.frontEnd.getPreviewData(header, code, footer);
+			var resetCss = '<style>body{margin: 0;}</style>'
 
-			var win = window.open("", "Emilio generator preview - " + name, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=850,top=0,left=0");
-			win.document.body.innerHTML = header + code + footer;
+			var win = window.open("", "Emilio generator preview - " + name, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=650,height=850,top=0,left=0");
+			win.document.body.innerHTML = resetCss + data.header + data.code + data.footer;
 		});
+	},
+
+	getPreviewData : function(header, code, footer) {
+
+		// logo
+		var emailLogo = $('#data-emailLogo').val().length ? $('#data-emailLogo').val() : 'http://via.placeholder.com/210x100/';
+		header = header.replace(new RegExp('[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)', 'g'), emailLogo);
+		
+		// clear intra tables ifs and simple loops
+		var regexp = '[%]{1,2}\/?(if[A-Za-z0-9]{1,}|loop)[%]{1,2}';
+		header = header.replace(new RegExp(regexp, 'g'), '');
+		code = code.replace(new RegExp(regexp, 'g'), '');
+		footer = footer.replace(new RegExp(regexp, 'g'), '');
+
+		// clear intra pages and banners
+		var regexp = '[%]{1,2}\/?((Pages|pages)|(Banners|banners))-[0-9]{1,}-(Loop|loop)[%]{1,2}';
+		header = header.replace(new RegExp(regexp, 'g'), '');
+		code = code.replace(new RegExp(regexp, 'g'), '');
+		footer = footer.replace(new RegExp(regexp, 'g'), '');
+
+		// footer default banners
+		var emailSocial = $('#data-emailSocial').val().length ? $('#data-emailSocial').val() : 'http://via.placeholder.com/30x30/';
+		footer = footer.replace(new RegExp('%%BannerImage%%', 'g'), emailSocial);
+
+		var data = {
+			header : header,
+			code : code,
+			footer : footer
+		};
+
+		return data;
 	},
 
 	initsBT : function() {
@@ -322,3 +390,8 @@ APP.main = {
 };
 
 $(document).ready(APP.main.init);
+
+// window.onbeforeunload = confirmExit;
+// function confirmExit() {
+// 	return "Ieep vols sortir?";
+// }
