@@ -248,8 +248,9 @@ APP.frontEnd = {
 			var editor = ace.edit($editor[0]);
 			var code = editor.getValue();
 			var name = DATA.mails[$editor.data('id')];
-			var header = ace.edit( $('#editor-'+APP.scriptGenerator.LANGUAGE_ID+'_H')[0] ).getValue();
-			var footer = ace.edit( $('#editor-'+APP.scriptGenerator.LANGUAGE_ID+'_F')[0] ).getValue();
+			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
 
 			var win = window.open("", "Emilio generator preview - " + name, "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=850,top=0,left=0");
