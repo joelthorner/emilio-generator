@@ -212,7 +212,7 @@ DATA.chi = {
                     
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
-                  %loop%
+                  <!-- %loop% -->
                   <tr class="productRow">
                     <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
@@ -229,7 +229,7 @@ DATA.chi = {
                    
                     <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
-                  %/loop%
+                  <!-- %/loop% -->
                   
                 </tbody>
               </table>
@@ -434,7 +434,7 @@ DATA.chi = {
                     <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">数量</td>
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
-                  %loop%
+                  <!-- %loop% -->
                   <tr class="productRow">
                     <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
@@ -451,7 +451,7 @@ DATA.chi = {
                     <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
                     <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
-                  %/loop%
+                  <!-- %/loop% -->
 
                 </tbody>
               </table>
@@ -480,7 +480,7 @@ DATA.chi = {
                     </span>
                   </td>
                 </tr>
-                %%ifOrderDiscount%%
+                <!-- %%ifOrderDiscount%% -->
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">折扣</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
@@ -489,7 +489,7 @@ DATA.chi = {
                     </span>
                   </td>
                 </tr>
-                %%/ifOrderDiscount%%
+                <!-- %%/ifOrderDiscount%% -->
                 <tr>
                   <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">总计 </td>
                   <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
@@ -504,7 +504,7 @@ DATA.chi = {
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
-        %%ifComments%%
+        <!-- %%ifComments%% -->
         <tr>
           <td>
             <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
@@ -518,7 +518,7 @@ DATA.chi = {
             </table>        
           </td>
         </tr>
-        %%/ifComments%%
+        <!-- %%/ifComments%% -->
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td bgColor="#f4f4f4">
@@ -619,7 +619,7 @@ TEXTHERE
                     <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">数量</td>
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
-                  %loop%
+                  <!-- %loop% -->
                   <tr class="productRow">
                     <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
@@ -636,7 +636,7 @@ TEXTHERE
                     <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
                     <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
-                  %/loop%
+                  <!-- %/loop% -->
 
                 </tbody>
               </table>
