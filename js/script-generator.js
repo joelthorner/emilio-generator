@@ -18,7 +18,7 @@ APP.scriptGenerator = {
 	T3 : 0,
 	T4 : 0,
 	T_MAIL : 0,
-	T_SETMODE : "3of3",
+	T_SETMODE : "3in1",
 	TIMEOPENPLANTS : 0,
 
 	init : function () {
@@ -221,27 +221,27 @@ APP.scriptGenerator = {
 													/* set header */
 													var header = contentTab[0].querySelectorAll('textarea[name="header_' + LANG_DESTI + '"]');
 													if(header[0]){
-														if(T_SETMODE == "1of3"){
+														if(T_SETMODE == "3in3"){
 															header[0].value = HEADER_VALUE;
-														}else if(T_SETMODE == "3of3"){
+														}else if(T_SETMODE == "3in1"){
 															header[0].value = '';
 														}
 													}
 													/* set footer */
 													var footer = contentTab[0].querySelectorAll('textarea[name="footer_' + LANG_DESTI + '"]');
 													if(footer[0]){
-														if(T_SETMODE == "1of3"){
+														if(T_SETMODE == "3in3"){
 															footer[0].value = FOOTER_VALUE;
-														}else if(T_SETMODE == "3of3"){
+														}else if(T_SETMODE == "3in1"){
 															footer[0].value = '';
 														}
 													}
 													/* set htmlcontent */
 													var body = contentTab[0].querySelectorAll('textarea[name="body_' + LANG_DESTI + '"]');
 													if(body[0]){
-														if(T_SETMODE == "1of3"){
+														if(T_SETMODE == "3in3"){
 															body[0].value = HTML_VALUE;
-														}else if(T_SETMODE == "3of3"){
+														}else if(T_SETMODE == "3in1"){
 															body[0].value = HEADER_VALUE + HTML_VALUE + FOOTER_VALUE;
 														}
 													}
