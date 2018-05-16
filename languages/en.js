@@ -20,7 +20,7 @@ DATA.en = {
               <tr>
                 <td style="">
                   <a href="%%ecommerceURL%%">
-                    <img class="fix" src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="" style="height: auto;">
+                    <img class="fix" src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="%%ecommerceName%%" style="height: auto;">
                   </a>
                 </td>
               </tr>
