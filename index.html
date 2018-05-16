@@ -18,10 +18,10 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator&nbsp;&nbsp;<small class="badge badge-pill badge-warning">v1.0.8</small></a>
-		<ul class="navbar-nav mr-auto">
+		<a class="navbar-brand" href="#">Emilio generator&nbsp;&nbsp;<small class="badge badge-pill badge-warning">v1.0.9</small></a>
+		<ul class="navbar-nav ml-auto">
 			<li class="nav-item text-secondary">
-				<small>This app only works in Chrome >= v66</small>
+				<small>This app only works in Chrome >= v60</small>
 			</li>
 		</ul>
 	</nav>
@@ -45,12 +45,23 @@
 
 				<div class="mb-3">
 					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
-						<label class="custom-control-label" for="deelayNormal"><small>Normal Deelay</small></label>
+						<input type="radio" id="setToDefaultSite" name="setmode" class="custom-control-input" checked value="3of3">
+						<label class="custom-control-label" for="setToDefaultSite"><small>Save all template in mail body <b class="badge badge-secondary">3 in 3</b></small></label>
 					</div>
 					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="setAllToBody" name="setmode" class="custom-control-input" value="1of3">
+						<label class="custom-control-label" for="setAllToBody"><small>Default mode <b class="badge badge-secondary">3 in 1</b></small></label>
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
+						<label class="custom-control-label" for="deelayNormal"><small>Normal Deelay <b class="badge badge-secondary">5s</b></small></label>
+					</div><br>
+					<div class="custom-control custom-radio custom-control-inline">
 						<input type="radio" id="deelayHigh" name="deelay" class="custom-control-input" value="10000">
-						<label class="custom-control-label" for="deelayHigh"><small>For china LC deelay</small></label>
+						<label class="custom-control-label" for="deelayHigh"><small>For china LC deelay <b class="badge badge-secondary">10s</b></small></label>
 					</div>
 				</div>
 
@@ -64,6 +75,8 @@
 
 				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
 				
+				<br><br>
+				<div class="h4">Dev</div>
 
 				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
 

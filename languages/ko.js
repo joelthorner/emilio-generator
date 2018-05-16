@@ -20,7 +20,7 @@ DATA.ko = {
             <tr>
               <td style="">
                 <a href="%%ecommerceURL%%">
-                  <img class="fix" src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="" style="height: auto;">
+                  <img class="fix" src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="%%ecommerceName%%" style="height: auto;">
                 </a>
               </td>
             </tr>
@@ -37,11 +37,11 @@ DATA.ko = {
                 <td align="center" style="">
                   <table border="0" cellspacing="10" cellpadding="0">
                     <tr>
-                      %%Pages-501-Loop%%
+                      <!-- %%Pages-501-Loop%% -->
                       <td style="text-align: center;">
                         <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
                       </td>
-                      %%/Pages-501-Loop%%
+                      <!-- %%/Pages-501-Loop%% -->
                     </tr>
                   </table>
                 </td>
@@ -50,13 +50,13 @@ DATA.ko = {
                 <td align="center" style="padding: 12px 0 12px 0px;">
                   <table border="0" cellspacing="8" cellpadding="0">
                     <tr>
-                      %%Banners-502-Loop%% 
+                      <!-- %%Banners-502-Loop%% --> 
                       <td width="25" style="text-align: center; ">
                         <a href="%%BannerLink%%" target="">
                           <img src="%%BannerImage%%" width="20" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
-                      %%/Banners-502-Loop%%
+                      <!-- %%/Banners-502-Loop%% -->
                     </tr>
                   </table>
                 </td>
@@ -65,23 +65,23 @@ DATA.ko = {
                 <td align="center" style="">
                   <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      %%Pages-503-Loop%% 
+                      <!-- %%Pages-503-Loop%% --> 
                       <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
                         <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
                           %%pageContent%%
                         </span>
                       </td>
-                      %%/Pages-503-Loop%%
+                      <!-- %%/Pages-503-Loop%% -->
                     </tr>
                   </table>
                 </td>
               </tr>
               <tr>
-                %%Pages-504-Loop%% 
+                <!-- %%Pages-504-Loop%% --> 
                 <td align="center" class="footercopy" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
                   %%pageContent%%
                 </td>
-                %%/Pages-504-Loop%%  
+                <!-- %%/Pages-504-Loop%% -->  
               </tr>
               <tr>
                 <td align="center" heigth="50" class="footercopy" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
@@ -204,7 +204,7 @@ DATA.ko = {
                     
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">가격</td>
                   </tr>
-                  %loop%
+                  <!-- %loop% -->
                   <tr class="productRow">
                     <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
@@ -221,7 +221,7 @@ DATA.ko = {
                    
                     <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
-                  %/loop%
+                  <!-- %/loop% -->
                   
                 </tbody>
               </table>
@@ -424,7 +424,7 @@ DATA.ko = {
                       <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">수량<</td>
                       <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">가격</td>
                     </tr>
-                    %loop%
+                    <!-- %loop% -->
                     <tr class="productRow">
                       <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
@@ -441,7 +441,7 @@ DATA.ko = {
                       <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
                       <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                     </tr>
-                    %/loop%
+                    <!-- %/loop% -->
                     
                   </tbody>
                 </table>
@@ -470,7 +470,7 @@ DATA.ko = {
                       </span>
                     </td>
                   </tr>
-        %%ifOrderDiscount%%
+        <!-- %%ifOrderDiscount%% -->
         <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">할인</td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
@@ -479,7 +479,7 @@ DATA.ko = {
                       </span>
                     </td>
                   </tr>
-        %%/ifOrderDiscount%%
+        <!-- %%/ifOrderDiscount%% -->
                   <tr>
                     <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">합계</td>
                     <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
@@ -494,7 +494,7 @@ DATA.ko = {
               </td>
             </tr>
             <tr><td>&nbsp;</td></tr>
-          %%ifComments%%
+          <!-- %%ifComments%% -->
             <tr>
               <td>
                 <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
@@ -508,7 +508,7 @@ DATA.ko = {
               </table>        
               </td>
             </tr>
-            %%/ifComments%%
+            <!-- %%/ifComments%% -->
             <tr><td>&nbsp;</td></tr>
             <tr>
           <td bgColor="#f4f4f4">
@@ -609,7 +609,7 @@ TEXTHERE
                     <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">수량</td>
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">가격</td>
                   </tr>
-                  %loop%
+                  <!-- %loop% -->
                   <tr class="productRow">
                     <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
@@ -626,7 +626,7 @@ TEXTHERE
                     <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
                     <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
-                  %/loop%
+                  <!-- %/loop% -->
                   
                 </tbody>
               </table>

@@ -18,6 +18,7 @@ APP.scriptGenerator = {
 	T3 : 0,
 	T4 : 0,
 	T_MAIL : 0,
+	T_SETMODE : "3of3",
 	TIMEOPENPLANTS : 0,
 
 	init : function () {
@@ -50,6 +51,7 @@ APP.scriptGenerator = {
 		SG.T3 = 500;
 		SG.T4 = 500;
 		SG.T_MAIL = parseInt($('[name="deelay"]:checked').val());
+		SG.T_SETMODE = $('[name="setmode"]:checked').val();
 		SG.TIMEOPENPLANTS = 1000;
 
 		// save session editors DATA
@@ -120,6 +122,7 @@ APP.scriptGenerator = {
 			 T3 = APP.scriptGenerator.T3, 
 			 T4 = APP.scriptGenerator.T4, 
 			 T_MAIL = APP.scriptGenerator.T_MAIL,
+			 T_SETMODE = APP.scriptGenerator.T_SETMODE,
 			 TIMEOPENPLANTS = APP.scriptGenerator.TIMEOPENPLANTS;
 
 		var _arrMailIds = '[' + arrMailsIds_OK.join(', ') + ']';
@@ -156,7 +159,7 @@ APP.scriptGenerator = {
 			var arrMailSubjects = ${_arrMailSubjects};
 			var HEADER_VALUE = ${_HEADER};
 			var FOOTER_VALUE = ${_FOOTER};
-			var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL}, TIMEOPENPLANTS = ${TIMEOPENPLANTS};
+			var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL}, TIMEOPENPLANTS = ${TIMEOPENPLANTS}, T_SETMODE = "${T_SETMODE}";
 			var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
 			var LANG_DESTI = ${languageID_OK_DESTI};
 			var mailTimeSeconds = T_MAIL / 1000;
@@ -218,17 +221,29 @@ APP.scriptGenerator = {
 													/* set header */
 													var header = contentTab[0].querySelectorAll('textarea[name="header_' + LANG_DESTI + '"]');
 													if(header[0]){
-														header[0].value = HEADER_VALUE;
+														if(T_SETMODE == "1of3"){
+															header[0].value = HEADER_VALUE;
+														}else if(T_SETMODE == "3of3"){
+															header[0].value = '';
+														}
 													}
 													/* set footer */
 													var footer = contentTab[0].querySelectorAll('textarea[name="footer_' + LANG_DESTI + '"]');
 													if(footer[0]){
-														footer[0].value = FOOTER_VALUE;
+														if(T_SETMODE == "1of3"){
+															footer[0].value = FOOTER_VALUE;
+														}else if(T_SETMODE == "3of3"){
+															footer[0].value = '';
+														}
 													}
 													/* set htmlcontent */
 													var body = contentTab[0].querySelectorAll('textarea[name="body_' + LANG_DESTI + '"]');
 													if(body[0]){
-														body[0].value = HTML_VALUE;
+														if(T_SETMODE == "1of3"){
+															body[0].value = HTML_VALUE;
+														}else if(T_SETMODE == "3of3"){
+															body[0].value = HEADER_VALUE + HTML_VALUE + FOOTER_VALUE;
+														}
 													}
 
 													/* SAVE TEMPLATE AND CLOSE */
@@ -274,8 +289,9 @@ APP.scriptGenerator = {
 
 		`;
 
+		// replace js script /* */ comments
+		 __SCRIPT__2 = __SCRIPT__2.replace(/\/\*.*?\*\//g, '');
 		__SCRIPT__ = __SCRIPT__1 + __SCRIPT__2.replace(/[\t\n]/g, '');
-		// __SCRIPT__ = __SCRIPT__.replace(/[\t\n]/g, '');
 
 		if (!arrMailsIds_OK.length) __SCRIPT__ = "";
 
