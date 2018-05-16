@@ -35,11 +35,11 @@ DATA.fr = {
               <td align="center" style="">
                 <table border="0" cellspacing="10" cellpadding="0">
                   <tr>
-                    %%Pages-501-Loop%%
+                    <!-- %%Pages-501-Loop%% -->
                       <td style="text-align: center;">
                         <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
                       </td>
-                    %%/Pages-501-Loop%%
+                    <!-- %%/Pages-501-Loop%% -->
                   </tr>
                 </table>
               </td>
@@ -48,13 +48,13 @@ DATA.fr = {
               <td align="center" style="padding: 12px 0 12px 0px;">
                 <table border="0" cellspacing="8" cellpadding="0">
                   <tr>
-                    %%Banners-502-Loop%% 
+                    <!-- %%Banners-502-Loop%% --> 
                       <td width="30" style="text-align: center; ">
                         <a href="%%BannerLink%%" target="">
                           <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
-                    %%/Banners-502-Loop%%
+                    <!-- %%/Banners-502-Loop%% -->
                   </tr>
                 </table>
               </td>
@@ -63,23 +63,23 @@ DATA.fr = {
               <td align="center" style="">
                 <table border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    %%Pages-503-Loop%% 
+                    <!-- %%Pages-503-Loop%% --> 
                       <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
                         <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
                           %%pageContent%%
                         </span>
                       </td>
-                    %%/Pages-503-Loop%%
+                    <!-- %%/Pages-503-Loop%% -->
                   </tr>
                 </table>
               </td>
             </tr>
             <tr>
-              %%Pages-504-Loop%% 
+              <!-- %%Pages-504-Loop%% --> 
                 <td align="center" class="footercopy" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
                   %%pageContent%%
                 </td>
-              %%/Pages-504-Loop%%  
+              <!-- %%/Pages-504-Loop%% -->  
             </tr>
             <tr>
               <td align="center" heigth="50" class="footercopy" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
