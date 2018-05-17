@@ -176,6 +176,13 @@ DATA.ca = {
     <span style="font-size:15px;">Hola<br/><br/>Gràcies per subscriure't al nostre butlletí de notícies. Aviat rebràs informació sobre activitats, notícies sobre la nostra empresa i novetats en productes i promocions.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
 </tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
+    </span>
+  </td>
+</tr>
 `
   }, // end 5
 
@@ -543,13 +550,6 @@ DATA.ca = {
     
     <strong>Confirmació de la baixa de la newsletter</strong><br><br>
     <span style="font-size:15px;">Hola<br><br>Has sigut dona't de baixa amb èxit de la nostra newsletter.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
-    </span>
   </td>
 </tr>
 `
