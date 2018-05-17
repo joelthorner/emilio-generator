@@ -188,6 +188,13 @@ DATA.fr = {
     <span style="font-size:15px;">Bonjour<br/><br/>Vous êtes bien inscrit(e) à notre newsletter, vous recevrez désormais tous nos e-mails concernant les nouveautés et promotions de la e-boutique.<br/><br/>Rendez-nous visite sur <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
 </tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Se désabonner</a> <span style="color:#333;font-size:10px;">de la Newsletter</span>
+    </span>
+  </td>
+</tr>
 `
   }, // end 5
 
@@ -573,13 +580,6 @@ DATA.fr = {
   L’annulation de l’inscription à la newsletter s’est effectuée correctement.<br/><br/>
   Cordialement.<br/><br/>
   L’équipe %%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Se désabonner</a> <span style="color:#333;font-size:10px;">de la Newsletter</span>
-    </span>
   </td>
 </tr>
 `
