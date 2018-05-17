@@ -172,6 +172,13 @@ DATA.es = {
     <span style="font-size:15px;">Hola<br/><br/>Gracias por suscribirte a nuestro boletín de noticias. Pronto recibirás información sobre actividades, noticias sobre nuestra empresa y novedades en productos y promociones.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
 </tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Darse de baja</a> <span style="color:#333;font-size:10px;">de la subscripción de Newsletter</span>
+    </span>
+  </td>
+</tr>
 `
     }, // end 5
 
@@ -527,13 +534,6 @@ DATA.es = {
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Confirmación de la baja de la newsletter</strong><br><br>
     <span style="font-size:15px;">Hola<br><br>Has sido dado de baja con éxito de nuestra newsletter.<br><br>Atentamente, el equipo de %%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Darse de baja</a> <span style="color:#333;font-size:10px;">de la subscripción de Newsletter</span>
-    </span>
   </td>
 </tr>
 `
