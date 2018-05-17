@@ -180,6 +180,13 @@ DATA.chi = {
     <span style="font-size: 15px;">您好</span><br><br><span style="font-size: 15px;">谢谢您订阅我们的资讯，我们会为您发送我们的公司相关的最新动态，活动，热门产品和促销信息。</span><br><br><span style="font-size: 15px;">我们期待能在 </span><a href="%%ecommerceURL%%" style="font-size: 15px; color: rgb(0, 0, 0);">%%ecommerceName%%</a><span style="font-size: 15px;"> 见到您</span>
   </td>
 </tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+    </span>
+  </td>
+</tr>
 `
   }, // end 5
 
@@ -546,13 +553,6 @@ DATA.chi = {
         
     <strong>资讯退订</strong><br><br>
     <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
-    </span>
   </td>
 </tr>
 `
