@@ -175,6 +175,13 @@ DATA.ko = {
     <span style="font-size:15px;">안녕하세요<br><br>우리의 뉴스 레터에 구독 해 주셔서 감사합니다.  곧 우리 회사에 대해 뉴스,  제품 기능,인기 제품과 판촉을 받을 것입니다 <br><br><a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> 에서 당신을 뵙기를 기대합니다</span>
   </td>
 </tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
+    </span>
+  </td>
+</tr>
 `
   }, // end 5
 
@@ -537,13 +544,6 @@ DATA.ko = {
     
     <strong>콘텐츠를 수신 거부하기 </strong><br><br>
     <span style="font-size:15px;">안녕하세요<br><br>우리의콘텐츠를  성공적으로 수신 거부했습니다.<br><br> %%ecommerceName%%</span>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
-    </span>
   </td>
 </tr>
 `
