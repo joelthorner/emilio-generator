@@ -177,6 +177,13 @@ DATA.en = {
     <span style="font-size:15px;">Hello<br/><br/>Thank you for your registration to our newsletter. Soon you will receive news about our company, information of features and hottest products and promotions.<br/><br/>We are looking forward to seeing you on <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
 </tr>
+<tr>
+  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
+    </span>
+  </td>
+</tr>
 `
   }, // end 5
 
@@ -555,13 +562,7 @@ DATA.en = {
     <span style="font-size:15px;">Hello<br><br>You have been unsubscribed successfully.<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
-    </span>
-  </td>
-</tr>
+
 `
   }, // end 11
 
