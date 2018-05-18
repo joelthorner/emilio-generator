@@ -63,7 +63,7 @@ APP.fillData = {
 				if ($(this).data('valid') == false) invalids++;
 			});
 			if ($cont.find('.block-mail').length-2 == invalids) {
-				$tab.addClass('disabled');
+				$tab.addClass('c_disabled');
 			}
 		});
 	},
