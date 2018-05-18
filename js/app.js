@@ -243,7 +243,7 @@ APP.frontEnd = {
 	},
 
 	generateMailsFile : function() {
-		$('.download').click(function(event) {
+		$('.download').not('.download-all').click(function(event) {
 			event.preventDefault();
 			event.stopPropagation();
 
@@ -269,6 +269,36 @@ APP.frontEnd = {
 
 			// Remove anchor from body
 			document.body.removeChild(a);
+		});
+
+		$('.download-all').click(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			
+			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+
+			$('#output-tabs-cont #tab-lang-c-'+actualLangId+' .block-mail').not('.block-header, .block-footer').each(function(index, el) {
+				var $editor = $(this).find('.editor');
+
+				var editor = ace.edit($editor[0]);
+				var code = editor.getValue();
+				var name = DATA.mails[$editor.data('id')];
+				var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+				var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+				var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+
+
+				var a = window.document.createElement('a');
+				a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+				a.download = name + '_' + actualLangKey + '.html';
+
+				// Append anchor to body.
+				document.body.appendChild(a);
+				a.click();
+
+				// Remove anchor from body
+				document.body.removeChild(a);
+			});
 		});
 	},
 
