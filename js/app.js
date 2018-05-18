@@ -167,7 +167,9 @@ APP.fillData = {
 									<div class="block-mail block-header">${HTML_header_lang}</div>
 									<div class="block-mail block-footer">${HTML_footer_lang}</div>
 									<hr class="mail-conts-sep">
-									${HTML_mails_lang}
+									<div class="mails-wrap">
+										${HTML_mails_lang}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -245,6 +247,34 @@ APP.frontEnd = {
 		this.badgesSession();
 		this.preview();
 		this.generateMailsFile();
+		this.search();
+	},
+
+	search : function() {
+		$('#search-submit').click(function(event) {
+			var VAL = $.trim($('#search').val()).toLowerCase();
+			$('.finded-search').css('order', '').removeClass('finded-search');
+
+			if (VAL.length) {
+				var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+
+				$('#output-tabs-cont #tab-lang-c-'+actualLangId+' .block-mail').not('.block-header, .block-footer').each(function(index, el) {
+					var name = $.trim($(this).find('[data-toggle="collapse"]').text()).toLowerCase();
+					if (name.includes(VAL)) {
+						$(this).addClass('finded-search');
+					}
+				});
+
+				$('.finded-search').each(function(index, el) {
+					$(this).css('order', '-' + (100 - index));
+				});
+			}
+		});
+
+		$('#search-reset').click(function(event) {
+			$('#search').val('');
+			$('.finded-search').css('order', '').removeClass('finded-search');
+		});
 	},
 
 	generateMailsFile : function() {

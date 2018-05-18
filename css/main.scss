@@ -46,7 +46,7 @@ body{
 
 .h5, h5 {
 	&:not(.modal-title){
-    	font-size: 0.95rem;
+		font-size: 0.95rem;
 	}
 }
 
@@ -55,8 +55,8 @@ body{
 }
 
 .ace-xcode .ace_gutter {
-	background: #f8f9fa;
-	color: #6c757d;
+	background: #f8f9fa !important;
+	color: #6c757d !important;
 }
 
 #container{
@@ -170,8 +170,18 @@ label.input-group-text {
 		box-shadow: 0 0px rem(3px) #d9dde0;
 		margin-bottom: rem(8px);
 		width: 100%;
-		.btn{
+		&.finded-search .btn{
 			// transition: all 350ms ease;
+			background-color: var(--blue) !important;
+			border-color: var(--blue) !important;
+			color: #FFF;
+
+			.download, .preview{
+				i{
+					opacity: 1;
+					color: #FFF;
+				}
+			}
 		}
 		.btn:not(.collapsed){
 			border-bottom-left-radius: 0;
@@ -183,7 +193,7 @@ label.input-group-text {
 		}
 		&.block-footer .badges,
 		&.block-header .badges{
-			right: .75rem;
+			// right: .75rem;
 		}
 	}
 	.btn-block{
@@ -393,4 +403,26 @@ label.input-group-text {
 	width: 100%;
 	margin-top: 0;
 	border-color: transparent;
+}
+
+#search{
+	border-color: #FFF;
+}
+
+.mails-wrap{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#search-reset{
+	width: rem(31px);
+	height: rem(31px);
+	margin-left: rem(8px);
+
+	i{
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
 }
