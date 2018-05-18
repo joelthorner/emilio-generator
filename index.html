@@ -41,57 +41,58 @@
 			</div><!-- data-tabs-cont -->
 
 			<div id="actions" class="col-2">
-				<div class="h4">Controls</div>
+				<div class="scrollable">
+					<div class="h4">Controls</div>
 
-				<div class="mb-3">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="setAllToBody" name="setmode" class="custom-control-input" checked value="3in1">
-						<label class="custom-control-label" for="setAllToBody"><small>Save all template in mail body <b class="badge badge-secondary">3 in 1</b></small></label>
+					<div class="mb-3">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="setAllToBody" name="setmode" class="custom-control-input" checked value="3in1">
+							<label class="custom-control-label" for="setAllToBody"><span>Save all template in mail body <span class="badge badge-pill badge-secondary">3 in 1</span></span></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="setToDefaultPlace" name="setmode" class="custom-control-input" value="3in3">
+							<label class="custom-control-label" for="setToDefaultPlace"><span>Default mode <span class="badge badge-pill badge-secondary">3 in 3</span></span></label>
+						</div>
 					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="setToDefaultPlace" name="setmode" class="custom-control-input" value="3in3">
-						<label class="custom-control-label" for="setToDefaultPlace"><small>Default mode <b class="badge badge-secondary">3 in 3</b></small></label>
+
+					<div class="mb-3">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
+							<label class="custom-control-label" for="deelayNormal"><span>Normal Deelay <span class="badge badge-pill badge-secondary">5s</span></span></label>
+						</div><br>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="deelayHigh" name="deelay" class="custom-control-input" value="10000">
+							<label class="custom-control-label" for="deelayHigh"><span>For china LC deelay <span class="badge badge-pill badge-secondary">10s</span></span></label>
+						</div>
 					</div>
-				</div>
 
-				<div class="mb-3">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
-						<label class="custom-control-label" for="deelayNormal"><small>Normal Deelay <b class="badge badge-secondary">5s</b></small></label>
-					</div><br>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="deelayHigh" name="deelay" class="custom-control-input" value="10000">
-						<label class="custom-control-label" for="deelayHigh"><small>For china LC deelay <b class="badge badge-secondary">10s</b></small></label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="selectLangsFO">Destination lang</label>
+						</div>
+						<select class="custom-select" id="selectLangsFO">
+						</select>
 					</div>
-				</div>
 
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<label class="input-group-text" for="selectLangsFO">Destination lang</label>
+					<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
+					
+					<br><br>
+					<div class="h4">Dev</div>
+
+					<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
+
+					<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send mail conts changes</button>
+					<br><br>
+
+					<div class="h4">Preview data</div>
+					<div class="form-group">
+						<label for="data-emailLogo"><small>Default email logo</small></label>
+						<input type="text" class="form-control form-control-sm" id="data-emailLogo" placeholder="cdn/file.extension" value="http://via.placeholder.com/210x100">
 					</div>
-					<select class="custom-select" id="selectLangsFO">
-					</select>
-				</div>
-
-				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
-				
-				<br><br>
-				<div class="h4">Dev</div>
-
-				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
-
-				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
-				<button id="send-bug" type="button" class="btn btn-block btn-light" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
-				<br><br>
-
-				<div class="h4">Preview data</div>
-				<div class="form-group">
-					<label for="data-emailLogo"><small>Default email logo</small></label>
-					<input type="text" class="form-control form-control-sm" id="data-emailLogo" placeholder="cdn/file.extension" value="http://via.placeholder.com/210x100">
-				</div>
-				<div class="form-group">
-					<label for="data-emailSocial"><small>Default social banners</small></label>
-					<input type="text" class="form-control form-control-sm" id="data-emailSocial" placeholder="cdn/file.extension" value="http://via.placeholder.com/30x30">
+					<div class="form-group">
+						<label for="data-emailSocial"><small>Default social banners</small></label>
+						<input type="text" class="form-control form-control-sm" id="data-emailSocial" placeholder="cdn/file.extension" value="http://via.placeholder.com/30x30">
+					</div>
 				</div>
 			</div><!-- actions -->
 
@@ -100,6 +101,7 @@
 				<div class="list-group">
 					<a class="list-group-item list-group-item-action" href="http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines" target="_blank">Comodins</a>
 					<a href="https://trello.com/b/tBQU3RSN/emilio-generator" target="_blank" class="list-group-item list-group-item-action">Trello</a>
+					<a href="https://github.com/joelthorner/emilio-generator/issues" target="_blank" class="list-group-item list-group-item-action">Issues/Bugs</a>
 				</div>
 				<br><br>
 				<div class="h4">Credits</div>
@@ -121,7 +123,8 @@
 					</button>
 				</div>
 				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin [empty] i alhora existeixin al Logicommerce.
+					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin <span class="badge badge-pill badge-danger">empty</span> i alhora existeixin al Logicommerce.
+					<br>
 					<br>
 					Tampoc machaca altres idiomes
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">

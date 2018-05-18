@@ -40,11 +40,17 @@ APP.fillData = {
 				var _active = counter == 0 ? 'active' : '',
 					 _selected = counter == 0 ? true : false,
 					 _langId = langId,
-					 _langKey = langKey.toLowerCase();
+					 _langIdBadge = _langId;
+					 _langKey = langKey;
+
+				if (_langIdBadge < 10) _langIdBadge = '0' + _langIdBadge;
 
 				$output.append(`
 					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
-						${_langKey} <code class="badge badge-light">id ${_langId}</code>
+						${_langKey} <span class="badge badge-pill badge-light">id ${_langIdBadge}</span>
+						<div class="download download-all" title="Download ALL" data-toggle="tooltip">
+							<i class="material-icons">save</i>
+						</div>
 					</a>
 				`);
 				counter++;
@@ -91,7 +97,7 @@ APP.fillData = {
 						Header
 						<div class="badges">
 							${_validBlockData.badge}
-							<code class="badge badge-secondary">id H</code>
+							<span class="badge badge-pill badge-secondary">id H</span>
 						</div>
 					</button>
 					<div class="collapse" id="mail-cont-${langId}_H">
@@ -109,7 +115,7 @@ APP.fillData = {
 						Footer
 						<div class="badges">
 							${_validBlockData.badge}
-							<code class="badge badge-secondary">id F</code>
+							<span class="badge badge-pill badge-secondary">id F</span>
 						</div>
 					</button>
 					<div class="collapse" id="mail-cont-${langId}_F">
@@ -129,10 +135,10 @@ APP.fillData = {
 					HTML_mails_lang += `
 						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
 							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
-								<small>${_emailNameES}</small>
+								${_emailNameES}
 								<div class="badges">
 									${_validBlockData.badge}
-									<code class="badge badge-secondary">id ${idMail}</code>
+									<span class="badge badge-pill badge-secondary">id ${idMail}</span>
 								</div>
 								<div class="download" title="Download .html" data-toggle="tooltip">
 									<i class="material-icons">save</i>
@@ -156,13 +162,12 @@ APP.fillData = {
 				$output.append(`
 					<div class="tab-pane fade ${_active}" id="tab-lang-c-${langId}" role="tabpanel" aria-labelledby="tab-lang-${langId}">
 						<div class="row">
-							<div class="col-7">
-								<div class="scrollable mails">${HTML_mails_lang}</div>
-							</div>
-							<div class="col-5">
-								<div class="scrollable">
+							<div class="col-12">
+								<div class="scrollable mails">
 									<div class="block-mail block-header">${HTML_header_lang}</div>
 									<div class="block-mail block-footer">${HTML_footer_lang}</div>
+									<hr class="mail-conts-sep">
+									${HTML_mails_lang}
 								</div>
 							</div>
 						</div>
@@ -181,12 +186,12 @@ APP.fillData = {
 
 		if (!$.trim(subject).length){	
 			_return.valid = true;
-			_return.badge += '<code class="badge badge-warning">No sbj</code>';
+			_return.badge += '<span class="badge badge-pill badge-warning bd-sbj">No sbj</span>';
 		}
 
 		if ($.trim(contentMail).indexOf('TEXTHERE') !== -1 || $.trim(contentMail).length == 0){	
 			_return.valid = false;
-			_return.badge += '<code class="badge badge-danger">Empty</code>';
+			_return.badge += '<span class="badge badge-pill badge-danger bd-emp">Empty</span>';
 		}
 
 		return _return;
