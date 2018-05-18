@@ -11,14 +11,31 @@
 	<link rel="stylesheet" href="css/floating-labels.css">
 	<link rel="stylesheet" href="css/main.css">
 
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
 
 	<title>Emilio generatort</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<a class="navbar-brand" href="#">Emilio generator&nbsp;&nbsp;<small class="badge badge-pill badge-warning">v1.0.10</small></a>
+		<a class="navbar-brand" href="#">Emilio generator&nbsp;&nbsp;<small class="badge badge-pill badge-warning">v1.1.0</small></a>
+		<form class="form-inline" onsubmit="return false;">
+			<input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
+			<button class="btn btn-sm btn-secondary my-2 my-sm-0" type="submit" id="search-submit">Search</button>
+			<button class="btn btn-sm btn-danger my-2 my-sm-0" type="reset" id="search-reset"><i class="material-icons">close</i></button>
+		</form>
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item text-secondary">
 				<small>This app only works in Chrome >= v60</small>
@@ -41,57 +58,58 @@
 			</div><!-- data-tabs-cont -->
 
 			<div id="actions" class="col-2">
-				<div class="h4">Controls</div>
+				<div class="scrollable">
+					<div class="h4">Controls</div>
 
-				<div class="mb-3">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="setAllToBody" name="setmode" class="custom-control-input" checked value="3in1">
-						<label class="custom-control-label" for="setAllToBody"><small>Save all template in mail body <b class="badge badge-secondary">3 in 1</b></small></label>
+					<div class="mb-3">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="setAllToBody" name="setmode" class="custom-control-input" checked value="3in1">
+							<label class="custom-control-label" for="setAllToBody"><span>Save all template in mail body <span class="badge badge-pill badge-secondary">3 in 1</span></span></label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="setToDefaultPlace" name="setmode" class="custom-control-input" value="3in3">
+							<label class="custom-control-label" for="setToDefaultPlace"><span>Default mode <span class="badge badge-pill badge-secondary">3 in 3</span></span></label>
+						</div>
 					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="setToDefaultPlace" name="setmode" class="custom-control-input" value="3in3">
-						<label class="custom-control-label" for="setToDefaultPlace"><small>Default mode <b class="badge badge-secondary">3 in 3</b></small></label>
+
+					<div class="mb-3">
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
+							<label class="custom-control-label" for="deelayNormal"><span>Normal Deelay <span class="badge badge-pill badge-secondary">5s</span></span></label>
+						</div><br>
+						<div class="custom-control custom-radio custom-control-inline">
+							<input type="radio" id="deelayHigh" name="deelay" class="custom-control-input" value="10000">
+							<label class="custom-control-label" for="deelayHigh"><span>For china LC deelay <span class="badge badge-pill badge-secondary">10s</span></span></label>
+						</div>
 					</div>
-				</div>
 
-				<div class="mb-3">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="deelayNormal" name="deelay" class="custom-control-input" checked value="5000">
-						<label class="custom-control-label" for="deelayNormal"><small>Normal Deelay <b class="badge badge-secondary">5s</b></small></label>
-					</div><br>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="deelayHigh" name="deelay" class="custom-control-input" value="10000">
-						<label class="custom-control-label" for="deelayHigh"><small>For china LC deelay <b class="badge badge-secondary">10s</b></small></label>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="selectLangsFO">Destination lang</label>
+						</div>
+						<select class="custom-select" id="selectLangsFO">
+						</select>
 					</div>
-				</div>
 
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<label class="input-group-text" for="selectLangsFO">Destination lang</label>
+					<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
+					
+					<br><br>
+					<div class="h4">Dev</div>
+
+					<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
+
+					<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Enviar canvi o errort</button>
+					<br><br>
+
+					<div class="h4">Preview data</div>
+					<div class="form-group">
+						<label for="data-emailLogo"><small>Default email logo</small></label>
+						<input type="text" class="form-control form-control-sm" id="data-emailLogo" placeholder="cdn/file.extension" value="http://via.placeholder.com/210x100">
 					</div>
-					<select class="custom-select" id="selectLangsFO">
-					</select>
-				</div>
-
-				<button id="gen-script" type="button" class="btn btn-block btn-primary btn-lg" data-toggle="modal" data-target="#scriptGenerated"><i class="material-icons">done</i> Generate script</button>
-				
-				<br><br>
-				<div class="h4">Dev</div>
-
-				<button id="instructions" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#instructionsModal"><i class="material-icons">help</i> Instructions</button>
-
-				<button id="send-content" type="button" class="btn btn-block btn-light" data-toggle="modal" data-target="#sendContentModal"><i class="material-icons">create</i> Send content</button>
-				<button id="send-bug" type="button" class="btn btn-block btn-light" onclick="$(this).find('.text').text('Impossibru!')"><i class="material-icons">bug_report</i> <span class="text">Send bug</span></button>
-				<br><br>
-
-				<div class="h4">Preview data</div>
-				<div class="form-group">
-					<label for="data-emailLogo"><small>Default email logo</small></label>
-					<input type="text" class="form-control form-control-sm" id="data-emailLogo" placeholder="cdn/file.extension" value="http://via.placeholder.com/210x100">
-				</div>
-				<div class="form-group">
-					<label for="data-emailSocial"><small>Default social banners</small></label>
-					<input type="text" class="form-control form-control-sm" id="data-emailSocial" placeholder="cdn/file.extension" value="http://via.placeholder.com/30x30">
+					<div class="form-group">
+						<label for="data-emailSocial"><small>Default social banners</small></label>
+						<input type="text" class="form-control form-control-sm" id="data-emailSocial" placeholder="cdn/file.extension" value="http://via.placeholder.com/30x30">
+					</div>
 				</div>
 			</div><!-- actions -->
 
@@ -100,6 +118,7 @@
 				<div class="list-group">
 					<a class="list-group-item list-group-item-action" href="http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines" target="_blank">Comodins</a>
 					<a href="https://trello.com/b/tBQU3RSN/emilio-generator" target="_blank" class="list-group-item list-group-item-action">Trello</a>
+					<a href="https://github.com/joelthorner/emilio-generator/issues" target="_blank" class="list-group-item list-group-item-action">Issues/Bugs</a>
 				</div>
 				<br><br>
 				<div class="h4">Credits</div>
@@ -121,7 +140,8 @@
 					</button>
 				</div>
 				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin [empty] i alhora existeixin al Logicommerce.
+					<strong>Warning!</strong> El pruses nomes omplira els mails que no siguin <span class="badge badge-pill badge-danger">empty</span> i alhora existeixin al Logicommerce.
+					<br>
 					<br>
 					Tampoc machaca altres idiomes
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -226,9 +246,19 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<p class="text-center">
-						<small>joel.torner@tlgcommerce.com</small>
-					</p>
+					<div class="list-group">
+						<span class="list-group-item list-group-item-action flex-column align-items-start">
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1"><a href="mailto:joel.torner@tlgcommerce.com">joel.torner@tlgcommerce.com</a></h5>
+							</div>
+							<ul class="mb-1">
+								<li>Enviar erro gramatical</li>
+								<li>Suggerencia de canvi</li>
+								<li>Cualsevol error de continguts</li>
+								<li>Nous mails/continguts/idiomes</li>
+							</ul>
+						</span>
+					</div>
 					
 				</div>
 				<div class="modal-footer">
@@ -253,17 +283,42 @@
 					<div class="list-group">
 						<span class="list-group-item list-group-item-action flex-column align-items-start">
 							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">Copiar mails en un idioma</h5>
-								<small>09/04/2018</small>
+								<h5 class="mb-1">Copiar mails en un idioma (bàsic)</h5>
+								<small>18/05/2018</small>
 							</div>
 							<ol class="mb-1">
-								<li>Triar idioma</li>
-								<li>Editar (o no) mails del idioma i header o footer del idioma. Si no es toquen s'ompliran amb els predefinits de la <i title="Assosiació d'Afectats per Mails de TLG" data-toggle="tooltip" data-placement="top">A.A.M.T</i></li>
-								<li>Donar-li al boto generar script i copiar el script generat.</li>
-								<li>En la Consola (Dev) del Logicommerce exnganxar i executar</li>
-								<li>Pot trigar (1.5-3min), anirá surtint per consola els mails omplerts i si falla o no (mai falla)</li>
+								<li>Escollir idioma</li>
+								<li>Editar (o no) els continguts i/o header i footer del idioma. Si no es toquen s'ompliran amb els continguts de base.</li>
+								<li>Triar si emplenarem els mails tota la plantilla dins del camp body (default) del LC o header, body i footer als respectius camps.</li>
+								<li>Triar el idioma de destí dels mails (per defecte el mateix, epro es pot donar el cas de voler els mails en <i>EN</i> per al idioma <i>PT</i> perque no els tenim en <i>PT</i>)</li>
+								<li>Apretar el boto generar script i copiar el script generat.</li>
+								<li>Fer logout del LC si el tenim obert i tornar a fer login i sense obrir RES llençar el script per consola.</li>
+								<li>NO CANVÏS DE PESTANYA deixa'l fer!</li>
+								<li>El script anirà mostrant missatges de success i un missatge d'inici i final!</li>
 								<li>Mentres s'executa no toquis el Logicommerce, canvia de pestanya i ves fes un riu o un café</li>
-								<li>Quan acabi la moguda per consola veuras un missatge.</li>
+								<li>Repeat, quan acabi la moguda per consola veuras un missatge de final.</li>
+								<li>Enjoy!</li>
+							</ol>
+						</span>
+						<span class="list-group-item list-group-item-action flex-column align-items-start">
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1">Preview</h5>
+								<small>18/05/2018</small>
+							</div>
+							<ol class="mb-1">
+								<li>A les previews s'els fica les imatges dels inputs de la columna</li>
+								<li>Per veure com queda el logo i/o xxss pujar les fotos al LC i enganxar la URL, (es mes util en mails custom)</li>
+							</ol>
+						</span>
+						<span class="list-group-item list-group-item-action flex-column align-items-start">
+							<div class="d-flex w-100 justify-content-between">
+								<h5 class="mb-1">Downloads</h5>
+								<small>18/05/2018</small>
+							</div>
+							<ol class="mb-1">
+								<li>Pots descarregar un mail en concret o tots alhora (et fa guardar els mails 1 per 1 pero seguit)</li>
+								<li>Els mails descarregats son complets, corresponent header + body + footer.</li>
+								<li>Els mails es generaran amb el contingut editat si ho has fet</li>
 							</ol>
 						</span>
 					</div>

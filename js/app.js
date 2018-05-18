@@ -40,11 +40,17 @@ APP.fillData = {
 				var _active = counter == 0 ? 'active' : '',
 					 _selected = counter == 0 ? true : false,
 					 _langId = langId,
-					 _langKey = langKey.toLowerCase();
+					 _langIdBadge = _langId;
+					 _langKey = langKey;
+
+				if (_langIdBadge < 10) _langIdBadge = '0' + _langIdBadge;
 
 				$output.append(`
 					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
-						${_langKey} <code class="badge badge-light">id ${_langId}</code>
+						${_langKey} <span class="badge badge-pill badge-light">id ${_langIdBadge}</span>
+						<div class="download download-all" title="Download ALL" data-toggle="tooltip">
+							<i class="material-icons">save</i>
+						</div>
 					</a>
 				`);
 				counter++;
@@ -63,7 +69,7 @@ APP.fillData = {
 				if ($(this).data('valid') == false) invalids++;
 			});
 			if ($cont.find('.block-mail').length-2 == invalids) {
-				$tab.addClass('disabled');
+				$tab.addClass('c_disabled');
 			}
 		});
 	},
@@ -91,7 +97,7 @@ APP.fillData = {
 						Header
 						<div class="badges">
 							${_validBlockData.badge}
-							<code class="badge badge-secondary">id H</code>
+							<span class="badge badge-pill badge-secondary">id H</span>
 						</div>
 					</button>
 					<div class="collapse" id="mail-cont-${langId}_H">
@@ -109,7 +115,7 @@ APP.fillData = {
 						Footer
 						<div class="badges">
 							${_validBlockData.badge}
-							<code class="badge badge-secondary">id F</code>
+							<span class="badge badge-pill badge-secondary">id F</span>
 						</div>
 					</button>
 					<div class="collapse" id="mail-cont-${langId}_F">
@@ -129,10 +135,10 @@ APP.fillData = {
 					HTML_mails_lang += `
 						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
 							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
-								<small>${_emailNameES}</small>
+								${_emailNameES}
 								<div class="badges">
 									${_validBlockData.badge}
-									<code class="badge badge-secondary">id ${idMail}</code>
+									<span class="badge badge-pill badge-secondary">id ${idMail}</span>
 								</div>
 								<div class="download" title="Download .html" data-toggle="tooltip">
 									<i class="material-icons">save</i>
@@ -156,13 +162,14 @@ APP.fillData = {
 				$output.append(`
 					<div class="tab-pane fade ${_active}" id="tab-lang-c-${langId}" role="tabpanel" aria-labelledby="tab-lang-${langId}">
 						<div class="row">
-							<div class="col-7">
-								<div class="scrollable mails">${HTML_mails_lang}</div>
-							</div>
-							<div class="col-5">
-								<div class="scrollable">
+							<div class="col-12">
+								<div class="scrollable mails">
 									<div class="block-mail block-header">${HTML_header_lang}</div>
 									<div class="block-mail block-footer">${HTML_footer_lang}</div>
+									<hr class="mail-conts-sep">
+									<div class="mails-wrap">
+										${HTML_mails_lang}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -181,12 +188,12 @@ APP.fillData = {
 
 		if (!$.trim(subject).length){	
 			_return.valid = true;
-			_return.badge += '<code class="badge badge-warning">No sbj</code>';
+			_return.badge += '<span class="badge badge-pill badge-warning bd-sbj">No sbj</span>';
 		}
 
 		if ($.trim(contentMail).indexOf('TEXTHERE') !== -1 || $.trim(contentMail).length == 0){	
 			_return.valid = false;
-			_return.badge += '<code class="badge badge-danger">Empty</code>';
+			_return.badge += '<span class="badge badge-pill badge-danger bd-emp">Empty</span>';
 		}
 
 		return _return;
@@ -240,10 +247,38 @@ APP.frontEnd = {
 		this.badgesSession();
 		this.preview();
 		this.generateMailsFile();
+		this.search();
+	},
+
+	search : function() {
+		$('#search-submit').click(function(event) {
+			var VAL = $.trim($('#search').val()).toLowerCase();
+			$('.finded-search').css('order', '').removeClass('finded-search');
+
+			if (VAL.length) {
+				var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+
+				$('#output-tabs-cont #tab-lang-c-'+actualLangId+' .block-mail').not('.block-header, .block-footer').each(function(index, el) {
+					var name = $.trim($(this).find('[data-toggle="collapse"]').text()).toLowerCase();
+					if (name.includes(VAL)) {
+						$(this).addClass('finded-search');
+					}
+				});
+
+				$('.finded-search').each(function(index, el) {
+					$(this).css('order', '-' + (100 - index));
+				});
+			}
+		});
+
+		$('#search-reset').click(function(event) {
+			$('#search').val('');
+			$('.finded-search').css('order', '').removeClass('finded-search');
+		});
 	},
 
 	generateMailsFile : function() {
-		$('.download').click(function(event) {
+		$('.download').not('.download-all').click(function(event) {
 			event.preventDefault();
 			event.stopPropagation();
 
@@ -269,6 +304,36 @@ APP.frontEnd = {
 
 			// Remove anchor from body
 			document.body.removeChild(a);
+		});
+
+		$('.download-all').click(function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			
+			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+
+			$('#output-tabs-cont #tab-lang-c-'+actualLangId+' .block-mail').not('.block-header, .block-footer').each(function(index, el) {
+				var $editor = $(this).find('.editor');
+
+				var editor = ace.edit($editor[0]);
+				var code = editor.getValue();
+				var name = DATA.mails[$editor.data('id')];
+				var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+				var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+				var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+
+
+				var a = window.document.createElement('a');
+				a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+				a.download = name + '_' + actualLangKey + '.html';
+
+				// Append anchor to body.
+				document.body.appendChild(a);
+				a.click();
+
+				// Remove anchor from body
+				document.body.removeChild(a);
+			});
 		});
 	},
 
