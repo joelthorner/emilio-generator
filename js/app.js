@@ -282,28 +282,8 @@ APP.frontEnd = {
 			event.preventDefault();
 			event.stopPropagation();
 
-
 			var $editor = $(this).parents('.block-mail').find('.editor');
-
-			var editor = ace.edit($editor[0]);
-			var code = editor.getValue();
-			var name = DATA.mails[$editor.data('id')];
-			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
-			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
-			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
-			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
-
-
-			var a = window.document.createElement('a');
-			a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
-			a.download = name + '_' + actualLangKey + '.html';
-
-			// Append anchor to body.
-			document.body.appendChild(a);
-			a.click();
-
-			// Remove anchor from body
-			document.body.removeChild(a);
+			APP.frontEnd.generateLinkDownload($editor);
 		});
 
 		$('.download-all').click(function(event) {
@@ -312,29 +292,34 @@ APP.frontEnd = {
 			
 			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
 
-			$('#output-tabs-cont #tab-lang-c-'+actualLangId+' .block-mail').not('.block-header, .block-footer').each(function(index, el) {
-				var $editor = $(this).find('.editor');
-
-				var editor = ace.edit($editor[0]);
-				var code = editor.getValue();
-				var name = DATA.mails[$editor.data('id')];
-				var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
-				var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
-				var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
-
-
-				var a = window.document.createElement('a');
-				a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
-				a.download = name + '_' + actualLangKey + '.html';
-
-				// Append anchor to body.
-				document.body.appendChild(a);
-				a.click();
-
-				// Remove anchor from body
-				document.body.removeChild(a);
-			});
+			$('#output-tabs-cont #tab-lang-c-' + actualLangId + ' .block-mail').not('.block-header, .block-footer')
+				.each(function(index, el) {
+					var $editor = $(this).find('.editor');
+					APP.frontEnd.generateLinkDownload($editor);
+				});
 		});
+	},
+
+	generateLinkDownload : function ($editor) {
+		var editor = ace.edit($editor[0]);
+		var code = editor.getValue();
+		var name = DATA.mails[$editor.data('id')];
+		var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+		var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+		var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
+		var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+
+
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+		a.download = name + '_' + actualLangKey + '_id-' + $editor.data('id') + '.html';
+
+		// Append anchor to body.
+		document.body.appendChild(a);
+		a.click();
+
+		// Remove anchor from body
+		document.body.removeChild(a);
 	},
 
 	preview : function () {
