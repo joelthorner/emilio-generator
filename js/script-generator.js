@@ -71,7 +71,7 @@ APP.scriptGenerator = {
 				}
 			});
 
-		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"]').find('[data-id]')
+		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"][data-id]')
 			.each(function(index, el) {
 				SG.VALID_MAILS_IDS.push($(el).data('id'))
 			});
@@ -290,7 +290,7 @@ APP.scriptGenerator = {
 		`;
 
 		// replace js script /* */ comments
-		 __SCRIPT__2 = __SCRIPT__2.replace(/\/\*.*?\*\//g, '');
+		__SCRIPT__2 = __SCRIPT__2.replace(/\/\*.*?\*\//g, '');
 		__SCRIPT__ = __SCRIPT__1 + __SCRIPT__2.replace(/[\t\n]/g, '');
 
 		if (!arrMailsIds_OK.length) __SCRIPT__ = "";

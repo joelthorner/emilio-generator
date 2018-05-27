@@ -49,7 +49,7 @@ APP.fillData = {
 					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
 						${_langKey} <span class="badge badge-pill badge-light">id ${_langIdBadge}</span>
 						<div class="download download-all" title="Download ALL" data-toggle="tooltip">
-							<i class="material-icons">save</i>
+							<i class="material-icons">get_app</i>
 						</div>
 					</a>
 				`);
@@ -93,16 +93,26 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
-					<button class="btn btn-light btn-block collapsed" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
-						Header
-						<div class="badges">
-							${_validBlockData.badge}
-							<span class="badge badge-pill badge-secondary">id H</span>
-						</div>
-					</button>
-					<div class="collapse" id="mail-cont-${langId}_H">
-						<div class="card card-body">
-							<div class="editor" id="editor-${langId}_H" data-id="H">${_langDataHeader}</div>
+					<div class="block-mail block-header" data-lang="${langId}">
+						<div class="card">
+							<div class="card-body">
+								<a class="header-collapsible collapsed clearfix" data-toggle="collapse" href="#mail-cont-${langId}_H" role="button" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
+									<div class="card-title h5">Generic Header</div>
+									<div class="badges">
+										${_validBlockData.badge}
+										<span class="badge badge-pill badge-secondary">id F</span>
+									</div>
+								</a>
+
+								<div class="collapse" id="mail-cont-${langId}_H">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<label class="card-title-custom">Html</label>
+											<div class="editor editor-cont" id="editor-${langId}_H">${_langDataHeader}</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				`;
@@ -111,16 +121,26 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
-					<button class="btn btn-light btn-block collapsed" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
-						Footer
-						<div class="badges">
-							${_validBlockData.badge}
-							<span class="badge badge-pill badge-secondary">id F</span>
-						</div>
-					</button>
-					<div class="collapse" id="mail-cont-${langId}_F">
-						<div class="card card-body">
-							<div class="editor" id="editor-${langId}_F" data-id="F">${_langDataFooter}</div>
+					<div class="block-mail block-footer" data-lang="${langId}">
+						<div class="card">
+							<div class="card-body">
+								<a class="header-collapsible collapsed clearfix" data-toggle="collapse" href="#mail-cont-${langId}_F" role="button" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
+									<div class="card-title h5">Generic Footer</div>
+									<div class="badges">
+										${_validBlockData.badge}
+										<span class="badge badge-pill badge-secondary">id F</span>
+									</div>
+								</a>
+
+								<div class="collapse" id="mail-cont-${langId}_F">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<label class="card-title-custom">Html</label>
+											<div class="editor editor-cont" id="editor-${langId}_F">${_langDataFooter}</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				`;
@@ -133,43 +153,63 @@ APP.fillData = {
 						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
 
 					HTML_mails_lang += `
-						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
-							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
-								${_emailNameES}
-								<div class="badges">
-									${_validBlockData.badge}
-									<span class="badge badge-pill badge-secondary">id ${idMail}</span>
-								</div>
-								<div class="download" title="Download .html" data-toggle="tooltip">
-									<i class="material-icons">save</i>
-								</div>
-								<div class="preview" title="Basic preview" data-toggle="tooltip">
-									<i class="material-icons">visibility</i>
-								</div>
-							</button>
-							<div class="collapse" id="mail-cont-${langId}_${idMail}">
-								<div class="card card-body">
-									<label class="card-title-custom">Html</label>
-									<div class="editor editor-cont" data-id="${idMail}" id="editor-${langId}_${idMail}">${_contMail}</div>
-									<label class="card-title-custom">Subject</label>
-									<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
+						<div class="block-mail" data-valid="${_validBlockData.valid}" data-id="${idMail}" data-lang="${langId}">
+							<div class="card">
+								<div class="card-body">
+									<div class="dropdown">
+										<button class="dropdown-toggle btn" type="button" id="drp-${langId}_${idMail}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<i class="material-icons">more_vert</i>
+										</button>
+										<div class="dropdown-menu" aria-labelledby="drp-${langId}_${idMail}">
+											<div class="download dropdown-item">
+												<i class="material-icons">get_app</i> Download .html
+											</div>
+											<div class="preview dropdown-item">
+												<i class="material-icons">visibility</i> Basic preview
+											</div>
+										  	<div class="dropdown-divider"></div>
+										  	<div class="toggle-header dropdown-item">
+												<i class="material-icons">add</i> <span class="text">Add</span> header
+											</div>
+											<div class="toggle-footer dropdown-item">
+												<i class="material-icons">add</i> <span class="text">Add</span> footer
+											</div>
+										</div>
+									</div>
+
+									<a class="header-collapsible collapsed clearfix" data-toggle="collapse" href="#mail-cont-${langId}_${idMail}" role="button" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
+										<div class="card-title h5">${_emailNameES}</div>
+										<div class="badges">
+											${_validBlockData.badge}
+											<span class="badge badge-pill badge-secondary">id ${idMail}</span>
+										</div>
+									</a>
+
+									<div class="collapse" id="mail-cont-${langId}_${idMail}">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item">
+												<label class="card-title-custom">Subject</label>
+												<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
+											</li>
+											<li class="list-group-item">
+												<label class="card-title-custom">Html</label>
+												<div class="editor editor-cont" id="editor-${langId}_${idMail}">${_contMail}</div>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 					`;
 				});
-
 				$output.append(`
 					<div class="tab-pane fade ${_active}" id="tab-lang-c-${langId}" role="tabpanel" aria-labelledby="tab-lang-${langId}">
 						<div class="row">
 							<div class="col-12">
 								<div class="scrollable mails">
-									<div class="block-mail block-header">${HTML_header_lang}</div>
-									<div class="block-mail block-footer">${HTML_footer_lang}</div>
-									<hr class="mail-conts-sep">
-									<div class="mails-wrap">
-										${HTML_mails_lang}
-									</div>
+									${HTML_header_lang}
+									${HTML_footer_lang}
+									${HTML_mails_lang}
 								</div>
 							</div>
 						</div>
@@ -188,12 +228,12 @@ APP.fillData = {
 
 		if (!$.trim(subject).length){	
 			_return.valid = true;
-			_return.badge += '<span class="badge badge-pill badge-warning bd-sbj">No sbj</span>';
+			_return.badge += '<span class="badge badge-pill badge-warning bd-sbj">No subject</span>';
 		}
 
 		if ($.trim(contentMail).indexOf('TEXTHERE') !== -1 || $.trim(contentMail).length == 0){	
 			_return.valid = false;
-			_return.badge += '<span class="badge badge-pill badge-danger bd-emp">Empty</span>';
+			_return.badge += '<span class="badge badge-pill badge-danger bd-emp">No content</span>';
 		}
 
 		return _return;
@@ -214,8 +254,10 @@ APP.editors = {
 			editor.setTheme("ace/theme/xcode");
 			editor.session.setMode("ace/mode/html");
 			editor.setOptions({
-				showPrintMargin: false,
-				useWorker:false
+				useWorker: false,
+				// maxLines: Infinity,
+				// minLines: 10,
+				showPrintMargin: false
 			});
 
 			editor.on("change", function(event, editor) {
