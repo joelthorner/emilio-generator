@@ -399,34 +399,6 @@ APP.frontEnd = {
 				.prepend(validBlockData.badge);
 		});
 	}
-
-	// sendContent : function() {
-	// 	var $modal = $('#sendContentModal');
-		
-	// 	$.each(DATA.mails, function(id, name) {
-	// 		$('#selectSendContent').append(`
-	// 			<option value="${name}">${name}</option>
-	// 		`);
-	// 	});
-
-	// 	$.each(DATA.langs, function(id, name) {
-	// 		$('#selectSendContentLang').append(`
-	// 			<option value="${name}">${name}</option>
-	// 		`);
-	// 	});
-
-	// 	$('#btnSendCont').click(function(event) {
-	// 		// var link = "mailto:joel.torner@tlgcommerce.com"
-	// 		var link = "mailto:joeltorner@gmail.com"
-	// 			// + "?cc=myCCaddress@example.com"
-	// 			+ "?subject=" + encodeURIComponent($('#asuntu').val())
-	// 			+ "&body=" + encodeURIComponent($('#selectSendContentLang').val() + ' ') 
-	// 			+ encodeURIComponent($('#selectSendContent').val() + ' \n')
-	// 			+ encodeURIComponent($('#mailcontSend').val())
-	// 		;
-	// 		$(location).attr('href', link);
-	// 	});
-	// }
 };
 
 APP.main = {
@@ -441,7 +413,10 @@ APP.main = {
 
 $(document).ready(APP.main.init);
 
-// window.onbeforeunload = confirmExit;
-// function confirmExit() {
-// 	return "Ieep vols sortir?";
-// }
+// exit
+if (window.location.host.indexOf('.github.io') > -1) {
+	window.onbeforeunload = confirmExit;
+	function confirmExit() {
+		return "Ieep vols sortir?";
+	}
+}
