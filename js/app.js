@@ -413,3 +413,10 @@ APP.main = {
 
 $(document).ready(APP.main.init);
 
+// exit
+if (window.location.host.indexOf('.github.io') > -1) {
+	window.onbeforeunload = confirmExit;
+	function confirmExit() {
+		return "Ieep vols sortir?";
+	}
+}
