@@ -18,7 +18,7 @@ DATA.ko = {
         <td bgcolor="#fff" style="padding: 20px;">
           <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center;">  
             <tr>
-              <td style="">
+              <td >
                 <a href="%%ecommerceURL%%">
                   <img src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="%%ecommerceName%%" style="height: auto;">
                 </a>
@@ -34,7 +34,7 @@ DATA.ko = {
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">    
               <tr>
-                <td align="center" style="">
+                <td align="center" >
                   <table border="0" cellspacing="10" cellpadding="0">
                     <tr>
                       <!-- %%Pages-501-Loop%% -->
@@ -62,7 +62,7 @@ DATA.ko = {
                 </td>
               </tr>
               <tr>
-                <td align="center" style="">
+                <td align="center" >
                   <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <!-- %%Pages-503-Loop%% --> 
@@ -202,7 +202,7 @@ DATA.ko = {
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">제품 추천</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -213,7 +213,7 @@ DATA.ko = {
                   </tr>
                   <!-- %loop% -->
                   <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
@@ -226,7 +226,7 @@ DATA.ko = {
                   </table>        
                     </td>
                    
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
                   
@@ -243,7 +243,7 @@ DATA.ko = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong style="">친구의 메시지             댓글:</strong><br/>
+                    <strong >친구의 메시지             댓글:</strong><br/>
                     %%comments%% 
                     
                   </td>
@@ -280,7 +280,7 @@ DATA.ko = {
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">제품 추천</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -291,7 +291,7 @@ DATA.ko = {
                   </tr>
              
                   <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
@@ -303,7 +303,7 @@ DATA.ko = {
                         </tr>
                       </table>        
                     </td>
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
                 
                   
@@ -320,7 +320,7 @@ DATA.ko = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong style="">친구의 추천입니다 :</strong><br/>
+                  <strong >친구의 추천입니다 :</strong><br/>
                   %%comments%% 
                   
                 </td>
@@ -422,7 +422,7 @@ DATA.ko = {
           <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">주문 정보</span></td></tr>
           <tr><td>&nbsp;</td></tr>
           <tr>
-            <td width="" style="vertical-align: top">
+            <td style="vertical-align: top">
               <div style="padding: 0 0">
                 <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                   <tbody>
@@ -433,7 +433,7 @@ DATA.ko = {
                     </tr>
                     <!-- %loop% -->
                     <tr class="productRow">
-                      <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                      <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                           <tr>
                             <td style="padding: 10px 0px;">
@@ -445,8 +445,8 @@ DATA.ko = {
                         </tr>
                     </table>        
                       </td>
-                      <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                      <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                      <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                     </tr>
                     <!-- %/loop% -->
                     
@@ -507,7 +507,7 @@ DATA.ko = {
                 <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                   <tr>
                     <td>
-                      <strong style="">주문 평가:</strong><br/>
+                      <strong >주문 평가:</strong><br/>
                       %%orderComments%% 
                       
                     </td>
@@ -600,7 +600,7 @@ TEXTHERE
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">쇼핑 카트:</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -611,7 +611,7 @@ TEXTHERE
                   </tr>
                   <!-- %loop% -->
                   <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
@@ -623,8 +623,8 @@ TEXTHERE
                       </tr>
                   </table>        
                     </td>
-                    <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
                   
