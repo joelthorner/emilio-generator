@@ -3,22 +3,22 @@
 DATA.chi = {
 
   header : `
-<table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" class="principalTable" style="padding:25px;background-color:#eee;padding-bottom:0px;">
+<table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" style="padding:25px;background-color:#eee;padding-bottom:0px;">
   <tr>
     <td>
       <!--[if (gte mso 9)|(IE)]>
-        <table width="600" align="center" cellpadding="0" cellspacing="0" border="0" class="principalTable">
+        <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td>
       <![endif]-->
-      <table bgcolor="#ffffff" class="content" align="center" cellpadding="0" cellspacing="0" border="0" style="width: 100%;max-width: 600px;">
+      <table bgcolor="#ffffff" align="center" cellpadding="0" cellspacing="0" border="0" style="width: 100%;max-width: 600px;">
         <tr>
-          <td bgcolor="#fff" class="header" style="padding: 20px;">
+          <td bgcolor="#fff" style="padding: 20px;">
             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center;">  
               <tr>
-                <td style="">
+                <td >
                   <a href="%%ecommerceURL%%">
-                    <img class="fix" src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="%%ecommerceName%%" style="height: auto;">
+                    <img src="%%imagesURL%%logoEmail.jpg" width="210" height="auto" border="0" alt="%%ecommerceName%%" style="height: auto;">
                   </a>
                 </td>
               </tr>
@@ -29,10 +29,10 @@ DATA.chi = {
 
   footer : `
       <tr>
-        <td class="footer" bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+        <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">    
             <tr>
-              <td align="center" style="">
+              <td align="center" >
                 <table border="0" cellspacing="10" cellpadding="0">
                   <tr>
                     <!-- %%Pages-501-Loop%% -->
@@ -60,7 +60,7 @@ DATA.chi = {
               </td>
             </tr>
             <tr>
-              <td align="center" style="">
+              <td align="center" >
                 <table border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <!-- %%Pages-503-Loop%% --> 
@@ -76,13 +76,13 @@ DATA.chi = {
             </tr>
             <tr>
               <!-- %%Pages-504-Loop%% --> 
-                <td align="center" class="footercopy" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
+                <td align="center" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
                   %%pageContent%%
                 </td>
               <!-- %%/Pages-504-Loop%% -->  
             </tr>
             <tr>
-              <td align="center" heigth="50" class="footercopy" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
+              <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
                 如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
               </td>
             </tr>
@@ -98,8 +98,8 @@ DATA.chi = {
     </td>
   </tr>
   <tr>
-    <td align="center" class="footercopy" style="font-family: sans-serif;font-size: 14px;color: #ffffff;">   
-      <span class="hide" style="color:#000;font-size:10px;">&nbsp; </span>
+    <td align="center" style="font-family: sans-serif;font-size: 14px;color: #ffffff;">   
+      <span style="color:#000;font-size:10px;">&nbsp; </span>
     </td>
   </tr>
 </table>
@@ -117,20 +117,85 @@ DATA.chi = {
 我们期待能在 <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>%%ecommerceName%%</span>    
   </td>
 </tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Unsubscribe</a> <span style="color:#333;font-size:10px;">from the Newsletter</span>
-    </span>
-  </td>
-</tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
-    </span>
-  </td>
-</tr>
+`,
+    footer : `
+      <tr>
+        <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">    
+            <tr>
+              <td align="center" >
+                <table border="0" cellspacing="10" cellpadding="0">
+                  <tr>
+                    <!-- %%Pages-501-Loop%% -->
+                      <td style="text-align: center;">
+                        <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
+                      </td>
+                    <!-- %%/Pages-501-Loop%% -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 12px 0 12px 0px;">
+                <table border="0" cellspacing="8" cellpadding="0">
+                  <tr>
+                    <!-- %%Banners-502-Loop%% --> 
+                      <td width="30" style="text-align: center; ">
+                        <a href="%%BannerLink%%" target="">
+                          <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                        </a>
+                      </td>
+                    <!-- %%/Banners-502-Loop%% -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" >
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <!-- %%Pages-503-Loop%% --> 
+                      <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                        <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                          %%pageContent%%
+                        </span>
+                      </td>
+                    <!-- %%/Pages-503-Loop%% -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <!-- %%Pages-504-Loop%% --> 
+                <td align="center" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
+                  %%pageContent%%
+                </td>
+              <!-- %%/Pages-504-Loop%% -->  
+            </tr>
+            <tr>
+              <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+    <![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+      <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+        <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+      </span>
+    </td>
+  </tr>
+</table>
 `
   }, // end 1
 
@@ -138,7 +203,7 @@ DATA.chi = {
     subject : "注销账户",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>确认删除账户</strong><br><br>
     <span style="font-size:15px;">您好<br/><br/>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br/><br/> %%ecommerceName%%</span>
   </td>
@@ -163,7 +228,7 @@ DATA.chi = {
     subject : "修改密码 %%ecommerceName%%",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>修改密码</strong><br><br>
     <span style="font-size:15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
   </td>
@@ -180,13 +245,85 @@ DATA.chi = {
     <span style="font-size: 15px;">您好</span><br><br><span style="font-size: 15px;">谢谢您订阅我们的资讯，我们会为您发送我们的公司相关的最新动态，活动，热门产品和促销信息。</span><br><br><span style="font-size: 15px;">我们期待能在 </span><a href="%%ecommerceURL%%" style="font-size: 15px; color: rgb(0, 0, 0);">%%ecommerceName%%</a><span style="font-size: 15px;"> 见到您</span>
   </td>
 </tr>
-<tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
-    </span>
-  </td>
-</tr>
+`,
+    footer : `
+      <tr>
+        <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">    
+            <tr>
+              <td align="center" >
+                <table border="0" cellspacing="10" cellpadding="0">
+                  <tr>
+                    <!-- %%Pages-501-Loop%% -->
+                      <td style="text-align: center;">
+                        <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
+                      </td>
+                    <!-- %%/Pages-501-Loop%% -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" style="padding: 12px 0 12px 0px;">
+                <table border="0" cellspacing="8" cellpadding="0">
+                  <tr>
+                    <!-- %%Banners-502-Loop%% --> 
+                      <td width="30" style="text-align: center; ">
+                        <a href="%%BannerLink%%" target="">
+                          <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                        </a>
+                      </td>
+                    <!-- %%/Banners-502-Loop%% -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" >
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <!-- %%Pages-503-Loop%% --> 
+                      <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                        <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                          %%pageContent%%
+                        </span>
+                      </td>
+                    <!-- %%/Pages-503-Loop%% -->
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <!-- %%Pages-504-Loop%% --> 
+                <td align="center" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
+                  %%pageContent%%
+                </td>
+              <!-- %%/Pages-504-Loop%% -->  
+            </tr>
+            <tr>
+              <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+    <![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+      <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+        <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+      </span>
+    </td>
+  </tr>
+</table>
 `
   }, // end 5
 
@@ -194,13 +331,13 @@ DATA.chi = {
     subject : "%%anonymousName%%  收藏了喜欢的产品",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>收藏推荐</strong><br /><br />
   <span style="font-size:15px;">您的好友发送了您可能感兴趣的产品给您。<br /><br />您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br /><br />The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
-  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
+  <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
       
@@ -210,7 +347,7 @@ DATA.chi = {
 产品款式 </span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -220,12 +357,12 @@ DATA.chi = {
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
                   <!-- %loop% -->
-                  <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
+                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
                           </td> 
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -234,7 +371,7 @@ DATA.chi = {
                   </table>        
                     </td>
                    
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
                   
@@ -248,10 +385,10 @@ DATA.chi = {
         
           <tr>
             <td>
-              <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+              <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong style="">来自好友的消息  评论</strong><br/>
+                    <strong >来自好友的消息  评论</strong><br/>
                     %%comments%% 
                     
                   </td>
@@ -273,13 +410,13 @@ DATA.chi = {
     html : `
       
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>昵称 给您推荐产品</strong><br /><br />
   <span style="font-size:15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br /><br />若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br /><br /> %%ecommerceName%%</span>
   </td>
 </tr>
 <tr>
-  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
+  <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
       
@@ -289,7 +426,7 @@ DATA.chi = {
 产品款式</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -299,12 +436,12 @@ DATA.chi = {
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
              
-                  <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
+                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
                           </td> 
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -313,7 +450,7 @@ DATA.chi = {
                   </table>        
                     </td>
                    
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                 
                   
@@ -327,10 +464,10 @@ DATA.chi = {
         
           <tr>
             <td>
-              <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+              <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong style="">来自好友的推荐:</strong><br/>
+                    <strong >来自好友的推荐:</strong><br/>
                     %%comments%% 
                     
                   </td>
@@ -351,7 +488,7 @@ DATA.chi = {
     subject : "来自 %%ecommerceName%% 的联系",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>联系方式</strong><br><br>
   <span style="font-size:15px;">名字: %%anonymousFirstName%%<br />姓氏: %%anonymousLastName%%<br />邮箱: %%anonymousEmail%%<br />手机: %%anonymousPhone%%<br />查询信息:  %%queryMotive%%<br />消息内容: %%comments%%</span>
   </td>
@@ -363,7 +500,7 @@ DATA.chi = {
     subject : "产品的相关问题",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>问题关于 </strong><br><br>
     <span style="font-size:15px;">名字: %%anonymousFirstName%%<br />姓氏: %%anonymousLastName%%<br />邮箱: %%anonymousEmail%%<br />电话: %%anonymousPhone%%<br />消息内容: %%comments%%<br /><br />产品名称: %%name%%<br />产品货号: %%sku%%</span>
   </td>
@@ -375,7 +512,7 @@ DATA.chi = {
     subject : "确认订单",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>确认订单</strong><br>
     <span style="font-size:15px;">亲爱的 %%firstName%% %%lastname%%,<br>
 
@@ -385,12 +522,12 @@ DATA.chi = {
   </td>
 </tr>
 <tr>
-  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
+  <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
         <tr>
           <td style="vertical-align: middle;font-family: sans-serif; " class="dir1" align="right">
-            <table class="direcciones" width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
                 <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
                   订单编号:<br>
@@ -408,7 +545,7 @@ DATA.chi = {
         </tr>
         <tr>
           <td style="vertical-align: middle;font-family: sans-serif; " class="dir1" align="right">
-            <table class="direcciones" width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
                 <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
                   <strong>支付账号:</strong><br>
@@ -432,7 +569,7 @@ DATA.chi = {
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">订单详情</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -442,12 +579,12 @@ DATA.chi = {
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
                   <!-- %loop% -->
-                  <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
+                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
                           </td> 
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -455,35 +592,35 @@ DATA.chi = {
                         </tr>
                       </table>        
                     </td>
-                    <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
 
                 </tbody>
               </table>
-              <table class="subTotals" align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
+              <table align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">小计</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span class="price">
-                      <span class="integerPrice">%%orderTotalWithoutTaxes%%  </span> 
+                    <span>
+                      <span>%%orderTotalWithoutTaxes%%  </span> 
                     </span>
                   </td>
                 </tr>
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span class="price">
-                      <span class="integerPrice"> %%shippingMethodWithPrice%% </span>
+                    <span>
+                      <span> %%shippingMethodWithPrice%% </span>
                     </span>
                   </td>
                 </tr>
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span class="price">
-                      <span class="integerPrice">%%paymentMethodPrice%% </span>
+                    <span>
+                      <span>%%paymentMethodPrice%% </span>
                     </span>
                   </td>
                 </tr>
@@ -491,8 +628,8 @@ DATA.chi = {
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">折扣</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span class="price">
-                      <span class="integerPrice">- %%orderDiscounts%%</span>
+                    <span>
+                      <span>- %%orderDiscounts%%</span>
                     </span>
                   </td>
                 </tr>
@@ -500,8 +637,8 @@ DATA.chi = {
                 <tr>
                   <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">总计 </td>
                   <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
-                    <span class="price">
-                      <span class="integerPrice">%%total%% </span>
+                    <span>
+                      <span>%%total%% </span>
                     </span>
                   </td>
                 </tr>   
@@ -514,10 +651,10 @@ DATA.chi = {
         <!-- %%ifComments%% -->
         <tr>
           <td>
-            <table class="orderComments" width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong style="">订单评论</strong><br/>
+                  <strong >订单评论</strong><br/>
                   %%orderComments%% 
 
                 </td>
@@ -529,7 +666,7 @@ DATA.chi = {
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td bgColor="#f4f4f4">
-            <table width="88%" align="center" class="paymentSystem" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
+            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
               <tr>
                 <td style="padding: 15px 0px 15px 0px;">
                   %%textToEmail%%
@@ -549,7 +686,7 @@ DATA.chi = {
     subject : "退订资讯",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
         
     <strong>资讯退订</strong><br><br>
     <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
@@ -562,7 +699,7 @@ DATA.chi = {
     subject : "您的好友要赞助你",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   
     <strong>赞助要求 </strong><br><br>
     <span>您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%%
@@ -575,7 +712,7 @@ DATA.chi = {
     subject : "完成募集",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
     <strong>您的募集已经完成一个订单，享受收益吧！　　/strong><br><br>
     <span>您好,<br/><br/>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br/><br/>折扣将会自动使用在您下次的订单。<br/><br/>谢谢您的支持。<br /><br />%%ecommerceName%%</span>
   </td>
@@ -594,14 +731,14 @@ TEXTHERE
     subject : "Inquiry from %%ecommerceName%%",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的購物車錯過了您</strong><br /><br />
     <span style="font-size:15px;">你好 %firstName% %lastName%, <br /><br />在您最后一次浏览我们网页后将以下商品放入购物车，但是您没有完成订单填写。请点击这里： <br /><br />
     <a target="_blank" href="%recoverOrderLink%" style="color:#000;">购物车</a> 返回您的购物车.<br/><br/>%%ecommerceName%% 团队</span>
   </td>
 </tr>
 <tr>
-  <td class="tablaPedido" style="padding: 0px 0px;" align="center">
+  <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
 
@@ -610,7 +747,7 @@ TEXTHERE
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">购物车:</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td width="" style="vertical-align: top">
+          <td style="vertical-align: top">
             <div style="padding: 0 0">
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
@@ -620,12 +757,12 @@ TEXTHERE
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
                   <!-- %loop% -->
-                  <tr class="productRow">
-                    <td width="" style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" class="productSmallImage miniBasketProductImage" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
+                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';"> 
                           </td> 
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -633,8 +770,8 @@ TEXTHERE
                         </tr>
                       </table>        
                     </td>
-                    <td width="" style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td width="" style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
 
@@ -664,7 +801,7 @@ TEXTHERE
     subject : "Email verification - %%ecommerceName%%",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email verification</strong><br /><br />
     <span style="font-size:15px;">Hello %firstName% %lastName%,<br/><br/>Thanks for registring on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br /><br />We are looking forward to seeing you on <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
   </td>
@@ -676,7 +813,7 @@ TEXTHERE
     subject : "Account activated - %%ecommerceName%%",
     html : `
 <tr>
-  <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>Account activated</strong><br><br>
   <span style="font-size:15px;">Hello %firstName% %lastName%,<br/><br/>We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br /><br />You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br /><br />We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
   </td>

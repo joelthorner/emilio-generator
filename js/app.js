@@ -47,9 +47,9 @@ APP.fillData = {
 
 				$output.append(`
 					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
-						${_langKey} <span class="badge badge-pill badge-light">id ${_langIdBadge}</span>
+						${_langKey} <span class="badge badge-light">id ${_langIdBadge}</span>
 						<div class="download download-all" title="Download ALL" data-toggle="tooltip">
-							<i class="material-icons">save</i>
+							<i class="material-icons">get_app</i>
 						</div>
 					</a>
 				`);
@@ -93,16 +93,26 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("HEADER", _langDataHeader);
 
 				HTML_header_lang = `
-					<button class="btn btn-light btn-block collapsed" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_H" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
-						Header
-						<div class="badges">
-							${_validBlockData.badge}
-							<span class="badge badge-pill badge-secondary">id H</span>
-						</div>
-					</button>
-					<div class="collapse" id="mail-cont-${langId}_H">
-						<div class="card card-body">
-							<div class="editor" id="editor-${langId}_H" data-id="H">${_langDataHeader}</div>
+					<div class="block-mail block-header" data-lang="${langId}">
+						<div class="card">
+							<div class="card-body">
+								<a class="header-collapsible collapsed clearfix" data-toggle="collapse" href="#mail-cont-${langId}_H" role="button" aria-expanded="false" aria-controls="mail-cont-${langId}_H">
+									<div class="card-title h5">Generic Header</div>
+									<div class="badges">
+										${_validBlockData.badge}
+										<span class="badge badge-secondary">Header</span>
+									</div>
+								</a>
+
+								<div class="collapse" id="mail-cont-${langId}_H">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<label class="card-title-custom">Html</label>
+											<div class="editor editor-cont editor-header" id="editor-${langId}_H">${_langDataHeader}</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				`;
@@ -111,16 +121,26 @@ APP.fillData = {
 					 _validBlockData = APP.fillData.getValidBlockData("FOOTER", _langDataFooter);
 
 				HTML_footer_lang = `
-					<button class="btn btn-light btn-block collapsed" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_F" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
-						Footer
-						<div class="badges">
-							${_validBlockData.badge}
-							<span class="badge badge-pill badge-secondary">id F</span>
-						</div>
-					</button>
-					<div class="collapse" id="mail-cont-${langId}_F">
-						<div class="card card-body">
-							<div class="editor" id="editor-${langId}_F" data-id="F">${_langDataFooter}</div>
+					<div class="block-mail block-footer" data-lang="${langId}">
+						<div class="card">
+							<div class="card-body">
+								<a class="header-collapsible collapsed clearfix" data-toggle="collapse" href="#mail-cont-${langId}_F" role="button" aria-expanded="false" aria-controls="mail-cont-${langId}_F">
+									<div class="card-title h5">Generic Footer</div>
+									<div class="badges">
+										${_validBlockData.badge}
+										<span class="badge badge-secondary">Footer</span>
+									</div>
+								</a>
+
+								<div class="collapse" id="mail-cont-${langId}_F">
+									<ul class="list-group list-group-flush">
+										<li class="list-group-item">
+											<label class="card-title-custom">Html</label>
+											<div class="editor editor-cont editor-footer" id="editor-${langId}_F">${_langDataFooter}</div>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				`;
@@ -132,44 +152,99 @@ APP.fillData = {
 						 _emailNameES = DATA.mails[idMail],
 						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
 
+					// new
+					var _customFooter = '', _customHeader = '', _customBadges = '', 
+						 customHeaderLbl = 'Add', customFooterLbl = 'Add',
+						 customHeaderIco = 'add', customFooterIco = 'add';
+
+					// header
+					if (dataMail.hasOwnProperty('header')) {
+						var _contHead = APP.utils.safe_tags_replace(dataMail.header).replace('\n', '');
+						_customHeader = `
+							<li class="list-group-item custom-header">
+								<label class="card-title-custom">Custom header</label>
+								<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">${_contHead}</div>
+							</li>
+						`;
+						_customBadges += '<span class="badge badge-info badge-custom-header">Custom Header</span>';
+						customHeaderLbl = 'Remove';
+						customHeaderIco = 'delete';
+					}
+					// foot 
+					if (dataMail.hasOwnProperty('footer')) {
+						var _contFoot = APP.utils.safe_tags_replace(dataMail.footer).replace('\n', '');
+						_customFooter = `
+							<li class="list-group-item custom-footer">
+								<label class="card-title-custom">Custom footer</label>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">${_contFoot}</div>
+							</li>
+						`;
+						_customBadges += '<span class="badge badge-info badge-custom-footer">Custom Footer</span>';
+						customFooterLbl = 'Remove';
+						customFooterIco = 'delete';
+					}
+
 					HTML_mails_lang += `
-						<div class="block-mail" data-valid="${_validBlockData.valid}" data-order-alph="">
-							<button class="btn collapsed btn-light btn-block" type="button" data-toggle="collapse" data-target="#mail-cont-${langId}_${idMail}" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
-								${_emailNameES}
-								<div class="badges">
-									${_validBlockData.badge}
-									<span class="badge badge-pill badge-secondary">id ${idMail}</span>
-								</div>
-								<div class="download" title="Download .html" data-toggle="tooltip">
-									<i class="material-icons">save</i>
-								</div>
-								<div class="preview" title="Basic preview" data-toggle="tooltip">
-									<i class="material-icons">visibility</i>
-								</div>
-							</button>
-							<div class="collapse" id="mail-cont-${langId}_${idMail}">
-								<div class="card card-body">
-									<label class="card-title-custom">Html</label>
-									<div class="editor editor-cont" data-id="${idMail}" id="editor-${langId}_${idMail}">${_contMail}</div>
-									<label class="card-title-custom">Subject</label>
-									<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
+						<div class="block-mail block-mail-mail" data-valid="${_validBlockData.valid}" data-id="${idMail}" data-lang="${langId}">
+							<div class="card">
+								<div class="card-body">
+									<div class="dropdown">
+										<button class="dropdown-toggle btn" type="button" id="drp-${langId}_${idMail}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<i class="material-icons">more_vert</i>
+										</button>
+										<div class="dropdown-menu" aria-labelledby="drp-${langId}_${idMail}">
+											<div class="download dropdown-item">
+												<i class="material-icons">get_app</i> Download .html
+											</div>
+											<div class="preview dropdown-item">
+												<i class="material-icons">visibility</i> Basic preview
+											</div>
+										  	<div class="dropdown-divider"></div>
+										  	<div class="toggle-header dropdown-item">
+												<i class="material-icons">${customHeaderIco}</i> <span class="text">${customHeaderLbl}</span> header
+											</div>
+											<div class="toggle-footer dropdown-item">
+												<i class="material-icons">${customFooterIco}</i> <span class="text">${customFooterLbl}</span> footer
+											</div>
+										</div>
+									</div>
+
+									<a class="header-collapsible collapsed clearfix" data-toggle="collapse" href="#mail-cont-${langId}_${idMail}" role="button" aria-expanded="false" aria-controls="mail-cont-${langId}_${idMail}">
+										<div class="card-title h5">${_emailNameES}</div>
+										<div class="badges">
+											${_validBlockData.badge}
+											${_customBadges}
+											<span class="badge badge-secondary">id ${idMail}</span>
+										</div>
+									</a>
+
+									<div class="collapse" id="mail-cont-${langId}_${idMail}">
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item">
+												<label class="card-title-custom">Subject</label>
+												<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
+											</li>
+											<li class="list-group-item">
+												<label class="card-title-custom">Html</label>
+												<div class="editor editor-cont editor-body" id="editor-${langId}_${idMail}">${_contMail}</div>
+											</li>
+											${_customHeader}
+											${_customFooter}
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 					`;
 				});
-
 				$output.append(`
 					<div class="tab-pane fade ${_active}" id="tab-lang-c-${langId}" role="tabpanel" aria-labelledby="tab-lang-${langId}">
 						<div class="row">
 							<div class="col-12">
 								<div class="scrollable mails">
-									<div class="block-mail block-header">${HTML_header_lang}</div>
-									<div class="block-mail block-footer">${HTML_footer_lang}</div>
-									<hr class="mail-conts-sep">
-									<div class="mails-wrap">
-										${HTML_mails_lang}
-									</div>
+									${HTML_header_lang}
+									${HTML_footer_lang}
+									${HTML_mails_lang}
 								</div>
 							</div>
 						</div>
@@ -188,12 +263,12 @@ APP.fillData = {
 
 		if (!$.trim(subject).length){	
 			_return.valid = true;
-			_return.badge += '<span class="badge badge-pill badge-warning bd-sbj">No sbj</span>';
+			_return.badge += '<span class="badge badge-warning bd-sbj">No subject</span>';
 		}
 
 		if ($.trim(contentMail).indexOf('TEXTHERE') !== -1 || $.trim(contentMail).length == 0){	
 			_return.valid = false;
-			_return.badge += '<span class="badge badge-pill badge-danger bd-emp">Empty</span>';
+			_return.badge += '<span class="badge badge-danger bd-emp">No content</span>';
 		}
 
 		return _return;
@@ -202,20 +277,20 @@ APP.fillData = {
 
 APP.editors = {
 	init : function () {
-		this.ace();
+		this.ace($('.editor'));
 	},
 
-	ace : function () {
-		
-		var $editors = $('.editor');
+	ace : function ($editors) {
 
 		for (var i = 0; i < $editors.length; i++) {
 			var editor = ace.edit($editors[i]);
 			editor.setTheme("ace/theme/xcode");
 			editor.session.setMode("ace/mode/html");
 			editor.setOptions({
-				showPrintMargin: false,
-				useWorker:false
+				useWorker: false,
+				maxLines: 15,
+				minLines: 10,
+				showPrintMargin: false
 			});
 
 			editor.on("change", function(event, editor) {
@@ -229,12 +304,16 @@ APP.editors = {
 					subject = "NON_EMPT_STRING";
 				}
 
-				var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
+				if (!$self.is('.editor-custom-footer') && !$self.is('.editor-custom-header')) {
 
-				$blockMail.data('valid', validBlockData.valid)
-				$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
-				$blockMail.find('.badges')
-					.prepend(validBlockData.badge);
+					var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
+
+					// fix update attribute valid html change required
+					$blockMail.attr('data-valid', validBlockData.valid);
+					$blockMail.find('.badges').find('.badge').not('.badge-secondary, .badge-info').remove();
+					$blockMail.find('.badges')
+						.prepend(validBlockData.badge);
+				}
 			});
 		}
 	}
@@ -244,10 +323,76 @@ APP.frontEnd = {
 	init : function() {
 		this.initsBT();
 		this.fakeLogin();
+		this.manageCustoms();
 		this.badgesSession();
 		this.preview();
 		this.generateMailsFile();
 		this.search();
+	},
+
+	manageCustoms : function() {
+		$('.toggle-header, .toggle-footer').click(function(event) {
+			
+			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key').toLowerCase();
+			var langId = $('#output-tabs .nav-link.active').data('lang-id');
+			var idMail = $(this).parents('.block-mail').data('id');
+
+			if ($(this).is('.toggle-header')) {
+				var $el = $(this).parents('.block-mail').find('.custom-header');
+				// remove
+				if ($el.length) {
+					// datas
+					$el.remove();
+					delete DATA[actualLangKey].mails[idMail].header;
+					// menu
+					$(this).find('.material-icons').text('add')
+					$(this).find('.text').text('Add');
+					$(this).parents('.block-mail').find('.badges .badge-custom-header').remove();
+				}
+				// add
+				else{
+					$(this).parents('.block-mail').find('.list-group').append(`
+						<li class="list-group-item custom-header">
+							<label class="card-title-custom">Custom header</label>
+							<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">FILLME PLEASE</div>
+						</li>
+					`);
+					$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-header">Custom Header</span>');
+					// menu
+					$(this).find('.material-icons').text('delete')
+					$(this).find('.text').text('Remove');
+					APP.editors.ace($('#editor-' + langId + '_' + idMail + '_header'));
+				}
+			}else{
+				if ($(this).is('.toggle-footer')) {
+					var $el = $(this).parents('.block-mail').find('.custom-footer');
+					// remove
+					if ($el.length) {
+						// datas
+						$el.remove();
+						delete DATA[actualLangKey].mails[idMail].footer;
+						// menu
+						$(this).find('.material-icons').text('add')
+						$(this).find('.text').text('Add');
+						$(this).parents('.block-mail').find('.badges .badge-custom-footer').remove();
+					}
+					// add
+					else{
+						$(this).parents('.block-mail').find('.list-group').append(`
+							<li class="list-group-item custom-footer">
+								<label class="card-title-custom">Custom footer</label>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">FILLME PLEASE</div>
+							</li>
+						`);
+						$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-footer">Custom Footer</span>');
+						// menu
+						$(this).find('.material-icons').text('delete')
+						$(this).find('.text').text('Remove');
+						APP.editors.ace($('#editor-' + langId + '_' + idMail + '_footer'));
+					}
+				}
+			}
+		});
 	},
 
 	search : function() {
@@ -283,43 +428,71 @@ APP.frontEnd = {
 			event.stopPropagation();
 
 			var $editor = $(this).parents('.block-mail').find('.editor');
-			APP.frontEnd.generateLinkDownload($editor);
+			APP.frontEnd.generateLinkDownload($editor, 'link');
 		});
 
 		$('.download-all').click(function(event) {
 			event.preventDefault();
 			event.stopPropagation();
+
+			var zip = new JSZip();
 			
 			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
 
 			$('#output-tabs-cont #tab-lang-c-' + actualLangId + ' .block-mail').not('.block-header, .block-footer')
 				.each(function(index, el) {
 					var $editor = $(this).find('.editor');
-					APP.frontEnd.generateLinkDownload($editor);
+					var data = APP.frontEnd.generateLinkDownload($editor, 'code');
+					zip.file(data.fileName, data.content);
+				});
+
+			zip.generateAsync({type:"blob"})
+				.then(function(content) {
+					// see FileSaver.js
+					saveAs(content, "emilio-generator-" + actualLangKey + ".zip");
 				});
 		});
 	},
 
-	generateLinkDownload : function ($editor) {
+	generateLinkDownload : function ($editor, mode) {
 		var editor = ace.edit($editor[0]);
 		var code = editor.getValue();
-		var name = DATA.mails[$editor.data('id')];
+		var mailId = $editor.parents('.block-mail').data('id');
+		var name = DATA.mails[mailId];
 		var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
 		var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+		
 		var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 		var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
+		var fileName = name + '_' + actualLangKey + '_id-' + mailId + '.html';
 
-		var a = window.document.createElement('a');
-		a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
-		a.download = name + '_' + actualLangKey + '_id-' + $editor.data('id') + '.html';
+		// get custom header/footer
+		if ($editor.parents('.block-mail').find('.custom-header').length)
+			header = ace.edit( $editor.parents('.block-mail').find('.custom-header .editor')[0] ).getValue();
 
-		// Append anchor to body.
-		document.body.appendChild(a);
-		a.click();
+		if ($editor.parents('.block-mail').find('.custom-footer').length)
+			footer = ace.edit( $editor.parents('.block-mail').find('.custom-footer .editor')[0] ).getValue();
 
-		// Remove anchor from body
-		document.body.removeChild(a);
+		if (mode == 'link') {
+			var a = window.document.createElement('a');
+			a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+			a.download = fileName;
+
+			// Append anchor to body.
+			document.body.appendChild(a);
+			a.click();
+
+			// Remove anchor from body
+			document.body.removeChild(a);
+		}
+		if (mode == 'code') {
+			return {
+				fileName: fileName,
+				content: header + code + footer
+			};
+		}
 	},
 
 	preview : function () {
@@ -333,8 +506,16 @@ APP.frontEnd = {
 			var code = editor.getValue();
 			var name = DATA.mails[$editor.data('id')];
 			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+
 			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+			
+			// get custom header/footer
+			if ($(this).parents('.block-mail').find('.custom-header').length)
+				header = ace.edit( $(this).parents('.block-mail').find('.custom-header .editor')[0] ).getValue();
+
+			if ($(this).parents('.block-mail').find('.custom-footer').length)
+				footer = ace.edit( $(this).parents('.block-mail').find('.custom-footer .editor')[0] ).getValue();
 
 			var data = APP.frontEnd.getPreviewData(header, code, footer);
 			var resetCss = '<style>body{margin: 0;}</style>'
@@ -394,7 +575,7 @@ APP.frontEnd = {
 			var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
 
 			$blockMail.data('valid', validBlockData.valid)
-			$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
+			$blockMail.find('.badges').find('.badge').not('.badge-secondary, .badge-info').remove();
 			$blockMail.find('.badges')
 				.prepend(validBlockData.badge);
 		});

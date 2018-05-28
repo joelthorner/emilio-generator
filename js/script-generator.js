@@ -55,23 +55,47 @@ APP.scriptGenerator = {
 		SG.TIMEOPENPLANTS = 1000;
 
 		// save session editors DATA
-		$('#output-tabs-cont #tab-lang-c-' + SG.LANGUAGE_ID + ' .editor')
+		$('#output-tabs-cont #tab-lang-c-' + SG.LANGUAGE_ID + ' .block-mail')
 			.each(function(index, el) {
-				var editor = ace.edit(el);
-				var code = editor.getValue();
-				var id = $(el).data('id');
-				var langInitial = DATA.langs[SG.LANGUAGE_ID].toLowerCase();
+				var mailId = $(el).data('id');
+				var landInitials = DATA.langs[SG.LANGUAGE_ID].toLowerCase();
 
-				if (!isNaN(id)) {
-					DATA[langInitial].mails[id].html = code;
-					DATA[langInitial].mails[id].subject = $(el).parents('.block-mail').find('.subject').val();
-				}else{
-					if (id == 'H') DATA[langInitial].header = code;
-					if (id == 'F') DATA[langInitial].footer = code;
+				// header
+				if ($(el).is('.block-header')) {
+					var head = ace.edit( $(el).find('.editor-header')[0] ).getValue();
+					DATA[landInitials].header = head;
 				}
+				// footer
+				if ($(el).is('.block-footer')) {
+					var foot = ace.edit( $(el).find('.editor-footer')[0] ).getValue();
+					DATA[landInitials].footer = foot;
+				}
+
+				if ($(el).is('.block-mail-mail')) {
+					// custom header
+					if ($(el).find('.editor-custom-header').length){
+						var c_head = ace.edit( $(el).find('.editor-custom-header')[0] ).getValue();
+						DATA[landInitials].mails[mailId].header = c_head;
+					}
+					
+					// body
+					var body = ace.edit( $(el).find('.editor-body')[0] ).getValue();
+					DATA[landInitials].mails[mailId].html = body;
+
+
+					// custom footer
+					if ($(el).find('.editor-custom-footer').length){
+						var c_foot = ace.edit( $(el).find('.editor-custom-footer')[0] ).getValue();
+						DATA[landInitials].mails[mailId].footer = c_foot;
+					}
+					
+					// subj
+					DATA[landInitials].mails[mailId].subject = $(el).find('.subject').val();
+				}
+
 			});
 
-		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"]').find('[data-id]')
+		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"][data-id]')
 			.each(function(index, el) {
 				SG.VALID_MAILS_IDS.push($(el).data('id'))
 			});
@@ -81,7 +105,6 @@ APP.scriptGenerator = {
 
 	openModal : function() {
 		var SG = APP.scriptGenerator;
-
 
 		$('#scriptGenerated').on('shown.bs.modal', function(event) {
 			SG.saveInfo();
@@ -110,12 +133,37 @@ APP.scriptGenerator = {
 		});
 	},
 
-	// AQUI VE EL TEMA
+	// fer custom footer i custom header abuff
 	getScript : function(){
 		var __SCRIPT__ = "", __SCRIPT__1 = "", __SCRIPT__2 = "";
 		var arrMailsIds_OK = APP.scriptGenerator.VALID_MAILS_IDS;
 		var languageID_OK = APP.scriptGenerator.LANGUAGE_ID;
 		var languageID_OK_DESTI = APP.scriptGenerator.LANGUAGE_ID_TO;
+		var langInitial = DATA.langs[languageID_OK].toLowerCase();
+
+		// customs
+		var arrCustomHeaders = new Array(arrMailsIds_OK.length);
+		var arrCustomFooters = new Array(arrMailsIds_OK.length);
+
+		$.each(arrMailsIds_OK, function(index, arrID) {
+			// c header
+			if (DATA[langInitial].mails[arrID].hasOwnProperty('header')) {
+				arrCustomHeaders[index] = DATA[langInitial].mails[arrID].header;
+			}else{
+				arrCustomHeaders[index] = '';
+			}
+
+			// c footer
+			if (DATA[langInitial].mails[arrID].hasOwnProperty('footer')) {
+				arrCustomFooters[index] = DATA[langInitial].mails[arrID].footer;
+			}else{
+				arrCustomFooters[index] = '';
+			}
+		});
+
+		var _arrCustomHeaders = '[`' + arrCustomHeaders.join('`, `') + '`]',
+			 _arrCustomFooters = '[`' + arrCustomFooters.join('`, `') + '`]';
+		// end customs
 
 		var T1 = APP.scriptGenerator.T1, 
 			 T2 = APP.scriptGenerator.T2, 
@@ -126,7 +174,6 @@ APP.scriptGenerator = {
 			 TIMEOPENPLANTS = APP.scriptGenerator.TIMEOPENPLANTS;
 
 		var _arrMailIds = '[' + arrMailsIds_OK.join(', ') + ']';
-		var langInitial = DATA.langs[languageID_OK].toLowerCase();
 		
 		var _arrMailConts = `[\``;
 		$.each(arrMailsIds_OK, function(index, arrID) {
@@ -157,8 +204,12 @@ APP.scriptGenerator = {
 			var arrMailIds = ${_arrMailIds};
 			var arrMailConts = ${_arrMailConts};
 			var arrMailSubjects = ${_arrMailSubjects};
-			var HEADER_VALUE = ${_HEADER};
-			var FOOTER_VALUE = ${_FOOTER};
+			var HEADER_VALUE_MAIN = ${_HEADER};
+			var FOOTER_VALUE_MAIN = ${_FOOTER};
+
+			var arrCustomHeaders = ${_arrCustomHeaders};
+			var arrCustomFooters = ${_arrCustomFooters};
+
 			var T1 = ${T1}, T2 = ${T2}, T3 = ${T3}, T4 = ${T4}, T_MAIL = ${T_MAIL}, TIMEOPENPLANTS = ${TIMEOPENPLANTS}, T_SETMODE = "${T_SETMODE}";
 			var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null;
 			var LANG_DESTI = ${languageID_OK_DESTI};
@@ -175,6 +226,17 @@ APP.scriptGenerator = {
 						var ID_TEMPLATE = arrMailIds[i_1];
 						var SUBJECT_VALUE = arrMailSubjects[i_1];
 						var HTML_VALUE = arrMailConts[i_1];
+
+						var HEADER_VALUE = HEADER_VALUE_MAIN;
+						var FOOTER_VALUE = FOOTER_VALUE_MAIN;
+
+						if (arrCustomHeaders[i_1].length) {
+							HEADER_VALUE = arrCustomHeaders[i_1];
+						}
+
+						if (arrCustomFooters[i_1].length) {
+							FOOTER_VALUE = arrCustomFooters[i_1];
+						}
 
 						clearTimeout(ST_T1);
 						clearTimeout(ST_T2);
@@ -290,7 +352,7 @@ APP.scriptGenerator = {
 		`;
 
 		// replace js script /* */ comments
-		 __SCRIPT__2 = __SCRIPT__2.replace(/\/\*.*?\*\//g, '');
+		__SCRIPT__2 = __SCRIPT__2.replace(/\/\*.*?\*\//g, '');
 		__SCRIPT__ = __SCRIPT__1 + __SCRIPT__2.replace(/[\t\n]/g, '');
 
 		if (!arrMailsIds_OK.length) __SCRIPT__ = "";
