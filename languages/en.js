@@ -538,15 +538,15 @@ DATA.en = {
       <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
         <tbody>
           <tr>
-            <td style="vertical-align: middle;font-family: sans-serif; " class="dir1" align="right">
+            <td style="vertical-align: middle;font-family: sans-serif; " align="right">
               <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
-                  <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
+                  <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
                     Nº Order:<br>
                     Order date:<br>
                     State:<br>
                   </td>
-                  <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" class="dir2">
+                  <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
                     <strong>%%orderNumber%% </strong><br>
                     <strong>%%orderDate%%</strong><br>
                     <strong>Confirmed</strong><br>
@@ -556,17 +556,17 @@ DATA.en = {
             </td>  
           </tr>
           <tr>
-            <td style="vertical-align: middle;font-family: sans-serif; " class="dir1" align="right">
+            <td style="vertical-align: middle;font-family: sans-serif; " align="right">
               <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
                 <tr>
-                  <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
+                  <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
                     <strong>Billing Address:</strong><br>
                     %%firstName%% %%lastName%%<br>
                     %%address%% <br>
                     %%zip%%  %%city%%<br>
                     %%state%%<br>
                   </td>
-                  <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" class="dir2">
+                  <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
                     <strong>Shipping Address:</strong><br>
                     %%shippingFirstName%%  %%shippingLastName%% <br>
                     %%shippingAddress%% <br>
