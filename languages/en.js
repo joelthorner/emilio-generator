@@ -52,9 +52,9 @@ DATA.en = {
                   <table border="0" cellspacing="8" cellpadding="0">
                     <tr>
                       <!-- %%Banners-502-Loop%% --> 
-                      <td width="25" style="text-align: center; ">
+                      <td width="30" style="text-align: center; ">
                         <a href="%%BannerLink%%" target="">
-                          <img src="%%BannerImage%%" width="20" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                          <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
                       <!-- %%/Banners-502-Loop%% -->
@@ -144,9 +144,9 @@ DATA.en = {
                   <table border="0" cellspacing="8" cellpadding="0">
                     <tr>
                       <!-- %%Banners-502-Loop%% --> 
-                      <td width="25" style="text-align: center; ">
+                      <td width="30" style="text-align: center; ">
                         <a href="%%BannerLink%%" target="">
-                          <img src="%%BannerImage%%" width="20" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                          <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
                       <!-- %%/Banners-502-Loop%% -->
@@ -273,9 +273,9 @@ DATA.en = {
                   <table border="0" cellspacing="8" cellpadding="0">
                     <tr>
                       <!-- %%Banners-502-Loop%% --> 
-                      <td width="25" style="text-align: center; ">
+                      <td width="30" style="text-align: center; ">
                         <a href="%%BannerLink%%" target="">
-                          <img src="%%BannerImage%%" width="20" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                          <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
                       <!-- %%/Banners-502-Loop%% -->
