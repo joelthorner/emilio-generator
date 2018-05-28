@@ -47,7 +47,7 @@ APP.fillData = {
 
 				$output.append(`
 					<a class="nav-link ${_active}" id="tab-lang-${_langId}" data-toggle="pill" href="#tab-lang-c-${_langId}" role="tab" aria-controls="tab-lang-c-${_langId}" aria-selected="${_selected}" data-lang-id="${_langId}" data-lang-key="${_langKey}">
-						${_langKey} <span class="badge badge-pill badge-light">id ${_langIdBadge}</span>
+						${_langKey} <span class="badge badge-light">id ${_langIdBadge}</span>
 						<div class="download download-all" title="Download ALL" data-toggle="tooltip">
 							<i class="material-icons">get_app</i>
 						</div>
@@ -100,7 +100,7 @@ APP.fillData = {
 									<div class="card-title h5">Generic Header</div>
 									<div class="badges">
 										${_validBlockData.badge}
-										<span class="badge badge-pill badge-secondary">id F</span>
+										<span class="badge badge-secondary">Header</span>
 									</div>
 								</a>
 
@@ -128,7 +128,7 @@ APP.fillData = {
 									<div class="card-title h5">Generic Footer</div>
 									<div class="badges">
 										${_validBlockData.badge}
-										<span class="badge badge-pill badge-secondary">id F</span>
+										<span class="badge badge-secondary">Footer</span>
 									</div>
 								</a>
 
@@ -181,7 +181,7 @@ APP.fillData = {
 										<div class="card-title h5">${_emailNameES}</div>
 										<div class="badges">
 											${_validBlockData.badge}
-											<span class="badge badge-pill badge-secondary">id ${idMail}</span>
+											<span class="badge badge-secondary">id ${idMail}</span>
 										</div>
 									</a>
 
@@ -228,12 +228,12 @@ APP.fillData = {
 
 		if (!$.trim(subject).length){	
 			_return.valid = true;
-			_return.badge += '<span class="badge badge-pill badge-warning bd-sbj">No subject</span>';
+			_return.badge += '<span class="badge badge-warning bd-sbj">No subject</span>';
 		}
 
 		if ($.trim(contentMail).indexOf('TEXTHERE') !== -1 || $.trim(contentMail).length == 0){	
 			_return.valid = false;
-			_return.badge += '<span class="badge badge-pill badge-danger bd-emp">No content</span>';
+			_return.badge += '<span class="badge badge-danger bd-emp">No content</span>';
 		}
 
 		return _return;

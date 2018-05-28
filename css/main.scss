@@ -263,10 +263,11 @@ label.input-group-text {
 				position: static;
 				margin-right: 0.5rem;
 				padding: 0.35em 0.7em;
+				font-size: rem(10px);
 
 				&.badge-secondary{
 					text-transform: uppercase;
-					width: rem(41.5px);
+					// width: rem(41.5px);
 				}
 			}
 		}
