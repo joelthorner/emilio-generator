@@ -361,24 +361,33 @@ APP.frontEnd = {
 			event.stopPropagation();
 
 			var $editor = $(this).parents('.block-mail').find('.editor');
-			APP.frontEnd.generateLinkDownload($editor);
+			APP.frontEnd.generateLinkDownload($editor, 'link');
 		});
 
 		$('.download-all').click(function(event) {
 			event.preventDefault();
 			event.stopPropagation();
+
+			var zip = new JSZip();
 			
 			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
 
 			$('#output-tabs-cont #tab-lang-c-' + actualLangId + ' .block-mail').not('.block-header, .block-footer')
 				.each(function(index, el) {
 					var $editor = $(this).find('.editor');
-					APP.frontEnd.generateLinkDownload($editor);
+					var data = APP.frontEnd.generateLinkDownload($editor, 'code');
+					zip.file(data.fileName, data.content);
+				});
+
+			zip.generateAsync({type:"blob"})
+				.then(function(content) {
+					// see FileSaver.js
+					saveAs(content, "example.zip");
 				});
 		});
 	},
 
-	generateLinkDownload : function ($editor) {
+	generateLinkDownload : function ($editor, mode) {
 		var editor = ace.edit($editor[0]);
 		var code = editor.getValue();
 		var mailId = $editor.parents('.block-mail').data('id');
@@ -389,6 +398,8 @@ APP.frontEnd = {
 		var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 		var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
+		var fileName = name + '_' + actualLangKey + '_id-' + mailId + '.html';
+
 		// get custom header/footer
 		if ($editor.parents('.block-mail').find('.custom-header').length)
 			header = ace.edit( $editor.parents('.block-mail').find('.custom-header .editor')[0] ).getValue();
@@ -396,16 +407,24 @@ APP.frontEnd = {
 		if ($editor.parents('.block-mail').find('.custom-footer').length)
 			footer = ace.edit( $editor.parents('.block-mail').find('.custom-footer .editor')[0] ).getValue();
 
-		var a = window.document.createElement('a');
-		a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
-		a.download = name + '_' + actualLangKey + '_id-' + mailId + '.html';
+		if (mode == 'link') {
+			var a = window.document.createElement('a');
+			a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
+			a.download = fileName;
 
-		// Append anchor to body.
-		document.body.appendChild(a);
-		a.click();
+			// Append anchor to body.
+			document.body.appendChild(a);
+			a.click();
 
-		// Remove anchor from body
-		document.body.removeChild(a);
+			// Remove anchor from body
+			document.body.removeChild(a);
+		}
+		if (mode == 'code') {
+			return {
+				fileName: fileName,
+				content: header + code + footer
+			};
+		}
 	},
 
 	preview : function () {
