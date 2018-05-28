@@ -534,12 +534,12 @@ DATA.ca = {
           <td style="vertical-align: middle;font-family: sans-serif; " class="dir1" align="right">
             <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
-                <td width="30%" style="vertical-align: middle;background:#d9efef;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
+                <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
                   Núm. de la comanda:<br>
                   Data de la comanda:<br>
                   Estat:<br>
                 </td>
-                <td width="80%" style="vertical-align: middle; background:#d9efef;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" class="dir2">
+                <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" class="dir2">
                   <strong>%%orderNumber%% </strong><br>
                   <strong>%%orderDate%%</strong><br>
                   <strong>Confirmat</strong><br>
@@ -552,14 +552,14 @@ DATA.ca = {
           <td style="vertical-align: middle;font-family: sans-serif; " class="dir1" align="right">
             <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
-                <td width="50%" style="vertical-align: middle;background:#d9efef;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
+                <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" class="dir1">
                   <strong>Direcció de facturació:</strong><br>
                   %%firstName%% %%lastName%%<br>
                   %%address%% <br>
                   %%zip%%  %%city%%<br>
                   %%state%%<br>
                 </td>
-                <td width="50%" style="vertical-align: middle; background:#d9efef;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" class="dir2">
+                <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" class="dir2">
                   <strong>Direcció d'enviament:</strong><br>
                   %%shippingFirstName%%  %%shippingLastName%% <br>
                   %%shippingAddress%% <br>
