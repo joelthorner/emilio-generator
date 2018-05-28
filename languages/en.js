@@ -8,7 +8,7 @@ DATA.en = {
   <tr>
     <td>
       <!--[if (gte mso 9)|(IE)]>
-        <table width="600" align="center" cellpadding="0" cellspacing="0" border="0" class="principalTable">
+        <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td>
       <![endif]-->     
@@ -217,7 +217,7 @@ DATA.en = {
                       <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Price</td>
                     </tr>
                     <!-- %loop% -->
-                    <tr class="productRow">
+                    <tr>
                       <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                           <tr>
@@ -231,7 +231,7 @@ DATA.en = {
                         </table>        
                       </td>
                       
-                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                     </tr>
                     <!-- %/loop% -->
                     
@@ -295,7 +295,7 @@ DATA.en = {
                       <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Price</td>
                     </tr>
                     
-                    <tr class="productRow">
+                    <tr>
                       <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                           <tr>
@@ -309,7 +309,7 @@ DATA.en = {
                         </table>        
                       </td>
                       
-                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                     </tr>
                     
                     
@@ -445,7 +445,7 @@ DATA.en = {
                       <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Price</td>
                     </tr>
                     <!-- %loop% -->
-                    <tr class="productRow">
+                    <tr>
                       <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                           <tr>
@@ -460,7 +460,7 @@ DATA.en = {
                         </table>        
                       </td>
                       <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                     </tr>
                     <!-- %/loop% -->
 
@@ -470,24 +470,24 @@ DATA.en = {
                   <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Subtotal</td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span class="price">
-                        <span class="integerPrice">%%orderTotalWithoutTaxes%%  </span> 
+                      <span>
+                        <span>%%orderTotalWithoutTaxes%%  </span> 
                       </span>
                     </td>
                   </tr>
                   <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span class="price">
-                        <span class="integerPrice"> %%shippingMethodWithPrice%% </span>
+                      <span>
+                        <span> %%shippingMethodWithPrice%% </span>
                       </span>
                     </td>
                   </tr>
                   <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span class="price">
-                        <span class="integerPrice">%%paymentMethodPrice%% </span>
+                      <span>
+                        <span>%%paymentMethodPrice%% </span>
                       </span>
                     </td>
                   </tr>
@@ -495,8 +495,8 @@ DATA.en = {
                   <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Descuentos</td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span class="price">
-                        <span class="integerPrice">- %%orderDiscounts%%</span>
+                      <span>
+                        <span>- %%orderDiscounts%%</span>
                       </span>
                     </td>
                   </tr>
@@ -504,8 +504,8 @@ DATA.en = {
                   <tr>
                     <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Total</td>
                     <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
-                      <span class="price">
-                        <span class="integerPrice">%%total%% </span>
+                      <span>
+                        <span>%%total%% </span>
                       </span>
                     </td>
                   </tr>   
@@ -633,7 +633,7 @@ DATA.en = {
                     <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Price</td>
                   </tr>
                   <!-- %loop% -->
-                  <tr class="productRow">
+                  <tr>
                     <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
@@ -647,7 +647,7 @@ DATA.en = {
                       </table>        
                     </td>
                     <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span class="price"><span class="integerPrice">%price%</span></span></td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
                   
