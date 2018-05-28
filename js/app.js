@@ -166,7 +166,7 @@ APP.fillData = {
 								<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">${_contHead}</div>
 							</li>
 						`;
-						_customBadges += '<span class="badge badge-info">Custom Foot</span>';
+						_customBadges += '<span class="badge badge-info badge-custom-header">Custom Header</span>';
 						customHeaderLbl = 'Remove';
 						customHeaderIco = 'delete';
 					}
@@ -179,7 +179,7 @@ APP.fillData = {
 								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">${_contFoot}</div>
 							</li>
 						`;
-						_customBadges += '<span class="badge badge-info">Custom Foot</span>';
+						_customBadges += '<span class="badge badge-info badge-custom-footer">Custom Footer</span>';
 						customFooterLbl = 'Remove';
 						customFooterIco = 'delete';
 					}
@@ -277,12 +277,10 @@ APP.fillData = {
 
 APP.editors = {
 	init : function () {
-		this.ace();
+		this.ace($('.editor'));
 	},
 
-	ace : function () {
-		
-		var $editors = $('.editor');
+	ace : function ($editors) {
 
 		for (var i = 0; i < $editors.length; i++) {
 			var editor = ace.edit($editors[i]);
@@ -306,13 +304,16 @@ APP.editors = {
 					subject = "NON_EMPT_STRING";
 				}
 
-				var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
+				if (!$self.is('.editor-custom-footer') && !$self.is('.editor-custom-header')) {
 
-				// fix update attribute valid html change required
-				$blockMail.attr('data-valid', validBlockData.valid);
-				$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
-				$blockMail.find('.badges')
-					.prepend(validBlockData.badge);
+					var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
+
+					// fix update attribute valid html change required
+					$blockMail.attr('data-valid', validBlockData.valid);
+					$blockMail.find('.badges').find('.badge').not('.badge-secondary, .badge-info').remove();
+					$blockMail.find('.badges')
+						.prepend(validBlockData.badge);
+				}
 			});
 		}
 	}
@@ -322,10 +323,76 @@ APP.frontEnd = {
 	init : function() {
 		this.initsBT();
 		this.fakeLogin();
+		this.manageCustoms();
 		this.badgesSession();
 		this.preview();
 		this.generateMailsFile();
 		this.search();
+	},
+
+	manageCustoms : function() {
+		$('.toggle-header, .toggle-footer').click(function(event) {
+			
+			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key').toLowerCase();
+			var langId = $('#output-tabs .nav-link.active').data('lang-id');
+			var idMail = $(this).parents('.block-mail').data('id');
+
+			if ($(this).is('.toggle-header')) {
+				var $el = $(this).parents('.block-mail').find('.custom-header');
+				// remove
+				if ($el.length) {
+					// datas
+					$el.remove();
+					delete DATA[actualLangKey].mails[idMail].header;
+					// menu
+					$(this).find('.material-icons').text('add')
+					$(this).find('.text').text('Add');
+					$(this).parents('.block-mail').find('.badges .badge-custom-header').remove();
+				}
+				// add
+				else{
+					$(this).parents('.block-mail').find('.list-group').append(`
+						<li class="list-group-item custom-header">
+							<label class="card-title-custom">Custom header</label>
+							<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">FILLME PLEASE</div>
+						</li>
+					`);
+					$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-header">Custom Header</span>');
+					// menu
+					$(this).find('.material-icons').text('delete')
+					$(this).find('.text').text('Remove');
+					APP.editors.ace($('#editor-' + langId + '_' + idMail + '_header'));
+				}
+			}else{
+				if ($(this).is('.toggle-footer')) {
+					var $el = $(this).parents('.block-mail').find('.custom-footer');
+					// remove
+					if ($el.length) {
+						// datas
+						$el.remove();
+						delete DATA[actualLangKey].mails[idMail].footer;
+						// menu
+						$(this).find('.material-icons').text('add')
+						$(this).find('.text').text('Add');
+						$(this).parents('.block-mail').find('.badges .badge-custom-footer').remove();
+					}
+					// add
+					else{
+						$(this).parents('.block-mail').find('.list-group').append(`
+							<li class="list-group-item custom-footer">
+								<label class="card-title-custom">Custom footer</label>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">FILLME PLEASE</div>
+							</li>
+						`);
+						$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-footer">Custom Footer</span>');
+						// menu
+						$(this).find('.material-icons').text('delete')
+						$(this).find('.text').text('Remove');
+						APP.editors.ace($('#editor-' + langId + '_' + idMail + '_footer'));
+					}
+				}
+			}
+		});
 	},
 
 	search : function() {
@@ -371,6 +438,7 @@ APP.frontEnd = {
 			var zip = new JSZip();
 			
 			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
 
 			$('#output-tabs-cont #tab-lang-c-' + actualLangId + ' .block-mail').not('.block-header, .block-footer')
 				.each(function(index, el) {
@@ -382,7 +450,7 @@ APP.frontEnd = {
 			zip.generateAsync({type:"blob"})
 				.then(function(content) {
 					// see FileSaver.js
-					saveAs(content, "example.zip");
+					saveAs(content, "emilio-generator-" + actualLangKey + ".zip");
 				});
 		});
 	},
@@ -507,7 +575,7 @@ APP.frontEnd = {
 			var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
 
 			$blockMail.data('valid', validBlockData.valid)
-			$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
+			$blockMail.find('.badges').find('.badge').not('.badge-secondary, .badge-info').remove();
 			$blockMail.find('.badges')
 				.prepend(validBlockData.badge);
 		});
