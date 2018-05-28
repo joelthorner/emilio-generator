@@ -120,13 +120,86 @@ DATA.ca = {
     <span style="font-size:15px;">Hola  %firstName% %lastName%, <br><br>Ens complau confirmar-li la creació del seu compte de client a %%ecommerceURL%%.<br><br>Gràcies al seu compte de client podrà actualitzar el seu perfil i contrasenya, consultar el seu historial de comandes i altra informació del seu interès.<br><br>Esperem veure'l aviat a <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
 </tr>
-<tr>
-  <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
-    </span>
-  </td>
-</tr>
+`,
+    footer : `
+        <tr>
+          <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">    
+              <tr>
+                <td align="center" >
+                  <table border="0" cellspacing="10" cellpadding="0">
+                    <tr>
+                      <!-- %%Pages-501-Loop%% -->
+                      <td style="text-align: center;">
+                        <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
+                      </td>
+                      <!-- %%/Pages-501-Loop%% -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding: 12px 0 12px 0px;">
+                  <table border="0" cellspacing="8" cellpadding="0">
+                    <tr>
+                      <!-- %%Banners-502-Loop%% --> 
+                      <td width="25" style="text-align: center; ">
+                        <a href="%%BannerLink%%" target="">
+                          <img src="%%BannerImage%%" width="20" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                        </a>
+                      </td>
+                      <!-- %%/Banners-502-Loop%% -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" >
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <!-- %%Pages-503-Loop%% --> 
+                      <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                        <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                          %%pageContent%%
+                        </span>
+                      </td>
+                      <!-- %%/Pages-503-Loop%% -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <!-- %%Pages-504-Loop%% --> 
+                <td align="center" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
+                  %%pageContent%%
+                </td>
+                <!-- %%/Pages-504-Loop%% -->  
+              </tr>
+              <tr>
+                <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
+                  Per més informació, llegeixi la nostra %%privacy%% i %%termsOfUse%%.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+            </td>
+          </tr>
+        </table>
+      <![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+      <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+        <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
+      </span>
+    </td>
+  </tr>
+</table>
 `
   }, // end 1
 
@@ -176,13 +249,86 @@ DATA.ca = {
     <span style="font-size:15px;">Hola<br/><br/>Gràcies per subscriure't al nostre butlletí de notícies. Aviat rebràs informació sobre activitats, notícies sobre la nostra empresa i novetats en productes i promocions.<br/><br/>Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
 </tr>
-<tr>
-  <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
-      <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
-    </span>
-  </td>
-</tr>
+`,
+    footer : `
+        <tr>
+          <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">    
+              <tr>
+                <td align="center" >
+                  <table border="0" cellspacing="10" cellpadding="0">
+                    <tr>
+                      <!-- %%Pages-501-Loop%% -->
+                      <td style="text-align: center;">
+                        <a href="%%pageLink%%" style="padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;" target="%%pageTarget%%"> %%pageName%% </a>
+                      </td>
+                      <!-- %%/Pages-501-Loop%% -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding: 12px 0 12px 0px;">
+                  <table border="0" cellspacing="8" cellpadding="0">
+                    <tr>
+                      <!-- %%Banners-502-Loop%% --> 
+                      <td width="25" style="text-align: center; ">
+                        <a href="%%BannerLink%%" target="">
+                          <img src="%%BannerImage%%" width="20" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
+                        </a>
+                      </td>
+                      <!-- %%/Banners-502-Loop%% -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" >
+                  <table border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <!-- %%Pages-503-Loop%% --> 
+                      <td style="text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                        <span style="color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;">
+                          %%pageContent%%
+                        </span>
+                      </td>
+                      <!-- %%/Pages-503-Loop%% -->
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <!-- %%Pages-504-Loop%% --> 
+                <td align="center" style="font-family:Arial, sans-serif;font-size: 13px;color: #454545;">
+                  %%pageContent%%
+                </td>
+                <!-- %%/Pages-504-Loop%% -->  
+              </tr>
+              <tr>
+                <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
+                  Per més informació, llegeixi la nostra %%privacy%% i %%termsOfUse%%.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+            </td>
+          </tr>
+        </table>
+      <![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+      <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+        <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
+      </span>
+    </td>
+  </tr>
+</table>
 `
   }, // end 5
 
