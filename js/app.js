@@ -345,7 +345,8 @@ APP.frontEnd = {
 	generateLinkDownload : function ($editor) {
 		var editor = ace.edit($editor[0]);
 		var code = editor.getValue();
-		var name = DATA.mails[$editor.data('id')];
+		var mailId = $editor.parents('.block-mail').data('id');
+		var name = DATA.mails[mailId];
 		var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
 		var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
 		var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
@@ -354,7 +355,7 @@ APP.frontEnd = {
 
 		var a = window.document.createElement('a');
 		a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
-		a.download = name + '_' + actualLangKey + '_id-' + $editor.data('id') + '.html';
+		a.download = name + '_' + actualLangKey + '_id-' + mailId + '.html';
 
 		// Append anchor to body.
 		document.body.appendChild(a);
