@@ -50,7 +50,7 @@ DATA.fr = {
                   <tr>
                     <!-- %%Banners-502-Loop%% --> 
                       <td width="30" style="text-align: center;">
-                        <a href="%%BannerLink%%" target="">
+                        <a href="%%BannerLink%%">
                           <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
@@ -147,7 +147,7 @@ DATA.fr = {
                   <tr>
                     <!-- %%Banners-502-Loop%% --> 
                       <td width="30" style="text-align: center;">
-                        <a href="%%BannerLink%%" target="">
+                        <a href="%%BannerLink%%">
                           <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
@@ -284,7 +284,7 @@ DATA.fr = {
                   <tr>
                     <!-- %%Banners-502-Loop%% --> 
                       <td width="30" style="text-align: center;">
-                        <a href="%%BannerLink%%" target="">
+                        <a href="%%BannerLink%%">
                           <img src="%%BannerImage%%" width="30" height="auto" alt="%%BannerAlt%%" border="0" style="height: auto;">
                         </a>
                       </td>
