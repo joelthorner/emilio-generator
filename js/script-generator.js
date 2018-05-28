@@ -55,20 +55,37 @@ APP.scriptGenerator = {
 		SG.TIMEOPENPLANTS = 1000;
 
 		// save session editors DATA
-		$('#output-tabs-cont #tab-lang-c-' + SG.LANGUAGE_ID + ' .editor')
+		$('#output-tabs-cont #tab-lang-c-' + SG.LANGUAGE_ID + ' .block-mail-mail')
 			.each(function(index, el) {
-				var editor = ace.edit(el);
-				var code = editor.getValue();
-				var id = $(el).data('id');
-				var langInitial = DATA.langs[SG.LANGUAGE_ID].toLowerCase();
+				var mailId = $(el).data('id');
+				var landInitials = DATA.langs[SG.LANGUAGE_ID].toLowerCase();
 
-				if (!isNaN(id)) {
-					DATA[langInitial].mails[id].html = code;
-					DATA[langInitial].mails[id].subject = $(el).parents('.block-mail').find('.subject').val();
-				}else{
-					if (id == 'H') DATA[langInitial].header = code;
-					if (id == 'F') DATA[langInitial].footer = code;
+				// header
+				var head = ace.edit( $(el).find('.editor-header')[0] ).getValue();
+				DATA[landInitials].header = head;
+
+				// custom header
+				if ($(el).find('.editor-custom-header').length){
+					var c_head = ace.edit( $(el).find('.editor-custom-header')[0] ).getValue();
+					DATA[landInitials].mails[mailId].header = c_head;
 				}
+				
+				// body
+				var body = ace.edit( $(el).find('.editor-body')[0] ).getValue();
+				DATA[landInitials].mails[mailId].html = body;
+
+				// footer
+				var foot = ace.edit( $(el).find('.editor-footer')[0] ).getValue();
+				DATA[landInitials].footer = foot;
+
+				// custom footer
+				if ($(el).find('.editor-custom-footer').length){
+					var c_foot = ace.edit( $(el).find('.editor-custom-footer')[0] ).getValue();
+					DATA[landInitials].mails[mailId].footer = c_foot;
+				}
+
+				// subj
+				DATA[landInitials].mails[mailId].subject = $(el).find('.subject').val();
 			});
 
 		$('#tab-lang-c-' + SG.LANGUAGE_ID + ' [data-valid="true"][data-id]')
@@ -81,7 +98,6 @@ APP.scriptGenerator = {
 
 	openModal : function() {
 		var SG = APP.scriptGenerator;
-
 
 		$('#scriptGenerated').on('shown.bs.modal', function(event) {
 			SG.saveInfo();
@@ -110,10 +126,11 @@ APP.scriptGenerator = {
 		});
 	},
 
-	// AQUI VE EL TEMA
+	// fer custom footer i custom header abuff
 	getScript : function(){
 		var __SCRIPT__ = "", __SCRIPT__1 = "", __SCRIPT__2 = "";
 		var arrMailsIds_OK = APP.scriptGenerator.VALID_MAILS_IDS;
+		console.log(arrMailsIds_OK);
 		var languageID_OK = APP.scriptGenerator.LANGUAGE_ID;
 		var languageID_OK_DESTI = APP.scriptGenerator.LANGUAGE_ID_TO;
 

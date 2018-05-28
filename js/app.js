@@ -108,7 +108,7 @@ APP.fillData = {
 									<ul class="list-group list-group-flush">
 										<li class="list-group-item">
 											<label class="card-title-custom">Html</label>
-											<div class="editor editor-cont" id="editor-${langId}_H">${_langDataHeader}</div>
+											<div class="editor editor-cont editor-header" id="editor-${langId}_H">${_langDataHeader}</div>
 										</li>
 									</ul>
 								</div>
@@ -136,7 +136,7 @@ APP.fillData = {
 									<ul class="list-group list-group-flush">
 										<li class="list-group-item">
 											<label class="card-title-custom">Html</label>
-											<div class="editor editor-cont" id="editor-${langId}_F">${_langDataFooter}</div>
+											<div class="editor editor-cont editor-footer" id="editor-${langId}_F">${_langDataFooter}</div>
 										</li>
 									</ul>
 								</div>
@@ -152,8 +152,40 @@ APP.fillData = {
 						 _emailNameES = DATA.mails[idMail],
 						 _validBlockData = APP.fillData.getValidBlockData(_subject, _contMail);
 
+					// new
+					var _customFooter = '', _customHeader = '', _customBadges = '', 
+						 customHeaderLbl = 'Add', customFooterLbl = 'Add',
+						 customHeaderIco = 'add', customFooterIco = 'add';
+
+					// header
+					if (dataMail.hasOwnProperty('header')) {
+						var _contHead = APP.utils.safe_tags_replace(dataMail.header).replace('\n', '');
+						_customHeader = `
+							<li class="list-group-item custom-header">
+								<label class="card-title-custom">Custom header</label>
+								<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">${_contHead}</div>
+							</li>
+						`;
+						_customBadges += '<span class="badge badge-info">Custom Foot</span>';
+						customHeaderLbl = 'Remove';
+						customHeaderIco = 'delete';
+					}
+					// foot 
+					if (dataMail.hasOwnProperty('footer')) {
+						var _contFoot = APP.utils.safe_tags_replace(dataMail.footer).replace('\n', '');
+						_customFooter = `
+							<li class="list-group-item custom-footer">
+								<label class="card-title-custom">Custom footer</label>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">${_contFoot}</div>
+							</li>
+						`;
+						_customBadges += '<span class="badge badge-info">Custom Foot</span>';
+						customFooterLbl = 'Remove';
+						customFooterIco = 'delete';
+					}
+
 					HTML_mails_lang += `
-						<div class="block-mail" data-valid="${_validBlockData.valid}" data-id="${idMail}" data-lang="${langId}">
+						<div class="block-mail block-mail-mail" data-valid="${_validBlockData.valid}" data-id="${idMail}" data-lang="${langId}">
 							<div class="card">
 								<div class="card-body">
 									<div class="dropdown">
@@ -169,10 +201,10 @@ APP.fillData = {
 											</div>
 										  	<div class="dropdown-divider"></div>
 										  	<div class="toggle-header dropdown-item">
-												<i class="material-icons">add</i> <span class="text">Add</span> header
+												<i class="material-icons">${customHeaderIco}</i> <span class="text">${customHeaderLbl}</span> header
 											</div>
 											<div class="toggle-footer dropdown-item">
-												<i class="material-icons">add</i> <span class="text">Add</span> footer
+												<i class="material-icons">${customFooterIco}</i> <span class="text">${customFooterLbl}</span> footer
 											</div>
 										</div>
 									</div>
@@ -181,6 +213,7 @@ APP.fillData = {
 										<div class="card-title h5">${_emailNameES}</div>
 										<div class="badges">
 											${_validBlockData.badge}
+											${_customBadges}
 											<span class="badge badge-secondary">id ${idMail}</span>
 										</div>
 									</a>
@@ -193,8 +226,10 @@ APP.fillData = {
 											</li>
 											<li class="list-group-item">
 												<label class="card-title-custom">Html</label>
-												<div class="editor editor-cont" id="editor-${langId}_${idMail}">${_contMail}</div>
+												<div class="editor editor-cont editor-body" id="editor-${langId}_${idMail}">${_contMail}</div>
 											</li>
+											${_customHeader}
+											${_customFooter}
 										</ul>
 									</div>
 								</div>
@@ -255,8 +290,8 @@ APP.editors = {
 			editor.session.setMode("ace/mode/html");
 			editor.setOptions({
 				useWorker: false,
-				// maxLines: Infinity,
-				// minLines: 10,
+				maxLines: 15,
+				minLines: 10,
 				showPrintMargin: false
 			});
 
@@ -273,7 +308,8 @@ APP.editors = {
 
 				var validBlockData = APP.fillData.getValidBlockData(subject, contentMail);
 
-				$blockMail.data('valid', validBlockData.valid)
+				// fix update attribute valid html change required
+				$blockMail.attr('data-valid', validBlockData.valid);
 				$blockMail.find('.badges').find('.badge').not('.badge-secondary').remove();
 				$blockMail.find('.badges')
 					.prepend(validBlockData.badge);
@@ -349,9 +385,16 @@ APP.frontEnd = {
 		var name = DATA.mails[mailId];
 		var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
 		var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key');
+		
 		var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 		var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
+		// get custom header/footer
+		if ($editor.parents('.block-mail').find('.custom-header').length)
+			header = ace.edit( $editor.parents('.block-mail').find('.custom-header .editor')[0] ).getValue();
+
+		if ($editor.parents('.block-mail').find('.custom-footer').length)
+			footer = ace.edit( $editor.parents('.block-mail').find('.custom-footer .editor')[0] ).getValue();
 
 		var a = window.document.createElement('a');
 		a.href = window.URL.createObjectURL(new Blob([header, code, footer], {type: 'text/html'}));
@@ -376,8 +419,16 @@ APP.frontEnd = {
 			var code = editor.getValue();
 			var name = DATA.mails[$editor.data('id')];
 			var actualLangId = $('#output-tabs .nav-link.active').data('lang-id');
+
 			var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 			var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
+			
+			// get custom header/footer
+			if ($(this).parents('.block-mail').find('.custom-header').length)
+				header = ace.edit( $(this).parents('.block-mail').find('.custom-header .editor')[0] ).getValue();
+
+			if ($(this).parents('.block-mail').find('.custom-footer').length)
+				footer = ace.edit( $(this).parents('.block-mail').find('.custom-footer .editor')[0] ).getValue();
 
 			var data = APP.frontEnd.getPreviewData(header, code, footer);
 			var resetCss = '<style>body{margin: 0;}</style>'
