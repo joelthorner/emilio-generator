@@ -450,7 +450,7 @@ APP.frontEnd = {
 			zip.generateAsync({type:"blob"})
 				.then(function(content) {
 					// see FileSaver.js
-					saveAs(content, "emilio-generator-" + actualLangKey + ".zip");
+					saveAs(content, "emilio-generator [" + actualLangKey + "].zip");
 				});
 		});
 	},
