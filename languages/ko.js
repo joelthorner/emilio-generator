@@ -562,7 +562,7 @@ DATA.ko = {
                 </table>
             </td>  
           </tr>
-          <tr><td>&nbsp;</td></tr>
+          <tr><td>&nbsp;</td></tr> 
           <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">주문 정보</span></td></tr>
           <tr><td>&nbsp;</td></tr>
           <tr>

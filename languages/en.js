@@ -546,6 +546,7 @@ DATA.en = {
                     Order date:<br>
                     State:<br>
                   </td>
+
                   <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
                     <strong>%%orderNumber%% </strong><br>
                     <strong>%%orderDate%%</strong><br>
