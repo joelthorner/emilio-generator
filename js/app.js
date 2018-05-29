@@ -450,7 +450,7 @@ APP.frontEnd = {
 			zip.generateAsync({type:"blob"})
 				.then(function(content) {
 					// see FileSaver.js
-					saveAs(content, "emilio-generator-" + actualLangKey + ".zip");
+					saveAs(content, "emilio-generator [" + actualLangKey + "].zip");
 				});
 		});
 	},
@@ -466,7 +466,7 @@ APP.frontEnd = {
 		var header = ace.edit( $('#editor-'+actualLangId+'_H')[0] ).getValue();
 		var footer = ace.edit( $('#editor-'+actualLangId+'_F')[0] ).getValue();
 
-		var fileName = name + '_' + actualLangKey + '_id-' + mailId + '.html';
+		var fileName = name + ' [ID-' + mailId + '] [' + actualLangKey + '].html';
 
 		// get custom header/footer
 		if ($editor.parents('.block-mail').find('.custom-header').length)
