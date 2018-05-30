@@ -336,18 +336,32 @@ APP.frontEnd = {
 			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key').toLowerCase();
 			var langId = $('#output-tabs .nav-link.active').data('lang-id');
 			var idMail = $(this).parents('.block-mail').data('id');
+			var swalConfig = {
+				title: 'Are you sure?',
+				text: "You won't be able to revert this!",
+				type: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes, delete it!'
+			};
 
 			if ($(this).is('.toggle-header')) {
-				var $el = $(this).parents('.block-mail').find('.custom-header');
 				// remove
+				var $el = $(this).parents('.block-mail').find('.custom-header');
 				if ($el.length) {
-					// datas
-					$el.remove();
-					delete DATA[actualLangKey].mails[idMail].header;
-					// menu
-					$(this).find('.material-icons').text('add')
-					$(this).find('.text').text('Add');
-					$(this).parents('.block-mail').find('.badges .badge-custom-header').remove();
+					swal(swalConfig).then((result) => {
+						if (result.value) {
+							swal( 'Deleted!', 'Your file has been deleted.', 'success' );
+							// datas
+							$el.remove();
+							delete DATA[actualLangKey].mails[idMail].header;
+							// menu
+							$(this).find('.material-icons').text('add')
+							$(this).find('.text').text('Add');
+							$(this).parents('.block-mail').find('.badges .badge-custom-header').remove();
+						}
+					});
 				}
 				// add
 				else{
@@ -368,16 +382,21 @@ APP.frontEnd = {
 			}else{
 
 				if ($(this).is('.toggle-footer')) {
-					var $el = $(this).parents('.block-mail').find('.custom-footer');
 					// remove
+					var $el = $(this).parents('.block-mail').find('.custom-footer');
 					if ($el.length) {
-						// datas
-						$el.remove();
-						delete DATA[actualLangKey].mails[idMail].footer;
-						// menu
-						$(this).find('.material-icons').text('add')
-						$(this).find('.text').text('Add');
-						$(this).parents('.block-mail').find('.badges .badge-custom-footer').remove();
+						swal(swalConfig).then((result) => {
+							if (result.value) {
+								swal( 'Deleted!', 'Your file has been deleted.', 'success' );
+								// datas
+								$el.remove();
+								delete DATA[actualLangKey].mails[idMail].footer;
+								// menu
+								$(this).find('.material-icons').text('add')
+								$(this).find('.text').text('Add');
+								$(this).parents('.block-mail').find('.badges .badge-custom-footer').remove();
+							}
+						});
 					}
 					// add
 					else{
