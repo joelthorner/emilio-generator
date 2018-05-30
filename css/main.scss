@@ -36,6 +36,16 @@ body{
 	border-radius: 1px;
 }
 
+.editor{
+	::-webkit-scrollbar-track {
+		background: #272822; 
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #50504d;
+	}
+}
+
 .btn.focus, .btn:focus{
 	box-shadow: none !important;
 }

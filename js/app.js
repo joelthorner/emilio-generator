@@ -284,7 +284,7 @@ APP.editors = {
 
 		for (var i = 0; i < $editors.length; i++) {
 			var editor = ace.edit($editors[i]);
-			editor.setTheme("ace/theme/xcode");
+			editor.setTheme("ace/theme/monokai");
 			editor.session.setMode("ace/mode/html");
 			editor.setOptions({
 				useWorker: false,
