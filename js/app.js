@@ -284,7 +284,7 @@ APP.editors = {
 
 		for (var i = 0; i < $editors.length; i++) {
 			var editor = ace.edit($editors[i]);
-			editor.setTheme("ace/theme/xcode");
+			editor.setTheme("ace/theme/monokai");
 			editor.session.setMode("ace/mode/html");
 			editor.setOptions({
 				useWorker: false,
@@ -292,6 +292,18 @@ APP.editors = {
 				minLines: 10,
 				showPrintMargin: false
 			});
+			editor.commands.addCommand({
+				name: "Toggle Fullscreen",
+				bindKey: "F11",
+				exec: function(editor) {
+					$('body').toggleClass('fullScreen');
+					$(editor.container).toggleClass('fullScreen');
+					editor.setOptions({
+						maxLines: ($(editor.container).hasClass('fullScreen') ? window.innerHeight/14 : 15)
+					});
+					editor.resize();
+				}
+			})
 
 			editor.on("change", function(event, editor) {
 				var $self = $(editor.container);
@@ -328,6 +340,17 @@ APP.frontEnd = {
 		this.preview();
 		this.generateMailsFile();
 		this.search();
+		this.scrollOnOpenCollap();
+	},
+
+	scrollOnOpenCollap : function() {
+		$('.header-collapsible').click(function(event) {
+			if ($(this).hasClass('collapsed')) {
+				$(this).parents('.scrollable.mails').animate({
+					scrollTop: 88 * $(this).parents('.block-mail').index()
+				}, 350);
+			}
+		});
 	},
 
 	manageCustoms : function() {
@@ -336,57 +359,81 @@ APP.frontEnd = {
 			var actualLangKey = $('#output-tabs .nav-link.active').data('lang-key').toLowerCase();
 			var langId = $('#output-tabs .nav-link.active').data('lang-id');
 			var idMail = $(this).parents('.block-mail').data('id');
+			var swalConfig = {
+				title: 'Are you sure?',
+				text: "You won't be able to revert this!",
+				type: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Yes, delete it!'
+			};
 
 			if ($(this).is('.toggle-header')) {
-				var $el = $(this).parents('.block-mail').find('.custom-header');
 				// remove
+				var $el = $(this).parents('.block-mail').find('.custom-header');
 				if ($el.length) {
-					// datas
-					$el.remove();
-					delete DATA[actualLangKey].mails[idMail].header;
-					// menu
-					$(this).find('.material-icons').text('add')
-					$(this).find('.text').text('Add');
-					$(this).parents('.block-mail').find('.badges .badge-custom-header').remove();
+					swal(swalConfig).then((result) => {
+						if (result.value) {
+							swal( 'Deleted!', 'Your file has been deleted.', 'success' );
+							// datas
+							$el.remove();
+							delete DATA[actualLangKey].mails[idMail].header;
+							// menu
+							$(this).find('.material-icons').text('add')
+							$(this).find('.text').text('Add');
+							$(this).parents('.block-mail').find('.badges .badge-custom-header').remove();
+						}
+					});
 				}
 				// add
 				else{
+					var GENERIC_HEADER = APP.utils.safe_tags_replace( ace.edit( $('#editor-' + langId + '_H')[0] ).getValue() );
+
 					$(this).parents('.block-mail').find('.list-group').append(`
 						<li class="list-group-item custom-header">
 							<label class="card-title-custom">Custom header</label>
-							<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">FILLME PLEASE</div>
+							<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">${GENERIC_HEADER}</div>
 						</li>
 					`);
 					$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-header">Custom Header</span>');
 					// menu
-					$(this).find('.material-icons').text('delete')
+					$(this).find('.material-icons').text('delete');
 					$(this).find('.text').text('Remove');
 					APP.editors.ace($('#editor-' + langId + '_' + idMail + '_header'));
 				}
 			}else{
+
 				if ($(this).is('.toggle-footer')) {
-					var $el = $(this).parents('.block-mail').find('.custom-footer');
 					// remove
+					var $el = $(this).parents('.block-mail').find('.custom-footer');
 					if ($el.length) {
-						// datas
-						$el.remove();
-						delete DATA[actualLangKey].mails[idMail].footer;
-						// menu
-						$(this).find('.material-icons').text('add')
-						$(this).find('.text').text('Add');
-						$(this).parents('.block-mail').find('.badges .badge-custom-footer').remove();
+						swal(swalConfig).then((result) => {
+							if (result.value) {
+								swal( 'Deleted!', 'Your file has been deleted.', 'success' );
+								// datas
+								$el.remove();
+								delete DATA[actualLangKey].mails[idMail].footer;
+								// menu
+								$(this).find('.material-icons').text('add')
+								$(this).find('.text').text('Add');
+								$(this).parents('.block-mail').find('.badges .badge-custom-footer').remove();
+							}
+						});
 					}
 					// add
 					else{
+						var GENERIC_FOOTER = APP.utils.safe_tags_replace( ace.edit( $('#editor-' + langId + '_F')[0] ).getValue() );
+
 						$(this).parents('.block-mail').find('.list-group').append(`
 							<li class="list-group-item custom-footer">
 								<label class="card-title-custom">Custom footer</label>
-								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">FILLME PLEASE</div>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">${GENERIC_FOOTER}</div>
 							</li>
 						`);
 						$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-footer">Custom Footer</span>');
 						// menu
-						$(this).find('.material-icons').text('delete')
+						$(this).find('.material-icons').text('delete');
 						$(this).find('.text').text('Remove');
 						APP.editors.ace($('#editor-' + langId + '_' + idMail + '_footer'));
 					}
