@@ -292,6 +292,18 @@ APP.editors = {
 				minLines: 10,
 				showPrintMargin: false
 			});
+			editor.commands.addCommand({
+				name: "Toggle Fullscreen",
+				bindKey: "F11",
+				exec: function(editor) {
+					$('body').toggleClass('fullScreen');
+					$(editor.container).toggleClass('fullScreen');
+					editor.setOptions({
+						maxLines: ($(editor.container).hasClass('fullScreen') ? window.innerHeight/14 : 15)
+					});
+					editor.resize();
+				}
+			})
 
 			editor.on("change", function(event, editor) {
 				var $self = $(editor.container);
@@ -328,6 +340,17 @@ APP.frontEnd = {
 		this.preview();
 		this.generateMailsFile();
 		this.search();
+		this.scrollOnOpenCollap();
+	},
+
+	scrollOnOpenCollap : function() {
+		$('.header-collapsible').click(function(event) {
+			if ($(this).hasClass('collapsed')) {
+				$(this).parents('.scrollable.mails').animate({
+					scrollTop: 88 * $(this).parents('.block-mail').index()
+				}, 350);
+			}
+		});
 	},
 
 	manageCustoms : function() {
