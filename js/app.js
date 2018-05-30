@@ -351,19 +351,22 @@ APP.frontEnd = {
 				}
 				// add
 				else{
+					var GENERIC_HEADER = APP.utils.safe_tags_replace( ace.edit( $('#editor-' + langId + '_H')[0] ).getValue() );
+
 					$(this).parents('.block-mail').find('.list-group').append(`
 						<li class="list-group-item custom-header">
 							<label class="card-title-custom">Custom header</label>
-							<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">FILLME PLEASE</div>
+							<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">${GENERIC_HEADER}</div>
 						</li>
 					`);
 					$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-header">Custom Header</span>');
 					// menu
-					$(this).find('.material-icons').text('delete')
+					$(this).find('.material-icons').text('delete');
 					$(this).find('.text').text('Remove');
 					APP.editors.ace($('#editor-' + langId + '_' + idMail + '_header'));
 				}
 			}else{
+
 				if ($(this).is('.toggle-footer')) {
 					var $el = $(this).parents('.block-mail').find('.custom-footer');
 					// remove
@@ -378,15 +381,17 @@ APP.frontEnd = {
 					}
 					// add
 					else{
+						var GENERIC_FOOTER = APP.utils.safe_tags_replace( ace.edit( $('#editor-' + langId + '_F')[0] ).getValue() );
+
 						$(this).parents('.block-mail').find('.list-group').append(`
 							<li class="list-group-item custom-footer">
 								<label class="card-title-custom">Custom footer</label>
-								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">FILLME PLEASE</div>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">${GENERIC_FOOTER}</div>
 							</li>
 						`);
 						$(this).parents('.block-mail').find('.badges').prepend('<span class="badge badge-info badge-custom-footer">Custom Footer</span>');
 						// menu
-						$(this).find('.material-icons').text('delete')
+						$(this).find('.material-icons').text('delete');
 						$(this).find('.text').text('Remove');
 						APP.editors.ace($('#editor-' + langId + '_' + idMail + '_footer'));
 					}
