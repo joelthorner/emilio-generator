@@ -281,11 +281,27 @@ label.input-group-text {
 				}
 			}
 		}
+		.list-group-item:first-child{
+			.card-title-custom::after{
+				display: none;
+			}
+		}
 		.card-title-custom {
 			font-weight: bold;
 			font-size: rem(13px);
 			color: #343a40;
 			margin-bottom: rem(5px);
+			width: 100%;
+
+			&::after{
+				content: "Press F11 with focus on editor";
+				display: block;
+				float: right;
+				font-size: rem(11px);
+				color: var(--gray);
+				font-weight: normal;
+				padding-top: rem(3px);
+			}
 		}
 	}
 }
@@ -446,4 +462,24 @@ label.input-group-text {
 		right: 0;
 		margin: auto;
 	}
+}
+
+body.fullScreen{
+	overflow: hidden;
+}
+.fullScreen .editor:not(.fullScreen){
+	opacity: 0;
+	visibility: hidden;
+}
+.fullScreen .editor.fullScreen{
+	height: auto !important;
+	width: auto !important;
+	border: 0;
+	margin: 0;
+	position: fixed !important;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
 }
