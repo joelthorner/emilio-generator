@@ -345,7 +345,9 @@ APP.frontEnd = {
 
 	scrollOnOpenCollap : function() {
 		$('.header-collapsible').click(function(event) {
-			if ($(this).hasClass('collapsed')) {
+			
+			if ($(this).hasClass('collapsed') && !$(this).parents('.block-mail').is('[style*="order"]')) {
+				$('.active .collapse').not($(this).attr('href')).collapse('hide');
 				$(this).parents('.scrollable.mails').animate({
 					scrollTop: 88 * $(this).parents('.block-mail').index()
 				}, 350);
