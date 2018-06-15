@@ -334,7 +334,6 @@ APP.editors = {
 APP.frontEnd = {
 	init : function() {
 		this.initsBT();
-		this.fakeLogin();
 		this.manageCustoms();
 		this.badgesSession();
 		this.preview();
@@ -609,10 +608,6 @@ APP.frontEnd = {
 		$('[data-toggle="tooltip"]').tooltip();
 	},
 
-	fakeLogin : function() {
-		var _0xd5b8=["\x45\x6D\x47\x65\x6E\x5F\x6C\x6F\x67\x67\x65\x64","\x67\x65\x74\x49\x74\x65\x6D","\x23\x70\x61\x73\x73\x77\x6F\x72\x64\x4D\x6F\x64\x61\x6C","\x74\x72\x75\x65","\x73\x68\x6F\x77","\x6D\x6F\x64\x61\x6C","\x76\x61\x6C","\x23\x69\x6E\x70\x75\x74\x50\x61\x73\x73\x77\x6F\x72\x64","\x57\x65\x6C\x74\x65\x63\x32\x30\x30\x34","\x68\x69\x64\x65","\x73\x65\x74\x49\x74\x65\x6D","\x69\x73\x2D\x69\x6E\x76\x61\x6C\x69\x64","\x61\x64\x64\x43\x6C\x61\x73\x73","\x2E\x66\x6F\x72\x6D\x2D\x6C\x61\x62\x65\x6C\x2D\x67\x72\x6F\x75\x70\x20\x2A","\x66\x69\x6E\x64","\x63\x6C\x69\x63\x6B","\x23\x73\x69\x67\x6E\x69\x6E"];var logged=localStorage[_0xd5b8[1]](_0xd5b8[0]),$passwordModal=$(_0xd5b8[2]);if(logged!= _0xd5b8[3]){$passwordModal[_0xd5b8[5]](_0xd5b8[4])};$(_0xd5b8[16])[_0xd5b8[15]](function(_0xdcf7x3){if($(_0xd5b8[7])[_0xd5b8[6]]()== _0xd5b8[8]){$passwordModal[_0xd5b8[5]](_0xd5b8[9]);localStorage[_0xd5b8[10]](_0xd5b8[0],true)}else {$passwordModal[_0xd5b8[14]](_0xd5b8[13])[_0xd5b8[12]](_0xd5b8[11])}})
-	},
-
 	badgesSession : function() {
 		$('.subject').keyup(function(event) {
 			var $blockMail = $(this).parents('.block-mail');
@@ -633,6 +628,8 @@ APP.frontEnd = {
 
 APP.main = {
 	init : function () {
+		$('body').addClass('init');
+		
 		APP.fillData.init();
 		APP.editors.init();
 		APP.frontEnd.init();
@@ -641,7 +638,39 @@ APP.main = {
 	}
 };
 
-$(document).ready(APP.main.init);
+$(document).ready(function() {
+	if(window.location.host.indexOf('localhost') > -1 || window.location.host.indexOf('.github.io') > -1){
+		var timerInterval; var rescook;
+		if (!(parseInt(Cookies.get('tlgemgext')) == 1 || window.location.host.indexOf('localhost') > -1)) {
+			swal({
+				title: 'Comprovant acsés!',
+				html: '<span></span>',
+				showConfirmButton : false,
+				allowEscapeKey : false,
+				allowOutsideClick : false,
+				onOpen: () => {
+					swal.showLoading();
+					timerInterval = setInterval(() => {
+						rescook = Cookies.get('tlgemgext');
+					}, 100);
+					timerTimeout = setTimeout(() => {
+						clearTimeout(timerInterval);
+						if (parseInt(rescook) == 1 || window.location.host.indexOf('localhost') > -1) {
+							APP.main.init();
+							swal.close();
+						}else{
+							swal.getContent().querySelector('span')
+		        				.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞 Pregunta al Joel';
+		        			swal.hideLoading();
+						}
+					}, 3000);
+				}
+			});
+		}else{
+			APP.main.init();
+		}
+	}
+});
 
 // exit
 if (window.location.host.indexOf('.github.io') > -1) {
