@@ -830,10 +830,11 @@ TEXTHERE
     22 : {
       subject : "%%postName%% - %%blogName%%",
       html : `
+<!-- %loop% -->
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
     A continuación puedes leer los últimos artículos publicados en <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br/><br/>
-    <strong><a href="%%postUrl%%" style="color:#000;font-size:18px;text-decoration:none;">%%postName%%</a></strong>
+    <strong><a href="%%postLink%%" style="color:#000;font-size:18px;text-decoration:none;">%%postName%%</a></strong>
   </td>
 </tr>
 <tr>
@@ -841,7 +842,7 @@ TEXTHERE
     <table border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="30" style="text-align: center;">
-          <a href="%%postUrl%%" style="color:#000;">
+          <a href="%%postLink%%" style="color:#000;">
             <img src="%%postSmallImage%%" height="auto" width="115" border="0" style="height: auto;" alt="%%postName%%">
           </a>
         </td>
@@ -851,9 +852,10 @@ TEXTHERE
 </tr>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br/><br/><a href="%%postUrl%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
+    <span style="font-size:15px;">%%postShortText%%<br/><br/><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
   </td>
 </tr>
+<!-- %/loop% -->
 `
     }, // end 22
 
@@ -862,7 +864,7 @@ TEXTHERE
       html : `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    Alguien acaba de responder el artículo "<a href="%%postUrl%%" style="color:#000">%%postName%%</a>.<br/><br/>
+    Alguien acaba de responder el artículo "<a href="%%postLink%%" style="color:#000">%%postName%%</a>.<br/><br/>
   </td>
 </tr>
 <tr>
@@ -873,9 +875,9 @@ TEXTHERE
           <img src="%%commentGravatar%%?d=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fuser-23%2F512%2FUser_Thief.png&s=75" width="75" border="0" height="75">
         </td>
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
-          <a style="color:#000;text-decoration:none;" href="%%postUrl%%#comment%%commentId%%">%%commentNick%%</a><br/>
+          <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br/>
                   %%commentContent%%<br/><br/>
-          <span style="font-size:15px;"><a href="%%postUrl%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
+          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
         </td>
       </tr>
     </table>
