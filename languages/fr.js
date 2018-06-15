@@ -883,6 +883,7 @@ TEXTHERE
   22 : {
     subject : "%%postName%% - %%blogName%%",
     html : `
+<!-- %loop% -->
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
     Ci-dessous vous pouvez lire les derniers articles publiés dans <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br/><br/>
@@ -908,6 +909,7 @@ TEXTHERE
     <span style="font-size:15px;">%%postShortText%%<br /><br /><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Continuer la lecture!</strong></a>.</span>
   </td>
 </tr>
+<!-- %/loop% -->
 `
   }, // end 22
 
