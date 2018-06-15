@@ -628,6 +628,8 @@ APP.frontEnd = {
 
 APP.main = {
 	init : function () {
+		$('body').addClass('init');
+		
 		APP.fillData.init();
 		APP.editors.init();
 		APP.frontEnd.init();
@@ -643,6 +645,9 @@ $(document).ready(function() {
 			swal({
 				title: 'Comprovant acsés!',
 				html: '<span></span>',
+				showConfirmButton : false,
+				allowEscapeKey : false,
+				allowOutsideClick : false,
 				onOpen: () => {
 					swal.showLoading();
 					timerInterval = setInterval(() => {
@@ -655,7 +660,7 @@ $(document).ready(function() {
 							swal.close();
 						}else{
 							swal.getContent().querySelector('span')
-		        				.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞';
+		        				.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞 Pregunta al Joel';
 		        			swal.hideLoading();
 						}
 					}, 3000);
