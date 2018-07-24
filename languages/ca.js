@@ -863,7 +863,7 @@ TEXTHERE
   }, // end 20
 
   22 : {
-    subject : "%%postName%% - %%blogName%%",
+    subject : "Nou article del blog de %ecommerceName%!",
     html : `
 <!-- %loop% -->
 <tr>
