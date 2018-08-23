@@ -639,46 +639,44 @@ APP.main = {
 };
 
 $(document).ready(function() {
-	if(window.location.host.indexOf('localhost') > -1 || window.location.host.indexOf('.github.io') > -1){
-		var timerInterval;
+	var timerInterval;
 
-		swal({
-			title: 'Comprovant acsés!',
-			html: '<span></span>',
-			showConfirmButton : false,
-			allowEscapeKey : false,
-			allowOutsideClick : false,
-			onOpen: () => {
-				swal.showLoading();
-				var hasExtension = false;
-				chrome.runtime.sendMessage("jaimlomiojjmdhipacahmpnfefpbbeig", { message: "version" },
-					function (reply) {
-						if (reply) {
-							if (reply.version) {
-								if (reply.version.includes("1.") || reply.version.includes("2.")) {
-									hasExtension = true;
-								}
+	swal({
+		title: 'Comprovant acsés!',
+		html: '<span></span>',
+		showConfirmButton : false,
+		allowEscapeKey : false,
+		allowOutsideClick : false,
+		onOpen: () => {
+			swal.showLoading();
+			var hasExtension = false;
+			chrome.runtime.sendMessage("jaimlomiojjmdhipacahmpnfefpbbeig", { message: "version" },
+				function (reply) {
+					if (reply) {
+						if (reply.version) {
+							if (reply.version.includes("1.") || reply.version.includes("2.")) {
+								hasExtension = true;
 							}
 						}
-						else {
-							hasExtension = false;
-						}
-
-						timerTimeout = setTimeout(() => {
-							if (hasExtension) {
-								APP.main.init();
-								swal.close();
-							}else{
-								swal.getContent().querySelector('span')
-									.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞 Pregunta al Joel';
-								swal.hideLoading();
-							}
-						}, 1000);
 					}
-				);
-			}
-		});
-	}
+					else {
+						hasExtension = false;
+					}
+
+					timerTimeout = setTimeout(() => {
+						if (hasExtension) {
+							APP.main.init();
+							swal.close();
+						}else{
+							swal.getContent().querySelector('span')
+								.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞 Pregunta al Joel';
+							swal.hideLoading();
+						}
+					}, 1000);
+				}
+			);
+		}
+	});
 });
 
 // exit
