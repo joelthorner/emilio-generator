@@ -639,37 +639,44 @@ APP.main = {
 };
 
 $(document).ready(function() {
-	if(window.location.host.indexOf('localhost') > -1 || window.location.host.indexOf('.github.io') > -1){
-		var timerInterval; var rescook;
-		if (!(parseInt(Cookies.get('tlgemgext')) == 1 || window.location.host.indexOf('localhost') > -1)) {
-			swal({
-				title: 'Comprovant acsés!',
-				html: '<span></span>',
-				showConfirmButton : false,
-				allowEscapeKey : false,
-				allowOutsideClick : false,
-				onOpen: () => {
-					swal.showLoading();
-					timerInterval = setInterval(() => {
-						rescook = Cookies.get('tlgemgext');
-					}, 100);
+	var timerInterval;
+
+	swal({
+		title: 'Comprovant acsés!',
+		html: '<span></span>',
+		showConfirmButton : false,
+		allowEscapeKey : false,
+		allowOutsideClick : false,
+		onOpen: () => {
+			swal.showLoading();
+			var hasExtension = false;
+			chrome.runtime.sendMessage("jaimlomiojjmdhipacahmpnfefpbbeig", { message: "version" },
+				function (reply) {
+					if (reply) {
+						if (reply.version) {
+							if (reply.version.includes("1.") || reply.version.includes("2.")) {
+								hasExtension = true;
+							}
+						}
+					}
+					else {
+						hasExtension = false;
+					}
+
 					timerTimeout = setTimeout(() => {
-						clearTimeout(timerInterval);
-						if (parseInt(rescook) == 1 || window.location.host.indexOf('localhost') > -1) {
+						if (hasExtension) {
 							APP.main.init();
 							swal.close();
 						}else{
 							swal.getContent().querySelector('span')
-		        				.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞 Pregunta al Joel';
-		        			swal.hideLoading();
+								.textContent = 'Si no tens la extensio de chrome TLmanaGer no entres 😞 Pregunta al Joel';
+							swal.hideLoading();
 						}
-					}, 3000);
+					}, 1000);
 				}
-			});
-		}else{
-			APP.main.init();
+			);
 		}
-	}
+	});
 });
 
 // exit
