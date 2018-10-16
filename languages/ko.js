@@ -586,25 +586,38 @@ DATA.ko = {
                             <td style="padding: 10px 0px;">
                               %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
                             </td>
-                        </tr>
-                    </table>        
+                          </tr>
+                        </table>        
                       </td>
                       <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
                       <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                     </tr>
                     <!-- %/loop% -->
+
+                    <!-- %ifOrderGifts% -->
+                    <!-- %giftsLoop% -->
+                    <tr>
+                      <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                        <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: middle;" >
+                          <tr>
+                            <td style="padding: 10px 0px;">
+                              <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';"> 
+                            </td>  
+                            <td style="padding: 10px 0px;">
+                              <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;">&nbsp;</td>
+                    </tr>
+                    <!-- %/giftsLoop% -->
+                    <!-- %/ifOrderGifts% -->
                     
                   </tbody>
                 </table>
                 <table align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
-                  <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">소계</td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span>%%orderTotalWithoutTaxes%%  </span> 
-                      </span>
-                    </td>
-                  </tr>
                   <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
@@ -621,8 +634,8 @@ DATA.ko = {
                       </span>
                     </td>
                   </tr>
-        <!-- %%ifOrderDiscount%% -->
-        <tr>
+                  <!-- %%ifOrderDiscount%% -->
+                    <tr>
                     <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">할인</td>
                     <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                       <span>
@@ -630,26 +643,43 @@ DATA.ko = {
                       </span>
                     </td>
                   </tr>
-        <!-- %%/ifOrderDiscount%% -->
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">
-                    세금
-                  </td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%orderTaxes%%</span>
-                    </span>
-                  </td>
-                </tr>
+                  <!-- %%/ifOrderDiscount%% -->
+                  
+                  <tr>
+                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">소계</td>
+                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                      <span>
+                        <span>%%orderTotalWithoutTaxes%%  </span> 
+                      </span>
+                    </td>
+                  </tr>
 
+                  <tr>
+                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">속이기</td>
+                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                      <span>
+                        <span>%%orderTaxes%% </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <!--%%ifOrderBalanceCodes%%-->
+                  <tr>
+                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">바우처</td>
+                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                      <span>
+                        <span>- %%orderBalanceCodes%%</span>
+                      </span>
+                    </td>
+                  </tr>
+                  <!--%%/ifOrderBalanceCodes%%-->
                   <tr>
                     <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">합계</td>
                     <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
                       <span>
-                        <span>%%total%% </span>
+                        <span>%%total%%</span>
                       </span>
                     </td>
-                  </tr>   
+                  </tr>  
               
                 </table>
                </div>
