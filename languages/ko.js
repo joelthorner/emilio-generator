@@ -759,14 +759,19 @@ DATA.ko = {
   }, // end 13
 
   14 : {
-    subject : "",
+    subject : "반품 요청 %%ecommerceName%%",
     html : `
-TEXTHERE
+<tr>
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>반품 요청 정보</strong><br /><br />
+    <span style="font-size:15px;">여보세요 %firstName% %lastName%, <br /><br />환불 요청을 확인하게되어 기쁩니다.<br/><br/>주문 번호: %%orderNumber%%<br/><br/>The %%ecommerceName%% Team</span>
+  </td>
+</tr>
 `
   }, // end 14
 
   15 : {
-    subject : "Inquiry from %%ecommerceName%%",
+    subject : "%%ecommerceName%% 상담",
     html : `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -836,24 +841,24 @@ TEXTHERE
   }, // end 16
 
   17 : {
-    subject : "Email verification - %%ecommerceName%%",
+    subject : "이메일 확인 - %%ecommerceName%%",
     html : `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email verification</strong><br /><br />
-    <span style="font-size:15px;">Hello %firstName% %lastName%,<br/><br/>Thanks for registring on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br /><br />We are looking forward to seeing you on <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
+    <span style="font-size:15px;">여보세요 %firstName% %lastName%,<br/><br/>%%ecommerceURL%% 에 등록 주셔서 감사합니다. , 전자 메일 계정을 확인하기 위해 링크를 따르십시오 : <a href="%verifyLink%" style="color:#000;">여기를 클릭하십시오</a>.<br /><br />우리는 <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>에 당신을보고 기대하고 있습니다.<br /><br />The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
   }, // end 17
 
   18 : {
-    subject : "Account activated - %%ecommerceName%%",
+    subject : "계정 활성화 됨 - %%ecommerceName%%",
     html : `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Account activated</strong><br><br>
-    <span style="font-size:15px;">Hello %firstName% %lastName%,<br/><br/>We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br /><br />You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br /><br />We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
+    <strong>계정 활성화 됨</strong><br><br>
+    <span style="font-size:15px;">여보세요 %firstName% %lastName%,<br/><br/>우리는 %%ecommerceURL%%에서 고객 계정이 성공적으로 활성화되었음을 알려드립니다.<br /><br />이 제어판에 액세스하면 언제든지 모든 세부 정보를보고 수정할 수 있습니다. <a href="%%ecommerceURL%%" style="color:#000">프로필 수정</a><br /><br />곧 만나 뵙기를 바랍니다. <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -869,7 +874,6 @@ TEXTHERE
   20 : {
     subject : "",
     html : `
-TEXTHERE
 `
   }, // end 20
 
