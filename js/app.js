@@ -221,7 +221,7 @@ APP.fillData = {
 									<div class="collapse" id="mail-cont-${langId}_${idMail}">
 										<ul class="list-group list-group-flush">
 											<li class="list-group-item">
-												<label class="card-title-custom">Subject</label>
+												<label class="card-title-custom card-title-custom-subject">Subject</label>
 												<input type="text" class="form-control form-control-sm subject" value="${_subject}" placeholder="Subject">
 											</li>
 											<li class="list-group-item">
