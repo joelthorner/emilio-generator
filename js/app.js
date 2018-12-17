@@ -346,11 +346,16 @@ APP.frontEnd = {
 		$('.header-collapsible').click(function(event) {
 			
 			if ($(this).hasClass('collapsed') && !$(this).parents('.block-mail').is('[style*="order"]')) {
-				$('.active .collapse').not($(this).attr('href')).collapse('hide');
+				var sH = 0;
+				$(this).parents('.block-mail').prevAll().each(function(index, el) {
+					sH += $(el).outerHeight(true);
+				});
 				$(this).parents('.scrollable.mails').animate({
-					scrollTop: 88 * $(this).parents('.block-mail').index()
+					scrollTop: sH
 				}, 350);
 			}
+			
+			console.log();
 		});
 	},
 
