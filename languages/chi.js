@@ -111,7 +111,7 @@ DATA.chi = {
     subject : "欢迎您登陆 %%ecommerceName%%",
     html : `
 <tr>
-  <td>
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
         <span style="font-size:15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
 我们期待能在 <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>%%ecommerceName%%</span>    
@@ -215,7 +215,7 @@ DATA.chi = {
     subject : "恢复密码 %%ecommerceName%%",
     html : `
 <tr>
-  <td>
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>恢复密码</strong><br><br>
     <span style="font-size:15px;">您在浏览页面 %%ecommerceName%% 的时候这是您进入页面的密码恢复邮件<br><br><a href="%%lostPasswordLink%%" style="color:#000">点击此处</a><br><br>
 请记住该网址，该验证网址将会在邮件发送起24小时内有效<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 见到您<br><br>%%ecommerceName%%</span>
@@ -240,7 +240,7 @@ DATA.chi = {
     subject : "%%ecommerceName%% 资讯",
     html : `
 <tr>
-  <td>
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>订阅资讯</strong><br><br>
     <span style="font-size: 15px;">您好</span><br><br><span style="font-size: 15px;">谢谢您订阅我们的资讯，我们会为您发送我们的公司相关的最新动态，活动，热门产品和促销信息。</span><br><br><span style="font-size: 15px;">我们期待能在 </span><a href="%%ecommerceURL%%" style="font-size: 15px; color: rgb(0, 0, 0);">%%ecommerceName%%</a><span style="font-size: 15px;"> 见到您</span>
   </td>
