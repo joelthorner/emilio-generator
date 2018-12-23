@@ -491,6 +491,9 @@ body.fullScreen{
 	z-index: 10;
 }
 
-a.dropdown-item:active .text-muted {
+a.dropdown-item:active * {
 	color: #FFF !important;
+}
+.text-muted.arr {
+	word-break: break-all;
 }

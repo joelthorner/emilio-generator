@@ -37,9 +37,24 @@
 			<button class="btn btn-sm btn-secondary my-2 my-sm-0" type="submit" id="search-submit">Search</button>
 			<button class="btn btn-sm btn-danger my-2 my-sm-0" type="reset" id="search-reset"><i class="material-icons">close</i></button>
 		</form>
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item text-secondary">
-				<small>This app only works in Chrome 60.x</small>
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Importar / exportar
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#import-language-file">
+						<small class="text-muted">File to APP</small><br>
+						Importar idioma <small class="text-muted">(.emilio-generator)</small>
+					</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#" data-toggle="modal" data-target="#export-language-file">
+						<small class="text-muted">APP to file</small><br>
+						Exportar idioma <small class="text-muted">(.emilio-generator)</small>
+					</a>
+					<!-- <div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Descarregar template</a> -->
+				</div>
 			</li>
 		</ul>
 	</nav>
@@ -205,7 +220,7 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+					<button type="button" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
@@ -246,7 +261,7 @@
 
 	<!-- Modal -->
 	<div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="instructionsModalLabel"><i class="material-icons">list</i>Instruccions</h5>
@@ -291,6 +306,86 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="export-language-file" tabindex="-1" role="dialog" aria-labelledby="export-language-file-title" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="export-language-file-title"><i class="material-icons">import_export</i>Export language</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Language to export: <span class="badge badge-primary export-lang-modal"></span></p>
+					<div class="alert alert-warning" role="alert">
+						No modificar el prefijo del nombre del archivo [<span class="export-lang-modal"></span>]
+					</div>
+					<div class="form-group mn-3">
+						<label for="export-file-name">Nombre del archivo</label>
+						<input type="text" class="form-control" id="export-file-name" placeholder="Example: poweralia_v1">
+					</div>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" id="export-trigger">Generar</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="import-language-file" tabindex="-1" role="dialog" aria-labelledby="import-language-file-title" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="import-language-file-title"><i class="material-icons">import_export</i>Import language</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<div class="errors">
+						
+					</div>
+
+					<p class="mb-3 text-muted">Alerta importar l'arxiu sobrescriurà tot els mails del idioma carregat!</p>
+
+					<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="input-file-import" aria-describedby="input-file-import-name">
+							<label class="custom-file-label" for="input-file-import">Choose file</label>
+						</div>
+					</div>
+
+					<ul class="list-group mb-3">
+						<li class="list-group-item d-flex align-items-start justify-content-between lh-condensed data-mails">
+							<div>
+								<h6 class="my-0">Emails</h6>
+								<small class="text-muted arr"></small>
+							</div>
+							<span class="badge badge-primary arr"></span>
+						</li>
+
+						<li class="list-group-item d-flex align-items-start justify-content-between lh-condensed data-lang">
+							<div>
+								<h6 class="my-0">Idioma</h6>
+
+								<p class="mb-0">
+									<small class="text-muted">Contingut dels mails en: </small><span class="text-initials"></span>
+								</p>
+							</div>
+							<span class="badge badge-primary"></span>
+						</li>
+					</ul>
+
+					<button type="button" class="btn btn-primary btn-lg btn-block" disabled="" id="import-trigger">Submit</button>
+
 				</div>
 			</div>
 		</div>

@@ -354,8 +354,6 @@ APP.frontEnd = {
 					scrollTop: sH
 				}, 350);
 			}
-			
-			console.log();
 		});
 	},
 
@@ -631,6 +629,239 @@ APP.frontEnd = {
 	}
 };
 
+APP.importExport = {
+	init : function() {
+		this.exportOpenModal();
+		this.export();
+		this.importReadBlob();
+		this.importLoadFile();
+		this.onCloseImportModal();
+	},
+
+	exportOpenModal : function() {
+		$('#export-language-file').on('show.bs.modal', function(event) {
+			var lang = $('#output-tabs .nav-link.active').data('lang-key');
+			$(this).find('.export-lang-modal').text(lang);
+		});
+	},
+
+	export : function() {
+		$('#export-trigger').click(function(event) {
+			// save lang data
+			APP.scriptGenerator.saveInfo();
+
+			var lang = $('#output-tabs .nav-link.active').data('lang-key').toLowerCase();
+			var stringDATA = JSON.stringify(DATA[lang]);
+			var fileName = $.trim($('#export-file-name').val())
+			
+			var today = new Date(), dd = today.getDate(), mm = today.getMonth() + 1, yyyy = today.getFullYear(); 
+			if (dd < 10) { dd = '0' + dd } 
+			if (mm < 10) { mm = '0' + mm } 
+			today = dd + '-' + mm + '-' + yyyy;
+
+			var a = window.document.createElement('a');
+			a.href = window.URL.createObjectURL(new Blob([stringDATA], {encoding:"UTF-8", type:"text/plain;charset=UTF-8"}));
+			a.download = "[" + lang.toUpperCase() + "]_" + fileName + "_(" + today + ").emilio-generator";
+
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+		});
+	},
+
+	importReadBlob : function(opt_startByte, opt_stopByte) {
+
+		var files = document.getElementById('input-file-import').files;
+		if (!files.length) {
+			return;
+		}
+
+		var file = files[0];
+		var start = parseInt(opt_startByte) || 0;
+		var stop = parseInt(opt_stopByte) || file.size - 1;
+
+		var reader = new FileReader();
+
+		// If we use onloadend, we need to check the readyState.
+		reader.onloadend = function(evt) {
+			$('#import-language-file .errors').empty();
+
+			if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+
+				// name
+				var fullPath = $('#input-file-import').val();
+				if (fullPath) {
+
+					var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+					var filename = fullPath.substring(startIndex);
+					if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+						filename = filename.substring(1);
+					}
+					// visual <label>
+					$('[for="input-file-import"]').text(filename.replace('.emilio-generator', ''));
+					
+					// visual data
+					var fileNameLang = filename.match(/\[[A-Z]{2,3}\]/);
+					if (fileNameLang) {
+
+						// file txt to obj
+						console.log(evt.target.result);
+						var newDataObj = JSON.parse(evt.target.result);
+						console.log(newDataObj);
+
+						// data emails id list
+						var idList = [];
+						$.each(newDataObj.mails, function(key, val){
+							idList.push(key);
+						});
+						$('#import-language-file .data-mails .text-muted.arr')
+							.text(idList.toString());
+
+						// key lang 
+						var lang = fileNameLang[0].replace('[', '').replace(']', '');
+						$('#import-language-file .data-lang .text-initials')
+							.text(lang);
+
+						$('#import-trigger').removeAttr('disabled');
+						APP.importExport.saveImportDATA(newDataObj, lang);
+					} else {
+						$('#import-language-file .errors').append(`
+							<div class="alert alert-danger alert-dismissible fade show" role="alert">
+								<strong>Error!</strong> No has d'editar el prefix del arxiu!
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						`);
+					}
+				}
+			} else {
+				$('#import-language-file .errors').append(`
+					<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<strong>Error!</strong> Fail al pujar l'arxiu!
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				`);
+			}
+		};
+
+		var blob = file.slice(start, stop + 1);
+		reader.readAsText(blob);
+	},
+
+	importLoadFile : function() {
+		$("#input-file-import").change(function(){
+			APP.importExport.importReadBlob();
+		});
+	},
+
+	onCloseImportModal : function() {
+		$('#import-language-file').on('hidden.bs.modal', function(event) {
+			$('#import-language-file').attr('disabled', 'disabled');
+			$('#input-file-import').val('');
+			$(this).find('.arr, .text-initials, .custom-file-label').text('');
+		});
+	},
+
+	saveImportDATA : function(newDataObj, langInitials) {
+		$('#import-trigger').click(function(event) {
+			$('#import-language-file').modal('hide');
+			swal( 'Imported ['+langInitials+']!', 'Your file has been imported.', 'success' );
+
+			var $langTab = $('#output-tabs [data-lang-key="' + langInitials.toUpperCase() + '"]').click();
+			var langId = $langTab.data('lang-id'); // number
+
+			var $contMails = $('#tab-lang-c-'+langId);
+
+			// save generic header
+			ace.edit( $contMails.find('.editor-header')[0] ).setValue(newDataObj.header);
+			// save generic footer
+			ace.edit( $contMails.find('.editor-footer')[0] ).setValue(newDataObj.footer);
+			
+			$.each(newDataObj.mails, function(idMail, mail) {
+
+				// mail cont base
+				ace.edit( 
+					$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .editor-body')[0] 
+				).setValue( mail.html );
+				if (idMail == 1) { console.log(mail.html); }
+				
+				// subject
+				$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .subject').val(mail.subject);
+				
+				// custom footer ?
+				if (typeof mail.footer == "undefined") {
+					//  del
+					$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .custom-footer').remove();
+					$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .badge-custom-footer').remove();
+					delete DATA[langInitials.toLowerCase()].mails[idMail].footer;
+				
+				} else {
+					// set if exist custom footer
+					if ($contMails.find('.block-mail-mail[data-id="' + idMail + '"] .custom-footer').length) {
+						ace.edit( 
+							$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .editor-custom-footer')[0] 
+						).setValue( mail.footer );
+					} else {
+					// set if not exist custom footer
+						var $mail = $contMails.find('.block-mail-mail[data-id="' + idMail + '"]');
+						var thisFooter = APP.utils.safe_tags_replace(mail.footer);
+
+						$mail.find('.list-group').append(`
+							<li class="list-group-item custom-footer">
+								<label class="card-title-custom">Custom footer</label>
+								<div class="editor editor-cont editor-custom-footer" id="editor-${langId}_${idMail}_footer">${thisFooter}</div>
+							</li>
+						`);
+						$mail.find('.badges').prepend('<span class="badge badge-info badge-custom-header">Custom Footer</span>');
+						// menu
+						$mail.find('.toggle-footer .material-icons').text('delete');
+						$mail.find('.toggle-footer .text').text('Remove');
+						APP.editors.ace($('#editor-' + langId + '_' + idMail + '_footer'));
+					}
+				}
+
+				// custom header ?
+				if (typeof mail.header == "undefined") {
+					//  del
+					$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .custom-header').remove();
+					$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .badge-custom-header').remove();
+					delete DATA[langInitials.toLowerCase()].mails[idMail].header;
+				
+				} else {
+					// set if exist custom header
+					if ($contMails.find('.block-mail-mail[data-id="' + idMail + '"] .custom-header').length) {
+						ace.edit( 
+							$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .editor-custom-header')[0] 
+						).setValue( mail.header );
+					} else {
+					// set if not exist custom header
+						var $mail = $contMails.find('.block-mail-mail[data-id="' + idMail + '"]');
+						var thisFooter = APP.utils.safe_tags_replace(mail.header);
+
+						$mail.find('.list-group').append(`
+							<li class="list-group-item custom-header">
+								<label class="card-title-custom">Custom header</label>
+								<div class="editor editor-cont editor-custom-header" id="editor-${langId}_${idMail}_header">${thisFooter}</div>
+							</li>
+						`);
+						$mail.find('.badges').prepend('<span class="badge badge-info badge-custom-header">Custom Header</span>');
+						// menu
+						$mail.find('.toggle-header .material-icons').text('delete');
+						$mail.find('.toggle-header .text').text('Remove');
+						APP.editors.ace($('#editor-' + langId + '_' + idMail + '_header'));
+					}
+				}
+			});
+			
+			// save changes
+			APP.scriptGenerator.saveInfo();
+		});
+	}
+};
+
 APP.main = {
 	init : function () {
 		$('body').addClass('init');
@@ -638,6 +869,7 @@ APP.main = {
 		APP.fillData.init();
 		APP.editors.init();
 		APP.frontEnd.init();
+		APP.importExport.init();
 
 		APP.scriptGenerator.init();
 	}
