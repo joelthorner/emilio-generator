@@ -705,9 +705,7 @@ APP.importExport = {
 					if (fileNameLang) {
 
 						// file txt to obj
-						console.log(evt.target.result);
 						var newDataObj = JSON.parse(evt.target.result);
-						console.log(newDataObj);
 
 						// data emails id list
 						var idList = [];
@@ -786,7 +784,6 @@ APP.importExport = {
 				ace.edit( 
 					$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .editor-body')[0] 
 				).setValue( mail.html );
-				if (idMail == 1) { console.log(mail.html); }
 				
 				// subject
 				$contMails.find('.block-mail-mail[data-id="' + idMail + '"] .subject').val(mail.subject);
