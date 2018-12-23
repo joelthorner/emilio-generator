@@ -290,11 +290,6 @@ label.input-group-text {
 				}
 			}
 		}
-		.list-group-item:first-child{
-			.card-title-custom::after{
-				display: none;
-			}
-		}
 		.card-title-custom {
 			font-weight: bold;
 			font-size: rem(13px);
@@ -310,6 +305,9 @@ label.input-group-text {
 				color: var(--gray);
 				font-weight: normal;
 				padding-top: rem(3px);
+			}
+			&.card-title-custom-subject::after{
+				display: none;
 			}
 		}
 	}
@@ -491,4 +489,11 @@ body.fullScreen{
 	left: 0;
 	right: 0;
 	z-index: 10;
+}
+
+a.dropdown-item:active * {
+	color: #FFF !important;
+}
+.text-muted.arr {
+	word-break: break-all;
 }
