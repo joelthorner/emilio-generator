@@ -1,0 +1,16 @@
+@import 'styles-utils';
+@import 'styles-variables';
+
+.navbar {
+  padding: rem(0 30px);
+  height: rem($navbar-h);
+  // background-color: $test !important;
+
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-weight: 700;
+  font-size: rem(22px);
+  width: rem($sidebar-w - 60px);
+  margin-right: rem(30px);
+}

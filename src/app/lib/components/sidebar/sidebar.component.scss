@@ -1,0 +1,8 @@
+@import 'styles-utils';
+@import 'styles-variables';
+
+aside {
+  height: 100%;
+  width: $sidebar-w;
+  box-shadow: rem(3px 4px 5px 0px) rgba($shadow-1, .75);
+}

@@ -1,0 +1,10 @@
+@import 'styles-utils';
+@import 'styles-variables';
+
+.eg-layout {
+  height: calc(100% - #{$navbar-h});
+}
+.eg-content {
+  height: 100%;
+  display: flex;
+}

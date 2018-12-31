@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
+
+@import "styles-utils";
+@import "styles-variables";
+@import '~bootstrap/scss/bootstrap';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: rem(14px);
+  color: $blue-1;
+}
