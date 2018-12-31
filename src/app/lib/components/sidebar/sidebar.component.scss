@@ -4,5 +4,6 @@
 aside {
   height: 100%;
   width: $sidebar-w;
-  box-shadow: rem(3px 4px 5px 0px) rgba($shadow-1, .75);
+  box-shadow: 3px 4px 5px 0px rgba($shadow-1, .75);
+  background-color: #FFF;
 }

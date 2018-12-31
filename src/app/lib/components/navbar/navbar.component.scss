@@ -2,15 +2,15 @@
 @import 'styles-variables';
 
 .navbar {
-  padding: rem(0 30px);
-  height: rem($navbar-h);
+  padding: 0 $grid-gutter-width;
+  height: $navbar-h;
   // background-color: $test !important;
 
 }
 .navbar-brand {
   font-family: "Ubuntu";
   font-weight: 700;
-  font-size: rem(22px);
-  width: rem($sidebar-w - 60px);
-  margin-right: rem(30px);
+  font-size: 22px;
+  width: $sidebar-w - 60px;
+  margin-right: $grid-gutter-width;
 }

@@ -1,11 +1,37 @@
 // Colors
-$bg-light: #f7f7fa;
+$bg-light:       #f7f7fa;
+$light-border:   #f7eff6; // border over white
+$black-1:        #221b26;
 
-$blue-1: #5c6287;
-$pink-1: #a1008a;
+$blue-1:         #5c6287;
+$pink-1:         #cc00cc;
 
-$shadow-1: #e9ddf7;
+$shadow-1:       #e9ddf7; // shadow box color
+
 
 // Layout
-$sidebar-w: 250px;
-$navbar-h: 60px;
+$sidebar-w:       250px;
+$sidebar-item-h:  60px;
+$navbar-h:        60px;
+
+
+// BT overrites
+$primary:                   $pink-1 !default;
+
+$body-bg:                   $bg-light !default;
+$body-color:                $blue-1 !default;
+
+$link-color:                $pink-1 !default;
+$link-decoration:           none !default;
+$link-hover-color:          darken($pink-1, 15%) !default;
+$link-hover-decoration:     none !default;
+
+$grid-gutter-width:         30px !default;
+
+$font-family-sans-serif:    "Nunito", sans-serif !default;
+// $font-family-monospace:  SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:          $font-family-sans-serif !default;
+
+$font-size-base:            0.875rem !default; // 14px
+
+$transition-base:           all .2s ease-in-out !default;
