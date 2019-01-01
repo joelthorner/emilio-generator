@@ -8,3 +8,13 @@
   height: 100%;
   display: flex;
 }
+.eg-sidebar {
+  width: $sidebar-w;
+  float: left;
+}
+.eg-outlet {
+  float: left;
+  width: calc(100% - #{$sidebar-w});
+  height: 100%;
+  overflow: auto;
+}

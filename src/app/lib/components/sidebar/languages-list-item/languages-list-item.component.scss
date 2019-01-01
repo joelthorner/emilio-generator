@@ -3,33 +3,6 @@
 
 $badge-size: 22px;
 
-li {
-
-  > a {
-    color: $black-1;
-    height: $sidebar-item-h;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0 $grid-gutter-width;
-    border-bottom: 1px solid $light-border;
-    transition: $transition-base;
-    &:hover{
-      background-color: $primary;
-      color: #FFF;
-
-      .badge {
-        background-color: #fff;
-        color: $primary;
-      }
-      .icon {
-        fill: #FFF;
-      }
-    }
-  }
-}
-
 .badge {
   padding: 0;
   border-radius: 3px;
@@ -56,4 +29,44 @@ li {
   fill: $black-1;
   transform: translateY(-50%);
   transition: $transition-base;
+}
+
+li > a {
+  color: $black-1;
+  height: $sidebar-item-h;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 $grid-gutter-width;
+  border-bottom: 1px solid $light-border;
+  transition: $transition-base;
+
+  &:hover{
+    background-color: $primary;
+    color: #FFF;
+
+    .badge {
+      background-color: #fff;
+      color: $primary;
+    }
+    .icon {
+      fill: #FFF;
+    }
+  }
+}
+
+li.empty > a {
+  &, &:hover {
+    color: $disabled-text;
+    background-color: #FFF;
+
+    .badge {
+      background-color: $disabled-bg;
+      color: #FFF;
+    }
+    .icon {
+      fill: $disabled-text;
+    }
+  }
 }

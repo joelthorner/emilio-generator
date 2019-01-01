@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'eg-navbar',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  title = 'Emilio generator';
+  title = environment.title;
 
   constructor() { }
 
