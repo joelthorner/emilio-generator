@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
+
+@import '~compass-mixins/lib/compass/css3';
+
+@import "styles-utils";
+@import "styles-variables";
+@import '~bootstrap/scss/bootstrap';
+
+@include scrollbars(10px, #c1c1c1, #f1f1f1);
+
+html, body {
+  height: 100%;
+}
+
+// BT overrites
+.dropdown-toggle::after {
+  display: none;
+}
+
+// global components
+.view {
+  padding: $grid-gutter-width;
+}
+
+.card {
+  box-shadow: 0 0 12px 0px rgba($shadow-1, .75);
+  margin-bottom: $grid-gutter-width;
+}
+
+.card-header {
+  font-size: 20px;
+  border-bottom: 1px solid $light-border;
+  color: $blue-1;
+}

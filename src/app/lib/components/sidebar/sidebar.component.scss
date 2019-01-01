@@ -1,0 +1,8 @@
+@import 'styles-utils';
+@import 'styles-variables';
+
+aside {
+  height: 100%;
+  box-shadow: 2px 0 10px 0px rgba($shadow-1, .75);
+  background-color: #FFF;
+}
