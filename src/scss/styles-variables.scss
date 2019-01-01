@@ -3,11 +3,13 @@ $bg-light:       #f7f7fa;
 $light-border:   #f7eff6; // border over white
 $black-1:        #221b26;
 
-$blue-1:         #5c6287;
+$blue-1:         #5c649c;
 $pink-1:         #cc00cc;
 
 $shadow-1:       #e9ddf7; // shadow box color
 
+$disabled-bg:    #888;
+$disabled-text:  #666;
 
 // Layout
 $sidebar-w:       250px;
@@ -17,6 +19,7 @@ $navbar-h:        60px;
 
 // BT overrites
 $primary:                   $pink-1 !default;
+$dark:                      #333 !default;
 
 $body-bg:                   $bg-light !default;
 $body-color:                $blue-1 !default;
@@ -35,3 +38,22 @@ $font-family-base:          $font-family-sans-serif !default;
 $font-size-base:            0.875rem !default; // 14px
 
 $transition-base:           all .2s ease-in-out !default;
+
+$card-spacer-y:                     15px !default;
+$card-spacer-x:                     $grid-gutter-width !default;
+$card-border-width:                 0px !default;
+$card-border-radius:                7px !default;
+// $card-border-color:                 rgba($black, .125) !default;
+$card-inner-border-radius:          $card-border-radius !default; // calc(#{$card-border-radius} - #{$card-border-width}) !default;
+$card-cap-bg:                       #FFF !default;
+$card-cap-color:                    inherit !default;
+$card-bg:                           #FFF !default;
+
+$card-img-overlay-padding:          1.25rem !default;
+
+$card-group-margin:                 $grid-gutter-width / 2 !default;
+$card-deck-margin:                  $card-group-margin !default;
+
+$card-columns-count:                3 !default;
+$card-columns-gap:                  1.25rem !default;
+$card-columns-margin:               $card-spacer-y !default;
