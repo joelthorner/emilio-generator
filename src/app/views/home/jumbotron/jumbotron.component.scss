@@ -1,0 +1,39 @@
+@import 'styles-utils';
+@import 'styles-variables';
+
+.home-jumbo {
+  margin-top: -$grid-gutter-width;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+  height: rem(330px);
+  position: relative;
+  background-image: url("src/assets/home-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  .home-jumbo-inset {
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+h1 {
+  line-height: 1;
+
+  color: #FFF;
+  font-weight: 300;
+  font-size: 48px;
+
+
+  b {
+    font-family: "Ubuntu", sans-serif;
+  }
+}

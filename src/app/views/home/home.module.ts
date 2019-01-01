@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, JumbotronComponent],
   imports: [
     CommonModule
   ],
