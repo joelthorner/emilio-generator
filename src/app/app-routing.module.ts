@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'instructions',
+    loadChildren: './views/instructions/instructions.module#InstructionsModule'
   }
 ];
 
