@@ -10,6 +10,15 @@
   color: $blue-1;
 }
 
+.card-text {
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
 .card-title {
   a {
     color: $blue-1;

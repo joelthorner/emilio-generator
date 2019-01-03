@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+      {{ cardTitle }}
+    </div>
+    <div class="card-body">
+      <div class="card-items">
+        <div class="card-item" *ngFor="let release of changeLogItems">
+          <span class="card-title">
+            <a href="{{ release.html_url }}" target="_blank" rel="nofollow">{{ release.name }}</a>
+          </span>
+          <markdown class="card-text mb-0" [data]="release.body"></markdown>
+          <div class="card-bottom">{{ release.published_at | date }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
