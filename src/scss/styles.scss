@@ -28,7 +28,9 @@ html, body {
 
   .sidebar-collapsed & {
     width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
-
+    ul > li a {
+      justify-content: center;
+    }
     .name , .icon {
       display: none;
     }
