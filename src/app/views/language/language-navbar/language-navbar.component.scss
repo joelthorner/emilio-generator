@@ -1,0 +1,30 @@
+@import "styles-utils";
+@import "styles-variables";
+
+.navbar {
+  background-color: #FFF;
+  border-bottom: 1px solid $light-border;
+  border-left: 1px solid $light-border;
+  margin-left: -$grid-gutter-width;
+  margin-right: -$grid-gutter-width;
+  margin-top: -$grid-gutter-width;
+  margin-bottom: $grid-gutter-width;
+  padding: 0 $grid-gutter-width;
+  height: $navbar-h;
+}
+
+.navbar .navbar-nav .nav-link {
+  @media (min-width: 992px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.form-control {
+  width: 190px;
+  background-color: #f2f2f2;
+
+  &:not(:focus) {
+    border-color: #f2f2f2;
+  }
+}
