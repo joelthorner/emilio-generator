@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    {{ cardTitle }}
+  </div>
+  <div class="card-body">
+    <div class="card-items">
+      <div class="card-item" *ngFor="let credit of credits">
+        <span class="card-title" [innerHTML]="credit.title"></span>
+        <p class="card-text mb-0" [innerHTML]="credit.description"></p>
+        <span class="card-bottom" [innerHTML]="credit.bottom"></span>
+      </div>
+    </div>
+  </div>
+</div>

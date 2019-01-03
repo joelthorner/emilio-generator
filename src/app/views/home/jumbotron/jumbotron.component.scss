@@ -10,6 +10,11 @@
   background-image: url("src/assets/home-bg.jpg");
   background-size: cover;
   background-position: center;
+  margin-bottom: $grid-gutter-width;
+
+  @media (max-width: $small-breakpoints - 1px) {
+    height: rem(230px);
+  }
 
   .home-jumbo-inset {
     position: absolute;

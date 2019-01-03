@@ -14,7 +14,15 @@
   line-height: 1;
 }
 
+.version {
+  color: $pink-1;
+}
+
 .navbar .navbar-nav .nav-link {
+  &.version-link {
+    color: #FFF;
+  }
+
   @media (min-width: 992px) {
     padding-right: 15px;
     padding-left: 15px;
