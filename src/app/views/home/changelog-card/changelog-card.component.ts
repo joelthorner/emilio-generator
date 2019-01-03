@@ -15,21 +15,32 @@ export class ChangelogCardComponent implements OnInit {
 
   ngOnInit() {
     const octokit = require('@octokit/rest')();
+
+    octokit.authenticate({
+      type: 'oauth',
+      key: 'a2617b4a55282dfdbef1',
+      secret: '995753279547b58ff77098acee74d2c04a4788db'
+    });
+
     octokit.repos.listReleases({
       owner: 'joelthorner',
       repo: 'emilio-generator',
       per_page: '3',
       page: '1'
     }).then(result => {
-      for (const item of result.data) {
-        item.body = item.body
+
+      if (result.data) {
+        for (const item of result.data) {
+          item.body = item.body
           .replace('Changelog', '')
           .replace('changelog', '')
           .replace(/-{6,}/i, '');
-      }
-      console.log(result.data);
+        }
 
-      this.changeLogItems = result.data;
+        this.changeLogItems = result.data;
+      }
+    }).catch(function(error) {
+
     });
   }
 
