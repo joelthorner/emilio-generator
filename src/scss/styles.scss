@@ -12,6 +12,41 @@
 html, body {
   height: 100%;
 }
+.eg-layout {
+  height: calc(100% - #{$navbar-h});
+}
+.eg-content {
+  height: 100%;
+  display: flex;
+}
+.eg-sidebar {
+  width: $sidebar-w;
+  float: left;
+  transition: $transition-base;
+
+  // .sidebar-collapsed & {
+  //   width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
+
+  //   .name , .icon {
+  //     opacity: 0;
+  //     visibility: hidden;
+  //   }
+  //   .badge {
+  //     margin-right: 0;
+  //   }
+  // }
+}
+.eg-outlet {
+  float: left;
+  width: calc(100% - #{$sidebar-w});
+  height: 100%;
+  overflow: auto;
+  transition: $transition-base;
+
+  .sidebar-collapsed & {
+    width: calc(100% - #{$grid-gutter-width + $sidebar-badge-size + $grid-gutter-width});
+  }
+}
 
 // BT overrites
 .dropdown-toggle::after {

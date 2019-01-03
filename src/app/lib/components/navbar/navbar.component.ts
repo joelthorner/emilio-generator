@@ -7,11 +7,15 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+
   title = environment.title;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  collapseToggleSidebar() {
   }
 
 }
