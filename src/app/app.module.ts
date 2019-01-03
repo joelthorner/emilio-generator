@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { IconsModule } from './lib/icons/icons.module';
 import { ComponentsModule } from './lib/components/components.module';
 import { HomeModule } from './views/home/home.module';
+import { AppData } from './data/app-data';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HomeModule } from './views/home/home.module';
     ComponentsModule,
     HomeModule
   ],
-  providers: [],
+  providers: [AppData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

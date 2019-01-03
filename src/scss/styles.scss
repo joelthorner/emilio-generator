@@ -7,10 +7,46 @@
 @import "styles-variables";
 @import '~bootstrap/scss/bootstrap';
 
+@import 'component-card';
+
 @include scrollbars(10px, #c1c1c1, #f1f1f1);
 
 html, body {
   height: 100%;
+}
+.eg-layout {
+  height: calc(100% - #{$navbar-h});
+}
+.eg-content {
+  height: 100%;
+  display: flex;
+}
+.eg-sidebar {
+  width: $sidebar-w;
+  float: left;
+  transition: $transition-base;
+
+  .sidebar-collapsed & {
+    width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
+
+    .name , .icon {
+      display: none;
+    }
+    .badge {
+      margin-right: 0;
+    }
+  }
+}
+.eg-outlet {
+  float: left;
+  width: calc(100% - #{$sidebar-w});
+  height: 100%;
+  overflow: auto;
+  transition: $transition-base;
+
+  .sidebar-collapsed & {
+    width: calc(100% - #{$grid-gutter-width + $sidebar-badge-size + $grid-gutter-width});
+  }
 }
 
 // BT overrites
@@ -21,15 +57,4 @@ html, body {
 // global components
 .view {
   padding: $grid-gutter-width;
-}
-
-.card {
-  box-shadow: 0 0 12px 0px rgba($shadow-1, .75);
-  margin-bottom: $grid-gutter-width;
-}
-
-.card-header {
-  font-size: 20px;
-  border-bottom: 1px solid $light-border;
-  color: $blue-1;
 }

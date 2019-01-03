@@ -1,0 +1,35 @@
+.card {
+  box-shadow: 0 0 12px 0px rgba($shadow-1, .75);
+  margin-bottom: $grid-gutter-width;
+  height: 100%;
+}
+
+.card-header {
+  font-size: 20px;
+  border-bottom: 1px solid $light-border;
+  color: $blue-1;
+}
+
+.card-title {
+  a {
+    color: $blue-1;
+  }
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.card-bottom {
+  font-size: 12px;
+  color: $blue-2;
+}
+
+.card-items {
+  .card-item {
+    margin-bottom: $grid-gutter-width;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

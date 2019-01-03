@@ -4,8 +4,6 @@
 .navbar {
   padding: 0 $grid-gutter-width;
   height: $navbar-h;
-  // background-color: $test !important;
-
 }
 .navbar-brand {
   font-family: "Ubuntu";
@@ -16,23 +14,15 @@
   line-height: 1;
 }
 
-.toggle-sidebar {
-  fill: #FFF;
-  padding: 0;
-  display: block;
-  float: left;
-  width: $navbar-h - 20px;
-  height: $navbar-h - 20px;
-  margin-left: -10px;
-  margin-right: 15px;
-
-  .icon {
-    width: 24px;
-    height: 24px;
-  }
+.version {
+  color: $pink-1;
 }
 
 .navbar .navbar-nav .nav-link {
+  &.version-link {
+    color: #FFF;
+  }
+
   @media (min-width: 992px) {
     padding-right: 15px;
     padding-left: 15px;
