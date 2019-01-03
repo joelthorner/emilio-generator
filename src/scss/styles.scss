@@ -24,17 +24,16 @@ html, body {
   float: left;
   transition: $transition-base;
 
-  // .sidebar-collapsed & {
-  //   width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
+  .sidebar-collapsed & {
+    width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
 
-  //   .name , .icon {
-  //     opacity: 0;
-  //     visibility: hidden;
-  //   }
-  //   .badge {
-  //     margin-right: 0;
-  //   }
-  // }
+    .name , .icon {
+      display: none;
+    }
+    .badge {
+      margin-right: 0;
+    }
+  }
 }
 .eg-outlet {
   float: left;

@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="/">{{ title }}</a>
 
-  <button class="btn btn-dark toggle-sidebar" type="button" (click)="collapseToggleSidebar()">
-      <svg class="icon"><use xlink:href="#menu"></use></svg>
-  </button>
+  <div class="toggle-sidebar">
+    <eg-sidebar-toggle></eg-sidebar-toggle>
+  </div>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse"
           data-target="#navbar-collap" aria-controls="navbar-collap" aria-expanded="false" aria-label="Toggle navigation">

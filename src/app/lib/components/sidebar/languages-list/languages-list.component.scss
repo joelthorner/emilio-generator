@@ -44,11 +44,15 @@ li > a {
   height: $sidebar-item-h;
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   padding: 0 $grid-gutter-width;
   border-bottom: 1px solid $light-border;
   transition: $transition-base;
+
+  > * {
+    flex: 0 0 auto;
+  }
 
   &:hover{
     background-color: $primary;
