@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'instructions',
     loadChildren: './views/instructions/instructions.module#InstructionsModule'
+  },
+  {
+    path: 'language',
+    loadChildren: './views/language/language.module#LanguageModule'
   }
 ];
 
