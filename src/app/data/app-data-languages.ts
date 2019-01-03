@@ -13,7 +13,7 @@ export const LANGUAGES = {
   2: {
     key: 'en',
     name: 'English',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_EN
   },
   3: {
     key: 'ca',
