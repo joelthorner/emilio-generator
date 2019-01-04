@@ -11,6 +11,7 @@ export class LanguageComponent implements OnInit {
 
   public langKey: string;
   public langData: object;
+  public objectKeys = Object.keys;
 
   constructor(private route: ActivatedRoute, private router: Router, private appData: AppData) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -20,5 +21,4 @@ export class LanguageComponent implements OnInit {
     this.langKey = this.route.snapshot.params['langKey'];
     this.langData = this.appData.getLanguage(this.langKey);
   }
-
 }

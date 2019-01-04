@@ -20,11 +20,40 @@
   }
 }
 
-.form-control {
-  width: 190px;
-  background-color: #f2f2f2;
+.search-form {
+  position: relative;
 
-  &:not(:focus) {
-    border-color: #f2f2f2;
+  .form-control {
+    width: 190px;
+    padding-left: 1rem;
+    padding-right: 40px;
+    background-color: #f2f2f2;
+
+    &:not(:focus) {
+      border-color: #f2f2f2;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
   }
+
+  .icon {
+    fill: $pink-1;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+.generate-script {
+  width: 190px;
+  font-size: 15px;
 }
