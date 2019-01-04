@@ -1,5 +1,6 @@
 export const LANGUAGE_EN = {
-  header: `
+  header: {
+    html: `
 <table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" style="padding:25px;background-color:#eee;padding-bottom:0px;">
   <tr>
     <td>
@@ -23,9 +24,11 @@ export const LANGUAGE_EN = {
             </table>
           </td>
         </tr>
-`,
+`
+  },
 
-  footer: `
+  footer: {
+    html: `
         <tr>
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -102,7 +105,8 @@ export const LANGUAGE_EN = {
     </td>
   </tr>
 </table>
-`,
+`
+  },
 
   templates: {
 
@@ -123,7 +127,8 @@ export const LANGUAGE_EN = {
   </td>
 </tr>
 `,
-      footer: `
+      footer: {
+        html: `
         <tr>
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -203,6 +208,7 @@ export const LANGUAGE_EN = {
   </tr>
 </table>
 `
+      }
     }, // end 1
 
     2 : {
@@ -262,7 +268,8 @@ export const LANGUAGE_EN = {
   </td>
 </tr>
 `,
-      footer: `
+      footer: {
+        html: `
         <tr>
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -342,6 +349,7 @@ export const LANGUAGE_EN = {
   </tr>
 </table>
 `
+      }
     }, // end 5
 
     6 : {

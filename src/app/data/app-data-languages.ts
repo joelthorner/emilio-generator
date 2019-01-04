@@ -13,7 +13,7 @@ export const LANGUAGES = {
   2: {
     key: 'en',
     name: 'English',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_EN
   },
   3: {
     key: 'ca',
@@ -32,12 +32,12 @@ export const LANGUAGES = {
   },
   6: {
     key: 'zho',
-    name: 'Traditional Chinese',
+    name: 'Trad. Chinese',
     emails: LANGUAGE_XX
   },
   10: {
     key: 'chi',
-    name: 'Simplified Chinese',
+    name: 'Simpl. Chinese',
     emails: LANGUAGE_XX
   },
   11: {

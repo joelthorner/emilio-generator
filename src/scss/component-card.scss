@@ -1,6 +1,5 @@
 .card {
   box-shadow: 0 0 12px 0px rgba($shadow-1, .75);
-  margin-bottom: $grid-gutter-width;
   height: 100%;
 }
 
@@ -8,6 +7,15 @@
   font-size: 20px;
   border-bottom: 1px solid $light-border;
   color: $blue-1;
+}
+
+.card-text {
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
 }
 
 .card-title {

@@ -16,7 +16,7 @@ export class AppData {
     this.languages = copyLanguages;
   }
 
-  checkEmptyLanguages(languagesObj) {
+  public checkEmptyLanguages(languagesObj: any) {
     const languagesClone = languagesObj;
 
     for (const langId in languagesClone) {
@@ -33,7 +33,7 @@ export class AppData {
     return languagesClone;
   }
 
-  checkTemplatesTags(languagesObj) {
+  public checkTemplatesTags(languagesObj: any) {
     const languagesClone = languagesObj;
 
     for (const langId in languagesClone) {
@@ -74,5 +74,20 @@ export class AppData {
       }
     }
     return languagesClone;
+  }
+
+  public getLanguage(key: string) {
+    const languagesClone = this.languages;
+    let findedLang: any = {};
+
+    for (const langId in this.languages) {
+      const thisLanguage = languagesClone[langId];
+
+      if (thisLanguage.key === key) {
+        findedLang = thisLanguage;
+      }
+    }
+
+    return findedLang;
   }
 }

@@ -24,11 +24,13 @@ html, body {
 .eg-sidebar {
   width: $sidebar-w;
   float: left;
-  transition: $transition-base;
+  // transition: $transition-base;
 
   .sidebar-collapsed & {
     width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
-
+    ul > li a {
+      justify-content: center;
+    }
     .name , .icon {
       display: none;
     }
@@ -42,7 +44,7 @@ html, body {
   width: calc(100% - #{$sidebar-w});
   height: 100%;
   overflow: auto;
-  transition: $transition-base;
+  // transition: $transition-base;
 
   .sidebar-collapsed & {
     width: calc(100% - #{$grid-gutter-width + $sidebar-badge-size + $grid-gutter-width});

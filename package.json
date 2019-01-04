@@ -19,10 +19,12 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "@octokit/rest": "^16.3.2",
     "bootstrap": "^4.2.1",
     "compass-mixins": "^0.12.10",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
+    "ngx-markdown": "^7.0.3",
     "popper.js": "^1.14.6",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
@@ -33,9 +35,9 @@
     "@angular/cli": "~7.1.4",
     "@angular/compiler-cli": "~7.1.0",
     "@angular/language-service": "~7.1.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -47,6 +49,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "webpack-dev-server": "^3.1.14"
   }
 }

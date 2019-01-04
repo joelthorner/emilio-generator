@@ -1,0 +1,6 @@
+@import "styles-utils";
+@import "styles-variables";
+
+.row > .col {
+  margin-bottom: $grid-gutter-width;
+}
