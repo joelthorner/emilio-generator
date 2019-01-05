@@ -9,13 +9,21 @@ export class AppData {
 
   constructor() {
     let copyLanguages = this.languages;
-
-    copyLanguages = this.checkEmptyLanguages(copyLanguages);
-    copyLanguages = this.checkTemplatesTags(copyLanguages);
-
+    copyLanguages = this.checkAll(copyLanguages);
     this.languages = copyLanguages;
   }
 
+  public checkAll(languagesObj: any) {
+    let copyLanguages = languagesObj;
+
+    copyLanguages = this.checkEmptyLanguages(copyLanguages);
+    copyLanguages = this.checkTemplatesTags(copyLanguages);
+    copyLanguages = this.trimHtml(copyLanguages);
+
+    return copyLanguages;
+  }
+
+  // set/update languages[x].empty
   public checkEmptyLanguages(languagesObj: any) {
     const languagesClone = languagesObj;
 
@@ -33,6 +41,9 @@ export class AppData {
     return languagesClone;
   }
 
+  // set/update languages[x].emails.header.tags,
+  //    languages[x].emails.footer.tags,
+  //    languages[x].emails.templates[x].tags
   public checkTemplatesTags(languagesObj: any) {
     const languagesClone = languagesObj;
 
@@ -76,6 +87,7 @@ export class AppData {
     return languagesClone;
   }
 
+  // get language struct by key 'es'
   public getLanguage(key: string) {
     const languagesClone = this.languages;
     let findedLang: any = {};
@@ -89,5 +101,49 @@ export class AppData {
     }
 
     return findedLang;
+  }
+
+  // set string value 'html' or 'subject'
+  public setStringVal(langKey: string, path: string, code: string) {
+    let evalPath = 'this.languages';
+    for (const langId in this.languages) {
+      if (this.languages[langId].key === langKey) {
+        evalPath += '[' + langId + ']';
+      }
+    }
+
+    path.split('.').forEach(valueKey => {
+      evalPath += '.' + valueKey;
+    });
+
+    const toEval = evalPath + '=`' + code + '`;';
+    eval(toEval);
+
+    this.languages = this.checkAll(this.languages);
+  }
+
+  // trim all html contents first empty '\n'
+  public trimHtml(languagesObj: any) {
+    const languagesClone = languagesObj;
+
+    for (const langId in languagesClone) {
+      const thisLanguage = languagesClone[langId];
+
+      thisLanguage.emails.header.html = thisLanguage.emails.header.html.replace(/^\n{1}/i, '');
+      thisLanguage.emails.footer.html = thisLanguage.emails.footer.html.replace(/^\n{1}/i, '');
+
+      for (const emailId in thisLanguage.emails.templates) {
+
+        thisLanguage.emails.templates[emailId].html = thisLanguage.emails.templates[emailId].html.replace(/^\n{1}/i, '');
+
+        if (typeof thisLanguage.emails.templates[emailId].header !== 'undefined') {
+          thisLanguage.emails.templates[emailId].header.html = thisLanguage.emails.templates[emailId].header.html.replace(/^\n{1}/i, '');
+        }
+        if (typeof thisLanguage.emails.templates[emailId].footer !== 'undefined') {
+          thisLanguage.emails.templates[emailId].footer.html = thisLanguage.emails.templates[emailId].footer.html.replace(/^\n{1}/i, '');
+        }
+      }
+    }
+    return languagesClone;
   }
 }

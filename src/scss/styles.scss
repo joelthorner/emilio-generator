@@ -60,3 +60,24 @@ html, body {
 .view {
   padding: $grid-gutter-width;
 }
+
+// Editor
+body.editor-full-screen {
+	overflow: hidden;
+}
+.editor-full-screen .ace-editor-default:not(.editor-full-screen) {
+	opacity: 0;
+	visibility: hidden;
+}
+.editor-full-screen .ace-editor-default.editor-full-screen {
+	height: auto !important;
+	width: auto !important;
+	border: 0;
+	margin: 0;
+	position: fixed !important;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}

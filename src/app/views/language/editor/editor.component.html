@@ -1,0 +1,12 @@
+<ace-editor
+  class="ace-editor-default"
+  #editor
+  [(text)]="content"
+  [mode]="'html'"
+  [theme]="'eclipse'"
+  [options]="aceOptions"
+  [readOnly]="false"
+  [autoUpdateContent]="true"
+  [durationBeforeCallback]="0"
+  (textChanged)="onChangeAce($event)"
+></ace-editor>

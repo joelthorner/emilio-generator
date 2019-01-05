@@ -10,41 +10,40 @@
       <div class="lang-item lang-item-header lang-item-generic-header">
         <div class="card">
           <div class="card-header">
-            <a class="collapse-button" href="#" data-toggle="collapse"
-               data-target="#collap-lang-item-generic-header" aria-expanded="false">
+            <a class="collapse-button" href="#" data-toggle="collapse" data-target="#collap-lang-item-generic-header" aria-expanded="false">
 
               <div class="card-title">Generic Header</div>
               <div class="badges">
                 <ng-container *ngFor="let tagName of objectKeys(langData.emails.header.tags)" >
                   <span class="badge badge-{{ tagName }}"
-                        *ngIf="langData.emails.header.tags[tagName]">{{ tagName }}</span>
+                  *ngIf="langData.emails.header.tags[tagName]">{{ tagName }}</span>
                 </ng-container>
               </div>
             </a>
           </div>
 
+
           <div class="collapse" id="collap-lang-item-generic-header">
             <div class="card-body">
-<pre>
-  {{ langData.emails.header.html }}
-</pre>
+              <eg-editor [langKey]="langKey" [content]="langData.emails.header.html" [contentKey]="'emails.header.html'"></eg-editor>
             </div>
           </div>
         </div>
       </div>
+      <!-- /header -->
 
       <!-- footer -->
       <div class="lang-item lang-item-footer lang-item-generic-footer">
         <div class="card">
           <div class="card-header">
             <a class="collapse-button" href="#" data-toggle="collapse"
-                data-target="#collap-lang-item-generic-footer" aria-expanded="false">
+            data-target="#collap-lang-item-generic-footer" aria-expanded="false">
 
               <div class="card-title">Generic footer</div>
               <div class="badges">
                 <ng-container *ngFor="let tagName of objectKeys(langData.emails.footer.tags)" >
                   <span class="badge badge-{{ tagName }}"
-                        *ngIf="langData.emails.footer.tags[tagName]">{{ tagName }}</span>
+                  *ngIf="langData.emails.footer.tags[tagName]">{{ tagName }}</span>
                 </ng-container>
               </div>
             </a>
@@ -52,13 +51,12 @@
 
           <div class="collapse" id="collap-lang-item-generic-footer">
             <div class="card-body">
-<pre>
-  {{ langData.emails.footer.html }}
-</pre>
+              <eg-editor [langKey]="langKey" [content]="langData.emails.footer.html" [contentKey]="'emails.footer.html'"></eg-editor>
             </div>
           </div>
         </div>
       </div>
+      <!-- /footer -->
 
       <div class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}" *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)">
         <div class="card">
@@ -79,7 +77,7 @@
           <div class="collapse" id="collap-lang-item-email-{{ emailTemplateId }}">
             <div class="card-body">
 <pre>
-  {{ langData.emails.footer.html }}
+  {{ langData.emails.templates[emailTemplateId].html }}
 </pre>
             </div>
           </div>
