@@ -92,3 +92,14 @@ $rem-px-only: false !default;
     scrollbar-track-color: $background-color;
   }
 }
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

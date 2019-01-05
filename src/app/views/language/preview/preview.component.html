@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">
+    <div class="text">Preview</div>
+    <div class="subtitle"><span class="light">Email:</span> {{ name }}</div>
+  </div>
+  <div class="card-body">
+    <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(iframeSrc)" frameborder="0"></iframe>
+  </div>
+</div>

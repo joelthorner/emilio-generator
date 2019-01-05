@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageFunctions } from '../language.functions';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'eg-language-navbar',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageNavbarComponent implements OnInit {
 
-  constructor() { }
+  public langKey: string;
+
+  constructor(private languageFunctions: LanguageFunctions, private route: ActivatedRoute) {
+
+  }
 
   ngOnInit() {
+    this.langKey = this.route.snapshot.params['langKey'];
+  }
+
+  downloadZipLanguage(event) {
+    this.languageFunctions.downloadZipLanguage(event);
   }
 
 }
