@@ -14,7 +14,7 @@ export class LanguageComponent implements OnInit {
   // this.editors.toArray()[0].callFromParent();
 
   public langKey: string;
-  public langData: object;
+  public langData: any;
   public objectKeys = Object.keys;
 
   constructor(

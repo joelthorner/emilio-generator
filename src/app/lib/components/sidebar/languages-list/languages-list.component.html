@@ -1,12 +1,18 @@
 <ul class="list-unstyled">
-  <li *ngFor="let itemKey of objectKeys(listItems)" [ngClass]="{
-    'empty': listItems[itemKey].empty
-  }">
+  <li
+    *ngFor="let itemKey of objectKeys(listItems)"
+    [ngClass]="{ 'empty': listItems[itemKey].empty }"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
     <a routerLink="/language/{{ listItems[itemKey].key }}">
 
-      <span class="badge badge-primary" [ngClass]="{
-        'small-badge': listItems[itemKey].key.length >= 3
-      }">{{ listItems[itemKey].key | uppercase }}</span>
+      <span
+        class="badge badge-primary"
+        [ngClass]="{ 'small-badge': listItems[itemKey].key.length >= 3 }"
+      >
+        {{ listItems[itemKey].key | uppercase }}
+      </span>
 
       <span class="name">{{ listItems[itemKey].name }}</span>
       <svg class="icon"><use xlink:href="#chevron-right"></use></svg>

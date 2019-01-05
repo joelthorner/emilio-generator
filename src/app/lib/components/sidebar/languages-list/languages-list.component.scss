@@ -48,37 +48,57 @@ li > a {
   align-items: center;
   padding: 0 $grid-gutter-width;
   border-bottom: 1px solid $light-border;
+  background-color: #fff;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
   > * {
     flex: 0 0 auto;
   }
 
-  &:hover{
-    background-color: $primary;
-    color: #FFF;
+  &:hover {
+    color: $link-hover-color;
 
     .badge {
-      background-color: #fff;
-      color: $primary;
+      background-color: $link-hover-color;
     }
     .icon {
-      fill: #FFF;
+      fill: $link-hover-color;
     }
   }
 }
 
-li.empty > a {
-  &, &:hover {
-    color: $disabled-text;
-    background-color: #FFF;
+li.empty:not(.active) > a {
+  color: $disabled-text;
+  background-color: #FFF;
 
+  .badge {
+    background-color: $disabled-bg;
+    color: #FFF;
+  }
+  .icon {
+    fill: $disabled-text;
+  }
+
+  &:hover {
+    color: darken($disabled-text, 15%);
     .badge {
-      background-color: $disabled-bg;
-      color: #FFF;
+      background-color: darken($disabled-bg, 15%);
     }
     .icon {
-      fill: $disabled-text;
+      fill: darken($disabled-text, 15%);
     }
+  }
+}
+
+li.active > a {
+  background-color: $primary;
+  color: #FFF;
+
+  .badge {
+    background-color: #fff;
+    color: $primary;
+  }
+  .icon {
+    fill: #FFF;
   }
 }

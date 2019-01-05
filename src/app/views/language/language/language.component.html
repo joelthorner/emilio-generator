@@ -4,16 +4,22 @@
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col col-editors">
 
       <!-- header -->
       <div class="lang-item lang-item-header lang-item-generic-header">
         <div class="card">
           <div class="card-header">
-            <a class="collapse-button" href="#" data-toggle="collapse" data-target="#collap-lang-item-generic-header" aria-expanded="false">
-
-              <div class="card-title">Generic Header</div>
+            <a
+              class="collapse-button"
+              href="#collap-lang-item-generic-header"
+              data-toggle="collapse"
+              data-target="#collap-lang-item-generic-header"
+              aria-expanded="false"
+            >
+              <div class="text">Generic Header</div>
               <div class="badges">
+                <span class="badge badge-id">Header</span>
                 <ng-container *ngFor="let tagName of objectKeys(langData.emails.header.tags)" >
                   <span class="badge badge-{{ tagName }}"
                   *ngIf="langData.emails.header.tags[tagName]">{{ tagName }}</span>
@@ -21,7 +27,6 @@
               </div>
             </a>
           </div>
-
 
           <div class="collapse" id="collap-lang-item-generic-header">
             <div class="card-body">
@@ -36,11 +41,16 @@
       <div class="lang-item lang-item-footer lang-item-generic-footer">
         <div class="card">
           <div class="card-header">
-            <a class="collapse-button" href="#" data-toggle="collapse"
-            data-target="#collap-lang-item-generic-footer" aria-expanded="false">
-
-              <div class="card-title">Generic footer</div>
+            <a
+              class="collapse-button"
+              href="#collap-lang-item-generic-footer"
+              data-toggle="collapse"
+              data-target="#collap-lang-item-generic-footer"
+              aria-expanded="false"
+            >
+              <div class="text">Generic footer</div>
               <div class="badges">
+                  <span class="badge badge-id">Footer</span>
                 <ng-container *ngFor="let tagName of objectKeys(langData.emails.footer.tags)" >
                   <span class="badge badge-{{ tagName }}"
                   *ngIf="langData.emails.footer.tags[tagName]">{{ tagName }}</span>
@@ -61,11 +71,16 @@
       <div class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}" *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)">
         <div class="card">
           <div class="card-header">
-            <a class="collapse-button" href="#collap-lang-item-email-{{ emailTemplateId }}" data-toggle="collapse"
-                data-target="#collap-lang-item-email-{{ emailTemplateId }}" aria-expanded="false">
-
-              <div class="card-title">{{ langData.emails.templates[emailTemplateId].name }}</div>
+            <a
+              class="collapse-button"
+              href="#collap-lang-item-email-{{ emailTemplateId }}"
+              data-toggle="collapse"
+              data-target="#collap-lang-item-email-{{ emailTemplateId }}"
+              aria-expanded="false"
+            >
+              <div class="text">{{ langData.emails.templates[emailTemplateId].name }}</div>
               <div class="badges">
+                <span class="badge badge-id">Id {{ emailTemplateId }}</span>
                 <ng-container *ngFor="let tagName of objectKeys(langData.emails.templates[emailTemplateId].tags)" >
                   <span class="badge badge-{{ tagName }}"
                         *ngIf="langData.emails.templates[emailTemplateId].tags[tagName]">{{ tagName }}</span>
@@ -90,7 +105,7 @@
     </div>
 
     <!-- preview -->
-    <div class="col">
+    <div class="col col-preview">
       <div class="card">
         <div class="card-body">
           This is some text within a card body.
