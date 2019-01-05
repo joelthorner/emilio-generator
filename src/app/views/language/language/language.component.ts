@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppData } from 'src/app/data/app-data';
-// import { EditorComponent } from '../editor/editor.component';
 
 @Component({
   selector: 'eg-language',
@@ -10,12 +9,11 @@ import { AppData } from 'src/app/data/app-data';
 })
 export class LanguageComponent implements OnInit {
 
-  // @ViewChildren(EditorComponent) private editors: QueryList<EditorComponent>;
-  // this.editors.toArray()[0].callFromParent();
-
   public langKey: string;
   public langData: any;
   public objectKeys = Object.keys;
+
+  public previewEmail: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,6 +26,7 @@ export class LanguageComponent implements OnInit {
   ngOnInit() {
     this.langKey = this.route.snapshot.params['langKey'];
     this.langData = this.appData.getLanguage(this.langKey);
+    this.previewEmail = this.langData.emails.templates[1];
   }
 
 }

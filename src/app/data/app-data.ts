@@ -103,6 +103,21 @@ export class AppData {
     return findedLang;
   }
 
+  public getLangIdByKey(key: string) {
+    const languagesClone = this.languages;
+    let findedLangId: any;
+
+    for (const langId in this.languages) {
+      const thisLanguage = languagesClone[langId];
+
+      if (thisLanguage.key === key) {
+        findedLangId = langId;
+      }
+    }
+
+    return findedLangId;
+  }
+
   // set string value 'html' or 'subject'
   public setStringVal(langKey: string, path: string, code: string) {
     let evalPath = 'this.languages';

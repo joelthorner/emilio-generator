@@ -22,7 +22,10 @@ export class EditorComponent implements AfterViewInit {
 
   fullScreen = false;
 
-  constructor(private renderer: Renderer2, private appData: AppData) { }
+  constructor(
+    private renderer: Renderer2,
+    private appData: AppData
+    ) { }
 
 
   ngAfterViewInit() {
