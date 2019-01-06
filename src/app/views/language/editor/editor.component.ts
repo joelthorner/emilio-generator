@@ -11,12 +11,14 @@ export class EditorComponent implements AfterViewInit {
   @Input() content: any;
   @Input() langKey: string;
   @Input() contentKey: string;
+  @Input() label: string;
   @ViewChild('editor') editor;
 
   aceOptions = {
     useWorker: false,
     // maxLines: 15,
     minLines: 10,
+    tabSize: 2,
     showPrintMargin: false
   };
 

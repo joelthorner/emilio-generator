@@ -3,13 +3,13 @@
 
 @import '~compass-mixins/lib/compass/css3';
 
-@import "styles-utils";
 @import "styles-variables";
+@import "styles-utils";
 @import '~bootstrap/scss/bootstrap';
 
 @import 'component-card';
 
-@include scrollbars(10px, #c1c1c1, #f1f1f1);
+@include scrollbars(8px, #c1c1c1, #f1f1f1);
 
 html, body {
   height: 100%;
@@ -80,5 +80,6 @@ body.editor-full-screen {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
+  z-index: 10;
+  border-radius: 0;
 }

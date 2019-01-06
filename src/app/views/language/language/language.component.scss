@@ -1,5 +1,5 @@
-@import "styles-utils";
 @import "styles-variables";
+@import "styles-utils";
 
 .view-language {
   padding: 0;
@@ -41,6 +41,17 @@
   .card-header {
     .text {
       color: $blue-1;
+    }
+  }
+  .card-body {
+    padding-top: $grid-gutter-width - 10px;
+
+    .form-group {
+      margin-bottom: $grid-gutter-width;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

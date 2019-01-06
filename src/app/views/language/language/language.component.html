@@ -36,6 +36,7 @@
             <div class="collapse" id="collap-lang-item-generic-header">
               <div class="card-body">
                 <eg-editor
+                  label="Html"
                   [langKey]="langKey"
                   [content]="langData.emails.header.html"
                   [contentKey]="'emails.header.html'"
@@ -75,6 +76,7 @@
             <div class="collapse" id="collap-lang-item-generic-footer">
               <div class="card-body">
                 <eg-editor
+                  label="Html"
                   [langKey]="langKey"
                   [content]="langData.emails.footer.html"
                   [contentKey]="'emails.footer.html'"
@@ -119,11 +121,38 @@
                     [langKey]="langKey"
                   ></eg-subject>
                 </div>
-                <eg-editor
-                  [langKey]="langKey"
-                  [content]="langData.emails.templates[emailTemplateId].html"
-                  contentKey="emails.templates[{{ emailTemplateId }}].html"
-                ></eg-editor>
+
+                <!-- body -->
+                <div class="form-group">
+                  <eg-editor
+                    label="Body"
+                    [langKey]="langKey"
+                    [content]="langData.emails.templates[emailTemplateId].html"
+                    contentKey="emails.templates[{{ emailTemplateId }}].html"
+                  ></eg-editor>
+                </div>
+
+                <!-- customHeader -->
+                <div class="form-group">
+                  <eg-editor
+                    *ngIf="langData.emails.templates[emailTemplateId].tags.customHeader"
+                    label="Custom header"
+                    [langKey]="langKey"
+                    [content]="langData.emails.templates[emailTemplateId].header.html"
+                    contentKey="emails.templates[{{ emailTemplateId }}].header.html"
+                  ></eg-editor>
+                </div>
+
+                <!-- customFooter -->
+                <div class="form-group">
+                  <eg-editor
+                    *ngIf="langData.emails.templates[emailTemplateId].tags.customFooter"
+                    label="Custom footer"
+                    [langKey]="langKey"
+                    [content]="langData.emails.templates[emailTemplateId].footer.html"
+                    contentKey="emails.templates[{{ emailTemplateId }}].footer.html"
+                  ></eg-editor>
+                </div>
               </div>
             </div>
           </div>

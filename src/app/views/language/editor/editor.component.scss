@@ -1,5 +1,13 @@
+@import "styles-variables";
+@import "styles-utils";
+
 .ace-editor-default {
   min-height: 200px;
   width:100%;
   overflow: auto;
+  border-radius: 7px;
+  border: 1px solid $input-border-color;
+  transition: $transition-base;
+
+  @include form-control-focus($primary, #FFF, lighten($primary, 25%), 0 0 0 .2rem rgba($primary, .25))
 }
