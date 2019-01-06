@@ -7,9 +7,10 @@ import { LanguageNavbarComponent } from './language-navbar/language-navbar.compo
 import { AceEditorModule } from 'ng2-ace-editor';
 import { EditorComponent } from './editor/editor.component';
 import { PreviewComponent } from './preview/preview.component';
+import { SubjectComponent } from './subject/subject.component';
 
 @NgModule({
-  declarations: [LanguageComponent, LanguageNavbarComponent, EditorComponent, PreviewComponent],
+  declarations: [LanguageComponent, LanguageNavbarComponent, EditorComponent, PreviewComponent, SubjectComponent],
   imports: [
     CommonModule,
     LanguageRoutingModule,

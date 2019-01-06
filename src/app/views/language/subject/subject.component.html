@@ -1,0 +1,13 @@
+<label for="subject">Subject</label>
+
+<input
+  #subject
+  type="text"
+  class="form-control"
+  [value]="value"
+  (input)="changeSubject(langKey, contentKey, subject.value);"
+  autocomplete="off"
+  autocorrect="off"
+  autocapitalize="off"
+  spellcheck="false"
+>

@@ -22,8 +22,12 @@
                 <div class="badges">
                   <span class="badge badge-id">Header</span>
                   <ng-container *ngFor="let tagName of objectKeys(langData.emails.header.tags)" >
-                    <span class="badge badge-{{ tagName }}"
-                    *ngIf="langData.emails.header.tags[tagName]">{{ tagName }}</span>
+                    <span
+                      class="badge badge-{{ tagName }}"
+                      *ngIf="langData.emails.header.tags[tagName]"
+                    >
+                      {{ tagName }}
+                    </span>
                   </ng-container>
                 </div>
               </a>
@@ -31,7 +35,11 @@
 
             <div class="collapse" id="collap-lang-item-generic-header">
               <div class="card-body">
-                <eg-editor [langKey]="langKey" [content]="langData.emails.header.html" [contentKey]="'emails.header.html'"></eg-editor>
+                <eg-editor
+                  [langKey]="langKey"
+                  [content]="langData.emails.header.html"
+                  [contentKey]="'emails.header.html'"
+                ></eg-editor>
               </div>
             </div>
           </div>
@@ -51,10 +59,14 @@
               >
                 <div class="text">Generic footer</div>
                 <div class="badges">
-                    <span class="badge badge-id">Footer</span>
+                  <span class="badge badge-id">Footer</span>
                   <ng-container *ngFor="let tagName of objectKeys(langData.emails.footer.tags)" >
-                    <span class="badge badge-{{ tagName }}"
-                    *ngIf="langData.emails.footer.tags[tagName]">{{ tagName }}</span>
+                    <span
+                      class="badge badge-{{ tagName }}"
+                      *ngIf="langData.emails.footer.tags[tagName]"
+                    >
+                      {{ tagName }}
+                    </span>
                   </ng-container>
                 </div>
               </a>
@@ -62,7 +74,11 @@
 
             <div class="collapse" id="collap-lang-item-generic-footer">
               <div class="card-body">
-                <eg-editor [langKey]="langKey" [content]="langData.emails.footer.html" [contentKey]="'emails.footer.html'"></eg-editor>
+                <eg-editor
+                  [langKey]="langKey"
+                  [content]="langData.emails.footer.html"
+                  [contentKey]="'emails.footer.html'"
+                ></eg-editor>
               </div>
             </div>
           </div>
@@ -83,8 +99,12 @@
                 <div class="badges">
                   <span class="badge badge-id">Id {{ emailTemplateId }}</span>
                   <ng-container *ngFor="let tagName of objectKeys(langData.emails.templates[emailTemplateId].tags)" >
-                    <span class="badge badge-{{ tagName }}"
-                          *ngIf="langData.emails.templates[emailTemplateId].tags[tagName]">{{ tagName }}</span>
+                    <span
+                      class="badge badge-{{ tagName }}"
+                      *ngIf="langData.emails.templates[emailTemplateId].tags[tagName]"
+                    >
+                      {{ tagName }}
+                    </span>
                   </ng-container>
                 </div>
               </a>
@@ -92,7 +112,18 @@
 
             <div class="collapse" id="collap-lang-item-email-{{ emailTemplateId }}">
               <div class="card-body">
-                <eg-editor [langKey]="langKey" [content]="langData.emails.templates[emailTemplateId].html" contentKey="emails.templates[{{ emailTemplateId }}].html"></eg-editor>
+                <div class="form-group">
+                  <eg-subject
+                    contentKey="emails.templates[{{ emailTemplateId }}].subject"
+                    [value]="langData.emails.templates[emailTemplateId].subject"
+                    [langKey]="langKey"
+                  ></eg-subject>
+                </div>
+                <eg-editor
+                  [langKey]="langKey"
+                  [content]="langData.emails.templates[emailTemplateId].html"
+                  contentKey="emails.templates[{{ emailTemplateId }}].html"
+                ></eg-editor>
               </div>
             </div>
           </div>
