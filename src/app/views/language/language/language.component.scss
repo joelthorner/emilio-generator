@@ -1,6 +1,28 @@
 @import "styles-utils";
 @import "styles-variables";
 
+.view-language {
+  padding: 0;
+
+  .view-content {
+    position: absolute;
+    top: $navbar-h;
+    left: 0;
+    right: 0;
+    height: calc(100% - #{$navbar-h});
+    overflow: auto;
+    padding: $grid-gutter-width;
+  }
+}
+
+.language-navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
 .col-preview {
   flex: 0 0 650px + $grid-gutter-width;
   max-width: 650px + $grid-gutter-width;
@@ -12,7 +34,9 @@
 }
 
 .lang-item {
-  margin-bottom: $grid-gutter-width;
+  &:not(:last-child) {
+    margin-bottom: $grid-gutter-width;
+  }
 
   .card-header {
     .text {

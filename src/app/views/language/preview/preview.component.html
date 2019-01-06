@@ -4,6 +4,6 @@
     <div class="subtitle"><span class="light">Email:</span> {{ name }}</div>
   </div>
   <div class="card-body">
-    <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(iframeSrc)" frameborder="0"></iframe>
+    <iframe [src]="iframeSrc" frameborder="0"></iframe>
   </div>
 </div>

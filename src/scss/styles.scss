@@ -44,6 +44,7 @@ html, body {
   width: calc(100% - #{$sidebar-w});
   height: 100%;
   overflow: auto;
+  position: relative;
   // transition: $transition-base;
 
   .sidebar-collapsed & {
