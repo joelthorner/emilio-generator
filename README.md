@@ -1,9 +1,9 @@
 # Emilio Generator
 
 ## Design
-![Design](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design.png)
-![Design Lang](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-lang.png)
-![Design Script](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-script.png)
-![Design Condensed](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-lang-condensed.png)
-![Design Checking](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-checking.png)
-![Design Checking Error](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-error.png)
+![Design](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design.png?a=a)
+![Design Lang](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-lang.png?a=a)
+![Design Script](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-script.png?a=a)
+![Design Condensed](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-lang-condensed.png?a=a)
+![Design Checking](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-checking.png?a=a)
+![Design Checking Error](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-error.png?a=a)
