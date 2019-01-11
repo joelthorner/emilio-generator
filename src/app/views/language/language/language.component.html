@@ -1,114 +1,176 @@
-<div class="view view-instructions">
+<div class="view view-language">
   <div class="language-navbar">
     <eg-language-navbar></eg-language-navbar>
   </div>
 
-  <div class="row">
-    <div class="col col-editors">
+  <div class="view-content">
+    <div class="row">
+      <div class="col col-editors">
 
-      <!-- header -->
-      <div class="lang-item lang-item-header lang-item-generic-header">
-        <div class="card">
-          <div class="card-header">
-            <a
-              class="collapse-button"
-              href="#collap-lang-item-generic-header"
-              data-toggle="collapse"
-              data-target="#collap-lang-item-generic-header"
-              aria-expanded="false"
-            >
-              <div class="text">Generic Header</div>
-              <div class="badges">
-                <span class="badge badge-id">Header</span>
-                <ng-container *ngFor="let tagName of objectKeys(langData.emails.header.tags)" >
-                  <span class="badge badge-{{ tagName }}"
-                  *ngIf="langData.emails.header.tags[tagName]">{{ tagName }}</span>
-                </ng-container>
+        <!-- header -->
+        <div class="lang-item lang-item-header lang-item-generic-header">
+          <div class="card">
+            <div class="card-header">
+              <a
+                class="collapse-button"
+                href="#collap-lang-item-generic-header"
+                data-toggle="collapse"
+                data-target="#collap-lang-item-generic-header"
+                aria-expanded="false"
+              >
+                <div class="text">Generic Header</div>
+                <div class="badges">
+                  <span class="badge badge-id">Header</span>
+                  <ng-container *ngFor="let tagName of objectKeys(langData.emails.header.tags)" >
+                    <span
+                      class="badge badge-{{ tagName }}"
+                      *ngIf="langData.emails.header.tags[tagName]"
+                    >
+                      {{ tagName }}
+                    </span>
+                  </ng-container>
+                </div>
+              </a>
+            </div>
+
+            <div class="collapse" id="collap-lang-item-generic-header">
+              <div class="card-body">
+                <eg-editor
+                  label="Html"
+                  [langKey]="langKey"
+                  [content]="langData.emails.header.html"
+                  [contentKey]="'emails.header.html'"
+                ></eg-editor>
               </div>
-            </a>
-          </div>
-
-          <div class="collapse" id="collap-lang-item-generic-header">
-            <div class="card-body">
-              <eg-editor [langKey]="langKey" [content]="langData.emails.header.html" [contentKey]="'emails.header.html'"></eg-editor>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /header -->
+        <!-- /header -->
 
-      <!-- footer -->
-      <div class="lang-item lang-item-footer lang-item-generic-footer">
-        <div class="card">
-          <div class="card-header">
-            <a
-              class="collapse-button"
-              href="#collap-lang-item-generic-footer"
-              data-toggle="collapse"
-              data-target="#collap-lang-item-generic-footer"
-              aria-expanded="false"
-            >
-              <div class="text">Generic footer</div>
-              <div class="badges">
+        <!-- footer -->
+        <div class="lang-item lang-item-footer lang-item-generic-footer">
+          <div class="card">
+            <div class="card-header">
+              <a
+                class="collapse-button"
+                href="#collap-lang-item-generic-footer"
+                data-toggle="collapse"
+                data-target="#collap-lang-item-generic-footer"
+                aria-expanded="false"
+              >
+                <div class="text">Generic footer</div>
+                <div class="badges">
                   <span class="badge badge-id">Footer</span>
-                <ng-container *ngFor="let tagName of objectKeys(langData.emails.footer.tags)" >
-                  <span class="badge badge-{{ tagName }}"
-                  *ngIf="langData.emails.footer.tags[tagName]">{{ tagName }}</span>
-                </ng-container>
-              </div>
-            </a>
-          </div>
+                  <ng-container *ngFor="let tagName of objectKeys(langData.emails.footer.tags)" >
+                    <span
+                      class="badge badge-{{ tagName }}"
+                      *ngIf="langData.emails.footer.tags[tagName]"
+                    >
+                      {{ tagName }}
+                    </span>
+                  </ng-container>
+                </div>
+              </a>
+            </div>
 
-          <div class="collapse" id="collap-lang-item-generic-footer">
-            <div class="card-body">
-              <eg-editor [langKey]="langKey" [content]="langData.emails.footer.html" [contentKey]="'emails.footer.html'"></eg-editor>
+            <div class="collapse" id="collap-lang-item-generic-footer">
+              <div class="card-body">
+                <eg-editor
+                  label="Html"
+                  [langKey]="langKey"
+                  [content]="langData.emails.footer.html"
+                  [contentKey]="'emails.footer.html'"
+                ></eg-editor>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- /footer -->
+        <!-- /footer -->
 
-      <div class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}" *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)">
-        <div class="card">
-          <div class="card-header">
-            <a
-              class="collapse-button"
-              href="#collap-lang-item-email-{{ emailTemplateId }}"
-              data-toggle="collapse"
-              data-target="#collap-lang-item-email-{{ emailTemplateId }}"
-              aria-expanded="false"
-            >
-              <div class="text">{{ langData.emails.templates[emailTemplateId].name }}</div>
-              <div class="badges">
-                <span class="badge badge-id">Id {{ emailTemplateId }}</span>
-                <ng-container *ngFor="let tagName of objectKeys(langData.emails.templates[emailTemplateId].tags)" >
-                  <span class="badge badge-{{ tagName }}"
-                        *ngIf="langData.emails.templates[emailTemplateId].tags[tagName]">{{ tagName }}</span>
-                </ng-container>
+        <div class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}" *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)">
+          <div class="card">
+            <div class="card-header">
+              <a
+                class="collapse-button"
+                href="#collap-lang-item-email-{{ emailTemplateId }}"
+                data-toggle="collapse"
+                data-target="#collap-lang-item-email-{{ emailTemplateId }}"
+                aria-expanded="false"
+              >
+                <div class="text">{{ langData.emails.templates[emailTemplateId].name }}</div>
+                <div class="badges">
+                  <span class="badge badge-id">Id {{ emailTemplateId }}</span>
+                  <ng-container *ngFor="let tagName of objectKeys(langData.emails.templates[emailTemplateId].tags)" >
+                    <span
+                      class="badge badge-{{ tagName }}"
+                      *ngIf="langData.emails.templates[emailTemplateId].tags[tagName]"
+                    >
+                      {{ tagName }}
+                    </span>
+                  </ng-container>
+                </div>
+              </a>
+            </div>
+
+            <div class="collapse" id="collap-lang-item-email-{{ emailTemplateId }}">
+              <div class="card-body">
+                <div class="form-group">
+                  <eg-subject
+                    contentKey="emails.templates[{{ emailTemplateId }}].subject"
+                    [value]="langData.emails.templates[emailTemplateId].subject"
+                    [langKey]="langKey"
+                  ></eg-subject>
+                </div>
+
+                <!-- body -->
+                <div class="form-group">
+                  <eg-editor
+                    label="Body"
+                    [langKey]="langKey"
+                    [content]="langData.emails.templates[emailTemplateId].html"
+                    contentKey="emails.templates[{{ emailTemplateId }}].html"
+                  ></eg-editor>
+                </div>
+
+                <!-- customHeader -->
+                <div class="form-group">
+                  <eg-editor
+                    *ngIf="langData.emails.templates[emailTemplateId].tags.customHeader"
+                    label="Custom header"
+                    [langKey]="langKey"
+                    [content]="langData.emails.templates[emailTemplateId].header.html"
+                    contentKey="emails.templates[{{ emailTemplateId }}].header.html"
+                  ></eg-editor>
+                </div>
+
+                <!-- customFooter -->
+                <div class="form-group">
+                  <eg-editor
+                    *ngIf="langData.emails.templates[emailTemplateId].tags.customFooter"
+                    label="Custom footer"
+                    [langKey]="langKey"
+                    [content]="langData.emails.templates[emailTemplateId].footer.html"
+                    contentKey="emails.templates[{{ emailTemplateId }}].footer.html"
+                  ></eg-editor>
+                </div>
               </div>
-            </a>
-          </div>
-
-          <div class="collapse" id="collap-lang-item-email-{{ emailTemplateId }}">
-            <div class="card-body">
-<pre>
-  {{ langData.emails.templates[emailTemplateId].html }}
-</pre>
             </div>
           </div>
         </div>
+
+  <!-- <pre>
+  {{ langData | json }}
+  </pre> -->
       </div>
 
-<pre>
-{{ langData | json }}
-</pre>
-    </div>
+      <!-- preview -->
+      <div class="col col-preview">
+        <eg-preview [previewEmailId]="1" [previewEmailLangKey]="langKey"></eg-preview>
+      </div>
+      <!-- preview -->
 
-    <!-- preview -->
-    <div class="col col-preview">
-      <eg-preview [previewEmailId]="1" [previewEmailLangKey]="langKey"></eg-preview>
     </div>
-    <!-- preview -->
-
   </div>
 </div>
+
+<eg-modal-tags></eg-modal-tags>

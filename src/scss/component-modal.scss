@@ -1,0 +1,32 @@
+.modal-header {
+  padding: 20px $grid-gutter-width;
+  border-bottom-color: $light-border;
+
+  .close {
+    outline: none;
+    opacity: 1;
+    svg {
+      fill: $blue-2;
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+  }
+}
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1;
+  font-size: 20px;
+}
+.modal-body {
+  padding: 20px $grid-gutter-width;
+}
+.modal-footer {
+  border-top-color: $light-border;
+  padding: 20px $grid-gutter-width;
+
+  .btn {
+    font-size: 15px;
+    min-width: 100px;
+  }
+}

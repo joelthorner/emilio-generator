@@ -12,10 +12,13 @@ export class PreviewComponent implements OnInit {
   @Input() previewEmailId: any;
   @Input() previewEmailLangKey: any;
 
-  iframeSrc: string;
+  iframeSrc: any;
   name: string;
 
-  constructor(public sanitizer: DomSanitizer, private appData: AppData) { }
+  constructor(
+    public sanitizer: DomSanitizer,
+    private appData: AppData
+  ) { }
 
   ngOnInit() {
     const langId = this.appData.getLangIdByKey(this.previewEmailLangKey);
@@ -45,6 +48,9 @@ export class PreviewComponent implements OnInit {
       encodeURI(selectedHeader) +
       encodeURI(languages[langId].emails.templates[emailId].html) +
       encodeURI(selectedFooter);
+
+    // let iframeSrc_ = this.iframeSrc.replace('#', '%23');
+    this.iframeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.iframeSrc);
   }
 
 }

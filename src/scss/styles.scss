@@ -3,13 +3,14 @@
 
 @import '~compass-mixins/lib/compass/css3';
 
-@import "styles-utils";
 @import "styles-variables";
+@import "styles-utils";
 @import '~bootstrap/scss/bootstrap';
 
 @import 'component-card';
+@import 'component-modal';
 
-@include scrollbars(10px, #c1c1c1, #f1f1f1);
+@include scrollbars(8px, #c1c1c1, #f1f1f1);
 
 html, body {
   height: 100%;
@@ -44,6 +45,7 @@ html, body {
   width: calc(100% - #{$sidebar-w});
   height: 100%;
   overflow: auto;
+  position: relative;
   // transition: $transition-base;
 
   .sidebar-collapsed & {
@@ -79,5 +81,37 @@ body.editor-full-screen {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: 10;
+  z-index: 10;
+  border-radius: 0;
+}
+
+.badge {
+  font-weight: 400;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  padding: 0 0.8em;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 7px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+
+  &-id {
+    color: #FFF;
+    background-color: $blue-1;
+  }
+  &-empty {
+    color: #FFF;
+    background-color: $danger;
+  }
+  &-noSubject {
+    color: #FFF;
+    background-color: $warning;
+  }
+  &-customHeader, &-customFooter {
+    color: #FFF;
+    background-color: $info;
+  }
 }

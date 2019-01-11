@@ -1,5 +1,27 @@
-@import "styles-utils";
 @import "styles-variables";
+@import "styles-utils";
+
+.view-language {
+  padding: 0;
+
+  .view-content {
+    position: absolute;
+    top: $navbar-h;
+    left: 0;
+    right: 0;
+    height: calc(100% - #{$navbar-h});
+    overflow: auto;
+    padding: $grid-gutter-width;
+  }
+}
+
+.language-navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
 
 .col-preview {
   flex: 0 0 650px + $grid-gutter-width;
@@ -12,11 +34,24 @@
 }
 
 .lang-item {
-  margin-bottom: $grid-gutter-width;
+  &:not(:last-child) {
+    margin-bottom: $grid-gutter-width;
+  }
 
   .card-header {
     .text {
       color: $blue-1;
+    }
+  }
+  .card-body {
+    padding-top: $grid-gutter-width - 10px;
+
+    .form-group {
+      margin-bottom: $grid-gutter-width;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -24,34 +59,4 @@
 .badges {
   margin-top: 4px;
   @include clearfix();
-}
-.badge {
-  font-weight: 400;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.2px;
-  padding: 0 0.8em;
-  height: 18px;
-  line-height: 18px;
-  border-radius: 7px;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 5px;
-
-  &-id {
-    color: #FFF;
-    background-color: $blue-1;
-  }
-  &-empty {
-    color: #FFF;
-    background-color: $danger;
-  }
-  &-noSubject {
-    color: #FFF;
-    background-color: $warning;
-  }
-  &-customHeader, &-customFooter {
-    color: #FFF;
-    background-color: $info;
-  }
 }
