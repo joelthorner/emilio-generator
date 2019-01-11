@@ -8,9 +8,17 @@ import { AceEditorModule } from 'ng2-ace-editor';
 import { EditorComponent } from './editor/editor.component';
 import { PreviewComponent } from './preview/preview.component';
 import { SubjectComponent } from './subject/subject.component';
+import { ModalTagsComponent } from './modal-tags/modal-tags.component';
 
 @NgModule({
-  declarations: [LanguageComponent, LanguageNavbarComponent, EditorComponent, PreviewComponent, SubjectComponent],
+  declarations: [
+    LanguageComponent,
+    LanguageNavbarComponent,
+    EditorComponent,
+    PreviewComponent,
+    SubjectComponent,
+    ModalTagsComponent
+  ],
   imports: [
     CommonModule,
     LanguageRoutingModule,
