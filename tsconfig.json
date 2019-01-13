@@ -11,12 +11,19 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
+    "types": ["node"],
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "jszip": [
+        "./node_modules/jszip/dist/jszip.min.js"
+      ],
+      "stream": ["./node_modules/readable-stream/readable.js"]
+    }
   }
 }
