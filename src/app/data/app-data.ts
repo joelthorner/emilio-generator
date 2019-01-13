@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LANGUAGES } from './app-data-languages';
+import { JszipService } from '../lib/services/jszip.service';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,7 @@ import { LANGUAGES } from './app-data-languages';
 export class AppData {
   languages = LANGUAGES;
 
-  constructor() {
+  constructor(private jszip: JszipService) {
     let copyLanguages = this.languages;
     copyLanguages = this.checkAll(copyLanguages);
     this.languages = copyLanguages;
@@ -91,18 +92,23 @@ export class AppData {
   public getLanguage(key: string) {
     const languagesClone = this.languages;
     let findedLang: any = {};
+    let _langId;
 
     for (const langId in this.languages) {
       const thisLanguage = languagesClone[langId];
 
       if (thisLanguage.key === key) {
         findedLang = thisLanguage;
+        _langId = langId;
       }
     }
+
+    findedLang.id = _langId;
 
     return findedLang;
   }
 
+  // get language struct by int id 1
   public getLangIdByKey(key: string) {
     const languagesClone = this.languages;
     let findedLangId: any;
@@ -160,5 +166,39 @@ export class AppData {
       }
     }
     return languagesClone;
+  }
+
+  // execute download zip by language key
+  public generateLanguageZip(langKey: string) {
+    const data = this.getLanguage(langKey);
+    const emailsArray = [];
+
+    for (const templateId in data.emails.templates) {
+      const template = data.emails.templates[templateId];
+
+      let thisHeader = data.emails.header.html;
+      if (template.tags.customHeader) {
+        if (!template.header.tags.empty) {
+          thisHeader = template.header.html;
+        }
+      }
+
+      const thisBody = template.html;
+
+      let thisFooter = data.emails.footer.html;
+      if (template.tags.customFooter) {
+        if (!template.footer.tags.empty) {
+          thisFooter = template.footer.html;
+        }
+      }
+
+      emailsArray.push({
+        fileName: template.name + ' [id ' + templateId + '] [' + data.key + '].html',
+        content: thisHeader + thisBody + thisFooter
+      });
+    }
+
+    const zip = this.jszip.setZip(emailsArray);
+    this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
   }
 }
