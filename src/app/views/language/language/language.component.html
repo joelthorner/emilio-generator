@@ -12,7 +12,7 @@
           <div class="card">
             <div class="card-header">
               <a
-                class="collapse-button"
+                class="collapse-button collapsed"
                 href="#collap-lang-item-generic-header"
                 data-toggle="collapse"
                 data-target="#collap-lang-item-generic-header"
@@ -52,7 +52,7 @@
           <div class="card">
             <div class="card-header">
               <a
-                class="collapse-button"
+                class="collapse-button collapsed"
                 href="#collap-lang-item-generic-footer"
                 data-toggle="collapse"
                 data-target="#collap-lang-item-generic-footer"
@@ -91,7 +91,8 @@
           <div class="card">
             <div class="card-header">
               <a
-                class="collapse-button"
+                class="collapse-button collapsed"
+                (click)="refreshPreview($event, emailTemplateId)"
                 href="#collap-lang-item-email-{{ emailTemplateId }}"
                 data-toggle="collapse"
                 data-target="#collap-lang-item-email-{{ emailTemplateId }}"

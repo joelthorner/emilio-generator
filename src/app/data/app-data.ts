@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { LANGUAGES } from './app-data-languages';
 import { JszipService } from '../lib/services/jszip.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AppData {
-  languages = LANGUAGES;
+  public languages: any = LANGUAGES;
 
-  constructor(private jszip: JszipService) {
+  public preview: any;
+  public previewEmailId = 1;
+  public previewRefresh = 0;
+
+  constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
     let copyLanguages = this.languages;
     copyLanguages = this.checkAll(copyLanguages);
     this.languages = copyLanguages;
@@ -200,5 +205,38 @@ export class AppData {
 
     const zip = this.jszip.setZip(emailsArray);
     this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
+  }
+
+  // set sanitized src for iframe with email preview
+  public setPreviewIframeContent(langKey: string) {
+
+    this.preview = '';
+    this.previewRefresh ++;
+
+    const langId = this.getLanguage(langKey).id;
+
+    let header = this.languages[langId].emails.header.html;
+    if (this.languages[langId].emails.templates[this.previewEmailId].tags.customHeader) {
+      header = this.languages[langId].emails.templates[this.previewEmailId].header.html;
+    }
+
+    const body = this.languages[langId].emails.templates[this.previewEmailId].html;
+
+    let footer = this.languages[langId].emails.footer.html;
+    if (this.languages[langId].emails.templates[this.previewEmailId].tags.customFooter) {
+      footer = this.languages[langId].emails.templates[this.previewEmailId].footer.html;
+    }
+
+    const iframeSrc = 'data:text/html;charset=utf-8,' +
+    encodeURI('<html><head><body class="refresh-' + this.previewRefresh + '"><style>body{margin: 0;}</style>') +
+    encodeURI(header) + encodeURI(body) + encodeURI(footer) +
+    encodeURI('</body></html>');
+
+    this.preview = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
+  }
+
+  // get sanitized src for iframe with email preview
+  public getPreviewIframeContent() {
+    return this.preview;
   }
 }

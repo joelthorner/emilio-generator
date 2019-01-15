@@ -27,7 +27,7 @@ export class EditorComponent implements AfterViewInit {
   constructor(
     private renderer: Renderer2,
     private appData: AppData
-    ) { }
+  ) { }
 
 
   ngAfterViewInit() {
@@ -58,6 +58,10 @@ export class EditorComponent implements AfterViewInit {
 
   onChangeAce(code) {
     this.appData.setStringVal(this.langKey, this.contentKey, code);
+
+    // preview
+    // this.appData.previewEmailId = emailTemplateId;
+    this.appData.setPreviewIframeContent(this.langKey);
   }
 
 }

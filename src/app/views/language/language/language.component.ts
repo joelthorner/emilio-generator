@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppData } from 'src/app/data/app-data';
 
@@ -18,7 +18,8 @@ export class LanguageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private appData: AppData
+    private appData: AppData,
+    private render: Renderer2
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
@@ -27,6 +28,13 @@ export class LanguageComponent implements OnInit {
     this.langKey = this.route.snapshot.params['langKey'];
     this.langData = this.appData.getLanguage(this.langKey);
     this.previewEmail = this.langData.emails.templates[1];
+  }
+
+  refreshPreview(event: any, emailTemplateId: any) {
+    if (event.target.classList.contains('collapsed')) {
+      this.appData.previewEmailId = emailTemplateId;
+      this.appData.setPreviewIframeContent(this.langKey);
+    }
   }
 
 }
