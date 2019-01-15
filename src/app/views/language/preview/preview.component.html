@@ -3,7 +3,7 @@
     <div class="text">Preview</div>
     <div class="subtitle"><span class="light">Email:</span> {{ name }}</div>
   </div>
-  <div class="card-body">
-    <iframe [src]="iframeSrc" frameborder="0"></iframe>
+  <div class="card-body" id="card-iframe-container">
+    <iframe [src]="getSrc()" frameborder="0" id="card-iframe-preview"></iframe>
   </div>
 </div>

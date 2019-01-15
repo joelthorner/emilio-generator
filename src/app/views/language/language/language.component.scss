@@ -39,6 +39,14 @@
   }
 
   .card-header {
+    padding: 0;
+    .collapse-button {
+      padding: 15px $grid-gutter-width;
+      display: block;
+      > * {
+        pointer-events: none;
+      }
+    }
     .text {
       color: $blue-1;
     }
