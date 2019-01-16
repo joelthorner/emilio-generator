@@ -58,9 +58,6 @@ export class EditorComponent implements AfterViewInit {
 
   onChangeAce(code) {
     this.appData.setStringVal(this.langKey, this.contentKey, code);
-
-    // preview
-    // this.appData.previewEmailId = emailTemplateId;
     this.appData.setPreviewIframeContent(this.langKey);
   }
 

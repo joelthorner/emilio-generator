@@ -32,7 +32,8 @@ export class LanguageComponent implements OnInit {
 
   refreshPreview(event: any, emailTemplateId: any) {
     if (event.target.classList.contains('collapsed')) {
-      this.appData.previewEmailId = emailTemplateId;
+      this.appData.previewData.id = emailTemplateId;
+      this.appData.previewData.name = this.appData.getEmailData(this.langKey, emailTemplateId).name;
       this.appData.setPreviewIframeContent(this.langKey);
     }
   }

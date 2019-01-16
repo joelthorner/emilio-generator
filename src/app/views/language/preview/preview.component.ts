@@ -29,7 +29,8 @@ export class PreviewComponent implements OnInit {
     this.useCommonHeader = languageData.emails.templates[this.emailId].tags.customHeader;
     this.useCommonFooter = languageData.emails.templates[this.emailId].tags.customFooter;
 
-    this.appData.previewEmailId = this.emailId;
+    this.appData.previewData.id = this.emailId;
+    this.appData.previewData.name = this.appData.getEmailData(this.langKey, this.emailId).name;
     this.appData.setPreviewIframeContent(this.langKey);
   }
 

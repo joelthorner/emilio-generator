@@ -9,9 +9,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppData {
   public languages: any = LANGUAGES;
 
-  public preview: any;
-  public previewEmailId = 1;
-  public previewRefresh = 0;
+  public previewSrc: any;
+  public previewData = {
+    id: 1,
+    name: '',
+    options: {
+      logo: '',
+      social: ''
+    },
+    refresh: 0
+  };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
     let copyLanguages = this.languages;
@@ -97,7 +104,7 @@ export class AppData {
   public getLanguage(key: string) {
     const languagesClone = this.languages;
     let findedLang: any = {};
-    let _langId;
+    let _langId: any;
 
     for (const langId in this.languages) {
       const thisLanguage = languagesClone[langId];
@@ -113,7 +120,7 @@ export class AppData {
     return findedLang;
   }
 
-  // get language struct by int id 1
+  // get language id by key 'es'
   public getLangIdByKey(key: string) {
     const languagesClone = this.languages;
     let findedLangId: any;
@@ -127,6 +134,22 @@ export class AppData {
     }
 
     return findedLangId;
+  }
+
+  // get email data by lang key 'es' and email id 1
+  public getEmailData(langKey: string, emailId: any) {
+    const langData = this.getLanguage(langKey);
+    let emailData: any;
+
+    for (const templateId in langData.emails.templates) {
+      const thisTemplate = langData.emails.templates[templateId];
+
+      if (parseInt(templateId) === parseInt(emailId)) {
+        emailData = thisTemplate;
+      }
+    }
+
+    return emailData;
   }
 
   // set string value 'html' or 'subject'
@@ -210,33 +233,33 @@ export class AppData {
   // set sanitized src for iframe with email preview
   public setPreviewIframeContent(langKey: string) {
 
-    this.preview = '';
-    this.previewRefresh ++;
+    this.previewSrc = '';
+    this.previewData.refresh ++;
 
     const langId = this.getLanguage(langKey).id;
 
     let header = this.languages[langId].emails.header.html;
-    if (this.languages[langId].emails.templates[this.previewEmailId].tags.customHeader) {
-      header = this.languages[langId].emails.templates[this.previewEmailId].header.html;
+    if (this.languages[langId].emails.templates[this.previewData.id].tags.customHeader) {
+      header = this.languages[langId].emails.templates[this.previewData.id].header.html;
     }
 
-    const body = this.languages[langId].emails.templates[this.previewEmailId].html;
+    const body = this.languages[langId].emails.templates[this.previewData.id].html;
 
     let footer = this.languages[langId].emails.footer.html;
-    if (this.languages[langId].emails.templates[this.previewEmailId].tags.customFooter) {
-      footer = this.languages[langId].emails.templates[this.previewEmailId].footer.html;
+    if (this.languages[langId].emails.templates[this.previewData.id].tags.customFooter) {
+      footer = this.languages[langId].emails.templates[this.previewData.id].footer.html;
     }
 
     const iframeSrc = 'data:text/html;charset=utf-8,' +
-    encodeURI('<html><head><body class="refresh-' + this.previewRefresh + '"><style>body{margin: 0;}</style>') +
-    encodeURI(header) + encodeURI(body) + encodeURI(footer) +
-    encodeURI('</body></html>');
+      encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '"><style>body{margin: 0;}</style>') +
+      encodeURI(header) + encodeURI(body) + encodeURI(footer) +
+      encodeURI('</body></html>');
 
-    this.preview = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
+    this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
   }
 
   // get sanitized src for iframe with email preview
   public getPreviewIframeContent() {
-    return this.preview;
+    return this.previewSrc;
   }
 }
