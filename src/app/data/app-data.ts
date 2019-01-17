@@ -36,19 +36,17 @@ export class AppData {
   };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
-    let copyLanguages = this.languages;
-    copyLanguages = this.checkAll(copyLanguages);
-    this.languages = copyLanguages;
+    this.checkAll();
   }
 
-  public checkAll(languagesObj: any) {
-    let copyLanguages = languagesObj;
+  public checkAll() {
+    let copyLanguages = this.languages;
 
     copyLanguages = this.checkEmptyLanguages(copyLanguages);
     copyLanguages = this.checkTemplatesTags(copyLanguages);
     copyLanguages = this.trimHtml(copyLanguages);
 
-    return copyLanguages;
+    return this.languages = copyLanguages;
   }
 
   // set/update languages[x].empty
@@ -183,7 +181,7 @@ export class AppData {
     const toEval = evalPath + '=`' + code + '`;';
     eval(toEval);
 
-    this.languages = this.checkAll(this.languages);
+    this.languages = this.checkAll();
   }
 
   // trim all html contents first empty '\n'
@@ -245,6 +243,7 @@ export class AppData {
     this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
   }
 
+  // execute download html by language key and email id
   public generateEmailHtml(langKey: string, emailId: any) {
     const data = this.getLanguage(langKey);
 
@@ -309,5 +308,45 @@ export class AppData {
   // get sanitized src for iframe with email preview
   public getPreviewIframeContent() {
     return this.previewSrc;
+  }
+
+  public delCustomHeader(langKey: string, emailId: any) {
+    const data = this.getEmailData(langKey, emailId);
+    delete data.header;
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
+  }
+
+  public setCustomHeader(langKey: string, emailId: any) {
+    const langData = this.getLanguage(langKey);
+    const emailData = this.getEmailData(langKey, emailId);
+    console.log(langData);
+
+    emailData.header = {
+      html: langData.emails.header.html
+    };
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
+  }
+
+  public delCustomFooter(langKey: string, emailId: any) {
+    const data = this.getEmailData(langKey, emailId);
+    delete data.footer;
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
+  }
+
+  public setCustomFooter(langKey: string, emailId: any) {
+    const langData = this.getLanguage(langKey);
+    const emailData = this.getEmailData(langKey, emailId);
+    emailData.footer = {
+      html: langData.emails.footer.html
+    };
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
   }
 }

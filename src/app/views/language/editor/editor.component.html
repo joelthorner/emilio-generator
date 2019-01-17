@@ -1,6 +1,7 @@
 <label for="editor">{{ label }}</label>
 <ace-editor
   class="ace-editor-default"
+  [attr.data-lines]="lines"
   #editor
   [(text)]="content"
   [mode]="'html'"

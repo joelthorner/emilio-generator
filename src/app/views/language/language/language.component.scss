@@ -46,7 +46,9 @@
   &:not(:last-child) {
     margin-bottom: $grid-gutter-width;
   }
-
+  .card {
+    overflow: visible;
+  }
   .card-header {
     padding: 0;
     position: relative;
@@ -93,6 +95,10 @@
   .card:hover &, &:hover {
     opacity: 1;
     visibility: visible;
+  }
+
+  > * {
+    float: left;
   }
 
   .btn {
