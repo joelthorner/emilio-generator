@@ -3,7 +3,7 @@
     <eg-language-navbar></eg-language-navbar>
   </div>
 
-  <div class="view-content">
+  <div class="view-content" scrolling>
     <div class="row">
       <div class="col col-editors">
 
@@ -111,6 +111,16 @@
                   </ng-container>
                 </div>
               </a>
+
+              <div class="buttons-header">
+                <button class="btn btn-light" type="button" (click)="appData.generateEmailHtml(langKey, emailTemplateId)">
+                  <svg class="icon"><use xlink:href="#download"></use></svg>
+                </button>
+
+                <button class="btn btn-light" type="button">
+                  <svg class="icon"><use xlink:href="#tree-dots"></use></svg>
+                </button>
+              </div>
             </div>
 
             <div class="collapse" id="collap-lang-item-email-{{ emailTemplateId }}">

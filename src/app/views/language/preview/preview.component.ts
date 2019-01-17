@@ -37,5 +37,4 @@ export class PreviewComponent implements OnInit {
   getSrc() {
     return this.appData.getPreviewIframeContent();
   }
-
 }

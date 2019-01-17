@@ -7,7 +7,7 @@ import { saveAs } from 'file-saver';
 })
 export class JszipService {
 
-  public setZip(filesArr) {
+  public setZip(filesArr: any) {
     const zip = new JSZip();
 
     filesArr.forEach(file => {
@@ -17,11 +17,19 @@ export class JszipService {
     return zip;
   }
 
-  public saveAsZip(zip, zipName) {
+  public saveAsZip(zip: any, zipName: string) {
     zip.generateAsync({ type: 'blob' })
       .then(function(content) {
         // see FileSaver.js
         saveAs(content, zipName);
       });
+  }
+
+  public saveAsHtml(content: any, fileName: string, type: string) {
+    const blob = new Blob([ content ], {
+      type: type
+    });
+
+    saveAs(blob, fileName);
   }
 }

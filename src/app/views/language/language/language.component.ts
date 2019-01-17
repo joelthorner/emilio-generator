@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppData } from 'src/app/data/app-data';
 
+
 @Component({
   selector: 'eg-language',
   templateUrl: './language.component.html',
@@ -18,8 +19,7 @@ export class LanguageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private appData: AppData,
-    private render: Renderer2
+    public appData: AppData
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
@@ -37,5 +37,4 @@ export class LanguageComponent implements OnInit {
       this.appData.setPreviewIframeContent(this.langKey);
     }
   }
-
 }

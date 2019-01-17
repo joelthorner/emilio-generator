@@ -11,7 +11,11 @@
     right: 0;
     height: calc(100% - #{$navbar-h});
     overflow: auto;
-    padding: $grid-gutter-width;
+    &::-webkit-scrollbar {
+      width:  0;
+      height: 0;
+    }
+    padding: ($grid-gutter-width - 10px) $grid-gutter-width;
   }
 }
 
@@ -26,6 +30,11 @@
 .col-preview {
   flex: 0 0 650px + $grid-gutter-width;
   max-width: 650px + $grid-gutter-width;
+
+  position: fixed;
+  top: ($navbar-h * 2) + ($grid-gutter-width - 10px);
+  right: $grid-gutter-width / 2;
+  bottom: $grid-gutter-width - 10px;
 }
 
 .col-editors {
@@ -40,6 +49,8 @@
 
   .card-header {
     padding: 0;
+    position: relative;
+
     .collapse-button {
       padding: 15px $grid-gutter-width;
       display: block;
@@ -67,4 +78,46 @@
 .badges {
   margin-top: 4px;
   @include clearfix();
+}
+
+.buttons-header {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-base;
+
+  .card:hover &, &:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn {
+    fill: $blue-2;
+    background-color: #FFF;
+    border-color: #FFF;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    transition: $transition-base;
+
+    &:hover {
+      fill: $blue-1;
+    }
+    &:active, &:hover:active {
+      fill: $pink-1;
+    }
+    &:focus {
+      fill: $pink-1;
+      box-shadow: none;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

@@ -17,7 +17,22 @@ export class AppData {
       logo: '',
       social: ''
     },
-    refresh: 0
+    refresh: 0,
+    style : `
+      <style>
+        body{ margin: 0; font-size: 11px; }
+        ::-webkit-scrollbar {
+          width:  4px;
+          height: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #c1c1c1;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+      </style>
+    `
   };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
@@ -230,6 +245,39 @@ export class AppData {
     this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
   }
 
+  public generateEmailHtml(langKey: string, emailId: any) {
+    const data = this.getLanguage(langKey);
+
+    for (const templateId in data.emails.templates) {
+      if (parseInt(templateId) === parseInt(emailId)) {
+        const template = data.emails.templates[templateId];
+
+        let thisHeader = data.emails.header.html;
+        if (template.tags.customHeader) {
+          if (!template.header.tags.empty) {
+            thisHeader = template.header.html;
+          }
+        }
+
+        const thisBody = template.html;
+
+        let thisFooter = data.emails.footer.html;
+        if (template.tags.customFooter) {
+          if (!template.footer.tags.empty) {
+            thisFooter = template.footer.html;
+          }
+        }
+
+        const fileName = template.name + ' [id ' + templateId + '] [' + data.key + '].html';
+        const content = thisHeader + thisBody + thisFooter;
+        this.jszip.saveAsHtml(content, fileName, 'text/html;charset=utf-8');
+
+        return true;
+      }
+    }
+    return false;
+  }
+
   // set sanitized src for iframe with email preview
   public setPreviewIframeContent(langKey: string) {
 
@@ -251,7 +299,7 @@ export class AppData {
     }
 
     const iframeSrc = 'data:text/html;charset=utf-8,' +
-      encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '"><style>body{margin: 0;}</style>') +
+      encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '">' + this.previewData.style) +
       encodeURI(header) + encodeURI(body) + encodeURI(footer) +
       encodeURI('</body></html>');
 
