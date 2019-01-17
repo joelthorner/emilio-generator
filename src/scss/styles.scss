@@ -115,3 +115,8 @@ body.editor-full-screen {
     background-color: $info;
   }
 }
+
+.lang-item ::-webkit-scrollbar {
+  width:  4px;
+  height: 4px;
+}

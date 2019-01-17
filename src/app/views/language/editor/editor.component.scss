@@ -9,5 +9,16 @@
   border: 1px solid $input-border-color;
   transition: $transition-base;
 
-  @include form-control-focus($primary, #FFF, lighten($primary, 25%), 0 0 0 .2rem rgba($primary, .25))
+  @include form-control-focus($primary, #FFF, lighten($primary, 25%), 0 0 0 .2rem rgba($primary, .25));
+}
+
+.label-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  .info {
+    font-size: 12px;
+    opacity: 0.75;
+  }
 }

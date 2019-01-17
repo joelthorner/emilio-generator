@@ -14,8 +14,6 @@ export class EditorComponent implements AfterViewInit {
   @Input() label: string;
   @ViewChild('editor') editor: any;
 
-  public lines = 14;
-
   aceOptions = {
     useWorker: false,
     // maxLines: 15,
@@ -33,11 +31,6 @@ export class EditorComponent implements AfterViewInit {
 
 
   ngAfterViewInit() {
-    const contentLines = this.content.split('\n').length;
-    if (contentLines > this.lines) {
-      this.lines = contentLines;
-    }
-
     const renderer = this.renderer;
     const editorInstance = this.editor.getEditor();
     editorInstance.commands.addCommand({

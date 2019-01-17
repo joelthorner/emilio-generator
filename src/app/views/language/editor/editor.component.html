@@ -1,7 +1,10 @@
-<label for="editor">{{ label }}</label>
+<div class="label-wrap">
+  <label for="editor">{{ label }}</label>
+  <span class="info">Fullscreen: F11 with focus on editor</span>
+</div>
+
 <ace-editor
   class="ace-editor-default"
-  [attr.data-lines]="lines"
   #editor
   [(text)]="content"
   [mode]="'html'"
