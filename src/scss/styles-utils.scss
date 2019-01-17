@@ -72,7 +72,7 @@ $rem-px-only: false !default;
 }
 
 
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+@mixin scrollbars($size, $foreground-color, $background-color) {
   ::-webkit-scrollbar {
     width:  $size;
     height: $size;

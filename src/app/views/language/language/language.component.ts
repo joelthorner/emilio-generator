@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppData } from 'src/app/data/app-data';
 
+
 @Component({
   selector: 'eg-language',
   templateUrl: './language.component.html',
@@ -18,8 +19,7 @@ export class LanguageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private appData: AppData,
-    private render: Renderer2
+    public appData: AppData
   ) {
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
@@ -32,9 +32,34 @@ export class LanguageComponent implements OnInit {
 
   refreshPreview(event: any, emailTemplateId: any) {
     if (event.target.classList.contains('collapsed')) {
-      this.appData.previewEmailId = emailTemplateId;
+      this.appData.previewData.id = emailTemplateId;
+      this.appData.previewData.name = this.appData.getEmailData(this.langKey, emailTemplateId).name;
       this.appData.setPreviewIframeContent(this.langKey);
     }
   }
 
+  evalModifyHeader(event: any, emailId: any) {
+    event.preventDefault();
+
+    if (this.langData.emails.templates[emailId].tags.customHeader) {
+      // remove header
+      this.appData.delCustomHeader(this.langKey, emailId);
+
+    } else {
+      // add header
+      this.appData.setCustomHeader(this.langKey, emailId);
+    }
+  }
+  evalModifyFooter(event: any, emailId: any) {
+    event.preventDefault();
+
+    if (this.langData.emails.templates[emailId].tags.customFooter) {
+      // remove footer
+      this.appData.delCustomFooter(this.langKey, emailId);
+
+    } else {
+      // add footer
+      this.appData.setCustomFooter(this.langKey, emailId);
+    }
+  }
 }

@@ -1,6 +1,7 @@
+// v3 file template
 export const LANGUAGE_CA = {
-
-  header: `
+  header: {
+    html: `
 <table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" style="padding:25px;background-color:#eee;padding-bottom:0px;">
 
   <tr>
@@ -26,9 +27,11 @@ export const LANGUAGE_CA = {
 
           </td>
         </tr>
-`,
+`
+  },
 
-  footer: `
+  footer: {
+    html: `
         <tr>
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -105,7 +108,8 @@ export const LANGUAGE_CA = {
     </td>
   </tr>
 </table>
-`,
+`
+  },
 
   templates: {
 
@@ -123,7 +127,8 @@ export const LANGUAGE_CA = {
   </td>
 </tr>
 `,
-      footer: `
+      footer: {
+        html: `
         <tr>
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -195,7 +200,7 @@ export const LANGUAGE_CA = {
     </td>
   </tr>
   <tr>
-    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <td align="center" style="font-family: sans-serif;font-size: 14px;padding:10px;">
       <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
         <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
       </span>
@@ -203,6 +208,7 @@ export const LANGUAGE_CA = {
   </tr>
 </table>
 `
+      }
     }, // end 1
 
     2 : {
@@ -267,7 +273,8 @@ export const LANGUAGE_CA = {
   </td>
 </tr>
 `,
-      footer: `
+      footer: {
+        html: `
         <tr>
           <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -339,7 +346,7 @@ export const LANGUAGE_CA = {
     </td>
   </tr>
   <tr>
-    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <td align="center" style="font-family: sans-serif;font-size: 14px;padding:10px;">
       <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
         <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">Donar-se de baixa</a> <span style="color:#333;font-size:10px;">de la subscripció de Newsletter</span>
       </span>
@@ -347,6 +354,7 @@ export const LANGUAGE_CA = {
   </tr>
 </table>
 `
+      }
     }, // end 5
 
     6 : {

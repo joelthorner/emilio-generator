@@ -3,7 +3,7 @@
     <eg-language-navbar></eg-language-navbar>
   </div>
 
-  <div class="view-content">
+  <div class="view-content" scrolling>
     <div class="row">
       <div class="col col-editors">
 
@@ -111,6 +111,27 @@
                   </ng-container>
                 </div>
               </a>
+
+              <div class="buttons-header">
+                <button class="btn btn-light" type="button" (click)="appData.generateEmailHtml(langKey, emailTemplateId)">
+                  <svg class="icon"><use xlink:href="#download"></use></svg>
+                </button>
+
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <svg class="icon"><use xlink:href="#tree-dots"></use></svg>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" (click)="evalModifyHeader($event, emailTemplateId)">
+                      {{ langData.emails.templates[emailTemplateId].tags.customHeader ? 'Remove header' : 'Add header' }}
+                    </a>
+                    <a class="dropdown-item" href="#" (click)="evalModifyFooter($event, emailTemplateId)">
+                      {{ langData.emails.templates[emailTemplateId].tags.customFooter ? 'Remove footer' : 'Add footer' }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <div class="collapse" id="collap-lang-item-email-{{ emailTemplateId }}">

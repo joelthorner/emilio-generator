@@ -12,7 +12,7 @@ export class EditorComponent implements AfterViewInit {
   @Input() langKey: string;
   @Input() contentKey: string;
   @Input() label: string;
-  @ViewChild('editor') editor;
+  @ViewChild('editor') editor: any;
 
   aceOptions = {
     useWorker: false,
@@ -58,9 +58,6 @@ export class EditorComponent implements AfterViewInit {
 
   onChangeAce(code) {
     this.appData.setStringVal(this.langKey, this.contentKey, code);
-
-    // preview
-    // this.appData.previewEmailId = emailTemplateId;
     this.appData.setPreviewIframeContent(this.langKey);
   }
 

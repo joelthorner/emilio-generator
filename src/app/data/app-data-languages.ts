@@ -18,7 +18,7 @@ export const LANGUAGES = {
   3: {
     key: 'ca',
     name: 'Catalan',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_CA
   },
   4: {
     key: 'fr',

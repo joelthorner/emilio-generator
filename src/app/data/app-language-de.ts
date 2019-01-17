@@ -1,8 +1,13 @@
+// v3 file template
 export const LANGUAGE_DE = {
 
-  header: ``,
+  header: {
+    html: ``
+  },
 
-  footer: ``,
+  footer: {
+    html: ``
+  },
 
   templates: {
 

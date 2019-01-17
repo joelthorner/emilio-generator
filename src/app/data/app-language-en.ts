@@ -1,3 +1,4 @@
+// v3 file template
 export const LANGUAGE_EN = {
   header: {
     html: `

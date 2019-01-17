@@ -9,24 +9,44 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppData {
   public languages: any = LANGUAGES;
 
-  public preview: any;
-  public previewEmailId = 1;
-  public previewRefresh = 0;
+  public previewSrc: any;
+  public previewData = {
+    id: 1,
+    name: '',
+    options: {
+      logo: '',
+      social: ''
+    },
+    refresh: 0,
+    style : `
+      <style>
+        body{ margin: 0; font-size: 11px; }
+        ::-webkit-scrollbar {
+          width:  4px;
+          height: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #c1c1c1;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+        }
+      </style>
+    `
+  };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
-    let copyLanguages = this.languages;
-    copyLanguages = this.checkAll(copyLanguages);
-    this.languages = copyLanguages;
+    this.checkAll();
   }
 
-  public checkAll(languagesObj: any) {
-    let copyLanguages = languagesObj;
+  public checkAll() {
+    let copyLanguages = this.languages;
 
     copyLanguages = this.checkEmptyLanguages(copyLanguages);
     copyLanguages = this.checkTemplatesTags(copyLanguages);
     copyLanguages = this.trimHtml(copyLanguages);
 
-    return copyLanguages;
+    return this.languages = copyLanguages;
   }
 
   // set/update languages[x].empty
@@ -97,7 +117,7 @@ export class AppData {
   public getLanguage(key: string) {
     const languagesClone = this.languages;
     let findedLang: any = {};
-    let _langId;
+    let _langId: any;
 
     for (const langId in this.languages) {
       const thisLanguage = languagesClone[langId];
@@ -113,7 +133,7 @@ export class AppData {
     return findedLang;
   }
 
-  // get language struct by int id 1
+  // get language id by key 'es'
   public getLangIdByKey(key: string) {
     const languagesClone = this.languages;
     let findedLangId: any;
@@ -127,6 +147,22 @@ export class AppData {
     }
 
     return findedLangId;
+  }
+
+  // get email data by lang key 'es' and email id 1
+  public getEmailData(langKey: string, emailId: any) {
+    const langData = this.getLanguage(langKey);
+    let emailData: any;
+
+    for (const templateId in langData.emails.templates) {
+      const thisTemplate = langData.emails.templates[templateId];
+
+      if (parseInt(templateId) === parseInt(emailId)) {
+        emailData = thisTemplate;
+      }
+    }
+
+    return emailData;
   }
 
   // set string value 'html' or 'subject'
@@ -145,7 +181,7 @@ export class AppData {
     const toEval = evalPath + '=`' + code + '`;';
     eval(toEval);
 
-    this.languages = this.checkAll(this.languages);
+    this.languages = this.checkAll();
   }
 
   // trim all html contents first empty '\n'
@@ -207,36 +243,110 @@ export class AppData {
     this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
   }
 
+  // execute download html by language key and email id
+  public generateEmailHtml(langKey: string, emailId: any) {
+    const data = this.getLanguage(langKey);
+
+    for (const templateId in data.emails.templates) {
+      if (parseInt(templateId) === parseInt(emailId)) {
+        const template = data.emails.templates[templateId];
+
+        let thisHeader = data.emails.header.html;
+        if (template.tags.customHeader) {
+          if (!template.header.tags.empty) {
+            thisHeader = template.header.html;
+          }
+        }
+
+        const thisBody = template.html;
+
+        let thisFooter = data.emails.footer.html;
+        if (template.tags.customFooter) {
+          if (!template.footer.tags.empty) {
+            thisFooter = template.footer.html;
+          }
+        }
+
+        const fileName = template.name + ' [id ' + templateId + '] [' + data.key + '].html';
+        const content = thisHeader + thisBody + thisFooter;
+        this.jszip.saveAsHtml(content, fileName, 'text/html;charset=utf-8');
+
+        return true;
+      }
+    }
+    return false;
+  }
+
   // set sanitized src for iframe with email preview
   public setPreviewIframeContent(langKey: string) {
 
-    this.preview = '';
-    this.previewRefresh ++;
+    this.previewSrc = '';
+    this.previewData.refresh ++;
 
     const langId = this.getLanguage(langKey).id;
 
     let header = this.languages[langId].emails.header.html;
-    if (this.languages[langId].emails.templates[this.previewEmailId].tags.customHeader) {
-      header = this.languages[langId].emails.templates[this.previewEmailId].header.html;
+    if (this.languages[langId].emails.templates[this.previewData.id].tags.customHeader) {
+      header = this.languages[langId].emails.templates[this.previewData.id].header.html;
     }
 
-    const body = this.languages[langId].emails.templates[this.previewEmailId].html;
+    const body = this.languages[langId].emails.templates[this.previewData.id].html;
 
     let footer = this.languages[langId].emails.footer.html;
-    if (this.languages[langId].emails.templates[this.previewEmailId].tags.customFooter) {
-      footer = this.languages[langId].emails.templates[this.previewEmailId].footer.html;
+    if (this.languages[langId].emails.templates[this.previewData.id].tags.customFooter) {
+      footer = this.languages[langId].emails.templates[this.previewData.id].footer.html;
     }
 
     const iframeSrc = 'data:text/html;charset=utf-8,' +
-    encodeURI('<html><head><body class="refresh-' + this.previewRefresh + '"><style>body{margin: 0;}</style>') +
-    encodeURI(header) + encodeURI(body) + encodeURI(footer) +
-    encodeURI('</body></html>');
+      encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '">' + this.previewData.style) +
+      encodeURI(header) + encodeURI(body) + encodeURI(footer) +
+      encodeURI('</body></html>');
 
-    this.preview = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
+    this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
   }
 
   // get sanitized src for iframe with email preview
   public getPreviewIframeContent() {
-    return this.preview;
+    return this.previewSrc;
+  }
+
+  public delCustomHeader(langKey: string, emailId: any) {
+    const data = this.getEmailData(langKey, emailId);
+    delete data.header;
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
+  }
+
+  public setCustomHeader(langKey: string, emailId: any) {
+    const langData = this.getLanguage(langKey);
+    const emailData = this.getEmailData(langKey, emailId);
+    console.log(langData);
+
+    emailData.header = {
+      html: langData.emails.header.html
+    };
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
+  }
+
+  public delCustomFooter(langKey: string, emailId: any) {
+    const data = this.getEmailData(langKey, emailId);
+    delete data.footer;
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
+  }
+
+  public setCustomFooter(langKey: string, emailId: any) {
+    const langData = this.getLanguage(langKey);
+    const emailData = this.getEmailData(langKey, emailId);
+    emailData.footer = {
+      html: langData.emails.footer.html
+    };
+    this.checkAll();
+    this.previewData.id = emailId;
+    this.setPreviewIframeContent(langKey);
   }
 }
