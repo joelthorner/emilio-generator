@@ -67,7 +67,7 @@ li > a {
   }
 }
 
-li.empty:not(.active) > a {
+li.empty:not(.active):not(.active-s) > a {
   color: $disabled-text;
   background-color: #FFF;
 
@@ -90,6 +90,7 @@ li.empty:not(.active) > a {
   }
 }
 
+li.active-s > a,
 li.active > a {
   background-color: $primary;
   color: #FFF;

@@ -130,3 +130,23 @@ body.editor-full-screen {
   width:  4px;
   height: 4px;
 }
+
+.breadcrumb {
+  margin: 0 0 $grid-gutter-width;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  line-height: 1;
+
+  .breadcrumb-item {
+    a {
+      color: $blue-2;
+    }
+    + .breadcrumb-item:before {
+      color: #ab7fa5;
+    }
+    &.active {
+      color: $pink-1;
+    }
+  }
+}

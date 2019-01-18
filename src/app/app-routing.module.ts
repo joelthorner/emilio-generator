@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'language',
     loadChildren: './views/language/language.module#LanguageModule'
+  },
+  {
+    path: 'generate-script',
+    loadChildren: './views/generate-script/generate-script.module#GenerateScriptModule'
   }
 ];
 
