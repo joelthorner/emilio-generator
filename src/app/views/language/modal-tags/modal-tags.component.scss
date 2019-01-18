@@ -1,3 +1,7 @@
 .media-object {
   width: 100px;
 }
+.badge {
+  width: calc(100% - 10px);
+  margin-right: 10px;
+}

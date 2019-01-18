@@ -12,6 +12,16 @@
 
 @include scrollbars(8px, #c1c1c1, #f1f1f1);
 
+::-moz-selection {
+  color: #FFF;
+  background: $blue-1;
+}
+
+::selection {
+  color: #FFF;
+  background: $blue-1;
+}
+
 html, body {
   height: 100%;
 }
