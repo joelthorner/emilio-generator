@@ -67,14 +67,14 @@
           </div>
 
           <div class="form-group">
-            <div class="form-group-title">Destination language</div>
-            <small id="destLangHelp" class="form-text text-muted mb-3">
-              Generates the script in a language for a different language (due to lack of translation).
-            </small>
+            <div class="form-group-title pb-0">Destination language</div>
+            <span id="destLangHelp" class="text-butted mb-3">
+              Generar els emails en un llenguatge per a un llenguatge de destí diferent.
+            </span>
 
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="destLang"><b>{{ langKey | uppercase }} - {{ langData.name }}</b>&nbsp;to</label>
+                <label class="input-group-text" for="destLang"><b>{{ langKey | uppercase }} - {{ langData.name }}</b>&nbsp;&nbsp;to</label>
               </div>
               <select
                 class="custom-select"
@@ -96,16 +96,32 @@
       </div>
     </div>
 
-    <div class="col col-info">
+    <div class="col col-info col-3">
       <div class="card">
         <div class="card-body">
-          Script time
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="time">{{ scriptInsights.execTime }}</div>
+              <div class="time-label">Script execution time</div>
+            </div>
+            <div class="col">
+              <svg class="time-icon"><use xlink:href="#timer"></use></svg>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          Percent email %
+          <canvas baseChart
+              [data]="scriptInsights.emailsChart.data"
+              [labels]="scriptInsights.emailsChart.labels"
+              [chartType]="scriptInsights.emailsChart.type"
+              [legend]="scriptInsights.emailsChart.legend"
+              [colors]="scriptInsights.emailsChart.colors"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+            ></canvas>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppData } from 'src/app/data/app-data';
 import { NgForm } from '@angular/forms';
+import * as moment from 'moment';
 
 declare var require: any;
 
@@ -42,6 +43,20 @@ export class GenerateScriptComponent implements OnInit {
     }
   };
 
+  public scriptInsights = {
+    execTime: '0m 0s',
+    emailsChart: {
+      labels: ['Valids', 'Emptys'],
+      data: [33, 5],
+      type: 'doughnut',
+      legend: false,
+      colors: [{
+        backgroundColor: ['#920b7f', '#eee'],
+        borderColor: ['#920b7f', '#eee']
+      }]
+    }
+  };
+
   constructor(
     private route: ActivatedRoute,
     public appData: AppData
@@ -78,9 +93,12 @@ export class GenerateScriptComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.script = this.getScript();
+
+    const time = moment.duration(this.scriptData.data.totalTimeScript);
+    this.scriptInsights.execTime = time.minutes() + 'm' + (time.seconds() > 0 ? ' ' + time.seconds() + 's' : '');
   }
 
-  validEmailsId() {
+  private validEmailsId() {
     const idArray = [];
 
     for (const emailId in this.langData.emails.templates) {
@@ -93,7 +111,7 @@ export class GenerateScriptComponent implements OnInit {
     return idArray;
   }
 
-  getScript() {
+  private getScript() {
     let thisScript: string, thisScript_1: string, thisScript_2: string;
 
     // already stringfyed variables [!]
@@ -143,12 +161,11 @@ export class GenerateScriptComponent implements OnInit {
 				var SI_MAIN = setInterval(function() {
 
 					if (email_index<_arrEmailsId.length) {
-						var ID_TEMPLATE = _arrEmailsId[email_index];
-						var SUBJECT_VALUE = _arrEmailsSubject[email_index];
-						var HTML_VALUE = _arrEmailsBody[email_index];
-
-						var HEADER_VALUE = _defaultHeader;
-						var FOOTER_VALUE = _defaultFooter;
+						var ID_TEMPLATE = _arrEmailsId[email_index],
+						    SUBJECT_VALUE = _arrEmailsSubject[email_index],
+						    HTML_VALUE = _arrEmailsBody[email_index],
+                HEADER_VALUE = _defaultHeader,
+						    FOOTER_VALUE = _defaultFooter;
 
 						if (_arrCustomsHeader[email_index].length) {
 							HEADER_VALUE = _arrCustomsHeader[email_index];
@@ -258,7 +275,7 @@ export class GenerateScriptComponent implements OnInit {
               ${this.getConsoleLog('Template id-\' + ID_TEMPLATE + \' not found in LC. [\' + (email_index + 1) + \'/\' + _arrEmailsId.length + \']', 'warn')}
 						}
 
-						email_index++;
+						email_index ++;
 					} else {
             ${this.getConsoleLog('Script executed 100%')}
             ${this.getConsoleLog('Bye 😘')}
@@ -278,7 +295,7 @@ export class GenerateScriptComponent implements OnInit {
     return thisScript;
   }
 
-  getScriptCustoms(type: string) {
+  private getScriptCustoms(type: string) {
     const arr = [];
     const ucType = type.charAt(0).toUpperCase() + type.slice(1);
 
@@ -295,7 +312,7 @@ export class GenerateScriptComponent implements OnInit {
     return '[`' + arr.join('`, `') + '`]';
   }
 
-  getScriptDefaults(type: string) {
+  private getScriptDefaults(type: string) {
     const arr = [];
 
     this.scriptData.data.validEmailsId.forEach(emailId => {
@@ -306,7 +323,7 @@ export class GenerateScriptComponent implements OnInit {
     return '[`' + arr.join('`, `') + '`]';
   }
 
-  getConsoleLog(message: string, type: string = '') {
+  private getConsoleLog(message: string, type: string = '') {
     const toLength = 118;
     let styles = '';
 
@@ -361,5 +378,14 @@ export class GenerateScriptComponent implements OnInit {
     }
 
     return `console.log('${message}'${styles.replace(/[\t\n]*(\s\s)*/g, '')});`;
+  }
+
+  // charts events
+  public chartClicked(e:any):void {
+    console.log(e);
+  }
+
+  public chartHovered(e:any):void {
+    console.log(e);
   }
 }
