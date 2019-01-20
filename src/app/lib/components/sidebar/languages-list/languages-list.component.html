@@ -1,7 +1,7 @@
 <ul class="list-unstyled">
   <li
     *ngFor="let itemKey of objectKeys(listItems)"
-    [ngClass]="{ 'empty': listItems[itemKey].empty }"
+    [ngClass]="{ 'empty': listItems[itemKey].empty, 'active-s': router.url.indexOf('generate-script/' + listItems[itemKey].key) > -1 }"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
   >

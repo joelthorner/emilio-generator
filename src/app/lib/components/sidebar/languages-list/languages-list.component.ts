@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'eg-languages-list',
@@ -8,11 +9,11 @@ import { AppData } from 'src/app/data/app-data';
 })
 export class LanguagesListComponent implements OnInit {
 
-  objectKeys = Object.keys;
-  listItems = {};
+  public objectKeys = Object.keys;
+  public listItems = {};
 
-  constructor(private appData: AppData) {
-    this.listItems = appData.languages;
+  constructor(public appData: AppData, public router: Router) {
+    this.listItems = this.appData.languages;
   }
 
   ngOnInit() {

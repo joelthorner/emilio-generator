@@ -12,6 +12,16 @@
 
 @include scrollbars(8px, #c1c1c1, #f1f1f1);
 
+::-moz-selection {
+  color: #FFF;
+  background: $blue-1;
+}
+
+::selection {
+  color: #FFF;
+  background: $blue-1;
+}
+
 html, body {
   height: 100%;
 }
@@ -119,4 +129,24 @@ body.editor-full-screen {
 .lang-item ::-webkit-scrollbar {
   width:  4px;
   height: 4px;
+}
+
+.breadcrumb {
+  margin: 0 0 $grid-gutter-width;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  line-height: 1;
+
+  .breadcrumb-item {
+    a {
+      color: $blue-2;
+    }
+    + .breadcrumb-item:before {
+      color: #ab7fa5;
+    }
+    &.active {
+      color: $pink-1;
+    }
+  }
 }
