@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { GenerateScriptRoutingModule } from './generate-script-routing.module';
 import { GenerateScriptComponent } from './generate-script/generate-script.component';
@@ -8,7 +9,8 @@ import { GenerateScriptComponent } from './generate-script/generate-script.compo
   declarations: [GenerateScriptComponent],
   imports: [
     CommonModule,
-    GenerateScriptRoutingModule
+    GenerateScriptRoutingModule,
+    FormsModule
   ]
 })
 export class GenerateScriptModule { }

@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LanguagesListComponent implements OnInit {
 
-  objectKeys = Object.keys;
-  listItems = {};
+  public objectKeys = Object.keys;
+  public listItems = {};
 
   constructor(public appData: AppData, public router: Router) {
     this.listItems = this.appData.languages;

@@ -1,4 +1,4 @@
-<div class="view view-generate-script">
+<form class="view view-generate-script" #generateScriptForm="ngForm" (ngSubmit)="onSubmit(generateScriptForm)">
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -15,6 +15,82 @@
           Configuration
         </div>
         <div class="card-body">
+
+          <div class="form-group">
+            <div class="form-group-title">LC insert mode</div>
+            <div class="custom-control custom-radio">
+              <input
+                type="radio"
+                id="lcInsertMode3in1"
+                name="lcInsertMode"
+                class="custom-control-input"
+                value="3in1"
+                [(ngModel)]="scriptData.conf.lcInsertMode"
+              >
+              <label class="custom-control-label" for="lcInsertMode3in1"><b>3 in 1</b> - All email code into body input</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input
+                type="radio"
+                id="lcInsertMode3in3"
+                name="lcInsertMode"
+                class="custom-control-input"
+                value="3in3"
+                [(ngModel)]="scriptData.conf.lcInsertMode">
+              <label class="custom-control-label" for="lcInsertMode3in3"><b>3 in 3</b> - Header, body and footer each in input</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group-title">Time deelay</div>
+            <div class="custom-control custom-radio">
+              <input
+                type="radio"
+                id="timeDeelay5"
+                name="timeDeelay"
+                class="custom-control-input"
+                value="5000"
+                [ngModel]="scriptData.conf.timeDeelay" (ngModelChange)="onChangeTimeDeelay($event)"
+              >
+              <label class="custom-control-label" for="timeDeelay5"><b>5 seconds</b> - Normal deelay</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input
+                type="radio"
+                id="timeDeelay10"
+                name="timeDeelay"
+                class="custom-control-input"
+                value="10000"
+                [ngModel]="scriptData.conf.timeDeelay" (ngModelChange)="onChangeTimeDeelay($event)">
+              <label class="custom-control-label" for="timeDeelay10"><b>10 seconds</b> - Heavy deelay, for slow connections</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group-title">Destination language</div>
+            <small id="destLangHelp" class="form-text text-muted mb-3">
+              Generates the script in a language for a different language (due to lack of translation).
+            </small>
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="destLang"><b>{{ langKey | uppercase }} - {{ langData.name }}</b>&nbsp;to</label>
+              </div>
+              <select
+                class="custom-select"
+                id="destLang"
+                name="destLang"
+                aria-describedby="destLangHelp"
+                [(ngModel)]="scriptData.conf.destLang"
+              >
+                <option *ngFor="let langId of objectKeys(selectLangs)" [value]="langId">
+                  {{ selectLangs[langId].key | uppercase }} {{ selectLangs[langId].name }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" [disabled]="generateScriptForm.invalid">Generate script</button>
 
         </div>
       </div>
@@ -46,10 +122,10 @@
           Script
         </div>
         <div class="card-body">
-
+          <textarea name="script" cols="30" rows="10" [(ngModel)]="script"></textarea>
         </div>
       </div>
     </div>
   </div>
 
-</div>
+</form>
