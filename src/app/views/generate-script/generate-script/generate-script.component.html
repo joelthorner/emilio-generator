@@ -67,14 +67,14 @@
           </div>
 
           <div class="form-group">
-            <div class="form-group-title">Destination language</div>
-            <small id="destLangHelp" class="form-text text-muted mb-3">
-              Generates the script in a language for a different language (due to lack of translation).
-            </small>
+            <div class="form-group-title pb-0">Destination language</div>
+            <span id="destLangHelp" class="text-butted mb-3">
+              Generar els emails en un llenguatge per a un llenguatge de destí diferent.
+            </span>
 
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="destLang"><b>{{ langKey | uppercase }} - {{ langData.name }}</b>&nbsp;to</label>
+                <label class="input-group-text" for="destLang"><b>{{ langKey | uppercase }} - {{ langData.name }}</b>&nbsp;&nbsp;to</label>
               </div>
               <select
                 class="custom-select"
@@ -96,16 +96,35 @@
       </div>
     </div>
 
-    <div class="col col-info">
+    <div class="col col-info col-3">
       <div class="card">
         <div class="card-body">
-          Script time
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="time">{{ scriptInsights.execTime }}</div>
+              <div class="time-label">Script execution time</div>
+            </div>
+            <div class="col">
+              <svg class="time-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.833 43.917"><path fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" d="M1.5 33.083l9.666-18.666L21.583 26.25 31.75 1.5l10.166 14.583 9.417 18 9.917-9.333L71.416 41 81.5 28.417l10.333 14 9.5-22"/></svg>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          Percent email %
+          <div class="chart-max">
+            <canvas baseChart
+              [data]="scriptInsights.emailsChart.data"
+              [labels]="scriptInsights.emailsChart.labels"
+              [chartType]="scriptInsights.emailsChart.type"
+              [legend]="scriptInsights.emailsChart.legend"
+              [colors]="scriptInsights.emailsChart.colors"
+              [options]="scriptInsights.emailsChart.options"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+            ></canvas>
+          </div>
         </div>
       </div>
 
