@@ -47,13 +47,27 @@ export class GenerateScriptComponent implements OnInit {
     execTime: '0m 0s',
     emailsChart: {
       labels: ['Valids', 'Emptys'],
-      data: [33, 5],
+      data: [33, 10],
       type: 'doughnut',
       legend: false,
       colors: [{
-        backgroundColor: ['#920b7f', '#eee'],
-        borderColor: ['#920b7f', '#eee']
-      }]
+        backgroundColor: ['#cc00cc', '#e7e7eb'],
+        borderColor: ['#cc00cc', '#e7e7eb'],
+        borderWidth: [0, 0]
+      }],
+      options : {
+        cutoutPercentage: 75,
+        rotation: -1.25 * Math.PI,
+        circumference: 1.5 * Math.PI,
+        aspectRatio: 1,
+        tooltips : {
+          bodyFontFamily: '"Nunito", sans-serif',
+          bodyFontSize: 12,
+          xPadding: 10,
+          yPadding: 6,
+          displayColors: false
+        }
+      }
     }
   };
 
@@ -79,7 +93,11 @@ export class GenerateScriptComponent implements OnInit {
     this.scriptData.data.validEmailsId = this.validEmailsId();
     // calc total time script
     this.scriptData.data.totalTimeScript =
-    (this.scriptData.timeOuts.tEmail * this.scriptData.data.validEmailsId.length) + this.scriptData.timeOuts.tOpenLcWindow;
+      (this.scriptData.timeOuts.tEmail * this.scriptData.data.validEmailsId.length) + this.scriptData.timeOuts.tOpenLcWindow;
+
+    // recalc total time script
+    const time = moment.duration(this.scriptData.data.totalTimeScript);
+      this.scriptInsights.execTime = time.minutes() + 'm' + (time.seconds() > 0 ? ' ' + time.seconds() + 's' : '');
   }
 
   onChangeTimeDeelay(value: any) {
@@ -381,11 +399,9 @@ export class GenerateScriptComponent implements OnInit {
   }
 
   // charts events
-  public chartClicked(e:any):void {
-    console.log(e);
+  public chartClicked(event: any) {
   }
 
-  public chartHovered(e:any):void {
-    console.log(e);
+  public chartHovered(event: any) {
   }
 }

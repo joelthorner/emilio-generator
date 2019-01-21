@@ -105,7 +105,7 @@
               <div class="time-label">Script execution time</div>
             </div>
             <div class="col">
-              <svg class="time-icon"><use xlink:href="#timer"></use></svg>
+              <svg class="time-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.833 43.917"><path fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" d="M1.5 33.083l9.666-18.666L21.583 26.25 31.75 1.5l10.166 14.583 9.417 18 9.917-9.333L71.416 41 81.5 28.417l10.333 14 9.5-22"/></svg>
             </div>
           </div>
         </div>
@@ -113,15 +113,18 @@
 
       <div class="card">
         <div class="card-body">
-          <canvas baseChart
+          <div class="chart-max">
+            <canvas baseChart
               [data]="scriptInsights.emailsChart.data"
               [labels]="scriptInsights.emailsChart.labels"
               [chartType]="scriptInsights.emailsChart.type"
               [legend]="scriptInsights.emailsChart.legend"
               [colors]="scriptInsights.emailsChart.colors"
+              [options]="scriptInsights.emailsChart.options"
               (chartHover)="chartHovered($event)"
               (chartClick)="chartClicked($event)"
             ></canvas>
+          </div>
         </div>
       </div>
 
