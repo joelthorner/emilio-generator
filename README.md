@@ -1,5 +1,7 @@
 # Emilio Generator
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/9775737e744a848d2b57/maintainability)](https://codeclimate.com/github/joelthorner/emilio-generator/maintainability)
+
 ## Design
 ![Design](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design.png)
 ![Design Lang](https://raw.githubusercontent.com/joelthorner/emilio-generator/master/design/design-lang.png)
