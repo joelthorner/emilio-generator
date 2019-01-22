@@ -223,7 +223,7 @@ DATA.es = {
     }, // end 3
 
     4 : {
-      subject : "Cambio contraseña de %%ecommerceName%%",
+      subject : "Cambio de contraseña en %%ecommerceName%%",
       html : `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
