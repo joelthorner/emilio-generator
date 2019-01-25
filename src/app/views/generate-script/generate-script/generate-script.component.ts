@@ -85,6 +85,8 @@ export class GenerateScriptComponent implements OnInit {
     showPrintMargin: false
   };
 
+  public copyButton = true;
+
   constructor(
     private route: ActivatedRoute,
     public appData: AppData
@@ -492,6 +494,19 @@ export class GenerateScriptComponent implements OnInit {
   public onSubmit(form: NgForm) {
     // this.setExecTime();
     // this.getScript();
+  }
+
+  public copyScriptAction(event: any, scriptTextArea: any) {
+    console.log(scriptTextArea);
+
+    scriptTextArea.select();
+    document.execCommand('copy');
+    scriptTextArea.setSelectionRange(0, 0);
+    this.copyButton = !this.copyButton;
+
+    setTimeout(() => {
+      this.copyButton = !this.copyButton;
+    }, 1500);
   }
 
   // charts events

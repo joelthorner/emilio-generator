@@ -43,6 +43,14 @@
 .lang-item {
   max-width: calc(100% - 680px);
 
+  @for $i from 1 through 100 {
+
+    // for each $col_#{i}
+    &:nth-child(#{100 - $i}) .card {
+      z-index: $i;
+    }
+  }
+
   &:not(:last-child) {
     margin-bottom: $grid-gutter-width;
   }
@@ -52,6 +60,7 @@
   .card-header {
     padding: 0;
     position: relative;
+    background-color: transparent;
 
     .collapse-button {
       padding: 15px $grid-gutter-width;

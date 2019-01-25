@@ -118,5 +118,22 @@
     right: 30px;
     bottom: 30px;
     width: calc(100% - 60px);
+    border-radius: 7px;
+    border: 1px solid #ced4da;
+  }
+  .card-header {
+    position: relative;
+
+    .btn {
+      position: absolute;
+      right: $grid-gutter-width;;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 98px;
+
+      span {
+        margin-right: 4px;
+      }
+    }
   }
 }

@@ -208,6 +208,9 @@
       <div class="card">
         <div class="card-header">
           Script
+          <button class="btn btn-primary btn-xs" (click)="copyScriptAction($event, scriptTextArea);">
+            <span class="text" [innerHTML]="copyButton ? 'Copy' : 'Copied!'"></span> <svg class="icon"><use xlink:href="#copy"></use></svg>
+          </button>
         </div>
         <div class="card-body">
           <!-- (textChanged)="onChangeAce($event)" -->
@@ -215,7 +218,7 @@
             class="ace-editor-script"
             #editor
             [(text)]="script"
-            [mode]="'html'"
+            [mode]="'javascript'"
             [theme]="'xcode'"
             [options]="aceOptions"
             [readOnly]="true"
@@ -223,7 +226,7 @@
             [durationBeforeCallback]="100"
           ></ace-editor>
 
-          <!-- <textarea name="script" cols="30" rows="10" [(ngModel)]="script"></textarea> -->
+          <textarea class="sr-only" [value]="script" #scriptTextArea></textarea>
         </div>
       </div>
     </div>
