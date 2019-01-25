@@ -1,6 +1,12 @@
 @import 'styles-utils';
 @import 'styles-variables';
 
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .col-conf {
   .form-group-title {
     padding-bottom: 20px;
@@ -45,10 +51,13 @@
       margin-bottom: 0;
     }
   }
-  .time {
+  .time, .lenstring {
     font-size: 22px;
   }
-  .time-label {
+  .total-emails-label {
+    font-size: 26px;
+  }
+  .time-label, .label-valids, .lenstring-label {
     color: $blue-2;
   }
   .time-icon {
@@ -57,9 +66,57 @@
     stroke: $pink-1;
     margin-left: auto;
     display: block;
+    path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dash 4s linear both;
+    }
+  }
+  .lenstring-icon {
+    width: 100px;
+    height: 50px;
+    margin-left: auto;
+    display: block;
+    fill: $pink-1;
   }
   .chart-max {
     max-width: 120px;
-    margin: 0 auto;
+    margin: 0 auto 15px;
+    position: relative;
+  }
+  .percent-chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    line-height: 1;
+  }
+  .percent-chart-n {
+    font-weight: bold;
+    font-size: 26px;
+    color: $pink-1;
+  }
+  .percent-chart-label{
+    font-size: 18px;
+    color: $blue-2;
+  }
+}
+
+.col-script {
+  .card-body {
+    position: relative;
+  }
+  .ace-editor-script {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    width: calc(100% - 60px);
   }
 }

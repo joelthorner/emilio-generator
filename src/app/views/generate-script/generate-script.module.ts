@@ -5,6 +5,7 @@ import { ChartsModule } from 'ng2-charts';
 
 import { GenerateScriptRoutingModule } from './generate-script-routing.module';
 import { GenerateScriptComponent } from './generate-script/generate-script.component';
+import { AceEditorModule } from 'ng2-ace-editor';
 
 @NgModule({
   declarations: [GenerateScriptComponent],
@@ -12,7 +13,8 @@ import { GenerateScriptComponent } from './generate-script/generate-script.compo
     CommonModule,
     GenerateScriptRoutingModule,
     FormsModule,
-    ChartsModule
+    ChartsModule,
+    AceEditorModule
   ]
 })
 export class GenerateScriptModule { }
