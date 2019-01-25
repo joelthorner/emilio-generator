@@ -25,7 +25,7 @@
                 name="lcInsertMode"
                 class="custom-control-input"
                 value="3in1"
-                [(ngModel)]="scriptData.conf.lcInsertMode"
+                [ngModel]="scriptData.conf.lcInsertMode" (ngModelChange)="onChangeLcInsertMode($event)"
               >
               <label class="custom-control-label" for="lcInsertMode3in1"><b>3 in 1</b> - All email code into body input</label>
             </div>
@@ -36,7 +36,8 @@
                 name="lcInsertMode"
                 class="custom-control-input"
                 value="3in3"
-                [(ngModel)]="scriptData.conf.lcInsertMode">
+                [ngModel]="scriptData.conf.lcInsertMode" (ngModelChange)="onChangeLcInsertMode($event)"
+              >
               <label class="custom-control-label" for="lcInsertMode3in3"><b>3 in 3</b> - Header, body and footer each in input</label>
             </div>
           </div>
@@ -90,7 +91,7 @@
             </div>
           </div>
 
-          <button class="btn btn-primary btn-lg btn-block" [disabled]="generateScriptForm.invalid">Generate script</button>
+          <!-- <button class="btn btn-primary btn-lg btn-block" [disabled]="generateScriptForm.invalid">Generate script</button> -->
 
         </div>
       </div>
@@ -101,7 +102,7 @@
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col">
-              <div class="time">{{ scriptInsights.execTime }}</div>
+              <div class="time" [innerHTML]="scriptInsights.execTime"></div>
               <div class="time-label">Script execution time</div>
             </div>
             <div class="col">
@@ -114,6 +115,7 @@
       <div class="card">
         <div class="card-body">
           <div class="chart-max">
+            <!-- (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" -->
             <canvas baseChart
               [data]="scriptInsights.emailsChart.data"
               [labels]="scriptInsights.emailsChart.labels"
@@ -121,16 +123,82 @@
               [legend]="scriptInsights.emailsChart.legend"
               [colors]="scriptInsights.emailsChart.colors"
               [options]="scriptInsights.emailsChart.options"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"
             ></canvas>
+
+            <div class="percent-chart">
+              <div class="d-flex align-items-end">
+                <span class="percent-chart-n" [innerHTML]="scriptInsights.emails.validPerCent"></span><span class="percent-chart-label">%</span>
+              </div>
+            </div>
           </div>
+
+          <div class="row align-items-end">
+            <div class="col">
+              <span class="label-valids">Valid emails:</span>
+            </div>
+            <div class="col text-right">
+              <span class="total-emails-label">
+                <span class="valid-emails">{{ scriptInsights.emails.valid }}</span>/<span class="total-emails">{{ scriptInsights.emails.total }}</span>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          Code length
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="lenstring" [innerHTML]="scriptInsights.stringLen"></div>
+              <div class="lenstring-label">Script string lenght</div>
+            </div>
+            <div class="col">
+              <svg class="lenstring-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77 43">
+                <g transform="translate(0, 43) scale(1, -1)">
+                  <rect y="0" width="5">
+                    <animate attributeName="height" from="0" to="11" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="6" y="0" width="5">
+                    <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="12" y="0" width="5">
+                    <animate attributeName="height" from="0" to="11" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="18" y="0" width="5">
+                    <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="24" y="0" width="5">
+                    <animate attributeName="height" from="0" to="32" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="30" y="0" width="5">
+                    <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="36" y="0" width="5">
+                    <animate attributeName="height" from="0" to="32" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="42" y="0" width="5">
+                    <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="48" y="0" width="5">
+                    <animate attributeName="height" from="0" to="11" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="54" y="0" width="5">
+                    <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="60" width="5">
+                    <animate attributeName="height" from="0" to="43" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="66" y="0" width="5">
+                    <animate attributeName="height" from="0" to="2" dur="250ms" fill="freeze"/>
+                  </rect>
+                  <rect x="72" y="0" width="5">
+                    <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                  </rect>
+                </g>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>

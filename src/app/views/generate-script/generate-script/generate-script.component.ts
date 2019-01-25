@@ -20,7 +20,7 @@ export class GenerateScriptComponent implements OnInit {
   public objectKeys = Object.keys;
   private version = require( '../../../../../package.json').version;
 
-  public script: string;
+  public script = '';
 
   public scriptData = {
     conf: {
@@ -45,9 +45,15 @@ export class GenerateScriptComponent implements OnInit {
 
   public scriptInsights = {
     execTime: '0m 0s',
+    stringLen: 0,
+    emails: {
+      valid: 0,
+      total: 0,
+      validPerCent: 0
+    },
     emailsChart: {
       labels: ['Valids', 'Emptys'],
-      data: [33, 10],
+      data: [0, 0],
       type: 'doughnut',
       legend: false,
       colors: [{
@@ -82,41 +88,52 @@ export class GenerateScriptComponent implements OnInit {
     this.langId = this.appData.getLangIdByKey(this.langKey);
     this.selectLangs = this.appData.languages;
 
-    // init data ids
+    // init data ids [data]
     this.scriptData.conf.origLang = this.langId.toString();
     this.scriptData.conf.destLang = this.langId.toString(); // by default same id of origin
 
-    // equalize tEmail by timeDeelay conf
-    this.scriptData.timeOuts.tEmail = parseInt(this.scriptData.conf.timeDeelay);
+    // equalize tEmail by timeDeelay conf [data]
+    this.setTimeoutEmail();
+    // [data]
+    this.scriptData.data.validEmailsId = this.getValidEmailsId();
+    // [data]
+    this.setTotalTimeScript();
+    // [visual]
+    this.setExecTime();
+    // [visual]
+    this.setValidsChartData();
 
-    // set valid emails ids
-    this.scriptData.data.validEmailsId = this.validEmailsId();
-    // calc total time script
-    this.scriptData.data.totalTimeScript =
-      (this.scriptData.timeOuts.tEmail * this.scriptData.data.validEmailsId.length) + this.scriptData.timeOuts.tOpenLcWindow;
-
-    // recalc total time script
-    const time = moment.duration(this.scriptData.data.totalTimeScript);
-      this.scriptInsights.execTime = time.minutes() + 'm' + (time.seconds() > 0 ? ' ' + time.seconds() + 's' : '');
+    this.getScript();
   }
 
-  onChangeTimeDeelay(value: any) {
-    // equalize tEmail by timeDeelay conf
-    this.scriptData.timeOuts.tEmail = parseInt(value);
-
-    // recalc total time script
-    this.scriptData.data.totalTimeScript =
-      (this.scriptData.timeOuts.tEmail * this.scriptData.data.validEmailsId.length) + this.scriptData.timeOuts.tOpenLcWindow;
-  }
-
-  onSubmit(form: NgForm) {
-    this.script = this.getScript();
-
+  // scriptInsights.execTime - '2m 45s'
+  private setExecTime() {
     const time = moment.duration(this.scriptData.data.totalTimeScript);
     this.scriptInsights.execTime = time.minutes() + 'm' + (time.seconds() > 0 ? ' ' + time.seconds() + 's' : '');
   }
 
-  private validEmailsId() {
+  // scriptInsights.stringLen - 123000
+  private setStringLen() {
+    this.scriptInsights.stringLen = this.script.length;
+  }
+
+  // scriptData.data.totalTimeScript - 11150
+  private setTotalTimeScript() {
+    this.scriptData.data.totalTimeScript =
+      (this.scriptData.timeOuts.tEmail * this.scriptData.data.validEmailsId.length) + this.scriptData.timeOuts.tOpenLcWindow;
+  }
+
+  // scriptData.timeOuts.tEmail - 5000 (5 seconds)
+  private setTimeoutEmail(value: any = this.scriptData.conf.timeDeelay) {
+    this.scriptData.timeOuts.tEmail = parseInt(value);
+  }
+
+  private setLcInsertMode(value: any) {
+    this.scriptData.conf.lcInsertMode = value;
+  }
+
+  // return email templates array ids - [1, 2, 3]
+  private getValidEmailsId() {
     const idArray = [];
 
     for (const emailId in this.langData.emails.templates) {
@@ -129,6 +146,24 @@ export class GenerateScriptComponent implements OnInit {
     return idArray;
   }
 
+  // set data visual card [valid emails] (chart)
+  private setValidsChartData() {
+    // '20/30'
+    this.scriptInsights.emails.valid = this.getValidEmailsId().length;
+    this.scriptInsights.emails.total = Object.keys(this.langData.emails.templates).length;
+
+    // chart
+    const emptys = this.scriptInsights.emails.total - this.scriptInsights.emails.valid;
+    this.scriptInsights.emailsChart.data = [
+      this.scriptInsights.emails.valid, emptys
+    ];
+
+    // % valids
+    this.scriptInsights.emails.validPerCent =
+      Math.round((this.scriptInsights.emails.valid / this.scriptInsights.emails.total * 100) * 10 ) / 10;
+  }
+
+  // return script for LC
   private getScript() {
     let thisScript: string, thisScript_1: string, thisScript_2: string;
 
@@ -143,7 +178,7 @@ export class GenerateScriptComponent implements OnInit {
 
     thisScript_1 = `
       setTimeout(function() {
-        ${this.getConsoleLog('[Emilio Generator]', 'heading')}
+        ${this.getConsoleLog('[Emilio Generator] v' + this.version, 'heading')}
         ${this.getConsoleLog('Executing the script.')}
         ${this.getConsoleLog('Please do not close or change this browser tab.')}
       }, 1000);
@@ -297,7 +332,7 @@ export class GenerateScriptComponent implements OnInit {
 					} else {
             ${this.getConsoleLog('Script executed 100%')}
             ${this.getConsoleLog('Bye 😘')}
-            ${this.getConsoleLog('[Emilio Generator]', 'heading')}
+            ${this.getConsoleLog('[Emilio Generator] v' + this.version, 'heading')}
 						clearInterval(SI_MAIN);
 					}
 
@@ -310,9 +345,11 @@ export class GenerateScriptComponent implements OnInit {
     thisScript_2 = thisScript_2.replace(/[\t\n]/g, ''); // minify js
     thisScript = thisScript_1 + thisScript_2;
 
-    return thisScript;
+    this.script = thisScript;
+    this.setStringLen();
   }
 
+  // get email header/footer contents array - [`html`, `html`]
   private getScriptCustoms(type: string) {
     const arr = [];
     const ucType = type.charAt(0).toUpperCase() + type.slice(1);
@@ -330,6 +367,7 @@ export class GenerateScriptComponent implements OnInit {
     return '[`' + arr.join('`, `') + '`]';
   }
 
+  // get email array default string (subject or body) - [`html`, `html`]
   private getScriptDefaults(type: string) {
     const arr = [];
 
@@ -341,6 +379,7 @@ export class GenerateScriptComponent implements OnInit {
     return '[`' + arr.join('`, `') + '`]';
   }
 
+  // return string console log
   private getConsoleLog(message: string, type: string = '') {
     const toLength = 118;
     let styles = '';
@@ -398,10 +437,31 @@ export class GenerateScriptComponent implements OnInit {
     return `console.log('${message}'${styles.replace(/[\t\n]*(\s\s)*/g, '')});`;
   }
 
-  // charts events
-  public chartClicked(event: any) {
+  // [Events] ----------------------------------------------------------
+  public onChangeTimeDeelay(value: any) {
+    this.setTimeoutEmail(value);
+    this.setTotalTimeScript();
+    this.setExecTime();
+
+    this.getScript();
   }
 
-  public chartHovered(event: any) {
+  public onChangeLcInsertMode(value: any) {
+    this.setLcInsertMode(value);
+
+    this.getScript();
   }
+
+  // generate script event
+  public onSubmit(form: NgForm) {
+    this.setExecTime();
+    this.getScript();
+  }
+
+  // charts events
+  // public chartClicked(event: any) {
+  // }
+
+  // public chartHovered(event: any) {
+  // }
 }

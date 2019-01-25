@@ -57,6 +57,7 @@ li > a {
 
   &:hover {
     color: $link-hover-color;
+    background-color: $bg-light;
 
     .badge {
       background-color: $link-hover-color;
@@ -81,6 +82,8 @@ li.empty:not(.active):not(.active-s) > a {
 
   &:hover {
     color: darken($disabled-text, 15%);
+    background-color: $bg-light;
+
     .badge {
       background-color: darken($disabled-bg, 15%);
     }
