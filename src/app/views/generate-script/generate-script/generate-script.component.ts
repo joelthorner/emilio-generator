@@ -77,6 +77,14 @@ export class GenerateScriptComponent implements OnInit {
     }
   };
 
+  public aceOptions = {
+    useWorker: false,
+    // maxLines: 15,
+    minLines: 10,
+    tabSize: 2,
+    showPrintMargin: false
+  };
+
   constructor(
     private route: ActivatedRoute,
     public appData: AppData
@@ -90,7 +98,7 @@ export class GenerateScriptComponent implements OnInit {
 
     // init data ids [data]
     this.scriptData.conf.origLang = this.langId.toString();
-    this.scriptData.conf.destLang = this.langId.toString(); // by default same id of origin
+    this.setLcDestLang();
 
     // equalize tEmail by timeDeelay conf [data]
     this.setTimeoutEmail();
@@ -126,6 +134,11 @@ export class GenerateScriptComponent implements OnInit {
   // scriptData.timeOuts.tEmail - 5000 (5 seconds)
   private setTimeoutEmail(value: any = this.scriptData.conf.timeDeelay) {
     this.scriptData.timeOuts.tEmail = parseInt(value);
+  }
+
+  // scriptData.conf.destLang - 1
+  private setLcDestLang(value: any = this.langId.toString()) { // by default same id of origin
+    this.scriptData.conf.destLang = value;
   }
 
   private setLcInsertMode(value: any) {
@@ -316,7 +329,7 @@ export class GenerateScriptComponent implements OnInit {
 												}
 											}, T2);
 
-                      ${this.getConsoleLog('Success save template id-\' + ID_TEMPLATE + \' time: \' + emailTimeSeconds + \'s [\' + email_index + \'/\' + _arrEmailsId.length + \']')}
+                      ${this.getConsoleLog('save template id-\' + ID_TEMPLATE + \' time: \' + emailTimeSeconds + \'s [\' + email_index + \'/\' + _arrEmailsId.length + \']', 'success')}
 											emailTimeSeconds += (T_EMAIL / 1000);
 										} catch(e) {
                       ${this.getConsoleLog('Fail save template id-\' + ID_TEMPLATE + \'', 'error')}
@@ -331,7 +344,7 @@ export class GenerateScriptComponent implements OnInit {
 						email_index ++;
 					} else {
             ${this.getConsoleLog('Script executed 100%')}
-            ${this.getConsoleLog('Bye 😘')}
+            ${this.getConsoleLog('Bye 🦄')}
             ${this.getConsoleLog('[Emilio Generator] v' + this.version, 'heading')}
 						clearInterval(SI_MAIN);
 					}
@@ -421,6 +434,19 @@ export class GenerateScriptComponent implements OnInit {
         '`;
         break;
 
+      case 'success':
+        message = '%cSUCCESS%c ' + message;
+        styles = `,'
+          color: #fff;
+          background-color: #0099cc;
+          padding: 0px 4px;
+          margin-left:6px;
+        ', '
+          color: #0099cc;
+          padding-right:6px;
+        '`;
+        break;
+
       default:
         message = '%c' + message;
         styles = `,'
@@ -448,14 +474,24 @@ export class GenerateScriptComponent implements OnInit {
 
   public onChangeLcInsertMode(value: any) {
     this.setLcInsertMode(value);
+    this.setTotalTimeScript();
+    this.setExecTime();
+
+    this.getScript();
+  }
+
+  public onChangeDestLang(value: any) {
+    this.setLcDestLang(value);
+    this.setTotalTimeScript();
+    this.setExecTime();
 
     this.getScript();
   }
 
   // generate script event
   public onSubmit(form: NgForm) {
-    this.setExecTime();
-    this.getScript();
+    // this.setExecTime();
+    // this.getScript();
   }
 
   // charts events

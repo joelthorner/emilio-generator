@@ -62,7 +62,8 @@
                 name="timeDeelay"
                 class="custom-control-input"
                 value="10000"
-                [ngModel]="scriptData.conf.timeDeelay" (ngModelChange)="onChangeTimeDeelay($event)">
+                [ngModel]="scriptData.conf.timeDeelay" (ngModelChange)="onChangeTimeDeelay($event)"
+              >
               <label class="custom-control-label" for="timeDeelay10"><b>10 seconds</b> - Heavy deelay, for slow connections</label>
             </div>
           </div>
@@ -82,7 +83,7 @@
                 id="destLang"
                 name="destLang"
                 aria-describedby="destLangHelp"
-                [(ngModel)]="scriptData.conf.destLang"
+                [ngModel]="scriptData.conf.destLang" (ngModelChange)="onChangeDestLang($event)"
               >
                 <option *ngFor="let langId of objectKeys(selectLangs)" [value]="langId">
                   {{ selectLangs[langId].key | uppercase }} {{ selectLangs[langId].name }}
@@ -91,7 +92,7 @@
             </div>
           </div>
 
-          <!-- <button class="btn btn-primary btn-lg btn-block" [disabled]="generateScriptForm.invalid">Generate script</button> -->
+          <button class="btn btn-primary btn-lg btn-block" [disabled]="generateScriptForm.invalid">Generate script</button>
 
         </div>
       </div>
@@ -209,7 +210,20 @@
           Script
         </div>
         <div class="card-body">
-          <textarea name="script" cols="30" rows="10" [(ngModel)]="script"></textarea>
+          <!-- (textChanged)="onChangeAce($event)" -->
+          <ace-editor
+            class="ace-editor-script"
+            #editor
+            [(text)]="script"
+            [mode]="'html'"
+            [theme]="'xcode'"
+            [options]="aceOptions"
+            [readOnly]="true"
+            [autoUpdateContent]="true"
+            [durationBeforeCallback]="100"
+          ></ace-editor>
+
+          <!-- <textarea name="script" cols="30" rows="10" [(ngModel)]="script"></textarea> -->
         </div>
       </div>
     </div>

@@ -106,3 +106,17 @@
     color: $blue-2;
   }
 }
+
+.col-script {
+  .card-body {
+    position: relative;
+  }
+  .ace-editor-script {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    bottom: 30px;
+    width: calc(100% - 60px);
+  }
+}
