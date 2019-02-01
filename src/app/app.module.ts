@@ -7,6 +7,7 @@ import { IconsModule } from './lib/icons/icons.module';
 import { ComponentsModule } from './lib/components/components.module';
 import { HomeModule } from './views/home/home.module';
 import { AppData } from './data/app-data';
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppData } from './data/app-data';
     AppRoutingModule,
     IconsModule,
     ComponentsModule,
-    HomeModule
+    HomeModule,
+    LoadingBarRouterModule
   ],
   providers: [AppData],
   bootstrap: [AppComponent]
