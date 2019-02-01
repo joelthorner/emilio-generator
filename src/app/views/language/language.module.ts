@@ -9,6 +9,7 @@ import { EditorComponent } from './editor/editor.component';
 import { PreviewComponent } from './preview/preview.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ModalTagsComponent } from './modal-tags/modal-tags.component';
+import { ModalPreviewSettingsComponent } from './modal-preview-settings/modal-preview-settings.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ModalTagsComponent } from './modal-tags/modal-tags.component';
     EditorComponent,
     PreviewComponent,
     SubjectComponent,
-    ModalTagsComponent
+    ModalTagsComponent,
+    ModalPreviewSettingsComponent
   ],
   imports: [
     CommonModule,
