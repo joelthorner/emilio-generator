@@ -497,8 +497,6 @@ export class GenerateScriptComponent implements OnInit {
   }
 
   public copyScriptAction(event: any, scriptTextArea: any) {
-    console.log(scriptTextArea);
-
     scriptTextArea.select();
     document.execCommand('copy');
     scriptTextArea.setSelectionRange(0, 0);
