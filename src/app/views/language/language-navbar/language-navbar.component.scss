@@ -19,6 +19,13 @@
     padding-left: 15px;
   }
 }
+.navbar-light .navbar-nav .nav-link {
+  color: $black-1;
+  &:hover {
+    color: $link-hover-color;
+    background-color: $bg-light;
+  }
+}
 
 .search-form {
   position: relative;

@@ -43,9 +43,11 @@
 }
 
 .col-info {
-  .card {
-    height: auto;
-    margin-bottom: 30px;
+  flex: 0 0 370px;
+  max-width: 370px;
+
+  .col-item {
+    margin-bottom: $grid-gutter-width;
 
     &:last-child {
       margin-bottom: 0;
@@ -118,5 +120,95 @@
     right: 30px;
     bottom: 30px;
     width: calc(100% - 60px);
+    border-radius: 7px;
+    border: 1px solid #ced4da;
+  }
+  .card-header {
+    position: relative;
+
+    .btn {
+      position: absolute;
+      right: $grid-gutter-width;;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 98px;
+
+      span {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1499px) {
+  .col-info {
+    order: 1;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    .col-item:last-child {
+      margin-bottom: $grid-gutter-width;
+    }
+    .col-item-time, .col-item-len {
+      .card {
+        justify-content: center;
+
+        .card-body {
+          flex: none;
+        }
+      }
+    }
+  }
+  .col-conf {
+    flex: 0 0 50%;
+    max-width: 50%;
+    order: 2;
+  }
+  .col-script {
+    flex: 0 0 50%;
+    max-width: 50%;
+    order: 3;
+  }
+}
+@media (max-width: 1199px) {
+  .col-info {
+    order: 4;
+    .col-item {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-item, .col-item:last-child {
+      margin-top: $grid-gutter-width;
+      margin-bottom: 0;
+    }
+    .col-item-time {
+      order: 1;
+    }
+    .col-item-len {
+      order: 2;
+    }
+    .col-item-valid {
+      order: 3;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .col-conf {
+    margin-bottom: $grid-gutter-width;
+  }
+  .col-conf, .col-info, .col-script {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .col-info {
+    .col-item-time, .col-item-valid, .col-item-len {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  .col-script {
+    .card-body {
+      min-height: 350px;
+    }
   }
 }

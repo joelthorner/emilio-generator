@@ -43,6 +43,14 @@
 .lang-item {
   max-width: calc(100% - 680px);
 
+  @for $i from 1 through 100 {
+
+    // for each $col_#{i}
+    &:nth-child(#{100 - $i}) .card {
+      z-index: $i;
+    }
+  }
+
   &:not(:last-child) {
     margin-bottom: $grid-gutter-width;
   }
@@ -52,6 +60,7 @@
   .card-header {
     padding: 0;
     position: relative;
+    background-color: transparent;
 
     .collapse-button {
       padding: 15px $grid-gutter-width;
@@ -80,42 +89,4 @@
 .badges {
   margin-top: 4px;
   @include clearfix();
-}
-
-.buttons-header {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
-
-  > * {
-    float: left;
-  }
-
-  .btn {
-    fill: $blue-2;
-    background-color: #FFF;
-    border-color: #FFF;
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    transition: $transition-base;
-
-    &:hover {
-      fill: $blue-1;
-    }
-    &:active, &:hover:active {
-      fill: $pink-1;
-    }
-    &:focus {
-      fill: $pink-1;
-      box-shadow: none;
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
 }
