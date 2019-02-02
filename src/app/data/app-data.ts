@@ -286,12 +286,7 @@ export class AppData {
     }
 
     let html = header + body + footer;
-
-    // Replaces
-    html = html.replace(new RegExp('href=(["\'])(.*?)\\1', 'g'), 'href="javascript:void(0)"');
-    // Preview replace data
-    html = html.replace(new RegExp('[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)', 'g'), this.previewData.options.logo);
-    html = html.replace(new RegExp('%%BannerImage%%', 'g'), this.previewData.options.social);
+    html = this.previewReplaces(html);
 
     const iframeSrc = 'data:text/html;charset=utf-8,' +
       encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '">' + this.previewData.style) +
@@ -299,6 +294,16 @@ export class AppData {
       encodeURI('</body></html>');
 
     this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
+  }
+
+  private previewReplaces (html: string): string {
+    // prevent click empty links
+    html = html.replace(new RegExp('href=(["\'])(.*?)\\1', 'g'), 'href="javascript:void(0)"');
+
+    html = html.replace(new RegExp('[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)', 'g'), this.previewData.options.logo);
+    html = html.replace(new RegExp('%%BannerImage%%', 'g'), this.previewData.options.social);
+
+    return html;
   }
 
   // get sanitized src for iframe with email preview

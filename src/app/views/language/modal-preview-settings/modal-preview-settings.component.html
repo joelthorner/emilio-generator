@@ -1,5 +1,5 @@
 <div class="modal fade" id="modal-preview-settings" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-md" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Preview Settings</h5>
@@ -11,10 +11,56 @@
       </div>
       <div class="modal-body">
 
+        <div class="form-group">
+          <div class="form-group-title">Logo image</div>
+
+          <div class="row">
+            <div class="col-4">
+              <div class="wrap-img">
+                <img [src]="logoSrc" class="img-fluid" width="200">
+              </div>
+            </div>
+            <div class="col-8">
+              <label for="logoInputFile">Local file image</label>
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="logoInputFile" aria-describedby="logoInputFileSubmit" (change)="onSelectLogoFile($event)">
+                  <label class="custom-file-label" for="logoInputFile" [innerHTML]="logoName.length ? logoName : 'Choose file'"></label>
+                </div>
+              </div>
+              <small class="form-text text-danger" [hidden]="!logoErrorMsg.length" [innerHTML]="logoErrorMsg.length ? logoErrorMsg : ''"></small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="form-group-title">Social banner</div>
+
+            <div class="row">
+              <div class="col-4">
+                <div class="wrap-img">
+                  <img [src]="socialSrc" class="img-fluid" width="200">
+                </div>
+              </div>
+              <div class="col-8">
+                <label for="socialInputFile">Local file image</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="socialInputFile" aria-describedby="socialInputFileSubmit" (change)="onSelectSocialFile($event)">
+                    <label class="custom-file-label" for="socialInputFile" [innerHTML]="socialName.length ? socialName : 'Choose file'"></label>
+                  </div>
+                </div>
+                <small class="form-text text-danger" [hidden]="!socialErrorMsg.length" [innerHTML]="socialErrorMsg.length ? socialErrorMsg : ''"></small>
+              </div>
+            </div>
+
+          </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="saveAll()">Save changes</button>
       </div>
     </div>
   </div>
