@@ -1,0 +1,126 @@
+@import "styles-variables";
+@import "styles-utils";
+
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500000000000;
+  background-color: $bg-light;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+
+  padding: $grid-gutter-width;
+}
+
+h1 {
+  line-height: 1;
+  font-weight: 300;
+  font-size: 48px;
+
+  b {
+    font-weight: bold;
+    font-family: "Ubuntu", sans-serif;
+  }
+}
+
+.icon-wrap {
+  color: $blue-2;
+
+  .icon {
+    fill: $blue-2;
+    height: 36px;
+    width: 36px;
+    animation: spin 1s infinite linear;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+.card {
+  width: 800px;
+  height: 420px;
+  margin: auto;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    padding-bottom: $grid-gutter-width * 3;
+  }
+}
+
+.slider{
+  position: absolute;
+  width: 110%;
+  height: 4px;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .line{
+    position: absolute;
+    opacity: 0.4;
+    background-color: $pink-1;
+    width: 150%;
+    height: 4px;
+  }
+
+  .subline{
+    position: absolute;
+    background-color: $pink-1;
+    height: 5px;
+  }
+  .inc{
+    animation: increase 2s infinite;
+  }
+  .dec{
+    animation: decrease 2s 0.5s infinite;
+  }
+}
+
+.disclaimer {
+  position: absolute;
+  bottom: $grid-gutter-width;
+  left: $grid-gutter-width;
+  right: $grid-gutter-width;
+}
+
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes increase {
+  from {
+    left: -5%;
+    width: 5%;
+  }
+  to {
+    left: 130%;
+    width: 100%;
+  }
+}
+@keyframes decrease {
+  from {
+    left: -80%;
+    width:  80%;
+  }
+  to {
+    left: 110%;
+    width: 10%;
+  }
+}

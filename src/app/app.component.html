@@ -1,6 +1,11 @@
 <!-- svg icons -->
 <eg-icons></eg-icons>
 
+<ng-container *ngIf="auth.validUser == false">
+  <eg-access-loading></eg-access-loading>
+</ng-container>
+
+
 <ngx-loading-bar [includeSpinner]="false" [height]="'3px'" [color]="'#cc00cc'"></ngx-loading-bar>
 
 <!-- layout -->

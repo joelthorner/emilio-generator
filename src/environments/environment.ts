@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  title: 'Emilio Generator'
+  title: 'Emilio Generator',
+  loadingAuth: 1000,
+  infiniteLoading: true
 };
 
 /*
