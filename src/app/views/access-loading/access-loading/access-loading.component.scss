@@ -32,12 +32,23 @@ h1 {
 
 .icon-wrap {
   color: $blue-2;
+  &.error {
+    color: $danger;
+
+    .icon {
+      animation: bounce 1s infinite linear;
+    }
+  }
 
   .icon {
     fill: $blue-2;
     height: 36px;
     width: 36px;
     animation: spin 1s infinite linear;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: center;
   }
 
   span {
@@ -96,11 +107,18 @@ h1 {
   bottom: $grid-gutter-width;
   left: $grid-gutter-width;
   right: $grid-gutter-width;
+  color: $blue-2;
+  font-size: 12px;
+
+  a {
+    text-decoration: underline;
+    color: $blue-2;
+  }
 }
 
 @keyframes spin {
   100% {
-    transform:rotate(360deg);
+    transform:rotate(-360deg);
   }
 }
 

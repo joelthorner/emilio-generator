@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home/home.component';
 import { AuthService } from './lib/services/auth.service';
-import { AccessDeniedComponent } from './views/access-denied/access-denied/access-denied.component';
 
 const routes: Routes = [
   {

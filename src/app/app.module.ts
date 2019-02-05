@@ -8,7 +8,6 @@ import { ComponentsModule } from './lib/components/components.module';
 import { HomeModule } from './views/home/home.module';
 import { AppData } from './data/app-data';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
-import { AccessDeniedModule } from './views/access-denied/access-denied.module';
 import { AccessLoadingModule } from './views/access-loading/access-loading.module';
 import { AuthService } from './lib/services/auth.service';
 import { InstructionsModule } from './views/instructions/instructions.module';
@@ -23,7 +22,6 @@ import { InstructionsModule } from './views/instructions/instructions.module';
     IconsModule,
     ComponentsModule,
     HomeModule,
-    AccessDeniedModule,
     LoadingBarRouterModule,
     AccessLoadingModule
   ],

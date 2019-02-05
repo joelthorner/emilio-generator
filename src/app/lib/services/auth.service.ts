@@ -16,16 +16,23 @@ export class AuthService implements CanActivate {
 
   canActivate(): boolean | Observable<boolean> {
 
+    if (environment.authForceError) {
+      this.validUser = false;
+      this.checkedExtension = true;
+      return false;
+    }
+    if (environment.infiniteLoading) {
+      this.validUser = false;
+      this.checkedExtension = false;
+      return false;
+    }
     if (!environment.production) {
-      if (environment.infiniteLoading) {
-        this.validUser = false;
-        this.checkedExtension = false;
-        return false;
-      }
       this.validUser = true;
       this.checkedExtension = true;
       return true;
     }
+
+
 
     if (!this.validUser && !this.checkedExtension) {
 

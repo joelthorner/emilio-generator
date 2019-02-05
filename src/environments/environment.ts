@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   title: 'Emilio Generator',
   loadingAuth: 1000,
-  infiniteLoading: true
+  authForceError: false,
+  infiniteLoading: false
 };
 
 /*

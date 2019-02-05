@@ -5,19 +5,22 @@
   <eg-access-loading></eg-access-loading>
 </ng-container>
 
+<ng-container *ngIf="auth.validUser == true">
 
-<ngx-loading-bar [includeSpinner]="false" [height]="'3px'" [color]="'#cc00cc'"></ngx-loading-bar>
+  <ngx-loading-bar [includeSpinner]="false" [height]="'3px'" [color]="'#cc00cc'"></ngx-loading-bar>
 
-<!-- layout -->
-<div class="eg-layout">
-  <eg-navbar></eg-navbar>
+  <!-- layout -->
+  <div class="eg-layout">
+    <eg-navbar></eg-navbar>
 
-  <div class="eg-content">
-    <div class="eg-sidebar">
-      <eg-sidebar></eg-sidebar>
-    </div>
-    <div class="eg-outlet">
-      <router-outlet></router-outlet>
+    <div class="eg-content">
+      <div class="eg-sidebar">
+        <eg-sidebar></eg-sidebar>
+      </div>
+      <div class="eg-outlet">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
+
+</ng-container>
