@@ -10,6 +10,7 @@ import { PreviewComponent } from './preview/preview.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ModalTagsComponent } from './modal-tags/modal-tags.component';
 import { ModalPreviewSettingsComponent } from './modal-preview-settings/modal-preview-settings.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ModalPreviewSettingsComponent } from './modal-preview-settings/modal-pr
   imports: [
     CommonModule,
     LanguageRoutingModule,
-    AceEditorModule
+    AceEditorModule,
+    FormsModule
   ]
 })
 export class LanguageModule { }

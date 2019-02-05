@@ -1,16 +1,26 @@
 <!-- svg icons -->
 <eg-icons></eg-icons>
 
-<!-- layout -->
-<div class="eg-layout">
-  <eg-navbar></eg-navbar>
+<ng-container *ngIf="auth.validUser == false">
+  <eg-access-loading></eg-access-loading>
+</ng-container>
 
-  <div class="eg-content">
-    <div class="eg-sidebar">
-      <eg-sidebar></eg-sidebar>
-    </div>
-    <div class="eg-outlet">
-      <router-outlet></router-outlet>
+<ng-container *ngIf="auth.validUser == true">
+
+  <ngx-loading-bar [includeSpinner]="false" [height]="'3px'" [color]="'#cc00cc'"></ngx-loading-bar>
+
+  <!-- layout -->
+  <div class="eg-layout">
+    <eg-navbar></eg-navbar>
+
+    <div class="eg-content">
+      <div class="eg-sidebar">
+        <eg-sidebar></eg-sidebar>
+      </div>
+      <div class="eg-outlet">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
-</div>
+
+</ng-container>
