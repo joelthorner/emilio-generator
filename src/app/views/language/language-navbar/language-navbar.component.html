@@ -1,7 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <form class="form-inline mr-3 search-form">
     <svg class="icon"><use xlink:href="#search"></use></svg>
-    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [ngModel]="searchValue"
+      [ngModelOptions]="{ standalone: true, debounce: 500 }"
+      (ngModelChange)="searchChange($event)"
+    >
   </form>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

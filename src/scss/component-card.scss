@@ -12,10 +12,9 @@
 
   .buttons-header {
     position: absolute;
-    z-index: 1;
     top: 50%;
     right: 12px;
-    transform: translateY(-50%);
+    margin-top: -21px;
 
     > * {
       float: left;
