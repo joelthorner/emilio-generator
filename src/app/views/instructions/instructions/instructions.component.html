@@ -3,20 +3,40 @@
     <div class="col">
       <div class="card">
         <div class="card-header">
-          Copymails
+          Copiar mails en un idioma (bàsic)
         </div>
         <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <ol class="mb-1">
+            <li>Escollir idioma</li>
+            <li>Editar (o no) els continguts i/o header i footer del idioma. Si no es toquen s'ompliran amb els continguts de base.</li>
+            <li>Triar si emplenarem els mails tota la plantilla dins del camp body (default) del LC o header, body i footer als respectius camps.</li>
+            <li>Triar el idioma de destí dels mails (per defecte el mateix, epro es pot donar el cas de voler els mails en <i>EN</i> per al idioma <i>PT</i> perque no els tenim en <i>PT</i>)</li>
+            <li>Apretar el boto generar script i copiar el script generat.</li>
+            <li>Fer logout del LC si el tenim obert i tornar a fer login i sense obrir RES llençar el script per consola.</li>
+            <li>NO CANVÏS DE PESTANYA deixa'l fer!</li>
+            <li>El script anirà mostrant missatges de success i un missatge d'inici i final!</li>
+            <li>Mentres s'executa no toquis el Logicommerce, canvia de pestanya i ves fes un riu o un café</li>
+            <li>Repeat, quan acabi la moguda per consola veuras un missatge de final.</li>
+            <li>Enjoy!</li>
+          </ol>
         </div>
       </div>
     </div>
 
     <div class="col">
       <div class="card">
+        <div class="card-header">
+          Warnings
+        </div>
         <div class="card-body">
-          This is some text within a card body.
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            Si recarregues la app es perdrán els canvius.
+          </div>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            El pruses nomes omplira els mails que no siguin empty i alhora existeixin al Logicommerce.
+            <br>
+            Tampoc machaca altres idiomes
+          </div>
         </div>
       </div>
     </div>
