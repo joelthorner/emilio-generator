@@ -2,15 +2,15 @@
   <div class="language-navbar">
     <eg-language-navbar></eg-language-navbar>
   </div>
-  <div class="view-content" scrolling>
+  <div class="view-content" #scrolling>
     <div class="row">
       <div class="col col-editors">
 
         <!-- header -->
         <div
           class="lang-item lang-item-header lang-item-generic-header"
-          [ngClass]="findedLangItem('Generic Header', 'class')"
-          [style.order]="findedLangItem('Generic Header', 'order')"
+          [ngClass]="findedLangItem('Generic Header', 'class', scrolling)"
+          [style.order]="findedLangItem('Generic Header', 'order', scrolling)"
         >
           <div class="card">
             <div class="card-header">
@@ -53,8 +53,8 @@
         <!-- footer -->
         <div
           class="lang-item lang-item-footer lang-item-generic-footer"
-          [ngClass]="findedLangItem('Generic Footer', 'class')"
-          [style.order]="findedLangItem('Generic Footer', 'order')"
+          [ngClass]="findedLangItem('Generic Footer', 'class', scrolling)"
+          [style.order]="findedLangItem('Generic Footer', 'order', scrolling)"
         >
           <div class="card">
             <div class="card-header">
@@ -97,8 +97,8 @@
         <div
           class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}"
           *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)"
-          [ngClass]="findedLangItem(langData.emails.templates[emailTemplateId], 'class')"
-          [style.order]="findedLangItem(langData.emails.templates[emailTemplateId], 'order')"
+          [ngClass]="findedLangItem(langData.emails.templates[emailTemplateId], 'class', scrolling)"
+          [style.order]="findedLangItem(langData.emails.templates[emailTemplateId], 'order', scrolling)"
           >
           <div class="card">
             <div class="card-header">
@@ -125,15 +125,34 @@
               </a>
 
               <div class="buttons-header">
-                <button class="btn btn-light" type="button" (click)="appData.generateEmailHtml(langKey, emailTemplateId)">
-                  <svg class="icon"><use xlink:href="#download"></use></svg>
+                <button
+                  class="btn btn-light"
+                  type="button"
+                  (click)="refreshPreview($event, emailTemplateId, true)"
+                >
+                  <svg class="icon" data-toggle="tooltip" data-placement="top" title="Add to preview"><use xlink:href="#preview"></use></svg>
+                </button>
+
+                <button
+                  class="btn btn-light"
+                  type="button"
+                  (click)="appData.generateEmailHtml(langKey, emailTemplateId)"
+                >
+                  <svg class="icon" data-toggle="tooltip" data-placement="top" title="Download .html"><use xlink:href="#download"></use></svg>
                 </button>
 
                 <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <svg class="icon"><use xlink:href="#tree-dots"></use></svg>
+                  <button
+                    class="btn btn-light dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton{{ emailTemplateId }}"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <svg class="icon" data-toggle="tooltip" data-placement="top" title="Email options"><use xlink:href="#tree-dots"></use></svg>
                   </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                  <div class="dropdown-menu dropdown-menu-right" attr.aria-labelledby="dropdownMenuButton{{ emailTemplateId }}">
                     <a class="dropdown-item" href="#" (click)="evalModifyHeader($event, emailTemplateId)">
                       {{ langData.emails.templates[emailTemplateId].tags.customHeader ? 'Remove header' : 'Add header' }}
                     </a>

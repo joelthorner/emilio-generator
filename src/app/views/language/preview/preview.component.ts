@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 import { DomSanitizer } from '@angular/platform-browser';
+declare var $: any;
 
 @Component({
   selector: 'eg-preview',
@@ -32,6 +33,11 @@ export class PreviewComponent implements OnInit {
     this.appData.previewData.id = this.emailId;
     this.appData.previewData.name = this.appData.getEmailData(this.langKey, this.emailId).name;
     this.appData.setPreviewIframeContent(this.langKey);
+
+    // Sorry for this, the next project will build with https://ng-bootstrap.github.io/
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
   }
 
   getSrc() {

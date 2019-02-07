@@ -48,7 +48,7 @@
     }
   }
 
-  .icon {
+  .icon-search {
     fill: $pink-1;
     width: 17px;
     height: 17px;
@@ -63,4 +63,22 @@
 .generate-script {
   width: 190px;
   font-size: 15px;
+}
+
+.btn-clear-search {
+  height: 35px;
+  width: 35px;
+  position: relative;
+
+  .icon {
+    fill: #FFF;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
