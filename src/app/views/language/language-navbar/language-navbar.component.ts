@@ -36,4 +36,8 @@ export class LanguageNavbarComponent implements OnInit {
     this.search.changeSearch(event);
   }
 
+  clearSearch() {
+    this.search.changeSearch('');
+  }
+
 }

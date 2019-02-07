@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppData } from 'src/app/data/app-data';
 import { SearchService } from 'src/app/lib/services/search.service';
-
+declare var $: any;
 
 @Component({
   selector: 'eg-language',
@@ -32,10 +32,15 @@ export class LanguageComponent implements OnInit {
     this.langKey = this.route.snapshot.params['langKey'];
     this.langData = this.appData.getLanguage(this.langKey);
     this.previewEmail = this.langData.emails.templates[1];
+
+    // Sorry for this, the next project will build with https://ng-bootstrap.github.io/
+    $(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
   }
 
-  refreshPreview(event: any, emailTemplateId: any) {
-    if (event.target.classList.contains('collapsed')) {
+  refreshPreview(event: any, emailTemplateId: any, freeClick: boolean = false) {
+    if (event.target.classList.contains('collapsed') || freeClick) {
       this.appData.previewData.id = emailTemplateId;
       this.appData.previewData.name = this.appData.getEmailData(this.langKey, emailTemplateId).name;
       this.appData.setPreviewIframeContent(this.langKey);
@@ -67,7 +72,7 @@ export class LanguageComponent implements OnInit {
     }
   }
 
-  findedLangItem(item: any, type: string) {
+  findedLangItem(item: any, type: string, scrollEl: HTMLElement) {
     let finded = false;
 
     if (this.searchValue.length > 2) {
@@ -82,6 +87,10 @@ export class LanguageComponent implements OnInit {
         if (item.subject.toLowerCase().trim().includes(this.searchValue)) {
           finded = true;
         }
+      }
+
+      if (finded) {
+        scrollEl.scrollTop = 0;
       }
     }
 

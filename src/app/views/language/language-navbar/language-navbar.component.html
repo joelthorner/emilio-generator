@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <form class="form-inline mr-3 search-form">
-    <svg class="icon"><use xlink:href="#search"></use></svg>
+    <svg class="icon icon-search"><use xlink:href="#search"></use></svg>
     <input
       class="form-control"
       type="search"
@@ -11,6 +11,10 @@
       (ngModelChange)="searchChange($event)"
     >
   </form>
+
+  <button class="btn btn-danger btn-clear-search" type="button" [hidden]="!searchValue.length" (click)="clearSearch()">
+    <svg class="icon"><use xlink:href="#close"></use></svg>
+  </button>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
