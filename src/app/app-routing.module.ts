@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'generate-script',
         loadChildren: './views/generate-script/generate-script.module#GenerateScriptModule'
+      },
+      {
+        path: 'import-export',
+        loadChildren: './views/import-export/import-export.module#ImportExportModule'
       }
     ]
   },
