@@ -19,6 +19,11 @@
   }
 }
 
+.col-editors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .language-navbar {
   position: absolute;
   left: 0;
@@ -42,12 +47,13 @@
 
 .lang-item {
   max-width: calc(100% - 680px);
+  margin-right: 680px;
+  width: 100%;
 
-  @for $i from 1 through 100 {
-
-    // for each $col_#{i}
-    &:nth-child(#{100 - $i}) .card {
-      z-index: $i;
+  &.finded {
+    .card-header .text {
+      color: $pink-1;
+      font-weight: bold;
     }
   }
 

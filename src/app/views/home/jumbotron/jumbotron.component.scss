@@ -5,11 +5,12 @@
   margin-top: -$grid-gutter-width;
   margin-left: -$grid-gutter-width;
   margin-right: -$grid-gutter-width;
-  height: rem(330px);
+  height: 0;
+  padding-bottom: 22.6%;
   position: relative;
-  background-image: url("src/assets/home-bg-azuca.jpg");
+  background-image: url("src/assets/home-bg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center right;
   margin-bottom: $grid-gutter-width;
 
   @media (max-width: $small-breakpoints - 1px) {

@@ -2,13 +2,16 @@
   <div class="language-navbar">
     <eg-language-navbar></eg-language-navbar>
   </div>
-
   <div class="view-content" scrolling>
     <div class="row">
       <div class="col col-editors">
 
         <!-- header -->
-        <div class="lang-item lang-item-header lang-item-generic-header">
+        <div
+          class="lang-item lang-item-header lang-item-generic-header"
+          [ngClass]="findedLangItem('Generic Header', 'class')"
+          [style.order]="findedLangItem('Generic Header', 'order')"
+        >
           <div class="card">
             <div class="card-header">
               <a
@@ -48,7 +51,11 @@
         <!-- /header -->
 
         <!-- footer -->
-        <div class="lang-item lang-item-footer lang-item-generic-footer">
+        <div
+          class="lang-item lang-item-footer lang-item-generic-footer"
+          [ngClass]="findedLangItem('Generic Footer', 'class')"
+          [style.order]="findedLangItem('Generic Footer', 'order')"
+        >
           <div class="card">
             <div class="card-header">
               <a
@@ -58,7 +65,7 @@
                 data-target="#collap-lang-item-generic-footer"
                 aria-expanded="false"
               >
-                <div class="text">Generic footer</div>
+                <div class="text">Generic Footer</div>
                 <div class="badges">
                   <span class="badge badge-id">Footer</span>
                   <ng-container *ngFor="let tagName of objectKeys(langData.emails.footer.tags)" >
@@ -87,7 +94,12 @@
         </div>
         <!-- /footer -->
 
-        <div class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}" *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)">
+        <div
+          class="lang-item lang-item-email lang-item-email-{{ emailTemplateId }}"
+          *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)"
+          [ngClass]="findedLangItem(langData.emails.templates[emailTemplateId], 'class')"
+          [style.order]="findedLangItem(langData.emails.templates[emailTemplateId], 'order')"
+          >
           <div class="card">
             <div class="card-header">
               <a
