@@ -322,7 +322,6 @@ export class AppData {
   public setCustomHeader(langKey: string, emailId: any) {
     const langData = this.getLanguage(langKey);
     const emailData = this.getEmailData(langKey, emailId);
-    console.log(langData);
 
     emailData.header = {
       html: langData.emails.header.html

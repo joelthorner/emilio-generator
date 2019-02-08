@@ -52,19 +52,26 @@ export class LanguageComponent implements OnInit {
 
     if (this.langData.emails.templates[emailId].tags.customHeader) {
       // remove header
-      this.appData.delCustomHeader(this.langKey, emailId);
+      const confirmBool = confirm('Are you sure?');
+      if (confirmBool) {
+        this.appData.delCustomHeader(this.langKey, emailId);
+      }
 
     } else {
       // add header
       this.appData.setCustomHeader(this.langKey, emailId);
     }
   }
+
   evalModifyFooter(event: any, emailId: any) {
     event.preventDefault();
 
     if (this.langData.emails.templates[emailId].tags.customFooter) {
       // remove footer
-      this.appData.delCustomFooter(this.langKey, emailId);
+      const confirmBool = confirm('Are you sure?');
+      if (confirmBool) {
+        this.appData.delCustomFooter(this.langKey, emailId);
+      }
 
     } else {
       // add footer
