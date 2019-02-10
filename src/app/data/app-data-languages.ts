@@ -1,6 +1,7 @@
 import { LANGUAGE_ES } from './app-language-es';
 import { LANGUAGE_EN } from './app-language-en';
 import { LANGUAGE_CA } from './app-language-ca';
+import { LANGUAGE_FR } from './app-language-fr';
 import { LANGUAGE_DE } from './app-language-de';
 import { LANGUAGE_XX } from './app-language-XX';
 
@@ -23,7 +24,7 @@ export const LANGUAGES = {
   4: {
     key: 'fr',
     name: 'French',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_FR
   },
   5: {
     key: 'de',
