@@ -9,8 +9,9 @@
 
 @import 'component-card';
 @import 'component-modal';
+@import 'component-alert';
 
-@include scrollbars(8px, #c1c1c1, #f1f1f1);
+@include scrollbars(4px, #cfcfd2, #f4f4f4);
 
 ::-moz-selection {
   color: #FFF;
@@ -20,6 +21,10 @@
 ::selection {
   color: #FFF;
   background: $blue-1;
+}
+
+:focus, button:focus {
+  outline: none;
 }
 
 html, body {

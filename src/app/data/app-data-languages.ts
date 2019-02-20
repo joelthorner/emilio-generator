@@ -1,8 +1,15 @@
 import { LANGUAGE_ES } from './app-language-es';
 import { LANGUAGE_EN } from './app-language-en';
 import { LANGUAGE_CA } from './app-language-ca';
+import { LANGUAGE_FR } from './app-language-fr';
 import { LANGUAGE_DE } from './app-language-de';
-import { LANGUAGE_XX } from './app-language-XX';
+import { LANGUAGE_ZHO } from './app-language-zho';
+import { LANGUAGE_CHI } from './app-language-chi';
+import { LANGUAGE_JA } from './app-language-ja';
+import { LANGUAGE_IT } from './app-language-it';
+import { LANGUAGE_KO } from './app-language-ko';
+import { LANGUAGE_PT } from './app-language-pt';
+import { LANGUAGE_EU } from './app-language-eu';
 
 export const LANGUAGES = {
   1: {
@@ -23,46 +30,46 @@ export const LANGUAGES = {
   4: {
     key: 'fr',
     name: 'French',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_FR
   },
   5: {
     key: 'de',
     name: 'German',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_DE
   },
   6: {
     key: 'zho',
     name: 'Trad. Chinese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_ZHO
   },
   10: {
     key: 'chi',
     name: 'Simpl. Chinese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_CHI
   },
   11: {
     key: 'ja',
     name: 'Japanese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_JA
   },
   13: {
     key: 'it',
     name: 'Italian',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_IT
   },
   15: {
     key: 'ko',
     name: 'Korean',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_KO
   },
   17: {
     key: 'pt',
     name: 'Portuguese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_PT
   },
   24: {
     key: 'eu',
     name: 'Basque',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_EU
   }
 };

@@ -1,5 +1,6 @@
 // v3 file template
-export const LANGUAGE_ES = {
+export const LANGUAGE_CHI = {
+
   header: {
     html: `
 <table width="100%" bgcolor="#eee" border="0" cellpadding="0" cellspacing="0" style="padding:25px;background-color:#eee;padding-bottom:0px;">
@@ -11,7 +12,6 @@ export const LANGUAGE_ES = {
             <td>
       <![endif]-->
       <table bgcolor="#ffffff" align="center" cellpadding="0" cellspacing="0" border="0" style="width: 100%;max-width: 600px;">
-
         <tr>
           <td bgcolor="#fff" style="padding: 20px;">
             <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align:center;">
@@ -25,7 +25,7 @@ export const LANGUAGE_ES = {
             </table>
           </td>
         </tr>
-`,
+`
   },
 
   footer: {
@@ -85,7 +85,7 @@ export const LANGUAGE_ES = {
             </tr>
             <tr>
               <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
               </td>
             </tr>
           </table>
@@ -110,25 +110,20 @@ export const LANGUAGE_ES = {
 
   templates: {
 
-    1: {
-      name: 'Bienvenida',
-      subject: 'Gracias por darte de alta en %%ecommerceName%%',
-      html: `
+  1: {
+    name: 'Bienvenida',
+    subject: '欢迎您登陆 %%ecommerceName%%',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>¡Bienvenido a %%ecommerceName%%!</strong><br><br>
-    <span style="font-size:15px;">
-      Hola  %firstName% %lastName%,<br><br>
-      Nos complace confirmarte la creación de tu cuenta de cliente en %%ecommerceURL%%.<br><br>
-      Gracias a tu cuenta de cliente podrás actualizar tu perfil y contraseña, consultar tu historial de pedidos y otra información de tu interés.<br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>
-      Atentamente, el equipo de %%ecommerceName%%
-    </span>
+    <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
+      <span style="font-size:15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
+      我们期待能在 <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `,
-      footer: {
-        html: `
+    footer: {
+      html: `
       <tr>
         <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -184,7 +179,7 @@ export const LANGUAGE_ES = {
             </tr>
             <tr>
               <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
               </td>
             </tr>
           </table>
@@ -199,85 +194,72 @@ export const LANGUAGE_ES = {
     </td>
   </tr>
   <tr>
-    <td align="center" style="font-family: sans-serif;font-size: 14px;padding:10px;">
-      <a href="%linkDeleteSubscription%" style="color: #000;text-decoration: underline;font-size:10px;line-height:13px;"><span color="#000">Darse de baja</span></a>
-      <span style="color:#000;font-size:10px;">de la subscripción de Newsletter</span>
+    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+      <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+        <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+      </span>
     </td>
   </tr>
 </table>
 `
-      }
-    }, // end 1
+    }
+  }, // end 1
 
-    2: {
-      name: 'Baja de usuarios',
-      subject: 'Baja en %%ecommerceName%%',
-      html: `
+  2: {
+    name: 'Baja de usuarios',
+    subject: '注销账户',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Confirmación de cuenta eliminada</strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>Conforme a lo solicitado durante tu reciente visita a %%ecommerceName%%, confirmamos que tu cuenta de usuario %%email%% ha sido eliminada de nuestra base de datos.<br><br>Atentamente, el equipo de %%ecommerceName%%</span>
+    <strong>确认删除账户</strong><br><br>
+    <span style="font-size:15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 2
+  }, // end 2
 
-    3: {
-      name: 'Recordarios de contraseña',
-      subject: 'Recordar contraseña de %%ecommerceName%%',
-      html: `
+  3: {
+    name: 'Recordarios de contraseña',
+    subject: '恢复密码 %%ecommerceName%%',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recordar contraseña</strong><br><br>
-    <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br><br>
-      Conforme a lo solicitado durante tu reciente visita a %%ecommerceName%%, aquí tienes tu dirección de acceso a la zona de recuperación de contraseña:<br><br>
-      <a href="%%lostPasswordLink%%" style="color:#000">Click aquí para recuperar contraseña</a><br><br>
-      Este enlace solamente será válido durante las 24 horas siguientes al momento de su envío.<br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>
-      Atentamente, el equipo de %%ecommerceName%%
-    </span>
+    <strong>恢复密码</strong><br><br>
+    <span style="font-size:15px;">您在浏览页面 %%ecommerceName%% 的时候这是您进入页面的密码恢复邮件<br><br><a href="%%lostPasswordLink%%" style="color:#000">点击此处</a><br><br>
+    请记住该网址，该验证网址将会在邮件发送起24小时内有效<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 见到您<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 3
+  }, // end 3
 
-    4: {
-      name: 'Cambio de contraseña',
-      subject: 'Cambio contraseña de %%ecommerceName%%',
-      html: `
+  4: {
+    name: 'Cambio de contraseña',
+    subject: '修改密码 %%ecommerceName%%',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Cambio de contraseña</strong><br><br>
-    <span style="font-size:15px;">
-      Hola  %%firstName%% %%lastName%%,<br><br>
-      Te confirmamos que tu contraseña ha sido modificada.<br><br>
-      Asegúrate de anotar tus credenciales en un lugar seguro para futuras referencias.<br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
-      Atentamente, el equipo de %%ecommerceName%%
-    </span>
+    <strong>修改密码</strong><br><br>
+    <span style="font-size:15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 4
+  }, // end 4
 
-    5: {
-      name: 'Registro de newsletter',
-      subject: 'Subscripción a la newsletter en %%ecommerceName%%',
-      html: `
+  5: {
+    name: 'Registro de newsletter',
+    subject: '%%ecommerceName%% 资讯',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Subscripción a la newsletter</strong><br><br>
-    <span style="font-size:15px;">
-      Hola.<br><br>
-      Gracias por suscribirte a nuestro boletín de noticias. Pronto recibirás información sobre actividades, noticias sobre nuestra empresa y novedades en productos y promociones.<br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>
+    <strong>订阅资讯</strong><br><br>
+    <span style="font-size: 15px;">
+      您好</span><br><br><span style="font-size: 15px;">谢谢您订阅我们的资讯，我们会为您发送我们的公司相关的最新动态，活动，热门产品和促销信息。</span><br><br><span style="font-size: 15px;">我们期待能在 </span><a href="%%ecommerceURL%%" style="font-size: 15px; color: rgb(0, 0, 0);">%%ecommerceName%%</a><span style="font-size: 15px;"> 见到您
     </span>
   </td>
 </tr>
 `,
-      footer: {
-        html: `
+    footer: {
+      html: `
       <tr>
         <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -333,7 +315,7 @@ export const LANGUAGE_ES = {
             </tr>
             <tr>
               <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                如需要更多信息，请参见%%privacy%% and %%termsOfUse%%.
               </td>
             </tr>
           </table>
@@ -348,36 +330,36 @@ export const LANGUAGE_ES = {
     </td>
   </tr>
   <tr>
-    <td align="center" style="font-family: sans-serif;font-size: 14px;padding:10px;">
-      <a href="%linkDeleteSubscription%" style="color: #000;text-decoration: underline;font-size:10px;line-height:13px;"><span color="#000">Darse de baja</span></a>
-      <span style="color:#000;font-size:10px;">de la subscripción de Newsletter</span>
+    <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+      <span style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;">
+        <a href="%linkDeleteSubscription%" style="color: #333;text-decoration: underline;font-size:10px;line-height:13px;">取消订阅简报</a>
+      </span>
     </td>
   </tr>
 </table>
 `
-      }
-    }, // end 5
+    }
+  }, // end 5
 
-    6: {
-      name: 'Recomendación de wishlist',
-      subject: '%%anonymousName%% te recomienda sus productos favoritos de %%ecommerceName%%',
-      html: `
+  6: {
+    name: 'Recomendación de wishlist',
+    subject: '%%anonymousName%%  收藏了喜欢的产品',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recomendación de wishlist</strong><br><br>
-    <span style="font-size:15px;">
-      Tu amigo/a %%anonymousName%% (%%anonymousEmail%%) te envía este producto que puede resultarte de interés.<br><br>
-      Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>
-      Atentamente, el equipo de  %%ecommerceName%%
-    </span>
+  <strong>收藏推荐</strong><br><br>
+  <span style="font-size:15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
   <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
+
+
         <tr><td>&nbsp;</td></tr>
-        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Productos recomendados</span></td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">
+产品款式 </span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td style="vertical-align: top">
@@ -385,9 +367,9 @@ export const LANGUAGE_ES = {
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
                   <tr>
-                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
+                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">产品款式 </td>
 
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
                   <!-- %loop% -->
                   <tr>
@@ -400,8 +382,8 @@ export const LANGUAGE_ES = {
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
                           </td>
-                        </tr>
-                      </table>
+                      </tr>
+                  </table>
                     </td>
 
                     <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
@@ -411,51 +393,53 @@ export const LANGUAGE_ES = {
                 </tbody>
               </table>
 
-            </div>
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td>
-            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
-              <tr>
-                <td>
-                  <strong >Mensaje de tu amigo/a:</strong><br>
-                  %%comments%%
+             </div>
+            </td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
 
-                </td>
-              </tr>
+          <tr>
+            <td>
+              <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+                <tr>
+                  <td>
+                    <strong >来自好友的消息  评论</strong><br>
+                    %%comments%%
+
+                  </td>
+                </tr>
             </table>
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-      </tbody>
-    </table>
+            </td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+
+        </tbody>
+      </table>
   </td>
 </tr>
 `
-    }, // end 6
+  }, // end 6
 
-    7: {
-      name: 'Recomendación de producto',
-      subject: '%%anonymousName%% te recomienda un producto de %%ecommerceName%%',
-      html: `
+  7: {
+    name: 'Recomendación de producto',
+    subject: '产品推荐',
+    html: `
+
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recomendación de producto</strong><br><br>
-    <span style="font-size:15px;">
-      Tu amigo/a %%anonymousName%% (%%anonymousEmail%%) te envía este producto que puede resultarte de interés.<br><br>
-      Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
-      Atentamente, el equipo de  %%ecommerceName%%
-    </span>
+  <strong>昵称 给您推荐产品</strong><br><br>
+  <span style="font-size:15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 <tr>
   <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
+
+
         <tr><td>&nbsp;</td></tr>
-        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Productos recomendados</span></td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">
+产品款式</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td style="vertical-align: top">
@@ -463,9 +447,9 @@ export const LANGUAGE_ES = {
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
                   <tr>
-                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
+                    <td width="80%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">产品款式</td>
 
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
 
                   <tr>
@@ -478,80 +462,82 @@ export const LANGUAGE_ES = {
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
                           </td>
-                        </tr>
-                      </table>
+                      </tr>
+                  </table>
                     </td>
 
                     <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
+
+
                 </tbody>
               </table>
 
-            </div>
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-        <tr>
-          <td>
-            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
-              <tr>
-                <td>
-                  <strong >Mensaje de tu amigo/a:</strong><br>
-                  %%comments%%
-                </td>
-              </tr>
+             </div>
+            </td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+
+          <tr>
+            <td>
+              <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+                <tr>
+                  <td>
+                    <strong >来自好友的推荐:</strong><br>
+                    %%comments%%
+
+                  </td>
+                </tr>
             </table>
-          </td>
-        </tr>
-        <tr><td>&nbsp;</td></tr>
-      </tbody>
-    </table>
+            </td>
+          </tr>
+          <tr><td>&nbsp;</td></tr>
+
+        </tbody>
+      </table>
   </td>
 </tr>
 `
-    }, // end 7
+  }, // end 7
 
-    8: {
-      name: 'Contacto general',
-      subject: 'Formulario de contacto de %%ecommerceName%%',
-      html: `
+  8: {
+    name: 'Contacto general',
+    subject: '来自 %%ecommerceName%% 的联系',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Formulario de contacto</strong><br><br>
-    <span style="font-size:15px;">Nombre: %%anonymousFirstName%%<br>Email: %%anonymousEmail%%<br>Teléfono: %%anonymousPhone%%<br>Motivo de consulta:  %%queryMotive%%<br>Mensaje: %%comments%%</span>
+  <strong>联系方式</strong><br><br>
+  <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
   </td>
 </tr>
 `
-    }, // end 8
+  }, // end 8
 
-    9: {
-      name: 'Consulta de producto',
-      subject: 'Consulta sobre producto de %%ecommerceName%%',
-      html: `
+  9: {
+    name: 'Consulta de producto',
+    subject: '产品的相关问题',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Consulta sobre producto</strong><br><br>
-    <span style="font-size:15px;">Nombre: %%anonymousFirstName%%<br>Apellidos: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Teléfono: %%anonymousPhone%%<br>Mensaje: %%comments%%<br><br>Nombre Producto: %%name%%<br>Referencia Producto: %%sku%%</span>
+    <strong>问题关于 </strong><br><br>
+    <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
   </td>
 </tr>
 `
-    }, // end 9
+  }, // end 9
 
-    10: {
-      name: 'Confirmación de pedido',
-      subject: 'Confirmación de pedido - %%orderNumber%% - %%ecommerceName%%',
-      html: `
-<style type="text/css">
-  ul {
-    list-style-type: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-</style>
+  10: {
+    name: 'Confirmación de pedido',
+    subject: '确认订单',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Confirmación de pedido</strong><br>
-    <span style="font-size:15px;">Muchas gracias por confiar en nosotros. Su compra ha sido procesada correctamente. A continuación te mostramos los datos del pedido</span>
+    <strong>确认订单</strong><br>
+    <span style="font-size:15px;">亲爱的 %%firstName%% %%lastname%%,<br>
+
+      您的订单已确认并正确处理成功。<br>
+      已将订单信息以pdf的格式发送给您。 <br>
+    注意查收并查看您的订单详情。</span>
   </td>
 </tr>
 <tr>
@@ -563,14 +549,14 @@ export const LANGUAGE_ES = {
             <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
                 <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                  Nº de pedido:<br>
-                  Fecha del pedido:<br>
-                  Estado:<br>
+                  订单编号:<br>
+                  订单日期:<br>
+                  订单状态:<br>
                 </td>
                 <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
                   <strong>%%orderNumber%% </strong><br>
                   <strong>%%orderDate%%</strong><br>
-                  <strong>Confirmado</strong><br>
+                  <strong>已确认</strong><br>
                 </td>
               </tr>
             </table>
@@ -581,14 +567,14 @@ export const LANGUAGE_ES = {
             <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
                 <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                  <strong>Dirección de facturación:</strong><br>
+                  <strong>支付账号:</strong><br>
                   %%firstName%% %%lastName%%<br>
                   %%address%% <br>
                   %%zip%%  %%city%%<br>
                   %%state%%<br>
                 </td>
                 <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                  <strong>Dirección de envío:</strong><br>
+                  <strong>邮寄地址:</strong><br>
                   %%shippingFirstName%%  %%shippingLastName%% <br>
                   %%shippingAddress%% <br>
                   %%shippingZip%%  %%shippingCity%% <br>
@@ -599,7 +585,7 @@ export const LANGUAGE_ES = {
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
-        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Detalles del pedido</span></td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">订单详情</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td style="vertical-align: top">
@@ -607,9 +593,9 @@ export const LANGUAGE_ES = {
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
                   <tr>
-                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Cantidad</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
+                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">产品名 （款式） </td>
+                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">数量</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
                   <!-- %loop% -->
                   <tr>
@@ -620,8 +606,7 @@ export const LANGUAGE_ES = {
                             <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
-                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
-                            <div style="font-size: 10px;">%productOptions%</div>
+                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
                           </td>
                         </tr>
                       </table>
@@ -673,7 +658,7 @@ export const LANGUAGE_ES = {
                 </tr>
                 <!-- %%ifOrderDiscount%% -->
                 <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Descuentos</td>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">折扣</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
                       <span>- %%orderDiscounts%%</span>
@@ -681,8 +666,9 @@ export const LANGUAGE_ES = {
                   </td>
                 </tr>
                 <!-- %%/ifOrderDiscount%% -->
+
                 <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Subtotal</td>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">小计</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
                       <span>%%orderTotalWithoutTaxes%%  </span>
@@ -691,7 +677,7 @@ export const LANGUAGE_ES = {
                 </tr>
 
                 <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Impuestos</td>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">税收</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
                       <span>%%orderTaxes%% </span>
@@ -700,7 +686,7 @@ export const LANGUAGE_ES = {
                 </tr>
                 <!--%%ifOrderBalanceCodes%%-->
                 <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Vales</td>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">优惠券</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
                       <span>- %%orderBalanceCodes%%</span>
@@ -709,7 +695,7 @@ export const LANGUAGE_ES = {
                 </tr>
                 <!--%%/ifOrderBalanceCodes%%-->
                 <tr>
-                  <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Total</td>
+                  <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">总计</td>
                   <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
                     <span>
                       <span>%%total%%</span>
@@ -728,7 +714,7 @@ export const LANGUAGE_ES = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >Comentarios:</strong><br>
+                  <strong >订单评论</strong><br>
                   %%orderComments%%
 
                 </td>
@@ -754,85 +740,74 @@ export const LANGUAGE_ES = {
   </td>
 </tr>
 `
-    }, // end 10
+  }, // end 10
 
-    11: {
-      name: 'Baja de newsletter',
-      subject: 'Baja de la newsletter de %%ecommerceName%%',
-      html: `
+  11: {
+    name: 'Baja de newsletter',
+    subject: '退订资讯',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Confirmación de la baja de la newsletter</strong><br><br>
-    <span style="font-size:15px;">Hola<br><br>Has sido dado de baja con éxito de nuestra newsletter.<br><br>Atentamente, el equipo de %%ecommerceName%%</span>
+
+    <strong>资讯退订</strong><br><br>
+    <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 11
+  }, // end 11
 
-    12: {
-      name: 'Apadrinamiento',
-      subject: 'Tu amigo te quiere apadrinar',
-      html: `
+  12: {
+    name: 'Apadrinamiento',
+    subject: '您的好友要赞助你',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Solicitud de apadrinamiento</strong><br><br>
-    <span>Hola,<br><br>
-    %%firstName%% te invita a unirte a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
-    Hazte socio y regístrate aquí: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
-    Gracias por tu apoyo.<br><br>
-    Atentamente, el equipo de %%ecommerceName%%
+
+    <strong>赞助要求 </strong><br><br>
+    <span>您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%%
   </td>
 </tr>
 `
-    }, // end 12
+  }, // end 12
 
-    13: {
-      name: 'Apadrinamiento completo',
-      subject: 'Tu apadrinado ha realizado una compra: disfruta de tu descuento.',
-      html: `
+  13: {
+    name: 'Apadrinamiento completo',
+    subject: '完成募集',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
-    <strong>Apadrinamiento completado</strong><br><br>
-    <span>Hola,<br><br>
-    Uno de tus amigos acaba de hacer una compra en nuestra tienda de más de XX (€) de valor, por lo tanto, te ofrecemos un descuento de XX en tu próximo pedido.<br><br>
-    El descuento entrará automáticamente en vigor en tu próximo pedido. <br><br>
-    Gracias por tu apoyo.<br><br>
-    Atentamente, el equipo de %%ecommerceName%%</span>
+    <strong>您的募集已经完成一个订单，享受收益吧！</strong><br><br>
+    <span>您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
-    }, // end 13
+  }, // end 13
 
-    14: {
-      name: 'Petición devolución',
-      subject: 'Petición de devolución %%ecommerceName%%',
-      html: `
+  14: {
+    name: 'Petición devolución',
+    subject: '',
+    html: ``
+  }, // end 14
+
+  15: {
+    name: 'Pedido incompleto',
+    subject: 'Inquiry from %%ecommerceName%%',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Información de la petición de devolución</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%, <br><br>Nos complace confirmarte la petición de tu devolución.<br><br>Número de pedido: %%orderNumber%%<br><br>Atentamente, el equipo %%ecommerceName%%</span>
-  </td>
-</tr>
-`
-    }, // end 14
-
-    15: {
-      name: 'Pedido incompleto',
-      subject: 'Pedido incompleto de %%ecommerceName%%',
-      html: `
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Información del pedido incompleto</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%, <br><br>En tu última visita a nuestra tienda, añadiste los siguientes productos al carro de la compra, pero no completaste el pedido.<br><br>
-    Haz clic <a target="_blank" href="%recoverOrderLink%" style="color:#000;">aquí</a> si deseas recuperar tu pedido. <br><br>Atentamente, el equipo %%ecommerceName%%</span>
+    <strong>您的購物車錯過了您</strong><br><br>
+    <span style="font-size:15px;">你好 %firstName% %lastName%, <br><br>在您最后一次浏览我们网页后将以下商品放入购物车，但是您没有完成订单填写。请点击这里： <br><br>
+    <a target="_blank" href="%recoverOrderLink%" style="color:#000;">购物车</a> 返回您的购物车.<br><br>%%ecommerceName%% 团队</span>
   </td>
 </tr>
 <tr>
   <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
+
+
         <tr><td>&nbsp;</td></tr>
-        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Detalles del pedido incompleto</span></td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">购物车:</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td style="vertical-align: top">
@@ -840,9 +815,9 @@ export const LANGUAGE_ES = {
               <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
                   <tr>
-                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Producto</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Cantidad</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Precio</td>
+                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">产品名 （款式）</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">数量</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
                   </tr>
                   <!-- %loop% -->
                   <tr>
@@ -865,237 +840,155 @@ export const LANGUAGE_ES = {
 
                 </tbody>
               </table>
+
             </div>
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
+
       </tbody>
     </table>
   </td>
 </tr>
 `
-    }, // end 15
+  }, // end 15
 
-    16: {
-      name: 'Notificación transportista',
-      subject: 'Notificación transportista',
-      html: ``
-    }, // end 16
+  16: {
+    name: 'Notificación transportista',
+    subject: '',
+    html: ``
+  }, // end 16
 
-    17: {
-      name: 'Verificación de correo',
-      subject: 'Verificación de correo - %%ecommerceName%%',
-      html: `
+  17: {
+    name: 'Verificación de correo',
+    subject: 'Email verification - %%ecommerceName%%',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Verificación de correo</strong><br><br>
+    <strong>Email verification</strong><br><br>
     <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br><br>
-      Gracias por registrarte en %%ecommerceURL%%. Por favor activa tu cuenta clicando <a href="%verifyLink%"  style="color:#000;">aquí</a>.<br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>
-      Atentamente, el equipo de %%ecommerceName%%
+      Hello %firstName% %lastName%,<br><br>
+      Thanks for registring on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br><br>
+      We are looking forward to seeing you on <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
     </span>
   </td>
 </tr>
 `
-    }, // end 17
+  }, // end 17
 
-    18: {
-      name: 'Cuenta activada',
-      subject: 'Activación de cuenta - %%ecommerceName%%',
-      html: `
+  18: {
+    name: 'Cuenta activada',
+    subject: 'Account activated - %%ecommerceName%%',
+    html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Activación de cuenta</strong><br><br>
+    <strong>Account activated</strong><br><br>
     <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br><br>
-      Te notificamos que tu cuenta en %%ecommerceURL%% ha sido activada correctamente.<br><br>
-      Para ver tus datos y toda la información referente a tu cuenta accede a través del panel de control: <a href="%%ecommerceURL%%" style="color:#000">Editar tu perfil</a><br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>
-      Atentamente, el equipo de %%ecommerceName%%
+      Hello %firstName% %lastName%,<br><br>
+      We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br><br>
+      You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br><br>
+      We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
     </span>
   </td>
 </tr>
 `
-    }, // end 18
+  }, // end 18
 
-    19: {
-      name: 'Aviso a proveedores',
-      subject: '',
-      html: ``
-    }, // end 19
+  19: {
+    name: 'Aviso a proveedores',
+    subject: '',
+    html: ``
+  }, // end 19
 
-    20: {
-      name: 'Stock disponible',
-      subject: 'Stock disponible',
-      html: `
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Stock disponible del producto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
-    <span style="font-size:15px;">Hola,<br><br>El artículo que tanto querías ya está disponible!</span>
-    <span style="font-size:15px;">
-      Queremos recordarte que este email aporta información orientativa sobre la disponibilidad de este artículo y depende de muchos factores (personas interesadas, unidades disponibles). <br>
-      Hemos enviado este email a todos los clientes interesados en este artículo, por lo que es posible que se agote muy pronto.<br><br>
-      Atentamente, el equipo de %%ecommerceName%%
-    </span>
-  </td>
-</tr>
-`
-    }, // end 20
+  20: {
+    name: 'Stock disponible',
+    subject: '',
+    html: ``
+  }, // end 20
 
-    22: {
-      name: 'Blog - Notificación de Nuevo Artículo',
-      subject: '¡Nuevo artículo en el blog de %ecommerceName%!',
-      html: `
-<!-- %loop% -->
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    A continuación puedes leer los últimos artículos publicados en <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br><br>
-    <strong><a href="%%postLink%%" style="color:#000;font-size:18px;text-decoration:none;">%%postName%%</a></strong>
-  </td>
-</tr>
-<tr>
-  <td align="center" >
-    <table border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="30" style="text-align: center;">
-          <a href="%%postLink%%" style="color:#000;">
-            <img src="%%postSmallImage%%" height="auto" width="115" border="0" style="height: auto;" alt="%%postName%%">
-          </a>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
-  </td>
-</tr>
-<!-- %/loop% -->
-`
-    }, // end 22
+  22: {
+    name: 'Blog - Notificación de Nuevo Artículo',
+    subject: '',
+    html: ``
+  }, // end 22
 
-    23: {
-      name: 'Blog - Notificación de Nuevo Comentario',
-      subject: 'Nuevo comentario en %%postName%% - %%blogName%%',
-      html: `
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    Alguien acaba de responder el artículo "<a href="%%postLink%%" style="color:#000">%%postName%%</a>.<br><br>
-  </td>
-</tr>
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <table border="0" cellspacing="10" cellpadding="0" width="100%">
-      <tr>
-        <td style="text-align:right;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="30%">
-          <img src="%%commentGravatar%%?d=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fuser-23%2F512%2FUser_Thief.png&s=75" width="75" border="0" height="75">
-        </td>
-        <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
-          <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
-                  %%commentContent%%<br><br>
-          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continúa Leyendo!</strong></a>.</span>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-`
-    }, // end 23
+  23: {
+    name: 'Blog - Notificación de Nuevo Comentario',
+    subject: '',
+    html: ``
+  }, // end 23
 
-    24: {
-      name: 'Blog - Email de Bienvenida',
-      subject: '¡Bienvenido a %%blogName%%!',
-      html: `
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>¡Bienvenido a <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br><br>
-      Gracias por suscribirte a nuestro blog. Pronto recibirás los nuevos artículos por email, información sobre descuentos, promociones, regalos y datos de interés relativos a la actividad de la tienda online.<br><br>
-      Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>
-      Atentamente, el equipo de %%ecommerceName%%
-    </span>
-  </td>
-</tr>
-`
-    }, // end 24
+  24: {
+    name: 'Blog - Email de Bienvenida',
+    subject: '',
+    html: ``
+  }, // end 24
 
-    25: {
-      name: 'Confirmar suscripción de Stock',
-      subject: 'Suscripción de stock',
-      html: `
-<tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Suscripción de stock del producto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>Te has suscrito a los avisos de stock de %name%</span>
-    %productOptions%<br>
-    <span style="font-size:15px;">En caso de que volvamos a recibir este artículo te avisaremos de inmediato para que no se te escape.<br><br>Atentamente, el equipo de %%ecommerceName%%</span>
-  </td>
-</tr>
-`
-    }, // end 25
+  25: {
+    name: 'Confirmar suscripción de Stock',
+    subject: '',
+    html: ``
+  }, // end 25
 
-    26: {
-      name: 'SocialCurrency - Socialización',
-      subject: '',
-      html: ``
-    }, // end 26
+  26: {
+    name: 'SocialCurrency - Socialización',
+    subject: '',
+    html: ``
+  }, // end 26
 
-    27: {
-      name: 'SocialCurrency - Notificación incentivos',
-      subject: '',
-      html: ``
-    }, // end 27
+  27: {
+    name: 'SocialCurrency - Notificación incentivos',
+    subject: '',
+    html: ``
+  }, // end 27
 
-    32: {
-      name: 'Documento de pedido',
-      subject: '',
-      html: ``
-    }, // end 32
+  32: {
+    name: 'Documento de pedido',
+    subject: '',
+    html: ``
+  }, // end 32
 
-    33: {
-      name: 'Documento de albarán de entrega',
-      subject: '',
-      html: ``
-    }, // end 33
+  33: {
+    name: 'Documento de albarán de entrega',
+    subject: '',
+    html: ``
+  }, // end 33
 
-    34: {
-      name: 'Documento de factura',
-      subject: '',
-      html: ``
-    }, // end 34
+  34: {
+    name: 'Documento de factura',
+    subject: '',
+    html: ``
+  }, // end 34
 
-    35: {
-      name: 'Documento de factura rectificativa',
-      subject: '',
-      html: ``
-    }, // end 35
+  35: {
+    name: 'Documento de factura rectificativa',
+    subject: '',
+    html: ``
+  }, // end 35
 
-    36: {
-      name: 'Activación Two Factor Auth',
-      subject: '',
-      html: ``
-    }, // end 36
+  36: {
+    name: 'Activación Two Factor Auth',
+    subject: '',
+    html: ``
+  }, // end 36
 
-    37: {
-      name: 'Activación Two Factor Auth',
-      subject: '',
-      html: ``
-    }, // end 37
+  37: {
+    name: 'Activación Two Factor Auth',
+    subject: '',
+    html: ``
+  }, // end 37
 
-    38: {
-      name: 'Enviar código dispositivo Two Factor Auth',
-      subject: '',
-      html: ``
-    }, // end 38
+  38: {
+    name: 'Enviar código dispositivo Two Factor Auth',
+    subject: '',
+    html: ``
+  }, // end 38
 
-    39: {
-      name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
-      subject: '',
-      html: ``
-    }, // end 39
+  39: {
+    name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
+    subject: '',
+    html: ``
+  }, // end 39
 
   } // end emails
 };

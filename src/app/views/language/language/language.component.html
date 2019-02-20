@@ -99,7 +99,7 @@
           *ngFor="let emailTemplateId of objectKeys(langData.emails.templates)"
           [ngClass]="findedLangItem(langData.emails.templates[emailTemplateId], 'class', scrolling)"
           [style.order]="findedLangItem(langData.emails.templates[emailTemplateId], 'order', scrolling)"
-          >
+        >
           <div class="card">
             <div class="card-header">
               <a
@@ -211,9 +211,6 @@
           </div>
         </div>
 
-  <!-- <pre>
-  {{ langData | json }}
-  </pre> -->
       </div>
 
       <!-- preview -->

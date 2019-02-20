@@ -32,4 +32,12 @@ export class JszipService {
 
     saveAs(blob, fileName);
   }
+
+  public saveAsEmilioGenerator(json: any, fileName: string, type: string) {
+    const blob = new Blob([ JSON.stringify(json) ], {
+      type: type
+    });
+
+    saveAs(blob, fileName);
+  }
 }

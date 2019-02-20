@@ -288,10 +288,13 @@ export class AppData {
     let html = header + body + footer;
     html = this.previewReplaces(html);
 
-    const iframeSrc = 'data:text/html;charset=utf-8,' +
+    let iframeSrc = 'data:text/html;charset=utf-8,' +
       encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '">' + this.previewData.style) +
       encodeURI(html) +
       encodeURI('</body></html>');
+
+    // fix chrome set '#'
+    iframeSrc = iframeSrc.replace(new RegExp('#', 'g'), '%23');
 
     this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
   }
@@ -322,7 +325,6 @@ export class AppData {
   public setCustomHeader(langKey: string, emailId: any) {
     const langData = this.getLanguage(langKey);
     const emailData = this.getEmailData(langKey, emailId);
-    console.log(langData);
 
     emailData.header = {
       html: langData.emails.header.html
