@@ -3,6 +3,7 @@ import { LANGUAGE_EN } from './app-language-en';
 import { LANGUAGE_CA } from './app-language-ca';
 import { LANGUAGE_FR } from './app-language-fr';
 import { LANGUAGE_DE } from './app-language-de';
+import { LANGUAGE_ZHO } from './app-language-zho';
 import { LANGUAGE_XX } from './app-language-XX';
 
 export const LANGUAGES = {
@@ -34,7 +35,7 @@ export const LANGUAGES = {
   6: {
     key: 'zho',
     name: 'Trad. Chinese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_ZHO
   },
   10: {
     key: 'chi',
