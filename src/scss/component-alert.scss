@@ -1,0 +1,16 @@
+.alert {
+  .close {
+    opacity: 1;
+    .icon {
+      height: 20px;
+      width: 20px;
+      fill: #FFF;
+      display: block;
+    }
+  }
+  &-success {
+    color: #fff;
+    background-color: $pink-1;
+    border-color: $pink-1;
+  }
+}
