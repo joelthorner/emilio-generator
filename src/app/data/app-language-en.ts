@@ -219,7 +219,7 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Confirmation deleted account</strong><br><br>
-    <span style="font-size:15px;">Hello,<br/><br/>As requested during your recent visit to %%ecommerceName%%, we confirm that your user account %%email%% has been removed from our database.<br/><br/>The %%ecommerceName%% Team</span>
+    <span style="font-size:15px;">Hello,<br><br>As requested during your recent visit to %%ecommerceName%%, we confirm that your user account %%email%% has been removed from our database.<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -232,8 +232,8 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Password recovery</strong><br><br>
-    <span style="font-size:15px;">As requested during your recent visit to %%ecommerceName%% here's your address to access the password recovery zone:<br /><br /><a href="%%lostPasswordLink%%" style="color:#000">Click here</a><br /><br />
-      Keep in mind that this access code will expire 24 hours after this email was sent.<br /><br />We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
+    <span style="font-size:15px;">As requested during your recent visit to %%ecommerceName%% here's your address to access the password recovery zone:<br><br><a href="%%lostPasswordLink%%" style="color:#000">Click here</a><br><br>
+      Keep in mind that this access code will expire 24 hours after this email was sent.<br><br>We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -263,7 +263,7 @@ export const LANGUAGE_EN = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Subscription to the newsletter</strong><br><br>
     <span style="font-size:15px;">
-      Hello<br/><br/>Thank you for your registration to our newsletter. Soon you will receive news about our company, information of features and hottest products and promotions.<br/><br/>
+      Hello<br><br>Thank you for your registration to our newsletter. Soon you will receive news about our company, information of features and hottest products and promotions.<br><br>
       We are looking forward to seeing you on <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>
     </span>
   </td>
@@ -359,10 +359,10 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Wishlist recommend</strong><br /><br />
+    <strong>Wishlist recommend</strong><br><br>
     <span style="font-size:15px;">
-      Your friend %%anonymousName%% (%%anonymousEmail%%) sends you this product that may be of interest for you.<br /><br />
-      If you need more information about this product you can contact us on <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br /><br />
+      Your friend %%anonymousName%% (%%anonymousEmail%%) sends you this product that may be of interest for you.<br><br>
+      If you need more information about this product you can contact us on <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>
       The %%ecommerceName%% Team
     </span>
   </td>
@@ -419,7 +419,7 @@ export const LANGUAGE_EN = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >Message from your friend:</strong><br/>
+                    <strong >Message from your friend:</strong><br>
                     %%comments%%
 
                   </td>
@@ -442,10 +442,10 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Product recommendation</strong><br /><br />
+    <strong>Product recommendation</strong><br><br>
     <span style="font-size:15px;">
-      Hello %%friendName%%,<br>Your friend %%anonymousName%% (%%anonymousEmail%%) thinks this item could be of your interest.<br /><br />
-      If you need further information about this item you can contact us at <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br /><br />
+      Hello %%friendName%%,<br>Your friend %%anonymousName%% (%%anonymousEmail%%) thinks this item could be of your interest.<br><br>
+      If you need further information about this item you can contact us at <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
       The %%ecommerceName%% Team
     </span>
   </td>
@@ -502,7 +502,7 @@ export const LANGUAGE_EN = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >Your friend's personal message:</strong><br/>
+                    <strong >Your friend's personal message:</strong><br>
                     %%comments%%
 
                   </td>
@@ -526,7 +526,7 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Contact form</strong><br><br>
-    <span style="font-size:15px;">Name: %%anonymousFirstName%%<br />Lastname: %%anonymousLastName%%<br />Email: %%anonymousEmail%%<br />Phone: %%anonymousPhone%%<br />Query Motive:  %%queryMotive%%<br />Message: %%comments%%</span>
+    <span style="font-size:15px;">Name: %%anonymousFirstName%%<br>Lastname: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Phone: %%anonymousPhone%%<br>Query Motive:  %%queryMotive%%<br>Message: %%comments%%</span>
   </td>
 </tr>
 `
@@ -539,7 +539,7 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Question about a product</strong><br><br>
-    <span style="font-size:15px;">Name: %%anonymousFirstName%%<br />Lastname: %%anonymousLastName%%<br />Email: %%anonymousEmail%%<br />Phone: %%anonymousPhone%%<br />Message: %%comments%%<br /><br />Product name: %%name%%<br />Product sku: %%sku%%</span>
+    <span style="font-size:15px;">Name: %%anonymousFirstName%%<br>Lastname: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Phone: %%anonymousPhone%%<br>Message: %%comments%%<br><br>Product name: %%name%%<br>Product sku: %%sku%%</span>
   </td>
 </tr>
 `
@@ -740,7 +740,7 @@ export const LANGUAGE_EN = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >Comments:</strong><br/>
+                    <strong >Comments:</strong><br>
                     %%orderComments%%
 
                   </td>
@@ -810,10 +810,10 @@ export const LANGUAGE_EN = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
     <strong>Sponsorship completed</strong><br><br>
     <span>
-      Hello,<br/><br/>
-      One of your friends has just done a purchase in our shop for over XX (€) value, therefore we give you a XX discount in your next order.<br/><br/>
-      The discount will automatically take effect in your next order.<br/><br/>
-      Thanks for your support.<br /><br />
+      Hello,<br><br>
+      One of your friends has just done a purchase in our shop for over XX (€) value, therefore we give you a XX discount in your next order.<br><br>
+      The discount will automatically take effect in your next order.<br><br>
+      Thanks for your support.<br><br>
       The %%ecommerceName%% Team
     </span>
   </td>
@@ -827,8 +827,8 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Return Request Information</strong><br /><br />
-    <span style="font-size:15px;">Hello %firstName% %lastName%, <br /><br />We are pleased to confirm your refund request.<br/><br/>Order number: %%orderNumber%%<br/><br/>The %%ecommerceName%% Team</span>
+    <strong>Return Request Information</strong><br><br>
+    <span style="font-size:15px;">Hello %firstName% %lastName%, <br><br>We are pleased to confirm your refund request.<br><br>Order number: %%orderNumber%%<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -840,9 +840,9 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Incomplete order information</strong><br /><br />
-    <span style="font-size:15px;">Hello %firstName% %lastName%, <br /><br />In your last visit to our store %%ecommerceName%% you placed the following item(s) in the shopping cart, but you did not complete the order. <br /><br />
-    Click <a target="_blank" href="%recoverOrderLink%" style="color:#000;">here</a> to recover your cart.<br/><br/>The %%ecommerceName%% Team</span>
+    <strong>Incomplete order information</strong><br><br>
+    <span style="font-size:15px;">Hello %firstName% %lastName%, <br><br>In your last visit to our store %%ecommerceName%% you placed the following item(s) in the shopping cart, but you did not complete the order. <br><br>
+    Click <a target="_blank" href="%recoverOrderLink%" style="color:#000;">here</a> to recover your cart.<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
@@ -910,11 +910,11 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Email verification</strong><br /><br />
+    <strong>Email verification</strong><br><br>
     <span style="font-size:15px;">
-      Hello %firstName% %lastName%,<br/><br/>
-      Thanks for registering on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br /><br />
-      We are looking forward to seeing you on <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br /><br />
+      Hello %firstName% %lastName%,<br><br>
+      Thanks for registering on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br><br>
+      We are looking forward to seeing you on <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>
       The %%ecommerceName%% Team
     </span>
   </td>
@@ -930,10 +930,10 @@ export const LANGUAGE_EN = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Account activated</strong><br><br>
     <span style="font-size:15px;">
-      Hello %firstName% %lastName%,<br/><br/>
-      We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br /><br />
-      You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br /><br />
-      We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />
+      Hello %firstName% %lastName%,<br><br>
+      We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br><br>
+      You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br><br>
+      We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>
       The %%ecommerceName%% Team
     </span>
   </td>
@@ -953,11 +953,11 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Stock available of product <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br/><br>
-    <span style="font-size:15px;">Hello,<br/><br/>The article that you want so much is already available!</span>
+    <strong>Stock available of product <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
+    <span style="font-size:15px;">Hello,<br><br>The article that you want so much is already available!</span>
     <span style="font-size:15px;">
       We would like to remind you that this email provides guidance on the availability of this article and depends on many factors (people interested, available units).<br>
-      We have sent this email to all the customers interested in the article, so it is possible to be exhausted very soon.<br/><br/>
+      We have sent this email to all the customers interested in the article, so it is possible to be exhausted very soon.<br><br>
       The %%ecommerceName%% Team
     </span>
   </td>
@@ -972,7 +972,7 @@ export const LANGUAGE_EN = {
 <!-- %loop% -->
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    Below you can read the latest articles published in <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br/><br/>
+    Below you can read the latest articles published in <a href="%%blogUrl%%" style="color:#000">%%blogName%%</a>.<br><br>
     <strong><a href="%%postLink%%" style="color:#000;font-size:18px;text-decoration:none;">%%postName%%</a></strong>
   </td>
 </tr>
@@ -992,7 +992,7 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
-    <span style="font-size:15px;">%%postShortText%%<br /><br /><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Read More!</strong></a>.</span>
+    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Read More!</strong></a>.</span>
   </td>
 </tr>
 <!-- %/loop% -->
@@ -1005,7 +1005,7 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
-    There is a new comment on the post "<a href="%%postLink%%" style="color:#000">%%postName%%</a>.<br/><br/>
+    There is a new comment on the post "<a href="%%postLink%%" style="color:#000">%%postName%%</a>.<br><br>
   </td>
 </tr>
 <tr>
@@ -1017,8 +1017,8 @@ export const LANGUAGE_EN = {
           <img src="%%commentGravatar%%?d=https%3A%2F%2Fcdn2.iconfinder.com%2Fdata%2Ficons%2Fuser-23%2F512%2FUser_Thief.png&s=75" width="75" border="0" height="75">
         </td>
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
-          <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br/>
-          %%commentContent%%<br/><br/>
+          <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
+          %%commentContent%%<br><br>
           <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Read more!</strong></a>.</span>
         </td>
       </tr>
@@ -1035,11 +1035,11 @@ export const LANGUAGE_EN = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Welcome to <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br/><br/>
+    <strong>Welcome to <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br/><br/>
-      Thank you for your registration to our blog. Soon you will receive new posts by email, information of features and hottest products and promotions.<br /><br />
-      Hope to see you soon at <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team
+      Hola %firstName% %lastName%,<br><br>
+      Thank you for your registration to our blog. Soon you will receive new posts by email, information of features and hottest products and promotions.<br><br>
+      Hope to see you soon at <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
     </span>
   </td>
 </tr>
@@ -1053,9 +1053,9 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Stock subscription of product <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Hello,<br/><br/>You have subscribed to the %name% stock notices</span>
-    %productOptions%<br/>
-    <span style="font-size:15px;">In case we receive this article again we will notify you immediately.<br/><br/>We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br /><br />The %%ecommerceName%% Team</span>
+    <span style="font-size:15px;">Hello,<br><br>You have subscribed to the %name% stock notices</span>
+    %productOptions%<br>
+    <span style="font-size:15px;">In case we receive this article again we will notify you immediately.<br><br>We hope to see you soon in <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
