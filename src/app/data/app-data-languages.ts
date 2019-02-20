@@ -40,7 +40,7 @@ export const LANGUAGES = {
   10: {
     key: 'chi',
     name: 'Simpl. Chinese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_CHI
   },
   11: {
     key: 'ja',
