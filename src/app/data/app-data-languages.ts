@@ -7,7 +7,9 @@ import { LANGUAGE_ZHO } from './app-language-zho';
 import { LANGUAGE_CHI } from './app-language-chi';
 import { LANGUAGE_JA } from './app-language-ja';
 import { LANGUAGE_IT } from './app-language-it';
-import { LANGUAGE_XX } from './app-language-XX';
+import { LANGUAGE_KO } from './app-language-ko';
+import { LANGUAGE_PT } from './app-language-pt';
+import { LANGUAGE_EU } from './app-language-eu';
 
 export const LANGUAGES = {
   1: {
@@ -58,16 +60,16 @@ export const LANGUAGES = {
   15: {
     key: 'ko',
     name: 'Korean',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_KO
   },
   17: {
     key: 'pt',
     name: 'Portuguese',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_PT
   },
   24: {
     key: 'eu',
     name: 'Basque',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_EU
   }
 };
