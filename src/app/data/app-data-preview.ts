@@ -7,10 +7,10 @@ export const PREVIEWDATA = {
         height: 4px;
       }
       ::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
+        background: rgb(207, 207, 210);
       }
       ::-webkit-scrollbar-track {
-        background: #f1f1f1;
+        background: rgb(244, 244, 244);
       }
     </style>
   `,
