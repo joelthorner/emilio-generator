@@ -4,6 +4,9 @@ import { LANGUAGE_CA } from './app-language-ca';
 import { LANGUAGE_FR } from './app-language-fr';
 import { LANGUAGE_DE } from './app-language-de';
 import { LANGUAGE_ZHO } from './app-language-zho';
+import { LANGUAGE_CHI } from './app-language-chi';
+import { LANGUAGE_JA } from './app-language-ja';
+import { LANGUAGE_IT } from './app-language-it';
 import { LANGUAGE_XX } from './app-language-XX';
 
 export const LANGUAGES = {
@@ -50,7 +53,7 @@ export const LANGUAGES = {
   13: {
     key: 'it',
     name: 'Italian',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_IT
   },
   15: {
     key: 'ko',
