@@ -29,7 +29,7 @@ export const LANGUAGES = {
   5: {
     key: 'de',
     name: 'German',
-    emails: LANGUAGE_XX
+    emails: LANGUAGE_DE
   },
   6: {
     key: 'zho',
