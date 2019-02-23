@@ -1,6 +1,9 @@
 import { Component, Input, ViewChild, Renderer2, AfterViewInit } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 
+import 'brace/theme/xcode';
+import 'brace/mode/html';
+
 @Component({
   selector: 'eg-editor',
   templateUrl: './editor.component.html',
