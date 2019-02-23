@@ -4,6 +4,9 @@ import { AppData } from 'src/app/data/app-data';
 import { NgForm } from '@angular/forms';
 import * as moment from 'moment';
 
+import 'brace/theme/xcode';
+import 'brace/mode/javascript';
+
 declare var require: any;
 
 @Component({
