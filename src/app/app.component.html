@@ -18,7 +18,7 @@
         <eg-sidebar></eg-sidebar>
       </div>
       <div class="eg-outlet">
-        <router-outlet></router-outlet>
+        <router-outlet (window:beforeunload)="doBeforeUnload()"></router-outlet>
       </div>
     </div>
   </div>
