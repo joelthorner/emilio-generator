@@ -4,6 +4,7 @@
     [ngClass]="{ 'empty': listItems[itemKey].empty, 'active-s': router.url.indexOf('generate-script/' + listItems[itemKey].key) > -1 }"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
+    [style.order]="listItems[itemKey].empty ? 10 : 1"
   >
     <a routerLink="/language/{{ listItems[itemKey].key }}">
 
