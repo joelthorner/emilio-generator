@@ -10,6 +10,7 @@ import { LANGUAGE_IT } from './app-language-it';
 import { LANGUAGE_KO } from './app-language-ko';
 import { LANGUAGE_PT } from './app-language-pt';
 import { LANGUAGE_EU } from './app-language-eu';
+import { LANGUAGE_SV } from './app-language-sv';
 
 export const LANGUAGES = {
   1: {
@@ -71,5 +72,10 @@ export const LANGUAGES = {
     key: 'eu',
     name: 'Basque',
     emails: LANGUAGE_EU
+  },
+  34: {
+    key: 'sv',
+    name: 'Svenska',
+    emails: LANGUAGE_SV
   }
 };
