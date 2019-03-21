@@ -525,201 +525,208 @@ export const LANGUAGE_KO = {
     name: 'Confirmación de pedido',
     subject: '주문을 확인하기',
     html: `
+<style type="text/css">
+  ul {
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+</style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>주문을 확인하기 </strong><br>
     <span style="font-size:15px;">안녕허세요 %%firstName%% %%lastname%%,<br>
 
-    주문이 올바르게 식별하고 성공적으로 처리되었습니다.<br>
-    주문 정보는 pdf 형식으로 발송되었습니다 <br>
-    주의하세요. 당신의 주문서를 보고 확인하세요 </span>
-    </td>
-    </tr>
-    <tr>
-    <td style="padding: 0px 0px;" align="center">
-      <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
-        <tbody>
-          <tr>
-            <td style="vertical-align: middle;font-family: sans-serif;" align="right">
-               <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+      주문이 올바르게 식별하고 성공적으로 처리되었습니다.<br>
+      주문 정보는 pdf 형식으로 발송되었습니다 <br>
+      주의하세요. 당신의 주문서를 보고 확인하세요
+    </span>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 0px 0px;" align="center">
+    <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
+      <tbody>
+        <tr>
+          <td style="vertical-align: middle;font-family: sans-serif;" align="right">
+            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+              <tr>
+                <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
+                 주문 번호:<br>
+                  주문 날짜:<br>
+                  주문 상태 :<br>
+                </td>
+                <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
+                  <strong>%%orderNumber%% </strong><br>
+                  <strong>%%orderDate%%</strong><br>
+                  <strong>확인되었습니다</strong><br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align: middle;font-family: sans-serif;" align="right">
+            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+              <tr>
+                <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
+                  <strong>지불 계정 :</strong><br>
+                  %%firstName%% %%lastName%%<br>
+                  %%address%% <br>
+                  %%zip%%  %%city%%<br>
+                  %%state%%<br>
+                </td>
+                <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
+                  <strong>비송주소:</strong><br>
+                  %%shippingFirstName%%  %%shippingLastName%% <br>
+                  %%shippingAddress%% <br>
+                  %%shippingZip%%  %%shippingCity%% <br>
+                  %%shippingState%% <br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">주문 정보</span></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td style="vertical-align: top">
+            <div style="padding: 0 0">
+              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
                   <tr>
-                    <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                     주문 번호:<br>
-                      주문 날짜:<br>
-                      주문 상태 :<br>
-                    </td>
-                    <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                      <strong>%%orderNumber%% </strong><br>
-                      <strong>%%orderDate%%</strong><br>
-                      <strong>확인되었습니다</strong><br>
-                    </td>
+                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">제품 이름 (모텔)</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">수량<</td>
+                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">가격</td>
                   </tr>
-                </table>
-            </td>
-          </tr>
-          <tr>
-            <td style="vertical-align: middle;font-family: sans-serif;" align="right">
-               <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                  <!-- %loop% -->
                   <tr>
-                    <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                      <strong>지불 계정 :</strong><br>
-                      %%firstName%% %%lastName%%<br>
-                      %%address%% <br>
-                      %%zip%%  %%city%%<br>
-                      %%state%%<br>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                          </td>
+                          <td style="padding: 10px 0px;">
+                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
-                    <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                      <strong>비송주소:</strong><br>
-                      %%shippingFirstName%%  %%shippingLastName%% <br>
-                      %%shippingAddress%% <br>
-                      %%shippingZip%%  %%shippingCity%% <br>
-                      %%shippingState%% <br>
-                    </td>
+                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
-                </table>
-            </td>
-          </tr>
-          <tr><td>&nbsp;</td></tr>
-          <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">주문 정보</span></td></tr>
-          <tr><td>&nbsp;</td></tr>
-          <tr>
-            <td style="vertical-align: top">
-              <div style="padding: 0 0">
-                <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
-                  <tbody>
-                    <tr>
-                      <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">제품 이름 (모텔)</td>
-                      <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">수량<</td>
-                      <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">가격</td>
-                    </tr>
-                    <!-- %loop% -->
-                    <tr>
-                      <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                        <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
-                          <tr>
-                            <td style="padding: 10px 0px;">
-                              <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
-                            </td>
-                            <td style="padding: 10px 0px;">
-                              %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
-                    </tr>
-                    <!-- %/loop% -->
+                  <!-- %/loop% -->
 
-                    <!-- %ifOrderGifts% -->
-                    <!-- %giftsLoop% -->
-                    <tr>
-                      <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                        <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: middle;" >
-                          <tr>
-                            <td style="padding: 10px 0px;">
-                              <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
-                            </td>
-                            <td style="padding: 10px 0px;">
-                              <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
-                            </td>
-                          </tr>
-                        </table>
-                      </td>
-                      <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                      <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;">&nbsp;</td>
-                    </tr>
-                    <!-- %/giftsLoop% -->
-                    <!-- %/ifOrderGifts% -->
+                  <!-- %ifOrderGifts% -->
+                  <!-- %giftsLoop% -->
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                      <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: middle;" >
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
+                          </td>
+                          <td style="padding: 10px 0px;">
+                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
+                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;">&nbsp;</td>
+                  </tr>
+                  <!-- %/giftsLoop% -->
+                  <!-- %/ifOrderGifts% -->
 
-                  </tbody>
-                </table>
-                <table align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
-                  <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span> %%shippingMethodWithPrice%% </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span>%%paymentMethodPrice%% </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <!-- %%ifOrderDiscount%% -->
-                    <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">할인</td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span>- %%orderDiscounts%%</span>
-                      </span>
-                    </td>
-                  </tr>
-                  <!-- %%/ifOrderDiscount%% -->
-
-                  <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">소계</td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span>%%orderTotalWithoutTaxes%%  </span>
-                      </span>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">속이기</td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span>%%orderTaxes%% </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <!--%%ifOrderBalanceCodes%%-->
-                  <tr>
-                    <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">바우처</td>
-                    <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                      <span>
-                        <span>- %%orderBalanceCodes%%</span>
-                      </span>
-                    </td>
-                  </tr>
-                  <!--%%/ifOrderBalanceCodes%%-->
-                  <tr>
-                    <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">합계</td>
-                    <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
-                      <span>
-                        <span>%%total%%</span>
-                      </span>
-                    </td>
-                  </tr>
-
-                </table>
-               </div>
-              </td>
-            </tr>
-            <tr><td>&nbsp;</td></tr>
-          <!-- %%ifComments%% -->
-            <tr>
-              <td>
-                <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
-                  <tr>
-                    <td>
-                      <strong >주문 평가:</strong><br>
-                      %%orderComments%%
-
-                    </td>
-                  </tr>
+                </tbody>
               </table>
-              </td>
-            </tr>
-            <!-- %%/ifComments%% -->
-            <tr><td>&nbsp;</td></tr>
-            <tr>
+              <table align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
+                <tr>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
+                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                    <span>
+                      <span> %%shippingMethodWithPrice%% </span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
+                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                    <span>
+                      <span>%%paymentMethodPrice%% </span>
+                    </span>
+                  </td>
+                </tr>
+                <!-- %%ifOrderDiscount%% -->
+                <tr>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">할인</td>
+                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                    <span>
+                      <span>- %%orderDiscounts%%</span>
+                    </span>
+                  </td>
+                </tr>
+                <!-- %%/ifOrderDiscount%% -->
+
+                <tr>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">소계</td>
+                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                    <span>
+                      <span>%%orderTotalWithoutTaxes%%  </span>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">속이기</td>
+                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                    <span>
+                      <span>%%orderTaxes%% </span>
+                    </span>
+                  </td>
+                </tr>
+                <!--%%ifOrderBalanceCodes%%-->
+                <tr>
+                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">바우처</td>
+                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
+                    <span>
+                      <span>- %%orderBalanceCodes%%</span>
+                    </span>
+                  </td>
+                </tr>
+                <!--%%/ifOrderBalanceCodes%%-->
+                <tr>
+                  <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">합계</td>
+                  <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
+                    <span>
+                      <span>%%total%%</span>
+                    </span>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <!-- %%ifComments%% -->
+        <tr>
+          <td>
+            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+              <tr>
+                <td>
+                  <strong >주문 평가:</strong><br>
+                  %%orderComments%%
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- %%/ifComments%% -->
+        <tr><td>&nbsp;</td></tr>
+        <tr>
           <td bgColor="#f4f4f4">
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
               <tr>
@@ -730,11 +737,10 @@ export const LANGUAGE_KO = {
             </table>
           </td>
         </tr>
-          </tbody>
-        </table>
-    </td>
-  </tr>
-</table>
+      </tbody>
+    </table>
+  </td>
+</tr>
 `
   }, // end 10
 
