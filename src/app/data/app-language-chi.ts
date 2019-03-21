@@ -530,6 +530,13 @@ export const LANGUAGE_CHI = {
     name: 'Confirmación de pedido',
     subject: '确认订单',
     html: `
+<style type="text/css">
+  ul {
+    list-style-type: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+</style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>确认订单</strong><br>
