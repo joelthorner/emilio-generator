@@ -1021,7 +1021,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Benvingut a <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br><br>
+    <span style="font-size:15px;">Hola,<br><br>
     Gracies per subscriure't al nostre blog. Aviat rebrás els nous articles per email, informació sobre descomptes, promocions, regals y dades d'interés relacionats a l'activitat de la botiga online.<br><br>
     Esperem veure't aviat a <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
     Atentament, l'equip de %%ecommerceName%%</span>

@@ -1079,7 +1079,7 @@ export const LANGUAGE_IT = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>¡Benvenuto a <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">
-      Ciao %firstName% %lastName%,<br><br>
+      Ciao,<br><br>
       Grazie per esserti iscritto al nostro blog. Riceverai presto via mail i nuovi articoli, le informazioni relative agli sconti, alle promozioni, ai regali e le informazioni importanti che riguardano l'attivit&agrave; del nostro negozio online.<br><br>
       Ci auguriamo di vederti presto su <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
       Cordiali saluti, il team di %%ecommerceName%%

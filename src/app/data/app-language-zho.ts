@@ -1010,7 +1010,7 @@ export const LANGUAGE_ZHO = {
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>歡迎來到 <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
+    <strong>歡迎來到 <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊我們的博客。 很快，您將通過電子郵件，功能信息以及最熱門的產品和促銷活動收到新帖子。<br><br>希望很快能在 <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a> 見到你.<br><br>%%ecommerceName%% 球隊</span>
   </td>
 </tr>

@@ -1078,7 +1078,7 @@ export const LANGUAGE_DE = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Willkommen <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">
-      Hallo %firstName% %lastName%,<br><br>
+      Hallo,<br><br>
       Danke für die Anmeldung zu unserem Blog. Bald werden Sie die neuen Artikel per E-Mail erhalten, Informationen über Rabatte, Werbeaktionen, Geschenke und interessante Informationen im Zusammenhang mit der Aktivität des Online-Shops.<br><br>
       Wir hoffen Sie bald begrüßen zu dürfen unter <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
       Mit freundlichen Grüßen, das Team von %%ecommerceName%%

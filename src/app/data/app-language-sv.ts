@@ -1286,7 +1286,7 @@ export const LANGUAGE_SV = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Välkommen till <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">
-      Hej %firstName% %lastName%,<br><br>
+      Hej,<br><br>
       Tack för att du registrerade dig i vår blogg.<br>
       Snart kommer du få nya blogg inlägg med information om dom hetaste produkterna, kampanjer och ny information.<br><br>
       Vi syns på <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br><br>
