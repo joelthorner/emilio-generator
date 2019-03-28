@@ -791,9 +791,9 @@ export const LANGUAGE_EN = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Sponsorship request</strong><br><br>
-    <span>Hello,<br><br> %%firstName%% invites you to join <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
-    Become a member and registrer here: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
-    Thanks for your support.<br><br>The %%ecommerceName%% Team
+    <span style="font-size:15px;">Hello,<br><br> %%firstName%% invites you to join <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
+    Become a member and registrer here: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
+    Thanks for your support.<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -804,9 +804,9 @@ export const LANGUAGE_EN = {
       subject: 'Your sponsored just finished an order: enjoy the benefits',
       html: `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Sponsorship completed</strong><br><br>
-    <span>
+    <span style="font-size:15px;">
       Hello,<br><br>
       One of your friends has just done a purchase in our shop for over XX (€) value, therefore we give you a XX discount in your next order.<br><br>
       The discount will automatically take effect in your next order.<br><br>
@@ -1034,7 +1034,7 @@ export const LANGUAGE_EN = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Welcome to <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br><br>
+      Hello,<br><br>
       Thank you for your registration to our blog. Soon you will receive new posts by email, information of features and hottest products and promotions.<br><br>
       Hope to see you soon at <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
     </span>

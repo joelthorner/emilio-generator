@@ -776,11 +776,11 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Solicitud de apadrinamiento</strong><br><br>
-    <span>Hola,<br><br>
+    <span style="font-size:15px;">Hola,<br><br>
     %%firstName%% te invita a unirte a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
-    Hazte socio y regístrate aquí: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
+    Hazte socio y regístrate aquí: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
     Gracias por tu apoyo.<br><br>
-    Atentamente, el equipo de %%ecommerceName%%
+    Atentamente, el equipo de %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -791,9 +791,9 @@ export const LANGUAGE_ES = {
       subject: 'Tu apadrinado ha realizado una compra: disfruta de tu descuento.',
       html: `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Apadrinamiento completado</strong><br><br>
-    <span>Hola,<br><br>
+    <span style="font-size:15px;">Hola,<br><br>
     Uno de tus amigos acaba de hacer una compra en nuestra tienda de más de XX (€) de valor, por lo tanto, te ofrecemos un descuento de XX en tu próximo pedido.<br><br>
     El descuento entrará automáticamente en vigor en tu próximo pedido. <br><br>
     Gracias por tu apoyo.<br><br>
@@ -1012,7 +1012,7 @@ export const LANGUAGE_ES = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>¡Bienvenido a <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
     <span style="font-size:15px;">
-      Hola %firstName% %lastName%,<br><br>
+      Hola,<br><br>
       Gracias por suscribirte a nuestro blog. Pronto recibirás los nuevos artículos por email, información sobre descuentos, promociones, regalos y datos de interés relativos a la actividad de la tienda online.<br><br>
       Esperamos verte pronto en <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>
       Atentamente, el equipo de %%ecommerceName%%
