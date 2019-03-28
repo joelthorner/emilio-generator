@@ -817,14 +817,14 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Richiesta di sponsorizzazione</strong><br><br>
-    <span>
+    <span style="font-size:15px;">
       Ciao,<br><br>
       %%firstName%% ti invita ad unirti a <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
       Diventa socio e registrati qui:
+      <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
+      Grazie per il tuo sostegno.<br><br>
+      Cordiali saluti, il team di %%ecommerceName%%
     </span>
-    <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
-    Grazie per il tuo sostegno.<br><br>
-    Cordiali saluti, il team di %%ecommerceName%%
   </td>
 </tr>
 `
@@ -835,9 +835,9 @@ export const LANGUAGE_IT = {
     subject: 'Il tuo sponsorizzato ha effettuato un acquisto: goditi il tuo sconto.',
     html: `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Sponsorizzazione completata</strong><br><br>
-    <span>
+    <span style="font-size:15px;">
       Ciao,<br><br>
       Uno dei tuoi amici ha appena effettuato un acquisto nel nostro negozio per un valore superiore a XX (€) quindi, ti offriamo uno sconto di XX sul tuo prossimo ordine.<br><br>
       sul tuo prossimo ordine <br><br>

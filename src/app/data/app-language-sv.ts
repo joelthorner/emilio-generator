@@ -1027,9 +1027,9 @@ export const LANGUAGE_SV = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Sponsringsförfrågan</strong><br><br>
-    <span>Hej,<br><br> %%firstName%% bjuder in dig till <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
-    Registrera dig som medlem här: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
-    Tack för din support.<br><br>De %%ecommerceName%% Team
+    <span style="font-size:15px;">Hej,<br><br> %%firstName%% bjuder in dig till <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
+    Registrera dig som medlem här: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
+    Tack för din support.<br><br>De %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -1040,9 +1040,9 @@ export const LANGUAGE_SV = {
       subject: 'Din sponsring blev precis utförd: njuta av din belöning',
       html: `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Sponsring</strong><br><br>
-    <span>
+    <span style="font-size:15px;">
       Hej!<br><br>
       En av din vänner har just gjort ett köp i vår webshop för ett värde över XX (€), därför ger vi dig en XX rabatt på din nästa order.<br><br>
       Rabatten kommer automatiskt att dras av i din nästa order.<br><br>

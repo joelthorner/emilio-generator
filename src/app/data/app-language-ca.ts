@@ -785,9 +785,9 @@ export const LANGUAGE_CA = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Sol·licitud d'apadrinament</strong><br><br>
-    <span>Hola,<br><br>%%firstName%% t'invita a unir-te a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
-    Fes-te soci i registra't aquí: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
-    Gràcies pel teu suport<br><br>Atentament, l'equip de %%ecommerceName%%
+    <span style="font-size:15px;">Hola,<br><br>%%firstName%% t'invita a unir-te a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
+    Fes-te soci i registra't aquí: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
+    Gràcies pel teu suport<br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -798,9 +798,9 @@ export const LANGUAGE_CA = {
       subject: 'El teu apadrinament ha realitzat una compra: disfruta del teu descompte.',
       html : `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Apadrinament completat</strong><br><br>
-    <span>
+    <span style="font-size:15px;">
       Hola,<br><br>
       Un dels teus amics acaba de fer una compra a la nostra botiga de més de XX (€) de valor, per tant, t'oferim un descompte de XX en la pròxima comanda.<br><br>
       El descompte entrará automáticament en vigor en la teva prxima comanda. <br><br>

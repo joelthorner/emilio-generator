@@ -792,11 +792,11 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Demande de parrainage</strong><br><br>
-    <span>Bonjour,<br><br>
+    <span style="font-size:15px;">Bonjour,<br><br>
     %%firstName%% vous invite à rejoindre <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
-    Devenez membre et inscrivez-vous ici: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
+    Devenez membre et inscrivez-vous ici: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
     Merci pour votre soutien.<br><br>
-    Cordialement, L'équipe %%ecommerceName%%
+    Cordialement, L'équipe %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -807,9 +807,9 @@ export const LANGUAGE_FR = {
     subject: 'Votre mentor ont fait un achat: profiter de votre remise.',
     html: `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Parrainage complété</strong><br><br>
-    <span>
+    <span style="font-size:15px;">
       Bonjour,<br><br>
       Un de vos amis vient de faire un achat dans notre boutique sur XX (€) valeur, par conséquent, nous offrons un rabais de XX sur votre prochaine commande.<br><br>
       La réduction entrera en vigueur automatiquement sur votre prochaine commande.<br><br>

@@ -765,7 +765,9 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>찬조요구</strong><br><br>
-    <span>안녕하세요,<br><br> %%firstName%% 에당신을 초청해 가입합니다 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>회원이되기 위해서는 여기 로그인하세요: </span><a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>지지해 주셔서 감사합니다.<br><br>%%ecommerceName%%
+    <span style="font-size:15px;">
+      안녕하세요,<br><br> %%firstName%% 에당신을 초청해 가입합니다 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>회원이되기 위해서는 여기 로그인하세요: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>지지해 주셔서 감사합니다.<br><br>%%ecommerceName%%
+    </span>
   </td>
 </tr>
 `
@@ -776,9 +778,11 @@ export const LANGUAGE_KO = {
     subject: '모집을완성되었습니다',
     html: `
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;text-align:center;">
+  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>당신의모집은     한주문을 완성되었습니다,즐기십시오!</strong><br><br>
-    <span>안녕하세요,<br><br>딩신의친구는 한주문을 완성되었습니다,다음 주문에서 (     %)할인을 받을 수 있습니다<br><br>다음주문에  할인이 자동으로 사용합니다<br><br>지지해 주셔서 감사합니다<br><br>The %%ecommerceName%% Team</span>
+    <span style="font-size:15px;">
+      안녕하세요,<br><br>딩신의친구는 한주문을 완성되었습니다,다음 주문에서 (     %)할인을 받을 수 있습니다<br><br>다음주문에  할인이 자동으로 사용합니다<br><br>지지해 주셔서 감사합니다<br><br>The %%ecommerceName%% Team
+    </span>
   </td>
 </tr>
 `
