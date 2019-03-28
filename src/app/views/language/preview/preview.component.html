@@ -5,6 +5,14 @@
 
     <div class="buttons-header">
       <button
+        class="btn btn-light btn-collapse"
+        type="button"
+        (click)="toggleCollapsePreview()"
+      >
+        <svg class="icon" data-toggle="tooltip" data-placement="top" title="Collapse preview"><use xlink:href="#menu"></use></svg>
+      </button>
+
+      <button
         class="btn btn-light"
         type="button"
         data-toggle="modal"

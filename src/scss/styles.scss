@@ -167,3 +167,33 @@ body.editor-full-screen {
 .modal-header {
   align-items: center;
 }
+
+.preview-collapsed {
+
+  .col-preview {
+    width: 66px;
+
+    .card-body {
+      display: none;
+    }
+    .card-header {
+      min-height: 66px;
+
+      .text, .subtitle {
+        display: none;
+      }
+      .buttons-header {
+        .btn:not(.btn-collapse) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .col-editors {
+    .lang-item {
+      max-width: calc(100% - 96px);
+      margin-right: 96px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Renderer2 } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 import { DomSanitizer } from '@angular/platform-browser';
 declare var $: any;
@@ -19,7 +19,11 @@ export class PreviewComponent implements OnInit {
   public useCommonHeader: boolean;
   public useCommonFooter: boolean;
 
-  constructor(public appData: AppData, public sanitizer: DomSanitizer) {}
+  constructor(
+    public appData: AppData,
+    public sanitizer: DomSanitizer,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit() {
 
@@ -42,5 +46,13 @@ export class PreviewComponent implements OnInit {
 
   getSrc() {
     return this.appData.getPreviewIframeContent();
+  }
+
+  toggleCollapsePreview() {
+    if (document.body.classList.contains('preview-collapsed')) {
+      this.renderer.removeClass(document.body, 'preview-collapsed');
+    } else {
+      this.renderer.addClass(document.body, 'preview-collapsed');
+    }
   }
 }
