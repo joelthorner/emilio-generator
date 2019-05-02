@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var require: any;
+import { ReleasesGithubApiService } from 'src/app/lib/services/releases-github-api.service';
 
 @Component({
   selector: 'eg-changelog-card',
@@ -11,34 +11,29 @@ export class ChangelogCardComponent implements OnInit {
   cardTitle = 'Changelog';
   changeLogItems = [];
 
-  constructor() { }
+  constructor(private service: ReleasesGithubApiService) {}
 
   ngOnInit() {
-    const Octokit = require('@octokit/rest');
+    this.service.getLastsReleases().subscribe(result => {
+      const arr = [];
+      for (const key in result) {
+        if (result.hasOwnProperty(key)) {
+          arr.push(result[key]);
+        }
+      }
 
-    const clientWithAuth = new Octokit({
-      auth: '995753279547b58ff77098acee74d2c04a4788db'
-    });
-
-    clientWithAuth.repos.listReleases({
-      owner: 'joelthorner',
-      repo: 'emilio-generator',
-      per_page: '3',
-      page: '1'
-    }).then(result => {
-
-      if (result.data) {
-        for (const item of result.data) {
+      if (result) {
+        for (const item of arr) {
           item.body = item.body
-          .replace('Changelog', '')
-          .replace('changelog', '')
-          .replace(/-{6,}/i, '');
+            .replace('Changelog', '')
+            .replace('changelog', '')
+            .replace(/-{6,}/i, '');
         }
 
-        this.changeLogItems = result.data;
+        this.changeLogItems = arr;
       }
-    }).catch(function(error) {
-
+    }, error => {
+      console.log(error); // for development only.
     });
   }
 

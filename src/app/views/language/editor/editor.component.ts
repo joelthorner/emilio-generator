@@ -1,8 +1,11 @@
 import { Component, Input, ViewChild, Renderer2, AfterViewInit } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 
+import 'brace';
 import 'brace/theme/xcode';
 import 'brace/mode/html';
+import 'brace/ext/searchbox';
+
 
 @Component({
   selector: 'eg-editor',
