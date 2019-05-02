@@ -11,6 +11,8 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { AccessLoadingModule } from './views/access-loading/access-loading.module';
 import { AuthService } from './lib/services/auth.service';
 import { InstructionsModule } from './views/instructions/instructions.module';
+import { ReleasesGithubApiService } from './lib/services/releases-github-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { InstructionsModule } from './views/instructions/instructions.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     IconsModule,
     ComponentsModule,
@@ -27,7 +30,8 @@ import { InstructionsModule } from './views/instructions/instructions.module';
   ],
   providers: [
     AppData,
-    AuthService
+    AuthService,
+    ReleasesGithubApiService
   ],
   bootstrap: [AppComponent]
 })
