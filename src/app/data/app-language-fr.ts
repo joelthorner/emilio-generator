@@ -705,7 +705,7 @@ export const LANGUAGE_FR = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Imposition</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTaxes%% </span>
+                      <span>%%orderTaxes%%</span>
                     </span>
                   </td>
                 </tr>

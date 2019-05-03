@@ -687,7 +687,7 @@ export const LANGUAGE_CHI = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">税收</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTaxes%% </span>
+                      <span>%%orderTaxes%%</span>
                     </span>
                   </td>
                 </tr>

@@ -732,7 +732,7 @@ export const LANGUAGE_DE = {
                   </td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTaxes%% </span>
+                      <span>%%orderTaxes%%</span>
                     </span>
                   </td>
                 </tr>
