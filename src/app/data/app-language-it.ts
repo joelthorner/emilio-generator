@@ -736,7 +736,7 @@ export const LANGUAGE_IT = {
                     </span>
                   </td>
                 </tr>
-                <!--%%ifOrderBalanceCodes%%-->
+                <!-- %%ifOrderBalanceCodes%% -->
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Buoni acquisto</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
@@ -745,7 +745,7 @@ export const LANGUAGE_IT = {
                     </span>
                   </td>
                 </tr>
-                <!--%%/ifOrderBalanceCodes%%-->
+                <!-- %%/ifOrderBalanceCodes%% -->
                 <tr>
                   <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Totale</td>
                   <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
