@@ -126,7 +126,7 @@
 
               <div class="buttons-header">
                 <button
-                  class="btn btn-light"
+                  class="btn btn-light over-1400"
                   type="button"
                   (click)="refreshPreview($event, emailTemplateId, true)"
                 >
@@ -134,7 +134,7 @@
                 </button>
 
                 <button
-                  class="btn btn-light"
+                  class="btn btn-light over-1400"
                   type="button"
                   (click)="appData.generateEmailHtml(langKey, emailTemplateId)"
                 >
@@ -153,6 +153,13 @@
                     <svg class="icon" data-toggle="tooltip" data-placement="top" title="Email options"><use xlink:href="#tree-dots"></use></svg>
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" attr.aria-labelledby="dropdownMenuButton{{ emailTemplateId }}">
+                    <a class="dropdown-item over-1400" href="#" (click)="refreshPreview($event, emailTemplateId, true)">
+                      Add to preview
+                    </a>
+                    <a class="dropdown-item over-1400" href="#" (click)="appData.generateEmailHtml(langKey, emailTemplateId)">
+                      Download .html
+                    </a>
+                    <hr class="over-1400">
                     <a class="dropdown-item" href="#" (click)="evalModifyHeader($event, emailTemplateId)">
                       {{ langData.emails.templates[emailTemplateId].tags.customHeader ? 'Remove header' : 'Add header' }}
                     </a>

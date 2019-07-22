@@ -32,7 +32,7 @@ export const LANGUAGE_IT = {
   footer: {
     html: `
       <tr>
-        <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+        <td bgcolor="#E8E8E8" style="background-color: #E8E8E8;padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td align="center" >
@@ -131,7 +131,7 @@ export const LANGUAGE_IT = {
     footer: {
       html: `
       <tr>
-        <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+        <td bgcolor="#E8E8E8" style="background-color: #E8E8E8;padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td align="center" >
@@ -284,7 +284,7 @@ export const LANGUAGE_IT = {
     footer: {
       html: `
       <tr>
-        <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+        <td bgcolor="#E8E8E8" style="background-color: #E8E8E8;padding: 30px 30px 15px 30px;">
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td align="center" >
@@ -732,11 +732,11 @@ export const LANGUAGE_IT = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Imposte</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTaxes%% </span>
+                      <span>%%orderTaxes%%</span>
                     </span>
                   </td>
                 </tr>
-                <!--%%ifOrderBalanceCodes%%-->
+                <!-- %%ifOrderBalanceCodes%% -->
                 <tr>
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Buoni acquisto</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
@@ -745,7 +745,7 @@ export const LANGUAGE_IT = {
                     </span>
                   </td>
                 </tr>
-                <!--%%/ifOrderBalanceCodes%%-->
+                <!-- %%/ifOrderBalanceCodes%% -->
                 <tr>
                   <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Totale</td>
                   <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
