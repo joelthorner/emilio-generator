@@ -34,7 +34,7 @@ export const LANGUAGE_ZHO = {
   footer: {
     html: `
         <tr>
-          <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+          <td bgcolor="#E8E8E8" style="background-color: #E8E8E8;padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td align="center" >
@@ -136,7 +136,7 @@ export const LANGUAGE_ZHO = {
     footer: {
       html: `
         <tr>
-          <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+          <td bgcolor="#E8E8E8" style="background-color: #E8E8E8;padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td align="center" >
@@ -273,7 +273,7 @@ export const LANGUAGE_ZHO = {
     footer: {
       html: `
         <tr>
-          <td bgcolor="#E8E8E8" style="padding: 30px 30px 15px 30px;">
+          <td bgcolor="#E8E8E8" style="background-color: #E8E8E8;padding: 30px 30px 15px 30px;">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td align="center" >
