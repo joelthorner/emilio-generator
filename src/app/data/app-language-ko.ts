@@ -534,7 +534,7 @@ export const LANGUAGE_KO = {
 </style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>주문을 확인하기 </strong><br>
+    <strong>주문을 확인하기 </strong><br><br>
     <span style="font-size:15px;">안녕허세요 %%firstName%% %%lastname%%,<br>
 
       주문이 올바르게 식별하고 성공적으로 처리되었습니다.<br>

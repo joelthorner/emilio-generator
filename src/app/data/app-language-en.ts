@@ -558,7 +558,7 @@ export const LANGUAGE_EN = {
 </style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Order confirmation </strong><br>
+    <strong>Order confirmation </strong><br><br>
     <span style="font-size:15px;">Dear %%firstName%% %%lastname%%,<br>
       We confirm your order has been processed correctly.<br>
       Please find your order attached as a PDF file. <br>

@@ -550,7 +550,7 @@ export const LANGUAGE_ES = {
 </style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Confirmación de pedido</strong><br>
+    <strong>Confirmación de pedido</strong><br><br>
     <span style="font-size:15px;">Muchas gracias por confiar en nosotros. Su compra ha sido procesada correctamente. A continuación te mostramos los datos del pedido</span>
   </td>
 </tr>
