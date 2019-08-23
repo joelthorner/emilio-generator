@@ -580,7 +580,7 @@ export const LANGUAGE_IT = {
 </style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Conferma d'ordine</strong><br>
+    <strong>Conferma d'ordine</strong><br><br>
     <span style="font-size:15px;">
       Ti ringraziamo per la fiducia. Il tuo acquisto è andato a buon fine. Qui di seguito potrai visualizzare i dettagli dell'ordine
     </span>

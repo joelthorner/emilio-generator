@@ -560,7 +560,7 @@ export const LANGUAGE_FR = {
 </style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Confirmation de commande</strong><br>
+    <strong>Confirmation de commande</strong><br><br>
     <span style="font-size:15px;">
       Bonjour %%firstName%% %%lastName%%,<br><br>
       Nous vous remercions de faire vos achats à %%ecommerceName%%. Nous vous confirmons que la commande numéro %%orderNumber%% a été traitée correctement.<br><br>

@@ -551,7 +551,7 @@ export const LANGUAGE_ZHO = {
 </style>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>確認訂單</strong><br>
+    <strong>確認訂單</strong><br><br>
     <span style="font-size:15px;">亲爱的 %%firstName%% %%lastname%%,<br>
       您的订单已确认并正确处理成功。<br>
       已将订单信息以pdf的格式发送给您。 <br>
