@@ -32,7 +32,7 @@
     "emailjs": "^2.2.0",
     "emailjs-com": "^2.4.1",
     "file-saver": "^2.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jszip": "^3.3.0",
     "moment": "^2.24.0",
     "ng2-ace-editor": "^0.3.9",
