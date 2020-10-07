@@ -85,7 +85,7 @@ export const LANGUAGE_ES = {
             </tr>
             <tr>
               <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                Para más información, lee nuestra %%privacy%% y %%termsOfUse%%.
               </td>
             </tr>
           </table>
@@ -184,7 +184,7 @@ export const LANGUAGE_ES = {
             </tr>
             <tr>
               <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                Para más información, lee nuestra %%privacy%% y %%termsOfUse%%.
               </td>
             </tr>
           </table>
@@ -333,7 +333,7 @@ export const LANGUAGE_ES = {
             </tr>
             <tr>
               <td align="center" heigth="50" style="font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;">
-                Para más información, lee nuestra %%privacy%% y  %%termsOfUse%%.
+                Para más información, lee nuestra %%privacy%% y %%termsOfUse%%.
               </td>
             </tr>
           </table>
