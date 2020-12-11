@@ -374,7 +374,7 @@ export const LANGUAGE_KO = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -400,7 +400,7 @@ export const LANGUAGE_KO = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >친구의 메시지             댓글:</strong><br>
+                    <strong>친구의 메시지             댓글:</strong><br>
                     %%comments%%
 
                   </td>
@@ -453,7 +453,7 @@ export const LANGUAGE_KO = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -478,7 +478,7 @@ export const LANGUAGE_KO = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >친구의 추천입니다 :</strong><br>
+                  <strong>친구의 추천입니다 :</strong><br>
                   %%comments%%
 
                 </td>
@@ -606,7 +606,7 @@ export const LANGUAGE_KO = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -647,7 +647,7 @@ export const LANGUAGE_KO = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span> %%shippingMethodWithPrice%% </span>
+                      <span>%%shippingMethodWithPrice%%</span>
                     </span>
                   </td>
                 </tr>
@@ -655,7 +655,7 @@ export const LANGUAGE_KO = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%paymentMethodPrice%% </span>
+                      <span>%%paymentMethodPrice%%</span>
                     </span>
                   </td>
                 </tr>
@@ -674,7 +674,7 @@ export const LANGUAGE_KO = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">소계</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTotalWithoutTaxes%%  </span>
+                      <span>%%orderTotalWithoutTaxes%%</span>
                     </span>
                   </td>
                 </tr>
@@ -717,7 +717,7 @@ export const LANGUAGE_KO = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >주문 평가:</strong><br>
+                  <strong>주문 평가:</strong><br>
                   %%orderComments%%
                 </td>
               </tr>
@@ -837,7 +837,7 @@ export const LANGUAGE_KO = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -879,7 +879,7 @@ export const LANGUAGE_KO = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email verification</strong><br><br>
     <span style="font-size:15px;">
-      여보세요 %firstName% %lastName%,<br><br>%%ecommerceURL%% 에 등록 주셔서 감사합니다. , 전자 메일 계정을 확인하기 위해 링크를 따르십시오 : <a href="%verifyLink%" style="color:#000;">여기를 클릭하십시오</a>.<br><br>우리는 <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>에 당신을보고 기대하고 있습니다.<br><br>The %%ecommerceName%% Team
+      여보세요 %firstName% %lastName%,<br><br>%%ecommerceURL%% 에 등록 주셔서 감사합니다. , 전자 메일 계정을 확인하기 위해 링크를 따르십시오 : <a href="%verifyLink%" style="color:#000;">여기를 클릭하십시오</a>.<br><br>우리는 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>에 당신을보고 기대하고 있습니다.<br><br>The %%ecommerceName%% Team
     </span>
   </td>
 </tr>

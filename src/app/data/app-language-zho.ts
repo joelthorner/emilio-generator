@@ -390,7 +390,7 @@ export const LANGUAGE_ZHO = {
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                           <tr>
                             <td style="padding: 10px 0px;">
-                              <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                              <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                             </td>
                             <td style="padding: 10px 0px;">
                               %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -416,7 +416,7 @@ export const LANGUAGE_ZHO = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >来自好友的消息 评论</strong><br>
+                    <strong>来自好友的消息 评论</strong><br>
                     %%comments%%
 
                   </td>
@@ -469,7 +469,7 @@ export const LANGUAGE_ZHO = {
                         <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                           <tr>
                             <td style="padding: 10px 0px;">
-                              <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                              <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                             </td>
                             <td style="padding: 10px 0px;">
                               %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -495,7 +495,7 @@ export const LANGUAGE_ZHO = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >来自好友的推荐</strong><br>
+                    <strong>来自好友的推荐</strong><br>
                     %%comments%%
 
                   </td>
@@ -623,7 +623,7 @@ export const LANGUAGE_ZHO = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -665,7 +665,7 @@ export const LANGUAGE_ZHO = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span> %%shippingMethodWithPrice%% </span>
+                      <span>%%shippingMethodWithPrice%%</span>
                     </span>
                   </td>
                 </tr>
@@ -673,7 +673,7 @@ export const LANGUAGE_ZHO = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%paymentMethodPrice%% </span>
+                      <span>%%paymentMethodPrice%%</span>
                     </span>
                   </td>
                 </tr>
@@ -691,7 +691,7 @@ export const LANGUAGE_ZHO = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">小計</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTotalWithoutTaxes%%  </span>
+                      <span>%%orderTotalWithoutTaxes%%</span>
                     </span>
                   </td>
                 </tr>
@@ -734,7 +734,7 @@ export const LANGUAGE_ZHO = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >订单评论</strong><br>
+                  <strong>订单评论</strong><br>
                   %%orderComments%%
 
                 </td>
@@ -851,7 +851,7 @@ export const LANGUAGE_ZHO = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -899,7 +899,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>電子郵件驗證</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊%% ecommerceURL %%。 請按照鏈接驗證您的電子郵件帳戶： <a href="%verifyLink%"  style="color:#000;">點擊這裡</a>.<br><br>我們期待著與您相見 <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%% 球隊</span>
+    <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊%% ecommerceURL %%。 請按照鏈接驗證您的電子郵件帳戶： <a href="%verifyLink%"  style="color:#000;">點擊這裡</a>.<br><br>我們期待著與您相見 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%% 球隊</span>
   </td>
 </tr>
 `
@@ -1011,7 +1011,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>歡迎來到 <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊我們的博客。 很快，您將通過電子郵件，功能信息以及最熱門的產品和促銷活動收到新帖子。<br><br>希望很快能在 <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a> 見到你.<br><br>%%ecommerceName%% 球隊</span>
+    <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊我們的博客。 很快，您將通過電子郵件，功能信息以及最熱門的產品和促銷活動收到新帖子。<br><br>希望很快能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> 見到你.<br><br>%%ecommerceName%% 球隊</span>
   </td>
 </tr>
 `

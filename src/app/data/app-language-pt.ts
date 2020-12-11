@@ -399,7 +399,7 @@ export const LANGUAGE_PT = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -424,7 +424,7 @@ export const LANGUAGE_PT = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >Mensaje de tu amigo/a:</strong><br>
+                  <strong>Mensaje de tu amigo/a:</strong><br>
                   %%comments%%
 
                 </td>
@@ -477,7 +477,7 @@ export const LANGUAGE_PT = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -500,7 +500,7 @@ export const LANGUAGE_PT = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >Mensaje de tu amigo/a:</strong><br>
+                  <strong>Mensaje de tu amigo/a:</strong><br>
                   %%comments%%
                 </td>
               </tr>
@@ -635,7 +635,7 @@ export const LANGUAGE_PT = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -677,7 +677,7 @@ export const LANGUAGE_PT = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span> %%shippingMethodWithPrice%% </span>
+                      <span>%%shippingMethodWithPrice%%</span>
                     </span>
                   </td>
                 </tr>
@@ -685,7 +685,7 @@ export const LANGUAGE_PT = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%paymentMethodPrice%% </span>
+                      <span>%%paymentMethodPrice%%</span>
                     </span>
                   </td>
                 </tr>
@@ -703,7 +703,7 @@ export const LANGUAGE_PT = {
                   <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Subtotal</td>
                   <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
                     <span>
-                      <span>%%orderTotalWithoutTaxes%%  </span>
+                      <span>%%orderTotalWithoutTaxes%%</span>
                     </span>
                   </td>
                 </tr>
@@ -746,7 +746,7 @@ export const LANGUAGE_PT = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >Comentarios:</strong><br>
+                  <strong>Comentarios:</strong><br>
                   %%orderComments%%
 
                 </td>
@@ -872,7 +872,7 @@ export const LANGUAGE_PT = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -1042,7 +1042,7 @@ export const LANGUAGE_PT = {
     <span style="font-size:15px;">
       Olà,<br><br>
       Obrigado por sua inscrição em nosso blog. Em breve você receberá novos posts por e-mail, informações de recursos e produtos e promoções mais quentes.<br><br>
-      Espero ver você em breve em<a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>  A equipa de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
+      Espero ver você em breve em<a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>  A equipa de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
     </span>
   </td>
 </tr>
