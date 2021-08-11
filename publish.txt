@@ -1,5 +1,8 @@
 npm install
-npm build --prod or npm run-script build --prod
+
+npm build --prod 
+npm run-script build --prod
+
 -> change base href of dist/index.html to https://joelthorner.github.io/emilio-generator/
 clone gh-pages branch
 clean gh-pages branch content
