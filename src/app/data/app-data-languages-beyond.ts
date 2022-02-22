@@ -1,30 +1,30 @@
-import { LANGUAGE_ES } from './fluid/app-language-es';
-import { LANGUAGE_EN } from './fluid/app-language-en';
-import { LANGUAGE_CA } from './fluid/app-language-ca';
-import { LANGUAGE_FR } from './fluid/app-language-fr';
-import { LANGUAGE_DE } from './fluid/app-language-de';
-import { LANGUAGE_ZHO } from './fluid/app-language-zho';
-import { LANGUAGE_AR } from './fluid/app-language-ar';
-import { LANGUAGE_CHI } from './fluid/app-language-chi';
-import { LANGUAGE_JA } from './fluid/app-language-ja';
-import { LANGUAGE_IT } from './fluid/app-language-it';
-import { LANGUAGE_KO } from './fluid/app-language-ko';
-import { LANGUAGE_PT } from './fluid/app-language-pt';
-import { LANGUAGE_EU } from './fluid/app-language-eu';
-import { LANGUAGE_SV } from './fluid/app-language-sv';
-import { LANGUAGE_RU } from './fluid/app-language-ru';
-import { LANGUAGE_MN } from './fluid/app-language-mn';
-import { LANGUAGE_BG } from './fluid/app-language-bg';
-import { LANGUAGE_RO } from './fluid/app-language-ro';
-import { LANGUAGE_NL } from './fluid/app-language-nl';
-import { LANGUAGE_HU } from './fluid/app-language-hu';
-import { LANGUAGE_PL } from './fluid/app-language-pl';
-import { LANGUAGE_SK } from './fluid/app-language-sk';
-import { LANGUAGE_TR } from './fluid/app-language-tr';
-import { LANGUAGE_TH } from './fluid/app-language-th';
-import { LANGUAGE_LO } from './fluid/app-language-lo';
+import { LANGUAGE_ES } from './beyond/app-language-es';
+import { LANGUAGE_EN } from './beyond/app-language-en';
+import { LANGUAGE_CA } from './beyond/app-language-ca';
+import { LANGUAGE_FR } from './beyond/app-language-fr';
+import { LANGUAGE_DE } from './beyond/app-language-de';
+import { LANGUAGE_ZHO } from './beyond/app-language-zho';
+import { LANGUAGE_AR } from './beyond/app-language-ar';
+import { LANGUAGE_CHI } from './beyond/app-language-chi';
+import { LANGUAGE_JA } from './beyond/app-language-ja';
+import { LANGUAGE_IT } from './beyond/app-language-it';
+import { LANGUAGE_KO } from './beyond/app-language-ko';
+import { LANGUAGE_PT } from './beyond/app-language-pt';
+import { LANGUAGE_EU } from './beyond/app-language-eu';
+import { LANGUAGE_SV } from './beyond/app-language-sv';
+import { LANGUAGE_RU } from './beyond/app-language-ru';
+import { LANGUAGE_MN } from './beyond/app-language-mn';
+import { LANGUAGE_BG } from './beyond/app-language-bg';
+import { LANGUAGE_RO } from './beyond/app-language-ro';
+import { LANGUAGE_NL } from './beyond/app-language-nl';
+import { LANGUAGE_HU } from './beyond/app-language-hu';
+import { LANGUAGE_PL } from './beyond/app-language-pl';
+import { LANGUAGE_SK } from './beyond/app-language-sk';
+import { LANGUAGE_TR } from './beyond/app-language-tr';
+import { LANGUAGE_TH } from './beyond/app-language-th';
+import { LANGUAGE_LO } from './beyond/app-language-lo';
 
-export const LANGUAGES = {
+export const LANGUAGES_BEYOND = {
   1: {
     key: 'es',
     name: 'Spanish',
