@@ -517,8 +517,28 @@ export const LANGUAGE_CA = {
 
     18: {
       name: "Cuenta activada",
-      subject: "",
-      html: ``,
+      subject: "{{ general.ecommerceName }} - Activació del compte",
+      html: `
+{% set languageSheet = {
+  premessage: 'Activació del compte',
+  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: 'Et notifiquem que el teu compte a ' ~ general.ecommerceUrl ~ ' ha sigut activat correctament.',
+  messageBody2: 'Per veure les teves dades i tota la informació referent al teu compte accedeix a través del panell de control: <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">Editar el teu perfil</a>',
+  messageBody3: "Esperem veure't aviat a" ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+} %}
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageBody3 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
     }, // end :
 
     19: {
@@ -588,7 +608,7 @@ export const LANGUAGE_CA = {
     }, // end :
 
     37: {
-      name: "Activación Two Factor Auth",
+      name: "Desactivación Two Factor Auth",
       subject: "",
       html: ``,
     }, // end :
