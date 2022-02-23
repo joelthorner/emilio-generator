@@ -1,21 +1,37 @@
-<form class="view view-generate-script" #generateScriptForm="ngForm" (ngSubmit)="onSubmit(generateScriptForm)">
-
+<form
+  class="view view-generate-script"
+  #generateScriptForm="ngForm"
+  (ngSubmit)="onSubmit(generateScriptForm)"
+>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-      <li class="breadcrumb-item"><a routerLink="/language/{{ langKey }}">{{ langData.name }}</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Generate Script</li>
+      <li class="breadcrumb-item">
+        <a routerLink="/language/{{ langKey }}">{{ langData.name }}</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Generate Script
+      </li>
     </ol>
   </nav>
 
   <div class="row">
     <div class="col col-conf">
       <div class="card">
-        <div class="card-header">
-          Configuration
-        </div>
+        <div class="card-header">Configuration</div>
         <div class="card-body">
-
+          <div class="form-group" [hidden]="!beyondValue">
+            <div class="form-group-title">Beyond default email account Id</div>
+            <input
+                type="text"
+                id="mailAccountId"
+                name="mailAccountId"
+                class="form-control"
+                value="1"
+                [ngModel]="scriptData.conf.mailAccountId"
+                (ngModelChange)="onChangeMailAccountId($event)"
+              />
+          </div>
           <div class="form-group">
             <div class="form-group-title">LC insert mode</div>
             <div class="custom-control custom-radio">
@@ -25,9 +41,13 @@
                 name="lcInsertMode"
                 class="custom-control-input"
                 value="3in1"
-                [ngModel]="scriptData.conf.lcInsertMode" (ngModelChange)="onChangeLcInsertMode($event)"
+                [ngModel]="scriptData.conf.lcInsertMode"
+                (ngModelChange)="onChangeLcInsertMode($event)"
+                [disabled]="beyondValue"
+              />
+              <label class="custom-control-label" for="lcInsertMode3in1"
+                ><b>3 in 1</b> - All email code into body input</label
               >
-              <label class="custom-control-label" for="lcInsertMode3in1"><b>3 in 1</b> - All email code into body input</label>
             </div>
             <div class="custom-control custom-radio">
               <input
@@ -36,9 +56,12 @@
                 name="lcInsertMode"
                 class="custom-control-input"
                 value="3in3"
-                [ngModel]="scriptData.conf.lcInsertMode" (ngModelChange)="onChangeLcInsertMode($event)"
+                [ngModel]="scriptData.conf.lcInsertMode"
+                (ngModelChange)="onChangeLcInsertMode($event)"
+              />
+              <label class="custom-control-label" for="lcInsertMode3in3"
+                ><b>3 in 3</b> - Header, body and footer each in input</label
               >
-              <label class="custom-control-label" for="lcInsertMode3in3"><b>3 in 3</b> - Header, body and footer each in input</label>
             </div>
           </div>
 
@@ -51,9 +74,12 @@
                 name="timeDeelay"
                 class="custom-control-input"
                 value="5000"
-                [ngModel]="scriptData.conf.timeDeelay" (ngModelChange)="onChangeTimeDeelay($event)"
+                [ngModel]="scriptData.conf.timeDeelay"
+                (ngModelChange)="onChangeTimeDeelay($event)"
+              />
+              <label class="custom-control-label" for="timeDeelay5"
+                ><b>5 seconds</b> - Normal deelay</label
               >
-              <label class="custom-control-label" for="timeDeelay5"><b>5 seconds</b> - Normal deelay</label>
             </div>
             <div class="custom-control custom-radio">
               <input
@@ -62,38 +88,49 @@
                 name="timeDeelay"
                 class="custom-control-input"
                 value="10000"
-                [ngModel]="scriptData.conf.timeDeelay" (ngModelChange)="onChangeTimeDeelay($event)"
+                [ngModel]="scriptData.conf.timeDeelay"
+                (ngModelChange)="onChangeTimeDeelay($event)"
+              />
+              <label class="custom-control-label" for="timeDeelay10"
+                ><b>10 seconds</b> - Heavy deelay, for slow connections</label
               >
-              <label class="custom-control-label" for="timeDeelay10"><b>10 seconds</b> - Heavy deelay, for slow connections</label>
             </div>
           </div>
 
           <div class="form-group mb-0">
             <div class="form-group-title pb-0">Destination language</div>
             <span id="destLangHelp" class="text-butted mb-3">
-              Generar els emails en un llenguatge per a un llenguatge de destí diferent.
+              Generar els emails en un llenguatge per a un llenguatge de destí
+              diferent.
             </span>
 
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="destLang"><b>{{ langKey | uppercase }} - {{ langData.name }}</b>&nbsp;&nbsp;to</label>
+                <label class="input-group-text" for="destLang"
+                  ><b>{{ langKey | uppercase }} - {{ langData.name }}</b
+                  >&nbsp;&nbsp;to</label
+                >
               </div>
               <select
                 class="custom-select"
                 id="destLang"
                 name="destLang"
                 aria-describedby="destLangHelp"
-                [ngModel]="scriptData.conf.destLang" (ngModelChange)="onChangeDestLang($event)"
+                [ngModel]="scriptData.conf.destLang"
+                (ngModelChange)="onChangeDestLang($event)"
               >
-                <option *ngFor="let langId of objectKeys(selectLangs)" [value]="langId">
-                  {{ selectLangs[langId].key | uppercase }} {{ selectLangs[langId].name }}
+                <option
+                  *ngFor="let langId of objectKeys(selectLangs)"
+                  [value]="langId"
+                >
+                  {{ selectLangs[langId].key | uppercase }}
+                  {{ selectLangs[langId].name }}
                 </option>
               </select>
             </div>
           </div>
 
           <!-- <button class="btn btn-primary btn-lg btn-block" [disabled]="generateScriptForm.invalid">Generate script</button> -->
-
         </div>
       </div>
     </div>
@@ -109,7 +146,20 @@
                   <div class="time-label">Script execution time</div>
                 </div>
                 <div class="col">
-                  <svg class="time-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.833 43.917"><path fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="2" d="M1.5 33.083l9.666-18.666L21.583 26.25 31.75 1.5l10.166 14.583 9.417 18 9.917-9.333L71.416 41 81.5 28.417l10.333 14 9.5-22"/></svg>
+                  <svg
+                    class="time-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 102.833 43.917"
+                  >
+                    <path
+                      fill="none"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-miterlimit="2"
+                      d="M1.5 33.083l9.666-18.666L21.583 26.25 31.75 1.5l10.166 14.583 9.417 18 9.917-9.333L71.416 41 81.5 28.417l10.333 14 9.5-22"
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
@@ -121,7 +171,8 @@
             <div class="card-body">
               <div class="chart-max">
                 <!-- (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)" -->
-                <canvas baseChart
+                <canvas
+                  baseChart
                   [data]="scriptInsights.emailsChart.data"
                   [labels]="scriptInsights.emailsChart.labels"
                   [chartType]="scriptInsights.emailsChart.type"
@@ -132,7 +183,11 @@
 
                 <div class="percent-chart">
                   <div class="d-flex align-items-end">
-                    <span class="percent-chart-n" [innerHTML]="scriptInsights.emails.validPerCent"></span><span class="percent-chart-label">%</span>
+                    <span
+                      class="percent-chart-n"
+                      [innerHTML]="scriptInsights.emails.validPerCent"
+                    ></span
+                    ><span class="percent-chart-label">%</span>
                   </div>
                 </div>
               </div>
@@ -143,11 +198,15 @@
                 </div>
                 <div class="col text-right">
                   <span class="total-emails-label">
-                    <span class="valid-emails">{{ scriptInsights.emails.valid }}</span>/<span class="total-emails">{{ scriptInsights.emails.total }}</span>
+                    <span class="valid-emails">{{
+                      scriptInsights.emails.valid
+                    }}</span
+                    >/<span class="total-emails">{{
+                      scriptInsights.emails.total
+                    }}</span>
                   </span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -157,50 +216,135 @@
             <div class="card-body">
               <div class="row align-items-center">
                 <div class="col">
-                  <div class="lenstring" [innerHTML]="scriptInsights.stringLen"></div>
+                  <div
+                    class="lenstring"
+                    [innerHTML]="scriptInsights.stringLen"
+                  ></div>
                   <div class="lenstring-label">Script string lenght</div>
                 </div>
                 <div class="col">
-                  <svg class="lenstring-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77 43">
+                  <svg
+                    class="lenstring-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 77 43"
+                  >
                     <g transform="translate(0, 43) scale(1, -1)">
                       <rect y="0" width="5">
-                        <animate attributeName="height" from="0" to="11" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="11"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="6" y="0" width="5">
-                        <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="22"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="12" y="0" width="5">
-                        <animate attributeName="height" from="0" to="11" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="11"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="18" y="0" width="5">
-                        <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="22"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="24" y="0" width="5">
-                        <animate attributeName="height" from="0" to="32" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="32"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="30" y="0" width="5">
-                        <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="22"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="36" y="0" width="5">
-                        <animate attributeName="height" from="0" to="32" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="32"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="42" y="0" width="5">
-                        <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="22"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="48" y="0" width="5">
-                        <animate attributeName="height" from="0" to="11" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="11"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="54" y="0" width="5">
-                        <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="22"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="60" width="5">
-                        <animate attributeName="height" from="0" to="43" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="43"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="66" y="0" width="5">
-                        <animate attributeName="height" from="0" to="2" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="2"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                       <rect x="72" y="0" width="5">
-                        <animate attributeName="height" from="0" to="22" dur="250ms" fill="freeze"/>
+                        <animate
+                          attributeName="height"
+                          from="0"
+                          to="22"
+                          dur="250ms"
+                          fill="freeze"
+                        />
                       </rect>
                     </g>
                   </svg>
@@ -216,8 +360,15 @@
       <div class="card">
         <div class="card-header">
           Script
-          <button class="btn btn-primary btn-xs" (click)="copyScriptAction($event, scriptTextArea);">
-            <span class="text" [innerHTML]="copyButton ? 'Copy' : 'Copied!'"></span> <svg class="icon"><use xlink:href="#copy"></use></svg>
+          <button
+            class="btn btn-primary btn-xs"
+            (click)="copyScriptAction($event, scriptTextArea)"
+          >
+            <span
+              class="text"
+              [innerHTML]="copyButton ? 'Copy' : 'Copied!'"
+            ></span>
+            <svg class="icon"><use xlink:href="#copy"></use></svg>
           </button>
         </div>
         <div class="card-body">
@@ -239,5 +390,4 @@
       </div>
     </div>
   </div>
-
 </form>

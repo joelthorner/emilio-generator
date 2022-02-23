@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreditsCardComponent implements OnInit {
 
-  cardTitle = 'Credits';
+  cardTitle = 'Info';
   credits = [
     {
-      title: '<a href="https://github.com/joelthorner" target="_blank" rel="nofollow">Joelthorner</a>',
-      description: 'Designer and developer',
-      bottom: 'First angular 7x app'
+      title: 'Beyond',
+      description: 'Ara disponible també versió biom!',
+      bottom: 'Ole'
     },
     {
       title: 'AAMH',
