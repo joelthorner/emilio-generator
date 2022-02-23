@@ -414,6 +414,7 @@ export class AppData {
       for (let i = 0; i < langItems.length; i++) {
         const langItem = langItems[i];
         let langItemData = /^([a-zA-Z_0-9]*?\s?:\s?)([\S\s]*)$/g.exec(langItem);
+
         if (langItemData != null && langItemData.length > 1) {
           let trimedValue = langItemData[2].trim();
           let value = trimedValue.substring(1).trim(),
