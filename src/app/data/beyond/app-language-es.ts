@@ -29,7 +29,7 @@ export const LANGUAGE_ES = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Per més informació, llegeixi la nostra <a href="' ~ general.privacyPolicyLink ~ '">política de privacitat</a> i les <a href="' ~ general.termsOfUseLink ~ '">condicions d'ús</a>.'
+  moreInfo: 'Para obtener más información, lea nuestra <a href="' ~ general.privacyPolicyLink ~ '">política de privacidad</a> y <a href="' ~ general.termsOfUseLink ~ '">términos de uso</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
