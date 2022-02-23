@@ -365,20 +365,84 @@ export class AppData {
   }
 
   private previewReplacesBeyond(html: string): string {
+    // Logo
     html = html.replace(
       new RegExp("\\{\\{\\s?general\\.ecommerceLogo\\s?\\}\\}", "g"),
       this.previewData.options.logo
     );
+    // Banners
     html = html.replace(
       new RegExp("\\{\\{\\s?banner\\.image\\s?\\}\\}", "g"),
       this.previewData.options.social
     );
+    // Twig variables
     html = html.replace(
       new RegExp("(\\{%\\s[\\S\\s]*?\\s*%\\})", "gm"),
-      '<!-- $1 -->'
+      "<!-- $1 -->"
     );
+    // Twig comments
+    html = html.replace(
+      new RegExp("(\\{#\\s[\\S\\s]*?\\s*#\\})", "gm"),
+      "<!-- $1 -->"
+    );
+    // Twig languageSheets
+    let beyondLanguageSheets = this.getBeyondLanguageSheets(html);
+    Object.keys(beyondLanguageSheets).forEach(function (key) {
+      html = html.replace(
+        new RegExp("\\{\\{\\s?languageSheet\\." + key + "\\s?\\}\\}", "g"),
+        beyondLanguageSheets[key]
+      );
+    });
 
     return html;
+  }
+
+  private getBeyondLanguageSheets(html: string) {
+    let myRe = /\{%\sset\slanguageSheet\s?=\s?\{([\S\s]*?)\}\s?%\}/g;
+    let variablesRaw = [];
+    let langItems = [];
+    let langItemsData = {};
+
+    while ((variablesRaw = myRe.exec(html)) !== null) {
+      if (variablesRaw != null && variablesRaw.length > 1) {
+        langItems = langItems.concat(variablesRaw[1].split(/\,\n/));
+      }
+    }
+    langItems = langItems.map((s) => s.trim());
+
+    if (langItems.length) {
+      for (let i = 0; i < langItems.length; i++) {
+        const langItem = langItems[i];
+        let langItemData = /^([a-zA-Z_0-9]*?\s?:\s?)([\S\s]*)$/g.exec(langItem);
+        if (langItemData != null && langItemData.length > 1) {
+          let trimedValue = langItemData[2].trim();
+          let value = trimedValue.substring(1).trim(),
+            key = langItemData[1].replace(":", "").trim(),
+            lastValChar = value.substr(value.length - 1);
+
+          if (lastValChar === `'` || lastValChar === `"`) {
+            value = value.slice(0, -1);
+          }
+
+          // Replace variables inter string:
+          value = value.replace(
+            new RegExp(`[\\"\\']{1}\\s?\\~\\s?[\\"\\']{1}`, "g"), // `' ~ '`
+            " "
+          );
+          value = value.replace(
+            new RegExp(`[\\"\\']{1}\\s?\\~\\s?`, "g"), // `' ~ `
+            " "
+          );
+          value = value.replace(
+            new RegExp(`\\s?\\~\\s?[\\"\\']{1}`, "g"), // ` ~ '`
+            " "
+          );
+
+          langItemsData[key] = value;
+        }
+      }
+    }
+    return langItemsData;
   }
 
   private previewReplaces(html: string): string {
