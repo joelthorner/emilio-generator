@@ -6,14 +6,14 @@ export const LANGUAGE_CA = {
   <tr>
     <td>
     <!--[if (gte mso 9)|(IE)]>
-    <table width="600" align="left" cellpadding="0" cellspacing="0" border="0">
+    <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
       <tr>
         <td>
     <![endif]-->
-    <table bgcolor="#fff" align="left" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+    <table bgcolor="#fff" align="center" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
       <tr>
           <td bgcolor="#fff" style="padding: 20px;">
-          <table width="100%" align="left" border="0" cellpadding="0" cellspacing="0" style="text-align: left;">
+          <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align: center;">
             <tr>
               <td>
                 <a href="{{ general.ecommerceURL }}">
@@ -29,7 +29,7 @@ export const LANGUAGE_CA = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Per més informació, llegeixi la nostra <a href="' ~ general.privacyPolicyLink ~ '">política de privacitat</a> i les <a href="' ~ general.termsOfUseLink ~ '">condicions d\'ús</a>.'
+  moreInfo: 'Per més informació, llegeixi la nostra <a href="' ~ general.privacyPolicyLink ~ '">política de privacitat</a> i les <a href="' ~ general.termsOfUseLink ~ '">condicions d'ús</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -37,7 +37,7 @@ export const LANGUAGE_CA = {
               {% set pages = general.getPages(501) %}
               {% if pages|length %}
                 <tr>
-                  <td align="left">
+                  <td align="center">
                     <table border="0" cellspacing="10" cellpadding="0">
                       <tr>
                         {% for page in pages %}
@@ -53,7 +53,7 @@ export const LANGUAGE_CA = {
               {% set banners = general.getBanners(502) %}
               {% if banners|length %}
                 <tr>
-                  <td align="left" style="padding: 12px 0 12px 0px;">
+                  <td align="center" style="padding: 12px 0 12px 0px;">
                     <table border="0" cellspacing="8" cellpadding="0">
                       <tr>
                         {% for banner in banners %}
@@ -71,7 +71,7 @@ export const LANGUAGE_CA = {
               {% set pages = general.getPages(503) %}
               {% if pages|length %}
                 <tr>
-                  <td align="left">
+                  <td align="center">
                     <table border="0" cellspacing="0" cellpadding="0">
                       <tr>
                         {% for page in pages %}
@@ -88,12 +88,12 @@ export const LANGUAGE_CA = {
               {% if pages|length %}
                 <tr>
                   {% for page in pages %}
-                    <td align="left" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;">{{ page.content }}</td>
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;">{{ page.content }}</td>
                   {% endfor %}
                 </tr>
               {% endif %}
               <tr>
-                <td align="left" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
+                <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
                   {{ languageSheet.moreInfo }}
                 </td>
               </tr>
@@ -130,7 +130,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -154,7 +154,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -179,7 +179,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -206,7 +206,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -239,14 +239,14 @@ export const LANGUAGE_CA = {
   premessage: 'Recomanació de producte',
   messageHeader1: "El teu amic/ga " ~ recommend.name ~ " (" ~ recommend.email ~ ") t'envia aquest producte que pot resultar del teu interès.",
   messageBody: 'Si necessites més informació sobre aquest producte pots contactar amb nosaltres a <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName,
+  messageSignature: 'Atentament, l'equip de' ~ general.ecommerceName,
   recommendedProducts: 'Productes recomanats',
   product: 'Producte',
   price: 'Preu',
   comments: 'Missatge del teu amic/ga:'
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
@@ -256,16 +256,16 @@ export const LANGUAGE_CA = {
   </td>
 </tr>
 <tr>
-  <td style="padding: 0px 0px;" align="left">
+  <td style="padding: 0px 0px;" align="center">
     <table style="width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;">
       <tbody>
         <tr><td>&nbsp;</td></tr>
-        <tr><td align="left"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;">{{ languageSheet.recommendedProducts }}</span></td></tr>
+        <tr><td align="center"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;">{{ languageSheet.recommendedProducts }}</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td style="vertical-align: top">
             <div style="padding: 0 0;">
-              <table style="border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="left">
+              <table style="border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
                   <tr>
                     <td width="80%" height="32" style="color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.product }}</td>
@@ -294,7 +294,7 @@ export const LANGUAGE_CA = {
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td>
-            <table width="88%" align="left" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;">
+            <table width="88%" align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;">
               <tr>
                 <td>
                   <strong>{{ languageSheet.comments }}</strong><br>
@@ -325,7 +325,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
       {% if contact.name|length %}
@@ -365,7 +365,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
       {% if data.name|length %}
@@ -417,7 +417,7 @@ export const LANGUAGE_CA = {
   } %}
 {% endif %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -473,7 +473,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -503,7 +503,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader }}<br><br>
@@ -528,7 +528,7 @@ export const LANGUAGE_CA = {
   messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
 } %}
 <tr>
-  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: left;">
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size:15px;">
       {{ languageSheet.messageHeader }}<br><br>
