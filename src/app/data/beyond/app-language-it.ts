@@ -29,7 +29,7 @@ export const LANGUAGE_IT = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Para obtener más información, lea nuestra <a href="' ~ general.privacyPolicyLink ~ '">política de privacidad</a> y <a href="' ~ general.termsOfUseLink ~ '">términos de uso</a>.'
+  moreInfo: 'Per ulteriori informazioni, si prega di leggere la nostra <a href="' ~ general.privacyPolicyLink ~ '">informativa sulla privacy</a> y <a href="' ~ general.termsOfUseLink ~ '">condizioni d'uso</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -119,15 +119,15 @@ export const LANGUAGE_IT = {
   templates: {
     1: {
       name: "Bienvenida",
-      subject: "{{ general.ecommerceName }} - Gracias por darte de alta",
+      subject: "{{ general.ecommerceName }} - Grazie per la registrazione",
       html: `
 {% set languageSheet = {
-  premessage: '¡Bienvenido/a a ' ~ general.ecommerceName ~ '!',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: 'Nos complace confirmarte la creación de tu cuenta de cliente en <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageBody2: 'Gracias a tu cuenta de cliente podrás actualizar tu perfil y contraseña, consultar tu historial de pedidos y otra información de tu interés.',
-  messageBody3: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: 'Benvenuti a ' ~ general.ecommerceName ~ '!',
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: 'Siamo lieti di confermare che il tuo account cliente su <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageBody2: "Grazie al tuo account cliente potrai aggiornare il tuo profilo e la tua password, consultare il tuo storico ordini ed altre informazioni utili.",
+  messageBody3: "Ci auguriamo di vederti presto su  " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -145,13 +145,13 @@ export const LANGUAGE_IT = {
 
     2: {
       name: "Baja de usuarios",
-      subject: "{{ general.ecommerceName }} - Baja de usuario",
+      subject: "{{ general.ecommerceName }} - Cancellazione dell'utente",
       html: `
 {% set languageSheet = {
-  premessage: 'Confirmación de cuenta eliminada',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody: 'Conforme a lo solicitado durante tu reciente visita a ' ~ general.ecommerceName ~ ", confirmamos que tu cuenta de usuario " ~ user.email ~ " ha sido eliminada de nuestra base de datos.",
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: 'Conferma account eliminato',
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody: 'Come da te richiesto durante la tua ultima visita su ' ~ general.ecommerceName ~ ", ti confermiamo che l'account utente " ~ user.email ~ " è stato eliminato dal nostro database.",
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -167,16 +167,16 @@ export const LANGUAGE_IT = {
 
     3: {
       name: "Recordarios de contraseña",
-      subject: "{{ general.ecommerceName }} - Recordar contraseña",
+      subject: "{{ general.ecommerceName }} - Ricorda la password",
       html: `
 {% set languageSheet = {
-  premessage: 'Recordar contraseña',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: "Conforme a lo solicitado durante tu reciente visita a " ~ general.ecommerceName ~ ", aquí tienes tu dirección de acceso a la zona de recuperación de contraseña:",
-  messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Click aquí para recuperar contraseña</a>',
-  messageBody3: 'Este enlace solamente será válido durante las 24 horas siguientes al momento de su envío.',
-  messageBody4: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: 'Ricorda la password',
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: "Come da te richiesto durante la tua ultima visita su " ~ general.ecommerceName ~ ", ti inviamo il link di accesso alla sezione dedicata al recupero della password:",
+  messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Clicca qui per recuperare la password</a>',
+  messageBody3: 'Questo link sar&agrave; attivo solamente per le 24 ore successive al suo invio.',
+  messageBody4: "Ci auguriamo di vederti presto su  " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -195,15 +195,15 @@ export const LANGUAGE_IT = {
 
     4: {
       name: "Cambio de contraseña",
-      subject: "{{ general.ecommerceName }} - Cambio de contraseña",
+      subject: "{{ general.ecommerceName }} - Cambio della password",
       html: `
 {% set languageSheet = {
-  premessage: 'Cambio de contraseña',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: 'Te confirmamos que tu contraseña ha sido modificada.',
-  messageBody2: "Asegúrate de anotar tus credenciales en un lugar seguro para futuras referencias.",
-  messageBody3: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: 'Cambio della password',
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: "Ti confermiamo che la tua password è stata modificata.",
+  messageBody2: "Accertati di conservare le credenziali in un luogo sicuro per gli accessi futuri.",
+  messageBody3: "Ci auguriamo di vederti presto su  " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -227,17 +227,17 @@ export const LANGUAGE_IT = {
 
     6: {
       name: "Recomendación de wishlist",
-      subject: "{{ general.ecommerceName }} - {{ recommend.name }} te recomienda sus productos favoritos",
+      subject: "{{ general.ecommerceName }} - {{ recommend.name }} raccomanda i suoi prodotti preferiti",
       html: `
 {% set languageSheet = {
-  premessage: 'Recomendación de favoritos',
-  messageHeader1: "Tu amigo/a " ~ recommend.name ~ " (" ~ recommend.email ~ ") te envía estos productos que pueden resultarte de interés.",
-  messageBody: 'Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName,
-  recommendedProducts: 'Productos recomendados',
-  product: 'Producto',
-  price: 'Precio',
-  comments: 'Mensaje de tu amigo/a:'
+  premessage: 'Raccomandazione sui preferiti',
+  messageHeader1: "Il tuo amico/a " ~ recommend.name ~ " (" ~ recommend.email ~ ") ti invia questo prodotto a cui potresti essere interessato.",
+  messageBody: 'Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName,
+  recommendedProducts: 'Prodotti raccomandati',
+  product: 'Prodotto',
+  price: 'Prezzo',
+  comments: 'Messaggio del tuo amico:'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -307,17 +307,17 @@ export const LANGUAGE_IT = {
 
     7: {
       name: "Recomendación de producto",
-      subject: "{{ general.ecommerceName }} - {{ recommend.name }} te recomienda un producto",
+      subject: "{{ general.ecommerceName }} - {{ recommend.name }} raccomanda un prodotto",
       html: `
 {% set languageSheet = {
-  premessage: 'Recomendación de producto',
-  messageHeader1: "Tu amigo/a " ~ recommend.name ~ " (" ~ recommend.email ~ ") te envía este producto que puede resultarte de interés.",
-  messageBody: 'Si necesitas más información acerca de este producto puedes contactar con nosotros en <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName,
-  recommendedProducts: 'Productos recomendados',
-  product: 'Producto',
-  price: 'Precio',
-  comments: 'Mensaje de tu amigo/a:'
+  premessage: 'Raccomandazione di prodotto',
+  messageHeader1: "Il tuo amico/a " ~ recommend.name ~ " (" ~ recommend.email ~ ") ti invia questo prodotto a cui potresti essere interessato.",
+  messageBody: 'Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName,
+  recommendedProducts: 'Prodotti raccomandati',
+  product: 'Prodotto',
+  price: 'Prezzo',
+  comments: 'Messaggio del tuo amico:'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -387,16 +387,16 @@ export const LANGUAGE_IT = {
 
     8: {
       name: "Contacto general",
-      subject: "{{ general.ecommerceName }} - Formulario de contacto",
+      subject: "{{ general.ecommerceName }} - Modulo di contatto",
       html: `
 {% set languageSheet = {
-  premessage: 'Formulario de contacto',
-  name: 'Nombre:',
+  premessage: 'Modulo di contatto',
+  name: 'Nome:',
   email: 'Email:',
-  phone: 'Teléfono:',
-  motive: 'Motivo de consulta:',
-  comments: 'Mensaje:',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  phone: 'Telefono:',
+  motive: 'Motivo della richiesta:',
+  comments: 'Messaggio:',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -430,13 +430,13 @@ export const LANGUAGE_IT = {
       html: `
 {% set languageSheet = {
   premessage: 'Consulta sobre producto',
-  name: 'Nombre:',
+  name: 'Nome:',
   email: 'Email:',
-  phone: 'Teléfono:',
-  comments: 'Mensaje:',
-  productName: 'Nombre de producto:',
-  productSku: 'Referencia de producto:',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  phone: 'Telefono:',
+  comments: 'Messaggio:',
+  productName: 'Nome Prodotto:',
+  productSku: 'Codice Prodotto:',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -469,25 +469,25 @@ export const LANGUAGE_IT = {
 
     10: {
       name: "Confirmación de pedido",
-      subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Pedido recibido') : ('Confirmación de pedido') }} {{ sales.documentNumber }}",
+      subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Ordine ricevuto') : ('Conferma d\'ordine') }} {{ sales.documentNumber }}",
       html: `
 {% if sales.reserve %}
   {% set languageSheet = {
-    premessage: 'Pedido recibido',
-    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-    messageBody1: 'Hemos recibido tu pedido, al tener algún producto por encargo lo tenemos pendiente de revisión.',
-    messageBody2: 'Si todo es correcto, recibirás un correo automático de confirmación.',
-    messageBody3: 'Si tenemos alguna duda nos pondremos en contacto contigo.',
-    messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+    premessage: 'Ordine ricevuto',
+    messageHeader: 'Ciao ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
+    messageBody1: 'Abbiamo ricevuto il suo ordine, dato che abbiamo alcuni prodotti in ordine lo abbiamo in attesa di revisione.',
+    messageBody2: 'Se tutto è corretto, riceverai un'e-mail di conferma automatica.',
+    messageBody3: 'Se abbiamo delle domande vi contatteremo.',
+    messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
   } %}
 {% else %}
   {% set languageSheet = {
-    premessage: 'Confirmación de pedido',
-    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-    messageBody1: 'Te confirmamos que tu pedido ha sido procesado correctamente.',
-    messageBody2: "Podrás encontrar este pedido en el archivo PDF adjunto.",
-    messageBody3: 'Gracias por comprar en <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-    messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+    premessage: 'Conferma d\'ordine',
+    messageHeader: 'Ciao ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
+    messageBody1: 'Confermiamo che il suo ordine è stato elaborato correttamente.',
+    messageBody2: "Potete trovare questo ordine nel file PDF allegato.",
+    messageBody3: 'Grazie per aver fatto acquisti da <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+    messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
   } %}
 {% endif %}
 <tr>
@@ -537,14 +537,14 @@ export const LANGUAGE_IT = {
 
     15: {
       name: "Pedido incompleto",
-      subject: "{{ general.ecommerceName }} - Pedido incompleto",
+      subject: "{{ general.ecommerceName }} - Ordine incompleto",
       html: `
 {% set languageSheet = {
-  premessage: "Información del pedido incompleto",
-  messageHeader: 'Hola ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',
-  messageBody1: 'En tu última visita a nuestra tienda, añadiste los siguientes productos al carro de la compra, pero no completaste el pedido.',
-  messageBody2: 'Haz clic <a target="_blank" href="' ~ abandonedCart.link ~ '" style="color: #000;">aquí</a> si deseas recuperar tu pedido.',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: "Informazioni ordine incompleto",
+  messageHeader: 'Ciao ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',
+  messageBody1: 'Durante la tua ultima visita al nostro negozio, hai aggiunto al carrello i seguenti prodotti, ma non hai completato l'ordine.',
+  messageBody2: 'Clicca <a target="_blank" href="' ~ abandonedCart.link ~ '" style="color: #000;">qui</a> se desideri recuperare il tuo ordine.',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -567,14 +567,14 @@ export const LANGUAGE_IT = {
 
     17: {
       name: "Verificación de correo",
-      subject: "{{ general.ecommerceName }} - Verificación de correo",
+      subject: "{{ general.ecommerceName }} - Verifica dell\'indirizzo e-mail",
       html: `
 {% set languageSheet = {
-  premessage: "Verificación de correo",
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: 'Gracias por registrarte en ' ~ general.ecommerceUrl ~ '. Por favor activa tu cuenta clicando <a href="' ~ user.verifyAccountLink ~ '" style="color: #000;">aquí</a>.',
-  messageBody2: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: "Verifica dell'indirizzo e-mail",
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: 'Grazie per esserti registrato su ' ~ general.ecommerceUrl ~ '. Per favore attiva il tuo account cliccando <a href="' ~ user.verifyAccountLink ~ '" style="color: #000;">qui</a>.',
+  messageBody2: "Ci auguriamo di vederti presto su  " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -591,15 +591,15 @@ export const LANGUAGE_IT = {
 
     18: {
       name: "Cuenta activada",
-      subject: "{{ general.ecommerceName }} - Activación de cuenta",
+      subject: "{{ general.ecommerceName }} - Attivazione dell'account",
       html: `
 {% set languageSheet = {
-  premessage: 'Activación de cuenta',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: 'Te notificamos que tu cuenta en ' ~ general.ecommerceUrl ~ ' ha sido activada correctamente.',
-  messageBody2: 'Para ver tus datos y toda la información referente a tu cuenta accede a través del panel de control: <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">Editar tu perfil</a>',
-  messageBody3: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: "Attivazione dell'account",
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: 'Ti informiamo che il tuo account su ' ~ general.ecommerceUrl ~ ' è stato attivato correttamente.',
+  messageBody2: 'Per visualizzare i tuoi dati e tutte le informazioni relative al tuo account accedi tramite il pannello di controllo: <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">Modifica il tuo profilo</a>',
+  messageBody3: "Ci auguriamo di vederti presto su  " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -623,15 +623,15 @@ export const LANGUAGE_IT = {
 
     20: {
       name: "Stock disponible",
-      subject: "{{ general.ecommerceName }} - Stock disponible",
+      subject: "{{ general.ecommerceName }} - Stock disponibile",
       html: `
 {% set languageSheet = {
-  premessage: 'Stock disponible del producto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: "¡El artículo que tanto querías ya está disponible!",
-  messageBody2: "Queremos recordarte que este email aporta información orientativa sobre la disponibilidad de este artículo y depende de muchos factores (personas interesadas, unidades disponibles).",
-  messageBody3: "Hemos enviado este email a todos los clientes interesados en este artículo, por lo que es posible que se agote muy pronto.",
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: 'Disponibilit&agrave; del prodotto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: "L'articolo che tanto desideravi è ora disponibile!",
+  messageBody2: "Ti ricordiamo che questo messaggio e-mail fornisce delle informazioni indicative riguardo alla disponibilit&agrave; dell'articolo e tale disponibilit&agrave; dipende da molti fattori (persone interessate, pezzi disponibili).",
+  messageBody3: "Questo messaggio è stato inviato a tutti i clienti interessati a questo articolo, di conseguenza è possibile che molto presto non sia pi&ugrave; disponibile.",
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -667,14 +667,14 @@ export const LANGUAGE_IT = {
 
     25: {
       name: "Confirmar suscripción de Stock",
-      subject: "{{ general.ecommerceName }} - Subscripción de stock",
+      subject: "{{ general.ecommerceName }} - Iscrizione all\'avviso di disponibilit&agrave;",
       html: `
 {% set languageSheet = {
-  premessage: 'Suscripción de stock del producto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
-  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: "Te has suscrito a los avisos de stock de " ~ data.product.name,
-  messageBody2: "En caso de que volvamos a recibir este artículo te avisaremos de inmediato para que no se te escape.",
-  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+  premessage: 'Iscrizione all'avviso di disponibilit&agrave; del prodotto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: "Ti sei iscritto agli avvisi di disponibilit&agrave; del " ~ data.product.name,
+  messageBody2: "Nel caso in cui questo articolo fosse nuovamente disponibile ti avviseremo immediatamente per fare in modo che non ti sfugga.",
+  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">

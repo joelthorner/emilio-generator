@@ -452,7 +452,7 @@ export const LANGUAGE_IT = {
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>Recomendación de producto</strong><br><br>
+    <strong>Raccomandazione di prodotto</strong><br><br>
     <span style="font-size:15px;">
       Il tuo amico/a %%anonymousName%% (%%anonymousEmail%%) ti invia questo prodotto a cui potresti essere interessato.<br><br>
       Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
