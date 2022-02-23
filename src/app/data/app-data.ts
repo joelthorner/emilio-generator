@@ -345,6 +345,7 @@ export class AppData {
 
     let html = header + body + footer;
     html = this.previewReplaces(html);
+    html = this.previewReplacesBeyond(html);
 
     let iframeSrc =
       "data:text/html;charset=utf-8," +
@@ -361,6 +362,23 @@ export class AppData {
     iframeSrc = iframeSrc.replace(new RegExp("#", "g"), "%23");
 
     this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
+  }
+
+  private previewReplacesBeyond(html: string): string {
+    html = html.replace(
+      new RegExp("\\{\\{\\s?general\\.ecommerceLogo\\s?\\}\\}", "g"),
+      this.previewData.options.logo
+    );
+    html = html.replace(
+      new RegExp("\\{\\{\\s?banner\\.image\\s?\\}\\}", "g"),
+      this.previewData.options.social
+    );
+    html = html.replace(
+      new RegExp("(\\{%\\s[\\S\\s]*?\\s*%\\})", "gm"),
+      '<!-- $1 -->'
+    );
+
+    return html;
   }
 
   private previewReplaces(html: string): string {

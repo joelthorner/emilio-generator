@@ -261,8 +261,8 @@ export class GenerateScriptComponent implements OnInit {
       ? this.getScriptPart2Beyond()
       : this.getScriptPart2();
 
-    // thisScript_2 = thisScript_2.replace(/\/\*.*?\*\//g, ""); // replace js comments
-    // thisScript_2 = thisScript_2.replace(/[\t\n]/g, ""); // minify js
+    thisScript_2 = thisScript_2.replace(/\/\*.*?\*\//g, ""); // replace js comments
+    thisScript_2 = thisScript_2.replace(/[\t\n]/g, ""); // minify js
     thisScript = thisScript_1 + thisScript_2;
 
     this.script = thisScript;
