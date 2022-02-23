@@ -184,7 +184,7 @@ export const LANGUAGE_KO = {
     }, // end :
 
     37: {
-      name: "Activación Two Factor Auth",
+      name: "Desactivación Two Factor Auth",
       subject: "",
       html: ``,
     }, // end :
