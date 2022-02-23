@@ -1,4 +1,4 @@
-// v3 file template
+// v4 file template
 export const LANGUAGE_CA = {
   header: {
     html: `
@@ -127,7 +127,7 @@ export const LANGUAGE_CA = {
   messageBody1: 'Ens complau confirmar-te la creació del teu compte de client a <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
   messageBody2: 'Gràcies al teu compte de client podràs actualitzar el teu perfil i contrasenya, consultar el teu historial de comandes i altra informació del teu interès.',
   messageBody3: "Esperem veure't aviat a " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentament, l'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -151,7 +151,7 @@ export const LANGUAGE_CA = {
   premessage: 'Confirmació de compte eliminat',
   messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody: 'Tal i com ens has sol·licitat al web ' ~ general.ecommerceName ~ ", confirmem que el teu compte d'usuari " ~ user.email ~ " ha estat eliminat de la nostra base de dades.",
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -176,7 +176,7 @@ export const LANGUAGE_CA = {
   messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Fes clic aquí per recuperar la teva contrasenya</a>',
   messageBody3: 'Aquest enllaç només serà vàlid durant les 24 hores següents al moment del seu enviament.',
   messageBody4: "Esperem veure't aviat a " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -203,7 +203,7 @@ export const LANGUAGE_CA = {
   messageBody1: 'Et confirmem que la teva contrasenya ha sigut modificada.',
   messageBody2: "Assegura't d'anotar les teves credencials en un lloc segur per futures referències.",
   messageBody3: "Esperem veure't aviat a " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -222,13 +222,87 @@ export const LANGUAGE_CA = {
     5: {
       name: "Registro de newsletter",
       subject: "",
-      html: `DEPRECATED`,
+      html: ``,
     }, // end 5
 
     6: {
       name: "Recomendación de wishlist",
-      subject: "",
-      html: `TODO`,
+      subject: "{{ general.ecommerceName }} - {{ recommend.name }} et recomana els seus productes favorits",
+      html: `
+{% set languageSheet = {
+  premessage: 'Recomanació de favorits',
+  messageHeader1: "El teu amic/ga " ~ recommend.name ~ " (" ~ recommend.email ~ ") t'envia aquests productes que poden resultar del teu interès.",
+  messageBody: 'Si necessites més informació sobre aquests productes pots contactar amb nosaltres a <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName,
+  recommendedProducts: 'Productes recomanats',
+  product: 'Producte',
+  price: 'Preu',
+  comments: 'Missatge del teu amic/ga:'
+} %}
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader1 }}<br><br>
+      {{ languageSheet.messageBody }}<br><br>
+      {{ languageSheet.messageSignature }}<br><br>
+    </span>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 0px 0px;" align="center">
+    <table style="width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;">
+      <tbody>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center"><span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;">{{ languageSheet.recommendedProducts }}</span></td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td style="vertical-align: top">
+            <div style="padding: 0 0;">
+              <table style="border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td width="80%" height="32" style="color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.product }}</td>
+                    <td width="20%" height="32" style="color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.price }}</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;">
+                      <table style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" >
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img width="60" src="{{ recommend.product.images.smallImage }}" alt="{{ recommend.product.name }}" onerror="this.style.display='none';">
+                          </td>
+                          <td style="padding: 10px 0px;">
+                            {{ recommend.product.sku }} - <a href="{{ recommend.product.productLink }}" title="{{ recommend.product.name }}" target="_blank" rel="noreferrer" style="text-decoration: none;"><span style="color: #454545; text-decoration: none;">{{ recommend.product.name }}</span></a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;"><span><span>{{ recommend.product.price }}</span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td>
+            <table width="88%" align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;">
+              <tr>
+                <td>
+                  <strong>{{ languageSheet.comments }}</strong><br>
+                  {{ recommend.comments }}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
+  </td>
+</tr>`,
     }, // end 6
 
     7: {
@@ -239,7 +313,7 @@ export const LANGUAGE_CA = {
   premessage: 'Recomanació de producte',
   messageHeader1: "El teu amic/ga " ~ recommend.name ~ " (" ~ recommend.email ~ ") t'envia aquest producte que pot resultar del teu interès.",
   messageBody: 'Si necessites més informació sobre aquest producte pots contactar amb nosaltres a <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentament, l'equip de' ~ general.ecommerceName,
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName,
   recommendedProducts: 'Productes recomanats',
   product: 'Producte',
   price: 'Preu',
@@ -322,7 +396,7 @@ export const LANGUAGE_CA = {
   phone: 'Telèfon:',
   motive: 'Motiu de consulta:',
   comments: 'Missatge:',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -362,7 +436,7 @@ export const LANGUAGE_CA = {
   comments: 'Missatge:',
   productName: 'Nom del producte:',
   productSku: 'Referència del producte:',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -404,7 +478,7 @@ export const LANGUAGE_CA = {
     messageBody1: 'Hem rebut la teva comanda, al haver-hi algun producte per encàrrec la tenim pendent de revisió.',
     messageBody2: 'Si tot és correcte rebràs un correu automàtic de confirmació.',
     messageBody3: 'Si tenim algun dubte ens posarem en contacte amb tu.',
-    messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+    messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
   } %}
 {% else %}
   {% set languageSheet = {
@@ -413,7 +487,7 @@ export const LANGUAGE_CA = {
     messageBody1: 'Et confirmem que la teva comanda ha estat processada correctament.',
     messageBody2: "Podràs trobar aquesta comanda en el fitxer PDF que s'adjunta.",
     messageBody3: 'Gràcies per comprar a <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-    messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+    messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
   } %}
 {% endif %}
 <tr>
@@ -435,31 +509,31 @@ export const LANGUAGE_CA = {
     </span>
   </td>
 </tr>`,
-    }, // end :
+    },
 
     11: {
       name: "Baja de newsletter",
       subject: "",
-      html: `DEPRECATED`,
-    }, // end :
+      html: ``,
+    },
 
     12: {
       name: "Apadrinamiento",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     13: {
       name: "Apadrinamiento completo",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     14: {
       name: "Documento de RMA",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     15: {
       name: "Pedido incompleto",
@@ -470,7 +544,7 @@ export const LANGUAGE_CA = {
   messageHeader: 'Hola ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',
   messageBody1: 'A la teva ultima visita a la nostra botiga, vas afegir els següents productes a la cistella de la compra, però no has completat la comanda.',
   messageBody2: 'Fes clic <a target="_blank" href="' ~ abandonedCart.link ~ '" style="color: #000;">aquí</a> si desitges recuperar la teva comanda.',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -483,13 +557,13 @@ export const LANGUAGE_CA = {
     </span>
   </td>
 </tr>`,
-    }, // end :
+    },
 
     16: {
       name: "Notificación transportista",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     17: {
       name: "Verificación de correo",
@@ -500,7 +574,7 @@ export const LANGUAGE_CA = {
   messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Gràcies per registrar-te a ' ~ general.ecommerceUrl ~ '. Si us plau, activa el teu compte fent clic <a href="' ~ user.verifyAccountLink ~ '" style="color: #000;">aquí</a>.',
   messageBody2: "Esperem veure't aviat a " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -513,7 +587,7 @@ export const LANGUAGE_CA = {
     </span>
   </td>
 </tr>`,
-    }, // end :
+    },
 
     18: {
       name: "Cuenta activada",
@@ -524,8 +598,8 @@ export const LANGUAGE_CA = {
   messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Et notifiquem que el teu compte a ' ~ general.ecommerceUrl ~ ' ha sigut activat correctament.',
   messageBody2: 'Per veure les teves dades i tota la informació referent al teu compte accedeix a través del panell de control: <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">Editar el teu perfil</a>',
-  messageBody3: "Esperem veure't aviat a" ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
+  messageBody3: "Esperem veure't aviat a " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -539,96 +613,134 @@ export const LANGUAGE_CA = {
     </span>
   </td>
 </tr>`,
-    }, // end :
+    },
 
     19: {
       name: "Aviso a proveedores",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     20: {
       name: "Stock disponible",
-      subject: "",
-      html: ``,
-    }, // end :
+      subject: "{{ general.ecommerceName }} - Estoc disponible",
+      html: `
+{% set languageSheet = {
+  premessage: 'Estoc disponible del producte <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: "L'article que tant volíes ja està disponible!",
+  messageBody2: "Volem recordar-te que aquest email aporta informació orientativa sobre la disponibilitat d'aquest artícle i depen de molts factors (persones interesades, unitats disponibles).",
+  messageBody3: "Hem enviat aquest email a tots els clients interessats en l'artícle, per tant es posible que s'esgoti molt aviat.",
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
+} %}
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageBody3 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
+    },
 
     22: {
       name: "Blog - Notificación de Nuevo Artículo",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     23: {
       name: "Blog - Notificación de Nuevo Comentario",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     24: {
       name: "Blog - Email de Bienvenida",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     25: {
       name: "Confirmar suscripción de Stock",
-      subject: "",
-      html: ``,
-    }, // end :
+      subject: "{{ general.ecommerceName }} - Subscripció de estoc",
+      html: `
+{% set languageSheet = {
+  premessage: 'Subscripció de estoc del producte <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: "T'has subscrit als avisos de stock de " ~ data.product.name,
+  messageBody2: "En cas de que tornem a rebre aquest artícle t'avisarem d'inmediat per a que no se t'escapi.",
+  messageSignature: 'Atentament, l\'equip de ' ~ general.ecommerceName
+} %}
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
+    },
 
     32: {
       name: "Documento de pedido",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     33: {
       name: "Documento de albarán de entrega",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     34: {
       name: "Documento de factura",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     35: {
       name: "Documento de factura rectificativa",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     36: {
       name: "Activación Two Factor Auth",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     37: {
       name: "Desactivación Two Factor Auth",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     38: {
       name: "Enviar código dispositivo Two Factor Auth",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     39: {
       name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
       subject: "",
       html: ``,
-    }, // end :
+    },
 
     40: {
       name: "Documento de Devolución",
       subject: "",
       html: ``,
-    }, // end :
+    },
   }, // end emails
 };
