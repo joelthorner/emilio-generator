@@ -1,23 +1,29 @@
 <ul class="list-unstyled">
   <li
-    *ngFor="let itemKey of objectKeys(listItems)"
-    [ngClass]="{ 'empty': listItems[itemKey].empty, 'active-s': router.url.indexOf('generate-script/' + listItems[itemKey].key) > -1 }"
+    *ngFor="let itemKey of objectKeys(appData.languages)"
+    [ngClass]="{
+      empty: appData.languages[itemKey].empty,
+      'active-s':
+        router.url.indexOf(
+          'generate-script/' + appData.languages[itemKey].key
+        ) > -1
+    }"
     routerLinkActive="active"
     [routerLinkActiveOptions]="{ exact: true }"
-    [style.order]="listItems[itemKey].empty ? 10 : 1"
+    [style.order]="appData.languages[itemKey].empty ? 10 : 1"
   >
-    <a routerLink="/language/{{ listItems[itemKey].key }}">
-
+    <a routerLink="/language/{{ appData.languages[itemKey].key }}">
       <span
         class="badge badge-primary"
-        [ngClass]="{ 'small-badge': listItems[itemKey].key.length >= 3 }"
+        [ngClass]="{
+          'small-badge': appData.languages[itemKey].key.length >= 3
+        }"
       >
-        {{ listItems[itemKey].key | uppercase }}
+        {{ appData.languages[itemKey].key | uppercase }}
       </span>
 
-      <span class="name">{{ listItems[itemKey].name }}</span>
+      <span class="name">{{ appData.languages[itemKey].name }}</span>
       <svg class="icon"><use xlink:href="#chevron-right"></use></svg>
-
     </a>
   </li>
 </ul>
