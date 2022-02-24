@@ -39,6 +39,9 @@
 
     </ul>
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item beyond-item" *ngIf="beyondValue">
+        <span class="badge rounded-pill bg-primary">BEYOND</span>
+      </li>
       <li class="nav-item">
         <a class="nav-link version-link" href="https://github.com/joelthorner/emilio-generator/releases/tag/v{{ version }}" target="_blank" rel="nofollow">Version: <b class="version">{{ version }}</b></a>
       </li>

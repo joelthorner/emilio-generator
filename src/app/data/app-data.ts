@@ -9,6 +9,8 @@ import { DomSanitizer } from "@angular/platform-browser";
   providedIn: "root",
 })
 export class AppData {
+  public DEPRECATED_BEYOND_EMAIL_IDS = [5, 11, 12, 13];
+
   public languages: any = LANGUAGES_FLUID;
   public previewDataInclude: any = PREVIEWDATA;
 
@@ -87,6 +89,9 @@ export class AppData {
       for (const emailId in thisLanguage.emails.templates) {
         // set template 'tags' property
         thisLanguage.emails.templates[emailId].tags = {
+          deprecated:
+            thisLanguage.system == "beyond" &&
+            this.DEPRECATED_BEYOND_EMAIL_IDS.includes(parseInt(emailId)),
           empty:
             thisLanguage.emails.templates[emailId].html.trim().length === 0,
           noSubject:

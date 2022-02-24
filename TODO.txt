@@ -1,10 +1,3 @@
-messageSignature: 'Salut i Visca la Terra!!!!'
-
-per
-
-messageSignature: 'Atentament, l\'equip de' ~ general.ecommerceName
-
-
 -----------------
 
 
@@ -26,8 +19,6 @@ mirar emails amb nom de arxiu:
 
 ------------------------
 
-fer tags de email deprecated per la newsletter i de te document name field?
-
 
 crear els emails de rma
 
@@ -42,6 +33,3 @@ Dubtes per a charly:
 - comodins stock confirmar
 - comodins blog confirmar
 - comodins rma confirmar
-
-
-email carlos eliminar plantilles apadrinamiento i newsletter

@@ -13,5 +13,6 @@ export class BeyondService {
 
   changeBeyond(beyond: boolean) {
     this.beyondSource.next(beyond);
+    localStorage.setItem("beyondActive", beyond === true ? "1" : "0");
   }
 }
