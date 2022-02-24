@@ -3204,7 +3204,7 @@ var EditorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light\">\r\n  <form class=\"form-inline mr-3 search-form\">\r\n    <svg class=\"icon icon-search\"><use xlink:href=\"#search\"></use></svg>\r\n    <input\r\n      class=\"form-control\"\r\n      type=\"search\"\r\n      placeholder=\"Search\"\r\n      aria-label=\"Search\"\r\n      [ngModel]=\"searchValue\"\r\n      [ngModelOptions]=\"{ standalone: true, debounce: 500 }\"\r\n      (ngModelChange)=\"searchChange($event)\"\r\n    >\r\n  </form>\r\n\r\n  <button class=\"btn btn-danger btn-clear-search\" type=\"button\" [hidden]=\"!searchValue.length\" (click)=\"clearSearch()\">\r\n    <svg class=\"icon\"><use xlink:href=\"#close\"></use></svg>\r\n  </button>\r\n\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" (click)=\"downloadZipLanguage($event)\">\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\"><path d=\"M377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zM128.4 336c-17.9 0-32.4 12.1-32.4 27 0 15 14.6 27 32.5 27s32.4-12.1 32.4-27-14.6-27-32.5-27zM224 136V0h-63.6v32h-32V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM95.9 32h32v32h-32zm32.3 384c-33.2 0-58-30.4-51.4-62.9L96.4 256v-32h32v-32h-32v-32h32v-32h-32V96h32V64h32v32h-32v32h32v32h-32v32h32v32h-32v32h22.1c5.7 0 10.7 4.1 11.8 9.7l17.3 87.7c6.4 32.4-18.4 62.6-51.4 62.6z\"></path></svg>\r\n          <span>Download zip</span>\r\n        </a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" data-toggle=\"modal\" data-target=\"#modal-tags-legend\">\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 512\"><path d=\"M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z\"></path></svg>\r\n          <span>Tags legend</span>\r\n        </a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" data-toggle=\"modal\" data-target=\"#modal-preview-settings\">\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z\"></path></svg>\r\n          <span>Preview settings</span>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n\r\n    <a class=\"btn btn-primary generate-script\" routerLink=\"/generate-script/{{ langKey }}\">Generate script</a>\r\n  </div>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light\">\r\n  <form class=\"form-inline mr-3 search-form\">\r\n    <svg class=\"icon icon-search\"><use xlink:href=\"#search\"></use></svg>\r\n    <div class=\"custom-control custom-switch mr-3\">\r\n      <input\r\n        type=\"checkbox\"\r\n        class=\"custom-control-input\"\r\n        id=\"customSwitch1\"\r\n        [ngModel]=\"beyondValue\"\r\n        [ngModelOptions]=\"{ standalone: true, debounce: 500 }\"\r\n        (ngModelChange)=\"beyondChange($event)\"\r\n      />\r\n      <label class=\"custom-control-label\" for=\"customSwitch1\">Beyond</label>\r\n    </div>\r\n    <input\r\n      class=\"form-control\"\r\n      type=\"search\"\r\n      placeholder=\"Search\"\r\n      aria-label=\"Search\"\r\n      [ngModel]=\"searchValue\"\r\n      [ngModelOptions]=\"{ standalone: true, debounce: 500 }\"\r\n      (ngModelChange)=\"searchChange($event)\"\r\n    />\r\n  </form>\r\n\r\n  <button\r\n    class=\"btn btn-danger btn-clear-search\"\r\n    type=\"button\"\r\n    [hidden]=\"!searchValue.length\"\r\n    (click)=\"clearSearch()\"\r\n  >\r\n    <svg class=\"icon\"><use xlink:href=\"#close\"></use></svg>\r\n  </button>\r\n\r\n  <button\r\n    class=\"navbar-toggler\"\r\n    type=\"button\"\r\n    data-toggle=\"collapse\"\r\n    data-target=\"#navbarSupportedContent\"\r\n    aria-controls=\"navbarSupportedContent\"\r\n    aria-expanded=\"false\"\r\n    aria-label=\"Toggle navigation\"\r\n  >\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\" (click)=\"downloadZipLanguage($event)\">\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 384 512\">\r\n            <path\r\n              d=\"M377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zM128.4 336c-17.9 0-32.4 12.1-32.4 27 0 15 14.6 27 32.5 27s32.4-12.1 32.4-27-14.6-27-32.5-27zM224 136V0h-63.6v32h-32V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM95.9 32h32v32h-32zm32.3 384c-33.2 0-58-30.4-51.4-62.9L96.4 256v-32h32v-32h-32v-32h32v-32h-32V96h32V64h32v32h-32v32h32v32h-32v32h32v32h-32v32h22.1c5.7 0 10.7 4.1 11.8 9.7l17.3 87.7c6.4 32.4-18.4 62.6-51.4 62.6z\"\r\n            ></path>\r\n          </svg>\r\n          <span>Download zip</span>\r\n        </a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\">\r\n        <a\r\n          class=\"nav-link\"\r\n          href=\"#\"\r\n          data-toggle=\"modal\"\r\n          data-target=\"#modal-tags-legend\"\r\n        >\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 512\">\r\n            <path\r\n              d=\"M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z\"\r\n            ></path>\r\n          </svg>\r\n          <span>Tags legend</span>\r\n        </a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\">\r\n        <a\r\n          class=\"nav-link\"\r\n          href=\"#\"\r\n          data-toggle=\"modal\"\r\n          data-target=\"#modal-preview-settings\"\r\n        >\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">\r\n            <path\r\n              d=\"M496 384H160v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h80v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h336c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160h-80v-16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h336v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h80c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zm0-160H288V48c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v16H16C7.2 64 0 71.2 0 80v32c0 8.8 7.2 16 16 16h208v16c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-16h208c8.8 0 16-7.2 16-16V80c0-8.8-7.2-16-16-16z\"\r\n            ></path>\r\n          </svg>\r\n          <span>Preview settings</span>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n\r\n    <a\r\n      class=\"btn btn-primary generate-script\"\r\n      routerLink=\"/generate-script/{{ langKey }}\"\r\n      >Generate script</a\r\n    >\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -3234,20 +3234,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var src_app_data_app_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/data/app-data */ "./src/app/data/app-data.ts");
 /* harmony import */ var src_app_lib_services_search_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/lib/services/search.service */ "./src/app/lib/services/search.service.ts");
+/* harmony import */ var src_app_lib_services_beyond_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/lib/services/beyond.service */ "./src/app/lib/services/beyond.service.ts");
+
 
 
 
 
 
 var LanguageNavbarComponent = /** @class */ (function () {
-    function LanguageNavbarComponent(appData, route, search) {
+    function LanguageNavbarComponent(appData, route, search, beyond) {
         this.appData = appData;
         this.route = route;
         this.search = search;
+        this.beyond = beyond;
     }
     LanguageNavbarComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.search.currentSearch.subscribe(function (searchValue) { return _this.searchValue = searchValue; });
+        this.beyond.currentBeyond.subscribe(function (beyondValue) { return _this.beyondValue = beyondValue; });
         this.langKey = this.route.snapshot.params['langKey'];
     };
     LanguageNavbarComponent.prototype.downloadZipLanguage = function (event) {
@@ -3257,6 +3261,9 @@ var LanguageNavbarComponent = /** @class */ (function () {
     LanguageNavbarComponent.prototype.searchChange = function (event) {
         event = event.toLowerCase().trim();
         this.search.changeSearch(event);
+    };
+    LanguageNavbarComponent.prototype.beyondChange = function (event) {
+        this.beyond.changeBeyond(event);
     };
     LanguageNavbarComponent.prototype.clearSearch = function () {
         this.search.changeSearch('');
@@ -3269,7 +3276,8 @@ var LanguageNavbarComponent = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_data_app_data__WEBPACK_IMPORTED_MODULE_3__["AppData"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
-            src_app_lib_services_search_service__WEBPACK_IMPORTED_MODULE_4__["SearchService"]])
+            src_app_lib_services_search_service__WEBPACK_IMPORTED_MODULE_4__["SearchService"],
+            src_app_lib_services_beyond_service__WEBPACK_IMPORTED_MODULE_5__["BeyondService"]])
     ], LanguageNavbarComponent);
     return LanguageNavbarComponent;
 }());
@@ -3420,34 +3428,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var src_app_data_app_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/data/app-data */ "./src/app/data/app-data.ts");
 /* harmony import */ var src_app_lib_services_search_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/lib/services/search.service */ "./src/app/lib/services/search.service.ts");
+/* harmony import */ var src_app_lib_services_beyond_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/lib/services/beyond.service */ "./src/app/lib/services/beyond.service.ts");
+
 
 
 
 
 
 var LanguageComponent = /** @class */ (function () {
-    function LanguageComponent(route, router, appData, search) {
+    function LanguageComponent(route, router, appData, search, beyond) {
         this.route = route;
         this.router = router;
         this.appData = appData;
         this.search = search;
+        this.beyond = beyond;
         this.objectKeys = Object.keys;
         this.router.routeReuseStrategy.shouldReuseRoute = function () { return false; };
     }
     LanguageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.search.currentSearch.subscribe(function (searchValue) { return _this.searchValue = searchValue; });
-        this.langKey = this.route.snapshot.params['langKey'];
-        this.langData = this.appData.getLanguage(this.langKey);
-        this.previewEmail = this.langData.emails.templates[1];
+        this.search.currentSearch.subscribe(function (searchValue) { return (_this.searchValue = searchValue); });
+        this.beyond.currentBeyond.subscribe(function (beyondValue) {
+            _this.beyondValue = beyondValue;
+            _this._ngOnInit();
+        });
         // Sorry for this, the next project will build with https://ng-bootstrap.github.io/
         $(function () {
             $('[data-toggle="tooltip"]').tooltip();
         });
     };
+    LanguageComponent.prototype._ngOnInit = function () {
+        this.appData.changeLanguageSource(this.beyondValue);
+        this.langKey = this.route.snapshot.params["langKey"];
+        this.langData = this.appData.getLanguage(this.langKey);
+        this.previewEmail = this.langData.emails.templates[1];
+    };
     LanguageComponent.prototype.refreshPreview = function (event, emailTemplateId, freeClick) {
         if (freeClick === void 0) { freeClick = false; }
-        if (event.target.classList.contains('collapsed') || freeClick) {
+        if (event.target.classList.contains("collapsed") || freeClick) {
             this.appData.previewData.id = emailTemplateId;
             this.appData.previewData.name = this.appData.getEmailData(this.langKey, emailTemplateId).name;
             this.appData.setPreviewIframeContent(this.langKey);
@@ -3457,7 +3475,7 @@ var LanguageComponent = /** @class */ (function () {
         event.preventDefault();
         if (this.langData.emails.templates[emailId].tags.customHeader) {
             // remove header
-            var confirmBool = confirm('Are you sure?');
+            var confirmBool = confirm("Are you sure?");
             if (confirmBool) {
                 this.appData.delCustomHeader(this.langKey, emailId);
             }
@@ -3471,7 +3489,7 @@ var LanguageComponent = /** @class */ (function () {
         event.preventDefault();
         if (this.langData.emails.templates[emailId].tags.customFooter) {
             // remove footer
-            var confirmBool = confirm('Are you sure?');
+            var confirmBool = confirm("Are you sure?");
             if (confirmBool) {
                 this.appData.delCustomFooter(this.langKey, emailId);
             }
@@ -3484,7 +3502,7 @@ var LanguageComponent = /** @class */ (function () {
     LanguageComponent.prototype.findedLangItem = function (item, type, scrollEl) {
         var finded = false;
         if (this.searchValue.length > 2) {
-            if (typeof item === 'string') {
+            if (typeof item === "string") {
                 if (item.toLowerCase().trim().includes(this.searchValue)) {
                     finded = true;
                 }
@@ -3501,23 +3519,24 @@ var LanguageComponent = /** @class */ (function () {
                 scrollEl.scrollTop = 0;
             }
         }
-        if (type === 'class') {
-            return finded ? 'finded' : '';
+        if (type === "class") {
+            return finded ? "finded" : "";
         }
-        else if (type === 'order') {
+        else if (type === "order") {
             return finded ? 1 : 10;
         }
     };
     LanguageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'eg-language',
+            selector: "eg-language",
             template: __webpack_require__(/*! ./language.component.html */ "./src/app/views/language/language/language.component.html"),
             styles: [__webpack_require__(/*! ./language.component.scss */ "./src/app/views/language/language/language.component.scss")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
             src_app_data_app_data__WEBPACK_IMPORTED_MODULE_3__["AppData"],
-            src_app_lib_services_search_service__WEBPACK_IMPORTED_MODULE_4__["SearchService"]])
+            src_app_lib_services_search_service__WEBPACK_IMPORTED_MODULE_4__["SearchService"],
+            src_app_lib_services_beyond_service__WEBPACK_IMPORTED_MODULE_5__["BeyondService"]])
     ], LanguageComponent);
     return LanguageComponent;
 }());
@@ -3666,7 +3685,7 @@ var ModalPreviewSettingsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal fade\" id=\"modal-tags-legend\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\">Tags Legend</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">\r\n            <svg class=\"icon\"><use xlink:href=\"#close\"></use></svg>\r\n          </span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <ul class=\"list-unstyled\">\r\n          <li class=\"media\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-id\">Id 00</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Tag id</h5>\r\n              Email template internal id.\r\n            </div>\r\n          </li>\r\n          <li class=\"media my-4\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-empty\">empty</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Empty html</h5>\r\n              Indicates if an html is empty string after a trim.\r\n            </div>\r\n          </li>\r\n          <li class=\"media my-4\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-noSubject\">noSubject</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">No subject</h5>\r\n              Show if email subject is empty after trim.\r\n            </div>\r\n          </li>\r\n          <li class=\"media\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-customHeader\">customHeader</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Custom Header/Footer</h5>\r\n              Indicates a possible self email custom header or footer.\r\n            </div>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n        <!-- <button type=\"button\" class=\"btn btn-primary\">Save changes</button> -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"modal fade\" id=\"modal-tags-legend\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 class=\"modal-title\">Tags Legend</h5>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">\r\n            <svg class=\"icon\"><use xlink:href=\"#close\"></use></svg>\r\n          </span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <ul class=\"list-unstyled\">\r\n          <li class=\"media\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-id\">Id 00</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Tag id</h5>\r\n              Email template internal id.\r\n            </div>\r\n          </li>\r\n          <li class=\"media my-4\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-empty\">empty</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Empty html</h5>\r\n              Indicates if an html is empty string after a trim.\r\n            </div>\r\n          </li>\r\n          <li class=\"media my-4\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-deprecated\">deprecated</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Deprecated</h5>\r\n              Indicates if an email is deprecated.\r\n            </div>\r\n          </li>\r\n          <li class=\"media my-4\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-noSubject\">noSubject</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">No subject</h5>\r\n              Show if email subject is empty after trim.\r\n            </div>\r\n          </li>\r\n          <li class=\"media\">\r\n            <div class=\"media-object\">\r\n              <span class=\"badge badge-customHeader\">customHeader</span>\r\n            </div>\r\n            <div class=\"media-body\">\r\n              <h5 class=\"mt-0 mb-1\">Custom Header/Footer</h5>\r\n              Indicates a possible self email custom header or footer.\r\n            </div>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n        <!-- <button type=\"button\" class=\"btn btn-primary\">Save changes</button> -->\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 

@@ -7,7 +7,7 @@
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = {"name":"emilio-generator","version":"2.0.8","scripts":{"ng":"ng","start":"ng serve","build":"ng build","test":"ng test","lint":"ng lint","e2e":"ng e2e"},"private":true,"dependencies":{"@angular/animations":"~7.1.0","@angular/common":"~7.1.0","@angular/compiler":"~7.1.0","@angular/core":"~7.1.0","@angular/forms":"~7.1.0","@angular/platform-browser":"~7.1.0","@angular/platform-browser-dynamic":"~7.1.0","@angular/router":"~7.1.0","@ngx-loading-bar/core":"^4.2.0","@ngx-loading-bar/router":"^4.2.0","@octokit/request":"^3.0.1","@octokit/rest":"^16.43.1","@types/jquery":"^3.3.34","ace-builds":"^1.4.9","bootstrap":"^4.4.1","chart.js":"^2.9.3","compass-mixins":"^0.12.10","core-js":"^2.6.11","emailjs":"^2.2.0","emailjs-com":"^2.4.1","file-saver":"^2.0.2","jquery":"^3.4.1","jszip":"^3.3.0","moment":"^2.24.0","ng2-ace-editor":"^0.3.9","ng2-charts":"^1.6.0","ngx-markdown":"^7.1.5","node-sass":"^4.14.1","popper.js":"^1.16.1","rxjs":"~6.3.3","tslib":"^1.11.1","zone.js":"^0.8.29"},"devDependencies":{"@angular-devkit/build-angular":"^0.13.10","@angular/cli":"^7.3.10","@angular/compiler-cli":"^7.2.16","@angular/language-service":"~7.1.0","@types/chrome":"0.0.78","@types/file-saver":"^2.0.1","@types/jasmine":"^2.8.16","@types/jasminewd2":"^2.0.8","@types/node":"^8.10.59","angular-cli-ghpages":"^0.6.2","codelyzer":"~4.5.0","jasmine-core":"~2.99.1","jasmine-spec-reporter":"~4.2.1","karma":"^4.4.1","karma-chrome-launcher":"~2.2.0","karma-coverage-istanbul-reporter":"^2.1.1","karma-jasmine":"~1.1.2","karma-jasmine-html-reporter":"^0.2.2","protractor":"^5.4.3","ts-node":"~7.0.0","tslint":"~5.11.0","typescript":"~3.1.6","webpack-dev-server":"^3.10.3"}};
+module.exports = {"name":"emilio-generator","version":"2.1.0","scripts":{"ng":"ng","start":"ng serve","build":"ng build","test":"ng test","lint":"ng lint","e2e":"ng e2e"},"private":true,"dependencies":{"@angular/animations":"~7.1.0","@angular/common":"~7.1.0","@angular/compiler":"~7.1.0","@angular/core":"~7.1.0","@angular/forms":"~7.1.0","@angular/platform-browser":"~7.1.0","@angular/platform-browser-dynamic":"~7.1.0","@angular/router":"~7.1.0","@ngx-loading-bar/core":"^4.2.0","@ngx-loading-bar/router":"^4.2.0","@octokit/request":"^3.0.1","@octokit/rest":"^16.43.2","@types/jquery":"^3.5.13","ace-builds":"^1.4.14","bootstrap":"^4.6.1","chart.js":"^2.9.4","compass-mixins":"^0.12.10","core-js":"^2.6.12","emailjs":"^2.2.0","emailjs-com":"^2.6.4","file-saver":"^2.0.5","jquery":"^3.6.0","jszip":"^3.7.1","moment":"^2.29.1","ng2-ace-editor":"^0.3.9","ng2-charts":"^1.6.0","ngx-markdown":"^7.1.5","node-sass":"4.14.1","popper.js":"^1.16.1","rxjs":"~6.3.3","tslib":"^1.14.1","zone.js":"^0.8.29"},"devDependencies":{"@angular-devkit/build-angular":"^0.13.10","@angular/cli":"^7.3.10","@angular/compiler-cli":"^7.2.16","@angular/language-service":"~7.1.0","@types/chrome":"0.0.78","@types/file-saver":"^2.0.5","@types/jasmine":"^2.8.19","@types/jasminewd2":"^2.0.10","@types/node":"^8.10.66","angular-cli-ghpages":"^0.6.2","codelyzer":"~4.5.0","jasmine-core":"~2.99.1","jasmine-spec-reporter":"~4.2.1","karma":"^4.4.1","karma-chrome-launcher":"~2.2.0","karma-coverage-istanbul-reporter":"^2.1.1","karma-jasmine":"~1.1.2","karma-jasmine-html-reporter":"^0.2.2","protractor":"^5.4.4","ts-node":"~7.0.0","tslint":"~5.11.0","typescript":"^3.1.8","webpack-dev-server":"^3.11.3"}};
 
 /***/ }),
 
@@ -163,14 +163,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _lib_services_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./lib/services/auth.service */ "./src/app/lib/services/auth.service.ts");
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _lib_services_beyond_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./lib/services/beyond.service */ "./src/app/lib/services/beyond.service.ts");
+
 
 
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(auth) {
+    function AppComponent(auth, beyond) {
         this.auth = auth;
+        this.beyond = beyond;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        if (localStorage.getItem("beyondActive") &&
+            localStorage.getItem("beyondActive") == "1") {
+            this.beyond.changeBeyond(true);
+        }
+        else {
+            this.beyond.changeBeyond(false);
+        }
+    };
     AppComponent.prototype.doBeforeUnload = function () {
         if (src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
             return false;
@@ -178,11 +190,11 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'eg-root',
+            selector: "eg-root",
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_lib_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_lib_services_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"], _lib_services_beyond_service__WEBPACK_IMPORTED_MODULE_4__["BeyondService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -262,41 +274,41 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/data/app-data-languages.ts":
-/*!********************************************!*\
-  !*** ./src/app/data/app-data-languages.ts ***!
-  \********************************************/
-/*! exports provided: LANGUAGES */
+/***/ "./src/app/data/app-data-languages-beyond.ts":
+/*!***************************************************!*\
+  !*** ./src/app/data/app-data-languages-beyond.ts ***!
+  \***************************************************/
+/*! exports provided: LANGUAGES_BEYOND */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGES", function() { return LANGUAGES; });
-/* harmony import */ var _app_language_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app-language-es */ "./src/app/data/app-language-es.ts");
-/* harmony import */ var _app_language_en__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-language-en */ "./src/app/data/app-language-en.ts");
-/* harmony import */ var _app_language_ca__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-language-ca */ "./src/app/data/app-language-ca.ts");
-/* harmony import */ var _app_language_fr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-language-fr */ "./src/app/data/app-language-fr.ts");
-/* harmony import */ var _app_language_de__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-language-de */ "./src/app/data/app-language-de.ts");
-/* harmony import */ var _app_language_zho__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-language-zho */ "./src/app/data/app-language-zho.ts");
-/* harmony import */ var _app_language_ar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-language-ar */ "./src/app/data/app-language-ar.ts");
-/* harmony import */ var _app_language_chi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-language-chi */ "./src/app/data/app-language-chi.ts");
-/* harmony import */ var _app_language_ja__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-language-ja */ "./src/app/data/app-language-ja.ts");
-/* harmony import */ var _app_language_it__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app-language-it */ "./src/app/data/app-language-it.ts");
-/* harmony import */ var _app_language_ko__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app-language-ko */ "./src/app/data/app-language-ko.ts");
-/* harmony import */ var _app_language_pt__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./app-language-pt */ "./src/app/data/app-language-pt.ts");
-/* harmony import */ var _app_language_eu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app-language-eu */ "./src/app/data/app-language-eu.ts");
-/* harmony import */ var _app_language_sv__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./app-language-sv */ "./src/app/data/app-language-sv.ts");
-/* harmony import */ var _app_language_ru__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app-language-ru */ "./src/app/data/app-language-ru.ts");
-/* harmony import */ var _app_language_mn__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./app-language-mn */ "./src/app/data/app-language-mn.ts");
-/* harmony import */ var _app_language_bg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./app-language-bg */ "./src/app/data/app-language-bg.ts");
-/* harmony import */ var _app_language_ro__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./app-language-ro */ "./src/app/data/app-language-ro.ts");
-/* harmony import */ var _app_language_nl__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./app-language-nl */ "./src/app/data/app-language-nl.ts");
-/* harmony import */ var _app_language_hu__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./app-language-hu */ "./src/app/data/app-language-hu.ts");
-/* harmony import */ var _app_language_pl__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./app-language-pl */ "./src/app/data/app-language-pl.ts");
-/* harmony import */ var _app_language_sk__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./app-language-sk */ "./src/app/data/app-language-sk.ts");
-/* harmony import */ var _app_language_tr__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./app-language-tr */ "./src/app/data/app-language-tr.ts");
-/* harmony import */ var _app_language_th__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./app-language-th */ "./src/app/data/app-language-th.ts");
-/* harmony import */ var _app_language_lo__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./app-language-lo */ "./src/app/data/app-language-lo.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGES_BEYOND", function() { return LANGUAGES_BEYOND; });
+/* harmony import */ var _beyond_app_language_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./beyond/app-language-es */ "./src/app/data/beyond/app-language-es.ts");
+/* harmony import */ var _beyond_app_language_en__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./beyond/app-language-en */ "./src/app/data/beyond/app-language-en.ts");
+/* harmony import */ var _beyond_app_language_ca__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./beyond/app-language-ca */ "./src/app/data/beyond/app-language-ca.ts");
+/* harmony import */ var _beyond_app_language_fr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./beyond/app-language-fr */ "./src/app/data/beyond/app-language-fr.ts");
+/* harmony import */ var _beyond_app_language_de__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./beyond/app-language-de */ "./src/app/data/beyond/app-language-de.ts");
+/* harmony import */ var _beyond_app_language_zho__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./beyond/app-language-zho */ "./src/app/data/beyond/app-language-zho.ts");
+/* harmony import */ var _beyond_app_language_ar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./beyond/app-language-ar */ "./src/app/data/beyond/app-language-ar.ts");
+/* harmony import */ var _beyond_app_language_chi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./beyond/app-language-chi */ "./src/app/data/beyond/app-language-chi.ts");
+/* harmony import */ var _beyond_app_language_ja__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./beyond/app-language-ja */ "./src/app/data/beyond/app-language-ja.ts");
+/* harmony import */ var _beyond_app_language_it__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./beyond/app-language-it */ "./src/app/data/beyond/app-language-it.ts");
+/* harmony import */ var _beyond_app_language_ko__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./beyond/app-language-ko */ "./src/app/data/beyond/app-language-ko.ts");
+/* harmony import */ var _beyond_app_language_pt__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./beyond/app-language-pt */ "./src/app/data/beyond/app-language-pt.ts");
+/* harmony import */ var _beyond_app_language_eu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./beyond/app-language-eu */ "./src/app/data/beyond/app-language-eu.ts");
+/* harmony import */ var _beyond_app_language_sv__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./beyond/app-language-sv */ "./src/app/data/beyond/app-language-sv.ts");
+/* harmony import */ var _beyond_app_language_ru__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./beyond/app-language-ru */ "./src/app/data/beyond/app-language-ru.ts");
+/* harmony import */ var _beyond_app_language_mn__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./beyond/app-language-mn */ "./src/app/data/beyond/app-language-mn.ts");
+/* harmony import */ var _beyond_app_language_bg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./beyond/app-language-bg */ "./src/app/data/beyond/app-language-bg.ts");
+/* harmony import */ var _beyond_app_language_ro__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./beyond/app-language-ro */ "./src/app/data/beyond/app-language-ro.ts");
+/* harmony import */ var _beyond_app_language_nl__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./beyond/app-language-nl */ "./src/app/data/beyond/app-language-nl.ts");
+/* harmony import */ var _beyond_app_language_hu__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./beyond/app-language-hu */ "./src/app/data/beyond/app-language-hu.ts");
+/* harmony import */ var _beyond_app_language_pl__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./beyond/app-language-pl */ "./src/app/data/beyond/app-language-pl.ts");
+/* harmony import */ var _beyond_app_language_sk__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./beyond/app-language-sk */ "./src/app/data/beyond/app-language-sk.ts");
+/* harmony import */ var _beyond_app_language_tr__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./beyond/app-language-tr */ "./src/app/data/beyond/app-language-tr.ts");
+/* harmony import */ var _beyond_app_language_th__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./beyond/app-language-th */ "./src/app/data/beyond/app-language-th.ts");
+/* harmony import */ var _beyond_app_language_lo__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./beyond/app-language-lo */ "./src/app/data/beyond/app-language-lo.ts");
 
 
 
@@ -322,132 +334,373 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var LANGUAGES = {
+var LANGUAGES_BEYOND = {
     1: {
-        key: 'es',
-        name: 'Spanish',
-        emails: _app_language_es__WEBPACK_IMPORTED_MODULE_0__["LANGUAGE_ES"]
+        key: "es",
+        name: "Spanish",
+        emails: _beyond_app_language_es__WEBPACK_IMPORTED_MODULE_0__["LANGUAGE_ES"],
+        system: "beyond",
     },
     2: {
-        key: 'en',
-        name: 'English',
-        emails: _app_language_en__WEBPACK_IMPORTED_MODULE_1__["LANGUAGE_EN"]
+        key: "en",
+        name: "English",
+        emails: _beyond_app_language_en__WEBPACK_IMPORTED_MODULE_1__["LANGUAGE_EN"],
+        system: "beyond",
     },
     3: {
-        key: 'ca',
-        name: 'Catalan',
-        emails: _app_language_ca__WEBPACK_IMPORTED_MODULE_2__["LANGUAGE_CA"]
+        key: "ca",
+        name: "Catalan",
+        emails: _beyond_app_language_ca__WEBPACK_IMPORTED_MODULE_2__["LANGUAGE_CA"],
+        system: "beyond",
     },
     4: {
-        key: 'fr',
-        name: 'French',
-        emails: _app_language_fr__WEBPACK_IMPORTED_MODULE_3__["LANGUAGE_FR"]
+        key: "fr",
+        name: "French",
+        emails: _beyond_app_language_fr__WEBPACK_IMPORTED_MODULE_3__["LANGUAGE_FR"],
+        system: "beyond",
     },
     5: {
-        key: 'de',
-        name: 'German',
-        emails: _app_language_de__WEBPACK_IMPORTED_MODULE_4__["LANGUAGE_DE"]
+        key: "de",
+        name: "German",
+        emails: _beyond_app_language_de__WEBPACK_IMPORTED_MODULE_4__["LANGUAGE_DE"],
+        system: "beyond",
     },
     6: {
-        key: 'zho',
-        name: 'Trad. Chinese',
-        emails: _app_language_zho__WEBPACK_IMPORTED_MODULE_5__["LANGUAGE_ZHO"]
+        key: "zho",
+        name: "Trad. Chinese",
+        emails: _beyond_app_language_zho__WEBPACK_IMPORTED_MODULE_5__["LANGUAGE_ZHO"],
+        system: "beyond",
     },
     7: {
-        key: 'ar',
-        name: 'Arabic',
-        emails: _app_language_ar__WEBPACK_IMPORTED_MODULE_6__["LANGUAGE_AR"]
+        key: "ar",
+        name: "Arabic",
+        emails: _beyond_app_language_ar__WEBPACK_IMPORTED_MODULE_6__["LANGUAGE_AR"],
+        system: "beyond",
     },
     10: {
-        key: 'chi',
-        name: 'Simpl. Chinese',
-        emails: _app_language_chi__WEBPACK_IMPORTED_MODULE_7__["LANGUAGE_CHI"]
+        key: "chi",
+        name: "Simpl. Chinese",
+        emails: _beyond_app_language_chi__WEBPACK_IMPORTED_MODULE_7__["LANGUAGE_CHI"],
+        system: "beyond",
     },
     11: {
-        key: 'ja',
-        name: 'Japanese',
-        emails: _app_language_ja__WEBPACK_IMPORTED_MODULE_8__["LANGUAGE_JA"]
+        key: "ja",
+        name: "Japanese",
+        emails: _beyond_app_language_ja__WEBPACK_IMPORTED_MODULE_8__["LANGUAGE_JA"],
+        system: "beyond",
     },
     12: {
-        key: 'ru',
-        name: 'Russian',
-        emails: _app_language_ru__WEBPACK_IMPORTED_MODULE_14__["LANGUAGE_RU"]
+        key: "ru",
+        name: "Russian",
+        emails: _beyond_app_language_ru__WEBPACK_IMPORTED_MODULE_14__["LANGUAGE_RU"],
+        system: "beyond",
     },
     13: {
-        key: 'it',
-        name: 'Italian',
-        emails: _app_language_it__WEBPACK_IMPORTED_MODULE_9__["LANGUAGE_IT"]
+        key: "it",
+        name: "Italian",
+        emails: _beyond_app_language_it__WEBPACK_IMPORTED_MODULE_9__["LANGUAGE_IT"],
+        system: "beyond",
     },
     15: {
-        key: 'ko',
-        name: 'Korean',
-        emails: _app_language_ko__WEBPACK_IMPORTED_MODULE_10__["LANGUAGE_KO"]
+        key: "ko",
+        name: "Korean",
+        emails: _beyond_app_language_ko__WEBPACK_IMPORTED_MODULE_10__["LANGUAGE_KO"],
+        system: "beyond",
     },
     17: {
-        key: 'pt',
-        name: 'Portuguese',
-        emails: _app_language_pt__WEBPACK_IMPORTED_MODULE_11__["LANGUAGE_PT"]
+        key: "pt",
+        name: "Portuguese",
+        emails: _beyond_app_language_pt__WEBPACK_IMPORTED_MODULE_11__["LANGUAGE_PT"],
+        system: "beyond",
     },
     19: {
-        key: 'ro',
-        name: 'Romanian',
-        emails: _app_language_ro__WEBPACK_IMPORTED_MODULE_17__["LANGUAGE_RO"]
+        key: "ro",
+        name: "Romanian",
+        emails: _beyond_app_language_ro__WEBPACK_IMPORTED_MODULE_17__["LANGUAGE_RO"],
+        system: "beyond",
     },
     20: {
-        key: 'nl',
-        name: 'Dutch',
-        emails: _app_language_nl__WEBPACK_IMPORTED_MODULE_18__["LANGUAGE_NL"]
+        key: "nl",
+        name: "Dutch",
+        emails: _beyond_app_language_nl__WEBPACK_IMPORTED_MODULE_18__["LANGUAGE_NL"],
+        system: "beyond",
     },
     21: {
-        key: 'hu',
-        name: 'Hungarian',
-        emails: _app_language_hu__WEBPACK_IMPORTED_MODULE_19__["LANGUAGE_HU"]
+        key: "hu",
+        name: "Hungarian",
+        emails: _beyond_app_language_hu__WEBPACK_IMPORTED_MODULE_19__["LANGUAGE_HU"],
+        system: "beyond",
     },
     22: {
-        key: 'sk',
-        name: 'Slovak',
-        emails: _app_language_sk__WEBPACK_IMPORTED_MODULE_21__["LANGUAGE_SK"]
+        key: "sk",
+        name: "Slovak",
+        emails: _beyond_app_language_sk__WEBPACK_IMPORTED_MODULE_21__["LANGUAGE_SK"],
+        system: "beyond",
     },
     24: {
-        key: 'eu',
-        name: 'Basque',
-        emails: _app_language_eu__WEBPACK_IMPORTED_MODULE_12__["LANGUAGE_EU"]
+        key: "eu",
+        name: "Basque",
+        emails: _beyond_app_language_eu__WEBPACK_IMPORTED_MODULE_12__["LANGUAGE_EU"],
+        system: "beyond",
     },
     25: {
-        key: 'tr',
-        name: 'Turkish',
-        emails: _app_language_tr__WEBPACK_IMPORTED_MODULE_22__["LANGUAGE_TR"]
+        key: "tr",
+        name: "Turkish",
+        emails: _beyond_app_language_tr__WEBPACK_IMPORTED_MODULE_22__["LANGUAGE_TR"],
+        system: "beyond",
     },
     26: {
-        key: 'th',
-        name: 'Thai',
-        emails: _app_language_th__WEBPACK_IMPORTED_MODULE_23__["LANGUAGE_TH"]
+        key: "th",
+        name: "Thai",
+        emails: _beyond_app_language_th__WEBPACK_IMPORTED_MODULE_23__["LANGUAGE_TH"],
+        system: "beyond",
     },
     27: {
-        key: 'lo',
-        name: 'Lao',
-        emails: _app_language_lo__WEBPACK_IMPORTED_MODULE_24__["LANGUAGE_LO"]
+        key: "lo",
+        name: "Lao",
+        emails: _beyond_app_language_lo__WEBPACK_IMPORTED_MODULE_24__["LANGUAGE_LO"],
+        system: "beyond",
     },
     28: {
-        key: 'pl',
-        name: 'Polish',
-        emails: _app_language_pl__WEBPACK_IMPORTED_MODULE_20__["LANGUAGE_PL"]
+        key: "pl",
+        name: "Polish",
+        emails: _beyond_app_language_pl__WEBPACK_IMPORTED_MODULE_20__["LANGUAGE_PL"],
+        system: "beyond",
     },
     31: {
-        key: 'mn',
-        name: 'Mongolian',
-        emails: _app_language_mn__WEBPACK_IMPORTED_MODULE_15__["LANGUAGE_MN"]
+        key: "mn",
+        name: "Mongolian",
+        emails: _beyond_app_language_mn__WEBPACK_IMPORTED_MODULE_15__["LANGUAGE_MN"],
+        system: "beyond",
     },
     32: {
-        key: 'bg',
-        name: 'Bulgarian',
-        emails: _app_language_bg__WEBPACK_IMPORTED_MODULE_16__["LANGUAGE_BG"]
+        key: "bg",
+        name: "Bulgarian",
+        emails: _beyond_app_language_bg__WEBPACK_IMPORTED_MODULE_16__["LANGUAGE_BG"],
+        system: "beyond",
     },
     34: {
-        key: 'sv',
-        name: 'Svenska',
-        emails: _app_language_sv__WEBPACK_IMPORTED_MODULE_13__["LANGUAGE_SV"]
-    }
+        key: "sv",
+        name: "Svenska",
+        emails: _beyond_app_language_sv__WEBPACK_IMPORTED_MODULE_13__["LANGUAGE_SV"],
+        system: "beyond",
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/app-data-languages-fluid.ts":
+/*!**************************************************!*\
+  !*** ./src/app/data/app-data-languages-fluid.ts ***!
+  \**************************************************/
+/*! exports provided: LANGUAGES_FLUID */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGES_FLUID", function() { return LANGUAGES_FLUID; });
+/* harmony import */ var _fluid_app_language_es__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./fluid/app-language-es */ "./src/app/data/fluid/app-language-es.ts");
+/* harmony import */ var _fluid_app_language_en__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fluid/app-language-en */ "./src/app/data/fluid/app-language-en.ts");
+/* harmony import */ var _fluid_app_language_ca__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fluid/app-language-ca */ "./src/app/data/fluid/app-language-ca.ts");
+/* harmony import */ var _fluid_app_language_fr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./fluid/app-language-fr */ "./src/app/data/fluid/app-language-fr.ts");
+/* harmony import */ var _fluid_app_language_de__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./fluid/app-language-de */ "./src/app/data/fluid/app-language-de.ts");
+/* harmony import */ var _fluid_app_language_zho__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./fluid/app-language-zho */ "./src/app/data/fluid/app-language-zho.ts");
+/* harmony import */ var _fluid_app_language_ar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./fluid/app-language-ar */ "./src/app/data/fluid/app-language-ar.ts");
+/* harmony import */ var _fluid_app_language_chi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./fluid/app-language-chi */ "./src/app/data/fluid/app-language-chi.ts");
+/* harmony import */ var _fluid_app_language_ja__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./fluid/app-language-ja */ "./src/app/data/fluid/app-language-ja.ts");
+/* harmony import */ var _fluid_app_language_it__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./fluid/app-language-it */ "./src/app/data/fluid/app-language-it.ts");
+/* harmony import */ var _fluid_app_language_ko__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./fluid/app-language-ko */ "./src/app/data/fluid/app-language-ko.ts");
+/* harmony import */ var _fluid_app_language_pt__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./fluid/app-language-pt */ "./src/app/data/fluid/app-language-pt.ts");
+/* harmony import */ var _fluid_app_language_eu__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./fluid/app-language-eu */ "./src/app/data/fluid/app-language-eu.ts");
+/* harmony import */ var _fluid_app_language_sv__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./fluid/app-language-sv */ "./src/app/data/fluid/app-language-sv.ts");
+/* harmony import */ var _fluid_app_language_ru__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./fluid/app-language-ru */ "./src/app/data/fluid/app-language-ru.ts");
+/* harmony import */ var _fluid_app_language_mn__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./fluid/app-language-mn */ "./src/app/data/fluid/app-language-mn.ts");
+/* harmony import */ var _fluid_app_language_bg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./fluid/app-language-bg */ "./src/app/data/fluid/app-language-bg.ts");
+/* harmony import */ var _fluid_app_language_ro__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./fluid/app-language-ro */ "./src/app/data/fluid/app-language-ro.ts");
+/* harmony import */ var _fluid_app_language_nl__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./fluid/app-language-nl */ "./src/app/data/fluid/app-language-nl.ts");
+/* harmony import */ var _fluid_app_language_hu__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./fluid/app-language-hu */ "./src/app/data/fluid/app-language-hu.ts");
+/* harmony import */ var _fluid_app_language_pl__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./fluid/app-language-pl */ "./src/app/data/fluid/app-language-pl.ts");
+/* harmony import */ var _fluid_app_language_sk__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./fluid/app-language-sk */ "./src/app/data/fluid/app-language-sk.ts");
+/* harmony import */ var _fluid_app_language_tr__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./fluid/app-language-tr */ "./src/app/data/fluid/app-language-tr.ts");
+/* harmony import */ var _fluid_app_language_th__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./fluid/app-language-th */ "./src/app/data/fluid/app-language-th.ts");
+/* harmony import */ var _fluid_app_language_lo__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./fluid/app-language-lo */ "./src/app/data/fluid/app-language-lo.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var LANGUAGES_FLUID = {
+    1: {
+        key: "es",
+        name: "Spanish",
+        emails: _fluid_app_language_es__WEBPACK_IMPORTED_MODULE_0__["LANGUAGE_ES"],
+        system: "fluid",
+    },
+    2: {
+        key: "en",
+        name: "English",
+        emails: _fluid_app_language_en__WEBPACK_IMPORTED_MODULE_1__["LANGUAGE_EN"],
+        system: "fluid",
+    },
+    3: {
+        key: "ca",
+        name: "Catalan",
+        emails: _fluid_app_language_ca__WEBPACK_IMPORTED_MODULE_2__["LANGUAGE_CA"],
+        system: "fluid",
+    },
+    4: {
+        key: "fr",
+        name: "French",
+        emails: _fluid_app_language_fr__WEBPACK_IMPORTED_MODULE_3__["LANGUAGE_FR"],
+        system: "fluid",
+    },
+    5: {
+        key: "de",
+        name: "German",
+        emails: _fluid_app_language_de__WEBPACK_IMPORTED_MODULE_4__["LANGUAGE_DE"],
+        system: "fluid",
+    },
+    6: {
+        key: "zho",
+        name: "Trad. Chinese",
+        emails: _fluid_app_language_zho__WEBPACK_IMPORTED_MODULE_5__["LANGUAGE_ZHO"],
+        system: "fluid",
+    },
+    7: {
+        key: "ar",
+        name: "Arabic",
+        emails: _fluid_app_language_ar__WEBPACK_IMPORTED_MODULE_6__["LANGUAGE_AR"],
+        system: "fluid",
+    },
+    10: {
+        key: "chi",
+        name: "Simpl. Chinese",
+        emails: _fluid_app_language_chi__WEBPACK_IMPORTED_MODULE_7__["LANGUAGE_CHI"],
+        system: "fluid",
+    },
+    11: {
+        key: "ja",
+        name: "Japanese",
+        emails: _fluid_app_language_ja__WEBPACK_IMPORTED_MODULE_8__["LANGUAGE_JA"],
+        system: "fluid",
+    },
+    12: {
+        key: "ru",
+        name: "Russian",
+        emails: _fluid_app_language_ru__WEBPACK_IMPORTED_MODULE_14__["LANGUAGE_RU"],
+        system: "fluid",
+    },
+    13: {
+        key: "it",
+        name: "Italian",
+        emails: _fluid_app_language_it__WEBPACK_IMPORTED_MODULE_9__["LANGUAGE_IT"],
+        system: "fluid",
+    },
+    15: {
+        key: "ko",
+        name: "Korean",
+        emails: _fluid_app_language_ko__WEBPACK_IMPORTED_MODULE_10__["LANGUAGE_KO"],
+        system: "fluid",
+    },
+    17: {
+        key: "pt",
+        name: "Portuguese",
+        emails: _fluid_app_language_pt__WEBPACK_IMPORTED_MODULE_11__["LANGUAGE_PT"],
+        system: "fluid",
+    },
+    19: {
+        key: "ro",
+        name: "Romanian",
+        emails: _fluid_app_language_ro__WEBPACK_IMPORTED_MODULE_17__["LANGUAGE_RO"],
+        system: "fluid",
+    },
+    20: {
+        key: "nl",
+        name: "Dutch",
+        emails: _fluid_app_language_nl__WEBPACK_IMPORTED_MODULE_18__["LANGUAGE_NL"],
+        system: "fluid",
+    },
+    21: {
+        key: "hu",
+        name: "Hungarian",
+        emails: _fluid_app_language_hu__WEBPACK_IMPORTED_MODULE_19__["LANGUAGE_HU"],
+        system: "fluid",
+    },
+    22: {
+        key: "sk",
+        name: "Slovak",
+        emails: _fluid_app_language_sk__WEBPACK_IMPORTED_MODULE_21__["LANGUAGE_SK"],
+        system: "fluid",
+    },
+    24: {
+        key: "eu",
+        name: "Basque",
+        emails: _fluid_app_language_eu__WEBPACK_IMPORTED_MODULE_12__["LANGUAGE_EU"],
+        system: "fluid",
+    },
+    25: {
+        key: "tr",
+        name: "Turkish",
+        emails: _fluid_app_language_tr__WEBPACK_IMPORTED_MODULE_22__["LANGUAGE_TR"],
+        system: "fluid",
+    },
+    26: {
+        key: "th",
+        name: "Thai",
+        emails: _fluid_app_language_th__WEBPACK_IMPORTED_MODULE_23__["LANGUAGE_TH"],
+        system: "fluid",
+    },
+    27: {
+        key: "lo",
+        name: "Lao",
+        emails: _fluid_app_language_lo__WEBPACK_IMPORTED_MODULE_24__["LANGUAGE_LO"],
+        system: "fluid",
+    },
+    28: {
+        key: "pl",
+        name: "Polish",
+        emails: _fluid_app_language_pl__WEBPACK_IMPORTED_MODULE_20__["LANGUAGE_PL"],
+        system: "fluid",
+    },
+    31: {
+        key: "mn",
+        name: "Mongolian",
+        emails: _fluid_app_language_mn__WEBPACK_IMPORTED_MODULE_15__["LANGUAGE_MN"],
+        system: "fluid",
+    },
+    32: {
+        key: "bg",
+        name: "Bulgarian",
+        emails: _fluid_app_language_bg__WEBPACK_IMPORTED_MODULE_16__["LANGUAGE_BG"],
+        system: "fluid",
+    },
+    34: {
+        key: "sv",
+        name: "Svenska",
+        emails: _fluid_app_language_sv__WEBPACK_IMPORTED_MODULE_13__["LANGUAGE_SV"],
+        system: "fluid",
+    },
 };
 
 
@@ -562,10 +815,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppData", function() { return AppData; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_data_languages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-data-languages */ "./src/app/data/app-data-languages.ts");
-/* harmony import */ var _app_data_preview__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-data-preview */ "./src/app/data/app-data-preview.ts");
-/* harmony import */ var _lib_services_jszip_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/services/jszip.service */ "./src/app/lib/services/jszip.service.ts");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _app_data_languages_fluid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-data-languages-fluid */ "./src/app/data/app-data-languages-fluid.ts");
+/* harmony import */ var _app_data_languages_beyond__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-data-languages-beyond */ "./src/app/data/app-data-languages-beyond.ts");
+/* harmony import */ var _app_data_preview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-data-preview */ "./src/app/data/app-data-preview.ts");
+/* harmony import */ var _lib_services_jszip_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/services/jszip.service */ "./src/app/lib/services/jszip.service.ts");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+
 
 
 
@@ -576,26 +831,36 @@ var AppData = /** @class */ (function () {
     function AppData(jszip, sanitizer) {
         this.jszip = jszip;
         this.sanitizer = sanitizer;
-        this.languages = _app_data_languages__WEBPACK_IMPORTED_MODULE_2__["LANGUAGES"];
-        this.previewDataInclude = _app_data_preview__WEBPACK_IMPORTED_MODULE_3__["PREVIEWDATA"];
+        this.DEPRECATED_BEYOND_EMAIL_IDS = [5, 11, 12, 13];
+        this.languages = _app_data_languages_fluid__WEBPACK_IMPORTED_MODULE_2__["LANGUAGES_FLUID"];
+        this.previewDataInclude = _app_data_preview__WEBPACK_IMPORTED_MODULE_4__["PREVIEWDATA"];
         this.previewData = {
             id: 1,
-            name: '',
+            name: "",
             options: {
                 logo: this.previewDataInclude.logo,
-                social: this.previewDataInclude.social
+                social: this.previewDataInclude.social,
             },
             refresh: 0,
-            style: this.previewDataInclude.css
+            style: this.previewDataInclude.css,
         };
         this.checkAll();
     }
+    AppData.prototype.changeLanguageSource = function (isBeyond) {
+        if (isBeyond) {
+            this.languages = _app_data_languages_beyond__WEBPACK_IMPORTED_MODULE_3__["LANGUAGES_BEYOND"];
+        }
+        else {
+            this.languages = _app_data_languages_fluid__WEBPACK_IMPORTED_MODULE_2__["LANGUAGES_FLUID"];
+        }
+        this.checkAll();
+    };
     AppData.prototype.checkAll = function () {
         var copyLanguages = this.languages;
         copyLanguages = this.checkEmptyLanguages(copyLanguages);
         copyLanguages = this.checkTemplatesTags(copyLanguages);
         copyLanguages = this.trimHtml(copyLanguages);
-        return this.languages = copyLanguages;
+        return (this.languages = copyLanguages);
     };
     // set/update languages[x].empty
     AppData.prototype.checkEmptyLanguages = function (languagesObj) {
@@ -621,30 +886,38 @@ var AppData = /** @class */ (function () {
             var thisLanguage = languagesClone[langId];
             // set header 'tags' property
             thisLanguage.emails.header.tags = {
-                empty: thisLanguage.emails.header.html.trim().length === 0
+                empty: thisLanguage.emails.header.html.trim().length === 0,
             };
             // set footer 'tags' property
             thisLanguage.emails.footer.tags = {
-                empty: thisLanguage.emails.footer.html.trim().length === 0
+                empty: thisLanguage.emails.footer.html.trim().length === 0,
             };
             for (var emailId in thisLanguage.emails.templates) {
                 // set template 'tags' property
                 thisLanguage.emails.templates[emailId].tags = {
+                    deprecated: thisLanguage.system == "beyond" &&
+                        this.DEPRECATED_BEYOND_EMAIL_IDS.includes(parseInt(emailId)),
                     empty: thisLanguage.emails.templates[emailId].html.trim().length === 0,
                     noSubject: thisLanguage.emails.templates[emailId].subject.trim().length === 0,
-                    customHeader: typeof thisLanguage.emails.templates[emailId].header === 'undefined' ? false : true,
-                    customFooter: typeof thisLanguage.emails.templates[emailId].footer === 'undefined' ? false : true
+                    customHeader: typeof thisLanguage.emails.templates[emailId].header === "undefined"
+                        ? false
+                        : true,
+                    customFooter: typeof thisLanguage.emails.templates[emailId].footer === "undefined"
+                        ? false
+                        : true,
                 };
                 // set custom header 'tags' property
-                if (typeof thisLanguage.emails.templates[emailId].header !== 'undefined') {
+                if (typeof thisLanguage.emails.templates[emailId].header !== "undefined") {
                     thisLanguage.emails.templates[emailId].header.tags = {
-                        empty: thisLanguage.emails.templates[emailId].header.html.trim().length === 0
+                        empty: thisLanguage.emails.templates[emailId].header.html.trim()
+                            .length === 0,
                     };
                 }
                 // set custom footer 'tags' property
-                if (typeof thisLanguage.emails.templates[emailId].footer !== 'undefined') {
+                if (typeof thisLanguage.emails.templates[emailId].footer !== "undefined") {
                     thisLanguage.emails.templates[emailId].footer.tags = {
-                        empty: thisLanguage.emails.templates[emailId].footer.html.trim().length === 0
+                        empty: thisLanguage.emails.templates[emailId].footer.html.trim()
+                            .length === 0,
                     };
                 }
             }
@@ -692,16 +965,16 @@ var AppData = /** @class */ (function () {
     };
     // set string value 'html' or 'subject'
     AppData.prototype.setStringVal = function (langKey, path, code) {
-        var evalPath = 'this.languages';
+        var evalPath = "this.languages";
         for (var langId in this.languages) {
             if (this.languages[langId].key === langKey) {
-                evalPath += '[' + langId + ']';
+                evalPath += "[" + langId + "]";
             }
         }
-        path.split('.').forEach(function (valueKey) {
-            evalPath += '.' + valueKey;
+        path.split(".").forEach(function (valueKey) {
+            evalPath += "." + valueKey;
         });
-        var toEval = evalPath + '=`' + code + '`;';
+        var toEval = evalPath + "=`" + code + "`;";
         eval(toEval);
         this.languages = this.checkAll();
     };
@@ -710,15 +983,18 @@ var AppData = /** @class */ (function () {
         var languagesClone = languagesObj;
         for (var langId in languagesClone) {
             var thisLanguage = languagesClone[langId];
-            thisLanguage.emails.header.html = thisLanguage.emails.header.html.replace(/^\n{1}/i, '');
-            thisLanguage.emails.footer.html = thisLanguage.emails.footer.html.replace(/^\n{1}/i, '');
+            thisLanguage.emails.header.html = thisLanguage.emails.header.html.replace(/^\n{1}/i, "");
+            thisLanguage.emails.footer.html = thisLanguage.emails.footer.html.replace(/^\n{1}/i, "");
             for (var emailId in thisLanguage.emails.templates) {
-                thisLanguage.emails.templates[emailId].html = thisLanguage.emails.templates[emailId].html.replace(/^\n{1}/i, '');
-                if (typeof thisLanguage.emails.templates[emailId].header !== 'undefined') {
-                    thisLanguage.emails.templates[emailId].header.html = thisLanguage.emails.templates[emailId].header.html.replace(/^\n{1}/i, '');
+                thisLanguage.emails.templates[emailId].html =
+                    thisLanguage.emails.templates[emailId].html.replace(/^\n{1}/i, "");
+                if (typeof thisLanguage.emails.templates[emailId].header !== "undefined") {
+                    thisLanguage.emails.templates[emailId].header.html =
+                        thisLanguage.emails.templates[emailId].header.html.replace(/^\n{1}/i, "");
                 }
-                if (typeof thisLanguage.emails.templates[emailId].footer !== 'undefined') {
-                    thisLanguage.emails.templates[emailId].footer.html = thisLanguage.emails.templates[emailId].footer.html.replace(/^\n{1}/i, '');
+                if (typeof thisLanguage.emails.templates[emailId].footer !== "undefined") {
+                    thisLanguage.emails.templates[emailId].footer.html =
+                        thisLanguage.emails.templates[emailId].footer.html.replace(/^\n{1}/i, "");
                 }
             }
         }
@@ -744,12 +1020,12 @@ var AppData = /** @class */ (function () {
                 }
             }
             emailsArray.push({
-                fileName: template.name + ' [id ' + templateId + '] [' + data.key + '].html',
-                content: thisHeader + thisBody + thisFooter
+                fileName: template.name + " [id " + templateId + "] [" + data.key + "].html",
+                content: thisHeader + thisBody + thisFooter,
             });
         }
         var zip = this.jszip.setZip(emailsArray);
-        this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
+        this.jszip.saveAsZip(zip, "emilio-generator [id " + data.id + "] [" + data.key + "].zip");
     };
     // execute download html by language key and email id
     AppData.prototype.generateEmailHtml = function (langKey, emailId) {
@@ -770,9 +1046,9 @@ var AppData = /** @class */ (function () {
                         thisFooter = template.footer.html;
                     }
                 }
-                var fileName = template.name + ' [id ' + templateId + '] [' + data.key + '].html';
+                var fileName = template.name + " [id " + templateId + "] [" + data.key + "].html";
                 var content = thisHeader + thisBody + thisFooter;
-                this.jszip.saveAsHtml(content, fileName, 'text/html;charset=utf-8');
+                this.jszip.saveAsHtml(content, fileName, "text/html;charset=utf-8");
                 return true;
             }
         }
@@ -780,33 +1056,93 @@ var AppData = /** @class */ (function () {
     };
     // set sanitized src for iframe with email preview
     AppData.prototype.setPreviewIframeContent = function (langKey) {
-        this.previewSrc = '';
+        this.previewSrc = "";
         this.previewData.refresh++;
         var langId = this.getLanguage(langKey).id;
         var header = this.languages[langId].emails.header.html;
-        if (this.languages[langId].emails.templates[this.previewData.id].tags.customHeader) {
-            header = this.languages[langId].emails.templates[this.previewData.id].header.html;
+        if (this.languages[langId].emails.templates[this.previewData.id].tags
+            .customHeader) {
+            header =
+                this.languages[langId].emails.templates[this.previewData.id].header
+                    .html;
         }
         var body = this.languages[langId].emails.templates[this.previewData.id].html;
         var footer = this.languages[langId].emails.footer.html;
-        if (this.languages[langId].emails.templates[this.previewData.id].tags.customFooter) {
-            footer = this.languages[langId].emails.templates[this.previewData.id].footer.html;
+        if (this.languages[langId].emails.templates[this.previewData.id].tags
+            .customFooter) {
+            footer =
+                this.languages[langId].emails.templates[this.previewData.id].footer
+                    .html;
         }
         var html = header + body + footer;
         html = this.previewReplaces(html);
-        var iframeSrc = 'data:text/html;charset=utf-8,' +
-            encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '">' + this.previewData.style) +
+        html = this.previewReplacesBeyond(html);
+        var iframeSrc = "data:text/html;charset=utf-8," +
+            encodeURI('<html><head><body class="refresh-' +
+                this.previewData.refresh +
+                '">' +
+                this.previewData.style) +
             encodeURI(html) +
-            encodeURI('</body></html>');
+            encodeURI("</body></html>");
         // fix chrome set '#'
-        iframeSrc = iframeSrc.replace(new RegExp('#', 'g'), '%23');
+        iframeSrc = iframeSrc.replace(new RegExp("#", "g"), "%23");
         this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
+    };
+    AppData.prototype.previewReplacesBeyond = function (html) {
+        // Logo
+        html = html.replace(new RegExp("\\{\\{\\s?general\\.ecommerceLogo\\s?\\}\\}", "g"), this.previewData.options.logo);
+        // Banners
+        html = html.replace(new RegExp("\\{\\{\\s?banner\\.image\\s?\\}\\}", "g"), this.previewData.options.social);
+        // Twig variables
+        html = html.replace(new RegExp("(\\{%\\s[\\S\\s]*?\\s*%\\})", "gm"), "<!-- $1 -->");
+        // Twig comments
+        html = html.replace(new RegExp("(\\{#\\s[\\S\\s]*?\\s*#\\})", "gm"), "<!-- $1 -->");
+        // Twig languageSheets
+        var beyondLanguageSheets = this.getBeyondLanguageSheets(html);
+        Object.keys(beyondLanguageSheets).forEach(function (key) {
+            html = html.replace(new RegExp("\\{\\{\\s?languageSheet\\." + key + "\\s?\\}\\}", "g"), beyondLanguageSheets[key]);
+        });
+        return html;
+    };
+    AppData.prototype.getBeyondLanguageSheets = function (html) {
+        var myRe = /\{%\sset\slanguageSheet\s?=\s?\{([\S\s]*?)\}\s?%\}/g;
+        var variablesRaw = [];
+        var langItems = [];
+        var langItemsData = {};
+        while ((variablesRaw = myRe.exec(html)) !== null) {
+            if (variablesRaw != null && variablesRaw.length > 1) {
+                langItems = langItems.concat(variablesRaw[1].split(/\,\n/));
+            }
+        }
+        langItems = langItems.map(function (s) { return s.trim(); });
+        if (langItems.length) {
+            for (var i = 0; i < langItems.length; i++) {
+                var langItem = langItems[i];
+                var langItemData = /^([a-zA-Z_0-9]*?\s?:\s?)([\S\s]*)$/g.exec(langItem);
+                if (langItemData != null && langItemData.length > 1) {
+                    var trimedValue = langItemData[2].trim();
+                    var value = trimedValue.substring(1).trim(), key = langItemData[1].replace(":", "").trim(), lastValChar = value.substr(value.length - 1);
+                    if (lastValChar === "'" || lastValChar === "\"") {
+                        value = value.slice(0, -1);
+                    }
+                    // Replace variables inter string:
+                    value = value.replace(new RegExp("[\\\"\\']{1}\\s?\\~\\s?[\\\"\\']{1}", "g"), // `' ~ '`
+                    " ");
+                    value = value.replace(new RegExp("[\\\"\\']{1}\\s?\\~\\s?", "g"), // `' ~ `
+                    " ");
+                    value = value.replace(new RegExp("\\s?\\~\\s?[\\\"\\']{1}", "g"), // ` ~ '`
+                    " ");
+                    langItemsData[key] = value;
+                }
+            }
+        }
+        return langItemsData;
     };
     AppData.prototype.previewReplaces = function (html) {
         // prevent click empty links
-        html = html.replace(new RegExp('href=(["\'])(.*?)\\1', 'g'), 'href="javascript:void(0)"');
-        html = html.replace(new RegExp('[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)', 'g'), this.previewData.options.logo);
-        html = html.replace(new RegExp('%%BannerImage%%', 'g'), this.previewData.options.social);
+        html = html.replace(new RegExp("href=([\"'])(.*?)\\1", "g"), 'href="javascript:void(0)"');
+        html = html.replace(new RegExp("[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)", "g"), this.previewData.options.logo);
+        html = html.replace(new RegExp("%%BannerImage%%", "g"), this.previewData.options.social);
         return html;
     };
     // get sanitized src for iframe with email preview
@@ -824,7 +1160,7 @@ var AppData = /** @class */ (function () {
         var langData = this.getLanguage(langKey);
         var emailData = this.getEmailData(langKey, emailId);
         emailData.header = {
-            html: langData.emails.header.html
+            html: langData.emails.header.html,
         };
         this.checkAll();
         this.previewData.id = emailId;
@@ -841,7 +1177,7 @@ var AppData = /** @class */ (function () {
         var langData = this.getLanguage(langKey);
         var emailData = this.getEmailData(langKey, emailId);
         emailData.footer = {
-            html: langData.emails.footer.html
+            html: langData.emails.footer.html,
         };
         this.checkAll();
         this.previewData.id = emailId;
@@ -849,9 +1185,9 @@ var AppData = /** @class */ (function () {
     };
     AppData = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root',
+            providedIn: "root",
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_lib_services_jszip_service__WEBPACK_IMPORTED_MODULE_4__["JszipService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_lib_services_jszip_service__WEBPACK_IMPORTED_MODULE_5__["JszipService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["DomSanitizer"]])
     ], AppData);
     return AppData;
 }());
@@ -860,10 +1196,4760 @@ var AppData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-ar.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-ar.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/beyond/app-language-ar.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-ar.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_AR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_AR", function() { return LANGUAGE_AR; });
+// v4 file template
+var LANGUAGE_AR = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-bg.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-bg.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_BG */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_BG", function() { return LANGUAGE_BG; });
+// v4 file template
+var LANGUAGE_BG = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-ca.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-ca.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_CA */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_CA", function() { return LANGUAGE_CA; });
+// v4 file template
+var LANGUAGE_CA = {
+    header: {
+        html: "\n<table width=\"100%\" bgcolor=\"#fff\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color: #fff; padding-bottom: 0px;\">\n  <tr>\n    <td>\n    <!--[if (gte mso 9)|(IE)]>\n    <table width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n        <td>\n    <![endif]-->\n    <table bgcolor=\"#fff\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\">\n      <tr>\n          <td bgcolor=\"#fff\" style=\"padding: 20px;\">\n          <table width=\"100%\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"text-align: center;\">\n            <tr>\n              <td>\n                <a href=\"{{ general.ecommerceURL }}\">\n                  <img src=\"{{ general.ecommerceLogo }}\" width=\"210\" height=\"auto\" border=\"0\" alt=\"{{ general.ecommerceName }}\" style=\"height: auto;\" />\n                </a>\n              </td>\n            </tr>\n          </table>\n        </td>\n      </tr>",
+    },
+    footer: {
+        html: "\n{% set languageSheet = {\n  moreInfo: 'Per m\u00E9s informaci\u00F3, llegeixi la nostra <a href=\"' ~ general.privacyPolicyLink ~ '\">pol\u00EDtica de privacitat</a> i les <a href=\"' ~ general.termsOfUseLink ~ '\">condicions d'\u00FAs</a>.'\n} %}\n        <tr>\n          <td bgcolor=\"#fff\" style=\"background-color: #fff; padding: 20px 20px 20px 20px;\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n              {% set pages = general.getPages(501) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"10\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left;\">\n                            <a href=\"{{ page.link }}\" style=\"padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;\" target=\"{{ page.target }}\">{{ page.name }}</a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set banners = general.getBanners(502) %}\n              {% if banners|length %}\n                <tr>\n                  <td align=\"center\" style=\"padding: 12px 0 12px 0px;\">\n                    <table border=\"0\" cellspacing=\"8\" cellpadding=\"0\">\n                      <tr>\n                        {% for banner in banners %}\n                          <td width=\"30\" style=\"text-align: left;\">\n                            <a href=\"{{ banner.link }}\">\n                              <img src=\"{{ banner.image }}\" width=\"30\" height=\"auto\" alt=\"{{ banner.alt }}\" border=\"0\" style=\"height: auto;\" />\n                            </a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(503) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">\n                            <span style=\"color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">{{ page.content }}</span>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(504) %}\n              {% if pages|length %}\n                <tr>\n                  {% for page in pages %}\n                    <td align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;\">{{ page.content }}</td>\n                  {% endfor %}\n                </tr>\n              {% endif %}\n              <tr>\n                <td align=\"center\" heigth=\"50\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;\">\n                  {{ languageSheet.moreInfo }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n      <!--[if (gte mso 9)|(IE)]>\n          </td>\n        </tr>\n      </table>\n      <![endif]-->\n    </td>\n  </tr>\n  <tr>\n    <td align=\"left\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">\n      <span style=\"color: #000; font-size: 10px;\">&nbsp;</span>\n    </td>\n  </tr>\n</table>",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "{{ general.ecommerceName }} - Gràcies per donar-te d'alta",
+            html: "\n{% set languageSheet = {\n  premessage: 'Benvingut/da a ' ~ general.ecommerceName ~ '!',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Ens complau confirmar-te la creaci\u00F3 del teu compte de client a <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageBody2: 'Gr\u00E0cies al teu compte de client podr\u00E0s actualitzar el teu perfil i contrasenya, consultar el teu historial de comandes i altra informaci\u00F3 del teu inter\u00E8s.',\n  messageBody3: \"Esperem veure't aviat a \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "{{ general.ecommerceName }} - Baixa d'usuari",
+            html: "\n{% set languageSheet = {\n  premessage: 'Confirmaci\u00F3 de compte eliminat',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody: 'Tal i com ens has sol\u00B7licitat al web ' ~ general.ecommerceName ~ \", confirmem que el teu compte d'usuari \" ~ user.email ~ \" ha estat eliminat de la nostra base de dades.\",\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "{{ general.ecommerceName }} - Recordar contrasenya",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recordar contrasenya',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"D'acord a la sol\u00B7licitud durant la teva recent visita a \" ~ general.ecommerceName ~ \", aqu\u00ED tens la teva direcci\u00F3 d'acc\u00E9s a la zona de recuperaci\u00F3 de contrasenya:\",\n  messageBody2: '<a href=\"' ~ user.lostPasswordLink ~ '\" style=\"color:#000\">Fes clic aqu\u00ED per recuperar la teva contrasenya</a>',\n  messageBody3: 'Aquest enlla\u00E7 nom\u00E9s ser\u00E0 v\u00E0lid durant les 24 hores seg\u00FCents al moment del seu enviament.',\n  messageBody4: \"Esperem veure't aviat a \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageBody4 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "{{ general.ecommerceName }} - Canvi de contrasenya",
+            html: "\n{% set languageSheet = {\n  premessage: 'Canvi de contrasenya',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Et confirmem que la teva contrasenya ha sigut modificada.',\n  messageBody2: \"Assegura't d'anotar les teves credencials en un lloc segur per futures refer\u00E8ncies.\",\n  messageBody3: \"Esperem veure't aviat a \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} et recomana els seus productes favorits",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recomanaci\u00F3 de favorits',\n  messageHeader1: \"El teu amic/ga \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") t'envia aquests productes que poden resultar del teu inter\u00E8s.\",\n  messageBody: 'Si necessites m\u00E9s informaci\u00F3 sobre aquests productes pots contactar amb nosaltres a <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName,\n  recommendedProducts: 'Productes recomanats',\n  product: 'Producte',\n  price: 'Preu',\n  comments: 'Missatge del teu amic/ga:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} et recomana un producte",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recomanaci\u00F3 de producte',\n  messageHeader1: \"El teu amic/ga \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") t'envia aquest producte que pot resultar del teu inter\u00E8s.\",\n  messageBody: 'Si necessites m\u00E9s informaci\u00F3 sobre aquest producte pots contactar amb nosaltres a <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName,\n  recommendedProducts: 'Productes recomanats',\n  product: 'Producte',\n  price: 'Preu',\n  comments: 'Missatge del teu amic/ga:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "{{ general.ecommerceName }} - Formulari de contacte",
+            html: "\n{% set languageSheet = {\n  premessage: 'Formulari de contacte',\n  name: 'Nom:',\n  email: 'Email:',\n  phone: 'Tel\u00E8fon:',\n  motive: 'Motiu de consulta:',\n  comments: 'Missatge:',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if contact.name|length %}\n        {{ languageSheet.name }} {{ contact.name }}<br>\n      {% endif %}\n      {% if contact.email|length %}\n        {{ languageSheet.email }} {{ contact.email }}<br>\n      {% endif %}\n      {% if contact.phone|length %}\n        {{ languageSheet.phone }} {{ contact.phone }}<br>\n      {% endif %}\n      {% if contact.motive|length %}\n        {{ languageSheet.motive }} {{ contact.motive }}<br>\n      {% endif %}\n      {% if contact.comments|length %}\n        {{ languageSheet.comments }} {{ contact.comments }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "{{ general.ecommerceName }} - Consulta sobre producte",
+            html: "\n{% set languageSheet = {\n  premessage: 'Consulta sobre producte',\n  name: 'Nom:',\n  email: 'Email:',\n  phone: 'Tel\u00E8fon:',\n  comments: 'Missatge:',\n  productName: 'Nom del producte:',\n  productSku: 'Refer\u00E8ncia del producte:',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if data.name|length %}\n        {{ languageSheet.name }} {{ data.name }}<br>\n      {% endif %}\n      {% if data.email|length %}\n        {{ languageSheet.email }} {{ data.email }}<br>\n      {% endif %}\n      {% if data.phone|length %}\n        {{ languageSheet.phone }} {{ data.phone }}<br>\n      {% endif %}\n      {% if data.comments|length %}\n        {{ languageSheet.comments }} {{ data.comments }}<br><br>\n      {% endif %}\n      {% if data.product.name|length %}\n        {{ languageSheet.productName }} {{ data.product.name }}<br>\n      {% endif %}\n      {% if data.product.sku|length %}\n        {{ languageSheet.productSku }} {{ data.product.sku }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Comanda rebuda') : ('Confirmació de comanda') }} {{ sales.documentNumber }}",
+            html: "\n{% if sales.reserve %}\n  {% set languageSheet = {\n    premessage: 'Comanda rebuda',\n    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Hem rebut la teva comanda, al haver-hi algun producte per enc\u00E0rrec la tenim pendent de revisi\u00F3.',\n    messageBody2: 'Si tot \u00E9s correcte rebr\u00E0s un correu autom\u00E0tic de confirmaci\u00F3.',\n    messageBody3: 'Si tenim algun dubte ens posarem en contacte amb tu.',\n    messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n  } %}\n{% else %}\n  {% set languageSheet = {\n    premessage: 'Confirmaci\u00F3 de comanda',\n    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Et confirmem que la teva comanda ha estat processada correctament.',\n    messageBody2: \"Podr\u00E0s trobar aquesta comanda en el fitxer PDF que s'adjunta.\",\n    messageBody3: 'Gr\u00E0cies per comprar a <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n    messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n  } %}\n{% endif %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {% if sales.reserve %}\n        {# do nothing #}\n      {% else %}\n        {% if sales.paymentSystem.message|length %}\n          {{ sales.paymentSystem.message }}<br><br>\n        {% endif %}\n      {% endif %}\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "{{ general.ecommerceName }} - Comanda no completada",
+            html: "\n{% set languageSheet = {\n  premessage: \"Informaci\u00F3 de la comanda no completada\",\n  messageHeader: 'Hola ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',\n  messageBody1: 'A la teva ultima visita a la nostra botiga, vas afegir els seg\u00FCents productes a la cistella de la compra, per\u00F2 no has completat la comanda.',\n  messageBody2: 'Fes clic <a target=\"_blank\" href=\"' ~ abandonedCart.link ~ '\" style=\"color: #000;\">aqu\u00ED</a> si desitges recuperar la teva comanda.',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "{{ general.ecommerceName }} - Verificació de correu",
+            html: "\n{% set languageSheet = {\n  premessage: \"Verificaci\u00F3 de correu\",\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Gr\u00E0cies per registrar-te a ' ~ general.ecommerceUrl ~ '. Si us plau, activa el teu compte fent clic <a href=\"' ~ user.verifyAccountLink ~ '\" style=\"color: #000;\">aqu\u00ED</a>.',\n  messageBody2: \"Esperem veure't aviat a \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br><br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "{{ general.ecommerceName }} - Activació del compte",
+            html: "\n{% set languageSheet = {\n  premessage: 'Activaci\u00F3 del compte',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Et notifiquem que el teu compte a ' ~ general.ecommerceUrl ~ ' ha sigut activat correctament.',\n  messageBody2: 'Per veure les teves dades i tota la informaci\u00F3 referent al teu compte accedeix a trav\u00E9s del panell de control: <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">Editar el teu perfil</a>',\n  messageBody3: \"Esperem veure't aviat a \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "{{ general.ecommerceName }} - Estoc disponible",
+            html: "\n{% set languageSheet = {\n  premessage: 'Estoc disponible del producte <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"L'article que tant vol\u00EDes ja est\u00E0 disponible!\",\n  messageBody2: \"Volem recordar-te que aquest email aporta informaci\u00F3 orientativa sobre la disponibilitat d'aquest art\u00EDcle i depen de molts factors (persones interesades, unitats disponibles).\",\n  messageBody3: \"Hem enviat aquest email a tots els clients interessats en l'art\u00EDcle, per tant es posible que s'esgoti molt aviat.\",\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "{{ general.ecommerceName }} - Subscripció de estoc",
+            html: "\n{% set languageSheet = {\n  premessage: 'Subscripci\u00F3 de estoc del producte <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"T'has subscrit als avisos de stock de \" ~ data.product.name,\n  messageBody2: \"En cas de que tornem a rebre aquest art\u00EDcle t'avisarem d'inmediat per a que no se t'escapi.\",\n  messageSignature: 'Atentament, l'equip de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-chi.ts":
+/*!*************************************************!*\
+  !*** ./src/app/data/beyond/app-language-chi.ts ***!
+  \*************************************************/
+/*! exports provided: LANGUAGE_CHI */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_CHI", function() { return LANGUAGE_CHI; });
+// v4 file template
+var LANGUAGE_CHI = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-de.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-de.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_DE */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_DE", function() { return LANGUAGE_DE; });
+// v4 file template
+var LANGUAGE_DE = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-en.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-en.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_EN */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_EN", function() { return LANGUAGE_EN; });
+// v4 file template
+var LANGUAGE_EN = {
+    header: {
+        html: "\n<table width=\"100%\" bgcolor=\"#fff\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color: #fff; padding-bottom: 0px;\">\n  <tr>\n    <td>\n    <!--[if (gte mso 9)|(IE)]>\n    <table width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n        <td>\n    <![endif]-->\n    <table bgcolor=\"#fff\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\">\n      <tr>\n          <td bgcolor=\"#fff\" style=\"padding: 20px;\">\n          <table width=\"100%\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"text-align: center;\">\n            <tr>\n              <td>\n                <a href=\"{{ general.ecommerceURL }}\">\n                  <img src=\"{{ general.ecommerceLogo }}\" width=\"210\" height=\"auto\" border=\"0\" alt=\"{{ general.ecommerceName }}\" style=\"height: auto;\" />\n                </a>\n              </td>\n            </tr>\n          </table>\n        </td>\n      </tr>",
+    },
+    footer: {
+        html: "\n{% set languageSheet = {\n  moreInfo: 'For more information, read our <a href=\"' ~ general.privacyPolicyLink ~ '\">privacy policy</a> and <a href=\"' ~ general.termsOfUseLink ~ '\">terms of use</a>.'\n} %}\n        <tr>\n          <td bgcolor=\"#fff\" style=\"background-color: #fff; padding: 20px 20px 20px 20px;\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n              {% set pages = general.getPages(501) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"10\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left;\">\n                            <a href=\"{{ page.link }}\" style=\"padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;\" target=\"{{ page.target }}\">{{ page.name }}</a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set banners = general.getBanners(502) %}\n              {% if banners|length %}\n                <tr>\n                  <td align=\"center\" style=\"padding: 12px 0 12px 0px;\">\n                    <table border=\"0\" cellspacing=\"8\" cellpadding=\"0\">\n                      <tr>\n                        {% for banner in banners %}\n                          <td width=\"30\" style=\"text-align: left;\">\n                            <a href=\"{{ banner.link }}\">\n                              <img src=\"{{ banner.image }}\" width=\"30\" height=\"auto\" alt=\"{{ banner.alt }}\" border=\"0\" style=\"height: auto;\" />\n                            </a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(503) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">\n                            <span style=\"color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">{{ page.content }}</span>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(504) %}\n              {% if pages|length %}\n                <tr>\n                  {% for page in pages %}\n                    <td align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;\">{{ page.content }}</td>\n                  {% endfor %}\n                </tr>\n              {% endif %}\n              <tr>\n                <td align=\"center\" heigth=\"50\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;\">\n                  {{ languageSheet.moreInfo }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n      <!--[if (gte mso 9)|(IE)]>\n          </td>\n        </tr>\n      </table>\n      <![endif]-->\n    </td>\n  </tr>\n  <tr>\n    <td align=\"left\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">\n      <span style=\"color: #000; font-size: 10px;\">&nbsp;</span>\n    </td>\n  </tr>\n</table>",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "{{ general.ecommerceName }} - Thank you for signup",
+            html: "\n{% set languageSheet = {\n  premessage: 'Welcome to ' ~ general.ecommerceName ~ '!',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'We are pleased to inform you that your customer account in <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a> has been successfully created.',\n  messageBody2: 'Thanks to your customer account now you can update your profile and password, view your order history and other details that may be of your interest.',\n  messageBody3: \"We hope to see you soon in \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "{{ general.ecommerceName }} - Account deleted",
+            html: "\n{% set languageSheet = {\n  premessage: 'Confirmation deleted account',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody: 'As requested during your recent visit to ' ~ general.ecommerceName ~ \", we confirm that your user account \" ~ user.email ~ \" has been removed from our database.\",\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "{{ general.ecommerceName }} - Password recovery",
+            html: "\n{% set languageSheet = {\n  premessage: 'Password recovery',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"As requested during your recent visit to \" ~ general.ecommerceName ~ \", here's your address to access the password recovery zone:\",\n  messageBody2: '<a href=\"' ~ user.lostPasswordLink ~ '\" style=\"color:#000\">Click here</a>',\n  messageBody3: 'Este enlace solamente ser\u00E1 v\u00E1lido durante las 24 horas siguientes al momento de su env\u00EDo.',\n  messageBody4: \"We hope to see you soon in \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageBody4 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "{{ general.ecommerceName }} - Password change",
+            html: "\n{% set languageSheet = {\n  premessage: 'Password change',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'This email is to inform you that your customer account password has been changed.',\n  messageBody2: \"Be sure to note your credentials in a safe place for future reference.\",\n  messageBody3: \"We hope to see you soon in \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} recommends their favourite products",
+            html: "\n{% set languageSheet = {\n  premessage: 'Wishlist recommend',\n  messageHeader1: \"Your friend \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") sends you this product that may be of interest for you.\",\n  messageBody: 'If you need more information about this product you can contact us on <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team',\n  recommendedProducts: 'Recommended products',\n  product: 'Product',\n  price: 'Price',\n  comments: 'Message from your friend:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} recommends you a product",
+            html: "\n{% set languageSheet = {\n  premessage: 'Product recommendation',\n  messageHeader1: \"Your friend \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") thinks this item could be of your interest.\",\n  messageBody: 'If you need further information about this item you can contact us at <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team',\n  recommendedProducts: 'Recommended products',\n  product: 'Product',\n  price: 'Price',\n  comments: 'Message from your friend:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "{{ general.ecommerceName }} - Contact form",
+            html: "\n{% set languageSheet = {\n  premessage: 'Contact form',\n  name: 'Name:',\n  email: 'Email:',\n  phone: 'Phone:',\n  motive: 'Query motive:',\n  comments: 'Message:',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if contact.name|length %}\n        {{ languageSheet.name }} {{ contact.name }}<br>\n      {% endif %}\n      {% if contact.email|length %}\n        {{ languageSheet.email }} {{ contact.email }}<br>\n      {% endif %}\n      {% if contact.phone|length %}\n        {{ languageSheet.phone }} {{ contact.phone }}<br>\n      {% endif %}\n      {% if contact.motive|length %}\n        {{ languageSheet.motive }} {{ contact.motive }}<br>\n      {% endif %}\n      {% if contact.comments|length %}\n        {{ languageSheet.comments }} {{ contact.comments }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "{{ general.ecommerceName }} - Product enquiry",
+            html: "\n{% set languageSheet = {\n  premessage: 'Product enquiry',\n  name: 'Name:',\n  email: 'Email:',\n  phone: 'Phone:',\n  comments: 'Message:',\n  productName: 'Product name:',\n  productSku: 'Product reference:',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if data.name|length %}\n        {{ languageSheet.name }} {{ data.name }}<br>\n      {% endif %}\n      {% if data.email|length %}\n        {{ languageSheet.email }} {{ data.email }}<br>\n      {% endif %}\n      {% if data.phone|length %}\n        {{ languageSheet.phone }} {{ data.phone }}<br>\n      {% endif %}\n      {% if data.comments|length %}\n        {{ languageSheet.comments }} {{ data.comments }}<br><br>\n      {% endif %}\n      {% if data.product.name|length %}\n        {{ languageSheet.productName }} {{ data.product.name }}<br>\n      {% endif %}\n      {% if data.product.sku|length %}\n        {{ languageSheet.productSku }} {{ data.product.sku }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Order received') : ('Order confirmation') }} {{ sales.documentNumber }}",
+            html: "\n{% if sales.reserve %}\n  {% set languageSheet = {\n    premessage: 'Order received',\n    messageHeader: 'Hello ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'We have received your order, as we have some products on order we have it pending review.',\n    messageBody2: 'If everything is correct, you will receive an automatic confirmation email.',\n    messageBody3: 'If we have any questions we will contact you.',\n    messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n  } %}\n{% else %}\n  {% set languageSheet = {\n    premessage: 'Order confirmation',\n    messageHeader: 'Hello ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'We confirm your order has been processed correctly.',\n    messageBody2: \"Please find your order attached as a PDF file.\",\n    messageBody3: 'Thank you for shopping at <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n    messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n  } %}\n{% endif %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {% if sales.reserve %}\n        {# do nothing #}\n      {% else %}\n        {% if sales.paymentSystem.message|length %}\n          {{ sales.paymentSystem.message }}<br><br>\n        {% endif %}\n      {% endif %}\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "{{ general.ecommerceName }} - Incomplete order",
+            html: "\n{% set languageSheet = {\n  premessage: \"Incomplete order information\",\n  messageHeader: 'Hello ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',\n  messageBody1: 'In your last visit to our store %%ecommerceName%% you placed the following item(s) in the shopping cart, but you did not complete the order.',\n  messageBody2: 'Click <a target=\"_blank\" href=\"' ~ abandonedCart.link ~ '\" style=\"color: #000;\">here</a> to recover your cart.',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "{{ general.ecommerceName }} - Email verification",
+            html: "\n{% set languageSheet = {\n  premessage: \"Email verification\",\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Thanks for registering on ' ~ general.ecommerceUrl ~ '. Please, follow the link in order to verify your e-mail account: <a href=\"' ~ user.verifyAccountLink ~ '\" style=\"color: #000;\">Click here</a>.',\n  messageBody2: \"We hope to see you soon in \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br><br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "{{ general.ecommerceName }} - Account activation",
+            html: "\n{% set languageSheet = {\n  premessage: 'Account activation',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'We are pleased to inform you that your customer account in ' ~ general.ecommerceUrl ~ ' has been successfully activated',\n  messageBody2: 'You can view and modify all your details at any time by accessing this control panel: <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">Edit your profile</a>',\n  messageBody3: \"We hope to see you soon in \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "{{ general.ecommerceName }} - Stock available",
+            html: "\n{% set languageSheet = {\n  premessage: 'Stock available of product <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"The article that you want so much is already available!\",\n  messageBody2: \"We would like to remind you that this email provides guidance on the availability of this article and depends on many factors (people interested, available units).\",\n  messageBody3: \"We have sent this email to all the customers interested in the article, so it is possible to be exhausted very soon.\",\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "{{ general.ecommerceName }} - Stock subscription",
+            html: "\n{% set languageSheet = {\n  premessage: 'Stock subscription of product <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"You have subscribed to the \" ~ data.product.name ~ \" stock notices.\",\n  messageBody2: \"In case we receive this article again we will notify you immediately.\",\n  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-es.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-es.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_ES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_ES", function() { return LANGUAGE_ES; });
+// v4 file template
+var LANGUAGE_ES = {
+    header: {
+        html: "\n<table width=\"100%\" bgcolor=\"#fff\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color: #fff; padding-bottom: 0px;\">\n  <tr>\n    <td>\n    <!--[if (gte mso 9)|(IE)]>\n    <table width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n        <td>\n    <![endif]-->\n    <table bgcolor=\"#fff\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\">\n      <tr>\n          <td bgcolor=\"#fff\" style=\"padding: 20px;\">\n          <table width=\"100%\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"text-align: center;\">\n            <tr>\n              <td>\n                <a href=\"{{ general.ecommerceURL }}\">\n                  <img src=\"{{ general.ecommerceLogo }}\" width=\"210\" height=\"auto\" border=\"0\" alt=\"{{ general.ecommerceName }}\" style=\"height: auto;\" />\n                </a>\n              </td>\n            </tr>\n          </table>\n        </td>\n      </tr>",
+    },
+    footer: {
+        html: "\n{% set languageSheet = {\n  moreInfo: 'Para obtener m\u00E1s informaci\u00F3n, lea nuestra <a href=\"' ~ general.privacyPolicyLink ~ '\">pol\u00EDtica de privacidad</a> y <a href=\"' ~ general.termsOfUseLink ~ '\">t\u00E9rminos de uso</a>.'\n} %}\n        <tr>\n          <td bgcolor=\"#fff\" style=\"background-color: #fff; padding: 20px 20px 20px 20px;\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n              {% set pages = general.getPages(501) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"10\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left;\">\n                            <a href=\"{{ page.link }}\" style=\"padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;\" target=\"{{ page.target }}\">{{ page.name }}</a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set banners = general.getBanners(502) %}\n              {% if banners|length %}\n                <tr>\n                  <td align=\"center\" style=\"padding: 12px 0 12px 0px;\">\n                    <table border=\"0\" cellspacing=\"8\" cellpadding=\"0\">\n                      <tr>\n                        {% for banner in banners %}\n                          <td width=\"30\" style=\"text-align: left;\">\n                            <a href=\"{{ banner.link }}\">\n                              <img src=\"{{ banner.image }}\" width=\"30\" height=\"auto\" alt=\"{{ banner.alt }}\" border=\"0\" style=\"height: auto;\" />\n                            </a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(503) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">\n                            <span style=\"color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">{{ page.content }}</span>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(504) %}\n              {% if pages|length %}\n                <tr>\n                  {% for page in pages %}\n                    <td align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;\">{{ page.content }}</td>\n                  {% endfor %}\n                </tr>\n              {% endif %}\n              <tr>\n                <td align=\"center\" heigth=\"50\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;\">\n                  {{ languageSheet.moreInfo }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n      <!--[if (gte mso 9)|(IE)]>\n          </td>\n        </tr>\n      </table>\n      <![endif]-->\n    </td>\n  </tr>\n  <tr>\n    <td align=\"left\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">\n      <span style=\"color: #000; font-size: 10px;\">&nbsp;</span>\n    </td>\n  </tr>\n</table>",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "{{ general.ecommerceName }} - Gracias por darte de alta",
+            html: "\n{% set languageSheet = {\n  premessage: '\u00A1Bienvenido/a a ' ~ general.ecommerceName ~ '!',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Nos complace confirmarte la creaci\u00F3n de tu cuenta de cliente en <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageBody2: 'Gracias a tu cuenta de cliente podr\u00E1s actualizar tu perfil y contrase\u00F1a, consultar tu historial de pedidos y otra informaci\u00F3n de tu inter\u00E9s.',\n  messageBody3: \"Esperamos verte pronto en \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "{{ general.ecommerceName }} - Baja de usuario",
+            html: "\n{% set languageSheet = {\n  premessage: 'Confirmaci\u00F3n de cuenta eliminada',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody: 'Conforme a lo solicitado durante tu reciente visita a ' ~ general.ecommerceName ~ \", confirmamos que tu cuenta de usuario \" ~ user.email ~ \" ha sido eliminada de nuestra base de datos.\",\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "{{ general.ecommerceName }} - Recordar contraseña",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recordar contrase\u00F1a',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Conforme a lo solicitado durante tu reciente visita a \" ~ general.ecommerceName ~ \", aqu\u00ED tienes tu direcci\u00F3n de acceso a la zona de recuperaci\u00F3n de contrase\u00F1a:\",\n  messageBody2: '<a href=\"' ~ user.lostPasswordLink ~ '\" style=\"color:#000\">Click aqu\u00ED para recuperar contrase\u00F1a</a>',\n  messageBody3: 'Este enlace solamente ser\u00E1 v\u00E1lido durante las 24 horas siguientes al momento de su env\u00EDo.',\n  messageBody4: \"Esperamos verte pronto en \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageBody4 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "{{ general.ecommerceName }} - Cambio de contraseña",
+            html: "\n{% set languageSheet = {\n  premessage: 'Cambio de contrase\u00F1a',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Te confirmamos que tu contrase\u00F1a ha sido modificada.',\n  messageBody2: \"Aseg\u00FArate de anotar tus credenciales en un lugar seguro para futuras referencias.\",\n  messageBody3: \"Esperamos verte pronto en \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} te recomienda sus productos favoritos",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recomendaci\u00F3n de favoritos',\n  messageHeader1: \"Tu amigo/a \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") te env\u00EDa estos productos que pueden resultarte de inter\u00E9s.\",\n  messageBody: 'Si necesitas m\u00E1s informaci\u00F3n acerca de este producto puedes contactar con nosotros en <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName,\n  recommendedProducts: 'Productos recomendados',\n  product: 'Producto',\n  price: 'Precio',\n  comments: 'Mensaje de tu amigo/a:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} te recomienda un producto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recomendaci\u00F3n de producto',\n  messageHeader1: \"Tu amigo/a \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") te env\u00EDa este producto que puede resultarte de inter\u00E9s.\",\n  messageBody: 'Si necesitas m\u00E1s informaci\u00F3n acerca de este producto puedes contactar con nosotros en <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName,\n  recommendedProducts: 'Productos recomendados',\n  product: 'Producto',\n  price: 'Precio',\n  comments: 'Mensaje de tu amigo/a:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "{{ general.ecommerceName }} - Formulario de contacto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Formulario de contacto',\n  name: 'Nombre:',\n  email: 'Email:',\n  phone: 'Tel\u00E9fono:',\n  motive: 'Motivo de consulta:',\n  comments: 'Mensaje:',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if contact.name|length %}\n        {{ languageSheet.name }} {{ contact.name }}<br>\n      {% endif %}\n      {% if contact.email|length %}\n        {{ languageSheet.email }} {{ contact.email }}<br>\n      {% endif %}\n      {% if contact.phone|length %}\n        {{ languageSheet.phone }} {{ contact.phone }}<br>\n      {% endif %}\n      {% if contact.motive|length %}\n        {{ languageSheet.motive }} {{ contact.motive }}<br>\n      {% endif %}\n      {% if contact.comments|length %}\n        {{ languageSheet.comments }} {{ contact.comments }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "{{ general.ecommerceName }} - Consulta sobre producto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Consulta sobre producto',\n  name: 'Nombre:',\n  email: 'Email:',\n  phone: 'Tel\u00E9fono:',\n  comments: 'Mensaje:',\n  productName: 'Nombre de producto:',\n  productSku: 'Referencia de producto:',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if data.name|length %}\n        {{ languageSheet.name }} {{ data.name }}<br>\n      {% endif %}\n      {% if data.email|length %}\n        {{ languageSheet.email }} {{ data.email }}<br>\n      {% endif %}\n      {% if data.phone|length %}\n        {{ languageSheet.phone }} {{ data.phone }}<br>\n      {% endif %}\n      {% if data.comments|length %}\n        {{ languageSheet.comments }} {{ data.comments }}<br><br>\n      {% endif %}\n      {% if data.product.name|length %}\n        {{ languageSheet.productName }} {{ data.product.name }}<br>\n      {% endif %}\n      {% if data.product.sku|length %}\n        {{ languageSheet.productSku }} {{ data.product.sku }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Pedido recibido') : ('Confirmación de pedido') }} {{ sales.documentNumber }}",
+            html: "\n{% if sales.reserve %}\n  {% set languageSheet = {\n    premessage: 'Pedido recibido',\n    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Hemos recibido tu pedido, al tener alg\u00FAn producto por encargo lo tenemos pendiente de revisi\u00F3n.',\n    messageBody2: 'Si todo es correcto, recibir\u00E1s un correo autom\u00E1tico de confirmaci\u00F3n.',\n    messageBody3: 'Si tenemos alguna duda nos pondremos en contacto contigo.',\n    messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n  } %}\n{% else %}\n  {% set languageSheet = {\n    premessage: 'Confirmaci\u00F3n de pedido',\n    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Te confirmamos que tu pedido ha sido procesado correctamente.',\n    messageBody2: \"Podr\u00E1s encontrar este pedido en el archivo PDF adjunto.\",\n    messageBody3: 'Gracias por comprar en <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n    messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n  } %}\n{% endif %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {% if sales.reserve %}\n        {# do nothing #}\n      {% else %}\n        {% if sales.paymentSystem.message|length %}\n          {{ sales.paymentSystem.message }}<br><br>\n        {% endif %}\n      {% endif %}\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "{{ general.ecommerceName }} - Pedido incompleto",
+            html: "\n{% set languageSheet = {\n  premessage: \"Informaci\u00F3n del pedido incompleto\",\n  messageHeader: 'Hola ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',\n  messageBody1: 'En tu \u00FAltima visita a nuestra tienda, a\u00F1adiste los siguientes productos al carro de la compra, pero no completaste el pedido.',\n  messageBody2: 'Haz clic <a target=\"_blank\" href=\"' ~ abandonedCart.link ~ '\" style=\"color: #000;\">aqu\u00ED</a> si deseas recuperar tu pedido.',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "{{ general.ecommerceName }} - Verificación de correo",
+            html: "\n{% set languageSheet = {\n  premessage: \"Verificaci\u00F3n de correo\",\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Gracias por registrarte en ' ~ general.ecommerceUrl ~ '. Por favor activa tu cuenta clicando <a href=\"' ~ user.verifyAccountLink ~ '\" style=\"color: #000;\">aqu\u00ED</a>.',\n  messageBody2: \"Esperamos verte pronto en \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br><br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "{{ general.ecommerceName }} - Activación de cuenta",
+            html: "\n{% set languageSheet = {\n  premessage: 'Activaci\u00F3n de cuenta',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Te notificamos que tu cuenta en ' ~ general.ecommerceUrl ~ ' ha sido activada correctamente.',\n  messageBody2: 'Para ver tus datos y toda la informaci\u00F3n referente a tu cuenta accede a trav\u00E9s del panel de control: <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">Editar tu perfil</a>',\n  messageBody3: \"Esperamos verte pronto en \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "{{ general.ecommerceName }} - Stock disponible",
+            html: "\n{% set languageSheet = {\n  premessage: 'Stock disponible del producto <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"\u00A1El art\u00EDculo que tanto quer\u00EDas ya est\u00E1 disponible!\",\n  messageBody2: \"Queremos recordarte que este email aporta informaci\u00F3n orientativa sobre la disponibilidad de este art\u00EDculo y depende de muchos factores (personas interesadas, unidades disponibles).\",\n  messageBody3: \"Hemos enviado este email a todos los clientes interesados en este art\u00EDculo, por lo que es posible que se agote muy pronto.\",\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "{{ general.ecommerceName }} - Subscripción de stock",
+            html: "\n{% set languageSheet = {\n  premessage: 'Suscripci\u00F3n de stock del producto <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Te has suscrito a los avisos de stock de \" ~ data.product.name,\n  messageBody2: \"En caso de que volvamos a recibir este art\u00EDculo te avisaremos de inmediato para que no se te escape.\",\n  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-eu.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-eu.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_EU */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_EU", function() { return LANGUAGE_EU; });
+// v4 file template
+var LANGUAGE_EU = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-fr.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-fr.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_FR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_FR", function() { return LANGUAGE_FR; });
+// v4 file template
+var LANGUAGE_FR = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-hu.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-hu.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_HU */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_HU", function() { return LANGUAGE_HU; });
+// v4 file template
+var LANGUAGE_HU = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-it.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-it.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_IT */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_IT", function() { return LANGUAGE_IT; });
+// v4 file template
+var LANGUAGE_IT = {
+    header: {
+        html: "\n<table width=\"100%\" bgcolor=\"#fff\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color: #fff; padding-bottom: 0px;\">\n  <tr>\n    <td>\n    <!--[if (gte mso 9)|(IE)]>\n    <table width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n        <td>\n    <![endif]-->\n    <table bgcolor=\"#fff\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\">\n      <tr>\n          <td bgcolor=\"#fff\" style=\"padding: 20px;\">\n          <table width=\"100%\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"text-align: center;\">\n            <tr>\n              <td>\n                <a href=\"{{ general.ecommerceURL }}\">\n                  <img src=\"{{ general.ecommerceLogo }}\" width=\"210\" height=\"auto\" border=\"0\" alt=\"{{ general.ecommerceName }}\" style=\"height: auto;\" />\n                </a>\n              </td>\n            </tr>\n          </table>\n        </td>\n      </tr>",
+    },
+    footer: {
+        html: "\n{% set languageSheet = {\n  moreInfo: 'Per ulteriori informazioni, si prega di leggere la nostra <a href=\"' ~ general.privacyPolicyLink ~ '\">informativa sulla privacy</a> y <a href=\"' ~ general.termsOfUseLink ~ '\">condizioni d'uso</a>.'\n} %}\n        <tr>\n          <td bgcolor=\"#fff\" style=\"background-color: #fff; padding: 20px 20px 20px 20px;\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n              {% set pages = general.getPages(501) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"10\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left;\">\n                            <a href=\"{{ page.link }}\" style=\"padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;\" target=\"{{ page.target }}\">{{ page.name }}</a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set banners = general.getBanners(502) %}\n              {% if banners|length %}\n                <tr>\n                  <td align=\"center\" style=\"padding: 12px 0 12px 0px;\">\n                    <table border=\"0\" cellspacing=\"8\" cellpadding=\"0\">\n                      <tr>\n                        {% for banner in banners %}\n                          <td width=\"30\" style=\"text-align: left;\">\n                            <a href=\"{{ banner.link }}\">\n                              <img src=\"{{ banner.image }}\" width=\"30\" height=\"auto\" alt=\"{{ banner.alt }}\" border=\"0\" style=\"height: auto;\" />\n                            </a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(503) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">\n                            <span style=\"color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">{{ page.content }}</span>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(504) %}\n              {% if pages|length %}\n                <tr>\n                  {% for page in pages %}\n                    <td align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;\">{{ page.content }}</td>\n                  {% endfor %}\n                </tr>\n              {% endif %}\n              <tr>\n                <td align=\"center\" heigth=\"50\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;\">\n                  {{ languageSheet.moreInfo }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n      <!--[if (gte mso 9)|(IE)]>\n          </td>\n        </tr>\n      </table>\n      <![endif]-->\n    </td>\n  </tr>\n  <tr>\n    <td align=\"left\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">\n      <span style=\"color: #000; font-size: 10px;\">&nbsp;</span>\n    </td>\n  </tr>\n</table>",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "{{ general.ecommerceName }} - Grazie per la registrazione",
+            html: "\n{% set languageSheet = {\n  premessage: 'Benvenuti a ' ~ general.ecommerceName ~ '!',\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Siamo lieti di confermare che il tuo account cliente su <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageBody2: \"Grazie al tuo account cliente potrai aggiornare il tuo profilo e la tua password, consultare il tuo storico ordini ed altre informazioni utili.\",\n  messageBody3: \"Ci auguriamo di vederti presto su  \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "{{ general.ecommerceName }} - Cancellazione dell'utente",
+            html: "\n{% set languageSheet = {\n  premessage: 'Conferma account eliminato',\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody: 'Come da te richiesto durante la tua ultima visita su ' ~ general.ecommerceName ~ \", ti confermiamo che l'account utente \" ~ user.email ~ \" \u00E8 stato eliminato dal nostro database.\",\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "{{ general.ecommerceName }} - Ricorda la password",
+            html: "\n{% set languageSheet = {\n  premessage: 'Ricorda la password',\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Come da te richiesto durante la tua ultima visita su \" ~ general.ecommerceName ~ \", ti inviamo il link di accesso alla sezione dedicata al recupero della password:\",\n  messageBody2: '<a href=\"' ~ user.lostPasswordLink ~ '\" style=\"color:#000\">Clicca qui per recuperare la password</a>',\n  messageBody3: 'Questo link sar&agrave; attivo solamente per le 24 ore successive al suo invio.',\n  messageBody4: \"Ci auguriamo di vederti presto su  \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageBody4 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "{{ general.ecommerceName }} - Cambio della password",
+            html: "\n{% set languageSheet = {\n  premessage: 'Cambio della password',\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Ti confermiamo che la tua password \u00E8 stata modificata.\",\n  messageBody2: \"Accertati di conservare le credenziali in un luogo sicuro per gli accessi futuri.\",\n  messageBody3: \"Ci auguriamo di vederti presto su  \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} raccomanda i suoi prodotti preferiti",
+            html: "\n{% set languageSheet = {\n  premessage: 'Raccomandazione sui preferiti',\n  messageHeader1: \"Il tuo amico/a \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") ti invia questo prodotto a cui potresti essere interessato.\",\n  messageBody: 'Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName,\n  recommendedProducts: 'Prodotti raccomandati',\n  product: 'Prodotto',\n  price: 'Prezzo',\n  comments: 'Messaggio del tuo amico:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} raccomanda un prodotto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Raccomandazione di prodotto',\n  messageHeader1: \"Il tuo amico/a \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") ti invia questo prodotto a cui potresti essere interessato.\",\n  messageBody: 'Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName,\n  recommendedProducts: 'Prodotti raccomandati',\n  product: 'Prodotto',\n  price: 'Prezzo',\n  comments: 'Messaggio del tuo amico:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "{{ general.ecommerceName }} - Modulo di contatto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Modulo di contatto',\n  name: 'Nome:',\n  email: 'Email:',\n  phone: 'Telefono:',\n  motive: 'Motivo della richiesta:',\n  comments: 'Messaggio:',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if contact.name|length %}\n        {{ languageSheet.name }} {{ contact.name }}<br>\n      {% endif %}\n      {% if contact.email|length %}\n        {{ languageSheet.email }} {{ contact.email }}<br>\n      {% endif %}\n      {% if contact.phone|length %}\n        {{ languageSheet.phone }} {{ contact.phone }}<br>\n      {% endif %}\n      {% if contact.motive|length %}\n        {{ languageSheet.motive }} {{ contact.motive }}<br>\n      {% endif %}\n      {% if contact.comments|length %}\n        {{ languageSheet.comments }} {{ contact.comments }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "{{ general.ecommerceName }} - Consulta sobre producto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Consulta sobre producto',\n  name: 'Nome:',\n  email: 'Email:',\n  phone: 'Telefono:',\n  comments: 'Messaggio:',\n  productName: 'Nome Prodotto:',\n  productSku: 'Codice Prodotto:',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if data.name|length %}\n        {{ languageSheet.name }} {{ data.name }}<br>\n      {% endif %}\n      {% if data.email|length %}\n        {{ languageSheet.email }} {{ data.email }}<br>\n      {% endif %}\n      {% if data.phone|length %}\n        {{ languageSheet.phone }} {{ data.phone }}<br>\n      {% endif %}\n      {% if data.comments|length %}\n        {{ languageSheet.comments }} {{ data.comments }}<br><br>\n      {% endif %}\n      {% if data.product.name|length %}\n        {{ languageSheet.productName }} {{ data.product.name }}<br>\n      {% endif %}\n      {% if data.product.sku|length %}\n        {{ languageSheet.productSku }} {{ data.product.sku }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Ordine ricevuto') : ('Conferma d\'ordine') }} {{ sales.documentNumber }}",
+            html: "\n{% if sales.reserve %}\n  {% set languageSheet = {\n    premessage: 'Ordine ricevuto',\n    messageHeader: 'Ciao ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Abbiamo ricevuto il suo ordine, dato che abbiamo alcuni prodotti in ordine lo abbiamo in attesa di revisione.',\n    messageBody2: 'Se tutto \u00E8 corretto, riceverai un'e-mail di conferma automatica.',\n    messageBody3: 'Se abbiamo delle domande vi contatteremo.',\n    messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n  } %}\n{% else %}\n  {% set languageSheet = {\n    premessage: 'Conferma d'ordine',\n    messageHeader: 'Ciao ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Confermiamo che il suo ordine \u00E8 stato elaborato correttamente.',\n    messageBody2: \"Potete trovare questo ordine nel file PDF allegato.\",\n    messageBody3: 'Grazie per aver fatto acquisti da <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n    messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n  } %}\n{% endif %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {% if sales.reserve %}\n        {# do nothing #}\n      {% else %}\n        {% if sales.paymentSystem.message|length %}\n          {{ sales.paymentSystem.message }}<br><br>\n        {% endif %}\n      {% endif %}\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "{{ general.ecommerceName }} - Ordine incompleto",
+            html: "\n{% set languageSheet = {\n  premessage: \"Informazioni ordine incompleto\",\n  messageHeader: 'Ciao ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',\n  messageBody1: 'Durante la tua ultima visita al nostro negozio, hai aggiunto al carrello i seguenti prodotti, ma non hai completato l'ordine.',\n  messageBody2: 'Clicca <a target=\"_blank\" href=\"' ~ abandonedCart.link ~ '\" style=\"color: #000;\">qui</a> se desideri recuperare il tuo ordine.',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "{{ general.ecommerceName }} - Verifica dell\'indirizzo e-mail",
+            html: "\n{% set languageSheet = {\n  premessage: \"Verifica dell'indirizzo e-mail\",\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Grazie per esserti registrato su ' ~ general.ecommerceUrl ~ '. Per favore attiva il tuo account cliccando <a href=\"' ~ user.verifyAccountLink ~ '\" style=\"color: #000;\">qui</a>.',\n  messageBody2: \"Ci auguriamo di vederti presto su  \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br><br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "{{ general.ecommerceName }} - Attivazione dell'account",
+            html: "\n{% set languageSheet = {\n  premessage: \"Attivazione dell'account\",\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Ti informiamo che il tuo account su ' ~ general.ecommerceUrl ~ ' \u00E8 stato attivato correttamente.',\n  messageBody2: 'Per visualizzare i tuoi dati e tutte le informazioni relative al tuo account accedi tramite il pannello di controllo: <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">Modifica il tuo profilo</a>',\n  messageBody3: \"Ci auguriamo di vederti presto su  \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "{{ general.ecommerceName }} - Stock disponibile",
+            html: "\n{% set languageSheet = {\n  premessage: 'Disponibilit&agrave; del prodotto <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"L'articolo che tanto desideravi \u00E8 ora disponibile!\",\n  messageBody2: \"Ti ricordiamo che questo messaggio e-mail fornisce delle informazioni indicative riguardo alla disponibilit&agrave; dell'articolo e tale disponibilit&agrave; dipende da molti fattori (persone interessate, pezzi disponibili).\",\n  messageBody3: \"Questo messaggio \u00E8 stato inviato a tutti i clienti interessati a questo articolo, di conseguenza \u00E8 possibile che molto presto non sia pi&ugrave; disponibile.\",\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "{{ general.ecommerceName }} - Iscrizione all\'avviso di disponibilit&agrave;",
+            html: "\n{% set languageSheet = {\n  premessage: 'Iscrizione all'avviso di disponibilit&agrave; del prodotto <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Ti sei iscritto agli avvisi di disponibilit&agrave; del \" ~ data.product.name,\n  messageBody2: \"Nel caso in cui questo articolo fosse nuovamente disponibile ti avviseremo immediatamente per fare in modo che non ti sfugga.\",\n  messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-ja.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-ja.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_JA */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_JA", function() { return LANGUAGE_JA; });
+// v4 file template
+var LANGUAGE_JA = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-ko.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-ko.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_KO */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_KO", function() { return LANGUAGE_KO; });
+// v4 file template
+var LANGUAGE_KO = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-lo.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-lo.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_LO */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_LO", function() { return LANGUAGE_LO; });
+// v4 file template
+var LANGUAGE_LO = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-mn.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-mn.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_MN */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_MN", function() { return LANGUAGE_MN; });
+// v4 file template
+var LANGUAGE_MN = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-nl.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-nl.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_NL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_NL", function() { return LANGUAGE_NL; });
+// v4 file template
+var LANGUAGE_NL = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-pl.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-pl.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_PL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_PL", function() { return LANGUAGE_PL; });
+// v4 file template
+var LANGUAGE_PL = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-pt.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-pt.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_PT */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_PT", function() { return LANGUAGE_PT; });
+// v4 file template
+var LANGUAGE_PT = {
+    header: {
+        html: "\n<table width=\"100%\" bgcolor=\"#fff\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color: #fff; padding-bottom: 0px;\">\n  <tr>\n    <td>\n    <!--[if (gte mso 9)|(IE)]>\n    <table width=\"600\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\n      <tr>\n        <td>\n    <![endif]-->\n    <table bgcolor=\"#fff\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\">\n      <tr>\n          <td bgcolor=\"#fff\" style=\"padding: 20px;\">\n          <table width=\"100%\" align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"text-align: center;\">\n            <tr>\n              <td>\n                <a href=\"{{ general.ecommerceURL }}\">\n                  <img src=\"{{ general.ecommerceLogo }}\" width=\"210\" height=\"auto\" border=\"0\" alt=\"{{ general.ecommerceName }}\" style=\"height: auto;\" />\n                </a>\n              </td>\n            </tr>\n          </table>\n        </td>\n      </tr>",
+    },
+    footer: {
+        html: "\n{% set languageSheet = {\n  moreInfo: 'Para mais informa\u00E7\u00F5es, leia nossa <a href=\"' ~ general.privacyPolicyLink ~ '\">pol\u00EDtica de privacidade</a> e <a href=\"' ~ general.termsOfUseLink ~ '\">termos de uso</a>.'\n} %}\n        <tr>\n          <td bgcolor=\"#fff\" style=\"background-color: #fff; padding: 20px 20px 20px 20px;\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n              {% set pages = general.getPages(501) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"10\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left;\">\n                            <a href=\"{{ page.link }}\" style=\"padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;\" target=\"{{ page.target }}\">{{ page.name }}</a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set banners = general.getBanners(502) %}\n              {% if banners|length %}\n                <tr>\n                  <td align=\"center\" style=\"padding: 12px 0 12px 0px;\">\n                    <table border=\"0\" cellspacing=\"8\" cellpadding=\"0\">\n                      <tr>\n                        {% for banner in banners %}\n                          <td width=\"30\" style=\"text-align: left;\">\n                            <a href=\"{{ banner.link }}\">\n                              <img src=\"{{ banner.image }}\" width=\"30\" height=\"auto\" alt=\"{{ banner.alt }}\" border=\"0\" style=\"height: auto;\" />\n                            </a>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(503) %}\n              {% if pages|length %}\n                <tr>\n                  <td align=\"center\">\n                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                      <tr>\n                        {% for page in pages %}\n                          <td style=\"text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">\n                            <span style=\"color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;\">{{ page.content }}</span>\n                          </td>\n                        {% endfor %}\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              {% endif %}\n              {% set pages = general.getPages(504) %}\n              {% if pages|length %}\n                <tr>\n                  {% for page in pages %}\n                    <td align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;\">{{ page.content }}</td>\n                  {% endfor %}\n                </tr>\n              {% endif %}\n              <tr>\n                <td align=\"center\" heigth=\"50\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;\">\n                  {{ languageSheet.moreInfo }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n      <!--[if (gte mso 9)|(IE)]>\n          </td>\n        </tr>\n      </table>\n      <![endif]-->\n    </td>\n  </tr>\n  <tr>\n    <td align=\"left\" style=\"font-family: sans-serif; font-size: 14px; color: #ffffff;\">\n      <span style=\"color: #000; font-size: 10px;\">&nbsp;</span>\n    </td>\n  </tr>\n</table>",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "{{ general.ecommerceName }} - Obrigado por se registar",
+            html: "\n{% set languageSheet = {\n  premessage: 'Bem-vindo a ' ~ general.ecommerceName ~ '!',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Temos o prazer de confirmar a cria\u00E7\u00E3o da sua conta de cliente em <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageBody2: 'Recomendamos-lhe que guarde este e-mail com os seus dados de acesso \u00E0 nossa loja online, de maneira a que a sua pr\u00F3xima compra seja mais f\u00E1cil e r\u00E1pida.',\n  messageBody3: \"Esperamos v\u00EA-lo em breve em \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "{{ general.ecommerceName }} - Confirmação da conta eliminada",
+            html: "\n{% set languageSheet = {\n  premessage: 'Confirma\u00E7\u00E3o da conta eliminada',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody: 'Como solicitado durante a sua recente visita a ' ~ general.ecommerceName ~ \", confirmamos que a sua conta \" ~ user.email ~ \" foi eliminada da nossa base de dados.\",\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "{{ general.ecommerceName }} - Recordar palavra-passe",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recordar palavra-passe',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Como solicitado durante a sua recente visita a \" ~ general.ecommerceName ~ \", aqui est\u00E1 o seu endere\u00E7o de acesso \u00E0 \u00E1rea de recupera\u00E7\u00E3o de senha:\",\n  messageBody2: '<a href=\"' ~ user.lostPasswordLink ~ '\" style=\"color:#000\">Clique aqui para recuperar a senha</a>',\n  messageBody3: 'Este link s\u00F3 ser\u00E1 v\u00E1lido por 24 horas ap\u00F3s o momento de sua entrega.',\n  messageBody4: \"Esperamos v\u00EA-lo em breve em \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageBody4 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "{{ general.ecommerceName }} - Modificação de password",
+            html: "\n{% set languageSheet = {\n  premessage: 'Modifica\u00E7\u00E3o de password',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Confirmamos que a sua password foi modificada.',\n  messageBody2: \"Recomendamos-lhe que conserve este email com os seus dados para que a sua futura compra seja mais f\u00E1cil e r\u00E1pida.\",\n  messageBody3: \"Esperamos v\u00EA-lo em breve em \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color:#000\">' ~ general.ecommerceName ~ '</a>.',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} ele recomenda os seus produtos preferidos",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recomenda\u00E7\u00E3o da lista de desejos',\n  messageHeader1: \"O seu amigo \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") envia-lhe os seus produtos preferidos.\",\n  messageBody: 'Se necessitar de mais informa\u00E7\u00F5es sobre este produto, pode contactar-nos em <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName,\n  recommendedProducts: 'Produtos recomendados',\n  product: 'Produto',\n  price: 'Pre\u00E7o',\n  comments: 'Mensagem do seu amigo/a:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "{{ general.ecommerceName }} - {{ recommend.name }} recomenda um produto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Recomenda\u00E7\u00E3o de produto',\n  messageHeader1: \"O seu amigo/a \" ~ recommend.name ~ \" (\" ~ recommend.email ~ \") envia-lhe este produto que pode ser do seu interesse.\",\n  messageBody: 'Se necessitar de mais informa\u00E7\u00F5es sobre este produto, pode contactar-nos em <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName,\n  recommendedProducts: 'Produtos recomendados',\n  product: 'Produto',\n  price: 'Pre\u00E7o',\n  comments: 'Mensagem do seu amigo/a:'\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader1 }}<br><br>\n      {{ languageSheet.messageBody }}<br><br>\n      {{ languageSheet.messageSignature }}<br><br>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #454545; font-weight: bold;\">{{ languageSheet.recommendedProducts }}</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0;\">\n              <table style=\"border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.product }}</td>\n                    <td width=\"20%\" height=\"32\" style=\"color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;\" bgColor=\"#F4F4F4\">{{ languageSheet.price }}</td>\n                  </tr>\n                  <tr>\n                    <td style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"{{ recommend.product.images.smallImage }}\" alt=\"{{ recommend.product.name }}\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            {{ recommend.product.sku }} - <a href=\"{{ recommend.product.productLink }}\" title=\"{{ recommend.product.name }}\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration: none;\"><span style=\"color: #454545; text-decoration: none;\">{{ recommend.product.name }}</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n                    <td style=\"text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;\"><span><span>{{ recommend.product.price }}</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 16px;\">\n              <tr>\n                <td>\n                  <strong>{{ languageSheet.comments }}</strong><br>\n                  {{ recommend.comments }}\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "{{ general.ecommerceName }} - Formulário de contacto",
+            html: "\n{% set languageSheet = {\n  premessage: 'Formul\u00E1rio de contacto',\n  name: 'Nome:',\n  email: 'Email:',\n  phone: 'Telefone:',\n  motive: 'Motivo da consulta:',\n  comments: 'Mensagem:',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if contact.name|length %}\n        {{ languageSheet.name }} {{ contact.name }}<br>\n      {% endif %}\n      {% if contact.email|length %}\n        {{ languageSheet.email }} {{ contact.email }}<br>\n      {% endif %}\n      {% if contact.phone|length %}\n        {{ languageSheet.phone }} {{ contact.phone }}<br>\n      {% endif %}\n      {% if contact.motive|length %}\n        {{ languageSheet.motive }} {{ contact.motive }}<br>\n      {% endif %}\n      {% if contact.comments|length %}\n        {{ languageSheet.comments }} {{ contact.comments }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "{{ general.ecommerceName }} - Dúvida sobre um produto",
+            html: "\n{% set languageSheet = {\n  premessage: 'D\u00FAvida sobre um produto',\n  name: 'Nome:',\n  email: 'Email:',\n  phone: 'Telefone:',\n  comments: 'Mensagem:',\n  productName: 'Nome do produto:',\n  productSku: 'Refer\u00EAncia do produto:',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size: 15px;\">\n      {% if data.name|length %}\n        {{ languageSheet.name }} {{ data.name }}<br>\n      {% endif %}\n      {% if data.email|length %}\n        {{ languageSheet.email }} {{ data.email }}<br>\n      {% endif %}\n      {% if data.phone|length %}\n        {{ languageSheet.phone }} {{ data.phone }}<br>\n      {% endif %}\n      {% if data.comments|length %}\n        {{ languageSheet.comments }} {{ data.comments }}<br><br>\n      {% endif %}\n      {% if data.product.name|length %}\n        {{ languageSheet.productName }} {{ data.product.name }}<br>\n      {% endif %}\n      {% if data.product.sku|length %}\n        {{ languageSheet.productSku }} {{ data.product.sku }}<br>\n      {% endif %}\n      <br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Ordem recebida') : ('Confirmação pedido') }} {{ sales.documentNumber }}",
+            html: "\n{% if sales.reserve %}\n  {% set languageSheet = {\n    premessage: 'Ordem recebida',\n    messageHeader: 'Ol\u00E1 ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: 'Recebemos a sua encomenda, uma vez que temos alguns produtos por encomenda, aguardamos a sua revis\u00E3o.',\n    messageBody2: 'Se tudo estiver correcto, receber\u00E1 um e-mail de confirma\u00E7\u00E3o autom\u00E1tica.',\n    messageBody3: 'Se tivermos alguma quest\u00E3o, entraremos em contacto consigo.',\n    messageSignature: 'A equipa de ' ~ general.ecommerceName\n  } %}\n{% else %}\n  {% set languageSheet = {\n    premessage: 'Confirma\u00E7\u00E3o pedido',\n    messageHeader: 'Ol\u00E1 ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',\n    messageBody1: \"Confirmamos que a sua encomenda foi processada correctamente.\",\n    messageBody2: \"Pode encontrar esta encomenda no ficheiro PDF em anexo.\",\n    messageBody3: 'Obrigado por fazer compras em <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n    messageSignature: 'A equipa de ' ~ general.ecommerceName\n  } %}\n{% endif %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {% if sales.reserve %}\n        {# do nothing #}\n      {% else %}\n        {% if sales.paymentSystem.message|length %}\n          {{ sales.paymentSystem.message }}<br><br>\n        {% endif %}\n      {% endif %}\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "{{ general.ecommerceName }} - Encomenda incompleta",
+            html: "\n{% set languageSheet = {\n  premessage: \"Informa\u00E7\u00E3o de encomenda incompleta\",\n  messageHeader: 'Ol\u00E1 ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',\n  messageBody1: 'Na sua \u00FAltima visita \u00E0 nossa loja, adicionou os seguintes produtos ao seu carrinho de compras, mas n\u00E3o completou a sua encomenda.',\n  messageBody2: 'Clique <a target=\"_blank\" href=\"' ~ abandonedCart.link ~ '\" style=\"color: #000;\">aqui</a> recuperar seu carrinho.',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "{{ general.ecommerceName }} - Verificação por e-mail",
+            html: "\n{% set languageSheet = {\n  premessage: \"Verifica\u00E7\u00E3o por e-mail\",\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Obrigado por se registar em ' ~ general.ecommerceUrl ~ '. Por favor, active a sua conta, clicando <a href=\"' ~ user.verifyAccountLink ~ '\" style=\"color: #000;\">aqui</a>.',\n  messageBody2: \"Esperamos v\u00EA-lo em breve em \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br><br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "{{ general.ecommerceName }} - Activação da conta",
+            html: "\n{% set languageSheet = {\n  premessage: 'Activa\u00E7\u00E3o da conta',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: 'Temos o prazer de informar que sua conta de cliente em ' ~ general.ecommerceUrl ~ ' foi ativada com sucesso.',\n  messageBody2: 'Voc\u00EA pode visualizar e modificar todos os seus detalhes a qualquer momento acessando este painel de controle: <a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">Edite seu perfil</a>',\n  messageBody3: \"Esperamos v\u00EA-lo em breve em \" ~ '<a href=\"' ~ general.ecommerceUrl ~ '\" style=\"color: #000;\">' ~ general.ecommerceName ~ '</a>',\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "{{ general.ecommerceName }} - Disponível em estoque",
+            html: "\n{% set languageSheet = {\n  premessage: 'Estoque dispon\u00EDvel do produto <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"O artigo que voc\u00EA quer tanto j\u00E1 est\u00E1 dispon\u00EDvel!\",\n  messageBody2: \"Gostar\u00EDamos de lembrar que este e-mail fornece orienta\u00E7\u00F5es sobre a disponibilidade deste artigo e depende de muitos fatores (pessoas interessadas, unidades dispon\u00EDveis).\",\n  messageBody3: \"Envi\u00E1mos este email a todos os clientes interessados no artigo, pelo que \u00E9 poss\u00EDvel esgotar-se muito em breve.\",\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageBody3 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "{{ general.ecommerceName }} - Subscrição de Ações",
+            html: "\n{% set languageSheet = {\n  premessage: 'Assinatura de estoque de produtos <a href=\"' ~ data.product.productLink ~ '\" style=\"color: #000;\">' ~ data.product.name ~ '</a>',\n  messageHeader: 'Ol\u00E1 ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',\n  messageBody1: \"Voc\u00EA se inscreveu nos an\u00FAncios de a\u00E7\u00F5es da \" ~ data.product.name,\n  messageBody2: \"Caso recebamos este artigo novamente iremos notific\u00E1-lo imediatamente para que ele n\u00E3o escape.\",\n  messageSignature: 'A equipa de ' ~ general.ecommerceName\n} %}\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;\">\n    <strong>{{ languageSheet.premessage }}</strong><br><br>\n    <span style=\"font-size:15px;\">\n      {{ languageSheet.messageHeader }}<br><br>\n      {{ languageSheet.messageBody1 }}<br>\n      {{ languageSheet.messageBody2 }}<br><br>\n      {{ languageSheet.messageSignature }}\n    </span>\n  </td>\n</tr>",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-ro.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-ro.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_RO */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_RO", function() { return LANGUAGE_RO; });
+// v4 file template
+var LANGUAGE_RO = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-ru.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-ru.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_RU */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_RU", function() { return LANGUAGE_RU; });
+// v4 file template
+var LANGUAGE_RU = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-sk.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-sk.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_SK */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_SK", function() { return LANGUAGE_SK; });
+// v4 file template
+var LANGUAGE_SK = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-sv.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-sv.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_SV */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_SV", function() { return LANGUAGE_SV; });
+// v4 file template
+var LANGUAGE_SV = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-th.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-th.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_TH */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_TH", function() { return LANGUAGE_TH; });
+// v4 file template
+var LANGUAGE_TH = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-tr.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/beyond/app-language-tr.ts ***!
+  \************************************************/
+/*! exports provided: LANGUAGE_TR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_TR", function() { return LANGUAGE_TR; });
+// v4 file template
+var LANGUAGE_TR = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/beyond/app-language-zho.ts":
+/*!*************************************************!*\
+  !*** ./src/app/data/beyond/app-language-zho.ts ***!
+  \*************************************************/
+/*! exports provided: LANGUAGE_ZHO */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LANGUAGE_ZHO", function() { return LANGUAGE_ZHO; });
+// v4 file template
+var LANGUAGE_ZHO = {
+    header: {
+        html: "",
+    },
+    footer: {
+        html: "",
+    },
+    templates: {
+        1: {
+            name: "Bienvenida",
+            subject: "",
+            html: "",
+        },
+        2: {
+            name: "Baja de usuarios",
+            subject: "",
+            html: "",
+        },
+        3: {
+            name: "Recordarios de contraseña",
+            subject: "",
+            html: "",
+        },
+        4: {
+            name: "Cambio de contraseña",
+            subject: "",
+            html: "",
+        },
+        5: {
+            name: "Registro de newsletter",
+            subject: "",
+            html: "",
+        },
+        6: {
+            name: "Recomendación de wishlist",
+            subject: "",
+            html: "",
+        },
+        7: {
+            name: "Recomendación de producto",
+            subject: "",
+            html: "",
+        },
+        8: {
+            name: "Contacto general",
+            subject: "",
+            html: "",
+        },
+        9: {
+            name: "Consulta de producto",
+            subject: "",
+            html: "",
+        },
+        10: {
+            name: "Confirmación de pedido",
+            subject: "",
+            html: "",
+        },
+        11: {
+            name: "Baja de newsletter",
+            subject: "",
+            html: "",
+        },
+        12: {
+            name: "Apadrinamiento",
+            subject: "",
+            html: "",
+        },
+        13: {
+            name: "Apadrinamiento completo",
+            subject: "",
+            html: "",
+        },
+        14: {
+            name: "Documento de RMA",
+            subject: "",
+            html: "",
+        },
+        15: {
+            name: "Pedido incompleto",
+            subject: "",
+            html: "",
+        },
+        16: {
+            name: "Notificación transportista",
+            subject: "",
+            html: "",
+        },
+        17: {
+            name: "Verificación de correo",
+            subject: "",
+            html: "",
+        },
+        18: {
+            name: "Cuenta activada",
+            subject: "",
+            html: "",
+        },
+        19: {
+            name: "Aviso a proveedores",
+            subject: "",
+            html: "",
+        },
+        20: {
+            name: "Stock disponible",
+            subject: "",
+            html: "",
+        },
+        22: {
+            name: "Blog - Notificación de Nuevo Artículo",
+            subject: "",
+            html: "",
+        },
+        23: {
+            name: "Blog - Notificación de Nuevo Comentario",
+            subject: "",
+            html: "",
+        },
+        24: {
+            name: "Blog - Email de Bienvenida",
+            subject: "",
+            html: "",
+        },
+        25: {
+            name: "Confirmar suscripción de Stock",
+            subject: "",
+            html: "",
+        },
+        32: {
+            name: "Documento de pedido",
+            subject: "",
+            html: "",
+        },
+        33: {
+            name: "Documento de albarán de entrega",
+            subject: "",
+            html: "",
+        },
+        34: {
+            name: "Documento de factura",
+            subject: "",
+            html: "",
+        },
+        35: {
+            name: "Documento de factura rectificativa",
+            subject: "",
+            html: "",
+        },
+        36: {
+            name: "Activación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        37: {
+            name: "Desactivación Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        38: {
+            name: "Enviar código dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        39: {
+            name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
+            subject: "",
+            html: "",
+        },
+        40: {
+            name: "Documento de Devolución",
+            subject: "",
+            html: "",
+        },
+    },
+};
+
+
+/***/ }),
+
+/***/ "./src/app/data/fluid/app-language-ar.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-ar.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_AR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1055,10 +6141,10 @@ var LANGUAGE_AR = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-bg.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-bg.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-bg.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-bg.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_BG */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1250,10 +6336,10 @@ var LANGUAGE_BG = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-ca.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-ca.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-ca.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-ca.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_CA */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1451,10 +6537,10 @@ var LANGUAGE_CA = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-chi.ts":
-/*!******************************************!*\
-  !*** ./src/app/data/app-language-chi.ts ***!
-  \******************************************/
+/***/ "./src/app/data/fluid/app-language-chi.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/fluid/app-language-chi.ts ***!
+  \************************************************/
 /*! exports provided: LANGUAGE_CHI */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1652,10 +6738,10 @@ var LANGUAGE_CHI = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-de.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-de.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-de.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-de.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_DE */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1853,10 +6939,10 @@ var LANGUAGE_DE = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-en.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-en.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-en.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-en.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_EN */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1875,7 +6961,7 @@ var LANGUAGE_EN = {
         1: {
             name: 'Bienvenida',
             subject: 'Thank you for signup to %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Welcome to %%ecommerceName%%!</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Hello  %firstName% %lastName%, <br><br>\n      We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully created.<br><br>\n      Thanks to your customer account now you can update your profile and password, view your order history and other details that may be of your interest.<br><br>\n      We hope to see you soon in <a href=\"%%ecommerceURL%%\" style=\"color: #000;\">%%ecommerceName%%</a><br><br>\n      The %%ecommerceName%% Team\n    </span>\n  </td>\n</tr>\n",
+            html: "\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Welcome to %%ecommerceName%%!</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Hello %firstName% %lastName%, <br><br>\n      We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully created.<br><br>\n      Thanks to your customer account now you can update your profile and password, view your order history and other details that may be of your interest.<br><br>\n      We hope to see you soon in <a href=\"%%ecommerceURL%%\" style=\"color: #000;\">%%ecommerceName%%</a><br><br>\n      The %%ecommerceName%% Team\n    </span>\n  </td>\n</tr>\n",
             footer: {
                 html: "\n        <tr>\n          <td bgcolor=\"#E8E8E8\" style=\"background-color: #E8E8E8;padding: 30px 30px 15px 30px;\">\n            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n              <tr>\n                <td align=\"center\" >\n                  <table border=\"0\" cellspacing=\"10\" cellpadding=\"0\">\n                    <tr>\n                      <!-- %%Pages-501-Loop%% -->\n                      <td style=\"text-align: center;\">\n                        <a href=\"%%pageLink%%\" style=\"padding:6px 10px;color:#454545;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;text-decoration:none;\" target=\"%%pageTarget%%\"> %%pageName%% </a>\n                      </td>\n                      <!-- %%/Pages-501-Loop%% -->\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n              <tr>\n                <td align=\"center\" style=\"padding: 12px 0 12px 0px;\">\n                  <table border=\"0\" cellspacing=\"8\" cellpadding=\"0\">\n                    <tr>\n                      <!-- %%Banners-502-Loop%% -->\n                      <td width=\"30\" style=\"text-align: center;\">\n                        <a href=\"%%BannerLink%%\">\n                          <img src=\"%%BannerImage%%\" width=\"30\" height=\"auto\" alt=\"%%BannerAlt%%\" border=\"0\" style=\"height: auto;\">\n                        </a>\n                      </td>\n                      <!-- %%/Banners-502-Loop%% -->\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n              <tr>\n                <td align=\"center\" >\n                  <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n                    <tr>\n                      <!-- %%Pages-503-Loop%% -->\n                      <td style=\"text-align: center; padding: 15px 25px 25px 25px;color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;\">\n                        <span style=\"color:#999;font-family:Arial, sans-serif;font-size:14px;line-height:20px;\">\n                          %%pageContent%%\n                        </span>\n                      </td>\n                      <!-- %%/Pages-503-Loop%% -->\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n              <tr>\n                <!-- %%Pages-504-Loop%% -->\n                <td align=\"center\" style=\"font-family:Arial, sans-serif;font-size: 13px;color: #454545;\">\n                  %%pageContent%%\n                </td>\n                <!-- %%/Pages-504-Loop%% -->\n              </tr>\n              <tr>\n                <td align=\"center\" heigth=\"50\" style=\"font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;\">\n                  For more information, read our %%privacy%% and %%termsOfUse%%.\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n\n      </table>\n      <!--[if (gte mso 9)|(IE)]>\n            </td>\n          </tr>\n        </table>\n      <![endif]-->\n    </td>\n  </tr>\n  <tr>\n    <td style=\"padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n      <span style=\"font-family:Arial, sans-serif;font-size: 11px;color: #999;height:15px;\">\n        <a href=\"%linkDeleteSubscription%\" style=\"color: #333;text-decoration: underline;font-size:10px;line-height:13px;\">Unsubscribe</a> <span style=\"color:#333;font-size:10px;\">from the Newsletter</span>\n      </span>\n    </td>\n  </tr>\n</table>\n"
             }
@@ -1916,7 +7002,7 @@ var LANGUAGE_EN = {
         8: {
             name: 'Contacto general',
             subject: 'Contact form of %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Contact form</strong><br><br>\n    <span style=\"font-size:15px;\">Name: %%anonymousFirstName%%<br>Lastname: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Phone: %%anonymousPhone%%<br>Query Motive:  %%queryMotive%%<br>Message: %%comments%%</span>\n  </td>\n</tr>\n"
+            html: "\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Contact form</strong><br><br>\n    <span style=\"font-size:15px;\">Name: %%anonymousFirstName%%<br>Lastname: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Phone: %%anonymousPhone%%<br>Query motive: %%queryMotive%%<br>Message: %%comments%%</span>\n  </td>\n</tr>\n"
         },
         9: {
             name: 'Consulta de producto',
@@ -2054,10 +7140,10 @@ var LANGUAGE_EN = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-es.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-es.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-es.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-es.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_ES */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2255,10 +7341,10 @@ var LANGUAGE_ES = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-eu.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-eu.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-eu.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-eu.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_EU */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2450,10 +7536,10 @@ var LANGUAGE_EU = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-fr.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-fr.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-fr.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-fr.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_FR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2651,10 +7737,10 @@ var LANGUAGE_FR = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-hu.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-hu.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-hu.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-hu.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_HU */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2846,10 +7932,10 @@ var LANGUAGE_HU = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-it.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-it.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-it.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-it.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_IT */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2904,7 +7990,7 @@ var LANGUAGE_IT = {
         7: {
             name: 'Recomendación de producto',
             subject: '%%anonymousName%% consiglia un prodotto da %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Recomendaci\u00F3n de producto</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Il tuo amico/a %%anonymousName%% (%%anonymousEmail%%) ti invia questo prodotto a cui potresti essere interessato.<br><br>\n      Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href=\"%%ecommerceURL%%\" style=\"color:#000 \">%%ecommerceName%%</a><br><br>\n      Cordiali saluti, il team di %%ecommerceName%%\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td align=\"center\">\n            <span style=\"font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;\">\n              Prodotti consigliati\n            </span>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0\">\n              <table style=\"border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Prodotto</td>\n\n                    <td width=\"20%\" height=\"32\" style=\"color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Prezzo</td>\n                  </tr>\n\n                  <tr>\n                    <td style=\"text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"%smallImage%\" alt=\"%name%\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            %sku% - <a href=\" %productLink%\" title=\"%name%\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration:none;\"><span style=\"color: #454545; text-decoration: none\">%name%</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n\n                    <td style=\"text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;\"><span><span>%price%</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;\">\n              <tr>\n                <td>\n                  <strong>Messaggio del tuo amico/a:</strong><br>\n                  %%comments%%\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>\n"
+            html: "\n<tr>\n  <td style=\"padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Raccomandazione di prodotto</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Il tuo amico/a %%anonymousName%% (%%anonymousEmail%%) ti invia questo prodotto a cui potresti essere interessato.<br><br>\n      Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href=\"%%ecommerceURL%%\" style=\"color:#000 \">%%ecommerceName%%</a><br><br>\n      Cordiali saluti, il team di %%ecommerceName%%\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td align=\"center\">\n            <span style=\"font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;\">\n              Prodotti consigliati\n            </span>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0\">\n              <table style=\"border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Prodotto</td>\n\n                    <td width=\"20%\" height=\"32\" style=\"color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Prezzo</td>\n                  </tr>\n\n                  <tr>\n                    <td style=\"text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"%smallImage%\" alt=\"%name%\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            %sku% - <a href=\" %productLink%\" title=\"%name%\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration:none;\"><span style=\"color: #454545; text-decoration: none\">%name%</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n\n                    <td style=\"text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;\"><span><span>%price%</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;\">\n              <tr>\n                <td>\n                  <strong>Messaggio del tuo amico/a:</strong><br>\n                  %%comments%%\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>\n"
         },
         8: {
             name: 'Contacto general',
@@ -3047,10 +8133,10 @@ var LANGUAGE_IT = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-ja.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-ja.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-ja.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-ja.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_JA */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3242,10 +8328,10 @@ var LANGUAGE_JA = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-ko.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-ko.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-ko.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-ko.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_KO */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3443,10 +8529,10 @@ var LANGUAGE_KO = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-lo.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-lo.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-lo.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-lo.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_LO */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3638,10 +8724,10 @@ var LANGUAGE_LO = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-mn.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-mn.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-mn.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-mn.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_MN */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3833,10 +8919,10 @@ var LANGUAGE_MN = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-nl.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-nl.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-nl.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-nl.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_NL */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4028,10 +9114,10 @@ var LANGUAGE_NL = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-pl.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-pl.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-pl.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-pl.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_PL */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4223,10 +9309,10 @@ var LANGUAGE_PL = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-pt.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-pt.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-pt.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-pt.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_PT */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4258,12 +9344,12 @@ var LANGUAGE_PT = {
         3: {
             name: 'Recordarios de contraseña',
             subject: 'Recordar a password %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Lembrar senha</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Ol\u00E1, %firstName% %lastName%,<br><br>\n      Conforme solicitado durante sua recente visita a %%ecommerceName%%, aqui est\u00E1 seu endere\u00E7o de acesso \u00E0 \u00E1rea de recupera\u00E7\u00E3o de senha:<br><br>\n      <a href=\"%%lostPasswordLink%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\">Clique aqui para recuperar a senha </a> <br> <br>\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Este link s\u00F3 ser\u00E1 v\u00E1lido por 24 horas ap\u00F3s o momento de sua entrega. <br> <br>\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Esperamos v\u00EA-lo em breve em <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>. <br> <br>\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Atenciosamente, a equipe de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n\n"
+            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Lembrar senha</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Ol\u00E1, %firstName% %lastName%,<br><br>\n      Conforme solicitado durante sua recente visita a %%ecommerceName%%, aqui est\u00E1 seu endere\u00E7o de acesso \u00E0 \u00E1rea de recupera\u00E7\u00E3o de senha:<br><br>\n      <a href=\"%%lostPasswordLink%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\">Clique aqui para recuperar a senha </a> <br> <br>\n      Este link s\u00F3 ser\u00E1 v\u00E1lido por 24 horas ap\u00F3s o momento de sua entrega. <br> <br>\n      Esperamos v\u00EA-lo em breve em <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>. <br> <br>\n      Atenciosamente, a equipe de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n\n"
         },
         4: {
             name: 'Cambio de contraseña',
             subject: 'Modificação de password %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Modifica\u00E7\u00E3o de password</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Ol\u00E1  %%firstName%% %%lastName%%,<br><br>\n      Confirmamos que a sua password foi modificada..<br><br>\n      Recomendamos-lhe que conserve este email com os seus dados para que a sua futura compra seja mais f\u00E1cil e r\u00E1pida. <br><br>\n      Esperamos por si em  <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\">%%ecommerceName%%</a>.<br><br>\n      A equipa de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n\n"
+            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Modifica\u00E7\u00E3o de password</strong><br><br>\n    <span style=\"font-size:15px;\">\n      Ol\u00E1  %%firstName%% %%lastName%%,<br><br>\n      Confirmamos que a sua password foi modificada.<br><br>\n      Recomendamos-lhe que conserve este email com os seus dados para que a sua futura compra seja mais f\u00E1cil e r\u00E1pida. <br><br>\n      Esperamos por si em  <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\">%%ecommerceName%%</a>.<br><br>\n      A equipa de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n\n"
         },
         5: {
             name: 'Registro de newsletter',
@@ -4276,12 +9362,12 @@ var LANGUAGE_PT = {
         6: {
             name: 'Recomendación de wishlist',
             subject: '%%anonymousName%% Recomende os seus produtos preferidos %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Recomenda\u00E7\u00E3o da lista de desejos</strong><br><br>\n    <span style=\"font-size:15px;\">\n      O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>\n     Se necessitar de mais informa\u00E7\u00F5es sobre este produto, pode contactar-nos em <a href=\"%%ecommerceURL%%\" style=\"color:#000\"> %%ecommerceName%% </a> <br> <br>\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Atenciosamente, a equipe de %%ecommerceName%%\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;\">Productos recomendados</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0\">\n              <table style=\"border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Producto</td>\n\n                    <td width=\"20%\" height=\"32\" style=\"color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Precio</td>\n                  </tr>\n                  <!-- %loop% -->\n                  <tr>\n                    <td style=\"text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"%smallImage%\" alt=\"%name%\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            %sku% - <a href=\" %productLink%\" title=\"%name%\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration:none;\"><span style=\"color: #454545; text-decoration: none\">%name%</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n\n                    <td style=\"text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;\"><span><span>%price%</span></span></td>\n                  </tr>\n                  <!-- %/loop% -->\n\n                </tbody>\n              </table>\n\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;\">\n              <tr>\n                <td>\n                  <strong>Mensaje de tu amigo/a:</strong><br>\n                  %%comments%%\n\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>\n"
+            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Recomenda\u00E7\u00E3o da lista de desejos</strong><br><br>\n    <span style=\"font-size:15px;\">\n      O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>\n      Se necessitar de mais informa\u00E7\u00F5es sobre este produto, pode contactar-nos em <a href=\"%%ecommerceURL%%\" style=\"color:#000\"> %%ecommerceName%% </a> <br> <br>\n      Atenciosamente, a equipe de %%ecommerceName%%\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;\">Productos recomendados</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0\">\n              <table style=\"border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Producto</td>\n\n                    <td width=\"20%\" height=\"32\" style=\"color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Precio</td>\n                  </tr>\n                  <!-- %loop% -->\n                  <tr>\n                    <td style=\"text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"%smallImage%\" alt=\"%name%\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            %sku% - <a href=\" %productLink%\" title=\"%name%\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration:none;\"><span style=\"color: #454545; text-decoration: none\">%name%</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n\n                    <td style=\"text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;\"><span><span>%price%</span></span></td>\n                  </tr>\n                  <!-- %/loop% -->\n\n                </tbody>\n              </table>\n\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;\">\n              <tr>\n                <td>\n                  <strong>Mensaje de tu amigo/a:</strong><br>\n                  %%comments%%\n\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>\n"
         },
         7: {
             name: 'Recomendación de producto',
             subject: '%%anonymousName%% recomenda-lhe um produto de  %%ecommerceName%%',
-            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Recomenda\u00E7\u00E3o de produto</strong><br><br>\n    <span style=\"font-size:15px;\">\n     O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>\n     Se necessitar de mais informa\u00E7\u00F5es sobre este produto, pode contactar-nos em <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a> <br> <br>\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Atenciosamente, a equipe de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;\">Productos recomendados</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0\">\n              <table style=\"border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Producto</td>\n\n                    <td width=\"20%\" height=\"32\" style=\"color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Precio</td>\n                  </tr>\n\n                  <tr>\n                    <td style=\"text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"%smallImage%\" alt=\"%name%\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            %sku% - <a href=\" %productLink%\" title=\"%name%\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration:none;\"><span style=\"color: #454545; text-decoration: none\">%name%</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n\n                    <td style=\"text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;\"><span><span>%price%</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;\">\n              <tr>\n                <td>\n                  <strong>Mensaje de tu amigo/a:</strong><br>\n                  %%comments%%\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>\n"
+            html: "\n<tr>\n  <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Recomenda\u00E7\u00E3o de produto</strong><br><br>\n    <span style=\"font-size:15px;\">\n      O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>\n      Se necessitar de mais informa\u00E7\u00F5es sobre este produto, pode contactar-nos em <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a> <br> <br>\n      Atenciosamente, a equipe de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n<tr>\n  <td style=\"padding: 0px 0px;\" align=\"center\">\n    <table style=\"width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;\">\n      <tbody>\n        <tr><td>&nbsp;</td></tr>\n        <tr><td align=\"center\"><span style=\"font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;\">Productos recomendados</span></td></tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td style=\"vertical-align: top\">\n            <div style=\"padding: 0 0\">\n              <table style=\"border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" width=\"88%\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\">\n                <tbody>\n                  <tr>\n                    <td width=\"80%\" height=\"32\" style=\"color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Producto</td>\n\n                    <td width=\"20%\" height=\"32\" style=\"color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;\" bgColor=\"#F4F4F4\">Precio</td>\n                  </tr>\n\n                  <tr>\n                    <td style=\"text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;\">\n                      <table style=\"color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;\" >\n                        <tr>\n                          <td style=\"padding: 10px 0px;\">\n                            <img width=\"60\" src=\"%smallImage%\" alt=\"%name%\" onerror=\"this.style.display='none';\">\n                          </td>\n                          <td style=\"padding: 10px 0px;\">\n                            %sku% - <a href=\" %productLink%\" title=\"%name%\" target=\"_blank\" rel=\"noreferrer\" style=\"text-decoration:none;\"><span style=\"color: #454545; text-decoration: none\">%name%</span></a>\n                          </td>\n                        </tr>\n                      </table>\n                    </td>\n\n                    <td style=\"text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;\"><span><span>%price%</span></span></td>\n                  </tr>\n                </tbody>\n              </table>\n\n            </div>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n        <tr>\n          <td>\n            <table width=\"88%\" align=\"center\" style=\"font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;\">\n              <tr>\n                <td>\n                  <strong>Mensaje de tu amigo/a:</strong><br>\n                  %%comments%%\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n        <tr><td>&nbsp;</td></tr>\n      </tbody>\n    </table>\n  </td>\n</tr>\n"
         },
         8: {
             name: 'Contacto general',
@@ -4346,7 +9432,7 @@ var LANGUAGE_PT = {
         20: {
             name: 'Stock disponible',
             subject: 'Disponível em estoque',
-            html: "\n<tr>\n <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Estoque dispon\u00EDvel do produto <a href=\"%productLink%\" style=\"color:#000;font-size:15px;\">%name%</a></strong>%productOptions%<br><br>\n    <span style=\"font-size:15px;\">Ol\u00E0,<br><br>O artigo que voc\u00EA quer tanto j\u00E1 est\u00E1 dispon\u00EDvel!</span>\n    <span style=\"font-size:15px;\">\n       Gostar\u00EDamos de lembrar que este e-mail fornece orienta\u00E7\u00F5es sobre a disponibilidade deste artigo e depende de muitos fatores (pessoas interessadas, unidades dispon\u00EDveis).\n\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 Envi\u00E1mos este email a todos os clientes interessados no artigo, pelo que \u00E9 poss\u00EDvel esgotar-se muito em breve.<br><br>\n      A equipa  de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n"
+            html: "\n<tr>\n <td style=\"padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;\">\n    <strong>Estoque dispon\u00EDvel do produto <a href=\"%productLink%\" style=\"color:#000;font-size:15px;\">%name%</a></strong>%productOptions%<br><br>\n    <span style=\"font-size:15px;\">Ol\u00E0,<br><br>O artigo que voc\u00EA quer tanto j\u00E1 est\u00E1 dispon\u00EDvel!</span>\n    <span style=\"font-size:15px;\">\n      Gostar\u00EDamos de lembrar que este e-mail fornece orienta\u00E7\u00F5es sobre a disponibilidade deste artigo e depende de muitos fatores (pessoas interessadas, unidades dispon\u00EDveis).\n      Envi\u00E1mos este email a todos os clientes interessados no artigo, pelo que \u00E9 poss\u00EDvel esgotar-se muito em breve.<br><br>\n      A equipa  de <a href=\"%%ecommerceURL%%\" style=\"color: #2a3a4a;text-decoration:none;font-weight:bolder;\"> %%ecommerceName%% </a>\n    </span>\n  </td>\n</tr>\n"
         },
         22: {
             name: 'Blog - Notificación de Nuevo Artículo',
@@ -4424,10 +9510,10 @@ var LANGUAGE_PT = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-ro.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-ro.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-ro.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-ro.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_RO */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4619,10 +9705,10 @@ var LANGUAGE_RO = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-ru.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-ru.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-ru.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-ru.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_RU */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4820,10 +9906,10 @@ var LANGUAGE_RU = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-sk.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-sk.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-sk.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-sk.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_SK */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5015,10 +10101,10 @@ var LANGUAGE_SK = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-sv.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-sv.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-sv.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-sv.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_SV */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5216,10 +10302,10 @@ var LANGUAGE_SV = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-th.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-th.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-th.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-th.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_TH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5411,10 +10497,10 @@ var LANGUAGE_TH = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-tr.ts":
-/*!*****************************************!*\
-  !*** ./src/app/data/app-language-tr.ts ***!
-  \*****************************************/
+/***/ "./src/app/data/fluid/app-language-tr.ts":
+/*!***********************************************!*\
+  !*** ./src/app/data/fluid/app-language-tr.ts ***!
+  \***********************************************/
 /*! exports provided: LANGUAGE_TR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5606,10 +10692,10 @@ var LANGUAGE_TR = {
 
 /***/ }),
 
-/***/ "./src/app/data/app-language-zho.ts":
-/*!******************************************!*\
-  !*** ./src/app/data/app-language-zho.ts ***!
-  \******************************************/
+/***/ "./src/app/data/fluid/app-language-zho.ts":
+/*!************************************************!*\
+  !*** ./src/app/data/fluid/app-language-zho.ts ***!
+  \************************************************/
 /*! exports provided: LANGUAGE_ZHO */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5869,7 +10955,7 @@ var ComponentsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" routerLink=\"/\">{{ title }}</a>\r\n\r\n  <div class=\"toggle-sidebar\">\r\n    <eg-sidebar-toggle></eg-sidebar-toggle>\r\n  </div>\r\n\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\"\r\n          data-target=\"#navbar-collap\" aria-controls=\"navbar-collap\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbar-collap\">\r\n\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <!-- <li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\">\r\n        <a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n      </li> -->\r\n\r\n      <li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\">\r\n        <a class=\"nav-link\" routerLink=\"/import-export\">Import / Export</a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines\" target=\"_blank\" rel=\"nofollow\">Email tags</a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\">\r\n        <a class=\"nav-link\" routerLink=\"/instructions\">Instructions</a>\r\n      </li>\r\n\r\n      <!-- <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"https://trello.com/b/tBQU3RSN/emilio-generator\" target=\"_blank\" rel=\"nofollow\">Trello</a>\r\n      </li> -->\r\n\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"https://github.com/joelthorner/emilio-generator/issues\" target=\"_blank\" rel=\"nofollow\">Issues/bugs</a>\r\n      </li>\r\n\r\n    </ul>\r\n    <ul class=\"navbar-nav ml-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link version-link\" href=\"https://github.com/joelthorner/emilio-generator/releases/tag/v{{ version }}\" target=\"_blank\" rel=\"nofollow\">Version: <b class=\"version\">{{ version }}</b></a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n  <a class=\"navbar-brand\" routerLink=\"/\">{{ title }}</a>\r\n\r\n  <div class=\"toggle-sidebar\">\r\n    <eg-sidebar-toggle></eg-sidebar-toggle>\r\n  </div>\r\n\r\n  <button\r\n    class=\"navbar-toggler\"\r\n    type=\"button\"\r\n    data-toggle=\"collapse\"\r\n    data-target=\"#navbar-collap\"\r\n    aria-controls=\"navbar-collap\"\r\n    aria-expanded=\"false\"\r\n    aria-label=\"Toggle navigation\"\r\n  >\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbar-collap\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <!-- <li class=\"nav-item\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\">\r\n        <a class=\"nav-link\" routerLink=\"/\">Home</a>\r\n      </li> -->\r\n\r\n      <li\r\n        class=\"nav-item\"\r\n        routerLinkActive=\"active\"\r\n        [routerLinkActiveOptions]=\"{ exact: true }\"\r\n      >\r\n        <a class=\"nav-link\" routerLink=\"/import-export\">Import / Export</a>\r\n      </li>\r\n\r\n      <li class=\"nav-item\" *ngIf=\"!beyondValue\">\r\n        <a\r\n          class=\"nav-link\"\r\n          href=\"http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines\"\r\n          target=\"_blank\"\r\n          rel=\"nofollow\"\r\n          >Email tags</a\r\n        >\r\n      </li>\r\n\r\n      <li class=\"nav-item\" *ngIf=\"beyondValue\">\r\n        <a\r\n          class=\"nav-link\"\r\n          href=\"http://10.254.1.55:8090/display/APICORE/Email+templates+Wildcards\"\r\n          target=\"_blank\"\r\n          rel=\"nofollow\"\r\n          >Email tags</a\r\n        >\r\n      </li>\r\n\r\n      <li\r\n        class=\"nav-item\"\r\n        routerLinkActive=\"active\"\r\n        [routerLinkActiveOptions]=\"{ exact: true }\"\r\n      >\r\n        <a class=\"nav-link\" routerLink=\"/instructions\">Instructions</a>\r\n      </li>\r\n\r\n      <!-- <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"https://trello.com/b/tBQU3RSN/emilio-generator\" target=\"_blank\" rel=\"nofollow\">Trello</a>\r\n      </li> -->\r\n\r\n      <li class=\"nav-item\">\r\n        <a\r\n          class=\"nav-link\"\r\n          href=\"https://github.com/joelthorner/emilio-generator/issues\"\r\n          target=\"_blank\"\r\n          rel=\"nofollow\"\r\n          >Issues/bugs</a\r\n        >\r\n      </li>\r\n    </ul>\r\n    <ul class=\"navbar-nav ml-auto\">\r\n      <li class=\"nav-item beyond-item\" *ngIf=\"beyondValue\">\r\n        <span class=\"badge rounded-pill bg-primary\">BEYOND</span>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a\r\n          class=\"nav-link version-link\"\r\n          href=\"https://github.com/joelthorner/emilio-generator/releases/tag/v{{\r\n            version\r\n          }}\"\r\n          target=\"_blank\"\r\n          rel=\"nofollow\"\r\n          >Version: <b class=\"version\">{{ version }}</b></a\r\n        >\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -5880,7 +10966,7 @@ module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".navbar {\n  padding: 0 30px;\n  height: 60px; }\n\n.navbar-brand {\n  font-family: \"Ubuntu\";\n  font-weight: 700;\n  font-size: 22px;\n  width: 190px;\n  margin-right: 30px;\n  line-height: 1; }\n\n.version {\n  color: #cc00cc; }\n\n.navbar .navbar-nav .nav-link.version-link {\n  color: #FFF; }\n\n@media (min-width: 992px) {\n  .navbar .navbar-nav .nav-link {\n    padding-right: 15px;\n    padding-left: 15px; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGliL2NvbXBvbmVudHMvbmF2YmFyL0M6XFxVc2Vyc1xcam9lbC50b3JuZXJcXERvY3VtZW50c1xcR2l0aHViXFxlbWlsaW8tZ2VuZXJhdG9yL3NyY1xcYXBwXFxsaWJcXGNvbXBvbmVudHNcXG5hdmJhclxcbmF2YmFyLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9saWIvY29tcG9uZW50cy9uYXZiYXIvQzpcXFVzZXJzXFxqb2VsLnRvcm5lclxcRG9jdW1lbnRzXFxHaXRodWJcXGVtaWxpby1nZW5lcmF0b3Ivc3JjXFxzY3NzXFxzdHlsZXMtdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDRSxlQ2lDOEI7RURoQzlCLFlDWTRCLEVBQUE7O0FEVjlCO0VBQ0UscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBd0I7RUFDeEIsa0JDeUI4QjtFRHhCOUIsY0FBYyxFQUFBOztBQUdoQjtFQUNFLGNDVnNCLEVBQUE7O0FEYXhCO0VBRUksV0FBVyxFQUFBOztBQUdiO0VBTEY7SUFNSSxtQkFBbUI7SUFDbkIsa0JBQWtCLEVBQUEsRUFFckIiLCJmaWxlIjoic3JjL2FwcC9saWIvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAnc3R5bGVzLXV0aWxzJztcclxuQGltcG9ydCAnc3R5bGVzLXZhcmlhYmxlcyc7XHJcblxyXG4ubmF2YmFyIHtcclxuICBwYWRkaW5nOiAwICRncmlkLWd1dHRlci13aWR0aDtcclxuICBoZWlnaHQ6ICRuYXZiYXItaDtcclxufVxyXG4ubmF2YmFyLWJyYW5kIHtcclxuICBmb250LWZhbWlseTogXCJVYnVudHVcIjtcclxuICBmb250LXdlaWdodDogNzAwO1xyXG4gIGZvbnQtc2l6ZTogMjJweDtcclxuICB3aWR0aDogJHNpZGViYXItdyAtIDYwcHg7XHJcbiAgbWFyZ2luLXJpZ2h0OiAkZ3JpZC1ndXR0ZXItd2lkdGg7XHJcbiAgbGluZS1oZWlnaHQ6IDE7XHJcbn1cclxuXHJcbi52ZXJzaW9uIHtcclxuICBjb2xvcjogJHBpbmstMTtcclxufVxyXG5cclxuLm5hdmJhciAubmF2YmFyLW5hdiAubmF2LWxpbmsge1xyXG4gICYudmVyc2lvbi1saW5rIHtcclxuICAgIGNvbG9yOiAjRkZGO1xyXG4gIH1cclxuXHJcbiAgQG1lZGlhIChtaW4td2lkdGg6IDk5MnB4KSB7XHJcbiAgICBwYWRkaW5nLXJpZ2h0OiAxNXB4O1xyXG4gICAgcGFkZGluZy1sZWZ0OiAxNXB4O1xyXG4gIH1cclxufVxyXG4iLCIvLyBDb2xvcnNcclxuJGJnLWxpZ2h0OiAgICAgICAjZjdmN2ZhO1xyXG4kbGlnaHQtYm9yZGVyOiAgICNmN2VmZjY7IC8vIGJvcmRlciBvdmVyIHdoaXRlXHJcbiRibGFjay0xOiAgICAgICAgIzIyMWIyNjtcclxuXHJcbiRibHVlLTE6ICAgICAgICAgIzVjNjQ5YztcclxuJGJsdWUtMjogICAgICAgICAjOWNhMWI5O1xyXG4kcGluay0xOiAgICAgICAgICNjYzAwY2M7XHJcblxyXG4kc2hhZG93LTE6ICAgICAgICNlOWRkZjc7IC8vIHNoYWRvdyBib3ggY29sb3JcclxuXHJcbiRkaXNhYmxlZC1iZzogICAgIzg4ODtcclxuJGRpc2FibGVkLXRleHQ6ICAjNjY2O1xyXG5cclxuLy8gTGF5b3V0XHJcbiRzaWRlYmFyLXc6ICAgICAgICAgICAgICAgMjUwcHg7XHJcbiRzaWRlYmFyLWl0ZW0taDogICAgICAgICAgNjBweDtcclxuJG5hdmJhci1oOiAgICAgICAgICAgICAgICA2MHB4O1xyXG4kc2lkZWJhci1iYWRnZS1zaXplOiAgICAgIDIzcHg7XHJcbiRzbWFsbC1icmVha3BvaW50czogICAgICAgMTM2NnB4O1xyXG5cclxuXHJcbi8vIEJUIG92ZXJyaXRlc1xyXG4kcHJpbWFyeTogICAgICAgICAgICAgICAgICAgJHBpbmstMSAhZGVmYXVsdDtcclxuJGRhcms6ICAgICAgICAgICAgICAgICAgICAgICMzMzMgIWRlZmF1bHQ7XHJcbiRkYW5nZXI6ICAgICAgICAgICAgICAgICAgICAjZmYwMDY2ICFkZWZhdWx0O1xyXG4kd2FybmluZzogICAgICAgICAgICAgICAgICAgI2ZmOTkwMCAhZGVmYXVsdDtcclxuJGluZm86ICAgICAgICAgICAgICAgICAgICAgICMwMDk5Y2MgIWRlZmF1bHQ7XHJcblxyXG4kYm9keS1iZzogICAgICAgICAgICAgICAgICAgJGJnLWxpZ2h0ICFkZWZhdWx0O1xyXG4kYm9keS1jb2xvcjogICAgICAgICAgICAgICAgJGJsdWUtMSAhZGVmYXVsdDtcclxuXHJcbiRsaW5rLWNvbG9yOiAgICAgICAgICAgICAgICAkcGluay0xICFkZWZhdWx0O1xyXG4kbGluay1kZWNvcmF0aW9uOiAgICAgICAgICAgbm9uZSAhZGVmYXVsdDtcclxuJGxpbmstaG92ZXItY29sb3I6ICAgICAgICAgIGRhcmtlbigkcGluay0xLCAxNSUpICFkZWZhdWx0O1xyXG4kbGluay1ob3Zlci1kZWNvcmF0aW9uOiAgICAgbm9uZSAhZGVmYXVsdDtcclxuXHJcbiRncmlkLWd1dHRlci13aWR0aDogICAgICAgICAzMHB4ICFkZWZhdWx0O1xyXG5cclxuJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWY6ICAgIFwiTnVuaXRvXCIsIHNhbnMtc2VyaWYgIWRlZmF1bHQ7XHJcbi8vICRmb250LWZhbWlseS1tb25vc3BhY2U6ICBTRk1vbm8tUmVndWxhciwgTWVubG8sIE1vbmFjbywgQ29uc29sYXMsIFwiTGliZXJhdGlvbiBNb25vXCIsIFwiQ291cmllciBOZXdcIiwgbW9ub3NwYWNlICFkZWZhdWx0O1xyXG4kZm9udC1mYW1pbHktYmFzZTogICAgICAgICAgJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWYgIWRlZmF1bHQ7XHJcblxyXG4kZm9udC1zaXplLWJhc2U6ICAgICAgICAgICAgMC44NzVyZW0gIWRlZmF1bHQ7IC8vIDE0cHhcclxuXHJcbiR0cmFuc2l0aW9uLWJhc2U6ICAgICAgICAgICBhbGwgLjJzIGVhc2UtaW4tb3V0ICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtc3BhY2VyLXk6ICAgICAgICAgICAgICAgICAgICAgMTVweCAhZGVmYXVsdDtcclxuJGNhcmQtc3BhY2VyLXg6ICAgICAgICAgICAgICAgICAgICAgJGdyaWQtZ3V0dGVyLXdpZHRoICFkZWZhdWx0O1xyXG4kY2FyZC1ib3JkZXItd2lkdGg6ICAgICAgICAgICAgICAgICAwcHggIWRlZmF1bHQ7XHJcbiRjYXJkLWJvcmRlci1yYWRpdXM6ICAgICAgICAgICAgICAgIDdweCAhZGVmYXVsdDtcclxuLy8gJGNhcmQtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAgICAgcmdiYSgkYmxhY2ssIC4xMjUpICFkZWZhdWx0O1xyXG4kY2FyZC1pbm5lci1ib3JkZXItcmFkaXVzOiAgICAgICAgICAkY2FyZC1ib3JkZXItcmFkaXVzICFkZWZhdWx0OyAvLyBjYWxjKCN7JGNhcmQtYm9yZGVyLXJhZGl1c30gLSAjeyRjYXJkLWJvcmRlci13aWR0aH0pICFkZWZhdWx0O1xyXG4kY2FyZC1jYXAtYmc6ICAgICAgICAgICAgICAgICAgICAgICAjRkZGICFkZWZhdWx0O1xyXG4kY2FyZC1jYXAtY29sb3I6ICAgICAgICAgICAgICAgICAgICBpbmhlcml0ICFkZWZhdWx0O1xyXG4kY2FyZC1iZzogICAgICAgICAgICAgICAgICAgICAgICAgICAjRkZGICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtaW1nLW92ZXJsYXktcGFkZGluZzogICAgICAgICAgMS4yNXJlbSAhZGVmYXVsdDtcclxuXHJcbiRjYXJkLWdyb3VwLW1hcmdpbjogICAgICAgICAgICAgICAgICRncmlkLWd1dHRlci13aWR0aCAvIDIgIWRlZmF1bHQ7XHJcbiRjYXJkLWRlY2stbWFyZ2luOiAgICAgICAgICAgICAgICAgICRjYXJkLWdyb3VwLW1hcmdpbiAhZGVmYXVsdDtcclxuXHJcbiRjYXJkLWNvbHVtbnMtY291bnQ6ICAgICAgICAgICAgICAgIDMgIWRlZmF1bHQ7XHJcbiRjYXJkLWNvbHVtbnMtZ2FwOiAgICAgICAgICAgICAgICAgIDEuMjVyZW0gIWRlZmF1bHQ7XHJcbiRjYXJkLWNvbHVtbnMtbWFyZ2luOiAgICAgICAgICAgICAgICRjYXJkLXNwYWNlci15ICFkZWZhdWx0O1xyXG5cclxuJGVuYWJsZS1zaGFkb3dzOiAgICAgICAgICAgICAgICAgICAgZmFsc2UgIWRlZmF1bHQ7XHJcblxyXG4kaW5wdXQtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAgICAjY2VkNGRhICFkZWZhdWx0O1xyXG4iXX0= */"
+module.exports = ".navbar {\n  padding: 0 30px;\n  height: 60px; }\n\n.navbar-brand {\n  font-family: \"Ubuntu\";\n  font-weight: 700;\n  font-size: 22px;\n  width: 190px;\n  margin-right: 30px;\n  line-height: 1; }\n\n.version {\n  color: #cc00cc; }\n\n.navbar .navbar-nav .nav-link.version-link {\n  color: #fff; }\n\n@media (min-width: 992px) {\n  .navbar .navbar-nav .nav-link {\n    padding-right: 15px;\n    padding-left: 15px; } }\n\n.beyond-item {\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.beyond-item span {\n    margin: 0;\n    color: #fff; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGliL2NvbXBvbmVudHMvbmF2YmFyL0M6XFxVc2Vyc1xcam9lbC50b3JuZXJcXERvY3VtZW50c1xcR2l0aHViXFxlbWlsaW8tZ2VuZXJhdG9yL3NyY1xcYXBwXFxsaWJcXGNvbXBvbmVudHNcXG5hdmJhclxcbmF2YmFyLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9saWIvY29tcG9uZW50cy9uYXZiYXIvQzpcXFVzZXJzXFxqb2VsLnRvcm5lclxcRG9jdW1lbnRzXFxHaXRodWJcXGVtaWxpby1nZW5lcmF0b3Ivc3JjXFxzY3NzXFxzdHlsZXMtdmFyaWFibGVzLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBR0E7RUFDRSxlQ2lDOEI7RURoQzlCLFlDWTRCLEVBQUE7O0FEVjlCO0VBQ0UscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2YsWUFBd0I7RUFDeEIsa0JDeUI4QjtFRHhCOUIsY0FBYyxFQUFBOztBQUdoQjtFQUNFLGNDVnNCLEVBQUE7O0FEYXhCO0VBRUksV0FBVyxFQUFBOztBQUdiO0VBTEY7SUFNSSxtQkFBbUI7SUFDbkIsa0JBQWtCLEVBQUEsRUFFckI7O0FBRUQ7RUFDRSxhQUFhO0VBQ2IsbUJBQW1CO0VBQ25CLHVCQUF1QixFQUFBOztBQUh6QjtJQUtJLFNBQVM7SUFDVCxXQUFXLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9saWIvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcInN0eWxlcy11dGlsc1wiO1xyXG5AaW1wb3J0IFwic3R5bGVzLXZhcmlhYmxlc1wiO1xyXG5cclxuLm5hdmJhciB7XHJcbiAgcGFkZGluZzogMCAkZ3JpZC1ndXR0ZXItd2lkdGg7XHJcbiAgaGVpZ2h0OiAkbmF2YmFyLWg7XHJcbn1cclxuLm5hdmJhci1icmFuZCB7XHJcbiAgZm9udC1mYW1pbHk6IFwiVWJ1bnR1XCI7XHJcbiAgZm9udC13ZWlnaHQ6IDcwMDtcclxuICBmb250LXNpemU6IDIycHg7XHJcbiAgd2lkdGg6ICRzaWRlYmFyLXcgLSA2MHB4O1xyXG4gIG1hcmdpbi1yaWdodDogJGdyaWQtZ3V0dGVyLXdpZHRoO1xyXG4gIGxpbmUtaGVpZ2h0OiAxO1xyXG59XHJcblxyXG4udmVyc2lvbiB7XHJcbiAgY29sb3I6ICRwaW5rLTE7XHJcbn1cclxuXHJcbi5uYXZiYXIgLm5hdmJhci1uYXYgLm5hdi1saW5rIHtcclxuICAmLnZlcnNpb24tbGluayB7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICB9XHJcblxyXG4gIEBtZWRpYSAobWluLXdpZHRoOiA5OTJweCkge1xyXG4gICAgcGFkZGluZy1yaWdodDogMTVweDtcclxuICAgIHBhZGRpbmctbGVmdDogMTVweDtcclxuICB9XHJcbn1cclxuXHJcbi5iZXlvbmQtaXRlbSB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIHNwYW4ge1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgY29sb3I6ICNmZmY7XHJcbiAgfVxyXG59XHJcbiIsIi8vIENvbG9yc1xyXG4kYmctbGlnaHQ6ICAgICAgICNmN2Y3ZmE7XHJcbiRsaWdodC1ib3JkZXI6ICAgI2Y3ZWZmNjsgLy8gYm9yZGVyIG92ZXIgd2hpdGVcclxuJGJsYWNrLTE6ICAgICAgICAjMjIxYjI2O1xyXG5cclxuJGJsdWUtMTogICAgICAgICAjNWM2NDljO1xyXG4kYmx1ZS0yOiAgICAgICAgICM5Y2ExYjk7XHJcbiRwaW5rLTE6ICAgICAgICAgI2NjMDBjYztcclxuXHJcbiRzaGFkb3ctMTogICAgICAgI2U5ZGRmNzsgLy8gc2hhZG93IGJveCBjb2xvclxyXG5cclxuJGRpc2FibGVkLWJnOiAgICAjODg4O1xyXG4kZGlzYWJsZWQtdGV4dDogICM2NjY7XHJcblxyXG4vLyBMYXlvdXRcclxuJHNpZGViYXItdzogICAgICAgICAgICAgICAyNTBweDtcclxuJHNpZGViYXItaXRlbS1oOiAgICAgICAgICA2MHB4O1xyXG4kbmF2YmFyLWg6ICAgICAgICAgICAgICAgIDYwcHg7XHJcbiRzaWRlYmFyLWJhZGdlLXNpemU6ICAgICAgMjNweDtcclxuJHNtYWxsLWJyZWFrcG9pbnRzOiAgICAgICAxMzY2cHg7XHJcblxyXG5cclxuLy8gQlQgb3ZlcnJpdGVzXHJcbiRwcmltYXJ5OiAgICAgICAgICAgICAgICAgICAkcGluay0xICFkZWZhdWx0O1xyXG4kZGFyazogICAgICAgICAgICAgICAgICAgICAgIzMzMyAhZGVmYXVsdDtcclxuJGRhbmdlcjogICAgICAgICAgICAgICAgICAgICNmZjAwNjYgIWRlZmF1bHQ7XHJcbiR3YXJuaW5nOiAgICAgICAgICAgICAgICAgICAjZmY5OTAwICFkZWZhdWx0O1xyXG4kaW5mbzogICAgICAgICAgICAgICAgICAgICAgIzAwOTljYyAhZGVmYXVsdDtcclxuXHJcbiRib2R5LWJnOiAgICAgICAgICAgICAgICAgICAkYmctbGlnaHQgIWRlZmF1bHQ7XHJcbiRib2R5LWNvbG9yOiAgICAgICAgICAgICAgICAkYmx1ZS0xICFkZWZhdWx0O1xyXG5cclxuJGxpbmstY29sb3I6ICAgICAgICAgICAgICAgICRwaW5rLTEgIWRlZmF1bHQ7XHJcbiRsaW5rLWRlY29yYXRpb246ICAgICAgICAgICBub25lICFkZWZhdWx0O1xyXG4kbGluay1ob3Zlci1jb2xvcjogICAgICAgICAgZGFya2VuKCRwaW5rLTEsIDE1JSkgIWRlZmF1bHQ7XHJcbiRsaW5rLWhvdmVyLWRlY29yYXRpb246ICAgICBub25lICFkZWZhdWx0O1xyXG5cclxuJGdyaWQtZ3V0dGVyLXdpZHRoOiAgICAgICAgIDMwcHggIWRlZmF1bHQ7XHJcblxyXG4kZm9udC1mYW1pbHktc2Fucy1zZXJpZjogICAgXCJOdW5pdG9cIiwgc2Fucy1zZXJpZiAhZGVmYXVsdDtcclxuLy8gJGZvbnQtZmFtaWx5LW1vbm9zcGFjZTogIFNGTW9uby1SZWd1bGFyLCBNZW5sbywgTW9uYWNvLCBDb25zb2xhcywgXCJMaWJlcmF0aW9uIE1vbm9cIiwgXCJDb3VyaWVyIE5ld1wiLCBtb25vc3BhY2UgIWRlZmF1bHQ7XHJcbiRmb250LWZhbWlseS1iYXNlOiAgICAgICAgICAkZm9udC1mYW1pbHktc2Fucy1zZXJpZiAhZGVmYXVsdDtcclxuXHJcbiRmb250LXNpemUtYmFzZTogICAgICAgICAgICAwLjg3NXJlbSAhZGVmYXVsdDsgLy8gMTRweFxyXG5cclxuJHRyYW5zaXRpb24tYmFzZTogICAgICAgICAgIGFsbCAuMnMgZWFzZS1pbi1vdXQgIWRlZmF1bHQ7XHJcblxyXG4kY2FyZC1zcGFjZXIteTogICAgICAgICAgICAgICAgICAgICAxNXB4ICFkZWZhdWx0O1xyXG4kY2FyZC1zcGFjZXIteDogICAgICAgICAgICAgICAgICAgICAkZ3JpZC1ndXR0ZXItd2lkdGggIWRlZmF1bHQ7XHJcbiRjYXJkLWJvcmRlci13aWR0aDogICAgICAgICAgICAgICAgIDBweCAhZGVmYXVsdDtcclxuJGNhcmQtYm9yZGVyLXJhZGl1czogICAgICAgICAgICAgICAgN3B4ICFkZWZhdWx0O1xyXG4vLyAkY2FyZC1ib3JkZXItY29sb3I6ICAgICAgICAgICAgICAgICByZ2JhKCRibGFjaywgLjEyNSkgIWRlZmF1bHQ7XHJcbiRjYXJkLWlubmVyLWJvcmRlci1yYWRpdXM6ICAgICAgICAgICRjYXJkLWJvcmRlci1yYWRpdXMgIWRlZmF1bHQ7IC8vIGNhbGMoI3skY2FyZC1ib3JkZXItcmFkaXVzfSAtICN7JGNhcmQtYm9yZGVyLXdpZHRofSkgIWRlZmF1bHQ7XHJcbiRjYXJkLWNhcC1iZzogICAgICAgICAgICAgICAgICAgICAgICNGRkYgIWRlZmF1bHQ7XHJcbiRjYXJkLWNhcC1jb2xvcjogICAgICAgICAgICAgICAgICAgIGluaGVyaXQgIWRlZmF1bHQ7XHJcbiRjYXJkLWJnOiAgICAgICAgICAgICAgICAgICAgICAgICAgICNGRkYgIWRlZmF1bHQ7XHJcblxyXG4kY2FyZC1pbWctb3ZlcmxheS1wYWRkaW5nOiAgICAgICAgICAxLjI1cmVtICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtZ3JvdXAtbWFyZ2luOiAgICAgICAgICAgICAgICAgJGdyaWQtZ3V0dGVyLXdpZHRoIC8gMiAhZGVmYXVsdDtcclxuJGNhcmQtZGVjay1tYXJnaW46ICAgICAgICAgICAgICAgICAgJGNhcmQtZ3JvdXAtbWFyZ2luICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtY29sdW1ucy1jb3VudDogICAgICAgICAgICAgICAgMyAhZGVmYXVsdDtcclxuJGNhcmQtY29sdW1ucy1nYXA6ICAgICAgICAgICAgICAgICAgMS4yNXJlbSAhZGVmYXVsdDtcclxuJGNhcmQtY29sdW1ucy1tYXJnaW46ICAgICAgICAgICAgICAgJGNhcmQtc3BhY2VyLXkgIWRlZmF1bHQ7XHJcblxyXG4kZW5hYmxlLXNoYWRvd3M6ICAgICAgICAgICAgICAgICAgICBmYWxzZSAhZGVmYXVsdDtcclxuXHJcbiRpbnB1dC1ib3JkZXItY29sb3I6ICAgICAgICAgICAgICAgICNjZWQ0ZGEgIWRlZmF1bHQ7XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -5897,23 +10983,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _services_beyond_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/beyond.service */ "./src/app/lib/services/beyond.service.ts");
+
 
 
 
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent() {
+    function NavbarComponent(beyond) {
+        this.beyond = beyond;
         this.title = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].title;
         this.version = __webpack_require__(/*! ../../../../../package.json */ "./package.json").version;
     }
     NavbarComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.beyond.currentBeyond.subscribe(function (beyondValue) {
+            _this.beyondValue = beyondValue;
+        });
     };
     NavbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'eg-navbar',
+            selector: "eg-navbar",
             template: __webpack_require__(/*! ./navbar.component.html */ "./src/app/lib/components/navbar/navbar.component.html"),
             styles: [__webpack_require__(/*! ./navbar.component.scss */ "./src/app/lib/components/navbar/navbar.component.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_beyond_service__WEBPACK_IMPORTED_MODULE_3__["BeyondService"]])
     ], NavbarComponent);
     return NavbarComponent;
 }());
@@ -5996,7 +11089,7 @@ var SidebarToggleComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"list-unstyled\">\r\n  <li\r\n    *ngFor=\"let itemKey of objectKeys(listItems)\"\r\n    [ngClass]=\"{ 'empty': listItems[itemKey].empty, 'active-s': router.url.indexOf('generate-script/' + listItems[itemKey].key) > -1 }\"\r\n    routerLinkActive=\"active\"\r\n    [routerLinkActiveOptions]=\"{ exact: true }\"\r\n    [style.order]=\"listItems[itemKey].empty ? 10 : 1\"\r\n  >\r\n    <a routerLink=\"/language/{{ listItems[itemKey].key }}\">\r\n\r\n      <span\r\n        class=\"badge badge-primary\"\r\n        [ngClass]=\"{ 'small-badge': listItems[itemKey].key.length >= 3 }\"\r\n      >\r\n        {{ listItems[itemKey].key | uppercase }}\r\n      </span>\r\n\r\n      <span class=\"name\">{{ listItems[itemKey].name }}</span>\r\n      <svg class=\"icon\"><use xlink:href=\"#chevron-right\"></use></svg>\r\n\r\n    </a>\r\n  </li>\r\n</ul>\r\n"
+module.exports = "<ul class=\"list-unstyled\">\r\n  <li\r\n    *ngFor=\"let itemKey of objectKeys(appData.languages)\"\r\n    [ngClass]=\"{\r\n      empty: appData.languages[itemKey].empty,\r\n      'active-s':\r\n        router.url.indexOf(\r\n          'generate-script/' + appData.languages[itemKey].key\r\n        ) > -1\r\n    }\"\r\n    routerLinkActive=\"active\"\r\n    [routerLinkActiveOptions]=\"{ exact: true }\"\r\n    [style.order]=\"appData.languages[itemKey].empty ? 10 : 1\"\r\n  >\r\n    <a routerLink=\"/language/{{ appData.languages[itemKey].key }}\">\r\n      <span\r\n        class=\"badge badge-primary\"\r\n        [ngClass]=\"{\r\n          'small-badge': appData.languages[itemKey].key.length >= 3\r\n        }\"\r\n      >\r\n        {{ appData.languages[itemKey].key | uppercase }}\r\n      </span>\r\n\r\n      <span class=\"name\">{{ appData.languages[itemKey].name }}</span>\r\n      <svg class=\"icon\"><use xlink:href=\"#chevron-right\"></use></svg>\r\n    </a>\r\n  </li>\r\n</ul>\r\n"
 
 /***/ }),
 
@@ -6034,14 +11127,11 @@ var LanguagesListComponent = /** @class */ (function () {
         this.appData = appData;
         this.router = router;
         this.objectKeys = Object.keys;
-        this.listItems = {};
-        this.listItems = this.appData.languages;
     }
-    LanguagesListComponent.prototype.ngOnInit = function () {
-    };
+    LanguagesListComponent.prototype.ngOnInit = function () { };
     LanguagesListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'eg-languages-list',
+            selector: "eg-languages-list",
             template: __webpack_require__(/*! ./languages-list.component.html */ "./src/app/lib/components/sidebar/languages-list/languages-list.component.html"),
             styles: [__webpack_require__(/*! ./languages-list.component.scss */ "./src/app/lib/components/sidebar/languages-list/languages-list.component.scss")]
         }),
@@ -6279,6 +11369,47 @@ var AuthService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/lib/services/beyond.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/lib/services/beyond.service.ts ***!
+  \************************************************/
+/*! exports provided: BeyondService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BeyondService", function() { return BeyondService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var src_app_data_app_data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/data/app-data */ "./src/app/data/app-data.ts");
+
+
+
+
+var BeyondService = /** @class */ (function () {
+    function BeyondService(appData) {
+        this.appData = appData;
+        this.beyondSource = new rxjs__WEBPACK_IMPORTED_MODULE_2__["BehaviorSubject"](false);
+        this.currentBeyond = this.beyondSource.asObservable();
+    }
+    BeyondService.prototype.changeBeyond = function (beyond) {
+        this.beyondSource.next(beyond);
+        localStorage.setItem("beyondActive", beyond === true ? "1" : "0");
+    };
+    BeyondService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: "root",
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_data_app_data__WEBPACK_IMPORTED_MODULE_3__["AppData"]])
+    ], BeyondService);
+    return BeyondService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/lib/services/jszip.service.ts":
 /*!***********************************************!*\
   !*** ./src/app/lib/services/jszip.service.ts ***!
@@ -6434,7 +11565,7 @@ module.exports = "<div class=\"login\">\r\n    <div class=\"card\">\r\n      <di
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 500000000000;\n  background-color: #f7f7fa;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: auto;\n  padding: 30px; }\n\nh1 {\n  line-height: 1;\n  font-weight: 300;\n  font-size: 48px; }\n\nh1 b {\n    font-weight: bold;\n    font-family: \"Ubuntu\", sans-serif; }\n\n.icon-wrap {\n  color: #9ca1b9; }\n\n.icon-wrap.error {\n    color: #ff0066; }\n\n.icon-wrap.error .icon {\n      -webkit-animation: bounce 1s infinite linear;\n              animation: bounce 1s infinite linear; }\n\n.icon-wrap .icon {\n    fill: #9ca1b9;\n    height: 36px;\n    width: 36px;\n    -webkit-animation: spin 1s infinite linear;\n            animation: spin 1s infinite linear;\n    margin: 0 auto;\n    font-size: 24px;\n    line-height: 34px;\n    text-align: center; }\n\n.icon-wrap span {\n    display: block; }\n\n.card {\n  width: 800px;\n  height: 420px;\n  margin: auto;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0; }\n\n.card .card-body {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-evenly;\n    padding-bottom: 90px; }\n\n.slider {\n  position: absolute;\n  width: 110%;\n  height: 4px;\n  overflow-x: hidden;\n  top: 0;\n  left: 0;\n  right: 0; }\n\n.slider .line {\n    position: absolute;\n    opacity: 0.4;\n    background-color: #cc00cc;\n    width: 150%;\n    height: 4px; }\n\n.slider .subline {\n    position: absolute;\n    background-color: #cc00cc;\n    height: 5px; }\n\n.slider .inc {\n    -webkit-animation: increase 2s infinite;\n            animation: increase 2s infinite; }\n\n.slider .dec {\n    -webkit-animation: decrease 2s 0.5s infinite;\n            animation: decrease 2s 0.5s infinite; }\n\n.disclaimer {\n  position: absolute;\n  bottom: 30px;\n  left: 30px;\n  right: 30px;\n  color: #9ca1b9;\n  font-size: 12px; }\n\n.disclaimer a {\n    text-decoration: underline;\n    color: #9ca1b9; }\n\n@-webkit-keyframes spin {\n  100% {\n    transform: rotate(-360deg); } }\n\n@keyframes spin {\n  100% {\n    transform: rotate(-360deg); } }\n\n@-webkit-keyframes increase {\n  from {\n    left: -5%;\n    width: 5%; }\n  to {\n    left: 130%;\n    width: 100%; } }\n\n@keyframes increase {\n  from {\n    left: -5%;\n    width: 5%; }\n  to {\n    left: 130%;\n    width: 100%; } }\n\n@-webkit-keyframes decrease {\n  from {\n    left: -80%;\n    width: 80%; }\n  to {\n    left: 110%;\n    width: 10%; } }\n\n@keyframes decrease {\n  from {\n    left: -80%;\n    width: 80%; }\n  to {\n    left: 110%;\n    width: 10%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvYWNjZXNzLWxvYWRpbmcvYWNjZXNzLWxvYWRpbmcvQzpcXFVzZXJzXFxqb2VsLnRvcm5lclxcRG9jdW1lbnRzXFxHaXRodWJcXGVtaWxpby1nZW5lcmF0b3Ivc3JjXFxhcHBcXHZpZXdzXFxhY2Nlc3MtbG9hZGluZ1xcYWNjZXNzLWxvYWRpbmdcXGFjY2Vzcy1sb2FkaW5nLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC92aWV3cy9hY2Nlc3MtbG9hZGluZy9hY2Nlc3MtbG9hZGluZy9DOlxcVXNlcnNcXGpvZWwudG9ybmVyXFxEb2N1bWVudHNcXEdpdGh1YlxcZW1pbGlvLWdlbmVyYXRvci9zcmNcXHNjc3NcXHN0eWxlcy12YXJpYWJsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNFLGVBQWU7RUFDZixNQUFNO0VBQ04sT0FBTztFQUNQLFFBQVE7RUFDUixTQUFTO0VBQ1QscUJBQXFCO0VBQ3JCLHlCQ1RzQjtFRFV0QixrQkFBa0I7RUFFbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsY0FBYztFQUVkLGFDbUI4QixFQUFBOztBRGhCaEM7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLGVBQWUsRUFBQTs7QUFIakI7SUFNSSxpQkFBaUI7SUFDakIsaUNBQWlDLEVBQUE7O0FBSXJDO0VBQ0UsY0MzQnNCLEVBQUE7O0FEMEJ4QjtJQUdJLGNDVitCLEVBQUE7O0FET25DO01BTU0sNENBQW9DO2NBQXBDLG9DQUFvQyxFQUFBOztBQU4xQztJQVdJLGFDckNvQjtJRHNDcEIsWUFBWTtJQUNaLFdBQVc7SUFDWCwwQ0FBa0M7WUFBbEMsa0NBQWtDO0lBQ2xDLGNBQWM7SUFDZCxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLGtCQUFrQixFQUFBOztBQWxCdEI7SUFzQkksY0FBYyxFQUFBOztBQUlsQjtFQUNFLFlBQVk7RUFDWixhQUFhO0VBQ2IsWUFBWTtFQUNaLHlCQUF5QjtFQUN6QiwwQkFBMEIsRUFBQTs7QUFMNUI7SUFRSSxhQUFhO0lBQ2Isc0JBQXNCO0lBQ3RCLDZCQUE2QjtJQUU3QixvQkFBc0MsRUFBQTs7QUFJMUM7RUFDRSxrQkFBa0I7RUFDbEIsV0FBVztFQUNYLFdBQVc7RUFDWCxrQkFBa0I7RUFDbEIsTUFBTTtFQUNOLE9BQU87RUFDUCxRQUFRLEVBQUE7O0FBUFY7SUFVSSxrQkFBa0I7SUFDbEIsWUFBWTtJQUNaLHlCQy9Fb0I7SURnRnBCLFdBQVc7SUFDWCxXQUFXLEVBQUE7O0FBZGY7SUFrQkksa0JBQWtCO0lBQ2xCLHlCQ3RGb0I7SUR1RnBCLFdBQVcsRUFBQTs7QUFwQmY7SUF1QkksdUNBQStCO1lBQS9CLCtCQUErQixFQUFBOztBQXZCbkM7SUEwQkksNENBQW9DO1lBQXBDLG9DQUFvQyxFQUFBOztBQUl4QztFQUNFLGtCQUFrQjtFQUNsQixZQ3JFOEI7RURzRTlCLFVDdEU4QjtFRHVFOUIsV0N2RThCO0VEd0U5QixjQ3ZHc0I7RUR3R3RCLGVBQWUsRUFBQTs7QUFOakI7SUFTSSwwQkFBMEI7SUFDMUIsY0M1R29CLEVBQUE7O0FEZ0h4QjtFQUNFO0lBQ0UsMEJBQXlCLEVBQUEsRUFBQTs7QUFGN0I7RUFDRTtJQUNFLDBCQUF5QixFQUFBLEVBQUE7O0FBSTdCO0VBQ0U7SUFDRSxTQUFTO0lBQ1QsU0FBUyxFQUFBO0VBRVg7SUFDRSxVQUFVO0lBQ1YsV0FBVyxFQUFBLEVBQUE7O0FBUGY7RUFDRTtJQUNFLFNBQVM7SUFDVCxTQUFTLEVBQUE7RUFFWDtJQUNFLFVBQVU7SUFDVixXQUFXLEVBQUEsRUFBQTs7QUFHZjtFQUNFO0lBQ0UsVUFBVTtJQUNWLFVBQVcsRUFBQTtFQUViO0lBQ0UsVUFBVTtJQUNWLFVBQVUsRUFBQSxFQUFBOztBQVBkO0VBQ0U7SUFDRSxVQUFVO0lBQ1YsVUFBVyxFQUFBO0VBRWI7SUFDRSxVQUFVO0lBQ1YsVUFBVSxFQUFBLEVBQUEiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9hY2Nlc3MtbG9hZGluZy9hY2Nlc3MtbG9hZGluZy9hY2Nlc3MtbG9hZGluZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCJzdHlsZXMtdmFyaWFibGVzXCI7XHJcbkBpbXBvcnQgXCJzdHlsZXMtdXRpbHNcIjtcclxuXHJcbi5sb2dpbiB7XHJcbiAgcG9zaXRpb246IGZpeGVkO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICB6LWluZGV4OiA1MDAwMDAwMDAwMDA7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogJGJnLWxpZ2h0O1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIG92ZXJmbG93OiBhdXRvO1xyXG5cclxuICBwYWRkaW5nOiAkZ3JpZC1ndXR0ZXItd2lkdGg7XHJcbn1cclxuXHJcbmgxIHtcclxuICBsaW5lLWhlaWdodDogMTtcclxuICBmb250LXdlaWdodDogMzAwO1xyXG4gIGZvbnQtc2l6ZTogNDhweDtcclxuXHJcbiAgYiB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGZvbnQtZmFtaWx5OiBcIlVidW50dVwiLCBzYW5zLXNlcmlmO1xyXG4gIH1cclxufVxyXG5cclxuLmljb24td3JhcCB7XHJcbiAgY29sb3I6ICRibHVlLTI7XHJcbiAgJi5lcnJvciB7XHJcbiAgICBjb2xvcjogJGRhbmdlcjtcclxuXHJcbiAgICAuaWNvbiB7XHJcbiAgICAgIGFuaW1hdGlvbjogYm91bmNlIDFzIGluZmluaXRlIGxpbmVhcjtcclxuICAgIH1cclxuICB9XHJcblxyXG4gIC5pY29uIHtcclxuICAgIGZpbGw6ICRibHVlLTI7XHJcbiAgICBoZWlnaHQ6IDM2cHg7XHJcbiAgICB3aWR0aDogMzZweDtcclxuICAgIGFuaW1hdGlvbjogc3BpbiAxcyBpbmZpbml0ZSBsaW5lYXI7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAzNHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgc3BhbiB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICB9XHJcbn1cclxuXHJcbi5jYXJkIHtcclxuICB3aWR0aDogODAwcHg7XHJcbiAgaGVpZ2h0OiA0MjBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcclxuICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMDtcclxuXHJcbiAgLmNhcmQtYm9keSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xyXG5cclxuICAgIHBhZGRpbmctYm90dG9tOiAkZ3JpZC1ndXR0ZXItd2lkdGggKiAzO1xyXG4gIH1cclxufVxyXG5cclxuLnNsaWRlcntcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgd2lkdGg6IDExMCU7XHJcbiAgaGVpZ2h0OiA0cHg7XHJcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG5cclxuICAubGluZXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIG9wYWNpdHk6IDAuNDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRwaW5rLTE7XHJcbiAgICB3aWR0aDogMTUwJTtcclxuICAgIGhlaWdodDogNHB4O1xyXG4gIH1cclxuXHJcbiAgLnN1YmxpbmV7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkcGluay0xO1xyXG4gICAgaGVpZ2h0OiA1cHg7XHJcbiAgfVxyXG4gIC5pbmN7XHJcbiAgICBhbmltYXRpb246IGluY3JlYXNlIDJzIGluZmluaXRlO1xyXG4gIH1cclxuICAuZGVje1xyXG4gICAgYW5pbWF0aW9uOiBkZWNyZWFzZSAycyAwLjVzIGluZmluaXRlO1xyXG4gIH1cclxufVxyXG5cclxuLmRpc2NsYWltZXIge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBib3R0b206ICRncmlkLWd1dHRlci13aWR0aDtcclxuICBsZWZ0OiAkZ3JpZC1ndXR0ZXItd2lkdGg7XHJcbiAgcmlnaHQ6ICRncmlkLWd1dHRlci13aWR0aDtcclxuICBjb2xvcjogJGJsdWUtMjtcclxuICBmb250LXNpemU6IDEycHg7XHJcblxyXG4gIGEge1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICBjb2xvcjogJGJsdWUtMjtcclxuICB9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgc3BpbiB7XHJcbiAgMTAwJSB7XHJcbiAgICB0cmFuc2Zvcm06cm90YXRlKC0zNjBkZWcpO1xyXG4gIH1cclxufVxyXG5cclxuQGtleWZyYW1lcyBpbmNyZWFzZSB7XHJcbiAgZnJvbSB7XHJcbiAgICBsZWZ0OiAtNSU7XHJcbiAgICB3aWR0aDogNSU7XHJcbiAgfVxyXG4gIHRvIHtcclxuICAgIGxlZnQ6IDEzMCU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbn1cclxuQGtleWZyYW1lcyBkZWNyZWFzZSB7XHJcbiAgZnJvbSB7XHJcbiAgICBsZWZ0OiAtODAlO1xyXG4gICAgd2lkdGg6ICA4MCU7XHJcbiAgfVxyXG4gIHRvIHtcclxuICAgIGxlZnQ6IDExMCU7XHJcbiAgICB3aWR0aDogMTAlO1xyXG4gIH1cclxufVxyXG4iLCIvLyBDb2xvcnNcclxuJGJnLWxpZ2h0OiAgICAgICAjZjdmN2ZhO1xyXG4kbGlnaHQtYm9yZGVyOiAgICNmN2VmZjY7IC8vIGJvcmRlciBvdmVyIHdoaXRlXHJcbiRibGFjay0xOiAgICAgICAgIzIyMWIyNjtcclxuXHJcbiRibHVlLTE6ICAgICAgICAgIzVjNjQ5YztcclxuJGJsdWUtMjogICAgICAgICAjOWNhMWI5O1xyXG4kcGluay0xOiAgICAgICAgICNjYzAwY2M7XHJcblxyXG4kc2hhZG93LTE6ICAgICAgICNlOWRkZjc7IC8vIHNoYWRvdyBib3ggY29sb3JcclxuXHJcbiRkaXNhYmxlZC1iZzogICAgIzg4ODtcclxuJGRpc2FibGVkLXRleHQ6ICAjNjY2O1xyXG5cclxuLy8gTGF5b3V0XHJcbiRzaWRlYmFyLXc6ICAgICAgICAgICAgICAgMjUwcHg7XHJcbiRzaWRlYmFyLWl0ZW0taDogICAgICAgICAgNjBweDtcclxuJG5hdmJhci1oOiAgICAgICAgICAgICAgICA2MHB4O1xyXG4kc2lkZWJhci1iYWRnZS1zaXplOiAgICAgIDIzcHg7XHJcbiRzbWFsbC1icmVha3BvaW50czogICAgICAgMTM2NnB4O1xyXG5cclxuXHJcbi8vIEJUIG92ZXJyaXRlc1xyXG4kcHJpbWFyeTogICAgICAgICAgICAgICAgICAgJHBpbmstMSAhZGVmYXVsdDtcclxuJGRhcms6ICAgICAgICAgICAgICAgICAgICAgICMzMzMgIWRlZmF1bHQ7XHJcbiRkYW5nZXI6ICAgICAgICAgICAgICAgICAgICAjZmYwMDY2ICFkZWZhdWx0O1xyXG4kd2FybmluZzogICAgICAgICAgICAgICAgICAgI2ZmOTkwMCAhZGVmYXVsdDtcclxuJGluZm86ICAgICAgICAgICAgICAgICAgICAgICMwMDk5Y2MgIWRlZmF1bHQ7XHJcblxyXG4kYm9keS1iZzogICAgICAgICAgICAgICAgICAgJGJnLWxpZ2h0ICFkZWZhdWx0O1xyXG4kYm9keS1jb2xvcjogICAgICAgICAgICAgICAgJGJsdWUtMSAhZGVmYXVsdDtcclxuXHJcbiRsaW5rLWNvbG9yOiAgICAgICAgICAgICAgICAkcGluay0xICFkZWZhdWx0O1xyXG4kbGluay1kZWNvcmF0aW9uOiAgICAgICAgICAgbm9uZSAhZGVmYXVsdDtcclxuJGxpbmstaG92ZXItY29sb3I6ICAgICAgICAgIGRhcmtlbigkcGluay0xLCAxNSUpICFkZWZhdWx0O1xyXG4kbGluay1ob3Zlci1kZWNvcmF0aW9uOiAgICAgbm9uZSAhZGVmYXVsdDtcclxuXHJcbiRncmlkLWd1dHRlci13aWR0aDogICAgICAgICAzMHB4ICFkZWZhdWx0O1xyXG5cclxuJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWY6ICAgIFwiTnVuaXRvXCIsIHNhbnMtc2VyaWYgIWRlZmF1bHQ7XHJcbi8vICRmb250LWZhbWlseS1tb25vc3BhY2U6ICBTRk1vbm8tUmVndWxhciwgTWVubG8sIE1vbmFjbywgQ29uc29sYXMsIFwiTGliZXJhdGlvbiBNb25vXCIsIFwiQ291cmllciBOZXdcIiwgbW9ub3NwYWNlICFkZWZhdWx0O1xyXG4kZm9udC1mYW1pbHktYmFzZTogICAgICAgICAgJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWYgIWRlZmF1bHQ7XHJcblxyXG4kZm9udC1zaXplLWJhc2U6ICAgICAgICAgICAgMC44NzVyZW0gIWRlZmF1bHQ7IC8vIDE0cHhcclxuXHJcbiR0cmFuc2l0aW9uLWJhc2U6ICAgICAgICAgICBhbGwgLjJzIGVhc2UtaW4tb3V0ICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtc3BhY2VyLXk6ICAgICAgICAgICAgICAgICAgICAgMTVweCAhZGVmYXVsdDtcclxuJGNhcmQtc3BhY2VyLXg6ICAgICAgICAgICAgICAgICAgICAgJGdyaWQtZ3V0dGVyLXdpZHRoICFkZWZhdWx0O1xyXG4kY2FyZC1ib3JkZXItd2lkdGg6ICAgICAgICAgICAgICAgICAwcHggIWRlZmF1bHQ7XHJcbiRjYXJkLWJvcmRlci1yYWRpdXM6ICAgICAgICAgICAgICAgIDdweCAhZGVmYXVsdDtcclxuLy8gJGNhcmQtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAgICAgcmdiYSgkYmxhY2ssIC4xMjUpICFkZWZhdWx0O1xyXG4kY2FyZC1pbm5lci1ib3JkZXItcmFkaXVzOiAgICAgICAgICAkY2FyZC1ib3JkZXItcmFkaXVzICFkZWZhdWx0OyAvLyBjYWxjKCN7JGNhcmQtYm9yZGVyLXJhZGl1c30gLSAjeyRjYXJkLWJvcmRlci13aWR0aH0pICFkZWZhdWx0O1xyXG4kY2FyZC1jYXAtYmc6ICAgICAgICAgICAgICAgICAgICAgICAjRkZGICFkZWZhdWx0O1xyXG4kY2FyZC1jYXAtY29sb3I6ICAgICAgICAgICAgICAgICAgICBpbmhlcml0ICFkZWZhdWx0O1xyXG4kY2FyZC1iZzogICAgICAgICAgICAgICAgICAgICAgICAgICAjRkZGICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtaW1nLW92ZXJsYXktcGFkZGluZzogICAgICAgICAgMS4yNXJlbSAhZGVmYXVsdDtcclxuXHJcbiRjYXJkLWdyb3VwLW1hcmdpbjogICAgICAgICAgICAgICAgICRncmlkLWd1dHRlci13aWR0aCAvIDIgIWRlZmF1bHQ7XHJcbiRjYXJkLWRlY2stbWFyZ2luOiAgICAgICAgICAgICAgICAgICRjYXJkLWdyb3VwLW1hcmdpbiAhZGVmYXVsdDtcclxuXHJcbiRjYXJkLWNvbHVtbnMtY291bnQ6ICAgICAgICAgICAgICAgIDMgIWRlZmF1bHQ7XHJcbiRjYXJkLWNvbHVtbnMtZ2FwOiAgICAgICAgICAgICAgICAgIDEuMjVyZW0gIWRlZmF1bHQ7XHJcbiRjYXJkLWNvbHVtbnMtbWFyZ2luOiAgICAgICAgICAgICAgICRjYXJkLXNwYWNlci15ICFkZWZhdWx0O1xyXG5cclxuJGVuYWJsZS1zaGFkb3dzOiAgICAgICAgICAgICAgICAgICAgZmFsc2UgIWRlZmF1bHQ7XHJcblxyXG4kaW5wdXQtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAgICAjY2VkNGRhICFkZWZhdWx0O1xyXG4iXX0= */"
+module.exports = ".login {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  z-index: 500000000000;\n  background-color: #f7f7fa;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  overflow: auto;\n  padding: 30px; }\n\nh1 {\n  line-height: 1;\n  font-weight: 300;\n  font-size: 48px; }\n\nh1 b {\n    font-weight: bold;\n    font-family: \"Ubuntu\", sans-serif; }\n\n.icon-wrap {\n  color: #9ca1b9; }\n\n.icon-wrap.error {\n    color: #ff0066; }\n\n.icon-wrap.error .icon {\n      animation: bounce 1s infinite linear; }\n\n.icon-wrap .icon {\n    fill: #9ca1b9;\n    height: 36px;\n    width: 36px;\n    animation: spin 1s infinite linear;\n    margin: 0 auto;\n    font-size: 24px;\n    line-height: 34px;\n    text-align: center; }\n\n.icon-wrap span {\n    display: block; }\n\n.card {\n  width: 800px;\n  height: 420px;\n  margin: auto;\n  border-top-left-radius: 0;\n  border-top-right-radius: 0; }\n\n.card .card-body {\n    display: flex;\n    flex-direction: column;\n    justify-content: space-evenly;\n    padding-bottom: 90px; }\n\n.slider {\n  position: absolute;\n  width: 110%;\n  height: 4px;\n  overflow-x: hidden;\n  top: 0;\n  left: 0;\n  right: 0; }\n\n.slider .line {\n    position: absolute;\n    opacity: 0.4;\n    background-color: #cc00cc;\n    width: 150%;\n    height: 4px; }\n\n.slider .subline {\n    position: absolute;\n    background-color: #cc00cc;\n    height: 5px; }\n\n.slider .inc {\n    animation: increase 2s infinite; }\n\n.slider .dec {\n    animation: decrease 2s 0.5s infinite; }\n\n.disclaimer {\n  position: absolute;\n  bottom: 30px;\n  left: 30px;\n  right: 30px;\n  color: #9ca1b9;\n  font-size: 12px; }\n\n.disclaimer a {\n    text-decoration: underline;\n    color: #9ca1b9; }\n\n@keyframes spin {\n  100% {\n    transform: rotate(-360deg); } }\n\n@keyframes increase {\n  from {\n    left: -5%;\n    width: 5%; }\n  to {\n    left: 130%;\n    width: 100%; } }\n\n@keyframes decrease {\n  from {\n    left: -80%;\n    width: 80%; }\n  to {\n    left: 110%;\n    width: 10%; } }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdmlld3MvYWNjZXNzLWxvYWRpbmcvYWNjZXNzLWxvYWRpbmcvQzpcXFVzZXJzXFxqb2VsLnRvcm5lclxcRG9jdW1lbnRzXFxHaXRodWJcXGVtaWxpby1nZW5lcmF0b3Ivc3JjXFxhcHBcXHZpZXdzXFxhY2Nlc3MtbG9hZGluZ1xcYWNjZXNzLWxvYWRpbmdcXGFjY2Vzcy1sb2FkaW5nLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC92aWV3cy9hY2Nlc3MtbG9hZGluZy9hY2Nlc3MtbG9hZGluZy9DOlxcVXNlcnNcXGpvZWwudG9ybmVyXFxEb2N1bWVudHNcXEdpdGh1YlxcZW1pbGlvLWdlbmVyYXRvci9zcmNcXHNjc3NcXHN0eWxlcy12YXJpYWJsZXMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNFLGVBQWU7RUFDZixNQUFNO0VBQ04sT0FBTztFQUNQLFFBQVE7RUFDUixTQUFTO0VBQ1QscUJBQXFCO0VBQ3JCLHlCQ1RzQjtFRFV0QixrQkFBa0I7RUFFbEIsYUFBYTtFQUNiLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsY0FBYztFQUVkLGFDbUI4QixFQUFBOztBRGhCaEM7RUFDRSxjQUFjO0VBQ2QsZ0JBQWdCO0VBQ2hCLGVBQWUsRUFBQTs7QUFIakI7SUFNSSxpQkFBaUI7SUFDakIsaUNBQWlDLEVBQUE7O0FBSXJDO0VBQ0UsY0MzQnNCLEVBQUE7O0FEMEJ4QjtJQUdJLGNDVitCLEVBQUE7O0FET25DO01BTU0sb0NBQW9DLEVBQUE7O0FBTjFDO0lBV0ksYUNyQ29CO0lEc0NwQixZQUFZO0lBQ1osV0FBVztJQUNYLGtDQUFrQztJQUNsQyxjQUFjO0lBQ2QsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixrQkFBa0IsRUFBQTs7QUFsQnRCO0lBc0JJLGNBQWMsRUFBQTs7QUFJbEI7RUFDRSxZQUFZO0VBQ1osYUFBYTtFQUNiLFlBQVk7RUFDWix5QkFBeUI7RUFDekIsMEJBQTBCLEVBQUE7O0FBTDVCO0lBUUksYUFBYTtJQUNiLHNCQUFzQjtJQUN0Qiw2QkFBNkI7SUFFN0Isb0JBQXNDLEVBQUE7O0FBSTFDO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxXQUFXO0VBQ1gsa0JBQWtCO0VBQ2xCLE1BQU07RUFDTixPQUFPO0VBQ1AsUUFBUSxFQUFBOztBQVBWO0lBVUksa0JBQWtCO0lBQ2xCLFlBQVk7SUFDWix5QkMvRW9CO0lEZ0ZwQixXQUFXO0lBQ1gsV0FBVyxFQUFBOztBQWRmO0lBa0JJLGtCQUFrQjtJQUNsQix5QkN0Rm9CO0lEdUZwQixXQUFXLEVBQUE7O0FBcEJmO0lBdUJJLCtCQUErQixFQUFBOztBQXZCbkM7SUEwQkksb0NBQW9DLEVBQUE7O0FBSXhDO0VBQ0Usa0JBQWtCO0VBQ2xCLFlDckU4QjtFRHNFOUIsVUN0RThCO0VEdUU5QixXQ3ZFOEI7RUR3RTlCLGNDdkdzQjtFRHdHdEIsZUFBZSxFQUFBOztBQU5qQjtJQVNJLDBCQUEwQjtJQUMxQixjQzVHb0IsRUFBQTs7QURnSHhCO0VBQ0U7SUFDRSwwQkFBeUIsRUFBQSxFQUFBOztBQUk3QjtFQUNFO0lBQ0UsU0FBUztJQUNULFNBQVMsRUFBQTtFQUVYO0lBQ0UsVUFBVTtJQUNWLFdBQVcsRUFBQSxFQUFBOztBQUdmO0VBQ0U7SUFDRSxVQUFVO0lBQ1YsVUFBVyxFQUFBO0VBRWI7SUFDRSxVQUFVO0lBQ1YsVUFBVSxFQUFBLEVBQUEiLCJmaWxlIjoic3JjL2FwcC92aWV3cy9hY2Nlc3MtbG9hZGluZy9hY2Nlc3MtbG9hZGluZy9hY2Nlc3MtbG9hZGluZy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCJzdHlsZXMtdmFyaWFibGVzXCI7XHJcbkBpbXBvcnQgXCJzdHlsZXMtdXRpbHNcIjtcclxuXHJcbi5sb2dpbiB7XHJcbiAgcG9zaXRpb246IGZpeGVkO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIGJvdHRvbTogMDtcclxuICB6LWluZGV4OiA1MDAwMDAwMDAwMDA7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogJGJnLWxpZ2h0O1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbiAgZGlzcGxheTogZmxleDtcclxuICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gIG92ZXJmbG93OiBhdXRvO1xyXG5cclxuICBwYWRkaW5nOiAkZ3JpZC1ndXR0ZXItd2lkdGg7XHJcbn1cclxuXHJcbmgxIHtcclxuICBsaW5lLWhlaWdodDogMTtcclxuICBmb250LXdlaWdodDogMzAwO1xyXG4gIGZvbnQtc2l6ZTogNDhweDtcclxuXHJcbiAgYiB7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgIGZvbnQtZmFtaWx5OiBcIlVidW50dVwiLCBzYW5zLXNlcmlmO1xyXG4gIH1cclxufVxyXG5cclxuLmljb24td3JhcCB7XHJcbiAgY29sb3I6ICRibHVlLTI7XHJcbiAgJi5lcnJvciB7XHJcbiAgICBjb2xvcjogJGRhbmdlcjtcclxuXHJcbiAgICAuaWNvbiB7XHJcbiAgICAgIGFuaW1hdGlvbjogYm91bmNlIDFzIGluZmluaXRlIGxpbmVhcjtcclxuICAgIH1cclxuICB9XHJcblxyXG4gIC5pY29uIHtcclxuICAgIGZpbGw6ICRibHVlLTI7XHJcbiAgICBoZWlnaHQ6IDM2cHg7XHJcbiAgICB3aWR0aDogMzZweDtcclxuICAgIGFuaW1hdGlvbjogc3BpbiAxcyBpbmZpbml0ZSBsaW5lYXI7XHJcbiAgICBtYXJnaW46IDAgYXV0bztcclxuICAgIGZvbnQtc2l6ZTogMjRweDtcclxuICAgIGxpbmUtaGVpZ2h0OiAzNHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIH1cclxuXHJcbiAgc3BhbiB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICB9XHJcbn1cclxuXHJcbi5jYXJkIHtcclxuICB3aWR0aDogODAwcHg7XHJcbiAgaGVpZ2h0OiA0MjBweDtcclxuICBtYXJnaW46IGF1dG87XHJcbiAgYm9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMDtcclxuICBib3JkZXItdG9wLXJpZ2h0LXJhZGl1czogMDtcclxuXHJcbiAgLmNhcmQtYm9keSB7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtZXZlbmx5O1xyXG5cclxuICAgIHBhZGRpbmctYm90dG9tOiAkZ3JpZC1ndXR0ZXItd2lkdGggKiAzO1xyXG4gIH1cclxufVxyXG5cclxuLnNsaWRlcntcclxuICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgd2lkdGg6IDExMCU7XHJcbiAgaGVpZ2h0OiA0cHg7XHJcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG4gIHRvcDogMDtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG5cclxuICAubGluZXtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIG9wYWNpdHk6IDAuNDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRwaW5rLTE7XHJcbiAgICB3aWR0aDogMTUwJTtcclxuICAgIGhlaWdodDogNHB4O1xyXG4gIH1cclxuXHJcbiAgLnN1YmxpbmV7XHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkcGluay0xO1xyXG4gICAgaGVpZ2h0OiA1cHg7XHJcbiAgfVxyXG4gIC5pbmN7XHJcbiAgICBhbmltYXRpb246IGluY3JlYXNlIDJzIGluZmluaXRlO1xyXG4gIH1cclxuICAuZGVje1xyXG4gICAgYW5pbWF0aW9uOiBkZWNyZWFzZSAycyAwLjVzIGluZmluaXRlO1xyXG4gIH1cclxufVxyXG5cclxuLmRpc2NsYWltZXIge1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBib3R0b206ICRncmlkLWd1dHRlci13aWR0aDtcclxuICBsZWZ0OiAkZ3JpZC1ndXR0ZXItd2lkdGg7XHJcbiAgcmlnaHQ6ICRncmlkLWd1dHRlci13aWR0aDtcclxuICBjb2xvcjogJGJsdWUtMjtcclxuICBmb250LXNpemU6IDEycHg7XHJcblxyXG4gIGEge1xyXG4gICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XHJcbiAgICBjb2xvcjogJGJsdWUtMjtcclxuICB9XHJcbn1cclxuXHJcbkBrZXlmcmFtZXMgc3BpbiB7XHJcbiAgMTAwJSB7XHJcbiAgICB0cmFuc2Zvcm06cm90YXRlKC0zNjBkZWcpO1xyXG4gIH1cclxufVxyXG5cclxuQGtleWZyYW1lcyBpbmNyZWFzZSB7XHJcbiAgZnJvbSB7XHJcbiAgICBsZWZ0OiAtNSU7XHJcbiAgICB3aWR0aDogNSU7XHJcbiAgfVxyXG4gIHRvIHtcclxuICAgIGxlZnQ6IDEzMCU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICB9XHJcbn1cclxuQGtleWZyYW1lcyBkZWNyZWFzZSB7XHJcbiAgZnJvbSB7XHJcbiAgICBsZWZ0OiAtODAlO1xyXG4gICAgd2lkdGg6ICA4MCU7XHJcbiAgfVxyXG4gIHRvIHtcclxuICAgIGxlZnQ6IDExMCU7XHJcbiAgICB3aWR0aDogMTAlO1xyXG4gIH1cclxufVxyXG4iLCIvLyBDb2xvcnNcclxuJGJnLWxpZ2h0OiAgICAgICAjZjdmN2ZhO1xyXG4kbGlnaHQtYm9yZGVyOiAgICNmN2VmZjY7IC8vIGJvcmRlciBvdmVyIHdoaXRlXHJcbiRibGFjay0xOiAgICAgICAgIzIyMWIyNjtcclxuXHJcbiRibHVlLTE6ICAgICAgICAgIzVjNjQ5YztcclxuJGJsdWUtMjogICAgICAgICAjOWNhMWI5O1xyXG4kcGluay0xOiAgICAgICAgICNjYzAwY2M7XHJcblxyXG4kc2hhZG93LTE6ICAgICAgICNlOWRkZjc7IC8vIHNoYWRvdyBib3ggY29sb3JcclxuXHJcbiRkaXNhYmxlZC1iZzogICAgIzg4ODtcclxuJGRpc2FibGVkLXRleHQ6ICAjNjY2O1xyXG5cclxuLy8gTGF5b3V0XHJcbiRzaWRlYmFyLXc6ICAgICAgICAgICAgICAgMjUwcHg7XHJcbiRzaWRlYmFyLWl0ZW0taDogICAgICAgICAgNjBweDtcclxuJG5hdmJhci1oOiAgICAgICAgICAgICAgICA2MHB4O1xyXG4kc2lkZWJhci1iYWRnZS1zaXplOiAgICAgIDIzcHg7XHJcbiRzbWFsbC1icmVha3BvaW50czogICAgICAgMTM2NnB4O1xyXG5cclxuXHJcbi8vIEJUIG92ZXJyaXRlc1xyXG4kcHJpbWFyeTogICAgICAgICAgICAgICAgICAgJHBpbmstMSAhZGVmYXVsdDtcclxuJGRhcms6ICAgICAgICAgICAgICAgICAgICAgICMzMzMgIWRlZmF1bHQ7XHJcbiRkYW5nZXI6ICAgICAgICAgICAgICAgICAgICAjZmYwMDY2ICFkZWZhdWx0O1xyXG4kd2FybmluZzogICAgICAgICAgICAgICAgICAgI2ZmOTkwMCAhZGVmYXVsdDtcclxuJGluZm86ICAgICAgICAgICAgICAgICAgICAgICMwMDk5Y2MgIWRlZmF1bHQ7XHJcblxyXG4kYm9keS1iZzogICAgICAgICAgICAgICAgICAgJGJnLWxpZ2h0ICFkZWZhdWx0O1xyXG4kYm9keS1jb2xvcjogICAgICAgICAgICAgICAgJGJsdWUtMSAhZGVmYXVsdDtcclxuXHJcbiRsaW5rLWNvbG9yOiAgICAgICAgICAgICAgICAkcGluay0xICFkZWZhdWx0O1xyXG4kbGluay1kZWNvcmF0aW9uOiAgICAgICAgICAgbm9uZSAhZGVmYXVsdDtcclxuJGxpbmstaG92ZXItY29sb3I6ICAgICAgICAgIGRhcmtlbigkcGluay0xLCAxNSUpICFkZWZhdWx0O1xyXG4kbGluay1ob3Zlci1kZWNvcmF0aW9uOiAgICAgbm9uZSAhZGVmYXVsdDtcclxuXHJcbiRncmlkLWd1dHRlci13aWR0aDogICAgICAgICAzMHB4ICFkZWZhdWx0O1xyXG5cclxuJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWY6ICAgIFwiTnVuaXRvXCIsIHNhbnMtc2VyaWYgIWRlZmF1bHQ7XHJcbi8vICRmb250LWZhbWlseS1tb25vc3BhY2U6ICBTRk1vbm8tUmVndWxhciwgTWVubG8sIE1vbmFjbywgQ29uc29sYXMsIFwiTGliZXJhdGlvbiBNb25vXCIsIFwiQ291cmllciBOZXdcIiwgbW9ub3NwYWNlICFkZWZhdWx0O1xyXG4kZm9udC1mYW1pbHktYmFzZTogICAgICAgICAgJGZvbnQtZmFtaWx5LXNhbnMtc2VyaWYgIWRlZmF1bHQ7XHJcblxyXG4kZm9udC1zaXplLWJhc2U6ICAgICAgICAgICAgMC44NzVyZW0gIWRlZmF1bHQ7IC8vIDE0cHhcclxuXHJcbiR0cmFuc2l0aW9uLWJhc2U6ICAgICAgICAgICBhbGwgLjJzIGVhc2UtaW4tb3V0ICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtc3BhY2VyLXk6ICAgICAgICAgICAgICAgICAgICAgMTVweCAhZGVmYXVsdDtcclxuJGNhcmQtc3BhY2VyLXg6ICAgICAgICAgICAgICAgICAgICAgJGdyaWQtZ3V0dGVyLXdpZHRoICFkZWZhdWx0O1xyXG4kY2FyZC1ib3JkZXItd2lkdGg6ICAgICAgICAgICAgICAgICAwcHggIWRlZmF1bHQ7XHJcbiRjYXJkLWJvcmRlci1yYWRpdXM6ICAgICAgICAgICAgICAgIDdweCAhZGVmYXVsdDtcclxuLy8gJGNhcmQtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAgICAgcmdiYSgkYmxhY2ssIC4xMjUpICFkZWZhdWx0O1xyXG4kY2FyZC1pbm5lci1ib3JkZXItcmFkaXVzOiAgICAgICAgICAkY2FyZC1ib3JkZXItcmFkaXVzICFkZWZhdWx0OyAvLyBjYWxjKCN7JGNhcmQtYm9yZGVyLXJhZGl1c30gLSAjeyRjYXJkLWJvcmRlci13aWR0aH0pICFkZWZhdWx0O1xyXG4kY2FyZC1jYXAtYmc6ICAgICAgICAgICAgICAgICAgICAgICAjRkZGICFkZWZhdWx0O1xyXG4kY2FyZC1jYXAtY29sb3I6ICAgICAgICAgICAgICAgICAgICBpbmhlcml0ICFkZWZhdWx0O1xyXG4kY2FyZC1iZzogICAgICAgICAgICAgICAgICAgICAgICAgICAjRkZGICFkZWZhdWx0O1xyXG5cclxuJGNhcmQtaW1nLW92ZXJsYXktcGFkZGluZzogICAgICAgICAgMS4yNXJlbSAhZGVmYXVsdDtcclxuXHJcbiRjYXJkLWdyb3VwLW1hcmdpbjogICAgICAgICAgICAgICAgICRncmlkLWd1dHRlci13aWR0aCAvIDIgIWRlZmF1bHQ7XHJcbiRjYXJkLWRlY2stbWFyZ2luOiAgICAgICAgICAgICAgICAgICRjYXJkLWdyb3VwLW1hcmdpbiAhZGVmYXVsdDtcclxuXHJcbiRjYXJkLWNvbHVtbnMtY291bnQ6ICAgICAgICAgICAgICAgIDMgIWRlZmF1bHQ7XHJcbiRjYXJkLWNvbHVtbnMtZ2FwOiAgICAgICAgICAgICAgICAgIDEuMjVyZW0gIWRlZmF1bHQ7XHJcbiRjYXJkLWNvbHVtbnMtbWFyZ2luOiAgICAgICAgICAgICAgICRjYXJkLXNwYWNlci15ICFkZWZhdWx0O1xyXG5cclxuJGVuYWJsZS1zaGFkb3dzOiAgICAgICAgICAgICAgICAgICAgZmFsc2UgIWRlZmF1bHQ7XHJcblxyXG4kaW5wdXQtYm9yZGVyLWNvbG9yOiAgICAgICAgICAgICAgICAjY2VkNGRhICFkZWZhdWx0O1xyXG4iXX0= */"
 
 /***/ }),
 
@@ -6598,12 +11729,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var CreditsCardComponent = /** @class */ (function () {
     function CreditsCardComponent() {
-        this.cardTitle = 'Credits';
+        this.cardTitle = 'Info';
         this.credits = [
             {
-                title: '<a href="https://github.com/joelthorner" target="_blank" rel="nofollow">Joelthorner</a>',
-                description: 'Designer and developer',
-                bottom: 'First angular 7x app'
+                title: 'Beyond',
+                description: 'Ara disponible també versió biom!',
+                bottom: 'Ole'
             },
             {
                 title: 'AAMH',
