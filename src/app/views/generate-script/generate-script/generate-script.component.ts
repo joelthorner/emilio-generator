@@ -28,7 +28,7 @@ export class GenerateScriptComponent implements OnInit {
 
   public scriptData = {
     conf: {
-      mailAccountId: '1',
+      mailAccountId: "1",
       lcInsertMode: "3in1",
       timeDeelay: "5000",
       origLang: "1", // overrited
@@ -162,7 +162,7 @@ export class GenerateScriptComponent implements OnInit {
   private setTimeoutEmail(value: any = this.scriptData.conf.timeDeelay) {
     this.scriptData.timeOuts.tEmail = parseInt(value);
   }
-  
+
   private setMailAccountId(value: any = this.scriptData.conf.mailAccountId) {
     this.scriptData.conf.mailAccountId = value;
   }
@@ -225,8 +225,10 @@ export class GenerateScriptComponent implements OnInit {
       arrEmailsId = "[" + this.scriptData.data.validEmailsId.join(", ") + "]",
       arrEmailsBody = this.getScriptDefaults("html"),
       arrEmailsSubject = this.getScriptDefaults("subject"),
-      defaultHeader = "`" + this.langData.emails.header.html + "`",
-      defaultFooter = "`" + this.langData.emails.footer.html + "`";
+      defaultHeader =
+        "`" + this.parseEscapedString(this.langData.emails.header.html) + "`",
+      defaultFooter =
+        "`" + this.parseEscapedString(this.langData.emails.footer.html) + "`";
 
     thisScript_1 = `
       setTimeout(function() {
@@ -621,7 +623,7 @@ export class GenerateScriptComponent implements OnInit {
         thisEmail.tags["custom" + ucType] &&
         thisEmail[type].html.trim().length > 0
       ) {
-        arr.push(thisEmail[type].html);
+        arr.push(this.parseEscapedString(thisEmail[type].html));
       } else {
         arr.push("");
       }
@@ -630,13 +632,25 @@ export class GenerateScriptComponent implements OnInit {
     return "[`" + arr.join("`, `") + "`]";
   }
 
+  private parseEscapedString(html: string) {
+    console.log(this.beyondValue);
+    if (this.beyondValue) {
+      return html.replace(`\\'`, `\\\\'`);
+    }
+    return html;
+  }
+
   // get email array default string (subject or body) - [`html`, `html`]
   private getScriptDefaults(type: string) {
     const arr = [];
 
     this.scriptData.data.validEmailsId.forEach((emailId) => {
       const thisEmail = this.langData.emails.templates[emailId];
-      arr.push(thisEmail[type]);
+      if (type == "html") {
+        arr.push(this.parseEscapedString(thisEmail[type]));
+      } else {
+        arr.push(thisEmail[type]);
+      }
     });
 
     return "[`" + arr.join("`, `") + "`]";
