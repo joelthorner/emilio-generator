@@ -119,7 +119,7 @@ export const LANGUAGE_EN = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Welcome to %%ecommerceName%%!</strong><br><br>
     <span style="font-size:15px;">
-      Hello  %firstName% %lastName%, <br><br>
+      Hello %firstName% %lastName%, <br><br>
       We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully created.<br><br>
       Thanks to your customer account now you can update your profile and password, view your order history and other details that may be of your interest.<br><br>
       We hope to see you soon in <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>
@@ -526,7 +526,7 @@ export const LANGUAGE_EN = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Contact form</strong><br><br>
-    <span style="font-size:15px;">Name: %%anonymousFirstName%%<br>Lastname: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Phone: %%anonymousPhone%%<br>Query Motive:  %%queryMotive%%<br>Message: %%comments%%</span>
+    <span style="font-size:15px;">Name: %%anonymousFirstName%%<br>Lastname: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Phone: %%anonymousPhone%%<br>Query motive: %%queryMotive%%<br>Message: %%comments%%</span>
   </td>
 </tr>
 `
