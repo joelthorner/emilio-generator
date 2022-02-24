@@ -543,7 +543,7 @@ export class GenerateScriptComponent implements OnInit {
                                 save[0].click();
 
                                 SI_NO = setInterval(() => {
-                                  var no = document.querySelector('.messageBox .rightButtons .button.red')
+                                  var no = document.querySelector('.messageBox .rightButtons .button.red');
                                   if (no) {
                                     no.click();
                                   }
