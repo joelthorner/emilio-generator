@@ -39067,7 +39067,7 @@ var GenerateScriptComponent = /** @class */ (function () {
         this.script = "";
         this.scriptData = {
             conf: {
-                mailAccountId: '1',
+                mailAccountId: "1",
                 lcInsertMode: "3in1",
                 timeDeelay: "5000",
                 origLang: "1",
@@ -39230,7 +39230,7 @@ var GenerateScriptComponent = /** @class */ (function () {
     GenerateScriptComponent.prototype.getScript = function () {
         var thisScript, thisScript_1, thisScript_2;
         // already stringfyed variables [!]
-        var arrCustomsHeader = this.getScriptCustoms("header"), arrCustomsFooter = this.getScriptCustoms("footer"), arrEmailsId = "[" + this.scriptData.data.validEmailsId.join(", ") + "]", arrEmailsBody = this.getScriptDefaults("html"), arrEmailsSubject = this.getScriptDefaults("subject"), defaultHeader = "`" + this.langData.emails.header.html + "`", defaultFooter = "`" + this.langData.emails.footer.html + "`";
+        var arrCustomsHeader = this.getScriptCustoms("header"), arrCustomsFooter = this.getScriptCustoms("footer"), arrEmailsId = "[" + this.scriptData.data.validEmailsId.join(", ") + "]", arrEmailsBody = this.getScriptDefaults("html"), arrEmailsSubject = this.getScriptDefaults("subject"), defaultHeader = "`" + this.parseEscapedString(this.langData.emails.header.html) + "`", defaultFooter = "`" + this.parseEscapedString(this.langData.emails.footer.html) + "`";
         thisScript_1 = "\n      setTimeout(function() {\n        " + this.getConsoleLog("[Emilio Generator] v" + this.version, "heading") + "\n        " + this.getConsoleLog("Executing the script.") + "\n        " + this.getConsoleLog("Please do not close or change this browser tab.") + "\n      }, 1000);\n\n      openMailTypes();\n\n      var _arrCustomsHeader = " + arrCustomsHeader + ",\n          _arrCustomsFooter = " + arrCustomsFooter + ",\n          _arrEmailsId = " + arrEmailsId + ",\n          _arrEmailsBody = " + arrEmailsBody + ",\n          _arrEmailsSubject = " + arrEmailsSubject + ",\n          _defaultHeader = " + defaultHeader + ",\n          _defaultFooter = " + defaultFooter + ",\n          _lcInsertMode = \"" + this.scriptData.conf.lcInsertMode + "\",\n          _destLang = " + this.scriptData.conf.destLang + ",\n          _confMailAccountId = " + this.scriptData.conf.mailAccountId + ";\n\n      var T1 = " + this.scriptData.timeOuts.t1 + ",\n          T2 = " + this.scriptData.timeOuts.t2 + ",\n          T3 = " + this.scriptData.timeOuts.t3 + ",\n          T4 = " + this.scriptData.timeOuts.t4 + ",\n          T_EMAIL = " + this.scriptData.timeOuts.tEmail + ",\n          T_OPEN_LC_WINDOW = " + this.scriptData.timeOuts.tOpenLcWindow + ";\n\n      var ST_T1 = null, ST_T2 = null, ST_T3 = null, ST_T4 = null, SI_NO = null;\n\n      var emailTimeSeconds = T_EMAIL / 1000;\n      var email_index = 0;\n    ";
         thisScript_2 = this.beyondValue
             ? this.getScriptPart2Beyond()
@@ -39256,7 +39256,7 @@ var GenerateScriptComponent = /** @class */ (function () {
             var thisEmail = _this.langData.emails.templates[emailId];
             if (thisEmail.tags["custom" + ucType] &&
                 thisEmail[type].html.trim().length > 0) {
-                arr.push(thisEmail[type].html);
+                arr.push(_this.parseEscapedString(thisEmail[type].html));
             }
             else {
                 arr.push("");
@@ -39264,13 +39264,24 @@ var GenerateScriptComponent = /** @class */ (function () {
         });
         return "[`" + arr.join("`, `") + "`]";
     };
+    GenerateScriptComponent.prototype.parseEscapedString = function (html) {
+        if (this.beyondValue) {
+            return html.replace(new RegExp("(\\\\')", 'g'), "\\\\'");
+        }
+        return html;
+    };
     // get email array default string (subject or body) - [`html`, `html`]
     GenerateScriptComponent.prototype.getScriptDefaults = function (type) {
         var _this = this;
         var arr = [];
         this.scriptData.data.validEmailsId.forEach(function (emailId) {
             var thisEmail = _this.langData.emails.templates[emailId];
-            arr.push(thisEmail[type]);
+            if (type == "html") {
+                arr.push(_this.parseEscapedString(thisEmail[type]));
+            }
+            else {
+                arr.push(thisEmail[type]);
+            }
         });
         return "[`" + arr.join("`, `") + "`]";
     };
