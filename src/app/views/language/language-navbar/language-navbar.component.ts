@@ -41,7 +41,7 @@ export class LanguageNavbarComponent implements OnInit {
   }
 
   beyondChange(event: any) {
-    this.beyond.changeBeyond(event, this.langKey);
+    this.beyond.changeBeyond(event);
   }
 
   clearSearch() {

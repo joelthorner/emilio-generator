@@ -11,7 +11,6 @@ import { BeyondService } from "src/app/lib/services/beyond.service";
 })
 export class ImportExportComponent implements OnInit {
   public objectKeys = Object.keys;
-  public selectLangs: any;
 
   public exportLang = "1";
   public exportFileNameVersion = 0;
@@ -33,10 +32,9 @@ export class ImportExportComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.beyond.currentBeyond.subscribe(
-      (beyondValue) => (this.beyondValue = beyondValue)
-    );
-    this.selectLangs = this.appData.languages;
+    // this.beyond.currentBeyond.subscribe(
+    //   (beyondValue) => (this.beyondValue = beyondValue)
+    // );
   }
 
   exportAction() {
@@ -69,35 +67,35 @@ export class ImportExportComponent implements OnInit {
 
       const blob = event.target.files[0].slice(start, stop + 1);
       reader.readAsText(blob);
-
-      const self = this;
-
-      reader.onloadend = function (eventLoadEnd: any) {
+      reader.onloadend = (eventLoadEnd: any) => {
         if (
           correctFormat &&
           eventLoadEnd.target.readyState === FileReader.DONE
         ) {
           const newDataObj = JSON.parse(eventLoadEnd.target.result);
 
-          const langId = self.appData.getLangIdByKey(newDataObj.key);
-          self.appData.languages[langId] = newDataObj;
-          self.importSuccessMsg = "File imported successfully.";
-          self.importSuccessData.push(
+          const langId = this.appData.getLangIdByKey(newDataObj.key);
+          const isBeyond = newDataObj.system === "beyond";
+          this.beyond.changeBeyond(isBeyond);
+
+          this.appData.languages[langId] = newDataObj;
+          this.importSuccessMsg = "File imported successfully.";
+          this.importSuccessData.push(
             "<b>Language</b> [" + newDataObj.name + "]"
           );
-          self.importSuccessData.push(
-            `<b>System</b> ${this.beyondValue ? "beyond" : "fluid"}`
+          this.importSuccessData.push(
+            `<b>System</b> ${isBeyond ? "beyond" : "fluid"}`
           );
-          self.importSuccessData.push("<b>File version</b> [2.x]");
-          self.importSuccessData.push(
+          this.importSuccessData.push("<b>File version</b> [2.x]");
+          this.importSuccessData.push(
             "<b>Emails ids</b> [" +
               Object.keys(newDataObj.emails.templates) +
               "]"
           );
 
-          self.importErrorMsg = "";
+          this.importErrorMsg = "";
         } else {
-          self.importErrorMsg = "Only .emilio-generator files!";
+          this.importErrorMsg = "Only .emilio-generator files!";
         }
       };
     }

@@ -11,7 +11,7 @@ export class BeyondService {
 
   constructor(public appData: AppData) {}
 
-  changeBeyond(beyond: boolean, langKey: string) {
+  changeBeyond(beyond: boolean) {
     this.beyondSource.next(beyond);
   }
 }

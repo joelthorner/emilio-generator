@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { LANGUAGES } from "./app-data-languages";
+import { LANGUAGES_FLUID } from "./app-data-languages-fluid";
 import { LANGUAGES_BEYOND } from "./app-data-languages-beyond";
 import { PREVIEWDATA } from "./app-data-preview";
 import { JszipService } from "../lib/services/jszip.service";
@@ -9,7 +9,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   providedIn: "root",
 })
 export class AppData {
-  public languages: any = LANGUAGES;
+  public languages: any = LANGUAGES_FLUID;
   public previewDataInclude: any = PREVIEWDATA;
 
   public previewSrc: any;
@@ -32,7 +32,7 @@ export class AppData {
     if (isBeyond) {
       this.languages = LANGUAGES_BEYOND;
     } else {
-      this.languages = LANGUAGES;
+      this.languages = LANGUAGES_FLUID;
     }
     this.checkAll();
   }
