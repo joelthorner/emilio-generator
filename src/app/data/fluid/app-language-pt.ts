@@ -234,9 +234,9 @@ export const LANGUAGE_PT = {
       Olá, %firstName% %lastName%,<br><br>
       Conforme solicitado durante sua recente visita a %%ecommerceName%%, aqui está seu endereço de acesso à área de recuperação de senha:<br><br>
       <a href="%%lostPasswordLink%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;">Clique aqui para recuperar a senha </a> <br> <br>
-       Este link só será válido por 24 horas após o momento de sua entrega. <br> <br>
-       Esperamos vê-lo em breve em <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>. <br> <br>
-       Atenciosamente, a equipe de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
+      Este link só será válido por 24 horas após o momento de sua entrega. <br> <br>
+      Esperamos vê-lo em breve em <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>. <br> <br>
+      Atenciosamente, a equipe de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
     </span>
   </td>
 </tr>
@@ -253,7 +253,7 @@ export const LANGUAGE_PT = {
     <strong>Modificação de password</strong><br><br>
     <span style="font-size:15px;">
       Olá  %%firstName%% %%lastName%%,<br><br>
-      Confirmamos que a sua password foi modificada..<br><br>
+      Confirmamos que a sua password foi modificada.<br><br>
       Recomendamos-lhe que conserve este email com os seus dados para que a sua futura compra seja mais fácil e rápida. <br><br>
       Esperamos por si em  <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;">%%ecommerceName%%</a>.<br><br>
       A equipa de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
@@ -371,8 +371,8 @@ export const LANGUAGE_PT = {
     <strong>Recomendação da lista de desejos</strong><br><br>
     <span style="font-size:15px;">
       O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>
-     Se necessitar de mais informações sobre este produto, pode contactar-nos em <a href="%%ecommerceURL%%" style="color:#000"> %%ecommerceName%% </a> <br> <br>
-       Atenciosamente, a equipe de %%ecommerceName%%
+      Se necessitar de mais informações sobre este produto, pode contactar-nos em <a href="%%ecommerceURL%%" style="color:#000"> %%ecommerceName%% </a> <br> <br>
+      Atenciosamente, a equipe de %%ecommerceName%%
     </span>
   </td>
 </tr>
@@ -448,9 +448,9 @@ export const LANGUAGE_PT = {
   <td style="padding: 20px 35px 20px 35px;color: #2a3a4a;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Recomendação de produto</strong><br><br>
     <span style="font-size:15px;">
-     O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>
-     Se necessitar de mais informações sobre este produto, pode contactar-nos em <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a> <br> <br>
-       Atenciosamente, a equipe de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
+      O seu amigo %%anonymousName%% (%%anonymousEmail%%) envia-lhe os seus produtos preferidos.<br><br>
+      Se necessitar de mais informações sobre este produto, pode contactar-nos em <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a> <br> <br>
+      Atenciosamente, a equipe de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
     </span>
   </td>
 </tr>
@@ -912,8 +912,8 @@ export const LANGUAGE_PT = {
     <strong>Estoque disponível do produto <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
     <span style="font-size:15px;">Olà,<br><br>O artigo que você quer tanto já está disponível!</span>
     <span style="font-size:15px;">
-       Gostaríamos de lembrar que este e-mail fornece orientações sobre a disponibilidade deste artigo e depende de muitos fatores (pessoas interessadas, unidades disponíveis).
-       Enviámos este email a todos os clientes interessados no artigo, pelo que é possível esgotar-se muito em breve.<br><br>
+      Gostaríamos de lembrar que este e-mail fornece orientações sobre a disponibilidade deste artigo e depende de muitos fatores (pessoas interessadas, unidades disponíveis).
+      Enviámos este email a todos os clientes interessados no artigo, pelo que é possível esgotar-se muito em breve.<br><br>
       A equipa  de <a href="%%ecommerceURL%%" style="color: #2a3a4a;text-decoration:none;font-weight:bolder;"> %%ecommerceName%% </a>
     </span>
   </td>

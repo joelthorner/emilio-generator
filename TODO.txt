@@ -30,3 +30,23 @@ fer tags de email deprecated per la newsletter i de te document name field?
 
 
 crear els emails de rma
+
+
+-------------------------
+
+
+falta un update de quins llenguatges estan omplerts del sidebar?
+
+
+---------------------------
+
+
+
+Dubtes per a charly:
+
+- comodins stock confirmar
+- comodins blog confirmar
+- comodins rma confirmar
+
+
+email carlos eliminar plantilles apadrinamiento i newsletter
