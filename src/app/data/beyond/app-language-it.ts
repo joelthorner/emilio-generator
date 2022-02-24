@@ -29,7 +29,7 @@ export const LANGUAGE_IT = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Per ulteriori informazioni, si prega di leggere la nostra <a href="' ~ general.privacyPolicyLink ~ '">informativa sulla privacy</a> y <a href="' ~ general.termsOfUseLink ~ '">condizioni d\'uso</a>.'
+  moreInfo: 'Per ulteriori informazioni, si prega di leggere la nostra <a href="' ~ general.privacyPolicyLink ~ '">informativa sulla privacy</a> y <a href="' ~ general.termsOfUseLink ~ '">condizioni d\\'uso</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -469,20 +469,20 @@ export const LANGUAGE_IT = {
 
     10: {
       name: "Confirmación de pedido",
-      subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Ordine ricevuto') : ('Conferma d\'ordine') }} {{ sales.documentNumber }}",
+      subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Ordine ricevuto') : ('Conferma d\\'ordine') }} {{ sales.documentNumber }}",
       html: `
 {% if sales.reserve %}
   {% set languageSheet = {
     premessage: 'Ordine ricevuto',
     messageHeader: 'Ciao ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
     messageBody1: 'Abbiamo ricevuto il suo ordine, dato che abbiamo alcuni prodotti in ordine lo abbiamo in attesa di revisione.',
-    messageBody2: 'Se tutto è corretto, riceverai un\'e-mail di conferma automatica.',
+    messageBody2: 'Se tutto è corretto, riceverai un\\'e-mail di conferma automatica.',
     messageBody3: 'Se abbiamo delle domande vi contatteremo.',
     messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
   } %}
 {% else %}
   {% set languageSheet = {
-    premessage: 'Conferma d\'ordine',
+    premessage: 'Conferma d\\'ordine',
     messageHeader: 'Ciao ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
     messageBody1: 'Confermiamo che il suo ordine è stato elaborato correttamente.',
     messageBody2: "Potete trovare questo ordine nel file PDF allegato.",
@@ -542,7 +542,7 @@ export const LANGUAGE_IT = {
 {% set languageSheet = {
   premessage: "Informazioni ordine incompleto",
   messageHeader: 'Ciao ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',
-  messageBody1: 'Durante la tua ultima visita al nostro negozio, hai aggiunto al carrello i seguenti prodotti, ma non hai completato l\'ordine.',
+  messageBody1: 'Durante la tua ultima visita al nostro negozio, hai aggiunto al carrello i seguenti prodotti, ma non hai completato l\\'ordine.',
   messageBody2: 'Clicca <a target="_blank" href="' ~ abandonedCart.link ~ '" style="color: #000;">qui</a> se desideri recuperare il tuo ordine.',
   messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
@@ -567,7 +567,7 @@ export const LANGUAGE_IT = {
 
     17: {
       name: "Verificación de correo",
-      subject: "{{ general.ecommerceName }} - Verifica dell\'indirizzo e-mail",
+      subject: "{{ general.ecommerceName }} - Verifica dell\\'indirizzo e-mail",
       html: `
 {% set languageSheet = {
   premessage: "Verifica dell'indirizzo e-mail",
@@ -667,10 +667,10 @@ export const LANGUAGE_IT = {
 
     25: {
       name: "Confirmar suscripción de Stock",
-      subject: "{{ general.ecommerceName }} - Iscrizione all\'avviso di disponibilit&agrave;",
+      subject: "{{ general.ecommerceName }} - Iscrizione all'avviso di disponibilit&agrave;",
       html: `
 {% set languageSheet = {
-  premessage: 'Iscrizione all\'avviso di disponibilit&agrave; del prodotto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  premessage: 'Iscrizione all\\'avviso di disponibilit&agrave; del prodotto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
   messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: "Ti sei iscritto agli avvisi di disponibilit&agrave; del " ~ data.product.name,
   messageBody2: "Nel caso in cui questo articolo fosse nuovamente disponibile ti avviseremo immediatamente per fare in modo che non ti sfugga.",
