@@ -33,3 +33,7 @@ Dubtes per a charly:
 - comodins stock confirmar
 - comodins blog confirmar
 - comodins rma confirmar
+
+
+fer detector de plantilla invalida i treure msg per consola
+forçar que en beyond vagi per 10s i no 5
