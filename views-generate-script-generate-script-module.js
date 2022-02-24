@@ -39141,7 +39141,11 @@ var GenerateScriptComponent = /** @class */ (function () {
         this.selectLangs = this.appData.languages;
         if (this.beyondValue === true) {
             this.scriptData.conf.lcInsertMode = "3in3";
-            this.scriptData.timeOuts.t4 += 500;
+            this.scriptData.timeOuts.t1 += 500;
+            this.scriptData.timeOuts.t2 += 500;
+            this.scriptData.timeOuts.t3 += 500;
+            this.scriptData.timeOuts.t4 += 1000;
+            this.scriptData.timeOuts.tEmail += 1000;
         }
         // init data ids [data]
         this.scriptData.conf.origLang = this.langId.toString();
