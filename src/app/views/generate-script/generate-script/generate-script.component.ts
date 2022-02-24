@@ -633,9 +633,8 @@ export class GenerateScriptComponent implements OnInit {
   }
 
   private parseEscapedString(html: string) {
-    console.log(this.beyondValue);
     if (this.beyondValue) {
-      return html.replace(`\\'`, `\\\\'`);
+      return html.replace(new RegExp(`(\\\\')`, 'g'), `\\\\'`);
     }
     return html;
   }
