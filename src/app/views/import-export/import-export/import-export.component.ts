@@ -31,11 +31,7 @@ export class ImportExportComponent implements OnInit {
     private beyond: BeyondService
   ) {}
 
-  ngOnInit() {
-    // this.beyond.currentBeyond.subscribe(
-    //   (beyondValue) => (this.beyondValue = beyondValue)
-    // );
-  }
+  ngOnInit() {}
 
   exportAction() {
     this.exportFileNameVersion++;
@@ -57,7 +53,7 @@ export class ImportExportComponent implements OnInit {
       let reader: any;
       reader = new FileReader();
 
-      const mb = event.target.files[0].size / 1024 / 1024;
+      // const mb = event.target.files[0].size / 1024 / 1024;
       const correctFormat =
         event.target.files[0].name.match(".emilio-generator");
       const start = 0;
