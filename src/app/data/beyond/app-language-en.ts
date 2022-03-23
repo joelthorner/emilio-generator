@@ -531,8 +531,27 @@ export const LANGUAGE_EN = {
 
     14: {
       name: "Documento de RMA",
-      subject: "",
-      html: ``,
+      subject: "{{ general.ecommerceName }} - Request for return",
+      html: `
+{% set languageSheet = {
+  premessage: 'Information on the return request',
+  messageHeader: 'Hello ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
+  messageBody1: 'Please note that we have received your request for a refund.',
+  messageBody2: 'If you have any questions about your return or any other issue, you can contact us.',
+  messageSignature: 'The ' ~ general.ecommerceName ~ ' Team'
+} %}
+
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
     },
 
     15: {
