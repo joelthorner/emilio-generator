@@ -531,8 +531,27 @@ export const LANGUAGE_PT = {
 
     14: {
       name: "Documento de RMA",
-      subject: "",
-      html: ``,
+      subject: "{{ general.ecommerceName }} - Pedido de devolução",
+      html: `
+{% set languageSheet = {
+  premessage: 'Informação sobre o pedido de devolução',
+  messageHeader: 'Olá ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
+  messageBody1: 'Por favor, note que recebemos o seu pedido de reembolso.',
+  messageBody2: 'Se tiver alguma dúvida sobre o seu regresso ou qualquer outro assunto, pode contactar-nos.',
+  messageSignature: 'A equipa de ' ~ general.ecommerceName
+} %}
+
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
     },
 
     15: {
