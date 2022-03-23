@@ -27,7 +27,8 @@ export class AppData {
   };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
-    this.checkAll();
+    let isBeyond = localStorage.getItem("beyondActive") && localStorage.getItem("beyondActive") == "1";
+    this.changeLanguageSource(isBeyond);
   }
 
   public changeLanguageSource(isBeyond: boolean) {
