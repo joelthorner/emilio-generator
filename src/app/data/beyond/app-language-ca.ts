@@ -531,8 +531,27 @@ export const LANGUAGE_CA = {
 
     14: {
       name: "Documento de RMA",
-      subject: "",
-      html: ``,
+      subject: "{{ general.ecommerceName }} - Petició de devolució",
+      html: `
+{% set languageSheet = {
+  premessage: 'Informació de la petició de devolució',
+  messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
+  messageBody1: 'T\\'informem que hem rebut la teva petició de devolució.',
+  messageBody2: 'Si tens algun dubte sobre la teva devolució o algun altre qüestió, pots posar-te en contacte amb nosaltres.',
+  messageSignature: 'Atentament, l\\'equip de ' ~ general.ecommerceName
+} %}
+
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size:15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
     },
 
     15: {
