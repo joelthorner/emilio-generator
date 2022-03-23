@@ -537,7 +537,7 @@ export const LANGUAGE_ES = {
   premessage: 'Información de la petición de devolución',
   messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
   messageBody1: 'Te informamos que hemos recibido tu petición de devolución.',
-  messageBody2: 'Si tienes alguna duda sobre tu devolucion o alguna otra cuestión, puedes ponerte en contacto con nosotros.',
+  messageBody2: 'Si tienes alguna duda sobre tu devolución o alguna otra cuestión, puedes ponerte en contacto con nosotros.',
   messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
 } %}
 
