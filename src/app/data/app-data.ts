@@ -372,8 +372,12 @@ export class AppData {
 
   private previewReplacesBeyond(html: string): string {
     // Logo
+    // html = html.replace(
+    //   new RegExp("\\{\\{\\s?general\\.ecommerceLogo\\s?\\}\\}", "g"),
+    //   this.previewData.options.logo
+    // );
     html = html.replace(
-      new RegExp("\\{\\{\\s?general\\.ecommerceLogo\\s?\\}\\}", "g"),
+      new RegExp("\\{\\{\\s?general\\.imagesURL\\s?\\}\\}email-logo\\.png", "g"),
       this.previewData.options.logo
     );
     // Banners
