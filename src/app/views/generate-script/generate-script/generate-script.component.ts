@@ -111,6 +111,7 @@ export class GenerateScriptComponent implements OnInit {
 
     if (this.beyondValue === true) {
       this.scriptData.conf.lcInsertMode = "3in3";
+      this.scriptData.conf.timeDeelay = "10000";
       this.scriptData.timeOuts.t1 += 500;
       this.scriptData.timeOuts.t2 += 500;
       this.scriptData.timeOuts.t3 += 500;

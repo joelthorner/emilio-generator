@@ -76,6 +76,7 @@
                 value="5000"
                 [ngModel]="scriptData.conf.timeDeelay"
                 (ngModelChange)="onChangeTimeDeelay($event)"
+                [disabled]="beyondValue"
               />
               <label class="custom-control-label" for="timeDeelay5"
                 ><b>5 seconds</b> - Normal deelay</label
