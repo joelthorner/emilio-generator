@@ -16,8 +16,8 @@ export const LANGUAGE_ES = {
           <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" style="text-align: center;">
             <tr>
               <td>
-                <a href="{{ general.ecommerceURL }}">
-                  <img src="{{ general.imagesURL }}email-logo.png" width="210" height="auto" border="0" alt="{{ general.ecommerceName }}" style="height: auto;" />
+                <a href="{{ general.ecommerceUrl }}">
+                  <img src="{{ general.ecommerceCdnImages }}email-logo.png" width="210" height="auto" border="0" alt="{{ general.ecommerceName }}" style="height: auto;" />
                 </a>
               </td>
             </tr>
