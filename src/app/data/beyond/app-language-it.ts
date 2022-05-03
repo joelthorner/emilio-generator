@@ -17,7 +17,7 @@ export const LANGUAGE_IT = {
             <tr>
               <td>
                 <a href="{{ general.ecommerceUrl }}">
-                  <img src="{{ general.ecommerceCdnImages }}email-logo.png" width="210" height="auto" border="0" alt="{{ general.ecommerceName }}" style="height: auto;" />
+                  <img src="{{ general.ecommerceCdnImages }}/email-logo.png" width="210" height="auto" border="0" alt="{{ general.ecommerceName }}" style="height: auto;" />
                 </a>
               </td>
             </tr>
