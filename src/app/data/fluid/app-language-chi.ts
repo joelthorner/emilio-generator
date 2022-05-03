@@ -117,7 +117,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
-      <span style="font-size:15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
+      <span style="font-size: 15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
       我们期待能在 <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>%%ecommerceName%%</span>
   </td>
 </tr>
@@ -212,7 +212,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>确认删除账户</strong><br><br>
-    <span style="font-size:15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -225,7 +225,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>恢复密码</strong><br><br>
-    <span style="font-size:15px;">您在浏览页面 %%ecommerceName%% 的时候这是您进入页面的密码恢复邮件<br><br><a href="%%lostPasswordLink%%" style="color:#000">点击此处</a><br><br>
+    <span style="font-size: 15px;">您在浏览页面 %%ecommerceName%% 的时候这是您进入页面的密码恢复邮件<br><br><a href="%%lostPasswordLink%%" style="color:#000">点击此处</a><br><br>
     请记住该网址，该验证网址将会在邮件发送起24小时内有效<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 见到您<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
@@ -239,7 +239,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>修改密码</strong><br><br>
-    <span style="font-size:15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -348,7 +348,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>收藏推荐</strong><br><br>
-  <span style="font-size:15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
+  <span style="font-size: 15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
@@ -428,7 +428,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>昵称 给您推荐产品</strong><br><br>
-  <span style="font-size:15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
+  <span style="font-size: 15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 <tr>
@@ -507,7 +507,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>联系方式</strong><br><br>
-  <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
+  <span style="font-size: 15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
   </td>
 </tr>
 `
@@ -520,7 +520,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>问题关于 </strong><br><br>
-    <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
+    <span style="font-size: 15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
   </td>
 </tr>
 `
@@ -540,7 +540,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
-    <span style="font-size:15px;">亲爱的 %%firstName%% %%lastname%%,<br>
+    <span style="font-size: 15px;">亲爱的 %%firstName%% %%lastname%%,<br>
       您的订单已确认并正确处理成功。<br>
       已将订单信息以pdf的格式发送给您。 <br>
     注意查收并查看您的订单详情。</span>
@@ -710,7 +710,7 @@ export const LANGUAGE_CHI = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>资讯退订</strong><br><br>
-    <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -724,7 +724,7 @@ export const LANGUAGE_CHI = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>赞助要求 </strong><br><br>
-    <span style="font-size:15px;">您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -737,7 +737,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的募集已经完成一个订单，享受收益吧！</strong><br><br>
-    <span style="font-size:15px;">您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -756,7 +756,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的購物車錯過了您</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%, <br><br>在您最后一次浏览我们网页后将以下商品放入购物车，但是您没有完成订单填写。请点击这里： <br><br>
+    <span style="font-size: 15px;">你好 %firstName% %lastName%, <br><br>在您最后一次浏览我们网页后将以下商品放入购物车，但是您没有完成订单填写。请点击这里： <br><br>
     <a target="_blank" href="%recoverOrderLink%" style="color:#000;">购物车</a> 返回您的购物车.<br><br>%%ecommerceName%% 团队</span>
   </td>
 </tr>
@@ -826,7 +826,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email verification</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hello %firstName% %lastName%,<br><br>
       Thanks for registring on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br><br>
       We are looking forward to seeing you on <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
@@ -843,7 +843,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Account activated</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hello %firstName% %lastName%,<br><br>
       We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br><br>
       You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br><br>

@@ -117,7 +117,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Добро пожаловать в %%ecommerceName%%!</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Здравствуйте %firstName% %lastName%,<br><br>
       Nos complace confirmarte la creación de tu cuenta de cliente en %%ecommerceURL%%.<br><br>
       Мы рады подтвердить создание вашей учетной записи клиента. Благодаря вашей учетной записи клиента вы можете обновить свой профиль и пароль, проверить историю своих заказов и другую интересную информацию.<br><br>
@@ -215,7 +215,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Подтверждение удаленного аккаунта</strong><br><br>
-    <span style="font-size:15px;">Здравствуй,<br><br>В соответствии с запросом во время вашего недавнего посещения %%ecommerceName%% мы подтверждаем, что ваша учетная запись пользователя %%email%% была удалена из нашей базы данных.<br><br>С уважением, команда %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Здравствуй,<br><br>В соответствии с запросом во время вашего недавнего посещения %%ecommerceName%% мы подтверждаем, что ваша учетная запись пользователя %%email%% была удалена из нашей базы данных.<br><br>С уважением, команда %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -228,7 +228,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Восстановление пароля</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Здравствуйте %firstName% %lastName%,<br><br>
       В соответствии с запросом во время вашего недавнего посещения %%ecommerceName%%, ваш адрес доступа к зоне восстановления пароля:<br><br>
       <a href="%%lostPasswordLink%%" style="color:#000">Нажмите здесь, чтобы восстановить пароль</a><br><br>
@@ -248,7 +248,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Смена пароля</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Здравствуйте %%firstName%% %%lastName%%,<br><br>
       Мы подтверждаем, что ваш пароль был изменен.<br><br>
       Обязательно запишите свои учетные данные в безопасном месте для дальнейшего использования.<br><br>
@@ -267,7 +267,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Подписка на рассылку</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Привет<br><br>
       Спасибо за подписку на нашу рассылку. Вскоре вы получите информацию о мероприятиях, новости о нашей компании и новости о продуктах и акциях.<br><br>
       Мы надеемся вскоре увидеть вас в <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>
@@ -363,7 +363,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Рекомендация продукта</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Ваш друг %%anonymousName%% (%%anonymousEmail%%) отправляет вам этот продукт, который может вас заинтересовать.<br><br>
       Если вам нужна дополнительная информация об этом продукте, вы можете связаться с нами по <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>
       С уважением, команда %%ecommerceName%%
@@ -441,7 +441,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Рекомендация продукта</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Здравствуйте %%anonymousName%% (%%anonymousEmail%%) отправляет вам этот продукт, который может вас заинтересовать. <br> <br>
       Если вам нужна дополнительная информация об этом продукте, вы можете связаться с нами по <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>
       С уважением, команда %%ecommerceName%%
@@ -516,7 +516,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Контактные данные</strong><br><br>
-    <span style="font-size:15px;">Имя: %%anonymousFirstName%%<br>E-mail: %%anonymousEmail%%<br>Телефон: %%anonymousPhone%%<br>Ваш вопрос:  %%queryMotive%%<br>Сообщениe: %%comments%%</span>
+    <span style="font-size: 15px;">Имя: %%anonymousFirstName%%<br>E-mail: %%anonymousEmail%%<br>Телефон: %%anonymousPhone%%<br>Ваш вопрос:  %%queryMotive%%<br>Сообщениe: %%comments%%</span>
   </td>
 </tr>
 `
@@ -529,7 +529,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Запрос продукта</strong><br><br>
-    <span style="font-size:15px;">Имя: %%anonymousFirstName%%<br>Фамилия: %%anonymousLastName%%<br>E-mail: %%anonymousEmail%%<br>Телефон: %%anonymousPhone%%<br>Сообщение: %%comments%%<br><br>Название товара: %%name%%<br>Артикул: %%sku%%</span>
+    <span style="font-size: 15px;">Имя: %%anonymousFirstName%%<br>Фамилия: %%anonymousLastName%%<br>E-mail: %%anonymousEmail%%<br>Телефон: %%anonymousPhone%%<br>Сообщение: %%comments%%<br><br>Название товара: %%name%%<br>Артикул: %%sku%%</span>
   </td>
 </tr>
 `
@@ -549,7 +549,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Подтверждение заказа</strong><br><br>
-    <span style="font-size:15px;">Большое спасибо за доверие к нам. Ваша покупка была успешно обработана. Ниже мы покажем данные заказа</span>
+    <span style="font-size: 15px;">Большое спасибо за доверие к нам. Ваша покупка была успешно обработана. Ниже мы покажем данные заказа</span>
   </td>
 </tr>
 <tr>
@@ -774,7 +774,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Информация о незавершенном заказе</strong><br><br>
-    <span style="font-size:15px;">Здравствуйте %%firstName%% %lastName%, <br><br>При последнем посещении нашего магазина вы добавили следующие товары в корзину, но не завершили заказ.<br><br>
+    <span style="font-size: 15px;">Здравствуйте %%firstName%% %lastName%, <br><br>При последнем посещении нашего магазина вы добавили следующие товары в корзину, но не завершили заказ.<br><br>
     <a target="_blank" href="%recoverOrderLink%" style="color:#000;">кликните сюда</a> если вы хотите восстановить свой заказ. <br><br>С уважением, команда %%ecommerceName%%</span>
   </td>
 </tr>
@@ -883,8 +883,8 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Товар в наличии на складе <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
-    <span style="font-size:15px;">Здравствуйте,<br><br>Статья, которую вы так хотели, теперь доступна!</span>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">Здравствуйте,<br><br>Статья, которую вы так хотели, теперь доступна!</span>
+    <span style="font-size: 15px;">
       Напоминаем, что в этом письме содержится информация о доступности данной статьи, которая зависит от многих факторов (заинтересованных лиц, доступных единиц). <br>
       Мы разослали это электронное письмо всем клиентам, заинтересованным в этой статье, поэтому в ближайшее время ее может не хватить.<br><br>
       С уважением, команда %%ecommerceName%%
@@ -920,7 +920,7 @@ export const LANGUAGE_RU = {
 </tr>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Продолжить чтение!</strong></a>.</span>
+    <span style="font-size: 15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Продолжить чтение!</strong></a>.</span>
   </td>
 </tr>
 <!-- %/loop% -->
@@ -946,7 +946,7 @@ export const LANGUAGE_RU = {
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
           <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
                   %%commentContent%%<br><br>
-          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Продолжить чтение!</strong></a>.</span>
+          <span style="font-size: 15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Продолжить чтение!</strong></a>.</span>
         </td>
       </tr>
     </table>
@@ -962,7 +962,7 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>¡Bienvenido a <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Здравствуй,<br><br>
       Спасибо за подписку на наш блог. Вскоре вы получите по электронной почте новые статьи, информацию о скидках, акциях, подарках и интересную информацию, связанную с деятельностью интернет-магазина.<br><br>
       Надеемся скоро увидеть вас в<a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
@@ -980,9 +980,9 @@ export const LANGUAGE_RU = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Подписка на акции <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>Вы подписались на уведомления об акциях %name%</span>
+    <span style="font-size: 15px;">Hola,<br><br>Вы подписались на уведомления об акциях %name%</span>
     %productOptions%<br>
-    <span style="font-size:15px;">Если мы снова получим эту статью, мы немедленно уведомим вас, чтобы она не ускользнула от вас.<br><br>С уважением, коллектив %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Если мы снова получим эту статью, мы немедленно уведомим вас, чтобы она не ускользнула от вас.<br><br>С уважением, коллектив %%ecommerceName%%</span>
   </td>
 </tr>
 `

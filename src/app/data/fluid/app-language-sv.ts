@@ -118,7 +118,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Välkommen till %%ecommerceName%%!</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej  %firstName% %lastName%, <br><br>
       Vi är glada att informera dig om att ditt kundkonto i %%ecommerceURL%% har skapats.<br><br>
       Med ditt kundkonto kan du nu uppdatera din profil och ditt lösenord, visa din orderhistorik och andra detaljer som kan vara av intresse för dig.<br><br>
@@ -219,7 +219,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Ditt konto är nu borttaget</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej!<br><br>
       Enligt din begäran efter ditt besök hos %%ecommerceName%%, kan vi nu bekräfta att ditt användarkonto %%email%% har blivit borttaget från vår databas.<br><br>
       Du är alltid välkommen tillbaka till oss!<br><br>
@@ -238,7 +238,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Lösenordsåterställning</strong><br><br>
-    <span style="font-size:15px;">På begäran efter ditt senaste besök på %%ecommerceName%% så kommer här en länk där du kan återställa ditt lösenord:<br><br><a href="%%lostPasswordLink%%" style="color:#000">Klicka här</a><br><br>
+    <span style="font-size: 15px;">På begäran efter ditt senaste besök på %%ecommerceName%% så kommer här en länk där du kan återställa ditt lösenord:<br><br><a href="%%lostPasswordLink%%" style="color:#000">Klicka här</a><br><br>
       Observera att koden är giltig i 24 timmar efter du mottagit detta mail.<br><br>VHoppas vi syns snart i <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>
       Med vänliga hälsningar<br><br>
       De %%ecommerceName%% Team</span>
@@ -254,7 +254,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Byta lösenord</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej %%firstName%% %%lastName%%,<br><br>Vi vill informera dig om att ditt lösenord på <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> nu är ändrat.<br>
       Skriv ner ditt lösenord för framtida besök.<br><br>
       Vi syns i <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a><br><br><br>
@@ -273,7 +273,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Prenumeration på vårat nyhetsbrev</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej!<br><br>Tack för att du registrerat dig till vårt nyhetsbrev.<br>
       Snart kommer du få nyhetesbrev med information om dom hetaste produkterna, kampanjer och ny information.<br><br><br>
       Med vänliga hälsningar<br><br>
@@ -373,7 +373,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Wishlist rekommendation</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Er vän %%anonymousName%% (%%anonymousEmail%%) Tror att ni kan vara intresserad av denna/dessa produkter.<br><br>
       Vill ni ha mer information om denna/dessa produkter, vänligen kontakta oss på <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br><br>
       Med vänliga hälsningar<br><br>
@@ -457,7 +457,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Product recommendation</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hello %%friendName%%,<br>Your friend %%anonymousName%% (%%anonymousEmail%%) thinks this item could be of your interest.<br><br>
       If you need further information about this item you can contact us at <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
       De %%ecommerceName%% Team
@@ -543,7 +543,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Kontaktformulär</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Förnamn: %%anonymousFirstName%%<br>
       Efternamn: %%anonymousLastName%%<br>
       Email: %%anonymousEmail%%<br>
@@ -563,7 +563,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Fråga om en produkt</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Förnamn: %%anonymousFirstName%%<br>
       Efternamn: %%anonymousLastName%%<br>
       Email: %%anonymousEmail%%<br>
@@ -591,7 +591,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Orderbekräftelse från %%ecommerceName%%</strong><br><br>
-    <span style="font-size:15px;">Hej %%firstName%% %%lastname%%,<br>
+    <span style="font-size: 15px;">Hej %%firstName%% %%lastname%%,<br>
 
 			Tack för att du handlar hos oss. Vi bekräftar härmed att er order har behandlats.<br>
 			Vi kommer att maila er när er order levereras. Vi bifogar även din order i den inkluderade pdf filen.<br><br>
@@ -762,7 +762,7 @@ export const LANGUAGE_SV = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Avregistrering nyhetsbrev</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej<br><br>
       Din avregistrering är nu slutförd.<br><br><br>
       Med vänliga hälsningar<br><br>
@@ -781,7 +781,7 @@ export const LANGUAGE_SV = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Sponsringsförfrågan</strong><br><br>
-    <span style="font-size:15px;">Hej,<br><br> %%firstName%% bjuder in dig till <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
+    <span style="font-size: 15px;">Hej,<br><br> %%firstName%% bjuder in dig till <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
     Registrera dig som medlem här: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
     Tack för din support.<br><br>De %%ecommerceName%% Team</span>
   </td>
@@ -796,7 +796,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Sponsring</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej!<br><br>
       En av din vänner har just gjort ett köp i vår webshop för ett värde över XX (€), därför ger vi dig en XX rabatt på din nästa order.<br><br>
       Rabatten kommer automatiskt att dras av i din nästa order.<br><br>
@@ -815,7 +815,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Retur information</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej %firstName% %lastName%! <br><br>
       Din returförfrågan är nu bekräftad.<br><br>
       Order nummer: %%orderNumber%%<br><br><br>
@@ -834,7 +834,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Ej slutförd beställning</strong><br><br>
-    <span style="font-size:15px;">Hej %firstName% %lastName%!<br><br>I ditt senaste besök hos oss  i %%ecommerceName%% lade du till följande artiklar i din varukorg, men slutförde inte din beställning.<br><br>
+    <span style="font-size: 15px;">Hej %firstName% %lastName%!<br><br>I ditt senaste besök hos oss  i %%ecommerceName%% lade du till följande artiklar i din varukorg, men slutförde inte din beställning.<br><br>
     Klicka <a target="_blank" href="%recoverOrderLink%" style="color:#000;">här</a> för att återgå till din varukorg.<br><br><br>Med vänliga hälsningar<br><br>De %%ecommerceName%% Team</span>
   </td>
 </tr>
@@ -895,7 +895,7 @@ export const LANGUAGE_SV = {
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej %firstName% %lastName%!<br><br>
       Vi är glada över att kunna meddela att er order %orderNumber% har skickats från vårt lager.<br><br>
       Du kan följa din order via %shippingTypeName% med trackingnummer: %trackingNumber%<br><br><br>
@@ -914,7 +914,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email bekräftelse</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej %firstName% %lastName%!<br><br>
       Tack för att du registrerat dig på %%ecommerceURL%%. Vänligen följ länken för att verifiera din mailadress: <a href="%verifyLink%" style="color:#000;">Klicka här</a>.<br><br>
       Vi syns på <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br><br>
@@ -933,7 +933,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Konto skapat</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej %firstName% %lastName%,<br><br>
       Ditt konto hos %%ecommerceURL%% har nu blivit skapat.<br><br>
       Du kan granska och ändra dina uppgifter närsomhelst via kontrollpanelen: <a href="%%ecommerceURL%%" style="color:#000">Redigera din profil</a><br><br>
@@ -958,8 +958,8 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Lager i lager av produkt <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
-    <span style="font-size:15px;">Hej,<br><br>Artikeln du vill ha så mycket är redan tillgänglig!</span>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">Hej,<br><br>Artikeln du vill ha så mycket är redan tillgänglig!</span>
+    <span style="font-size: 15px;">
       Vi vill påminna dig om att det här meddelandet innehåller vägledning om tillgängligheten av den här artikeln och beror på många faktorer (intresserade personer, tillgängliga enheter).<br>
       Vi har skickat det här mailet till alla kunder som är intresserade av artikeln, så det är möjligt att bli utmattad snart.<br><br>
       De %%ecommerceName%% Team
@@ -995,7 +995,7 @@ export const LANGUAGE_SV = {
 </tr>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Läs mer.</strong></a>.</span>
+    <span style="font-size: 15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Läs mer.</strong></a>.</span>
   </td>
 </tr>
 <!-- %/loop% -->
@@ -1022,7 +1022,7 @@ export const LANGUAGE_SV = {
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
           <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
           %%commentContent%%<br><br>
-          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Läs mer.</strong></a>.</span>
+          <span style="font-size: 15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Läs mer.</strong></a>.</span>
         </td>
       </tr>
     </table>
@@ -1039,7 +1039,7 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Välkommen till <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hej,<br><br>
       Tack för att du registrerade dig i vår blogg.<br>
       Snart kommer du få nya blogg inlägg med information om dom hetaste produkterna, kampanjer och ny information.<br><br>
@@ -1059,9 +1059,9 @@ export const LANGUAGE_SV = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Aktieabonnemang på produkt <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Hej,<br><br>Du har prenumererat på %name% stock notices</span>
+    <span style="font-size: 15px;">Hej,<br><br>Du har prenumererat på %name% stock notices</span>
     %productOptions%<br>
-    <span style="font-size:15px;">Om vi får den här artikeln igen, meddelar vi dig omedelbart.<br><br>
+    <span style="font-size: 15px;">Om vi får den här artikeln igen, meddelar vi dig omedelbart.<br><br>
     Vi hoppas att vi ses snart <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>De %%ecommerceName%% Team</span>
   </td>
 </tr>
