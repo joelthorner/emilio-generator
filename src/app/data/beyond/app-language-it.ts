@@ -181,7 +181,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br>
@@ -208,7 +208,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -242,7 +242,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
       {{ languageSheet.messageSignature }}<br><br>
@@ -322,7 +322,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
       {{ languageSheet.messageSignature }}<br><br>
@@ -493,7 +493,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -549,7 +549,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -579,7 +579,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br><br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -604,7 +604,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -636,7 +636,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -679,7 +679,7 @@ export const LANGUAGE_IT = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
