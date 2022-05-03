@@ -606,7 +606,7 @@ export const LANGUAGE_IT = {
             <div>
               <table style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: top; border-top: 1px solid #ddd;" width="85%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
-                  {% for item in sales.rows %}
+                  {% for item in sales.items %}
                     <tr>
                       <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding-left: 10px; padding-right: 10px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; padding-top: 10px;">
                         <table style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: top; border-collapse: collapse;" cellpadding="0" cellspacing="0">
