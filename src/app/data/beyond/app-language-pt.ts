@@ -550,7 +550,7 @@ export const LANGUAGE_PT = {
         <tr>
           <td align="center">
             <span style="font-family: Arial, Helvetica, sans-serif;font-size: 18px;color: #000; font-weight: bold;">
-              {% if sales.delivery.physicalLocation.id %}{{ languageSheet.pickup }}{% else %}{{ languageSheet.address }}{% endif %}
+              {% if sales.delivery.physicalLocation %}{{ languageSheet.pickup }}{% else %}{{ languageSheet.address }}{% endif %}
             </span>
           </td>
         </tr>
@@ -562,7 +562,7 @@ export const LANGUAGE_PT = {
                 <tbody>
                   <tr>
                     <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height: 20px; padding: 20px; border: 1px solid #ddd;">
-                      {% if sales.delivery.physicalLocation.id %}
+                      {% if sales.delivery.physicalLocation %}
                         {{ sales.delivery.physicalLocation.name }}<br>
                         {{ sales.delivery.physicalLocation.address }}<br>
                         {{ sales.delivery.physicalLocation.postalCode }} {{ sales.delivery.physicalLocation.city }} {{ sales.delivery.physicalLocation.state }}<br>
@@ -644,7 +644,7 @@ export const LANGUAGE_PT = {
               <table align="center" cellpadding="0" cellspacing="0" width="85%" style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="vertical-align: middle; text-align: center; font-weight: bold; border-right: 1px solid #ddd; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-bottom: 20px; padding-top: 10px;">
-                  {{ languageSheet.total }} {{ sales.total }}
+                    {{ languageSheet.total }} {{ sales.totals.total }}
                   </td>
                 </tr>
               </table>
