@@ -120,7 +120,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Benvinguts a %%ecommerceName%%!</strong><br><br>
-    <span style="font-size:15px;">Hola  %firstName% %lastName%, <br><br>
+    <span style="font-size: 15px;">Hola  %firstName% %lastName%, <br><br>
     Ens complau confirmar-li la creació del seu compte de client a %%ecommerceURL%%.<br><br>
     Gràcies al seu compte de client podrà actualitzar el seu perfil i contrasenya, consultar el seu historial de comandes i altra informació del seu interès.<br><br>Esperem veure'l aviat a <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>
     Atentament, l'equip de %%ecommerceName%%</span>
@@ -218,7 +218,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Confirmació de compte eliminat</strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>D'acord a la sol·licitud durant la teva recent visita a %%ecommerceName%%, confirmem que el teu compte d'usuari %%email%% ha sigut eliminat de la nostra base de dades.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Hola,<br><br>D'acord a la sol·licitud durant la teva recent visita a %%ecommerceName%%, confirmem que el teu compte d'usuari %%email%% ha sigut eliminat de la nostra base de dades.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -231,7 +231,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Recordar contrasenya</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br><br>
+    <span style="font-size: 15px;">Hola %firstName% %lastName%,<br><br>
     D'acord a la sol·licitud durant la teva recent visita a %%ecommerceName%%, aquí tens la teva direcció d'accés a la zona de recuperació de contrasenya:<br><br>
     <a href="%%lostPasswordLink%%" style="color:#000">Fes clic aquí per recuperar la teva contrasenya</a><br><br>
     Aquest enllaç només serà vàlid durant les 24 hores següents al moment del seu enviament.<br><br>
@@ -250,7 +250,7 @@ export const LANGUAGE_CA = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Canvi de contrasenya</strong><br><br>
-    <span style="font-size:15px;">Hola %%firstName%% %%lastName%%,<br><br>
+    <span style="font-size: 15px;">Hola %%firstName%% %%lastName%%,<br><br>
     Et confirmem que la teva contrasenya ha sigut modificada.<br><br>
     Assegura't d'anotar les teves credencials en un lloc segur per futures referències.<br><br>
     Esperem veure't aviat a <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
@@ -267,7 +267,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Subscripció a la newsletter</strong><br><br>
-    <span style="font-size:15px;">Hola<br><br>
+    <span style="font-size: 15px;">Hola<br><br>
     Gràcies per subscriure't al nostre butlletí de notícies. Aviat rebràs informació sobre activitats, notícies sobre la nostra empresa i novetats en productes i promocions.<br><br>
     Esperamos verte pronto en <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
@@ -364,7 +364,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Recomanació de wishlist</strong><br><br>
-    <span style="font-size:15px;">El teu amic/ga %%anonymousName%% (%%anonymousEmail%%) t'envia aquest producte que pot resultar del teu interès.<br><br>
+    <span style="font-size: 15px;">El teu amic/ga %%anonymousName%% (%%anonymousEmail%%) t'envia aquest producte que pot resultar del teu interès.<br><br>
     Si necessites més informació sobre aquest producte pots contactar amb nosaltres a <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>
     Atentament, l'equip de  %%ecommerceName%%</span>
   </td>
@@ -444,7 +444,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Recomanació de producte</strong><br><br>
-    <span style="font-size:15px;"> el teu amic/ga %%anonymousName%% (%%anonymousEmail%%) t'envía aquest producte que pot resultar del teu interès.<br><br>
+    <span style="font-size: 15px;"> el teu amic/ga %%anonymousName%% (%%anonymousEmail%%) t'envía aquest producte que pot resultar del teu interès.<br><br>
     Si necessites més informació sobre aquest producte pots contactar amb nosaltres a<a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
     Atentament, l'equip de  %%ecommerceName%%</span>
   </td>
@@ -524,7 +524,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Formulari de contacte</strong><br><br>
-    <span style="font-size:15px;">Nom: %%anonymousFirstName%%<br>Email: %%anonymousEmail%%<br>Telèfon: %%anonymousPhone%%<br>Motiu de consulta:  %%queryMotive%%<br>Missatge: %%comments%%</span>
+    <span style="font-size: 15px;">Nom: %%anonymousFirstName%%<br>Email: %%anonymousEmail%%<br>Telèfon: %%anonymousPhone%%<br>Motiu de consulta:  %%queryMotive%%<br>Missatge: %%comments%%</span>
   </td>
 </tr>
 `
@@ -537,7 +537,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Consulta sobre producte</strong><br><br>
-    <span style="font-size:15px;">Nom: %%anonymousFirstName%%<br>Cognoms: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Telèfon: %%anonymousPhone%%<br>Missatge: %%comments%%<br><br>Nom del producte: %%name%%<br>Referència del producte: %%sku%%</span>
+    <span style="font-size: 15px;">Nom: %%anonymousFirstName%%<br>Cognoms: %%anonymousLastName%%<br>Email: %%anonymousEmail%%<br>Telèfon: %%anonymousPhone%%<br>Missatge: %%comments%%<br><br>Nom del producte: %%name%%<br>Referència del producte: %%sku%%</span>
   </td>
 </tr>
 `
@@ -557,7 +557,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Confirmació de comanda</strong><br><br>
-    <span style="font-size:15px;">Moltes gràcies per confiar en nosaltres. La seva compra ha sigut processada correctament. A continuació et mostrem les dades de la comanda.</span>
+    <span style="font-size: 15px;">Moltes gràcies per confiar en nosaltres. La seva compra ha sigut processada correctament. A continuació et mostrem les dades de la comanda.</span>
   </td>
 </tr>
 <tr>
@@ -724,7 +724,7 @@ export const LANGUAGE_CA = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Confirmació de la baixa de la newsletter</strong><br><br>
-    <span style="font-size:15px;">Hola<br><br>Has sigut dona't de baixa amb èxit de la nostra newsletter.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Hola<br><br>Has sigut dona't de baixa amb èxit de la nostra newsletter.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -738,7 +738,7 @@ export const LANGUAGE_CA = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>Sol·licitud d'apadrinament</strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>%%firstName%% t'invita a unir-te a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
+    <span style="font-size: 15px;">Hola,<br><br>%%firstName%% t'invita a unir-te a  <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
     Fes-te soci i registra't aquí: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
     Gràcies pel teu suport<br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
@@ -753,7 +753,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Apadrinament completat</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hola,<br><br>
       Un dels teus amics acaba de fer una compra a la nostra botiga de més de XX (€) de valor, per tant, t'oferim un descompte de XX en la pròxima comanda.<br><br>
       El descompte entrará automáticament en vigor en la teva prxima comanda. <br><br>
@@ -771,7 +771,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Informació de la petició de devolució</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%, <br><br>Ens complau confirmar-te la petició de la teva devolució.<br><br>Número de comanda: %%orderNumber%%<br><br>Atentament, l'equip %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Hola %firstName% %lastName%, <br><br>Ens complau confirmar-te la petició de la teva devolució.<br><br>Número de comanda: %%orderNumber%%<br><br>Atentament, l'equip %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -784,7 +784,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Informació d la comanda no completada</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%, <br><br>A la teva ultima visita a la nostra botiga, vas afegir els següents productes a la cistella de la compra, però no has completat la comanda.<br><br>
+    <span style="font-size: 15px;">Hola %firstName% %lastName%, <br><br>A la teva ultima visita a la nostra botiga, vas afegir els següents productes a la cistella de la compra, però no has completat la comanda.<br><br>
       Fes clic <a target="_blank" href="%recoverOrderLink%" style="color:#000;">aquí</a> si desitges recuperar la teva comanda. <br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
 </tr>
@@ -854,7 +854,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Verificació de correu</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br><br>
+    <span style="font-size: 15px;">Hola %firstName% %lastName%,<br><br>
     Gràcies per registrar-te a %%ecommerceURL%%. Per favor activa el teu compte fent clic <a href="%verifyLink%"  style="color:#000;">aquí</a>.<br><br>
     Esperem veure't aviat a <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
     Atentament, l'equip de %%ecommerceName%%</span>
@@ -870,7 +870,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Activació del compte</strong><br><br>
-    <span style="font-size:15px;">Hola %firstName% %lastName%,<br><br>
+    <span style="font-size: 15px;">Hola %firstName% %lastName%,<br><br>
     Et notifiquem que el teu compte a %%ecommerceURL%% ha sigut activat correctament.<br><br>
     Per veure les teves dades i tota la informació referent al teu compte accedeix a través del panell de control: <a href="%%ecommerceURL%%" style="color:#000">Editar el teu perfil</a><br><br>
     Esperem veure't aviat a <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>
@@ -893,8 +893,8 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Stock disponible del producte <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
-    <span style="font-size:15px;">Hola,<br><br>L'article que tant volíes ja està disponible!</span>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">Hola,<br><br>L'article que tant volíes ja està disponible!</span>
+    <span style="font-size: 15px;">
       Volem recordar-te que aquest email aporta informació orientativa sobre la disponibilitat d'aquest artícle i depen de molts factors (persones interesades, unitats disponibles).<br>
       Hem enviat aquest email a tots els clients interessats en l'artícle, per tant es posible que s'esgoti molt aviat.<br><br>
       Atentament, l'equip de %%ecommerceName%%
@@ -930,7 +930,7 @@ export const LANGUAGE_CA = {
 </tr>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Segueix llegint!</strong></a>.</span>
+    <span style="font-size: 15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Segueix llegint!</strong></a>.</span>
   </td>
 </tr>
 <!-- %/loop% -->
@@ -957,7 +957,7 @@ export const LANGUAGE_CA = {
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
           <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
                   %%commentContent%%<br><br>
-          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Segueix llegint!</strong></a>.</span>
+          <span style="font-size: 15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Segueix llegint!</strong></a>.</span>
         </td>
       </tr>
     </table>
@@ -974,7 +974,7 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Benvingut a <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>
+    <span style="font-size: 15px;">Hola,<br><br>
     Gracies per subscriure't al nostre blog. Aviat rebrás els nous articles per email, informació sobre descomptes, promocions, regals y dades d'interés relacionats a l'activitat de la botiga online.<br><br>
     Esperem veure't aviat a <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
     Atentament, l'equip de %%ecommerceName%%</span>
@@ -990,9 +990,9 @@ export const LANGUAGE_CA = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Subscripció de stock del producte <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Hola,<br><br>T'has subscrit als avisos de stock de %name%</span>
+    <span style="font-size: 15px;">Hola,<br><br>T'has subscrit als avisos de stock de %name%</span>
     %productOptions%<br>
-    <span style="font-size:15px;">En cas de que tornem a rebre aquest artícle t'avisarem d'inmediat per a que no se t'escapi.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
+    <span style="font-size: 15px;">En cas de que tornem a rebre aquest artícle t'avisarem d'inmediat per a que no se t'escapi.<br><br>Atentament, l'equip de %%ecommerceName%%</span>
   </td>
 </tr>
 `

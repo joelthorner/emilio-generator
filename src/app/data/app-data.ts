@@ -377,7 +377,7 @@ export class AppData {
     //   this.previewData.options.logo
     // );
     html = html.replace(
-      new RegExp("\\{\\{\\s?general\\.imagesURL\\s?\\}\\}email-logo\\.png", "g"),
+      new RegExp("\\{\\{\\s?general\\.ecommerceCdnImages\\s?\\}\\}email-logo\\.png", "g"),
       this.previewData.options.logo
     );
     // Banners

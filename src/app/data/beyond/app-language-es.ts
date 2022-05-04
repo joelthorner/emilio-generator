@@ -109,7 +109,7 @@ export const LANGUAGE_ES = {
     </td>
   </tr>
   <tr>
-    <td align="left" style="font-family: sans-serif; font-size: 14px; color: #ffffff;">
+    <td align="left" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #ffffff;">
       <span style="color: #000; font-size: 10px;">&nbsp;</span>
     </td>
   </tr>
@@ -181,7 +181,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br>
@@ -208,7 +208,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -242,7 +242,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
       {{ languageSheet.messageSignature }}<br><br>
@@ -322,7 +322,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
       {{ languageSheet.messageSignature }}<br><br>
@@ -471,40 +471,230 @@ export const LANGUAGE_ES = {
       name: "Confirmación de pedido",
       subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Pedido recibido') : ('Confirmación de pedido') }} {{ sales.documentNumber }}",
       html: `
-{% if sales.reserve %}
-  {% set languageSheet = {
-    premessage: 'Pedido recibido',
-    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-    messageBody1: 'Hemos recibido tu pedido, al tener algún producto por encargo lo tenemos pendiente de revisión.',
-    messageBody2: 'Si todo es correcto, recibirás un correo automático de confirmación.',
-    messageBody3: 'Si tenemos alguna duda nos pondremos en contacto contigo.',
-    messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
-  } %}
-{% else %}
-  {% set languageSheet = {
-    premessage: 'Confirmación de pedido',
-    messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-    messageBody1: 'Te confirmamos que tu pedido ha sido procesado correctamente.',
-    messageBody2: "Podrás encontrar este pedido en el archivo PDF adjunto.",
-    messageBody3: 'Gracias por comprar en <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-    messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
-  } %}
-{% endif %}
+{% set languageSheet = {
+  premessage: 'Confirmación de pedido',
+  premessageReserve: 'Pedido recibido',
+  messageHeader: 'Muchas gracias por confiar en nosotros. Su compra ha sido procesada correctamente. Podrás encontrar este pedido en el archivo PDF adjunto.',
+  messageHeaderReserve: 'Muchas gracias por confiar en nosotros. Hemos recibido tu pedido, al tener algún producto por encargo lo tenemos pendiente de revisión.',
+  messageBody1: 'A continuación te mostramos los datos del pedido.',
+  messageBody2: 'Gracias por comprar en <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName,
+  orderNumber: 'Número de pedido:',
+  orderDate: 'Fecha del pedido:',
+  paymentSystem: 'Método de pago:',
+  shippingName: 'Método de envío:',
+  address: 'Dirección',
+  orderResume: 'Resumen del pedido',
+  quantity: 'Cantidad:',
+  gift: 'Regalo',
+  total: 'Total:',
+  comment: 'Comentarios:',
+  pickup: 'Has elegido entrega en tienda',
+  pickupMessage: 'Te avisaremos por mail cuando tu pedido esté disponible para recoger.'
+} %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
-    <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
-      {{ languageSheet.messageHeader }}<br><br>
-      {{ languageSheet.messageBody1 }}<br>
-      {{ languageSheet.messageBody2 }}<br><br>
-      {% if sales.reserve %}
-        {# do nothing #}
-      {% else %}
-        {% if sales.paymentSystem.message|length %}
-          {{ sales.paymentSystem.message }}<br><br>
+    <strong>{% if sales.reserve %}{{ languageSheet.premessageReserve }}{% else %}{{ languageSheet.premessage }}{% endif %}</strong><br><br>
+    <span style="font-size: 15px;">
+      {% if sales.reserve %}{{ languageSheet.messageHeaderReserve }}{% else %}{{ languageSheet.messageHeader }}{% endif %}<br><br>
+      {{ languageSheet.messageBody1 }}
+    </span>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 0px;" align="center">
+    <table style="width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; border-collapse: collapse;">
+      <tbody>
+        <tr>
+          <td style="vertical-align: middle; font-family: Arial, Helvetica, sans-serif;" align="center">
+            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+              <tr>
+                <td style="padding: 15px 15px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000; vertical-align: middle; text-align: center; width: 50%;" align="center" width="50%">
+                  <span style="font-size: 15px;">
+                    <b>{{ languageSheet.orderNumber }}</b><br>
+                    {{ sales.documentNumber }}
+                  </span>
+                </td>
+                <td style="padding: 15px 15px; line-height:20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000; vertical-align: middle; text-align: center;" align="center">
+                  <span style="font-size: 15px;">
+                    <b>{{ languageSheet.orderDate }}</b><br>
+                    {{ sales.date }}
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <tr>
+            <td style="vertical-align: middle;font-family: Arial, Helvetica, sans-serif;" align="center">
+              <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                <tr>
+                  <td style="padding: 15px 15px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000; vertical-align: middle; text-align: center; width: 50%;" align="center" width="50%">
+                    <span style="font-size: 15px;">
+                      <b>{{ languageSheet.paymentSystem }}</b><br>
+                      {{ sales.paymentSystem.name }}
+                    </span>
+                  </td>
+                  <td style="padding: 15px 15px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000; vertical-align: middle; text-align: center;" align="center">
+                    <span style="font-size: 15px;">
+                      <b>{{ languageSheet.shippingName }}</b><br>
+                      {% for shipment in sales.delivery.shipments %}
+                        {{ shipment.shipping.name }} {{ shipment.shipping.shippingTypeName }}
+                      {% endfor %}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td align="center">
+            <span style="font-family: Arial, Helvetica, sans-serif;font-size: 18px;color: #000; font-weight: bold;">
+              {% if sales.delivery.physicalLocation %}{{ languageSheet.pickup }}{% else %}{{ languageSheet.address }}{% endif %}
+            </span>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td style="vertical-align: top">
+            <div>
+              <table style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" width="85%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size:13px; line-height: 20px; padding: 20px; border: 1px solid #ddd;">
+                      {% if sales.delivery.physicalLocation %}
+                        {{ sales.delivery.physicalLocation.name }}<br>
+                        {{ sales.delivery.physicalLocation.address }}<br>
+                        {{ sales.delivery.physicalLocation.postalCode }} {{ sales.delivery.physicalLocation.city }} {{ sales.delivery.physicalLocation.state }}<br>
+                        {{ sales.delivery.physicalLocation.country }}<br>
+                        {% if sales.delivery.physicalLocation.phone|length %}{{ sales.delivery.physicalLocation.phone }}<br>{% endif %}
+                        {% if sales.delivery.physicalLocation.email|length %}{{ sales.delivery.physicalLocation.email }}<br>{% endif %}
+                        <br>
+                        <div style="font-size: 13px; display: block; line-height: 13px;">
+                          {{ languageSheet.pickupMessage }}
+                        </div>
+                      {% elseif sales.user.shippingAddress.id %}
+                        {{ sales.user.shippingAddress.firstName }} {{ sales.user.shippingAddress.lastName }}<br>
+                        {{ sales.user.shippingAddress.address }} {{ sales.user.shippingAddress.number }}<br>
+                        {{ sales.user.shippingAddress.postalCode }} {{ sales.user.shippingAddress.city }} {{ sales.user.shippingAddress.state }}<br>
+                        {{ sales.user.shippingAddress.country }}
+                      {% else %}
+                        {{ sales.user.billingAddress.firstName }} {{ sales.user.billingAddress.lastName }}<br>
+                        {{ sales.user.billingAddress.address }} {{ sales.user.billingAddress.number }}<br>
+                        {{ sales.user.billingAddress.postalCode }} {{ sales.user.billingAddress.city }} {{ sales.user.billingAddress.state }}<br>
+                        {{ sales.user.billingAddress.country }}
+                      {% endif %}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td align="center">
+            <span style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; color: #000; font-weight: bold;">
+              {{ languageSheet.orderResume }}
+            </span>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+          <td style="vertical-align: top; line-height: 20px;">
+            <div>
+              <table style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: top; border-top: 1px solid #ddd;" width="85%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  {% for item in sales.items %}
+                    <tr>
+                      <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding-left: 10px; padding-right: 10px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; padding-top: 10px;">
+                        <table style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: top; border-collapse: collapse;" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td style="padding: 10px 10px; vertical-align: top;">
+                              <img width="120" src="{{ item.image }}" alt="{{ item.name }}">
+                            </td>
+                            <td style="padding: 10px 10px;vertical-align: top;">
+                              <div>
+                                <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration: none; display: block; line-height: 20px;">
+                                  <span style="color: #000; text-decoration: none"><b>{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
+                                </a>
+                              </div>
+                              <br>
+                              {% if item.options|length %}
+                                <div style="font-size: 14px; line-height: 20px; color: #666;">
+                                  {% for option in item.options %}
+                                    <div>{{ option.name }}: {{ option.value }}</div>
+                                  {% endfor %}
+                                </div>
+                                <br>
+                              {% endif %}
+                              <div style="font-size: 14px; line-height: 20px; color: #666;">
+                                {{ languageSheet.quantity }} {{ item.quantity }}
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+              <table align="center" cellpadding="0" cellspacing="0" width="85%" style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="vertical-align: middle; text-align: center; font-weight: bold; border-right: 1px solid #ddd; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-bottom: 20px; padding-top: 10px;">
+                    {{ languageSheet.total }} {{ sales.totals.total }}
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
+        {% if sales.comment|length %}
+          <tr>
+            <td>
+              <table width="85%" align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000; line-height: 20px; border-collapse: collapse;" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <strong>{{ languageSheet.comment }}</strong><br>
+                    {{ sales.comment }}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
         {% endif %}
-      {% endif %}
-      {{ languageSheet.messageBody3 }}<br><br>
+
+        {% if sales.reserve %}
+          {# do nothing #}
+        {% else %}
+          {% if sales.paymentSystem.message|length %}
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+              <td bgColor="#f4f4f4">
+                <table width="85%" align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #000; line-height: 18px; border-collapse: collapse;" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="padding: 15px 0px 15px 0px;">
+                    {{ sales.paymentSystem.message }}
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+          {% endif %}
+        {% endif %}
+      </tbody>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <span style="font-size: 15px;">
+      {{ languageSheet.messageBody2 }}<br><br>
       {{ languageSheet.messageSignature }}
     </span>
   </td>
@@ -544,7 +734,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -568,7 +758,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -598,7 +788,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br><br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -623,7 +813,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -655,7 +845,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
@@ -698,7 +888,7 @@ export const LANGUAGE_ES = {
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>

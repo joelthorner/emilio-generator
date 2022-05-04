@@ -119,7 +119,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>%%ecommerceName%% 에 등록해 주셔서 감사합니다</strong><br><br>
-    <span style="font-size:15px;">안녕하세요  %firstName% %lastName%, <br><br>고객 계정이 성공적으로 생성되었습니다 <br><br>고객의 계정을 사용하여 주셔서 감사합니다,지금은 개인홈페이지 과  비밀번호를  업데이트 할 수 있습니다, 주문 내역과 기타 사항 을 볼 수 있습니다.<br><br>
+    <span style="font-size: 15px;">안녕하세요  %firstName% %lastName%, <br><br>고객 계정이 성공적으로 생성되었습니다 <br><br>고객의 계정을 사용하여 주셔서 감사합니다,지금은 개인홈페이지 과  비밀번호를  업데이트 할 수 있습니다, 주문 내역과 기타 사항 을 볼 수 있습니다.<br><br>
     <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a> 에서 당신을 뵙기를 기대합니다<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
@@ -214,7 +214,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>계정 삭제를 확인하기</strong><br><br>
-  <span style="font-size:15px;">안녕하세요<br><br>페이지를 방문하면에서 계정을 취소한요천이 확인되었습니다,우리의 데이타베이스에서성 공적으로 삭제되었습니다 <br><br>%%ecommerceName%%</span>
+  <span style="font-size: 15px;">안녕하세요<br><br>페이지를 방문하면에서 계정을 취소한요천이 확인되었습니다,우리의 데이타베이스에서성 공적으로 삭제되었습니다 <br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -227,7 +227,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>비밀번호를 복구하기</strong><br><br>
-  <span style="font-size:15px;">%%ecommerceName%% 의페이지 방문할때 바로 비밀 번호 복구 영역에 액세스 할<br><br><a href="%%lostPasswordLink%%" style="color:#000">수있는 주소입니다 , 여기를 클릭하십시오</a><br><br>
+  <span style="font-size: 15px;">%%ecommerceName%% 의페이지 방문할때 바로 비밀 번호 복구 영역에 액세스 할<br><br><a href="%%lostPasswordLink%%" style="color:#000">수있는 주소입니다 , 여기를 클릭하십시오</a><br><br>
   이 이메일을 보낸 후이 액세스 코드가 24 시간 동안 유효합니다 <br><br><a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 에서 당신을 뵙기를 기대합니다<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
@@ -241,7 +241,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>비밀번호 변경하기 </strong><br><br>
-    <span style="font-size:15px;">안녕하세요 %%firstName%% %%lastName%%,<br><br>이 메일은 고객 계정의 비밀번호가  변경되었음을 알려드립니다.<br><br>단싱의계정을보호하기위해서 이메시지가 안전 메시지로 확인하세요<br><br><a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>에서 당신을 뵙기를 기대합니다<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">안녕하세요 %%firstName%% %%lastName%%,<br><br>이 메일은 고객 계정의 비밀번호가  변경되었음을 알려드립니다.<br><br>단싱의계정을보호하기위해서 이메시지가 안전 메시지로 확인하세요<br><br><a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>에서 당신을 뵙기를 기대합니다<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -254,7 +254,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>콘텐츠를 구독하기</strong><br><br>
-    <span style="font-size:15px;">안녕하세요<br><br>우리의 뉴스 레터에 구독 해 주셔서 감사합니다.  곧 우리 회사에 대해 뉴스,  제품 기능,인기 제품과 판촉을 받을 것입니다 <br><br><a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> 에서 당신을 뵙기를 기대합니다</span>
+    <span style="font-size: 15px;">안녕하세요<br><br>우리의 뉴스 레터에 구독 해 주셔서 감사합니다.  곧 우리 회사에 대해 뉴스,  제품 기능,인기 제품과 판촉을 받을 것입니다 <br><br><a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> 에서 당신을 뵙기를 기대합니다</span>
   </td>
 </tr>
 `,
@@ -348,7 +348,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>추천을 소장하기</strong><br><br>
-  <span style="font-size:15px;">당신의친구는  당신이관심이 있을 수 있는제품을 보내되었습니다 <br><br>좀 더 자세한 정보가 필요하면 당신은 문의하실 수 있습니다, <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>The %%ecommerceName%% Team</span>
+  <span style="font-size: 15px;">당신의친구는  당신이관심이 있을 수 있는제품을 보내되었습니다 <br><br>좀 더 자세한 정보가 필요하면 당신은 문의하실 수 있습니다, <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a><br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
@@ -425,7 +425,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>애칭   당신에게 추천한제품 </strong><br><br>
-  <span style="font-size:15px;"> Hello %%friendName%%,<br>당신의 친구 %%anonymousName%% (%%anonymousEmail%%) 이 상품은 관심이 될 수 있다고 생각합니다 .<br><br>좀 더 자세한 정보가 필요하면 당신은 문의하실 수 있습니다, <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>The %%ecommerceName%% Team</span>
+  <span style="font-size: 15px;"> Hello %%friendName%%,<br>당신의 친구 %%anonymousName%% (%%anonymousEmail%%) 이 상품은 관심이 될 수 있다고 생각합니다 .<br><br>좀 더 자세한 정보가 필요하면 당신은 문의하실 수 있습니다, <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
@@ -502,7 +502,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>연럭서</strong><br><br>
-  <span style="font-size:15px;">이름: %%anonymousFirstName%%<br>성씨: %%anonymousLastName%%<br>이메일: %%anonymousEmail%%<br>행드폰: %%anonymousPhone%%<br>정보를 조회:  %%queryMotive%%<br>소식내용: %%comments%%</span>
+  <span style="font-size: 15px;">이름: %%anonymousFirstName%%<br>성씨: %%anonymousLastName%%<br>이메일: %%anonymousEmail%%<br>행드폰: %%anonymousPhone%%<br>정보를 조회:  %%queryMotive%%<br>소식내용: %%comments%%</span>
   </td>
 </tr>
 `
@@ -515,7 +515,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>질문대한</strong><br><br>
-  <span style="font-size:15px;">이름: %%anonymousFirstName%%<br>성씨: %%anonymousLastName%%<br>이메일: %%anonymousEmail%%<br>전화: %%anonymousPhone%%<br>메시지 내용: %%comments%%<br><br>제품 이름: %%name%%<br>제품 모델: %%sku%%</span>
+  <span style="font-size: 15px;">이름: %%anonymousFirstName%%<br>성씨: %%anonymousLastName%%<br>이메일: %%anonymousEmail%%<br>전화: %%anonymousPhone%%<br>메시지 내용: %%comments%%<br><br>제품 이름: %%name%%<br>제품 모델: %%sku%%</span>
   </td>
 </tr>
 `
@@ -535,7 +535,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>주문을 확인하기</strong><br><br>
-    <span style="font-size:15px;">안녕허세요 %%firstName%% %%lastname%%,<br>
+    <span style="font-size: 15px;">안녕허세요 %%firstName%% %%lastname%%,<br>
 
       주문이 올바르게 식별하고 성공적으로 처리되었습니다.<br>
       주문 정보는 pdf 형식으로 발송되었습니다 <br>
@@ -706,7 +706,7 @@ export const LANGUAGE_KO = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>콘텐츠를 수신 거부하기 </strong><br><br>
-    <span style="font-size:15px;">안녕하세요<br><br>우리의콘텐츠를  성공적으로 수신 거부했습니다.<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">안녕하세요<br><br>우리의콘텐츠를  성공적으로 수신 거부했습니다.<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -719,7 +719,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>찬조요구</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       안녕하세요,<br><br> %%firstName%% 에당신을 초청해 가입합니다 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>회원이되기 위해서는 여기 로그인하세요: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>지지해 주셔서 감사합니다.<br><br>%%ecommerceName%%
     </span>
   </td>
@@ -734,7 +734,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>당신의모집은     한주문을 완성되었습니다,즐기십시오!</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       안녕하세요,<br><br>딩신의친구는 한주문을 완성되었습니다,다음 주문에서 (     %)할인을 받을 수 있습니다<br><br>다음주문에  할인이 자동으로 사용합니다<br><br>지지해 주셔서 감사합니다<br><br>The %%ecommerceName%% Team
     </span>
   </td>
@@ -749,7 +749,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>반품 요청 정보</strong><br><br>
-    <span style="font-size:15px;">여보세요 %firstName% %lastName%, <br><br>환불 요청을 확인하게되어 기쁩니다.<br><br>주문 번호: %%orderNumber%%<br><br>The %%ecommerceName%% Team</span>
+    <span style="font-size: 15px;">여보세요 %firstName% %lastName%, <br><br>환불 요청을 확인하게되어 기쁩니다.<br><br>주문 번호: %%orderNumber%%<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 `
@@ -762,7 +762,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>너 쇼핑 카트가 그리워.</strong><br><br>
-    <span style="font-size:15px;">님 안녕하세요 %firstName% %lastName%, <br><br>저희 홈페이지에 마지막 찾아볼떼 다음상품을 장바구니에 놓았습니다. 하지만 주문을 완성하지 않습니다. 여기 클릭하세요: <br><br>
+    <span style="font-size: 15px;">님 안녕하세요 %firstName% %lastName%, <br><br>저희 홈페이지에 마지막 찾아볼떼 다음상품을 장바구니에 놓았습니다. 하지만 주문을 완성하지 않습니다. 여기 클릭하세요: <br><br>
     <a target="_blank" href="%recoverOrderLink%" style="color:#000;">쇼핑 카트</a>장바구니에 돌라가기<br><br>%%ecommerceName%% 팀</span>
   </td>
 </tr>
@@ -832,7 +832,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email verification</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       여보세요 %firstName% %lastName%,<br><br>%%ecommerceURL%% 에 등록 주셔서 감사합니다. , 전자 메일 계정을 확인하기 위해 링크를 따르십시오 : <a href="%verifyLink%" style="color:#000;">여기를 클릭하십시오</a>.<br><br>우리는 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>에 당신을보고 기대하고 있습니다.<br><br>The %%ecommerceName%% Team
     </span>
   </td>
@@ -847,7 +847,7 @@ export const LANGUAGE_KO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>계정 활성화 됨</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       여보세요 %firstName% %lastName%,<br><br>
       우리는 %%ecommerceURL%%에서 고객 계정이 성공적으로 활성화되었음을 알려드립니다.<br><br>이 제어판에 액세스하면 언제든지 모든 세부 정보를보고 수정할 수 있습니다. <a href="%%ecommerceURL%%" style="color:#000">프로필 수정</a><br><br>곧 만나 뵙기를 바랍니다. <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
     </span>

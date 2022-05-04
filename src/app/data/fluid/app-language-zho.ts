@@ -224,7 +224,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>确认删除账户</strong><br><br>
-    <span style="font-size:15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -237,7 +237,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>恢復密碼</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
     您在瀏覽頁面 %%ecommerceName%% 的時候這是您進入頁面的密碼恢復郵件<br><br><a href="%%lostPasswordLink%%" style="color:#000">點擊此處</a><br><br>請記住該網址，該驗證網址將會在郵件發送起24小時內有效<br><br>我們期待能在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 見到您<br><br>%%ecommerceName%%
     </span>
   </td>
@@ -252,7 +252,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>修改密码</strong><br><br>
-    <span style="font-size:15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -361,7 +361,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>收藏推荐</strong><br><br>
-    <span style="font-size:15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
+    <span style="font-size: 15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
@@ -440,7 +440,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>昵称 给您推荐产品</strong><br><br>
-    <span style="font-size:15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 <tr>
@@ -519,7 +519,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>联系方式</strong><br><br>
-    <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
+    <span style="font-size: 15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
   </td>
 </tr>
 `
@@ -532,7 +532,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>问题关于 </strong><br><br>
-    <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
+    <span style="font-size: 15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
   </td>
 </tr>
 `
@@ -552,7 +552,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>確認訂單</strong><br><br>
-    <span style="font-size:15px;">亲爱的 %%firstName%% %%lastname%%,<br>
+    <span style="font-size: 15px;">亲爱的 %%firstName%% %%lastname%%,<br>
       您的订单已确认并正确处理成功。<br>
       已将订单信息以pdf的格式发送给您。 <br>
       注意查收并查看您的订单详情。</span>
@@ -721,7 +721,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>资讯退订</strong><br><br>
-    <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -734,7 +734,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>赞助要求 </strong><br><br>
-    <span style="font-size:15px;">您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册:
+    <span style="font-size: 15px;">您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册:
     <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%% </span>
   </td>
 </tr>
@@ -748,7 +748,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的募集已经完成一个订单，享受收益吧！　　</strong><br><br>
-    <span style="font-size:15px;">您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -761,7 +761,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>退貨申請信息</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%, <br><br>我們很高興確認您的退款申請。<br><br>訂單號: %%orderNumber%%<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">你好 %firstName% %lastName%, <br><br>我們很高興確認您的退款申請。<br><br>訂單號: %%orderNumber%%<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -774,7 +774,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的購物車錯過了您</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%, <br><br>在您最後一次瀏覽我們網頁後將以下商品放入購物車，但是您沒有完成訂單填寫。請點擊這裡： <br><br>
+    <span style="font-size: 15px;">你好 %firstName% %lastName%, <br><br>在您最後一次瀏覽我們網頁後將以下商品放入購物車，但是您沒有完成訂單填寫。請點擊這裡： <br><br>
     <a target="_blank" href="%recoverOrderLink%" style="color:#000;">購物車</a> 返回您的購物車.<br><br>%%ecommerceName%% 團隊</span>
   </td>
 </tr>
@@ -838,7 +838,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的訂單在運送中。我們和您一樣興奮地期待！</strong><br><br>
-    <span style="font-size:15px;">您好  %firstName% %lastName%, <br><br>您的訂單 %orderNumber% 已經從我們的倉庫派出。<br><br>我們的運輸通信員將很快與您聯繫，並提供有關裝運的更多細節。 <br><br>
+    <span style="font-size: 15px;">您好  %firstName% %lastName%, <br><br>您的訂單 %orderNumber% 已經從我們的倉庫派出。<br><br>我們的運輸通信員將很快與您聯繫，並提供有關裝運的更多細節。 <br><br>
   </td>
 </tr>
 `
@@ -851,7 +851,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>電子郵件驗證</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊%% ecommerceURL %%。 請按照鏈接驗證您的電子郵件帳戶： <a href="%verifyLink%"  style="color:#000;">點擊這裡</a>.<br><br>我們期待著與您相見 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%% 球隊</span>
+    <span style="font-size: 15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊%% ecommerceURL %%。 請按照鏈接驗證您的電子郵件帳戶： <a href="%verifyLink%"  style="color:#000;">點擊這裡</a>.<br><br>我們期待著與您相見 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%% 球隊</span>
   </td>
 </tr>
 `
@@ -864,7 +864,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>帳戶已激活</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       您好 %firstName% %lastName%,<br><br>我們很高興地通知您，%%ecommerceURL%% 中的客戶帳戶已成功激活。<br><br>您可以通過訪問此控制面板隨時查看和修改所有詳細信息 <a href="%%ecommerceURL%%" style="color:#000">編輯您的個人資料</a><br><br>我們希望很快能見到你 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>%%ecommerceName%% 球隊
     </span>
   </td>
@@ -885,8 +885,8 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>庫存可用產品 <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong>%productOptions%<br><br>
-    <span style="font-size:15px;">你好,<br><br>你想要的那篇文章已經有了！</span>
-    <span style="font-size:15px;">我們想提醒您，此電子郵件提供了有關本文可用性的指導，並取決於許多因素（有興趣的人，可用單位）。 我們已將此電子郵件發送給對該文章感興趣的所有客戶，因此可能很快就會用盡。<br><br>%%ecommerceName%% 球隊</span>
+    <span style="font-size: 15px;">你好,<br><br>你想要的那篇文章已經有了！</span>
+    <span style="font-size: 15px;">我們想提醒您，此電子郵件提供了有關本文可用性的指導，並取決於許多因素（有興趣的人，可用單位）。 我們已將此電子郵件發送給對該文章感興趣的所有客戶，因此可能很快就會用盡。<br><br>%%ecommerceName%% 球隊</span>
   </td>
 </tr>
 `
@@ -919,7 +919,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
-    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>閱讀更多！</strong></a>.</span>
+    <span style="font-size: 15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>閱讀更多！</strong></a>.</span>
   </td>
 </tr>
 <!-- %/loop% -->
@@ -946,7 +946,7 @@ export const LANGUAGE_ZHO = {
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
           <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
           %%commentContent%%<br><br>
-          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>閱讀更多！</strong></a>.</span>
+          <span style="font-size: 15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>閱讀更多！</strong></a>.</span>
         </td>
       </tr>
     </table>
@@ -963,7 +963,7 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>歡迎來到 <a href="%%blogUrl%%" style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊我們的博客。 很快，您將通過電子郵件，功能信息以及最熱門的產品和促銷活動收到新帖子。<br><br>希望很快能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> 見到你.<br><br>%%ecommerceName%% 球隊</span>
+    <span style="font-size: 15px;">你好 %firstName% %lastName%,<br><br>感謝您註冊我們的博客。 很快，您將通過電子郵件，功能信息以及最熱門的產品和促銷活動收到新帖子。<br><br>希望很快能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a> 見到你.<br><br>%%ecommerceName%% 球隊</span>
   </td>
 </tr>
 `
@@ -976,9 +976,9 @@ export const LANGUAGE_ZHO = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>庫存訂購產品 <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">您好,<br><br>您已訂閱 %name% 股票通知</span>
+    <span style="font-size: 15px;">您好,<br><br>您已訂閱 %name% 股票通知</span>
     %productOptions%<br>
-    <span style="font-size:15px;">如果我們再次收到這篇文章，我們會立即通知您。<br><br>我們希望很快能見到你.<br><br>%%ecommerceName%% 球隊</span>
+    <span style="font-size: 15px;">如果我們再次收到這篇文章，我們會立即通知您。<br><br>我們希望很快能見到你.<br><br>%%ecommerceName%% 球隊</span>
   </td>
 </tr>
 `
