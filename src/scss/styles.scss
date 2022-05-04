@@ -117,7 +117,7 @@ body.editor-full-screen {
     color: #FFF;
     background-color: $blue-1;
   }
-  &-empty {
+  &-empty, &-deprecated {
     color: #FFF;
     background-color: $danger;
   }

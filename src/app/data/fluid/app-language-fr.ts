@@ -117,7 +117,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong> Bienvenue a %%ecommerceName%%</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour, %%firstName%% %%lastName%%:<br><br>
       Nous avons le plaisir de vous confirmer la création de votre compte client sur %%ecommerceURL%%.<br><br>
       Votre compte client vous permettra de mettre à jour votre profil et votre mot de passe, et de consulter votre historique de commandes parmi d’autres informations.<br><br>
@@ -218,7 +218,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Annulation newsletter </strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
     Bonjour,<br><br>
     Nous vous confirmons l’annulation de votre inscription au site.<br><br>
     Cordialement.<br><br>
@@ -235,7 +235,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Rappel de mot de passe</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour, %%firstName%% %%lastName%%:<br><br>
       Conformément à votre demande lors de la visite à %%ecommerceName%%, voici le lien qui vous donne accés à la zone pour la récupération de votre mot de passe:<br><br>
       <span><a href="%%lostPasswordLink%%" style="color:#000">Cliquez ici pour récupérer le mot de passe</a></span><br><br>
@@ -256,7 +256,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong> Changement de mot de passe </strong><br><br>
-    <span style="font-size:15px;">Bonjour, %%firstName%% %%lastName%%:<br><br>
+    <span style="font-size: 15px;">Bonjour, %%firstName%% %%lastName%%:<br><br>
     Se il vous plaît noter que votre mot de passe a été changé. <br><br>
     Au plaisir de vous voir bientôt <a href="%%ecommerceURL%%" style="font-weight:bold">%%ecommerceName%%</a><br><br>
     Cordialement,<br><br>L'équipe %%ecommerceName%%</span>
@@ -272,7 +272,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Subscripción a la newsletter</strong><br><br>
-    <span style="font-size:15px;">Bonjour<br><br>
+    <span style="font-size: 15px;">Bonjour<br><br>
     Vous êtes bien inscrit(e) à notre newsletter, vous recevrez désormais tous nos e-mails concernant les nouveautés et promotions de la e-boutique.<br><br>
     Rendez-nous visite sur <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a></span>
   </td>
@@ -368,7 +368,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Recommande les produits de %%ecommerceName%%</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour,<br><br>Ton ami %%anonymousName%% (%%anonymousEmail%%) vous envoie ce produit qui pourrait intéresser.<br><br>
       Si vous avez besoin de plus amples informations sur ce produit, vous pouvez nous contacter à <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
       Cordialement, L'équipe  %%ecommerceName%%
@@ -397,7 +397,7 @@ export const LANGUAGE_FR = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -423,7 +423,7 @@ export const LANGUAGE_FR = {
             <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
               <tr>
                 <td>
-                  <strong >Message de votre ami:</strong><br>
+                  <strong>Message de votre ami:</strong><br>
                   %%comments%%
 
                 </td>
@@ -447,7 +447,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Recommandation d'un produit</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour %%friendName%% <br><br>
       Un ami %%anonymousName%% (%%anonymousEmail%%) vous envoie ce produit qui pourrait intéresser.<br><br>
       Si vous avez besoin de plus amples informations sur ce produit, vous pouvez nous contacter à <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br>
@@ -474,7 +474,7 @@ export const LANGUAGE_FR = {
                   <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                     <tr>
                       <td style="padding: 10px 0px;">
-                        <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                        <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                       </td>
                       <td style="padding: 10px 0px;">
                         %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -494,7 +494,7 @@ export const LANGUAGE_FR = {
           <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
             <tr>
               <td>
-                <strong >Message à votre ami:</strong><br>
+                <strong>Message à votre ami:</strong><br>
                 %%comments%%
               </td>
             </tr>
@@ -515,7 +515,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Contacte general</strong><br><br>
-    <span style="font-size:15px;"><p>Prénom: %%anonymousFirstName%%<br>
+    <span style="font-size: 15px;"><p>Prénom: %%anonymousFirstName%%<br>
     Nom: %%anonymousLastName%%<br>
     Email: %%anonymousEmail%%<br>
     Téléphone: %%anonymousPhone%%<br>
@@ -532,7 +532,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Question sur un article </strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       <p>Prénom: %%anonymousFirstName%%<br>
       Nom: %%anonymousLastName%%<br>
       Email: %%anonymousEmail%%<br>
@@ -559,12 +559,10 @@ export const LANGUAGE_FR = {
   }
 </style>
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+  <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Confirmation de commande</strong><br><br>
-    <span style="font-size:15px;">
-      Bonjour %%firstName%% %%lastName%%,<br><br>
-      Nous vous remercions de faire vos achats à %%ecommerceName%%. Nous vous confirmons que la commande numéro %%orderNumber%% a été traitée correctement.<br><br>
-    </span>
+    <span style="font-size: 15px;">Bonjour %%firstName%% %%lastName%%,<br>
+      Nous vous remercions de faire vos achats à %%ecommerceName%%. Nous vous confirmons que la commande numéro %%orderNumber%% a été traitée correctement.</span>
   </td>
 </tr>
 <tr>
@@ -572,176 +570,132 @@ export const LANGUAGE_FR = {
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
         <tr>
-          <td style="vertical-align: middle;font-family: sans-serif;" align="right">
+          <td style="vertical-align: middle;font-family: sans-serif;" align="center">
             <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
-                <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                  Numéro de commande:<br>
-                  Date de la commande:<br>
-                  État:<br>
+                <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;width: 50%" align="center" width="50%">
+                  <b>Numéro de commande:</b><br>
+                  %%orderNumber%%
                 </td>
-                <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                  <strong>%%orderNumber%% </strong><br>
-                  <strong>%%orderDate%%</strong><br>
-                  <strong>Confirmé</strong><br>
+                <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;" align="center">
+                  <b>Date de commande:</b><br>
+                  %%orderDate%%
                 </td>
               </tr>
             </table>
           </td>
+          <tr>
+            <td style="vertical-align: middle;font-family: sans-serif;" align="center">
+              <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                <tr>
+                  <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;width: 50%" align="center" width="50%">
+                    <b>Mode de paiement:</b><br>
+                    %%paymentMethod%%
+                  </td>
+                  <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;" align="center">
+                    <b>Mode de livraison:</b><br>
+                    %%shipperName%% %%shippingTypeName%%
+                  </td>
+                </tr>
+              </table>
+            </td>
         </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Adresse</span></td></tr>
+        <tr><td>&nbsp;</td></tr>
         <tr>
-          <td style="vertical-align: middle;font-family: sans-serif;" align="right">
-            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-              <tr>
-                <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                  <strong>Adresse de facturation:</strong><br>
-                  %%firstName%% %%lastName%%<br>
-                  %%address%% <br>
-                  %%zip%%  %%city%%<br>
-                  %%state%%<br>
-                </td>
-                <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                  <strong>Adresse de livraison:</strong><br>
-                  %%shippingFirstName%%  %%shippingLastName%% <br>
-                  %%shippingAddress%% <br>
-                  %%shippingZip%%  %%shippingCity%% <br>
-                  %%shippingState%% <br>
-                </td>
-              </tr>
-            </table>
+          <td style="vertical-align: top">
+            <div>
+              <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="85%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height: 20px;padding: 20px;border: 1px solid #ddd;">
+                      %shippingFirstName% %shippingLastName%<br>
+                      %shippingAddress% %shippingNumber%<br>
+                      %shippingZip% %shippingCity% %shippingState%<br>
+                      %shippingCountryName%
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </td>
         </tr>
+        <tr><td>&nbsp;</td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">Détails de la commande</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td style="vertical-align: top">
-            <div style="padding: 0 0">
-              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+          <td style="vertical-align: top;line-height: 20px;">
+            <div>
+              <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: top;border-top: 1px solid #ddd;" width="85%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
-                  <tr>
-                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Produit</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Quantité</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">Prix</td>
-                  </tr>
                   <!-- %loop% -->
                   <tr>
-                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;padding-left:10px;padding-right:10px;border-left: 1px solid #ddd;border-right: 1px solid #ddd;padding-top: 10px;">
+                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: top;border-collapse:collapse;" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <img width="120" src="%smallImage%" alt="%name%">
                           </td>
-                          <td style="padding: 10px 0px;">
-                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
-                            <div style="font-size: 10px;">%productOptions%</div>
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;display: block;line-height: 20px;">
+                              <span style="color: #454545; text-decoration: none">%name%</span>
+                            </a>
+                            <div style="font-size: 10px;line-height: 12px;">%productOptions%</div>
+                            <div><br>Quantité: %quantity%</div>
                           </td>
                         </tr>
                       </table>
                     </td>
-                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
+
                   <!-- %ifOrderGifts% -->
                   <!-- %giftsLoop% -->
                   <tr>
-                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                      <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: middle;" >
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;padding-left:10px;padding-right:10px;border-left: 1px solid #ddd;border-right: 1px solid #ddd;">
+                      <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: top;border-collapse:collapse;" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <img width="120" src="%smallImage%" alt="%name%">
                           </td>
-                          <td style="padding: 10px 0px;">
-                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;display: block;line-height: 20px;">
+                              <span style="color: #454545; text-decoration: none">%name% <span style="font-size: 10px;">(Cadeau)</span></span>
+                            </a>
+                            <div><br>Quantité: %quantity%</div>
                           </td>
                         </tr>
                       </table>
                     </td>
-                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;">&nbsp;</td>
                   </tr>
                   <!-- %/giftsLoop% -->
                   <!-- %/ifOrderGifts% -->
 
                 </tbody>
               </table>
-              <table align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span> %%shippingMethodWithPrice%% </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%paymentMethodPrice%% </span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%ifOrderDiscount%% -->
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Réductions</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>- %%orderDiscounts%%</span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%/ifOrderDiscount%% -->
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Subtotal</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%orderTotalWithoutTaxes%%  </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Imposition</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%orderTaxes%%</span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%ifOrderBalanceCodes%% -->
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">Coupons</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>- %%orderBalanceCodes%%</span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%/ifOrderBalanceCodes%% -->
-                <tr>
-                  <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">Total</td>
-                  <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
-                    <span>
-                      <span>%%total%%</span>
-                    </span>
-                  </td>
-                </tr>
 
+              <table align="center" cellpadding="0" cellspacing="0" width="85%" style="color:#000;font-family:Arial, Helvetica, sans-serif;font-size:15px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="vertical-align: middle;text-align: center;font-weight:bold;border-right: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;padding-bottom: 20px;padding-top: 10px;">
+                    Total: %%total%%
+                  </td>
+                </tr>
               </table>
             </div>
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
         <!-- %%ifComments%% -->
         <tr>
           <td>
-            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+            <table width="85%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#454545;line-height:20px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
               <tr>
                 <td>
                   <strong>Commentaires:</strong><br>
                   %%orderComments%%
-
                 </td>
               </tr>
             </table>
@@ -751,7 +705,7 @@ export const LANGUAGE_FR = {
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td bgColor="#f4f4f4">
-            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
+            <table width="85%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="padding: 15px 0px 15px 0px;">
                   %%textToEmail%%
@@ -774,7 +728,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>Annulation newsletter </strong><br><br>
-  <span style="font-size:15px;">
+  <span style="font-size: 15px;">
     Bonjour,<br><br>
     L’annulation de l’inscription à la newsletter s’est effectuée correctement.<br><br>
     Cordialement.<br><br>
@@ -792,7 +746,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Demande de parrainage</strong><br><br>
-    <span style="font-size:15px;">Bonjour,<br><br>
+    <span style="font-size: 15px;">Bonjour,<br><br>
     %%firstName%% vous invite à rejoindre <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>
     Devenez membre et inscrivez-vous ici: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>
     Merci pour votre soutien.<br><br>
@@ -809,7 +763,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Parrainage complété</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour,<br><br>
       Un de vos amis vient de faire un achat dans notre boutique sur XX (€) valeur, par conséquent, nous offrons un rabais de XX sur votre prochaine commande.<br><br>
       La réduction entrera en vigueur automatiquement sur votre prochaine commande.<br><br>
@@ -827,7 +781,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Demande d'information Retour</strong><br><br>
-    <span style="font-size:15px;">Bonjour %firstName% %lastName%, <br><br>Nous sommes heureux de confirmer votre demande de remboursement.<br><br>Numéro de commande: %%orderNumber%%<br><br>L'équipe %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Bonjour %firstName% %lastName%, <br><br>Nous sommes heureux de confirmer votre demande de remboursement.<br><br>Numéro de commande: %%orderNumber%%<br><br>L'équipe %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -840,7 +794,7 @@ export const LANGUAGE_FR = {
     <tr>
       <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
         <strong>Incomplete demande d'information</strong><br><br>
-        <span style="font-size:15px;">Bonjour %%firstName%% %%lastName%%, <br><br>Sur votre dernière visite à notre magasin, vous avez ajouté les produits suivants à votre panier, mais n'a pas terminé la commande.<br><br>
+        <span style="font-size: 15px;">Bonjour %%firstName%% %%lastName%%, <br><br>Sur votre dernière visite à notre magasin, vous avez ajouté les produits suivants à votre panier, mais n'a pas terminé la commande.<br><br>
           Cliquez <a target="_blank" href="%recoverOrderLink%" style="color:#000;">ici</a> pour récupérer votre commande. <br><br>Sincèrement, l'équipe %%ecommerceName%%</span>
       </td>
     </tr>
@@ -867,7 +821,7 @@ export const LANGUAGE_FR = {
                           <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                             <tr>
                               <td style="padding: 10px 0px;">
-                                <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                                <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                               </td>
                               <td style="padding: 10px 0px;">
                                 %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -905,7 +859,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Vérification e-mail</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour %firstName% %lastName%,<br><br>
       Merci à la signature à  %%ecommerceURL%%. S'il vous plaît activer votre compte, cliquez <a href="%verifyLink%" style="color:#000;">ici </a>.<br><br>
       Nous espérons vous voir bientôt dans <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a>.<br><br>
@@ -923,7 +877,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Activation du compte</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour %firstName% %lastName%,<br><br>
       Nous vous informons que votre compte %%ecommerceURL%% a été activé avec succès.<br><br>
       Pour afficher vos données et toutes les informations concernant votre compte accessible via le panneau de commande: <a href="%%ecommerceURL%%" style="color:#000">Modifier votre profil</a><br><br>
@@ -949,11 +903,11 @@ export const LANGUAGE_FR = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Stock disponible du produit <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br>
     %productOptions%<br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour,<br><br>
       L'article que vous voulez tant est déjà disponible!
     </span>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Nous souhaitons vous rappeler que cet e-mail fournit des conseils sur la disponibilité de cet article et dépend de nombreux facteurs (personnes intéressées, unités disponibles).<br>
       Nous avons envoyé cet email à tous les clients intéressés par l'article, il est donc possible d'être épuisé très bientôt.<br><br>
       L'équipe %%ecommerceName%%
@@ -989,7 +943,7 @@ export const LANGUAGE_FR = {
 </tr>
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <span style="font-size:15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Continuer la lecture!</strong></a>.</span>
+    <span style="font-size: 15px;">%%postShortText%%<br><br><a href="%%postLink%%" style="color:#000;text-decoration:none;"><strong>Continuer la lecture!</strong></a>.</span>
   </td>
 </tr>
 <!-- %/loop% -->
@@ -1016,7 +970,7 @@ export const LANGUAGE_FR = {
         <td style="text-align:left;font-family:Arial, sans-serif;font-size: 11px;color: #999;height:20px;" width="70%">
           <a style="color:#000;text-decoration:none;" href="%%postLink%%#comment%%commentId%%">%%commentNick%%</a><br>
                   %%commentContent%%<br><br>
-          <span style="font-size:15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continuer à lire!</strong></a>.</span>
+          <span style="font-size: 15px;"><a href="%%postLink%%#comment%%commentId%%" style="color:#000;text-decoration:none;"><strong>Continuer à lire!</strong></a>.</span>
         </td>
       </tr>
     </table>
@@ -1033,7 +987,7 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Bienvenue a <a href="%%blogUrl%%"  style="color:#000;">%%blogName%%</a>!</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Bonjour,<br><br>
       Merci pour votre inscription à notre blog. Bientôt vous recevrez les nouveaux articles par email, des informations sur des remises, des promotions, des cadeaux et des informations générales concernant l'activité du boutique en ligne.<br><br>
       Nous espérons vous voir bientôt sur <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>
@@ -1051,9 +1005,9 @@ export const LANGUAGE_FR = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Abonnement de stock de produit <a href="%productLink%" style="color:#000;font-size:15px;">%name%</a></strong><br><br>
-    <span style="font-size:15px;">Bonjour,<br><br> Vous avez souscrit à des avis d'achat %name%</span>
+    <span style="font-size: 15px;">Bonjour,<br><br> Vous avez souscrit à des avis d'achat %name%</span>
     %productOptions%<br>
-    <span style="font-size:15px;">Dans le cas où nous recevons à nouveau cet article, nous vous en informerons immédiatement afin que vous ne puissiez pas vous échapper.<br><br>Cordialement, l'équipe %%ecommerceName%%</span>
+    <span style="font-size: 15px;">Dans le cas où nous recevons à nouveau cet article, nous vous en informerons immédiatement afin que vous ne puissiez pas vous échapper.<br><br>Cordialement, l'équipe %%ecommerceName%%</span>
   </td>
 </tr>
 `

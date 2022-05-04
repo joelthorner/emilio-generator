@@ -117,7 +117,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
-      <span style="font-size:15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
+      <span style="font-size: 15px;">您好 %firstName% %lastName%, <br><br>您的顾客账号已成功创建。<br><br>谢谢您使用我们的顾客账户，现在您可以完善您的个人主页, 密码，并查看您的订单信息和其他您感兴趣的详情。<br><br>
       我们期待能在 <a href="%%ecommerceURL%%" style="color: #000;">%%ecommerceName%%</a><br><br>%%ecommerceName%%</span>
   </td>
 </tr>
@@ -212,7 +212,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>确认删除账户</strong><br><br>
-    <span style="font-size:15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br>您在访问我们的页面时提出的注销账户申请已确认，您从我们的数据库中删除账户邮箱成功。<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -225,7 +225,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>恢复密码</strong><br><br>
-    <span style="font-size:15px;">您在浏览页面 %%ecommerceName%% 的时候这是您进入页面的密码恢复邮件<br><br><a href="%%lostPasswordLink%%" style="color:#000">点击此处</a><br><br>
+    <span style="font-size: 15px;">您在浏览页面 %%ecommerceName%% 的时候这是您进入页面的密码恢复邮件<br><br><a href="%%lostPasswordLink%%" style="color:#000">点击此处</a><br><br>
     请记住该网址，该验证网址将会在邮件发送起24小时内有效<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 见到您<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
@@ -239,7 +239,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>修改密码</strong><br><br>
-    <span style="font-size:15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好 %%firstName%% %%lastName%%,<br><br>此封邮件通知您的账户密码已修改成功<br><br>确认此邮件为安全邮件以保护您的账户<br><br>我们期待能在 <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -348,7 +348,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>收藏推荐</strong><br><br>
-  <span style="font-size:15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
+  <span style="font-size: 15px;">您的好友发送了您可能感兴趣的产品给您。<br><br>您若是想了解更多产品咨询可以在 <a href="%%ecommerceURL%%" style="color:#000">%%ecommerceName%%</a> 联系我们<br><br>The %%ecommerceName%% Team</span>
   </td>
 </tr>
 <tr>
@@ -377,7 +377,7 @@ export const LANGUAGE_CHI = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -403,7 +403,7 @@ export const LANGUAGE_CHI = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >来自好友的消息  评论</strong><br>
+                    <strong>来自好友的消息  评论</strong><br>
                     %%comments%%
 
                   </td>
@@ -428,7 +428,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>昵称 给您推荐产品</strong><br><br>
-  <span style="font-size:15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
+  <span style="font-size: 15px;"> Hello %%friendName%%,<br>您的朋友 %%anonymousName%% (%%anonymousEmail%%) 认为这款产品是你喜欢的类别 <br><br>若你需要更多相关信息您可以联系我们。 <a href="%%ecommerceURL%%" style="color:#000 ">%%ecommerceName%%</a><br><br> %%ecommerceName%%</span>
   </td>
 </tr>
 <tr>
@@ -457,7 +457,7 @@ export const LANGUAGE_CHI = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -483,7 +483,7 @@ export const LANGUAGE_CHI = {
               <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
                 <tr>
                   <td>
-                    <strong >来自好友的推荐:</strong><br>
+                    <strong>来自好友的推荐:</strong><br>
                     %%comments%%
 
                   </td>
@@ -507,7 +507,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
   <strong>联系方式</strong><br><br>
-  <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
+  <span style="font-size: 15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>手机: %%anonymousPhone%%<br>查询信息:  %%queryMotive%%<br>消息内容: %%comments%%</span>
   </td>
 </tr>
 `
@@ -520,7 +520,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>问题关于 </strong><br><br>
-    <span style="font-size:15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
+    <span style="font-size: 15px;">名字: %%anonymousFirstName%%<br>姓氏: %%anonymousLastName%%<br>邮箱: %%anonymousEmail%%<br>电话: %%anonymousPhone%%<br>消息内容: %%comments%%<br><br>产品名称: %%name%%<br>产品货号: %%sku%%</span>
   </td>
 </tr>
 `
@@ -538,10 +538,9 @@ export const LANGUAGE_CHI = {
   }
 </style>
 <tr>
-  <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
-    <strong>确认订单</strong><br><br>
-    <span style="font-size:15px;">亲爱的 %%firstName%% %%lastname%%,<br>
-
+  <td style="padding: 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
+    <strong>欢迎您登陆 %%ecommerceName%%</strong><br><br>
+    <span style="font-size: 15px;">亲爱的 %%firstName%% %%lastname%%,<br>
       您的订单已确认并正确处理成功。<br>
       已将订单信息以pdf的格式发送给您。 <br>
     注意查收并查看您的订单详情。</span>
@@ -552,178 +551,132 @@ export const LANGUAGE_CHI = {
     <table style="width: 100%; color: #000; font-family: sans-serif; font-size: 15px;border-collapse:collapse;">
       <tbody>
         <tr>
-          <td style="vertical-align: middle;font-family: sans-serif;" align="right">
+          <td style="vertical-align: middle;font-family: sans-serif;" align="center">
             <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
               <tr>
-                <td width="30%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                  订单编号:<br>
-                  订单日期:<br>
-                  订单状态:<br>
+                <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;width: 50%" align="center" width="50%">
+                  <b>订单编号:</b><br>
+                  %%orderNumber%%
                 </td>
-                <td width="80%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                  <strong>%%orderNumber%% </strong><br>
-                  <strong>%%orderDate%%</strong><br>
-                  <strong>已确认</strong><br>
+                <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;" align="center">
+                  <b>订单日期:</b><br>
+                  %%orderDate%%
                 </td>
               </tr>
             </table>
           </td>
+          <tr>
+            <td style="vertical-align: middle;font-family: sans-serif;" align="center">
+              <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
+                <tr>
+                  <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;width: 50%" align="center" width="50%">
+                    <b>付款方式:</b><br>
+                    %%paymentMethod%%
+                  </td>
+                  <td style="padding: 15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;vertical-align: middle;text-align: center;" align="center">
+                    <b>运输方式:</b><br>
+                    %%shipperName%% %%shippingTypeName%%
+                  </td>
+                </tr>
+              </table>
+            </td>
         </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">邮寄地址</span></td></tr>
+        <tr><td>&nbsp;</td></tr>
         <tr>
-          <td style="vertical-align: middle;font-family: sans-serif;" align="right">
-            <table width="100%" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
-              <tr>
-                <td width="50%" style="vertical-align: middle;background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-left:40px;" >
-                  <strong>支付账号:</strong><br>
-                  %%firstName%% %%lastName%%<br>
-                  %%address%% <br>
-                  %%zip%%  %%city%%<br>
-                  %%state%%<br>
-                </td>
-                <td width="50%" style="vertical-align: middle; background:#E8E8E8;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right:40px;" >
-                  <strong>邮寄地址:</strong><br>
-                  %%shippingFirstName%%  %%shippingLastName%% <br>
-                  %%shippingAddress%% <br>
-                  %%shippingZip%%  %%shippingCity%% <br>
-                  %%shippingState%% <br>
-                </td>
-              </tr>
-            </table>
+          <td style="vertical-align: top">
+            <div>
+              <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="85%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height: 20px;padding: 20px;border: 1px solid #ddd;">
+                      %shippingFirstName% %shippingLastName%<br>
+                      %shippingAddress% %shippingNumber%<br>
+                      %shippingZip% %shippingCity% %shippingState%<br>
+                      %shippingCountryName%
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </td>
         </tr>
+        <tr><td>&nbsp;</td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td align="center"><span style="font-family:Arial, Helvetica, sans-serif;font-size:18px;color:#454545;font-weight:bold;">订单详情</span></td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr>
-          <td style="vertical-align: top">
-            <div style="padding: 0 0">
-              <table style="border-bottom:2px solid #dcdcdc;color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+          <td style="vertical-align: top;line-height: 20px;">
+            <div>
+              <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: top;border-top: 1px solid #ddd;" width="85%" cellpadding="0" cellspacing="0" align="center">
                 <tbody>
-                  <tr>
-                    <td width="60%" height="32" style="color:#454545;text-align: left; padding-left:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">产品名 （款式） </td>
-                    <td width="20%" height="32" style="color:#454545;text-align: center;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">数量</td>
-                    <td width="20%" height="32" style="color:#454545;text-align: right; padding-right:10px;font-size:14px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;" bgColor="#F4F4F4">价格</td>
-                  </tr>
                   <!-- %loop% -->
                   <tr>
-                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;padding-left:10px;padding-right:10px;border-left: 1px solid #ddd;border-right: 1px solid #ddd;padding-top: 10px;">
+                      <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: top;border-collapse:collapse;" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <img width="120" src="%smallImage%" alt="%name%">
                           </td>
-                          <td style="padding: 10px 0px;">
-                            %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;display: block;line-height: 20px;">
+                              <span style="color: #454545; text-decoration: none">%name%</span>
+                            </a>
+                            <div style="font-size: 10px;line-height: 12px;">%productOptions%</div>
+                            <div><br>数量: %quantity%</div>
                           </td>
                         </tr>
                       </table>
                     </td>
-                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;"><span><span>%price%</span></span></td>
                   </tr>
                   <!-- %/loop% -->
 
                   <!-- %ifOrderGifts% -->
                   <!-- %giftsLoop% -->
                   <tr>
-                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                      <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: middle;" >
+                    <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;padding-left:10px;padding-right:10px;border-left: 1px solid #ddd;border-right: 1px solid #ddd;">
+                      <table style="color: #454545; font-family:sans-serif;font-size:14px;vertical-align: top;border-collapse:collapse;" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <img width="120" src="%smallImage%" alt="%name%">
                           </td>
-                          <td style="padding: 10px 0px;">
-                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
+                          <td style="padding: 10px 10px;vertical-align: top;">
+                            <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;display: block;line-height: 20px;">
+                              <span style="color: #454545; text-decoration: none">%name% <span style="font-size: 10px;">(礼物)</span></span>
+                            </a>
+                            <div><br>数量: %quantity%</div>
                           </td>
                         </tr>
                       </table>
                     </td>
-                    <td style="text-align: center;border-bottom:1px solid #dcdcdc;">%quantity%</td>
-                    <td style="text-align: right;padding-right:8px;border-bottom:1px solid #dcdcdc;">&nbsp;</td>
                   </tr>
                   <!-- %/giftsLoop% -->
                   <!-- %/ifOrderGifts% -->
 
                 </tbody>
               </table>
-              <table align="center" cellpadding="0" cellspacing="0" width="88%" style="color:#454545;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%shipperName%%  %%shippingTypeName%%</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span> %%shippingMethodWithPrice%% </span>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">%%paymentMethod%% </td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%paymentMethodPrice%% </span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%ifOrderDiscount%% -->
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">折扣</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>- %%orderDiscounts%%</span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%/ifOrderDiscount%% -->
 
+              <table align="center" cellpadding="0" cellspacing="0" width="85%" style="color:#000;font-family:Arial, Helvetica, sans-serif;font-size:15px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">小计</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%orderTotalWithoutTaxes%%  </span>
-                    </span>
+                  <td style="vertical-align: middle;text-align: center;font-weight:bold;border-right: 1px solid #ddd;border-left: 1px solid #ddd;border-bottom: 1px solid #ddd;padding-bottom: 20px;padding-top: 10px;">
+                    总计: %%total%%
                   </td>
                 </tr>
-
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">税收</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>%%orderTaxes%%</span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%ifOrderBalanceCodes%% -->
-                <tr>
-                  <td height="32" width="120" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;">优惠券</td>
-                  <td height="32" width="75" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;">
-                    <span>
-                      <span>- %%orderBalanceCodes%%</span>
-                    </span>
-                  </td>
-                </tr>
-                <!-- %%/ifOrderBalanceCodes%% -->
-                <tr>
-                  <td height="32" width="120" bgColor="#f4f4f4" style="vertical-align: middle;text-align:left;padding-left:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">总计</td>
-                  <td height="32" width="75" bgColor="#f4f4f4" style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;">
-                    <span>
-                      <span>%%total%%</span>
-                    </span>
-                  </td>
-                </tr>
-
               </table>
             </div>
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
         <!-- %%ifComments%% -->
         <tr>
           <td>
-            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:16px;">
+            <table width="85%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;color:#454545;line-height:20px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
               <tr>
                 <td>
-                  <strong >订单评论</strong><br>
+                  <strong>订单评论:</strong><br>
                   %%orderComments%%
-
                 </td>
               </tr>
             </table>
@@ -733,7 +686,7 @@ export const LANGUAGE_CHI = {
         <tr><td>&nbsp;</td></tr>
         <tr>
           <td bgColor="#f4f4f4">
-            <table width="88%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;" cellspacing="0" cellpadding="0">
+            <table width="85%" align="center" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;color:#454545;line-height:18px;border-collapse:collapse;" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="padding: 15px 0px 15px 0px;">
                   %%textToEmail%%
@@ -757,7 +710,7 @@ export const LANGUAGE_CHI = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>资讯退订</strong><br><br>
-    <span style="font-size:15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br>您已经成功退订我们的资讯。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -771,7 +724,7 @@ export const LANGUAGE_CHI = {
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
 
     <strong>赞助要求 </strong><br><br>
-    <span style="font-size:15px;">您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好<br><br> %%firstName%% 名字 邀请您加入 <a style="color:#000;" href="%%ecommerceURL%%">%%ecommerceName%%</a><br><br>成为其中一员请在此注册: <a href="%%urlRegisterSponsorShip%%" style="color:#000;">%%ecommerceName%%</a><br><br>谢谢您的支持<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -784,7 +737,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的募集已经完成一个订单，享受收益吧！</strong><br><br>
-    <span style="font-size:15px;">您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
+    <span style="font-size: 15px;">您好,<br><br>您的好友已完成了一个订单，您可以在下一次的订单中享受     折扣。<br><br>折扣将会自动使用在您下次的订单。<br><br>谢谢您的支持。<br><br>%%ecommerceName%%</span>
   </td>
 </tr>
 `
@@ -803,7 +756,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>您的購物車錯過了您</strong><br><br>
-    <span style="font-size:15px;">你好 %firstName% %lastName%, <br><br>在您最后一次浏览我们网页后将以下商品放入购物车，但是您没有完成订单填写。请点击这里： <br><br>
+    <span style="font-size: 15px;">你好 %firstName% %lastName%, <br><br>在您最后一次浏览我们网页后将以下商品放入购物车，但是您没有完成订单填写。请点击这里： <br><br>
     <a target="_blank" href="%recoverOrderLink%" style="color:#000;">购物车</a> 返回您的购物车.<br><br>%%ecommerceName%% 团队</span>
   </td>
 </tr>
@@ -832,7 +785,7 @@ export const LANGUAGE_CHI = {
                       <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="%smallImage% " alt="%name%" onerror="this.style.display='none';">
+                            <img width="60" src="%smallImage%" alt="%name%" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
                             %sku% - <a href=" %productLink%" title="%name%" target="_blank" rel="noreferrer" style="text-decoration:none;"><span style="color: #454545; text-decoration: none">%name%</span></a>
@@ -873,10 +826,10 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Email verification</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hello %firstName% %lastName%,<br><br>
       Thanks for registring on %%ecommerceURL%%. Please, follow the link in order to verify your e-mail account: <a href="%verifyLink%"  style="color:#000;">Click here</a>.<br><br>
-      We are looking forward to seeing you on <a href="%%ecommerceURL%%"  style="color:#000;">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
+      We are looking forward to seeing you on <a href="%%ecommerceURL%%" style="color:#000;">%%ecommerceName%%</a>.<br><br>The %%ecommerceName%% Team
     </span>
   </td>
 </tr>
@@ -890,7 +843,7 @@ export const LANGUAGE_CHI = {
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
     <strong>Account activated</strong><br><br>
-    <span style="font-size:15px;">
+    <span style="font-size: 15px;">
       Hello %firstName% %lastName%,<br><br>
       We are pleased to inform you that your customer account in %%ecommerceURL%% has been successfully activated.<br><br>
       You can view and modify all your details at any time by accessing this control panel: <a href="%%ecommerceURL%%" style="color:#000">Edit your profile</a><br><br>

@@ -1,0 +1,10 @@
+# Ordenar els emails del lc per poder agafar per ordre els contents:
+
+jQuery('.mail, .additionalMail').each(function() {
+
+    try {
+        jQuery(this).css('order', JSON.parse(jQuery(this).attr('data')).id);
+    }catch(a){
+        jQuery(this).css('order', 99999);
+    }
+})

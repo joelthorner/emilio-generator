@@ -5,27 +5,57 @@
     <eg-sidebar-toggle></eg-sidebar-toggle>
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#navbar-collap" aria-controls="navbar-collap" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbar-collap"
+    aria-controls="navbar-collap"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbar-collap">
-
     <ul class="navbar-nav mr-auto">
       <!-- <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" routerLink="/">Home</a>
       </li> -->
 
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <a class="nav-link" routerLink="/import-export">Import / Export</a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines" target="_blank" rel="nofollow">Email tags</a>
+      <li class="nav-item" *ngIf="!beyondValue">
+        <a
+          class="nav-link"
+          href="http://10.254.1.55:8090/display/RD/Plantillas+de+email#Plantillasdeemail-Usodecomodines"
+          target="_blank"
+          rel="nofollow"
+          >Email tags</a
+        >
       </li>
 
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <li class="nav-item" *ngIf="beyondValue">
+        <a
+          class="nav-link"
+          href="http://10.254.1.55:8090/display/APICORE/Email+templates+Wildcards"
+          target="_blank"
+          rel="nofollow"
+          >Email tags</a
+        >
+      </li>
+
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <a class="nav-link" routerLink="/instructions">Instructions</a>
       </li>
 
@@ -34,13 +64,29 @@
       </li> -->
 
       <li class="nav-item">
-        <a class="nav-link" href="https://github.com/joelthorner/emilio-generator/issues" target="_blank" rel="nofollow">Issues/bugs</a>
+        <a
+          class="nav-link"
+          href="https://github.com/joelthorner/emilio-generator/issues"
+          target="_blank"
+          rel="nofollow"
+          >Issues/bugs</a
+        >
       </li>
-
     </ul>
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item beyond-item" *ngIf="beyondValue">
+        <span class="badge rounded-pill bg-primary">BEYOND</span>
+      </li>
       <li class="nav-item">
-        <a class="nav-link version-link" href="https://github.com/joelthorner/emilio-generator/releases/tag/v{{ version }}" target="_blank" rel="nofollow">Version: <b class="version">{{ version }}</b></a>
+        <a
+          class="nav-link version-link"
+          href="https://github.com/joelthorner/emilio-generator/releases/tag/v{{
+            version
+          }}"
+          target="_blank"
+          rel="nofollow"
+          >Version: <b class="version">{{ version }}</b></a
+        >
       </li>
     </ul>
   </div>

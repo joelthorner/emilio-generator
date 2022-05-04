@@ -1,29 +1,42 @@
-import { Injectable } from '@angular/core';
-import { LANGUAGES } from './app-data-languages';
-import { PREVIEWDATA } from './app-data-preview';
-import { JszipService } from '../lib/services/jszip.service';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Injectable } from "@angular/core";
+import { LANGUAGES_FLUID } from "./app-data-languages-fluid";
+import { LANGUAGES_BEYOND } from "./app-data-languages-beyond";
+import { PREVIEWDATA } from "./app-data-preview";
+import { JszipService } from "../lib/services/jszip.service";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class AppData {
-  public languages: any = LANGUAGES;
+  public DEPRECATED_BEYOND_EMAIL_IDS = [5, 11, 12, 13];
+
+  public languages: any = LANGUAGES_FLUID;
   public previewDataInclude: any = PREVIEWDATA;
 
   public previewSrc: any;
   public previewData = {
     id: 1,
-    name: '',
+    name: "",
     options: {
       logo: this.previewDataInclude.logo,
-      social: this.previewDataInclude.social
+      social: this.previewDataInclude.social,
     },
     refresh: 0,
-    style : this.previewDataInclude.css
+    style: this.previewDataInclude.css,
   };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
+    let isBeyond = localStorage.getItem("beyondActive") && localStorage.getItem("beyondActive") == "1";
+    this.changeLanguageSource(isBeyond);
+  }
+
+  public changeLanguageSource(isBeyond: boolean) {
+    if (isBeyond) {
+      this.languages = LANGUAGES_BEYOND;
+    } else {
+      this.languages = LANGUAGES_FLUID;
+    }
     this.checkAll();
   }
 
@@ -34,7 +47,7 @@ export class AppData {
     copyLanguages = this.checkTemplatesTags(copyLanguages);
     copyLanguages = this.trimHtml(copyLanguages);
 
-    return this.languages = copyLanguages;
+    return (this.languages = copyLanguages);
   }
 
   // set/update languages[x].empty
@@ -66,34 +79,52 @@ export class AppData {
 
       // set header 'tags' property
       thisLanguage.emails.header.tags = {
-        empty: thisLanguage.emails.header.html.trim().length === 0
+        empty: thisLanguage.emails.header.html.trim().length === 0,
       };
 
       // set footer 'tags' property
       thisLanguage.emails.footer.tags = {
-        empty: thisLanguage.emails.footer.html.trim().length === 0
+        empty: thisLanguage.emails.footer.html.trim().length === 0,
       };
 
       for (const emailId in thisLanguage.emails.templates) {
-
         // set template 'tags' property
         thisLanguage.emails.templates[emailId].tags = {
-          empty: thisLanguage.emails.templates[emailId].html.trim().length === 0,
-          noSubject: thisLanguage.emails.templates[emailId].subject.trim().length === 0,
-          customHeader: typeof thisLanguage.emails.templates[emailId].header === 'undefined' ? false : true,
-          customFooter: typeof thisLanguage.emails.templates[emailId].footer === 'undefined' ? false : true
+          deprecated:
+            thisLanguage.system == "beyond" &&
+            this.DEPRECATED_BEYOND_EMAIL_IDS.includes(parseInt(emailId)),
+          empty:
+            thisLanguage.emails.templates[emailId].html.trim().length === 0,
+          noSubject:
+            thisLanguage.emails.templates[emailId].subject.trim().length === 0,
+          customHeader:
+            typeof thisLanguage.emails.templates[emailId].header === "undefined"
+              ? false
+              : true,
+          customFooter:
+            typeof thisLanguage.emails.templates[emailId].footer === "undefined"
+              ? false
+              : true,
         };
 
         // set custom header 'tags' property
-        if (typeof thisLanguage.emails.templates[emailId].header !== 'undefined') {
+        if (
+          typeof thisLanguage.emails.templates[emailId].header !== "undefined"
+        ) {
           thisLanguage.emails.templates[emailId].header.tags = {
-            empty: thisLanguage.emails.templates[emailId].header.html.trim().length === 0
+            empty:
+              thisLanguage.emails.templates[emailId].header.html.trim()
+                .length === 0,
           };
         }
         // set custom footer 'tags' property
-        if (typeof thisLanguage.emails.templates[emailId].footer !== 'undefined') {
+        if (
+          typeof thisLanguage.emails.templates[emailId].footer !== "undefined"
+        ) {
           thisLanguage.emails.templates[emailId].footer.tags = {
-            empty: thisLanguage.emails.templates[emailId].footer.html.trim().length === 0
+            empty:
+              thisLanguage.emails.templates[emailId].footer.html.trim()
+                .length === 0,
           };
         }
       }
@@ -155,18 +186,18 @@ export class AppData {
 
   // set string value 'html' or 'subject'
   public setStringVal(langKey: string, path: string, code: string) {
-    let evalPath = 'this.languages';
+    let evalPath = "this.languages";
     for (const langId in this.languages) {
       if (this.languages[langId].key === langKey) {
-        evalPath += '[' + langId + ']';
+        evalPath += "[" + langId + "]";
       }
     }
 
-    path.split('.').forEach(valueKey => {
-      evalPath += '.' + valueKey;
+    path.split(".").forEach((valueKey) => {
+      evalPath += "." + valueKey;
     });
 
-    const toEval = evalPath + '=`' + code + '`;';
+    const toEval = evalPath + "=`" + code + "`;";
     eval(toEval);
 
     this.languages = this.checkAll();
@@ -179,18 +210,36 @@ export class AppData {
     for (const langId in languagesClone) {
       const thisLanguage = languagesClone[langId];
 
-      thisLanguage.emails.header.html = thisLanguage.emails.header.html.replace(/^\n{1}/i, '');
-      thisLanguage.emails.footer.html = thisLanguage.emails.footer.html.replace(/^\n{1}/i, '');
+      thisLanguage.emails.header.html = thisLanguage.emails.header.html.replace(
+        /^\n{1}/i,
+        ""
+      );
+      thisLanguage.emails.footer.html = thisLanguage.emails.footer.html.replace(
+        /^\n{1}/i,
+        ""
+      );
 
       for (const emailId in thisLanguage.emails.templates) {
+        thisLanguage.emails.templates[emailId].html =
+          thisLanguage.emails.templates[emailId].html.replace(/^\n{1}/i, "");
 
-        thisLanguage.emails.templates[emailId].html = thisLanguage.emails.templates[emailId].html.replace(/^\n{1}/i, '');
-
-        if (typeof thisLanguage.emails.templates[emailId].header !== 'undefined') {
-          thisLanguage.emails.templates[emailId].header.html = thisLanguage.emails.templates[emailId].header.html.replace(/^\n{1}/i, '');
+        if (
+          typeof thisLanguage.emails.templates[emailId].header !== "undefined"
+        ) {
+          thisLanguage.emails.templates[emailId].header.html =
+            thisLanguage.emails.templates[emailId].header.html.replace(
+              /^\n{1}/i,
+              ""
+            );
         }
-        if (typeof thisLanguage.emails.templates[emailId].footer !== 'undefined') {
-          thisLanguage.emails.templates[emailId].footer.html = thisLanguage.emails.templates[emailId].footer.html.replace(/^\n{1}/i, '');
+        if (
+          typeof thisLanguage.emails.templates[emailId].footer !== "undefined"
+        ) {
+          thisLanguage.emails.templates[emailId].footer.html =
+            thisLanguage.emails.templates[emailId].footer.html.replace(
+              /^\n{1}/i,
+              ""
+            );
         }
       }
     }
@@ -222,13 +271,17 @@ export class AppData {
       }
 
       emailsArray.push({
-        fileName: template.name + ' [id ' + templateId + '] [' + data.key + '].html',
-        content: thisHeader + thisBody + thisFooter
+        fileName:
+          template.name + " [id " + templateId + "] [" + data.key + "].html",
+        content: thisHeader + thisBody + thisFooter,
       });
     }
 
     const zip = this.jszip.setZip(emailsArray);
-    this.jszip.saveAsZip(zip, 'emilio-generator [id ' + data.id + '] [' + data.key + '].zip');
+    this.jszip.saveAsZip(
+      zip,
+      "emilio-generator [id " + data.id + "] [" + data.key + "].zip"
+    );
   }
 
   // execute download html by language key and email id
@@ -255,9 +308,10 @@ export class AppData {
           }
         }
 
-        const fileName = template.name + ' [id ' + templateId + '] [' + data.key + '].html';
+        const fileName =
+          template.name + " [id " + templateId + "] [" + data.key + "].html";
         const content = thisHeader + thisBody + thisFooter;
-        this.jszip.saveAsHtml(content, fileName, 'text/html;charset=utf-8');
+        this.jszip.saveAsHtml(content, fileName, "text/html;charset=utf-8");
 
         return true;
       }
@@ -267,44 +321,156 @@ export class AppData {
 
   // set sanitized src for iframe with email preview
   public setPreviewIframeContent(langKey: string) {
-
-    this.previewSrc = '';
-    this.previewData.refresh ++;
+    this.previewSrc = "";
+    this.previewData.refresh++;
 
     const langId = this.getLanguage(langKey).id;
 
     let header = this.languages[langId].emails.header.html;
-    if (this.languages[langId].emails.templates[this.previewData.id].tags.customHeader) {
-      header = this.languages[langId].emails.templates[this.previewData.id].header.html;
+    if (
+      this.languages[langId].emails.templates[this.previewData.id].tags
+        .customHeader
+    ) {
+      header =
+        this.languages[langId].emails.templates[this.previewData.id].header
+          .html;
     }
 
-    const body = this.languages[langId].emails.templates[this.previewData.id].html;
+    const body =
+      this.languages[langId].emails.templates[this.previewData.id].html;
 
     let footer = this.languages[langId].emails.footer.html;
-    if (this.languages[langId].emails.templates[this.previewData.id].tags.customFooter) {
-      footer = this.languages[langId].emails.templates[this.previewData.id].footer.html;
+    if (
+      this.languages[langId].emails.templates[this.previewData.id].tags
+        .customFooter
+    ) {
+      footer =
+        this.languages[langId].emails.templates[this.previewData.id].footer
+          .html;
     }
 
     let html = header + body + footer;
     html = this.previewReplaces(html);
+    html = this.previewReplacesBeyond(html);
 
-    let iframeSrc = 'data:text/html;charset=utf-8,' +
-      encodeURI('<html><head><body class="refresh-' + this.previewData.refresh + '">' + this.previewData.style) +
+    let iframeSrc =
+      "data:text/html;charset=utf-8," +
+      encodeURI(
+        '<html><head><body class="refresh-' +
+          this.previewData.refresh +
+          '">' +
+          this.previewData.style
+      ) +
       encodeURI(html) +
-      encodeURI('</body></html>');
+      encodeURI("</body></html>");
 
     // fix chrome set '#'
-    iframeSrc = iframeSrc.replace(new RegExp('#', 'g'), '%23');
+    iframeSrc = iframeSrc.replace(new RegExp("#", "g"), "%23");
 
     this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
   }
 
-  private previewReplaces (html: string): string {
-    // prevent click empty links
-    html = html.replace(new RegExp('href=(["\'])(.*?)\\1', 'g'), 'href="javascript:void(0)"');
+  private previewReplacesBeyond(html: string): string {
+    // Logo
+    // html = html.replace(
+    //   new RegExp("\\{\\{\\s?general\\.ecommerceLogo\\s?\\}\\}", "g"),
+    //   this.previewData.options.logo
+    // );
+    html = html.replace(
+      new RegExp("\\{\\{\\s?general\\.ecommerceCdnImages\\s?\\}\\}email-logo\\.png", "g"),
+      this.previewData.options.logo
+    );
+    // Banners
+    html = html.replace(
+      new RegExp("\\{\\{\\s?banner\\.image\\s?\\}\\}", "g"),
+      this.previewData.options.social
+    );
+    // Twig variables
+    html = html.replace(
+      new RegExp("(\\{%\\s[\\S\\s]*?\\s*%\\})", "gm"),
+      "<!-- $1 -->"
+    );
+    // Twig comments
+    html = html.replace(
+      new RegExp("(\\{#\\s[\\S\\s]*?\\s*#\\})", "gm"),
+      "<!-- $1 -->"
+    );
+    // Twig languageSheets
+    let beyondLanguageSheets = this.getBeyondLanguageSheets(html);
+    Object.keys(beyondLanguageSheets).forEach(function (key) {
+      html = html.replace(
+        new RegExp("\\{\\{\\s?languageSheet\\." + key + "\\s?\\}\\}", "g"),
+        beyondLanguageSheets[key]
+      );
+    });
 
-    html = html.replace(new RegExp('[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)', 'g'), this.previewData.options.logo);
-    html = html.replace(new RegExp('%%BannerImage%%', 'g'), this.previewData.options.social);
+    return html;
+  }
+
+  private getBeyondLanguageSheets(html: string) {
+    let myRe = /\{%\sset\slanguageSheet\s?=\s?\{([\S\s]*?)\}\s?%\}/g;
+    let variablesRaw = [];
+    let langItems = [];
+    let langItemsData = {};
+
+    while ((variablesRaw = myRe.exec(html)) !== null) {
+      if (variablesRaw != null && variablesRaw.length > 1) {
+        langItems = langItems.concat(variablesRaw[1].split(/\,\n/));
+      }
+    }
+    langItems = langItems.map((s) => s.trim());
+
+    if (langItems.length) {
+      for (let i = 0; i < langItems.length; i++) {
+        const langItem = langItems[i];
+        let langItemData = /^([a-zA-Z_0-9]*?\s?:\s?)([\S\s]*)$/g.exec(langItem);
+
+        if (langItemData != null && langItemData.length > 1) {
+          let trimedValue = langItemData[2].trim();
+          let value = trimedValue.substring(1).trim(),
+            key = langItemData[1].replace(":", "").trim(),
+            lastValChar = value.substr(value.length - 1);
+
+          if (lastValChar === `'` || lastValChar === `"`) {
+            value = value.slice(0, -1);
+          }
+
+          // Replace variables inter string:
+          value = value.replace(
+            new RegExp(`[\\"\\']{1}\\s?\\~\\s?[\\"\\']{1}`, "g"), // `' ~ '`
+            " "
+          );
+          value = value.replace(
+            new RegExp(`[\\"\\']{1}\\s?\\~\\s?`, "g"), // `' ~ `
+            " "
+          );
+          value = value.replace(
+            new RegExp(`\\s?\\~\\s?[\\"\\']{1}`, "g"), // ` ~ '`
+            " "
+          );
+
+          langItemsData[key] = value;
+        }
+      }
+    }
+    return langItemsData;
+  }
+
+  private previewReplaces(html: string): string {
+    // prevent click empty links
+    html = html.replace(
+      new RegExp("href=([\"'])(.*?)\\1", "g"),
+      'href="javascript:void(0)"'
+    );
+
+    html = html.replace(
+      new RegExp("[%]{1,2}imagesURL[%]{1,2}logoEmail.(jpg|png|gif|jpeg)", "g"),
+      this.previewData.options.logo
+    );
+    html = html.replace(
+      new RegExp("%%BannerImage%%", "g"),
+      this.previewData.options.social
+    );
 
     return html;
   }
@@ -327,7 +493,7 @@ export class AppData {
     const emailData = this.getEmailData(langKey, emailId);
 
     emailData.header = {
-      html: langData.emails.header.html
+      html: langData.emails.header.html,
     };
     this.checkAll();
     this.previewData.id = emailId;
@@ -346,7 +512,7 @@ export class AppData {
     const langData = this.getLanguage(langKey);
     const emailData = this.getEmailData(langKey, emailId);
     emailData.footer = {
-      html: langData.emails.footer.html
+      html: langData.emails.footer.html,
     };
     this.checkAll();
     this.previewData.id = emailId;

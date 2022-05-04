@@ -1,0 +1,39 @@
+-----------------
+
+
+
+mirar emails amb nom de arxiu:
+
+  id = 10 - conf comanda
+  id = 19 - suppliers alert
+  id = 32 - order document ???
+  id = 33 - delivery note
+  id = 34 - inovice document
+  id = 35 - Rectification invoice document 
+
+
+
+  si et el camp attachmentName buit, si es aixi posar: order-{{sales.documentNumber}} ? treu un nom arxiu per defecte?
+
+
+
+------------------------
+
+
+crear els emails de rma
+
+
+
+---------------------------
+
+
+
+Dubtes per a charly:
+
+- comodins stock confirmar
+- comodins blog confirmar
+- comodins rma confirmar
+
+
+fer detector de plantilla invalida i treure msg per consola
+forçar que en beyond vagi per 10s i no 5
