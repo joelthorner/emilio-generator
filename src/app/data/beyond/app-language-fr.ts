@@ -29,7 +29,7 @@ export const LANGUAGE_FR = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Pour plus d\\'informations, lisez notre <a href="' ~ general.privacyPolicyLink ~ '">politique de confidentialité</a> y <a href="' ~ general.termsOfUseLink ~ '">conditions d'utilisation</a>.'
+  moreInfo: 'Pour plus d\\'informations, lisez notre <a href="' ~ general.privacyPolicyLink ~ '">politique de confidentialité</a> y <a href="' ~ general.termsOfUseLink ~ '">conditions d\\'utilisation</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -125,7 +125,7 @@ export const LANGUAGE_FR = {
   premessage: 'Bienvenue à ' ~ general.ecommerceName,
   messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Nous avons le plaisir de vous confirmer la création de votre compte client chez <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageBody2: 'Grâce à votre compte client, vous pourrez mettre à jour votre profil et votre mot de passe, consulter l\\'historique de vos commandes et d'autres informations qui vous intéressent.',
+  messageBody2: 'Grâce à votre compte client, vous pourrez mettre à jour votre profil et votre mot de passe, consulter l\\'historique de vos commandes et d\\'autres informations qui vous intéressent.',
   messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
   messageSignature: 'Sincèrement, l\\'équipe de ' ~ general.ecommerceName
 } %}
@@ -172,7 +172,7 @@ export const LANGUAGE_FR = {
 {% set languageSheet = {
   premessage: 'Mémoriser le mot de passe',
   messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: "Comme demandé lors de votre récente visite à " ~ general.ecommerceName ~ ", voici votre adresse d'accès à la zone de récupération du mot de passe :",
+  messageBody1: "Comme demandé lors de votre récente visite à " ~ general.ecommerceName ~ ", voici votre adresse d\\'accès à la zone de récupération du mot de passe :",
   messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Cliquez ici pour récupérer le mot de passe</a>',
   messageBody3: 'Ce lien ne sera valable que pendant 24 heures à compter de son envoi.',
   messageBody4: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
@@ -482,7 +482,7 @@ export const LANGUAGE_FR = {
   orderNumber: 'Numéro de commande:',
   orderDate: 'Date de la commande:',
   paymentSystem: 'Mode de paiement:',
-  shippingName: 'Méthode d'expédition:',
+  shippingName: 'Méthode d\\'expédition:',
   address: 'Adresse',
   orderResume: 'Résumé de la commande',
   quantity: 'Quantité:',
@@ -876,7 +876,7 @@ export const LANGUAGE_FR = {
 
     25: {
       name: "Confirmar suscripción de Stock",
-      subject: "{{ general.ecommerceName }} - Souscription d'actions",
+      subject: "{{ general.ecommerceName }} - Souscription d\\'actions",
       html: `
 {% set languageSheet = {
   premessage: 'Abonnement au stock de produits <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
