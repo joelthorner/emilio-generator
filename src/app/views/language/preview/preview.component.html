@@ -7,6 +7,14 @@
       <button
         class="btn btn-light btn-collapse"
         type="button"
+        (click)="downloadImgPreview()"
+      >
+        <svg class="icon" data-toggle="tooltip" data-placement="top" title="Download image preview"><use xlink:href="#download"></use></svg>
+      </button>
+      
+      <button
+        class="btn btn-light btn-collapse"
+        type="button"
         (click)="toggleCollapsePreview()"
       >
         <svg class="icon" data-toggle="tooltip" data-placement="top" title="Collapse preview"><use xlink:href="#menu"></use></svg>
