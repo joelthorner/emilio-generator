@@ -7,6 +7,21 @@
       <button
         class="btn btn-light btn-collapse"
         type="button"
+        (click)="downloadHtmlPreview()"
+      >
+        <p class="btn-text" data-toggle="tooltip" data-placement="top" title="Download as .HTML">HTML</p>
+      </button>
+      <button
+        class="btn btn-light btn-collapse"
+        type="button"
+        (click)="downloadImgPreview()"
+      >
+        <p class="btn-text" data-toggle="tooltip" data-placement="top" title="Download as .PNG">PNG</p>
+      </button>
+      
+      <button
+        class="btn btn-light btn-collapse"
+        type="button"
         (click)="toggleCollapsePreview()"
       >
         <svg class="icon" data-toggle="tooltip" data-placement="top" title="Collapse preview"><use xlink:href="#menu"></use></svg>

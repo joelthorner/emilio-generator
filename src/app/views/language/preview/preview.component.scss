@@ -13,6 +13,11 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.btn-text {
+  margin-block-end: 0;
+  color: $blue-2;
+  font-weight: 500;
+}
 .card-body {
   position: relative;
 }

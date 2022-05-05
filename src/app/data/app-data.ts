@@ -370,6 +370,54 @@ export class AppData {
     this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
   }
 
+  public getHTMLPreview(langKey: string) {
+    const langId = this.getLanguage(langKey).id;
+
+    let header = this.languages[langId].emails.header.html;
+    if (
+      this.languages[langId].emails.templates[this.previewData.id].tags
+        .customHeader
+    ) {
+      header =
+        this.languages[langId].emails.templates[this.previewData.id].header
+          .html;
+    }
+
+    const body =
+      this.languages[langId].emails.templates[this.previewData.id].html;
+
+    let footer = this.languages[langId].emails.footer.html;
+    if (
+      this.languages[langId].emails.templates[this.previewData.id].tags
+        .customFooter
+    ) {
+      footer =
+        this.languages[langId].emails.templates[this.previewData.id].footer
+          .html;
+    }
+
+    const filename = `${this.previewData.name} [id ${this.previewData.id}] [${langKey}].html`;
+    
+    let html = header + body + footer;
+    html = this.previewReplaces(html);
+    html = this.previewReplacesBeyond(html);
+    return { html, filename};
+  }
+  
+  // get a div with iframe content
+  public getHTMLIframeContent(langKey: string) {
+    let {html, filename} = this.getHTMLPreview(langKey)
+    
+    const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}">${this.previewData.style}${html}</body></html>`;
+    
+    const div = <HTMLElement>document.createElement("div")
+    div.style.width = `${document.getElementById('card-iframe-preview').offsetWidth}px`;
+    div.style.marginTop = "80px";
+    div.innerHTML = iframeSrc;
+    filename = filename.replace('html', 'png');
+    return { div, filename };
+  }
+
   private previewReplacesBeyond(html: string): string {
     // Logo
     // html = html.replace(

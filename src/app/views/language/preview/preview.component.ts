@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Renderer2 } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 import { DomSanitizer } from '@angular/platform-browser';
+import html2canvas from 'html2canvas';
+import { JszipService } from 'src/app/lib/services/jszip.service';
 declare var $: any;
 
 @Component({
@@ -54,5 +56,24 @@ export class PreviewComponent implements OnInit {
     } else {
       this.renderer.addClass(document.body, 'preview-collapsed');
     }
+  }
+
+  downloadHtmlPreview() {
+    const jsZip = new JszipService();
+    const {html, filename} = this.appData.getHTMLPreview(this.langKey);
+    jsZip.saveAsHtml(html, filename, 'text/html;charset=utf-8');
+  }
+
+  downloadImgPreview() {
+    const {div, filename} = this.appData.getHTMLIframeContent(this.langKey);
+    document.body.appendChild(div)
+
+    html2canvas(div).then((canvas) => {
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL()
+      link.click();
+      document.body.removeChild(div)
+    })
   }
 }
