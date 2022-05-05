@@ -66,14 +66,14 @@ export class PreviewComponent implements OnInit {
 
   downloadImgPreview() {
     const {div, filename} = this.appData.getHTMLIframeContent(this.langKey);
-    document.body.appendChild(div)
+    document.body.insertBefore(div, document.body.firstChild)
 
     html2canvas(div).then((canvas) => {
       const link = document.createElement('a');
       link.download = filename;
       link.href = canvas.toDataURL()
       link.click();
-      document.body.removeChild(div)
     })
+    document.body.removeChild(div)
   }
 }

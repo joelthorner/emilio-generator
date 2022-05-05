@@ -412,7 +412,9 @@ export class AppData {
     
     const div = <HTMLElement>document.createElement("div")
     div.style.width = `${document.getElementById('card-iframe-preview').offsetWidth}px`;
-    div.style.marginTop = "80px";
+    div.style.position = "absolute";
+    div.style.top = "0";
+    div.style.zIndex = "-1"
     div.innerHTML = iframeSrc;
     filename = filename.replace('html', 'png');
     return { div, filename };
