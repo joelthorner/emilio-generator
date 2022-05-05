@@ -62,7 +62,7 @@ export class PreviewComponent implements OnInit {
     document.body.appendChild(tmpDiv)
 
     html2canvas(tmpDiv).then((canvas) => {
-      var link = document.createElement('a');
+      const link = document.createElement('a');
       link.download = 'filename.png';
       link.href = canvas.toDataURL()
       link.click();

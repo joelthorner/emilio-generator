@@ -401,7 +401,7 @@ export class AppData {
     html = this.previewReplaces(html);
     html = this.previewReplacesBeyond(html);
 
-    let iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}>${this.previewData.style}${html}</body></html>`;
+    const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}>${this.previewData.style}${html}</body></html>`;
 
     const div = <HTMLElement>document.createElement("div")
     div.style.width = `${document.getElementById('card-iframe-preview').offsetWidth}px`;
