@@ -370,8 +370,7 @@ export class AppData {
     this.previewSrc = this.sanitizer.bypassSecurityTrustResourceUrl(iframeSrc);
   }
 
-  // get a div with iframe content
-  public getHTMLIframeContent(langKey: string) {
+  public getHTMLPreview(langKey: string) {
     const langId = this.getLanguage(langKey).id;
 
     let header = this.languages[langId].emails.header.html;
@@ -400,6 +399,12 @@ export class AppData {
     let html = header + body + footer;
     html = this.previewReplaces(html);
     html = this.previewReplacesBeyond(html);
+    return html;
+  }
+
+  // get a div with iframe content
+  public getHTMLIframeContent(langKey: string) {
+    const html = this.getHTMLPreview(langKey)
 
     const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}>${this.previewData.style}${html}</body></html>`;
 
