@@ -396,23 +396,26 @@ export class AppData {
           .html;
     }
 
+    const filename = `${this.previewData.name} [id ${this.previewData.id}] [${langKey}].html`;
+    
     let html = header + body + footer;
     html = this.previewReplaces(html);
     html = this.previewReplacesBeyond(html);
-    return html;
+    return { html, filename};
   }
-
+  
   // get a div with iframe content
   public getHTMLIframeContent(langKey: string) {
-    const html = this.getHTMLPreview(langKey)
-
-    const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}>${this.previewData.style}${html}</body></html>`;
-
+    let {html, filename} = this.getHTMLPreview(langKey)
+    
+    const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}">${this.previewData.style}${html}</body></html>`;
+    
     const div = <HTMLElement>document.createElement("div")
     div.style.width = `${document.getElementById('card-iframe-preview').offsetWidth}px`;
-    div.style.marginBlockStart = "80px";
+    div.style.marginTop = "80px";
     div.innerHTML = iframeSrc;
-    return div
+    filename = filename.replace('html', 'png');
+    return { div, filename };
   }
 
   private previewReplacesBeyond(html: string): string {
