@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Renderer2 } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 import { DomSanitizer } from '@angular/platform-browser';
 import html2canvas from 'html2canvas';
+import { JszipService } from 'src/app/lib/services/jszip.service';
 declare var $: any;
 
 @Component({
@@ -57,6 +58,12 @@ export class PreviewComponent implements OnInit {
     }
   }
 
+  downloadHtmlPreview() {
+    const jsZip = new JszipService();
+    const tmpDiv = this.appData.getHTMLPreview(this.langKey);
+    jsZip.saveAsHtml(tmpDiv, 'preview.html', 'text/html;charset=utf-8');
+  }
+
   downloadImgPreview() {
     const tmpDiv = <HTMLElement>this.appData.getHTMLIframeContent(this.langKey);
     document.body.appendChild(tmpDiv)
@@ -68,6 +75,5 @@ export class PreviewComponent implements OnInit {
       link.click();
       document.body.removeChild(tmpDiv)
     })
-
   }
 }
