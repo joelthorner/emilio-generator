@@ -60,20 +60,20 @@ export class PreviewComponent implements OnInit {
 
   downloadHtmlPreview() {
     const jsZip = new JszipService();
-    const tmpDiv = this.appData.getHTMLPreview(this.langKey);
-    jsZip.saveAsHtml(tmpDiv, 'preview.html', 'text/html;charset=utf-8');
+    const {html, filename} = this.appData.getHTMLPreview(this.langKey);
+    jsZip.saveAsHtml(html, filename, 'text/html;charset=utf-8');
   }
 
   downloadImgPreview() {
-    const tmpDiv = <HTMLElement>this.appData.getHTMLIframeContent(this.langKey);
-    document.body.appendChild(tmpDiv)
+    const {div, filename} = this.appData.getHTMLIframeContent(this.langKey);
+    document.body.appendChild(div)
 
-    html2canvas(tmpDiv).then((canvas) => {
+    html2canvas(div).then((canvas) => {
       const link = document.createElement('a');
-      link.download = 'filename.png';
+      link.download = filename;
       link.href = canvas.toDataURL()
       link.click();
-      document.body.removeChild(tmpDiv)
+      document.body.removeChild(div)
     })
   }
 }
