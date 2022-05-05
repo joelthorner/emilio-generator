@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Renderer2 } from '@angular/core';
 import { AppData } from 'src/app/data/app-data';
 import { DomSanitizer } from '@angular/platform-browser';
+import html2canvas from 'html2canvas';
 declare var $: any;
 
 @Component({
@@ -54,5 +55,19 @@ export class PreviewComponent implements OnInit {
     } else {
       this.renderer.addClass(document.body, 'preview-collapsed');
     }
+  }
+
+  downloadImgPreview() {
+    const tmpDiv = <HTMLElement>this.appData.getHTMLIframeContent(this.langKey);
+    document.body.appendChild(tmpDiv)
+
+    html2canvas(tmpDiv).then((canvas) => {
+      var link = document.createElement('a');
+      link.download = 'filename.png';
+      link.href = canvas.toDataURL()
+      link.click();
+      document.body.removeChild(tmpDiv)
+    })
+
   }
 }
