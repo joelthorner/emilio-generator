@@ -172,12 +172,13 @@ body.editor-full-screen {
 
   .col-preview {
     width: 66px;
+    height: 78px;
 
     .card-body {
       display: none;
     }
     .card-header {
-      min-height: 66px;
+      min-height: 78px;
 
       .text, .subtitle {
         display: none;
