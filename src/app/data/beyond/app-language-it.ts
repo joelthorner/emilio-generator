@@ -636,7 +636,7 @@ export const LANGUAGE_IT = {
               {{ languageSheet.total }}
             </td>
             <td style="text-align:right;padding-right:10px; border-bottom:1px solid #dcdcdc;font-weight:bold;" width="75" height="32" bgcolor="#f4f4f4">
-              <span>{{ sales.totals.total }}</span>
+              <span>{{ sales.totals.totalWithDiscountsWithTaxes }}</span>
             </td>
           </tr>
         </tbody>
