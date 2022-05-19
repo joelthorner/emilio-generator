@@ -644,7 +644,7 @@ export const LANGUAGE_PT = {
               <table align="center" cellpadding="0" cellspacing="0" width="85%" style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="vertical-align: middle; text-align: center; font-weight: bold; border-right: 1px solid #ddd; border-left: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-bottom: 20px; padding-top: 10px;">
-                    {{ languageSheet.total }} {{ sales.totals.total }}
+                    {{ languageSheet.total }} {{ sales.totals.totalWithDiscountsWithTaxes }}
                   </td>
                 </tr>
               </table>
