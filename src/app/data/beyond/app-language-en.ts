@@ -541,13 +541,26 @@ export const LANGUAGE_EN = {
             {% endif %}
           </td>
           <td style="vertical-align: middle; background:#e2e6eb;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right: 40px;" width="50%">
-            <strong>{{ languageSheet.addressShipping }}:</strong><br>
-            {% if sales.user.shippingAddress %}
+            
+            {% if sales.delivery.physicalLocation %}
+              <strong>{{ languageSheet.pickup }}:</strong><br><br>
+              <div style="font-size:13px; display:block;line-height:13px;margin-bottom: 5px;">
+                {{ languageSheet.pickupMessage }}
+              </div>
+              {{ sales.delivery.physicalLocation.name }}<br>
+              {{ sales.delivery.physicalLocation.address }}<br>
+              {{ sales.delivery.physicalLocation.postalCode }} {{ sales.delivery.physicalLocation.city }} {{ sales.delivery.physicalLocation.state }}<br>
+              {{ sales.delivery.physicalLocation.country }}<br>
+              {% if sales.delivery.physicalLocation.phone|length %}{{ sales.delivery.physicalLocation.phone }}<br>{% endif %}
+              {% if sales.delivery.physicalLocation.email|length %}{{ sales.delivery.physicalLocation.email }}<br>{% endif %}
+            {% elseif sales.user.shippingAddress %}
+              <strong>{{ languageSheet.addressShipping }}:</strong><br>
               {{ sales.user.shippingAddress.firstName }} {{ sales.user.shippingAddress.lastName }} <br>
               {{ sales.user.shippingAddress.address }} {{ sales.user.shippingAddress.number }}<br>
               {{ sales.user.shippingAddress.postalCode }} {{ sales.user.shippingAddress.city }} {{ sales.user.shippingAddress.state }}<br>
               {{ sales.user.shippingAddress.country }}
             {% else %}
+              <strong>{{ languageSheet.addressShipping }}:</strong><br>
               {{ sales.user.billingAddress.firstName }} {{ sales.user.billingAddress.lastName }}<br>
               {{ sales.user.billingAddress.address }} {{ sales.user.billingAddress.number }} <br>
               {{ sales.user.billingAddress.postalCode }} {{ sales.user.billingAddress.city }} {{ sales.user.billingAddress.state }} <br>
@@ -555,26 +568,6 @@ export const LANGUAGE_EN = {
             {% endif %}
           </td>
         </tr>
-        <!-- warehouse -->
-        {% if sales.delivery.physicalLocation %}
-          <tr>
-            <td style="vertical-align: middle; background:#fff;padding:15px 20px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545; border-bottom: 2px solid #e8e8e8;padding-left: 40px;" width="50%">
-              <strong>{{ languageSheet.pickup }}:</strong><br><br>
-              <div style="font-size:13px; display:block;line-height:13px;">
-                {{ languageSheet.pickupMessage }}
-              </div>
-            </td>
-            <td style="vertical-align: middle; background:#fff;padding:15px 20px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545; border-bottom: 2px solid #e8e8e8;padding-right: 40px;" width="50%">
-              {{ sales.delivery.physicalLocation.name }}<br>
-              {{ sales.delivery.physicalLocation.address }}<br>
-              {{ sales.delivery.physicalLocation.postalCode }} {{ sales.delivery.physicalLocation.city }} {{ sales.delivery.physicalLocation.state }}<br>
-              {{ sales.delivery.physicalLocation.country }}<br>
-              {% if sales.delivery.physicalLocation.phone|length %}{{ sales.delivery.physicalLocation.phone }}<br>{% endif %}
-              {% if sales.delivery.physicalLocation.email|length %}{{ sales.delivery.physicalLocation.email }}<br>{% endif %}
-            </td>
-          </tr>
-        {% endif %}
-        <!-- endwarehouse -->
       </tbody>
     </table>
   </td>
