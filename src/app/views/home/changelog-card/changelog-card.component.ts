@@ -27,7 +27,9 @@ export class ChangelogCardComponent implements OnInit {
           item.body = item.body
             .replace('Changelog', '')
             .replace('changelog', '')
-            .replace(/-{6,}/i, '');
+            .replace(/-{6,}/i, '')
+            .replace(/@([^\s]+)/g, `<a href="https://github.com/$1" target="_blank">@$1</a>`)
+            .replace(/#([0-9]{2,})/g, `<a href="https://github.com/joelthorner/emilio-generator/issues/$1" target="_blank">#$1</a>`);
         }
 
         this.changeLogItems = arr;
