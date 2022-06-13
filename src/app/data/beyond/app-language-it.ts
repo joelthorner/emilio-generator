@@ -227,11 +227,11 @@ export const LANGUAGE_IT = {
 
     6: {
       name: "Recomendación de wishlist",
-      subject: "{{ general.ecommerceName }} - {{ recommend.name }} raccomanda i suoi prodotti preferiti",
+      subject: "{{ general.ecommerceName }} - {{ wishlist.user.name }} raccomanda i suoi prodotti preferiti",
       html: `
 {% set languageSheet = {
   premessage: 'Raccomandazione sui preferiti',
-  messageHeader1: "Il tuo amico/a " ~ recommend.name ~ " (" ~ recommend.email ~ ") ti invia questo prodotto a cui potresti essere interessato.",
+  messageHeader1: "Il tuo amico/a " ~ wishlist.user.name ~ " (" ~ wishlist.user.email ~ ") ti invia questo prodotto a cui potresti essere interessato.",
   messageBody: 'Se desideri maggiori informazioni sul prodotto puoi contattarci su <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
   messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName,
   recommendedProducts: 'Prodotti raccomandati',
@@ -265,21 +265,25 @@ export const LANGUAGE_IT = {
                     <td width="80%" height="32" style="color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.product }}</td>
                     <td width="20%" height="32" style="color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.price }}</td>
                   </tr>
+                  {% for item in wishlist.products %}
                   <tr>
                     <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;">
                       <table style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" >
                         <tr>
                           <td style="padding: 10px 0px;">
-                            <img width="60" src="{{ recommend.product.images.smallImage }}" alt="{{ recommend.product.name }}" onerror="this.style.display='none';">
+                            <img width="60" src="{{ item.images.smallImage }}" alt="{{ item.name }}" onerror="this.style.display='none';">
                           </td>
                           <td style="padding: 10px 0px;">
-                            {{ recommend.product.sku }} - <a href="{{ recommend.product.productLink }}" title="{{ recommend.product.name }}" target="_blank" rel="noreferrer" style="text-decoration: none;"><span style="color: #454545; text-decoration: none;">{{ recommend.product.name }}</span></a>
+                            {{ item.sku }} - <a href="{{ item.productLink }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration: none;"><span style="color: #454545; text-decoration: none;">{{ item.name }}</span></a>
                           </td>
                         </tr>
                       </table>
                     </td>
-                    <td style="text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;"><span><span>{{ recommend.product.price }}</span></span></td>
+                    <td style="text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;"><span><span>
+                      {{ item.price|number_format(2) }}{{ general.defaultCurrencyCode }}
+                    </span></span></td>
                   </tr>
+                  {% endfor %}
                 </tbody>
               </table>
             </div>
@@ -803,7 +807,7 @@ export const LANGUAGE_IT = {
       subject: "{{ general.ecommerceName }} - Stock disponibile",
       html: `
 {% set languageSheet = {
-  premessage: 'Disponibilit&agrave; del prodotto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  premessage: 'Disponibilit&agrave; del prodotto <a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
   messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: "L'articolo che tanto desideravi è ora disponibile!",
   messageBody2: "Ti ricordiamo che questo messaggio e-mail fornisce delle informazioni indicative riguardo alla disponibilit&agrave; dell'articolo e tale disponibilit&agrave; dipende da molti fattori (persone interessate, pezzi disponibili).",
@@ -847,9 +851,9 @@ export const LANGUAGE_IT = {
       subject: "{{ general.ecommerceName }} - Iscrizione all'avviso di disponibilit&agrave;",
       html: `
 {% set languageSheet = {
-  premessage: 'Iscrizione all\\'avviso di disponibilit&agrave; del prodotto <a href="' ~ data.product.productLink ~ '" style="color: #000;">' ~ data.product.name ~ '</a>',
+  premessage: 'Iscrizione all\\'avviso di disponibilit&agrave; del prodotto <a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
   messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: "Ti sei iscritto agli avvisi di disponibilit&agrave; del " ~ data.product.name,
+  messageBody1: "Ti sei iscritto agli avvisi di disponibilit&agrave; del " ~ stockAlert.product.name,
   messageBody2: "Nel caso in cui questo articolo fosse nuovamente disponibile ti avviseremo immediatamente per fare in modo che non ti sfugga.",
   messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName
 } %}
