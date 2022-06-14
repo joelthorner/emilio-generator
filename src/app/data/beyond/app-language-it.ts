@@ -851,7 +851,7 @@ export const LANGUAGE_IT = {
       subject: "{{ general.ecommerceName }} - Iscrizione all'avviso di disponibilit&agrave;",
       html: `
 {% set languageSheet = {
-  premessage: 'Iscrizione all\\'avviso di disponibilit&agrave; del prodotto <a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
+  premessage: 'Iscrizione all\\'avviso di disponibilit&agrave; del prodotto <br><a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
   messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: "Ti sei iscritto agli avvisi di disponibilit&agrave; del " ~ stockAlert.product.name,
   messageBody2: "Nel caso in cui questo articolo fosse nuovamente disponibile ti avviseremo immediatamente per fare in modo che non ti sfugga.",
@@ -864,8 +864,48 @@ export const LANGUAGE_IT = {
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
-      {{ languageSheet.messageSignature }}
     </span>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 0px 0px;background-color: #fff;" align="center">
+    <table style="width: 100%; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 15px; border-collapse: collapse;">
+      <tbody>
+        <tr>
+          <td style="vertical-align: top">
+            <div style="padding: 0 0;">
+              <table style="border-bottom: 2px solid #dcdcdc; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" width="88%" cellpadding="0" cellspacing="0" align="center">
+                <tbody>
+                  <tr>
+                    <td width="80%" height="32" style="color: #454545; text-align: left; padding-left: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.product }}</td>
+                    <td width="20%" height="32" style="color: #454545; text-align: right; padding-right: 10px; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold;" bgColor="#F4F4F4">{{ languageSheet.price }}</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 14px; border-bottom: 1px solid #dcdcdc;">
+                      <table style="color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; vertical-align: middle;" >
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img width="60" src="{{ stockAlert.product.images.smallImage }}" alt="{{ stockAlert.product.name }}" onerror="this.style.display='none';">
+                          </td>
+                          <td style="padding: 10px 0px;">
+                            <a href="{{ stockAlert.product.productLink }}" title="{{ stockAlert.product.name }}" target="_blank" rel="noreferrer" style="text-decoration: none;"><span style="color: #454545; text-decoration: none;">{{ stockAlert.product.name }}</span></a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td style="text-align: right; padding-right: 8px; border-bottom: 1px solid #dcdcdc;"><span><span>{{ stockAlert.product.price|number_format(2) }}{{ general.defaultCurrencyCode }}</span></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr><td style="text-align: center;"> <br><br>
+      {{ languageSheet.messageSignature }}</td></tr>
+        
+        <tr><td>&nbsp;</td></tr>
+      </tbody>
+    </table>
   </td>
 </tr>`,
     },
