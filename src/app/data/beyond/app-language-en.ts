@@ -296,7 +296,7 @@ export const LANGUAGE_EN = {
               <tr>
                 <td>
                   <strong>{{ languageSheet.comments }}</strong><br>
-                  {{ recommend.comments }}
+                  {{ wishlist.comments }}
                 </td>
               </tr>
             </table>
