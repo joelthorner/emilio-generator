@@ -231,7 +231,8 @@ export const LANGUAGE_EN = {
       html: `
 {% set languageSheet = {
   premessage: 'Wishlist recommend',
-  messageHeader1: "Your friend " ~ wishlist.user.name ~ " (" ~ wishlist.user.email ~ ") sends you this product that may be of interest for you.",
+  messageHeader1: 'Hello ' ~ wishlist.toName ~ ',',
+  messageHeader2: "Your friend " ~ wishlist.user.firstName ~ " " ~ wishlist.user.lastName ~ " (" ~ wishlist.user.email ~ ") sends you this product that may be of interest for you.",
   messageBody: 'If you need more information about this product you can contact us on <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
   messageSignature: 'The ' ~ general.ecommerceName ~ ' Team',
   recommendedProducts: 'Recommended products',
@@ -244,6 +245,7 @@ export const LANGUAGE_EN = {
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
+      {{ languageSheet.messageHeader2 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
       {{ languageSheet.messageSignature }}<br><br>
     </span>
