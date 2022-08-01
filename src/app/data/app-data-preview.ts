@@ -2,16 +2,7 @@ export const PREVIEWDATA = {
   css: `
     <style>
       body{ margin: 0; font-size: 11px; }
-      ::-webkit-scrollbar {
-        width:  4px;
-        height: 4px;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgb(207, 207, 210);
-      }
-      ::-webkit-scrollbar-track {
-        background: rgb(244, 244, 244);
-      }
+      ::-webkit-scrollbar {display: none;}
     </style>
   `,
   logo: 'data:image/jpeg;base64,/9j/4QnARXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAExAAIAAAAeAAAAcgEyAAIAAAAUAAAAkIdpAAQAAAABAAAApAAAANAADg+mAAAnEAAOD6YAACcQQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykAMjAxOTowMjowMSAxODoxMDowNwAAA6ABAAMAAAAB//8AAKACA' +

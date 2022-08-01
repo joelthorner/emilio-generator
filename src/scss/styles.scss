@@ -11,7 +11,9 @@
 @import 'component-modal';
 @import 'component-alert';
 
-@include scrollbars(4px, #cfcfd2, #f4f4f4);
+::-webkit-scrollbar {
+  display: none;
+}
 
 ::-moz-selection {
   color: #FFF;
@@ -197,4 +199,12 @@ body.editor-full-screen {
       margin-right: 96px;
     }
   }
+}
+
+.btn {
+  border-radius: .5rem;
+}
+
+.ace-xcode .ace_gutter {
+  background: $bg-light;
 }
