@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { AppData } from "src/app/data/app-data";
-import { NgForm } from "@angular/forms";
-import * as moment from "moment";
-import { BeyondService } from "src/app/lib/services/beyond.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AppData } from 'src/app/data/app-data';
+import { NgForm } from '@angular/forms';
+import * as moment from 'moment';
+import { BeyondService } from 'src/app/lib/services/beyond.service';
 
-import "brace/theme/xcode";
-import "brace/mode/javascript";
+import 'brace/theme/xcode';
+import 'brace/mode/javascript';
 
 declare var require: any;
 
 @Component({
-  selector: "eg-generate-script",
-  templateUrl: "./generate-script.component.html",
-  styleUrls: ["./generate-script.component.scss"],
+  selector: 'eg-generate-script',
+  templateUrl: './generate-script.component.html',
+  styleUrls: ['./generate-script.component.scss'],
 })
 export class GenerateScriptComponent implements OnInit {
   public langKey: string;
@@ -21,18 +21,18 @@ export class GenerateScriptComponent implements OnInit {
   public langData: any;
   public selectLangs: any;
   public objectKeys = Object.keys;
-  private version = require("../../../../../package.json").version;
+  private version = require('../../../../../package.json').version;
   public beyondValue: boolean;
 
-  public script = "";
+  public script = '';
 
   public scriptData = {
     conf: {
-      mailAccountId: "1",
-      lcInsertMode: "3in1",
-      timeDeelay: "5000",
-      origLang: "1", // overrited
-      destLang: "1", // overrited
+      mailAccountId: '1',
+      lcInsertMode: '3in1',
+      timeDeelay: '5000',
+      origLang: '1', // overrited
+      destLang: '1', // overrited
     },
     data: {
       validEmailsId: [], // overrited
@@ -50,7 +50,7 @@ export class GenerateScriptComponent implements OnInit {
   };
 
   public scriptInsights = {
-    execTime: "0m 0s",
+    execTime: '0m 0s',
     stringLen: 0,
     emails: {
       valid: 0,
@@ -58,14 +58,14 @@ export class GenerateScriptComponent implements OnInit {
       validPerCent: 0,
     },
     emailsChart: {
-      labels: ["Valids", "Emptys"],
+      labels: ['Valids', 'Emptys'],
       data: [0, 0],
-      type: "doughnut",
+      type: 'doughnut',
       legend: false,
       colors: [
         {
-          backgroundColor: ["#cc00cc", "#e7e7eb"],
-          borderColor: ["#cc00cc", "#e7e7eb"],
+          backgroundColor: ['#cc00cc', '#e7e7eb'],
+          borderColor: ['#cc00cc', '#e7e7eb'],
           borderWidth: [0, 0],
         },
       ],
@@ -105,14 +105,14 @@ export class GenerateScriptComponent implements OnInit {
     this.beyond.currentBeyond.subscribe((beyondValue) => {
       this.beyondValue = beyondValue;
     });
-    this.langKey = this.route.snapshot.params["langKey"];
+    this.langKey = this.route.snapshot.params['langKey'];
     this.langData = this.appData.getLanguage(this.langKey);
     this.langId = this.appData.getLangIdByKey(this.langKey);
     this.selectLangs = this.appData.languages;
 
     if (this.beyondValue === true) {
-      this.scriptData.conf.lcInsertMode = "3in3";
-      this.scriptData.conf.timeDeelay = "10000";
+      this.scriptData.conf.lcInsertMode = '3in3';
+      this.scriptData.conf.timeDeelay = '10000';
       this.scriptData.timeOuts.t1 += 500;
       this.scriptData.timeOuts.t2 += 500;
       this.scriptData.timeOuts.t3 += 500;
@@ -144,8 +144,8 @@ export class GenerateScriptComponent implements OnInit {
     const time = moment.duration(this.scriptData.data.totalTimeScript);
     this.scriptInsights.execTime =
       time.minutes() +
-      "m" +
-      (time.seconds() > 0 ? " " + time.seconds() + "s" : "");
+      'm' +
+      (time.seconds() > 0 ? ' ' + time.seconds() + 's' : '');
   }
 
   // scriptInsights.stringLen - 123000
@@ -235,22 +235,22 @@ export class GenerateScriptComponent implements OnInit {
     let thisScript: string, thisScript_1: string, thisScript_2: string;
 
     // already stringfyed variables [!]
-    const arrCustomsHeader = this.getScriptCustoms("header"),
-      arrCustomsFooter = this.getScriptCustoms("footer"),
-      arrEmailsId = "[" + this.scriptData.data.validEmailsId.join(", ") + "]",
-      arrEmailsName = "['" + this.scriptData.data.validEmailsName.join("', '") + "']",
-      arrEmailsBody = this.getScriptDefaults("html"),
-      arrEmailsSubject = this.getScriptDefaults("subject"),
+    const arrCustomsHeader = this.getScriptCustoms('header'),
+      arrCustomsFooter = this.getScriptCustoms('footer'),
+      arrEmailsId = '[' + this.scriptData.data.validEmailsId.join(', ') + ']',
+      arrEmailsName = '[\'' + this.scriptData.data.validEmailsName.join('\', \'') + '\']',
+      arrEmailsBody = this.getScriptDefaults('html'),
+      arrEmailsSubject = this.getScriptDefaults('subject'),
       defaultHeader =
-        "`" + this.parseEscapedString(this.langData.emails.header.html) + "`",
+        '`' + this.parseEscapedString(this.langData.emails.header.html) + '`',
       defaultFooter =
-        "`" + this.parseEscapedString(this.langData.emails.footer.html) + "`";
+        '`' + this.parseEscapedString(this.langData.emails.footer.html) + '`';
 
     thisScript_1 = `
       setTimeout(function() {
-        ${this.getConsoleLog("[Emilio Generator] v" + this.version, "heading")}
-        ${this.getConsoleLog("Executing the script.")}
-        ${this.getConsoleLog("Please do not close or change this browser tab.")}
+        ${this.getConsoleLog('[Emilio Generator] v' + this.version, 'heading')}
+        ${this.getConsoleLog('Executing the script.')}
+        ${this.getConsoleLog('Please do not close or change this browser tab.')}
       }, 1000);
 
       openMailTypes();
@@ -284,8 +284,8 @@ export class GenerateScriptComponent implements OnInit {
       ? this.getScriptPart2Beyond()
       : this.getScriptPart2();
 
-    thisScript_2 = thisScript_2.replace(/\/\*.*?\*\//g, ""); // replace js comments
-    thisScript_2 = thisScript_2.replace(/[\t\n]/g, ""); // minify js
+    thisScript_2 = thisScript_2.replace(/\/\*.*?\*\//g, ''); // replace js comments
+    thisScript_2 = thisScript_2.replace(/[\t\n]/g, ''); // minify js
     thisScript = thisScript_1 + thisScript_2;
 
     this.script = thisScript;
@@ -318,8 +318,8 @@ export class GenerateScriptComponent implements OnInit {
                 editMailType(ID_TEMPLATE);
               } catch(e) {
                 ${this.getConsoleLog(
-                  "Fail open window template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
-                  "error"
+                  'Fail open window template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \')',
+                  'error'
                 )}
               }
               ST_T1 = setTimeout(function() {
@@ -393,14 +393,14 @@ export class GenerateScriptComponent implements OnInit {
                         }
                       }, T2);
                       ${this.getConsoleLog(
-                        "save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') time: ' + emailTimeSeconds + 's [' + email_index + '/' + _arrEmailsId.length + ']",
-                        "success"
+                        'save template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \') time: \' + emailTimeSeconds + \'s [\' + email_index + \'/\' + _arrEmailsId.length + \']',
+                        'success'
                       )}
                       emailTimeSeconds += (T_EMAIL / 1000);
                     } catch(e) {
                       ${this.getConsoleLog(
-                        "Fail save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
-                        "error"
+                        'Fail save template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \')',
+                        'error'
                       )}
                     }
                   }
@@ -408,17 +408,17 @@ export class GenerateScriptComponent implements OnInit {
               }, T1);
             } else {
               ${this.getConsoleLog(
-                "Template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') not found in LC. [' + (email_index + 1) + '/' + _arrEmailsId.length + ']",
-                "warn"
+                'Template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \') not found in LC. [\' + (email_index + 1) + \'/\' + _arrEmailsId.length + \']',
+                'warn'
               )}
             }
             email_index ++;
           } else {
-            ${this.getConsoleLog("Script executed 100%")}
-            ${this.getConsoleLog("Bye 🦄")}
+            ${this.getConsoleLog('Script executed 100%')}
+            ${this.getConsoleLog('Bye 🦄')}
             ${this.getConsoleLog(
-              "[Emilio Generator] v" + this.version,
-              "heading"
+              '[Emilio Generator] v' + this.version,
+              'heading'
             )}
             clearInterval(SI_MAIN);
           }
@@ -458,8 +458,8 @@ export class GenerateScriptComponent implements OnInit {
                 editMailType(ID_TEMPLATE);
               } catch(e) {
                 ${this.getConsoleLog(
-                  "Fail open window template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
-                  "error"
+                  'Fail open window template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \')',
+                  'error'
                 )}
               }
 
@@ -470,7 +470,7 @@ export class GenerateScriptComponent implements OnInit {
                   windowForm = windowForm[0].parentElement;
                   var allIndexesLangTabs = windowForm.querySelector('[name="languages"]');
                   var indexLanguage = 0;
-                  
+
                   if (allIndexesLangTabs) {
                     var allIndexesLangTabsValArr = allIndexesLangTabs.value.split(',');
                     for (let i_l = 0; i_l < allIndexesLangTabsValArr.length; i_l++) {
@@ -541,7 +541,7 @@ export class GenerateScriptComponent implements OnInit {
                             if (footer[0]) {
                               if (_lcInsertMode == "3in3" || _lcInsertMode == "3in1") {
                                 footer[0].value = FOOTER_VALUE;
-                                
+
                                 var editor = ace.edit(contentTab[0].querySelector('.editor_footer_' + _destLang));
                                 if (editor) {
                                   editor.getSession().setValue(FOOTER_VALUE);
@@ -553,7 +553,7 @@ export class GenerateScriptComponent implements OnInit {
                             if (body[0]) {
                               if (_lcInsertMode == "3in3" || _lcInsertMode == "3in1") {
                                 body[0].value = HTML_VALUE;
-                                
+
                                 var editor = ace.edit(contentTab[0].querySelector('.editor_body_' + _destLang));
                                 if (editor) {
                                   editor.getSession().setValue(HTML_VALUE);
@@ -586,39 +586,39 @@ export class GenerateScriptComponent implements OnInit {
                         }, T2);
 
                         ${this.getConsoleLog(
-                          "save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') time: ' + emailTimeSeconds + 's [' + email_index + '/' + _arrEmailsId.length + ']",
-                          "success"
+                          'save template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \') time: \' + emailTimeSeconds + \'s [\' + email_index + \'/\' + _arrEmailsId.length + \']',
+                          'success'
                         )}
                         emailTimeSeconds += (T_EMAIL / 1000);
                       } catch(e) {
                         ${this.getConsoleLog(
-                          "Fail save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
-                          "error"
+                          'Fail save template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \')',
+                          'error'
                         )}
                       }
                     }
                   } else {
                     ${this.getConsoleLog(
-                      "No hay configurada ninguna cuenta de email! Mission abortada! Por favor crea una.",
-                      "error"
+                      'No hay configurada ninguna cuenta de email! Mission abortada! Por favor crea una.',
+                      'error'
                     )}
                   }
                 }
               }, T1);
             } else {
               ${this.getConsoleLog(
-                "Template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') not found in LC. [' + (email_index + 1) + '/' + _arrEmailsId.length + ']",
-                "warn"
+                'Template id \' + ID_TEMPLATE + \' (\' + NAME_TEMPLATE + \') not found in LC. [\' + (email_index + 1) + \'/\' + _arrEmailsId.length + \']',
+                'warn'
               )}
             }
 
             email_index ++;
           } else {
-            ${this.getConsoleLog("Script executed 100%")}
-            ${this.getConsoleLog("Bye 🦄")}
+            ${this.getConsoleLog('Script executed 100%')}
+            ${this.getConsoleLog('Bye 🦄')}
             ${this.getConsoleLog(
-              "[Emilio Generator] v" + this.version,
-              "heading"
+              '[Emilio Generator] v' + this.version,
+              'heading'
             )}
             clearInterval(SI_NO);
             clearInterval(SI_MAIN);
@@ -639,16 +639,16 @@ export class GenerateScriptComponent implements OnInit {
       const thisEmail = this.langData.emails.templates[emailId];
 
       if (
-        thisEmail.tags["custom" + ucType] &&
+        thisEmail.tags['custom' + ucType] &&
         thisEmail[type].html.trim().length > 0
       ) {
         arr.push(this.parseEscapedString(thisEmail[type].html));
       } else {
-        arr.push("");
+        arr.push('');
       }
     });
 
-    return "[`" + arr.join("`, `") + "`]";
+    return '[`' + arr.join('`, `') + '`]';
   }
 
   private parseEscapedString(html: string) {
@@ -664,24 +664,24 @@ export class GenerateScriptComponent implements OnInit {
 
     this.scriptData.data.validEmailsId.forEach((emailId) => {
       const thisEmail = this.langData.emails.templates[emailId];
-      if (type == "html") {
+      if (type == 'html') {
         arr.push(this.parseEscapedString(thisEmail[type]));
       } else {
         arr.push(thisEmail[type]);
       }
     });
 
-    return "[`" + arr.join("`, `") + "`]";
+    return '[`' + arr.join('`, `') + '`]';
   }
 
   // return string console log
-  private getConsoleLog(message: string, type: string = "") {
+  private getConsoleLog(message: string, type: string = '') {
     const toLength = 118;
-    let styles = "";
+    let styles = '';
 
     switch (type) {
-      case "heading":
-        message = "%c" + message;
+      case 'heading':
+        message = '%c' + message;
         styles = `,'
           background-color: #cc00cc;
           color: #FFF;
@@ -690,8 +690,8 @@ export class GenerateScriptComponent implements OnInit {
         '`;
         break;
 
-      case "error":
-        message = "%cERROR%c " + message;
+      case 'error':
+        message = '%cERROR%c ' + message;
         styles = `,'
           color: #fff;
           background-color: #e02857;
@@ -703,8 +703,8 @@ export class GenerateScriptComponent implements OnInit {
         '`;
         break;
 
-      case "warn":
-        message = "%cWARN%c " + message;
+      case 'warn':
+        message = '%cWARN%c ' + message;
         styles = `,'
           color: #fff;
           background-color: #da8a00;
@@ -716,8 +716,8 @@ export class GenerateScriptComponent implements OnInit {
         '`;
         break;
 
-      case "success":
-        message = "%cSUCCESS%c " + message;
+      case 'success':
+        message = '%cSUCCESS%c ' + message;
         styles = `,'
           color: #fff;
           background-color: #0099cc;
@@ -730,7 +730,7 @@ export class GenerateScriptComponent implements OnInit {
         break;
 
       default:
-        message = "%c" + message;
+        message = '%c' + message;
         styles = `,'
           color: #5c649c;
           padding: 0 6px;
@@ -739,10 +739,10 @@ export class GenerateScriptComponent implements OnInit {
     }
 
     if (message.length < toLength) {
-      message += Array(toLength - message.length + 1).join(" ");
+      message += Array(toLength - message.length + 1).join(' ');
     }
 
-    return `console.log('${message}'${styles.replace(/[\t\n]*(\s\s)*/g, "")});`;
+    return `console.log('${message}'${styles.replace(/[\t\n]*(\s\s)*/g, '')});`;
   }
 
   // [Events] ----------------------------------------------------------
@@ -786,7 +786,7 @@ export class GenerateScriptComponent implements OnInit {
 
   public copyScriptAction(event: any, scriptTextArea: any) {
     scriptTextArea.select();
-    document.execCommand("copy");
+    document.execCommand('copy');
     scriptTextArea.setSelectionRange(0, 0);
     this.copyButton = !this.copyButton;
 
