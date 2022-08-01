@@ -856,8 +856,127 @@ export const LANGUAGE_ES = {
 
     24: {
       name: "Blog - Email de Bienvenida",
-      subject: "",
-      html: ``,
+      subject: "¡Bienvenido a  {{ blogSubscription.blogName }}!",
+      html: `
+{% set languageSheet = {
+  premessage: '¡Bienvenido/a a ' ~ '<a href="' ~ blogSubscription.blogLink ~ '" style="color: #000;">' ~ blogSubscription.blogName ~ '</a>!',
+
+  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: 'Gracias por suscribirte a nuestro blog. Pronto recibirás los nuevos artículos por email, información sobre descuentos, promociones, regalos y datos de interés relativos a la actividad de la tienda online.',
+  messageBody2: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+} %}
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size: 15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
+      footer: {
+        html: `
+{% set languageSheet = {
+  moreInfo: 'Para obtener más información, lea nuestra <a href="' ~ general.privacyPolicyLink ~ '">política de privacidad</a> y <a href="' ~ general.termsOfUseLink ~ '">términos de uso</a>.',
+  unsubscribe: 'Darse de baja de la suscripción del Blog'
+} %}
+        <tr>
+          <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              {% set pages = general.getPages(501) %}
+              {% if pages|length %}
+                <tr>
+                  <td align="center">
+                    <table border="0" cellspacing="10" cellpadding="0">
+                      <tr>
+                        {% for page in pages %}
+                          <td style="text-align: left;">
+                            <a href="{{ page.link }}" style="padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;" target="{{ page.target }}">{{ page.name }}</a>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              {% endif %}
+              {% set banners = general.getBanners(502) %}
+              {% if banners|length %}
+                <tr>
+                  <td align="center" style="padding: 12px 0 12px 0px;">
+                    <table border="0" cellspacing="8" cellpadding="0">
+                      <tr>
+                        {% for banner in banners %}
+                          <td width="30" style="text-align: left;">
+                            <a href="{{ banner.link }}">
+                              <img src="{{ banner.image }}" width="30" height="auto" alt="{{ banner.alt }}" border="0" style="height: auto;" />
+                            </a>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              {% endif %}
+              {% set pages = general.getPages(503) %}
+              {% if pages|length %}
+                <tr>
+                  <td align="center">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        {% for page in pages %}
+                          <td style="text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;">
+                            <span style="color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;">{{ page.content }}</span>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              {% endif %}
+              {% set pages = general.getPages(504) %}
+              {% if pages|length %}
+                <tr>
+                  {% for page in pages %}
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;padding: 10px 0;">{{ page.content }}</td>
+                  {% endfor %}
+                </tr>
+              {% endif %}
+              <tr>
+                <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
+                  {{ languageSheet.moreInfo }}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family: sans-serif; font-size: 14px; color: #ffffff;">
+      <span style="color: #000; font-size: 10px;">&nbsp;</span>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="font-family: sans-serif;font-size: 14px;padding:10px;">
+      <span style="color:#8b8b8b;font-size:10px;">
+        &nbsp;<br>
+        <a href="{{ general.ecommerceUrl }}/blog/unsubscribe?hash={{ blogSubscription.hash }}" style="color: #8b8b8b;text-decoration: underline;font-size:10px;line-height:13px;">
+          {{ languageSheet.unsubscribe }}
+        </a>
+      </span>
+    </td>
+  </tr>
+</table>`,
+      },
     },
 
     25: {
