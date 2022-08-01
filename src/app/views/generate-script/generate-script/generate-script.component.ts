@@ -36,6 +36,7 @@ export class GenerateScriptComponent implements OnInit {
     },
     data: {
       validEmailsId: [], // overrited
+      validEmailsName: [], // overrited
       totalTimeScript: 0,
     },
     timeOuts: {
@@ -127,6 +128,7 @@ export class GenerateScriptComponent implements OnInit {
     this.setTimeoutEmail();
     // [data]
     this.scriptData.data.validEmailsId = this.getValidEmailsId();
+    this.scriptData.data.validEmailsName = this.getValidEmailsName();
     // [data]
     this.setTotalTimeScript();
     // [visual]
@@ -191,6 +193,18 @@ export class GenerateScriptComponent implements OnInit {
     return idArray;
   }
 
+  private getValidEmailsName() {
+    const nameArray = [];
+
+    for (const emailId in this.langData.emails.templates) {
+      if (!this.langData.emails.templates[emailId].tags.empty) {
+        nameArray.push(this.langData.emails.templates[emailId].name);
+      }
+    }
+
+    return nameArray;
+  }
+
   // set data visual card [valid emails] (chart)
   private setValidsChartData() {
     // '20/30'
@@ -224,6 +238,7 @@ export class GenerateScriptComponent implements OnInit {
     const arrCustomsHeader = this.getScriptCustoms("header"),
       arrCustomsFooter = this.getScriptCustoms("footer"),
       arrEmailsId = "[" + this.scriptData.data.validEmailsId.join(", ") + "]",
+      arrEmailsName = "['" + this.scriptData.data.validEmailsName.join("', '") + "']",
       arrEmailsBody = this.getScriptDefaults("html"),
       arrEmailsSubject = this.getScriptDefaults("subject"),
       defaultHeader =
@@ -243,6 +258,7 @@ export class GenerateScriptComponent implements OnInit {
       var _arrCustomsHeader = ${arrCustomsHeader},
           _arrCustomsFooter = ${arrCustomsFooter},
           _arrEmailsId = ${arrEmailsId},
+          _arrEmailsName = ${arrEmailsName},
           _arrEmailsBody = ${arrEmailsBody},
           _arrEmailsSubject = ${arrEmailsSubject},
           _defaultHeader = ${defaultHeader},
@@ -282,6 +298,7 @@ export class GenerateScriptComponent implements OnInit {
         var SI_MAIN = setInterval(function() {
           if (email_index<_arrEmailsId.length) {
             var ID_TEMPLATE = _arrEmailsId[email_index],
+                NAME_TEMPLATE = _arrEmailsName[email_index],
                 SUBJECT_VALUE = _arrEmailsSubject[email_index],
                 HTML_VALUE = _arrEmailsBody[email_index],
                 HEADER_VALUE = _defaultHeader,
@@ -301,7 +318,7 @@ export class GenerateScriptComponent implements OnInit {
                 editMailType(ID_TEMPLATE);
               } catch(e) {
                 ${this.getConsoleLog(
-                  "Fail open window template id-' + ID_TEMPLATE + '",
+                  "Fail open window template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
                   "error"
                 )}
               }
@@ -376,13 +393,13 @@ export class GenerateScriptComponent implements OnInit {
                         }
                       }, T2);
                       ${this.getConsoleLog(
-                        "save template id-' + ID_TEMPLATE + ' time: ' + emailTimeSeconds + 's [' + email_index + '/' + _arrEmailsId.length + ']",
+                        "save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') time: ' + emailTimeSeconds + 's [' + email_index + '/' + _arrEmailsId.length + ']",
                         "success"
                       )}
                       emailTimeSeconds += (T_EMAIL / 1000);
                     } catch(e) {
                       ${this.getConsoleLog(
-                        "Fail save template id-' + ID_TEMPLATE + '",
+                        "Fail save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
                         "error"
                       )}
                     }
@@ -391,7 +408,7 @@ export class GenerateScriptComponent implements OnInit {
               }, T1);
             } else {
               ${this.getConsoleLog(
-                "Template id-' + ID_TEMPLATE + ' not found in LC. [' + (email_index + 1) + '/' + _arrEmailsId.length + ']",
+                "Template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') not found in LC. [' + (email_index + 1) + '/' + _arrEmailsId.length + ']",
                 "warn"
               )}
             }
@@ -418,6 +435,7 @@ export class GenerateScriptComponent implements OnInit {
 
           if (email_index<_arrEmailsId.length) {
             var ID_TEMPLATE = _arrEmailsId[email_index],
+                NAME_TEMPLATE = _arrEmailsName[email_index],
                 SUBJECT_VALUE = _arrEmailsSubject[email_index],
                 HTML_VALUE = _arrEmailsBody[email_index],
                 HEADER_VALUE = _defaultHeader,
@@ -440,7 +458,7 @@ export class GenerateScriptComponent implements OnInit {
                 editMailType(ID_TEMPLATE);
               } catch(e) {
                 ${this.getConsoleLog(
-                  "Fail open window template id-' + ID_TEMPLATE + '",
+                  "Fail open window template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
                   "error"
                 )}
               }
@@ -568,13 +586,13 @@ export class GenerateScriptComponent implements OnInit {
                         }, T2);
 
                         ${this.getConsoleLog(
-                          "save template id-' + ID_TEMPLATE + ' time: ' + emailTimeSeconds + 's [' + email_index + '/' + _arrEmailsId.length + ']",
+                          "save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') time: ' + emailTimeSeconds + 's [' + email_index + '/' + _arrEmailsId.length + ']",
                           "success"
                         )}
                         emailTimeSeconds += (T_EMAIL / 1000);
                       } catch(e) {
                         ${this.getConsoleLog(
-                          "Fail save template id-' + ID_TEMPLATE + '",
+                          "Fail save template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ')",
                           "error"
                         )}
                       }
@@ -589,7 +607,7 @@ export class GenerateScriptComponent implements OnInit {
               }, T1);
             } else {
               ${this.getConsoleLog(
-                "Template id-' + ID_TEMPLATE + ' not found in LC. [' + (email_index + 1) + '/' + _arrEmailsId.length + ']",
+                "Template id ' + ID_TEMPLATE + ' (' + NAME_TEMPLATE + ') not found in LC. [' + (email_index + 1) + '/' + _arrEmailsId.length + ']",
                 "warn"
               )}
             }
