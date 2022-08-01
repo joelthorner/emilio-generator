@@ -916,9 +916,12 @@ export const LANGUAGE_EN = {
             </div>
           </td>
         </tr>
-        <tr><td style="text-align: center;"> <br><br>
-      {{ languageSheet.messageSignature }}</td></tr>
-        
+        <tr>
+          <td style="text-align: center;">
+            <br><br>
+            {{ languageSheet.messageSignature }}
+          </td>
+        </tr>
         <tr><td>&nbsp;</td></tr>
       </tbody>
     </table>
