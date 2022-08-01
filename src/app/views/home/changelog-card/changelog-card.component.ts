@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { ReleasesGithubApiService } from "src/app/lib/services/releases-github-api.service";
+import { Component, OnInit } from '@angular/core';
+import { ReleasesGithubApiService } from 'src/app/lib/services/releases-github-api.service';
 
 @Component({
-  selector: "eg-changelog-card",
-  templateUrl: "./changelog-card.component.html",
-  styleUrls: ["./changelog-card.component.scss"],
+  selector: 'eg-changelog-card',
+  templateUrl: './changelog-card.component.html',
+  styleUrls: ['./changelog-card.component.scss'],
 })
 export class ChangelogCardComponent implements OnInit {
-  cardTitle = "Changelog";
+  cardTitle = 'Changelog';
   changeLogItems = [];
 
   constructor(private service: ReleasesGithubApiService) {}
@@ -25,9 +25,9 @@ export class ChangelogCardComponent implements OnInit {
         if (result) {
           for (const item of arr) {
             item.body = item.body
-              .replace("Changelog", "")
-              .replace("changelog", "")
-              .replace(/-{6,}/i, "")
+              .replace('Changelog', '')
+              .replace('changelog', '')
+              .replace(/-{6,}/i, '')
               .replace(
                 /@([^\s]+)/g,
                 `<a href="https://github.com/$1" target="_blank">@$1</a>`
