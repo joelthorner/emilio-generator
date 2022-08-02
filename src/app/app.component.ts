@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 import { AuthService } from "./lib/services/auth.service";
 import { environment } from "src/environments/environment";
 import { BeyondService } from "./lib/services/beyond.service";
@@ -11,7 +11,11 @@ import { BeyondService } from "./lib/services/beyond.service";
 export class AppComponent implements OnInit {
   public beyondValue: boolean;
 
-  constructor(public auth: AuthService, private beyond: BeyondService) {}
+  constructor(
+    public auth: AuthService,
+    private beyond: BeyondService,
+    private renderer: Renderer2
+  ) {}
 
   ngOnInit() {
     if (
@@ -22,6 +26,13 @@ export class AppComponent implements OnInit {
     } else {
       this.beyond.changeBeyond(false);
     }
+    this.beyond.currentBeyond.subscribe((beyondValue) => {
+      if (beyondValue) {
+        this.renderer.addClass(document.body, "beyond");
+      } else {
+        this.renderer.removeClass(document.body, "beyond");
+      }
+    });
   }
 
   doBeforeUnload() {

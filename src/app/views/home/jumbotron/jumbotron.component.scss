@@ -1,5 +1,5 @@
-@import 'styles-utils';
-@import 'styles-variables';
+@import "styles-utils";
+@import "styles-variables";
 
 .home-jumbo {
   margin-top: -$grid-gutter-width;
@@ -34,10 +34,9 @@
 h1 {
   line-height: 1;
 
-  color: #FFF;
+  color: #fff;
   font-weight: 300;
   font-size: 48px;
-
 
   b {
     font-family: "Ubuntu", sans-serif;
