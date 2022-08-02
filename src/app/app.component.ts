@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     if (
       localStorage.getItem("beyondActive") &&
-      localStorage.getItem("beyondActive") == "1"
+      localStorage.getItem("beyondActive") === "1"
     ) {
       this.beyond.changeBeyond(true);
     } else {

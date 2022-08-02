@@ -27,7 +27,9 @@ export class AppData {
   };
 
   constructor(private jszip: JszipService, public sanitizer: DomSanitizer) {
-    let isBeyond = localStorage.getItem("beyondActive") && localStorage.getItem("beyondActive") == "1";
+    let isBeyond =
+      localStorage.getItem("beyondActive") &&
+      localStorage.getItem("beyondActive") === "1";
     this.changeLanguageSource(isBeyond);
   }
 
@@ -397,26 +399,28 @@ export class AppData {
     }
 
     const filename = `${this.previewData.name} [id ${this.previewData.id}] [${langKey}].html`;
-    
+
     let html = header + body + footer;
     html = this.previewReplaces(html);
     html = this.previewReplacesBeyond(html);
-    return { html, filename};
+    return { html, filename };
   }
-  
+
   // get a div with iframe content
   public getHTMLIframeContent(langKey: string) {
-    let {html, filename} = this.getHTMLPreview(langKey)
-    
+    let { html, filename } = this.getHTMLPreview(langKey);
+
     const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}">${this.previewData.style}${html}</body></html>`;
-    
-    const div = <HTMLElement>document.createElement("div")
-    div.style.width = `${document.getElementById('card-iframe-preview').offsetWidth}px`;
+
+    const div = <HTMLElement>document.createElement("div");
+    div.style.width = `${
+      document.getElementById("card-iframe-preview").offsetWidth
+    }px`;
     div.style.position = "absolute";
     div.style.top = "0";
-    div.style.zIndex = "-1"
+    div.style.zIndex = "-1";
     div.innerHTML = iframeSrc;
-    filename = filename.replace('html', 'png');
+    filename = filename.replace("html", "png");
     return { div, filename };
   }
 
@@ -427,7 +431,10 @@ export class AppData {
     //   this.previewData.options.logo
     // );
     html = html.replace(
-      new RegExp("\\{\\{\\s?general\\.ecommerceCdnImages\\s?\\}\\}email-logo\\.png", "g"),
+      new RegExp(
+        "\\{\\{\\s?general\\.ecommerceCdnImages\\s?\\}\\}email-logo\\.png",
+        "g"
+      ),
       this.previewData.options.logo
     );
     // Banners
