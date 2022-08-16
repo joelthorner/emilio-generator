@@ -547,9 +547,9 @@ export const LANGUAGE_DE = {
             {% endif %}
           </td>
           <td style="vertical-align: middle; background:#e2e6eb;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right: 40px;" width="50%">
-            
+
             {% if sales.delivery.physicalLocation %}
-              <strong>{{ languageSheet.pickup }}:</strong><br><br>
+              <strong>{{ languageSheet.pickup }}:</strong><br>
               <div style="font-size:13px; display:block;line-height:13px;margin-bottom: 5px;">
                 {{ languageSheet.pickupMessage }}
               </div>
@@ -596,35 +596,85 @@ export const LANGUAGE_DE = {
             </td>
           </tr>
           {% for item in sales.items %}
-            <tr>
-              <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
-                  <tbody>
-                    <tr>
-                      <td style="padding: 10px 0px;">
-                        <img src="{{ item.image }}" alt="{{ item.name }}" width="60">
-                      </td>
-                      <td style="padding: 10px 0px;">
-                        <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
-                          <span style="color: #454545; text-decoration: none">{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
-                        </a>
-                        {% if item.options|length %}
-                          <div style="font-size: 14px; line-height: 20px; color: #666;">
-                            {% for option in item.options %}
-                              <div>{{ option.name }}: {{ option.value }}</div>
-                            {% endfor %}
-                          </div>
-                          <br>
-                        {% endif %}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-              <td style="text-align: center;padding-right:8px;border-bottom:1px solid #dcdcdc;text-align:right;">
-                {{ item.quantity }}
-              </td>
-            </tr>
+            {% if item.type == 'BUNDLE' %}
+              <tr>
+                <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
+                  <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 10px 0px;">
+                          <b>{{ item.name }}</b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="text-align: center;padding-right:8px;text-align:right;">
+                  {{ item.quantity }}
+                </td>
+              </tr>
+              {% for bundleItem in item.items %}
+                <tr>
+                  <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;{% if loop.last %}border-bottom:1px solid #dcdcdc;{% endif %}">
+                    <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
+                      <tbody>
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img src="{{ bundleItem.image }}" alt="{{ bundleItem.name }}" width="60">
+                          </td>
+                          <td style="padding: 10px 0px 0px 10px;">
+                            <a href="{{ bundleItem.link }}" title="{{ bundleItem.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
+                              <span style="color: #454545; text-decoration: none">{{ bundleItem.name }}</b></span>
+                            </a>
+                            {% if bundleItem.options|length %}
+                              <div style="font-size: 14px; line-height: 20px; color: #666;">
+                                {% for option in bundleItem.options %}
+                                  <div>{{ option.name }}: {{ option.value }}</div>
+                                {% endfor %}
+                              </div>
+                              <br>
+                            {% endif %}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td style="text-align: center;padding-right:8px;text-align:right;{% if loop.last %}border-bottom:1px solid #dcdcdc;{% endif %}">
+                    &nbsp;
+                  </td>
+                </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                  <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 10px 0px;">
+                          <img src="{{ item.image }}" alt="{{ item.name }}" width="60">
+                        </td>
+                        <td style="padding: 10px 0px 0px 10px;">
+                          <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
+                            <span style="color: #454545; text-decoration: none">{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
+                          </a>
+                          {% if item.options|length %}
+                            <div style="font-size: 14px; line-height: 20px; color: #666;">
+                              {% for option in item.options %}
+                                <div>{{ option.name }}: {{ option.value }}</div>
+                              {% endfor %}
+                            </div>
+                            <br>
+                          {% endif %}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="text-align: center;padding-right:8px;border-bottom:1px solid #dcdcdc;text-align:right;">
+                  {{ item.quantity }}
+                </td>
+              </tr>
+            {% endif %}
           {% endfor %}
         </tbody>
       </table>
