@@ -118,8 +118,8 @@ export const LANGUAGE_ES = {
 
   templates: {
     1: {
-      name: "Bienvenida",
-      subject: "{{ general.ecommerceName }} - Gracias por darte de alta",
+      name: 'Bienvenida',
+      subject: '{{ general.ecommerceName }} - Gracias por darte de alta',
       html: `
 {% set languageSheet = {
   premessage: '¡Bienvenido/a a ' ~ general.ecommerceName ~ '!',
@@ -144,8 +144,8 @@ export const LANGUAGE_ES = {
     }, // end 1
 
     2: {
-      name: "Baja de usuarios",
-      subject: "{{ general.ecommerceName }} - Baja de usuario",
+      name: 'Baja de usuarios',
+      subject: '{{ general.ecommerceName }} - Baja de usuario',
       html: `
 {% set languageSheet = {
   premessage: 'Confirmación de cuenta eliminada',
@@ -166,8 +166,8 @@ export const LANGUAGE_ES = {
     }, // end 2
 
     3: {
-      name: "Recordarios de contraseña",
-      subject: "{{ general.ecommerceName }} - Recordar contraseña",
+      name: 'Recordarios de contraseña',
+      subject: '{{ general.ecommerceName }} - Recordar contraseña',
       html: `
 {% set languageSheet = {
   premessage: 'Recordar contraseña',
@@ -194,8 +194,8 @@ export const LANGUAGE_ES = {
     }, // end 3
 
     4: {
-      name: "Cambio de contraseña",
-      subject: "{{ general.ecommerceName }} - Cambio de contraseña",
+      name: 'Cambio de contraseña',
+      subject: '{{ general.ecommerceName }} - Cambio de contraseña',
       html: `
 {% set languageSheet = {
   premessage: 'Cambio de contraseña',
@@ -220,14 +220,14 @@ export const LANGUAGE_ES = {
     }, // end 4
 
     5: {
-      name: "Registro de newsletter",
-      subject: "",
+      name: 'Registro de newsletter',
+      subject: '',
       html: ``,
     }, // end 5
 
     6: {
-      name: "Recomendación de wishlist",
-      subject: "{{ general.ecommerceName }} - {{ wishlist.user.name }} te recomienda sus productos favoritos",
+      name: 'Recomendación de wishlist',
+      subject: '{{ general.ecommerceName }} - {{ wishlist.user.name }} te recomienda sus productos favoritos',
       html: `
 {% set languageSheet = {
   premessage: 'Recomendación de favoritos',
@@ -312,8 +312,8 @@ export const LANGUAGE_ES = {
     }, // end 6
 
     7: {
-      name: "Recomendación de producto",
-      subject: "{{ general.ecommerceName }} - {{ recommend.name }} te recomienda un producto",
+      name: 'Recomendación de producto',
+      subject: '{{ general.ecommerceName }} - {{ recommend.name }} te recomienda un producto',
       html: `
 {% set languageSheet = {
   premessage: 'Recomendación de producto',
@@ -392,8 +392,8 @@ export const LANGUAGE_ES = {
     }, // end 7
 
     8: {
-      name: "Contacto general",
-      subject: "{{ general.ecommerceName }} - Formulario de contacto",
+      name: 'Contacto general',
+      subject: '{{ general.ecommerceName }} - Formulario de contacto',
       html: `
 {% set languageSheet = {
   premessage: 'Formulario de contacto',
@@ -431,8 +431,8 @@ export const LANGUAGE_ES = {
     }, // end 8
 
     9: {
-      name: "Consulta de producto",
-      subject: "{{ general.ecommerceName }} - Consulta sobre producto",
+      name: 'Consulta de producto',
+      subject: '{{ general.ecommerceName }} - Consulta sobre producto',
       html: `
 {% set languageSheet = {
   premessage: 'Consulta sobre producto',
@@ -474,8 +474,8 @@ export const LANGUAGE_ES = {
     }, // end 9
 
     10: {
-      name: "Confirmación de pedido",
-      subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Pedido recibido') : ('Confirmación de pedido') }} {{ sales.documentNumber }}",
+      name: 'Confirmación de pedido',
+      subject: '{{ general.ecommerceName }} - {{ (sales.reserve) ? (\'Pedido recibido\') : (\'Confirmación de pedido\') }} {{ sales.documentNumber }}',
       html: `
 {% set languageSheet = {
   premessage: 'Confirmación de pedido',
@@ -547,7 +547,7 @@ export const LANGUAGE_ES = {
             {% endif %}
           </td>
           <td style="vertical-align: middle; background:#e2e6eb;padding:15px 15px;line-height:20px;font-family: Arial, Helvetica, sans-serif;font-size:14px;color:#454545;padding-right: 40px;" width="50%">
-            
+
             {% if sales.delivery.physicalLocation %}
               <strong>{{ languageSheet.pickup }}:</strong><br>
               <div style="font-size:13px; display:block;line-height:13px;margin-bottom: 5px;">
@@ -596,35 +596,85 @@ export const LANGUAGE_ES = {
             </td>
           </tr>
           {% for item in sales.items %}
-            <tr>
-              <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
-                <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
-                  <tbody>
-                    <tr>
-                      <td style="padding: 10px 0px;">
-                        <img src="{{ item.image }}" alt="{{ item.name }}" width="60">
-                      </td>
-                      <td style="padding: 10px 0px;">
-                        <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
-                          <span style="color: #454545; text-decoration: none">{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
-                        </a>
-                        {% if item.options|length %}
-                          <div style="font-size: 14px; line-height: 20px; color: #666;">
-                            {% for option in item.options %}
-                              <div>{{ option.name }}: {{ option.value }}</div>
-                            {% endfor %}
-                          </div>
-                          <br>
-                        {% endif %}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-              <td style="text-align: center;padding-right:8px;border-bottom:1px solid #dcdcdc;text-align:right;">
-                {{ item.quantity }}
-              </td>
-            </tr>
+            {% if item.type == 'BUNDLE' %}
+              <tr>
+                <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;">
+                  <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 10px 0px;">
+                          <b>{{ item.name }}</b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="text-align: center;padding-right:8px;text-align:right;">
+                  {{ item.quantity }}
+                </td>
+              </tr>
+              {% for bundleItem in item.items %}
+                <tr>
+                  <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;{% if loop.last %}border-bottom:1px solid #dcdcdc;{% endif %}">
+                    <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
+                      <tbody>
+                        <tr>
+                          <td style="padding: 10px 0px;">
+                            <img src="{{ bundleItem.image }}" alt="{{ bundleItem.name }}" width="60">
+                          </td>
+                          <td style="padding: 10px 0px 0px 10px;">
+                            <a href="{{ bundleItem.link }}" title="{{ bundleItem.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
+                              <span style="color: #454545; text-decoration: none">{{ bundleItem.name }}</b></span>
+                            </a>
+                            {% if bundleItem.options|length %}
+                              <div style="font-size: 14px; line-height: 20px; color: #666;">
+                                {% for option in bundleItem.options %}
+                                  <div>{{ option.name }}: {{ option.value }}</div>
+                                {% endfor %}
+                              </div>
+                              <br>
+                            {% endif %}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td style="text-align: center;padding-right:8px;text-align:right;{% if loop.last %}border-bottom:1px solid #dcdcdc;{% endif %}">
+                    &nbsp;
+                  </td>
+                </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td style="text-align: left;font-family:Arial, Helvetica, sans-serif;font-size:14px;border-bottom:1px solid #dcdcdc;">
+                  <table style="color: #454545; font-family: sans-serif; font-size: 14px; vertical-align: middle;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 10px 0px;">
+                          <img src="{{ item.image }}" alt="{{ item.name }}" width="60">
+                        </td>
+                        <td style="padding: 10px 0px 0px 10px;">
+                          <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
+                            <span style="color: #454545; text-decoration: none">{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
+                          </a>
+                          {% if item.options|length %}
+                            <div style="font-size: 14px; line-height: 20px; color: #666;">
+                              {% for option in item.options %}
+                                <div>{{ option.name }}: {{ option.value }}</div>
+                              {% endfor %}
+                            </div>
+                            <br>
+                          {% endif %}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="text-align: center;padding-right:8px;border-bottom:1px solid #dcdcdc;text-align:right;">
+                  {{ item.quantity }}
+                </td>
+              </tr>
+            {% endif %}
           {% endfor %}
         </tbody>
       </table>
@@ -688,26 +738,26 @@ export const LANGUAGE_ES = {
     },
 
     11: {
-      name: "Baja de newsletter",
-      subject: "",
+      name: 'Baja de newsletter',
+      subject: '',
       html: ``,
     },
 
     12: {
-      name: "Apadrinamiento",
-      subject: "",
+      name: 'Apadrinamiento',
+      subject: '',
       html: ``,
     },
 
     13: {
-      name: "Apadrinamiento completo",
-      subject: "",
+      name: 'Apadrinamiento completo',
+      subject: '',
       html: ``,
     },
 
     14: {
-      name: "Documento de RMA",
-      subject: "{{ general.ecommerceName }} - Petición de devolución",
+      name: 'Documento de RMA',
+      subject: '{{ general.ecommerceName }} - Petición de devolución',
       html: `
 {% set languageSheet = {
   premessage: 'Información de la petición de devolución',
@@ -731,8 +781,8 @@ export const LANGUAGE_ES = {
     },
 
     15: {
-      name: "Pedido incompleto",
-      subject: "{{ general.ecommerceName }} - Pedido incompleto",
+      name: 'Pedido incompleto',
+      subject: '{{ general.ecommerceName }} - Pedido incompleto',
       html: `
 {% set languageSheet = {
   premessage: "Información del pedido incompleto",
@@ -755,14 +805,14 @@ export const LANGUAGE_ES = {
     },
 
     16: {
-      name: "Notificación transportista",
-      subject: "",
+      name: 'Notificación transportista',
+      subject: '',
       html: ``,
     },
 
     17: {
-      name: "Verificación de correo",
-      subject: "{{ general.ecommerceName }} - Verificación de correo",
+      name: 'Verificación de correo',
+      subject: '{{ general.ecommerceName }} - Verificación de correo',
       html: `
 {% set languageSheet = {
   premessage: "Verificación de correo",
@@ -785,8 +835,8 @@ export const LANGUAGE_ES = {
     },
 
     18: {
-      name: "Cuenta activada",
-      subject: "{{ general.ecommerceName }} - Activación de cuenta",
+      name: 'Cuenta activada',
+      subject: '{{ general.ecommerceName }} - Activación de cuenta',
       html: `
 {% set languageSheet = {
   premessage: 'Activación de cuenta',
@@ -811,14 +861,14 @@ export const LANGUAGE_ES = {
     },
 
     19: {
-      name: "Aviso a proveedores",
-      subject: "",
+      name: 'Aviso a proveedores',
+      subject: '',
       html: ``,
     },
 
     20: {
-      name: "Stock disponible",
-      subject: "{{ general.ecommerceName }} - Stock disponible",
+      name: 'Stock disponible',
+      subject: '{{ general.ecommerceName }} - Stock disponible',
       html: `
 {% set languageSheet = {
   premessage: 'Stock disponible del producto <a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
@@ -843,26 +893,145 @@ export const LANGUAGE_ES = {
     },
 
     22: {
-      name: "Blog - Notificación de Nuevo Artículo",
-      subject: "",
+      name: 'Blog - Notificación de Nuevo Artículo',
+      subject: '',
       html: ``,
     },
 
     23: {
-      name: "Blog - Notificación de Nuevo Comentario",
-      subject: "",
+      name: 'Blog - Notificación de Nuevo Comentario',
+      subject: '',
       html: ``,
     },
 
     24: {
-      name: "Blog - Email de Bienvenida",
-      subject: "",
-      html: ``,
+      name: 'Blog - Email de Bienvenida',
+      subject: '¡Bienvenido a  {{ blogSubscription.blogName }}!',
+      html: `
+{% set languageSheet = {
+  premessage: '¡Bienvenido/a a ' ~ '<a href="' ~ blogSubscription.blogLink ~ '" style="color: #000;">' ~ blogSubscription.blogName ~ '</a>!',
+
+  messageHeader: 'Hola ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageBody1: 'Gracias por suscribirte a nuestro blog. Pronto recibirás los nuevos artículos por email, información sobre descuentos, promociones, regalos y datos de interés relativos a la actividad de la tienda online.',
+  messageBody2: "Esperamos verte pronto en " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
+  messageSignature: 'Atentamente, el equipo de ' ~ general.ecommerceName
+} %}
+<tr>
+  <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
+    <strong>{{ languageSheet.premessage }}</strong><br><br>
+    <span style="font-size: 15px;">
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageBody2 }}<br><br>
+      {{ languageSheet.messageSignature }}
+    </span>
+  </td>
+</tr>`,
+      footer: {
+        html: `
+{% set languageSheet = {
+  moreInfo: 'Para obtener más información, lea nuestra <a href="' ~ general.privacyPolicyLink ~ '">política de privacidad</a> y <a href="' ~ general.termsOfUseLink ~ '">términos de uso</a>.',
+  unsubscribe: 'Darse de baja de la suscripción del Blog'
+} %}
+        <tr>
+          <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              {% set pages = general.getPages(501) %}
+              {% if pages|length %}
+                <tr>
+                  <td align="center">
+                    <table border="0" cellspacing="10" cellpadding="0">
+                      <tr>
+                        {% for page in pages %}
+                          <td style="text-align: left;">
+                            <a href="{{ page.link }}" style="padding: 6px 10px; color: #454545; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; text-decoration: none;" target="{{ page.target }}">{{ page.name }}</a>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              {% endif %}
+              {% set banners = general.getBanners(502) %}
+              {% if banners|length %}
+                <tr>
+                  <td align="center" style="padding: 12px 0 12px 0px;">
+                    <table border="0" cellspacing="8" cellpadding="0">
+                      <tr>
+                        {% for banner in banners %}
+                          <td width="30" style="text-align: left;">
+                            <a href="{{ banner.link }}">
+                              <img src="{{ banner.image }}" width="30" height="auto" alt="{{ banner.alt }}" border="0" style="height: auto;" />
+                            </a>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              {% endif %}
+              {% set pages = general.getPages(503) %}
+              {% if pages|length %}
+                <tr>
+                  <td align="center">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        {% for page in pages %}
+                          <td style="text-align: left; padding: 15px 25px 25px 25px; color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;">
+                            <span style="color: #999; font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 20px;">{{ page.content }}</span>
+                          </td>
+                        {% endfor %}
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              {% endif %}
+              {% set pages = general.getPages(504) %}
+              {% if pages|length %}
+                <tr>
+                  {% for page in pages %}
+                    <td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #454545;padding: 10px 0;">{{ page.content }}</td>
+                  {% endfor %}
+                </tr>
+              {% endif %}
+              <tr>
+                <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
+                  {{ languageSheet.moreInfo }}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+      <![endif]-->
+    </td>
+  </tr>
+  <tr>
+    <td align="left" style="font-family: sans-serif; font-size: 14px; color: #ffffff;">
+      <span style="color: #000; font-size: 10px;">&nbsp;</span>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="font-family: sans-serif;font-size: 14px;padding:10px;">
+      <span style="color:#8b8b8b;font-size:10px;">
+        &nbsp;<br>
+        <a href="{{ general.ecommerceUrl }}/blog/unsubscribe?hash={{ blogSubscription.hash }}" style="color: #8b8b8b;text-decoration: underline;font-size:10px;line-height:13px;">
+          {{ languageSheet.unsubscribe }}
+        </a>
+      </span>
+    </td>
+  </tr>
+</table>`,
+      },
     },
 
     25: {
-      name: "Confirmar suscripción de Stock",
-      subject: "{{ general.ecommerceName }} - Subscripción de stock",
+      name: 'Confirmar suscripción de Stock',
+      subject: '{{ general.ecommerceName }} - Subscripción de stock',
       html: `
 {% set languageSheet = {
   premessage: 'Suscripción de stock del producto <br><a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
@@ -916,9 +1085,12 @@ export const LANGUAGE_ES = {
             </div>
           </td>
         </tr>
-        <tr><td style="text-align: center;"> <br><br>
-      {{ languageSheet.messageSignature }}</td></tr>
-        
+        <tr>
+          <td style="text-align: center;">
+            <br><br>
+            {{ languageSheet.messageSignature }}
+          </td>
+        </tr>
         <tr><td>&nbsp;</td></tr>
       </tbody>
     </table>
@@ -927,56 +1099,56 @@ export const LANGUAGE_ES = {
     },
 
     32: {
-      name: "Documento de pedido",
-      subject: "",
+      name: 'Documento de pedido',
+      subject: '',
       html: ``,
     },
 
     33: {
-      name: "Documento de albarán de entrega",
-      subject: "",
+      name: 'Documento de albarán de entrega',
+      subject: '',
       html: ``,
     },
 
     34: {
-      name: "Documento de factura",
-      subject: "",
+      name: 'Documento de factura',
+      subject: '',
       html: ``,
     },
 
     35: {
-      name: "Documento de factura rectificativa",
-      subject: "",
+      name: 'Documento de factura rectificativa',
+      subject: '',
       html: ``,
     },
 
     36: {
-      name: "Activación Two Factor Auth",
-      subject: "",
+      name: 'Activación Two Factor Auth',
+      subject: '',
       html: ``,
     },
 
     37: {
-      name: "Desactivación Two Factor Auth",
-      subject: "",
+      name: 'Desactivación Two Factor Auth',
+      subject: '',
       html: ``,
     },
 
     38: {
-      name: "Enviar código dispositivo Two Factor Auth",
-      subject: "",
+      name: 'Enviar código dispositivo Two Factor Auth',
+      subject: '',
       html: ``,
     },
 
     39: {
-      name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
-      subject: "",
+      name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
+      subject: '',
       html: ``,
     },
 
     40: {
-      name: "Documento de Devolución",
-      subject: "",
+      name: 'Documento de Devolución',
+      subject: '',
       html: ``,
     },
   }, // end emails

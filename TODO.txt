@@ -36,4 +36,3 @@ Dubtes per a charly:
 
 
 fer detector de plantilla invalida i treure msg per consola
-forçar que en beyond vagi per 10s i no 5

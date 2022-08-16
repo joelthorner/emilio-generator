@@ -85,12 +85,6 @@ $rem-px-only: false !default;
   ::-webkit-scrollbar-track {
     background: $background-color;
   }
-
-  // For Internet Explorer
-  body {
-    scrollbar-face-color: $foreground-color;
-    scrollbar-track-color: $background-color;
-  }
 }
 
 @mixin clearfix() {
