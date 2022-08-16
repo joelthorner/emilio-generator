@@ -664,7 +664,7 @@ export class GenerateScriptComponent implements OnInit {
 
     this.scriptData.data.validEmailsId.forEach((emailId) => {
       const thisEmail = this.langData.emails.templates[emailId];
-      if (type == 'html') {
+      if (type === 'html') {
         arr.push(this.parseEscapedString(thisEmail[type]));
       } else {
         arr.push(thisEmail[type]);
