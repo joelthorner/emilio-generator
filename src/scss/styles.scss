@@ -114,6 +114,11 @@ body.editor-full-screen {
   right: 650px;
   z-index: 10;
   border-radius: 0;
+  transition: none;
+}
+
+.editor-full-screen.preview-collapsed .ace-editor-default.editor-full-screen {
+  right: 0;
 }
 
 .editor-full-screen .col-preview {
