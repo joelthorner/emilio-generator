@@ -1,44 +1,49 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
 
-@import '~compass-mixins/lib/compass/css3';
+@import "~compass-mixins/lib/compass/css3";
 
 @import "styles-variables";
 @import "styles-utils";
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-@import 'component-card';
-@import 'component-modal';
-@import 'component-alert';
+@import "component-card";
+@import "component-modal";
+@import "component-alert";
 
 ::-webkit-scrollbar {
   display: none;
 }
 
 ::-moz-selection {
-  color: #FFF;
+  color: #fff;
   background: $blue-1;
 }
 
 ::selection {
-  color: #FFF;
+  color: #fff;
   background: $blue-1;
 }
 
-:focus, button:focus {
+:focus,
+button:focus {
   outline: none;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
+
 .eg-layout {
   height: calc(100% - #{$navbar-h});
 }
+
 .eg-content {
   height: 100%;
   display: flex;
 }
+
 .eg-sidebar {
   width: $sidebar-w;
   float: left;
@@ -46,17 +51,22 @@ html, body {
 
   .sidebar-collapsed & {
     width: $grid-gutter-width + $sidebar-badge-size + $grid-gutter-width + 10px;
+
     ul > li a {
       justify-content: center;
     }
-    .name , .icon {
+
+    .name,
+    .icon {
       display: none;
     }
+
     .badge {
       margin-right: 0;
     }
   }
 }
+
 .eg-outlet {
   float: left;
   width: calc(100% - #{$sidebar-w});
@@ -66,7 +76,9 @@ html, body {
   // transition: $transition-base;
 
   .sidebar-collapsed & {
-    width: calc(100% - #{$grid-gutter-width + $sidebar-badge-size + $grid-gutter-width});
+    width: calc(
+      100% - #{$grid-gutter-width + $sidebar-badge-size + $grid-gutter-width}
+    );
   }
 }
 
@@ -82,29 +94,46 @@ html, body {
 
 // Editor
 body.editor-full-screen {
-	overflow: hidden;
+  overflow: hidden;
 }
+
 .editor-full-screen .ace-editor-default:not(.editor-full-screen) {
-	opacity: 0;
-	visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
+
 .editor-full-screen .ace-editor-default.editor-full-screen {
-	height: auto !important;
-	width: auto !important;
-	border: 0;
-	margin: 0;
-	position: fixed !important;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
+  height: auto !important;
+  width: auto !important;
+  border: 0;
+  margin: 0;
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 650px;
   z-index: 10;
   border-radius: 0;
 }
 
+.editor-full-screen .col-preview {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+  right: 0 !important;
+  z-index: 11;
+  .card {
+    border-radius: 0;
+  }
+  .card-header {
+    // display: none;
+  }
+}
+
 .badge {
   font-weight: 400;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 10px;
   letter-spacing: 0.2px;
   padding: 0 0.8em;
@@ -116,25 +145,30 @@ body.editor-full-screen {
   margin-bottom: 5px;
 
   &-id {
-    color: #FFF;
+    color: #fff;
     background-color: $blue-1;
   }
-  &-empty, &-deprecated {
-    color: #FFF;
+
+  &-empty,
+  &-deprecated {
+    color: #fff;
     background-color: $danger;
   }
+
   &-noSubject {
-    color: #FFF;
+    color: #fff;
     background-color: $warning;
   }
-  &-customHeader, &-customFooter {
-    color: #FFF;
+
+  &-customHeader,
+  &-customFooter {
+    color: #fff;
     background-color: $info;
   }
 }
 
 .lang-item ::-webkit-scrollbar {
-  width:  4px;
+  width: 4px;
   height: 4px;
 }
 
@@ -149,9 +183,11 @@ body.editor-full-screen {
     a {
       color: $blue-2;
     }
+
     + .breadcrumb-item:before {
       color: #ab7fa5;
     }
+
     &.active {
       color: $pink-1;
     }
@@ -162,8 +198,9 @@ body.editor-full-screen {
   width: 1rem;
   height: 1rem;
 }
+
 .btn-primary svg {
-  fill: #FFF;
+  fill: #fff;
 }
 
 .modal-header {
@@ -171,7 +208,6 @@ body.editor-full-screen {
 }
 
 .preview-collapsed {
-
   .col-preview {
     width: 66px;
     height: 78px;
@@ -179,12 +215,15 @@ body.editor-full-screen {
     .card-body {
       display: none;
     }
+
     .card-header {
       min-height: 78px;
 
-      .text, .subtitle {
+      .text,
+      .subtitle {
         display: none;
       }
+
       .buttons-header {
         .btn:not(.btn-collapse) {
           display: none;
@@ -202,7 +241,7 @@ body.editor-full-screen {
 }
 
 .btn {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
 .ace-xcode .ace_gutter {
