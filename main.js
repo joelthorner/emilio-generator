@@ -7,7 +7,7 @@
 /*! exports provided: name, version, scripts, private, dependencies, devDependencies, default */
 /***/ (function(module) {
 
-module.exports = {"name":"emilio-generator","version":"2.1.13","scripts":{"ng":"ng","start":"ng serve","build":"ng build","test":"ng test","lint":"ng lint","e2e":"ng e2e"},"private":true,"dependencies":{"@angular/animations":"~7.1.0","@angular/common":"~7.1.0","@angular/compiler":"~7.1.0","@angular/core":"~7.1.0","@angular/forms":"~7.1.0","@angular/platform-browser":"~7.1.0","@angular/platform-browser-dynamic":"~7.1.0","@angular/router":"~7.1.0","@ngx-loading-bar/core":"^4.2.0","@ngx-loading-bar/router":"^4.2.0","@octokit/request":"^3.0.1","@octokit/rest":"^16.43.2","@types/jquery":"^3.5.14","ace-builds":"^1.5.0","bootstrap":"^4.6.1","chart.js":"^2.9.4","compass-mixins":"^0.12.11","core-js":"^2.6.12","emailjs":"^2.2.0","emailjs-com":"^2.6.4","file-saver":"^2.0.5","html2canvas":"^1.4.1","jquery":"^3.6.0","jszip":"^3.9.1","moment":"^2.29.3","ng2-ace-editor":"^0.3.9","ng2-charts":"^1.6.0","ngx-markdown":"^7.1.5","node-sass":"4.14.1","npm":"^6.14.17","popper.js":"^1.16.1","rxjs":"~6.3.3","tslib":"^1.14.1","zone.js":"^0.8.29"},"devDependencies":{"@angular-devkit/build-angular":"^0.13.10","@angular/cli":"^7.3.10","@angular/compiler-cli":"^7.2.16","@angular/language-service":"~7.1.0","@types/chrome":"0.0.78","@types/file-saver":"^2.0.5","@types/jasmine":"^2.8.19","@types/jasminewd2":"^2.0.10","@types/node":"^8.10.66","angular-cli-ghpages":"^0.6.2","codelyzer":"~4.5.0","jasmine-core":"~2.99.1","jasmine-spec-reporter":"~4.2.1","karma":"^4.4.1","karma-chrome-launcher":"~2.2.0","karma-coverage-istanbul-reporter":"^2.1.1","karma-jasmine":"~1.1.2","karma-jasmine-html-reporter":"^0.2.2","protractor":"^5.4.4","ts-node":"~7.0.0","tslint":"~5.11.0","typescript":"^3.1.8","webpack-dev-server":"^3.11.3"}};
+module.exports = {"name":"emilio-generator","version":"2.1.14","scripts":{"ng":"ng","start":"ng serve","build":"ng build","test":"ng test","lint":"ng lint","e2e":"ng e2e"},"private":true,"dependencies":{"@angular/animations":"~7.1.0","@angular/common":"~7.1.0","@angular/compiler":"~7.1.0","@angular/core":"~7.1.0","@angular/forms":"~7.1.0","@angular/platform-browser":"~7.1.0","@angular/platform-browser-dynamic":"~7.1.0","@angular/router":"~7.1.0","@ngx-loading-bar/core":"^4.2.0","@ngx-loading-bar/router":"^4.2.0","@octokit/request":"^3.0.1","@octokit/rest":"^16.43.2","@types/jquery":"^3.5.14","ace-builds":"^1.5.0","bootstrap":"^4.6.1","chart.js":"^2.9.4","compass-mixins":"^0.12.11","core-js":"^2.6.12","emailjs":"^2.2.0","emailjs-com":"^2.6.4","file-saver":"^2.0.5","html2canvas":"^1.4.1","jquery":"^3.6.0","jszip":"^3.9.1","moment":"^2.29.3","ng2-ace-editor":"^0.3.9","ng2-charts":"^1.6.0","ngx-markdown":"^7.1.5","node-sass":"4.14.1","npm":"^6.14.17","popper.js":"^1.16.1","rxjs":"~6.3.3","tslib":"^1.14.1","zone.js":"^0.8.29"},"devDependencies":{"@angular-devkit/build-angular":"^0.13.10","@angular/cli":"^7.3.10","@angular/compiler-cli":"^7.2.16","@angular/language-service":"~7.1.0","@types/chrome":"0.0.78","@types/file-saver":"^2.0.5","@types/jasmine":"^2.8.19","@types/jasminewd2":"^2.0.10","@types/node":"^8.10.66","angular-cli-ghpages":"^0.6.2","codelyzer":"~4.5.0","jasmine-core":"~2.99.1","jasmine-spec-reporter":"~4.2.1","karma":"^4.4.1","karma-chrome-launcher":"~2.2.0","karma-coverage-istanbul-reporter":"^2.1.1","karma-jasmine":"~1.1.2","karma-jasmine-html-reporter":"^0.2.2","protractor":"^5.4.4","ts-node":"~7.0.0","tslint":"~5.11.0","typescript":"^3.1.8","webpack-dev-server":"^3.11.3"}};
 
 /***/ }),
 
@@ -1062,12 +1062,13 @@ var AppData = /** @class */ (function () {
     // get a div with iframe content
     AppData.prototype.getHTMLIframeContent = function (langKey) {
         var _a = this.getHTMLPreview(langKey), html = _a.html, filename = _a.filename;
-        var iframeSrc = "<html><head><body class=\"refresh-" + this.previewData.refresh + "\">" + this.previewData.style + html + "</body></html>";
+        var iframeSrc = "\n      <style>\n        .preview-png-cont a { all:revert; }\n        .preview-png-cont table { border-collapse: revert; }\n      </style>\n      " + this.previewData.style + "\n      " + html;
         var div = document.createElement("div");
+        div.classList.add('preview-png-cont');
         div.style.width = document.getElementById("card-iframe-preview").offsetWidth + "px";
         div.style.position = "absolute";
         div.style.top = "0";
-        div.style.zIndex = "-1";
+        div.style.zIndex = "1100";
         div.innerHTML = iframeSrc;
         filename = filename.replace("html", "png");
         return { div: div, filename: filename };
