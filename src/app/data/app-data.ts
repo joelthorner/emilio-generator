@@ -359,9 +359,9 @@ export class AppData {
       "data:text/html;charset=utf-8," +
       encodeURI(
         '<html><head><body class="refresh-' +
-          this.previewData.refresh +
-          '">' +
-          this.previewData.style
+        this.previewData.refresh +
+        '">' +
+        this.previewData.style
       ) +
       encodeURI(html) +
       encodeURI("</body></html>");
@@ -410,15 +410,20 @@ export class AppData {
   public getHTMLIframeContent(langKey: string) {
     let { html, filename } = this.getHTMLPreview(langKey);
 
-    const iframeSrc = `<html><head><body class="refresh-${this.previewData.refresh}">${this.previewData.style}${html}</body></html>`;
+    const iframeSrc = `
+      <style>
+        .preview-png-cont a { all:revert; }
+        .preview-png-cont table { border-collapse: revert; }
+      </style>
+      ${this.previewData.style}
+      ${html}`;
 
     const div = <HTMLElement>document.createElement("div");
-    div.style.width = `${
-      document.getElementById("card-iframe-preview").offsetWidth
-    }px`;
+    div.classList.add('preview-png-cont');
+    div.style.width = `${document.getElementById("card-iframe-preview").offsetWidth}px`;
     div.style.position = "absolute";
     div.style.top = "0";
-    div.style.zIndex = "-1";
+    div.style.zIndex = "1100";
     div.innerHTML = iframeSrc;
     filename = filename.replace("html", "png");
     return { div, filename };

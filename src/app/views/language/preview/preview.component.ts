@@ -25,7 +25,7 @@ export class PreviewComponent implements OnInit {
     public appData: AppData,
     public sanitizer: DomSanitizer,
     private renderer: Renderer2
-  ) {}
+  ) { }
 
   ngOnInit() {
 
@@ -41,7 +41,7 @@ export class PreviewComponent implements OnInit {
     this.appData.setPreviewIframeContent(this.langKey);
 
     // Sorry for this, the next project will build with https://ng-bootstrap.github.io/
-    $(function() {
+    $(function () {
       $('[data-toggle="tooltip"]').tooltip();
     });
   }
@@ -60,20 +60,20 @@ export class PreviewComponent implements OnInit {
 
   downloadHtmlPreview() {
     const jsZip = new JszipService();
-    const {html, filename} = this.appData.getHTMLPreview(this.langKey);
+    const { html, filename } = this.appData.getHTMLPreview(this.langKey);
     jsZip.saveAsHtml(html, filename, 'text/html;charset=utf-8');
   }
 
   downloadImgPreview() {
-    const {div, filename} = this.appData.getHTMLIframeContent(this.langKey);
+    const { div, filename } = this.appData.getHTMLIframeContent(this.langKey);
     document.body.insertBefore(div, document.body.firstChild)
 
     html2canvas(div).then((canvas) => {
       const link = document.createElement('a');
       link.download = filename;
-      link.href = canvas.toDataURL()
+      link.href = canvas.toDataURL();
       link.click();
     })
-    document.body.removeChild(div)
+    document.body.removeChild(div);
   }
 }

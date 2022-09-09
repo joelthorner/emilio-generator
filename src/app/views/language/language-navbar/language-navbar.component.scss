@@ -2,7 +2,7 @@
 @import "styles-utils";
 
 .navbar {
-  background-color: #FFF;
+  background-color: #fff;
   border-bottom: 1px solid $light-border;
   border-left: 1px solid $light-border;
   // margin-left: -$grid-gutter-width;
@@ -14,6 +14,10 @@
 }
 
 .navbar .navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   svg {
     width: 16px;
     height: 16px;
@@ -48,6 +52,12 @@
 
 .search-form {
   position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .ref {
+    position: relative;
+  }
 
   .form-control {
     width: 190px;
@@ -90,7 +100,7 @@
   position: relative;
 
   .icon {
-    fill: #FFF;
+    fill: #fff;
     width: 24px;
     height: 24px;
     position: absolute;
