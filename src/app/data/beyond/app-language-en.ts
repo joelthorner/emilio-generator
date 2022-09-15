@@ -822,7 +822,7 @@ export const LANGUAGE_EN = {
       html: `
 {% set languageSheet = {
   premessage: 'Stock available of product <a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
-  messageHeader: 'Hello ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageHeader: 'Hello ' ~ stockAlert.user.firstName ~ ' ' ~ stockAlert.user.lastName ~ ',',
   messageBody1: "The article that you want so much is already available!",
   messageBody2: "We would like to remind you that this email provides guidance on the availability of this article and depends on many factors (people interested, available units).",
   messageBody3: "We have sent this email to all the customers interested in the article, so it is possible to be exhausted very soon.",
