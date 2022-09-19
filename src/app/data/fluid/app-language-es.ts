@@ -111,8 +111,8 @@ export const LANGUAGE_ES = {
   templates: {
 
     1: {
-      name: 'Bienvenida',
-      subject: 'Gracias por darte de alta en %%ecommerceName%%',
+      name: `Bienvenida`,
+      subject: `Gracias por darte de alta en %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -210,8 +210,8 @@ export const LANGUAGE_ES = {
     }, // end 1
 
     2: {
-      name: 'Baja de usuarios',
-      subject: 'Baja en %%ecommerceName%%',
+      name: `Baja de usuarios`,
+      subject: `Baja en %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -223,8 +223,8 @@ export const LANGUAGE_ES = {
     }, // end 2
 
     3: {
-      name: 'Recordarios de contraseña',
-      subject: 'Recordar contraseña de %%ecommerceName%%',
+      name: `Recordarios de contraseña`,
+      subject: `Recordar contraseña de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -243,8 +243,8 @@ export const LANGUAGE_ES = {
     }, // end 3
 
     4: {
-      name: 'Cambio de contraseña',
-      subject: 'Cambio contraseña de %%ecommerceName%%',
+      name: `Cambio de contraseña`,
+      subject: `Cambio contraseña de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -262,8 +262,8 @@ export const LANGUAGE_ES = {
     }, // end 4
 
     5: {
-      name: 'Registro de newsletter',
-      subject: 'Subscripción a la newsletter en %%ecommerceName%%',
+      name: `Registro de newsletter`,
+      subject: `Subscripción a la newsletter en %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -359,8 +359,8 @@ export const LANGUAGE_ES = {
     }, // end 5
 
     6: {
-      name: 'Recomendación de wishlist',
-      subject: '%%anonymousName%% te recomienda sus productos favoritos de %%ecommerceName%%',
+      name: `Recomendación de wishlist`,
+      subject: `%%anonymousName%% te recomienda sus productos favoritos de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -437,8 +437,8 @@ export const LANGUAGE_ES = {
     }, // end 6
 
     7: {
-      name: 'Recomendación de producto',
-      subject: '%%anonymousName%% te recomienda un producto de %%ecommerceName%%',
+      name: `Recomendación de producto`,
+      subject: `%%anonymousName%% te recomienda un producto de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -512,8 +512,8 @@ export const LANGUAGE_ES = {
     }, // end 7
 
     8: {
-      name: 'Contacto general',
-      subject: 'Formulario de contacto de %%ecommerceName%%',
+      name: `Contacto general`,
+      subject: `Formulario de contacto de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -525,8 +525,8 @@ export const LANGUAGE_ES = {
     }, // end 8
 
     9: {
-      name: 'Consulta de producto',
-      subject: 'Consulta sobre producto de %%ecommerceName%%',
+      name: `Consulta de producto`,
+      subject: `Consulta sobre producto de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -538,8 +538,8 @@ export const LANGUAGE_ES = {
     }, // end 9
 
     10: {
-      name: 'Confirmación de pedido',
-      subject: 'Confirmación de pedido - %%orderNumber%% - %%ecommerceName%%',
+      name: `Confirmación de pedido`,
+      subject: `Confirmación de pedido - %%orderNumber%% - %%ecommerceName%%`,
       html: `
 <style type="text/css">
   ul {
@@ -711,8 +711,8 @@ export const LANGUAGE_ES = {
     }, // end 10
 
     11: {
-      name: 'Baja de newsletter',
-      subject: 'Baja de la newsletter de %%ecommerceName%%',
+      name: `Baja de newsletter`,
+      subject: `Baja de la newsletter de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -724,8 +724,8 @@ export const LANGUAGE_ES = {
     }, // end 11
 
     12: {
-      name: 'Apadrinamiento',
-      subject: 'Tu amigo te quiere apadrinar',
+      name: `Apadrinamiento`,
+      subject: `Tu amigo te quiere apadrinar`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -741,8 +741,8 @@ export const LANGUAGE_ES = {
     }, // end 12
 
     13: {
-      name: 'Apadrinamiento completo',
-      subject: 'Tu apadrinado ha realizado una compra: disfruta de tu descuento.',
+      name: `Apadrinamiento completo`,
+      subject: `Tu apadrinado ha realizado una compra: disfruta de tu descuento.`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -758,8 +758,8 @@ export const LANGUAGE_ES = {
     }, // end 13
 
     14: {
-      name: 'Petición devolución',
-      subject: 'Petición de devolución %%ecommerceName%%',
+      name: `Petición devolución`,
+      subject: `Petición de devolución %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -771,8 +771,8 @@ export const LANGUAGE_ES = {
     }, // end 14
 
     15: {
-      name: 'Pedido incompleto',
-      subject: 'Pedido incompleto de %%ecommerceName%%',
+      name: `Pedido incompleto`,
+      subject: `Pedido incompleto de %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -831,14 +831,14 @@ export const LANGUAGE_ES = {
     }, // end 15
 
     16: {
-      name: 'Notificación transportista',
-      subject: 'Notificación transportista',
+      name: `Notificación transportista`,
+      subject: `Notificación transportista`,
       html: ``
     }, // end 16
 
     17: {
-      name: 'Verificación de correo',
-      subject: 'Verificación de correo - %%ecommerceName%%',
+      name: `Verificación de correo`,
+      subject: `Verificación de correo - %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -855,8 +855,8 @@ export const LANGUAGE_ES = {
     }, // end 17
 
     18: {
-      name: 'Cuenta activada',
-      subject: 'Activación de cuenta - %%ecommerceName%%',
+      name: `Cuenta activada`,
+      subject: `Activación de cuenta - %%ecommerceName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -874,14 +874,14 @@ export const LANGUAGE_ES = {
     }, // end 18
 
     19: {
-      name: 'Aviso a proveedores',
-      subject: '',
+      name: `Aviso a proveedores`,
+      subject: ``,
       html: ``
     }, // end 19
 
     20: {
-      name: 'Stock disponible',
-      subject: 'Stock disponible',
+      name: `Stock disponible`,
+      subject: `Stock disponible`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -898,8 +898,8 @@ export const LANGUAGE_ES = {
     }, // end 20
 
     22: {
-      name: 'Blog - Notificación de Nuevo Artículo',
-      subject: '¡Nuevo artículo en el blog de %ecommerceName%!',
+      name: `Blog - Notificación de Nuevo Artículo`,
+      subject: `¡Nuevo artículo en el blog de %ecommerceName%!`,
       html: `
 <!-- %loop% -->
 <tr>
@@ -931,8 +931,8 @@ export const LANGUAGE_ES = {
     }, // end 22
 
     23: {
-      name: 'Blog - Notificación de Nuevo Comentario',
-      subject: 'Nuevo comentario en %%postName%% - %%blogName%%',
+      name: `Blog - Notificación de Nuevo Comentario`,
+      subject: `Nuevo comentario en %%postName%% - %%blogName%%`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
@@ -959,8 +959,8 @@ export const LANGUAGE_ES = {
     }, // end 23
 
     24: {
-      name: 'Blog - Email de Bienvenida',
-      subject: '¡Bienvenido a %%blogName%%!',
+      name: `Blog - Email de Bienvenida`,
+      subject: `¡Bienvenido a %%blogName%%!`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -977,8 +977,8 @@ export const LANGUAGE_ES = {
     }, // end 24
 
     25: {
-      name: 'Confirmar suscripción de Stock',
-      subject: 'Suscripción de stock',
+      name: `Confirmar suscripción de Stock`,
+      subject: `Suscripción de stock`,
       html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -992,62 +992,62 @@ export const LANGUAGE_ES = {
     }, // end 25
 
     26: {
-      name: 'SocialCurrency - Socialización',
-      subject: '',
+      name: `SocialCurrency - Socialización`,
+      subject: ``,
       html: ``
     }, // end 26
 
     27: {
-      name: 'SocialCurrency - Notificación incentivos',
-      subject: '',
+      name: `SocialCurrency - Notificación incentivos`,
+      subject: ``,
       html: ``
     }, // end 27
 
     32: {
-      name: 'Documento de pedido',
-      subject: '',
+      name: `Documento de pedido`,
+      subject: ``,
       html: ``
     }, // end 32
 
     33: {
-      name: 'Documento de albarán de entrega',
-      subject: '',
+      name: `Documento de albarán de entrega`,
+      subject: ``,
       html: ``
     }, // end 33
 
     34: {
-      name: 'Documento de factura',
-      subject: '',
+      name: `Documento de factura`,
+      subject: ``,
       html: ``
     }, // end 34
 
     35: {
-      name: 'Documento de factura rectificativa',
-      subject: '',
+      name: `Documento de factura rectificativa`,
+      subject: ``,
       html: ``
     }, // end 35
 
     36: {
-      name: 'Activación Two Factor Auth',
-      subject: '',
+      name: `Activación Two Factor Auth`,
+      subject: ``,
       html: ``
     }, // end 36
 
     37: {
-      name: 'Activación Two Factor Auth',
-      subject: '',
+      name: `Activación Two Factor Auth`,
+      subject: ``,
       html: ``
     }, // end 37
 
     38: {
-      name: 'Enviar código dispositivo Two Factor Auth',
-      subject: '',
+      name: `Enviar código dispositivo Two Factor Auth`,
+      subject: ``,
       html: ``
     }, // end 38
 
     39: {
-      name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
-      subject: '',
+      name: `Notificar Bloqueo de Dispositivo Two Factor Auth`,
+      subject: ``,
       html: ``
     }, // end 39
 

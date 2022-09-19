@@ -118,8 +118,8 @@ export const LANGUAGE_CA = {
 
   templates: {
     1: {
-      name: "Bienvenida",
-      subject: "{{ general.ecommerceName }} - Gràcies per donar-te d'alta",
+      name: `Bienvenida`,
+      subject: `{{ general.ecommerceName }} - Gràcies per donar-te d'alta`,
       html: `
 {% set languageSheet = {
   premessage: 'Benvingut/da a ' ~ general.ecommerceName ~ '!',
@@ -144,8 +144,8 @@ export const LANGUAGE_CA = {
     }, // end 1
 
     2: {
-      name: "Baja de usuarios",
-      subject: "{{ general.ecommerceName }} - Baixa d'usuari",
+      name: `Baja de usuarios`,
+      subject: `{{ general.ecommerceName }} - Baixa d'usuari`,
       html: `
 {% set languageSheet = {
   premessage: 'Confirmació de compte eliminat',
@@ -166,8 +166,8 @@ export const LANGUAGE_CA = {
     }, // end 2
 
     3: {
-      name: "Recordarios de contraseña",
-      subject: "{{ general.ecommerceName }} - Recordar contrasenya",
+      name: `Recordarios de contraseña`,
+      subject: `{{ general.ecommerceName }} - Recordar contrasenya`,
       html: `
 {% set languageSheet = {
   premessage: 'Recordar contrasenya',
@@ -194,8 +194,8 @@ export const LANGUAGE_CA = {
     }, // end 3
 
     4: {
-      name: "Cambio de contraseña",
-      subject: "{{ general.ecommerceName }} - Canvi de contrasenya",
+      name: `Cambio de contraseña`,
+      subject: `{{ general.ecommerceName }} - Canvi de contrasenya`,
       html: `
 {% set languageSheet = {
   premessage: 'Canvi de contrasenya',
@@ -220,14 +220,14 @@ export const LANGUAGE_CA = {
     }, // end 4
 
     5: {
-      name: "Registro de newsletter",
-      subject: "",
+      name: `Registro de newsletter`,
+      subject: ``,
       html: ``,
     }, // end 5
 
     6: {
-      name: "Recomendación de wishlist",
-      subject: "{{ general.ecommerceName }} - {{ wishlist.user.name }} et recomana els seus productes favorits",
+      name: `Recomendación de wishlist`,
+      subject: `{{ general.ecommerceName }} - {{ wishlist.user.name }} et recomana els seus productes favorits`,
       html: `
 {% set languageSheet = {
   premessage: 'Recomanació de favorits',
@@ -312,8 +312,8 @@ export const LANGUAGE_CA = {
     }, // end 6
 
     7: {
-      name: "Recomendación de producto",
-      subject: "{{ general.ecommerceName }} - {{ recommend.name }} et recomana un producte",
+      name: `Recomendación de producto`,
+      subject: `{{ general.ecommerceName }} - {{ recommend.name }} et recomana un producte`,
       html: `
 {% set languageSheet = {
   premessage: 'Recomanació de producte',
@@ -392,8 +392,8 @@ export const LANGUAGE_CA = {
     }, // end 7
 
     8: {
-      name: "Contacto general",
-      subject: "{{ general.ecommerceName }} - Formulari de contacte",
+      name: `Contacto general`,
+      subject: `{{ general.ecommerceName }} - Formulari de contacte`,
       html: `
 {% set languageSheet = {
   premessage: 'Formulari de contacte',
@@ -431,8 +431,8 @@ export const LANGUAGE_CA = {
     }, // end 8
 
     9: {
-      name: "Consulta de producto",
-      subject: "{{ general.ecommerceName }} - Consulta sobre producte",
+      name: `Consulta de producto`,
+      subject: `{{ general.ecommerceName }} - Consulta sobre producte`,
       html: `
 {% set languageSheet = {
   premessage: 'Consulta sobre producte',
@@ -474,8 +474,8 @@ export const LANGUAGE_CA = {
     }, // end 9
 
     10: {
-      name: "Confirmación de pedido",
-      subject: "{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Comanda rebuda') : ('Confirmació de comanda') }} {{ sales.documentNumber }}",
+      name: `Confirmación de pedido`,
+      subject: `{{ general.ecommerceName }} - {{ (sales.reserve) ? ('Comanda rebuda') : ('Confirmació de comanda') }} {{ sales.documentNumber }}`,
       html: `
 {% set languageSheet = {
   premessage: 'Confirmació de comanda',
@@ -738,26 +738,26 @@ export const LANGUAGE_CA = {
     },
 
     11: {
-      name: "Baja de newsletter",
-      subject: "",
+      name: `Baja de newsletter`,
+      subject: ``,
       html: ``,
     },
 
     12: {
-      name: "Apadrinamiento",
-      subject: "",
+      name: `Apadrinamiento`,
+      subject: ``,
       html: ``,
     },
 
     13: {
-      name: "Apadrinamiento completo",
-      subject: "",
+      name: `Apadrinamiento completo`,
+      subject: ``,
       html: ``,
     },
 
     14: {
-      name: "Documento de RMA",
-      subject: "{{ general.ecommerceName }} - Petició de devolució",
+      name: `Documento de RMA`,
+      subject: `{{ general.ecommerceName }} - Petició de devolució`,
       html: `
 {% set languageSheet = {
   premessage: 'Informació de la petició de devolució',
@@ -781,8 +781,8 @@ export const LANGUAGE_CA = {
     },
 
     15: {
-      name: "Pedido incompleto",
-      subject: "{{ general.ecommerceName }} - Comanda no completada",
+      name: `Pedido incompleto`,
+      subject: `{{ general.ecommerceName }} - Comanda no completada`,
       html: `
 {% set languageSheet = {
   premessage: "Informació de la comanda no completada",
@@ -805,14 +805,14 @@ export const LANGUAGE_CA = {
     },
 
     16: {
-      name: "Notificación transportista",
-      subject: "",
+      name: `Notificación transportista`,
+      subject: ``,
       html: ``,
     },
 
     17: {
-      name: "Verificación de correo",
-      subject: "{{ general.ecommerceName }} - Verificació de correu",
+      name: `Verificación de correo`,
+      subject: `{{ general.ecommerceName }} - Verificació de correu`,
       html: `
 {% set languageSheet = {
   premessage: "Verificació de correu",
@@ -835,8 +835,8 @@ export const LANGUAGE_CA = {
     },
 
     18: {
-      name: "Cuenta activada",
-      subject: "{{ general.ecommerceName }} - Activació del compte",
+      name: `Cuenta activada`,
+      subject: `{{ general.ecommerceName }} - Activació del compte`,
       html: `
 {% set languageSheet = {
   premessage: 'Activació del compte',
@@ -861,14 +861,14 @@ export const LANGUAGE_CA = {
     },
 
     19: {
-      name: "Aviso a proveedores",
-      subject: "",
+      name: `Aviso a proveedores`,
+      subject: ``,
       html: ``,
     },
 
     20: {
-      name: "Stock disponible",
-      subject: "{{ general.ecommerceName }} - Estoc disponible",
+      name: `Stock disponible`,
+      subject: `{{ general.ecommerceName }} - Estoc disponible`,
       html: `
 {% set languageSheet = {
   premessage: 'Estoc disponible del producte <a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
@@ -893,26 +893,26 @@ export const LANGUAGE_CA = {
     },
 
     22: {
-      name: "Blog - Notificación de Nuevo Artículo",
-      subject: "",
+      name: `Blog - Notificación de Nuevo Artículo`,
+      subject: ``,
       html: ``,
     },
 
     23: {
-      name: "Blog - Notificación de Nuevo Comentario",
-      subject: "",
+      name: `Blog - Notificación de Nuevo Comentario`,
+      subject: ``,
       html: ``,
     },
 
     24: {
-      name: "Blog - Email de Bienvenida",
-      subject: "",
+      name: `Blog - Email de Bienvenida`,
+      subject: ``,
       html: ``,
     },
 
     25: {
-      name: "Confirmar suscripción de Stock",
-      subject: "{{ general.ecommerceName }} - Subscripció de estoc",
+      name: `Confirmar suscripción de Stock`,
+      subject: `{{ general.ecommerceName }} - Subscripció de estoc`,
       html: `
 {% set languageSheet = {
   premessage: 'Subscripció de estoc del producte <br><a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
@@ -980,56 +980,56 @@ export const LANGUAGE_CA = {
     },
 
     32: {
-      name: "Documento de pedido",
-      subject: "",
+      name: `Documento de pedido`,
+      subject: ``,
       html: ``,
     },
 
     33: {
-      name: "Documento de albarán de entrega",
-      subject: "",
+      name: `Documento de albarán de entrega`,
+      subject: ``,
       html: ``,
     },
 
     34: {
-      name: "Documento de factura",
-      subject: "",
+      name: `Documento de factura`,
+      subject: ``,
       html: ``,
     },
 
     35: {
-      name: "Documento de factura rectificativa",
-      subject: "",
+      name: `Documento de factura rectificativa`,
+      subject: ``,
       html: ``,
     },
 
     36: {
-      name: "Activación Two Factor Auth",
-      subject: "",
+      name: `Activación Two Factor Auth`,
+      subject: ``,
       html: ``,
     },
 
     37: {
-      name: "Desactivación Two Factor Auth",
-      subject: "",
+      name: `Desactivación Two Factor Auth`,
+      subject: ``,
       html: ``,
     },
 
     38: {
-      name: "Enviar código dispositivo Two Factor Auth",
-      subject: "",
+      name: `Enviar código dispositivo Two Factor Auth`,
+      subject: ``,
       html: ``,
     },
 
     39: {
-      name: "Notificar Bloqueo de Dispositivo Two Factor Auth",
-      subject: "",
+      name: `Notificar Bloqueo de Dispositivo Two Factor Auth`,
+      subject: ``,
       html: ``,
     },
 
     40: {
-      name: "Documento de Devolución",
-      subject: "",
+      name: `Documento de Devolución`,
+      subject: ``,
       html: ``,
     },
   }, // end emails
