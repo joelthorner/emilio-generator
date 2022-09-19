@@ -113,8 +113,8 @@ export const LANGUAGE_KO = {
   templates: {
 
   1: {
-    name: 'Bienvenida',
-    subject: '%%ecommerceName%% 에 등록해 주셔서 감사합니다',
+    name: `Bienvenida`,
+    subject: `%%ecommerceName%% 에 등록해 주셔서 감사합니다`,
     html: `
 <tr>
   <td style="padding: 0 20px 20px 20px;color: #999;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -208,8 +208,8 @@ export const LANGUAGE_KO = {
   }, // end 1
 
   2: {
-    name: 'Baja de usuarios',
-    subject: '%%ecommerceName%% 계정 취소하기',
+    name: `Baja de usuarios`,
+    subject: `%%ecommerceName%% 계정 취소하기`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -221,8 +221,8 @@ export const LANGUAGE_KO = {
   }, // end 2
 
   3: {
-    name: 'Recordarios de contraseña',
-    subject: '%%ecommerceName%% 의비밀번호를 복구하기 ',
+    name: `Recordarios de contraseña`,
+    subject: `%%ecommerceName%% 의비밀번호를 복구하기 `,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -235,8 +235,8 @@ export const LANGUAGE_KO = {
   }, // end 3
 
   4: {
-    name: 'Cambio de contraseña',
-    subject: '%%ecommerceName%% 의 비밀번호 변경하기',
+    name: `Cambio de contraseña`,
+    subject: `%%ecommerceName%% 의 비밀번호 변경하기`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -248,8 +248,8 @@ export const LANGUAGE_KO = {
   }, // end 4
 
   5: {
-    name: 'Registro de newsletter',
-    subject: '%%ecommerceName%% 을구독하기',
+    name: `Registro de newsletter`,
+    subject: `%%ecommerceName%% 을구독하기`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -342,8 +342,8 @@ export const LANGUAGE_KO = {
   }, // end 5
 
   6: {
-    name: 'Recomendación de wishlist',
-    subject: '%%anonymousName%% 마음에 드는 제품을소장했습니다',
+    name: `Recomendación de wishlist`,
+    subject: `%%anonymousName%% 마음에 드는 제품을소장했습니다`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -418,8 +418,8 @@ export const LANGUAGE_KO = {
   }, // end 6
 
   7: {
-    name: 'Recomendación de producto',
-    subject: '제품 추천',
+    name: `Recomendación de producto`,
+    subject: `제품 추천`,
     html: `
 
 <tr>
@@ -496,8 +496,8 @@ export const LANGUAGE_KO = {
   }, // end 7
 
   8: {
-    name: 'Contacto general',
-    subject: '%%ecommerceName%% 에게서 연락을 왔습니다',
+    name: `Contacto general`,
+    subject: `%%ecommerceName%% 에게서 연락을 왔습니다`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -509,8 +509,8 @@ export const LANGUAGE_KO = {
   }, // end 8
 
   9: {
-    name: 'Consulta de producto',
-    subject: '제품의관련한문제',
+    name: `Consulta de producto`,
+    subject: `제품의관련한문제`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -522,8 +522,8 @@ export const LANGUAGE_KO = {
   }, // end 9
 
   10: {
-    name: 'Confirmación de pedido',
-    subject: '주문을 확인하기',
+    name: `Confirmación de pedido`,
+    subject: `주문을 확인하기`,
     html: `
 <style type="text/css">
   ul {
@@ -699,8 +699,8 @@ export const LANGUAGE_KO = {
   }, // end 10
 
   11: {
-    name: 'Baja de newsletter',
-    subject: '수신 거부한콘텐츠',
+    name: `Baja de newsletter`,
+    subject: `수신 거부한콘텐츠`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -713,8 +713,8 @@ export const LANGUAGE_KO = {
   }, // end 11
 
   12: {
-    name: 'Apadrinamiento',
-    subject: '당신의 친구는 신을  찬조할것입니다 ',
+    name: `Apadrinamiento`,
+    subject: `당신의 친구는 신을  찬조할것입니다 `,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -728,8 +728,8 @@ export const LANGUAGE_KO = {
   }, // end 12
 
   13: {
-    name: 'Apadrinamiento completo',
-    subject: '모집을완성되었습니다',
+    name: `Apadrinamiento completo`,
+    subject: `모집을완성되었습니다`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -743,8 +743,8 @@ export const LANGUAGE_KO = {
   }, // end 13
 
   14: {
-    name: 'Petición devolución',
-    subject: '반품 요청 %%ecommerceName%%',
+    name: `Petición devolución`,
+    subject: `반품 요청 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -756,8 +756,8 @@ export const LANGUAGE_KO = {
   }, // end 14
 
   15: {
-    name: 'Pedido incompleto',
-    subject: '%%ecommerceName%% 상담',
+    name: `Pedido incompleto`,
+    subject: `%%ecommerceName%% 상담`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -820,14 +820,14 @@ export const LANGUAGE_KO = {
   }, // end 15
 
   16: {
-    name: 'Notificación transportista',
-    subject: '',
+    name: `Notificación transportista`,
+    subject: ``,
     html: ``
   }, // end 16
 
   17: {
-    name: 'Verificación de correo',
-    subject: '이메일 확인 - %%ecommerceName%%',
+    name: `Verificación de correo`,
+    subject: `이메일 확인 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -841,8 +841,8 @@ export const LANGUAGE_KO = {
   }, // end 17
 
   18: {
-    name: 'Cuenta activada',
-    subject: '계정 활성화 됨 - %%ecommerceName%%',
+    name: `Cuenta activada`,
+    subject: `계정 활성화 됨 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -857,98 +857,98 @@ export const LANGUAGE_KO = {
   }, // end 18
 
   19: {
-    name: 'Aviso a proveedores',
-    subject: '',
+    name: `Aviso a proveedores`,
+    subject: ``,
     html: ``
   }, // end 19
 
   20: {
-    name: 'Stock disponible',
-    subject: '',
+    name: `Stock disponible`,
+    subject: ``,
     html: ``
   }, // end 20
 
   22: {
-    name: 'Blog - Notificación de Nuevo Artículo',
-    subject: '',
+    name: `Blog - Notificación de Nuevo Artículo`,
+    subject: ``,
     html: ``
   }, // end 22
 
   23: {
-    name: 'Blog - Notificación de Nuevo Comentario',
-    subject: '',
+    name: `Blog - Notificación de Nuevo Comentario`,
+    subject: ``,
     html: ``
   }, // end 23
 
   24: {
-    name: 'Blog - Email de Bienvenida',
-    subject: '',
+    name: `Blog - Email de Bienvenida`,
+    subject: ``,
     html: ``
   }, // end 24
 
   25: {
-    name: 'Confirmar suscripción de Stock',
-    subject: '',
+    name: `Confirmar suscripción de Stock`,
+    subject: ``,
     html: ``
   }, // end 25
 
   26: {
-    name: 'SocialCurrency - Socialización',
-    subject: '',
+    name: `SocialCurrency - Socialización`,
+    subject: ``,
     html: ``
   }, // end 26
 
   27: {
-    name: 'SocialCurrency - Notificación incentivos',
-    subject: '',
+    name: `SocialCurrency - Notificación incentivos`,
+    subject: ``,
     html: ``
   }, // end 27
 
   32: {
-    name: 'Documento de pedido',
-    subject: '',
+    name: `Documento de pedido`,
+    subject: ``,
     html: ``
   }, // end 32
 
   33: {
-    name: 'Documento de albarán de entrega',
-    subject: '',
+    name: `Documento de albarán de entrega`,
+    subject: ``,
     html: ``
   }, // end 33
 
   34: {
-    name: 'Documento de factura',
-    subject: '',
+    name: `Documento de factura`,
+    subject: ``,
     html: ``
   }, // end 34
 
   35: {
-    name: 'Documento de factura rectificativa',
-    subject: '',
+    name: `Documento de factura rectificativa`,
+    subject: ``,
     html: ``
   }, // end 35
 
   36: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 36
 
   37: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 37
 
   38: {
-    name: 'Enviar código dispositivo Two Factor Auth',
-    subject: '',
+    name: `Enviar código dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 38
 
   39: {
-    name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
-    subject: '',
+    name: `Notificar Bloqueo de Dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 39
 

@@ -111,8 +111,8 @@ export const LANGUAGE_CHI = {
   templates: {
 
   1: {
-    name: 'Bienvenida',
-    subject: '欢迎您登陆 %%ecommerceName%%',
+    name: `Bienvenida`,
+    subject: `欢迎您登陆 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -206,8 +206,8 @@ export const LANGUAGE_CHI = {
   }, // end 1
 
   2: {
-    name: 'Baja de usuarios',
-    subject: '注销账户',
+    name: `Baja de usuarios`,
+    subject: `注销账户`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -219,8 +219,8 @@ export const LANGUAGE_CHI = {
   }, // end 2
 
   3: {
-    name: 'Recordarios de contraseña',
-    subject: '恢复密码 %%ecommerceName%%',
+    name: `Recordarios de contraseña`,
+    subject: `恢复密码 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -233,8 +233,8 @@ export const LANGUAGE_CHI = {
   }, // end 3
 
   4: {
-    name: 'Cambio de contraseña',
-    subject: '修改密码 %%ecommerceName%%',
+    name: `Cambio de contraseña`,
+    subject: `修改密码 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -246,8 +246,8 @@ export const LANGUAGE_CHI = {
   }, // end 4
 
   5: {
-    name: 'Registro de newsletter',
-    subject: '%%ecommerceName%% 资讯',
+    name: `Registro de newsletter`,
+    subject: `%%ecommerceName%% 资讯`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -342,8 +342,8 @@ export const LANGUAGE_CHI = {
   }, // end 5
 
   6: {
-    name: 'Recomendación de wishlist',
-    subject: '%%anonymousName%%  收藏了喜欢的产品',
+    name: `Recomendación de wishlist`,
+    subject: `%%anonymousName%%  收藏了喜欢的产品`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -421,8 +421,8 @@ export const LANGUAGE_CHI = {
   }, // end 6
 
   7: {
-    name: 'Recomendación de producto',
-    subject: '产品推荐',
+    name: `Recomendación de producto`,
+    subject: `产品推荐`,
     html: `
 
 <tr>
@@ -501,8 +501,8 @@ export const LANGUAGE_CHI = {
   }, // end 7
 
   8: {
-    name: 'Contacto general',
-    subject: '来自 %%ecommerceName%% 的联系',
+    name: `Contacto general`,
+    subject: `来自 %%ecommerceName%% 的联系`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -514,8 +514,8 @@ export const LANGUAGE_CHI = {
   }, // end 8
 
   9: {
-    name: 'Consulta de producto',
-    subject: '产品的相关问题',
+    name: `Consulta de producto`,
+    subject: `产品的相关问题`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -527,8 +527,8 @@ export const LANGUAGE_CHI = {
   }, // end 9
 
   10: {
-    name: 'Confirmación de pedido',
-    subject: '确认订单',
+    name: `Confirmación de pedido`,
+    subject: `确认订单`,
     html: `
 <style type="text/css">
   ul {
@@ -703,8 +703,8 @@ export const LANGUAGE_CHI = {
   }, // end 10
 
   11: {
-    name: 'Baja de newsletter',
-    subject: '退订资讯',
+    name: `Baja de newsletter`,
+    subject: `退订资讯`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -717,8 +717,8 @@ export const LANGUAGE_CHI = {
   }, // end 11
 
   12: {
-    name: 'Apadrinamiento',
-    subject: '您的好友要赞助你',
+    name: `Apadrinamiento`,
+    subject: `您的好友要赞助你`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -731,8 +731,8 @@ export const LANGUAGE_CHI = {
   }, // end 12
 
   13: {
-    name: 'Apadrinamiento completo',
-    subject: '完成募集',
+    name: `Apadrinamiento completo`,
+    subject: `完成募集`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -744,14 +744,14 @@ export const LANGUAGE_CHI = {
   }, // end 13
 
   14: {
-    name: 'Petición devolución',
-    subject: '',
+    name: `Petición devolución`,
+    subject: ``,
     html: ``
   }, // end 14
 
   15: {
-    name: 'Pedido incompleto',
-    subject: 'Inquiry from %%ecommerceName%%',
+    name: `Pedido incompleto`,
+    subject: `Inquiry from %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -814,14 +814,14 @@ export const LANGUAGE_CHI = {
   }, // end 15
 
   16: {
-    name: 'Notificación transportista',
-    subject: '',
+    name: `Notificación transportista`,
+    subject: ``,
     html: ``
   }, // end 16
 
   17: {
-    name: 'Verificación de correo',
-    subject: 'Email verification - %%ecommerceName%%',
+    name: `Verificación de correo`,
+    subject: `Email verification - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -837,8 +837,8 @@ export const LANGUAGE_CHI = {
   }, // end 17
 
   18: {
-    name: 'Cuenta activada',
-    subject: 'Account activated - %%ecommerceName%%',
+    name: `Cuenta activada`,
+    subject: `Account activated - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -855,98 +855,98 @@ export const LANGUAGE_CHI = {
   }, // end 18
 
   19: {
-    name: 'Aviso a proveedores',
-    subject: '',
+    name: `Aviso a proveedores`,
+    subject: ``,
     html: ``
   }, // end 19
 
   20: {
-    name: 'Stock disponible',
-    subject: '',
+    name: `Stock disponible`,
+    subject: ``,
     html: ``
   }, // end 20
 
   22: {
-    name: 'Blog - Notificación de Nuevo Artículo',
-    subject: '',
+    name: `Blog - Notificación de Nuevo Artículo`,
+    subject: ``,
     html: ``
   }, // end 22
 
   23: {
-    name: 'Blog - Notificación de Nuevo Comentario',
-    subject: '',
+    name: `Blog - Notificación de Nuevo Comentario`,
+    subject: ``,
     html: ``
   }, // end 23
 
   24: {
-    name: 'Blog - Email de Bienvenida',
-    subject: '',
+    name: `Blog - Email de Bienvenida`,
+    subject: ``,
     html: ``
   }, // end 24
 
   25: {
-    name: 'Confirmar suscripción de Stock',
-    subject: '',
+    name: `Confirmar suscripción de Stock`,
+    subject: ``,
     html: ``
   }, // end 25
 
   26: {
-    name: 'SocialCurrency - Socialización',
-    subject: '',
+    name: `SocialCurrency - Socialización`,
+    subject: ``,
     html: ``
   }, // end 26
 
   27: {
-    name: 'SocialCurrency - Notificación incentivos',
-    subject: '',
+    name: `SocialCurrency - Notificación incentivos`,
+    subject: ``,
     html: ``
   }, // end 27
 
   32: {
-    name: 'Documento de pedido',
-    subject: '',
+    name: `Documento de pedido`,
+    subject: ``,
     html: ``
   }, // end 32
 
   33: {
-    name: 'Documento de albarán de entrega',
-    subject: '',
+    name: `Documento de albarán de entrega`,
+    subject: ``,
     html: ``
   }, // end 33
 
   34: {
-    name: 'Documento de factura',
-    subject: '',
+    name: `Documento de factura`,
+    subject: ``,
     html: ``
   }, // end 34
 
   35: {
-    name: 'Documento de factura rectificativa',
-    subject: '',
+    name: `Documento de factura rectificativa`,
+    subject: ``,
     html: ``
   }, // end 35
 
   36: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 36
 
   37: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 37
 
   38: {
-    name: 'Enviar código dispositivo Two Factor Auth',
-    subject: '',
+    name: `Enviar código dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 38
 
   39: {
-    name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
-    subject: '',
+    name: `Notificar Bloqueo de Dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 39
 

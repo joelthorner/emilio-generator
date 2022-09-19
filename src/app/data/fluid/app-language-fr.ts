@@ -111,8 +111,8 @@ export const LANGUAGE_FR = {
   templates: {
 
   1: {
-    name: 'Bienvenida',
-    subject: 'Bienvenue a %%ecommerceName%%',
+    name: `Bienvenida`,
+    subject: `Bienvenue a %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -212,8 +212,8 @@ export const LANGUAGE_FR = {
   }, // end 1
 
   2: {
-    name: 'Baja de usuarios',
-    subject: 'Annulation de compte %%ecommerceName%%',
+    name: `Baja de usuarios`,
+    subject: `Annulation de compte %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -229,8 +229,8 @@ export const LANGUAGE_FR = {
   }, // end 2
 
   3: {
-    name: 'Recordarios de contraseña',
-    subject: 'Rappel de mot de passe de %%ecommerceName%%',
+    name: `Recordarios de contraseña`,
+    subject: `Rappel de mot de passe de %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -250,8 +250,8 @@ export const LANGUAGE_FR = {
   }, // end 3
 
   4: {
-    name: 'Cambio de contraseña',
-    subject: 'Changement de mot de passe - %%ecommerceName%%',
+    name: `Cambio de contraseña`,
+    subject: `Changement de mot de passe - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -266,8 +266,8 @@ export const LANGUAGE_FR = {
   }, // end 4
 
   5: {
-    name: 'Registro de newsletter',
-    subject: 'Newsletter - %%ecommerceName%%',
+    name: `Registro de newsletter`,
+    subject: `Newsletter - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -362,8 +362,8 @@ export const LANGUAGE_FR = {
   }, // end 5
 
   6: {
-    name: 'Recomendación de wishlist',
-    subject: '%%anonymousName%% vous recommande les produits de %%ecommerceName%%',
+    name: `Recomendación de wishlist`,
+    subject: `%%anonymousName%% vous recommande les produits de %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -441,8 +441,8 @@ export const LANGUAGE_FR = {
   }, // end 6
 
   7: {
-    name: 'Recomendación de producto',
-    subject: '%%anonymousName%% vous recommande ce produit de %%ecommerceName%%',
+    name: `Recomendación de producto`,
+    subject: `%%anonymousName%% vous recommande ce produit de %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -509,8 +509,8 @@ export const LANGUAGE_FR = {
   }, // end 7
 
   8: {
-    name: 'Contacto general',
-    subject: 'Contacte general de %%ecommerceName%%',
+    name: `Contacto general`,
+    subject: `Contacte general de %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -526,8 +526,8 @@ export const LANGUAGE_FR = {
   }, // end 8
 
   9: {
-    name: 'Consulta de producto',
-    subject: 'Question sur un article de %%ecommerceName%%',
+    name: `Consulta de producto`,
+    subject: `Question sur un article de %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -548,8 +548,8 @@ export const LANGUAGE_FR = {
   }, // end 9
 
   10: {
-    name: 'Confirmación de pedido',
-    subject: 'Confirmation de commande - %%ecommerceName%%',
+    name: `Confirmación de pedido`,
+    subject: `Confirmation de commande - %%ecommerceName%%`,
     html: `
 <style type="text/css">
   ul {
@@ -722,8 +722,8 @@ export const LANGUAGE_FR = {
   }, // end 10
 
   11: {
-    name: 'Baja de newsletter',
-    subject: 'Annulation newsletter - %%ecommerceName%%',
+    name: `Baja de newsletter`,
+    subject: `Annulation newsletter - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -740,8 +740,8 @@ export const LANGUAGE_FR = {
   }, // end 11
 
   12: {
-    name: 'Apadrinamiento',
-    subject: 'Vous ami veut vous parrainez',
+    name: `Apadrinamiento`,
+    subject: `Vous ami veut vous parrainez`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -757,8 +757,8 @@ export const LANGUAGE_FR = {
   }, // end 12
 
   13: {
-    name: 'Apadrinamiento completo',
-    subject: 'Votre mentor ont fait un achat: profiter de votre remise.',
+    name: `Apadrinamiento completo`,
+    subject: `Votre mentor ont fait un achat: profiter de votre remise.`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -775,8 +775,8 @@ export const LANGUAGE_FR = {
   }, // end 13
 
   14: {
-    name: 'Petición devolución',
-    subject: 'Demande de retour %%ecommerceName%%',
+    name: `Petición devolución`,
+    subject: `Demande de retour %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -788,8 +788,8 @@ export const LANGUAGE_FR = {
   }, // end 14
 
   15: {
-    name: 'Pedido incompleto',
-    subject: 'Demande incomplète %%ecommerceName%%',
+    name: `Pedido incompleto`,
+    subject: `Demande incomplète %%ecommerceName%%`,
     html: `
     <tr>
       <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -847,14 +847,14 @@ export const LANGUAGE_FR = {
   }, // end 15
 
   16: {
-    name: 'Notificación transportista',
-    subject: 'Notification du transporteur',
+    name: `Notificación transportista`,
+    subject: `Notification du transporteur`,
     html: ``
   }, // end 16
 
   17: {
-    name: 'Verificación de correo',
-    subject: 'Vérification e-mail - %%ecommerceName%%',
+    name: `Verificación de correo`,
+    subject: `Vérification e-mail - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -871,8 +871,8 @@ export const LANGUAGE_FR = {
   }, // end 17
 
   18: {
-    name: 'Cuenta activada',
-    subject: 'Activation du compte - %%ecommerceName%%',
+    name: `Cuenta activada`,
+    subject: `Activation du compte - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -890,14 +890,14 @@ export const LANGUAGE_FR = {
   }, // end 18
 
   19: {
-    name: 'Aviso a proveedores',
-    subject: '',
+    name: `Aviso a proveedores`,
+    subject: ``,
     html: ``
   }, // end 19
 
   20: {
-    name: 'Stock disponible',
-    subject: 'Stock disponible',
+    name: `Stock disponible`,
+    subject: `Stock disponible`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -918,8 +918,8 @@ export const LANGUAGE_FR = {
   }, // end 20
 
   22: {
-    name: 'Blog - Notificación de Nuevo Artículo',
-    subject: 'Nouvel article sur le blog de %%ecommerceName%%!',
+    name: `Blog - Notificación de Nuevo Artículo`,
+    subject: `Nouvel article sur le blog de %%ecommerceName%%!`,
     html: `
 <!-- %loop% -->
 <tr>
@@ -951,8 +951,8 @@ export const LANGUAGE_FR = {
   }, // end 22
 
   23: {
-    name: 'Blog - Notificación de Nuevo Comentario',
-    subject: 'Nouveau commentaire sur %%postName%% - %%blogName%%',
+    name: `Blog - Notificación de Nuevo Comentario`,
+    subject: `Nouveau commentaire sur %%postName%% - %%blogName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
@@ -981,8 +981,8 @@ export const LANGUAGE_FR = {
   }, // end 23
 
   24: {
-    name: 'Blog - Email de Bienvenida',
-    subject: 'Bienvenue a %%blogName%%!',
+    name: `Blog - Email de Bienvenida`,
+    subject: `Bienvenue a %%blogName%%!`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -999,8 +999,8 @@ export const LANGUAGE_FR = {
   }, // end 24
 
   25: {
-    name: 'Confirmar suscripción de Stock',
-    subject: 'Abonnement de stock',
+    name: `Confirmar suscripción de Stock`,
+    subject: `Abonnement de stock`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -1014,62 +1014,62 @@ export const LANGUAGE_FR = {
   }, // end 25
 
   26: {
-    name: 'SocialCurrency - Socialización',
-    subject: '',
+    name: `SocialCurrency - Socialización`,
+    subject: ``,
     html: ``
   }, // end 26
 
   27: {
-    name: 'SocialCurrency - Notificación incentivos',
-    subject: '',
+    name: `SocialCurrency - Notificación incentivos`,
+    subject: ``,
     html: ``
   }, // end 27
 
   32: {
-    name: 'Documento de pedido',
-    subject: '',
+    name: `Documento de pedido`,
+    subject: ``,
     html: ``
   }, // end 32
 
   33: {
-    name: 'Documento de albarán de entrega',
-    subject: '',
+    name: `Documento de albarán de entrega`,
+    subject: ``,
     html: ``
   }, // end 33
 
   34: {
-    name: 'Documento de factura',
-    subject: '',
+    name: `Documento de factura`,
+    subject: ``,
     html: ``
   }, // end 34
 
   35: {
-    name: 'Documento de factura rectificativa',
-    subject: '',
+    name: `Documento de factura rectificativa`,
+    subject: ``,
     html: ``
   }, // end 35
 
   36: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 36
 
   37: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 37
 
   38: {
-    name: 'Enviar código dispositivo Two Factor Auth',
-    subject: '',
+    name: `Enviar código dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 38
 
   39: {
-    name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
-    subject: '',
+    name: `Notificar Bloqueo de Dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 39
 

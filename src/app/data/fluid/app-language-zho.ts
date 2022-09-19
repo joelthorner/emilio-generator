@@ -115,8 +115,8 @@ export const LANGUAGE_ZHO = {
   templates: {
 
   1: {
-    name: 'Bienvenida',
-    subject: 'Thank you for signup to %%ecommerceName%%',
+    name: `Bienvenida`,
+    subject: `Thank you for signup to %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -218,8 +218,8 @@ export const LANGUAGE_ZHO = {
   }, // end 1
 
   2: {
-    name: 'Baja de usuarios',
-    subject: 'Unsubscribe - %%ecommerceName%%',
+    name: `Baja de usuarios`,
+    subject: `Unsubscribe - %%ecommerceName%%`,
     html: `
 <tr>
   <td class="innerpadding bodycopy borderbottom" style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -231,8 +231,8 @@ export const LANGUAGE_ZHO = {
   }, // end 2
 
   3: {
-    name: 'Recordarios de contraseña',
-    subject: '恢复密码 - %%ecommerceName%%',
+    name: `Recordarios de contraseña`,
+    subject: `恢复密码 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -246,8 +246,8 @@ export const LANGUAGE_ZHO = {
   }, // end 3
 
   4: {
-    name: 'Cambio de contraseña',
-    subject: 'Change password on %%ecommerceName%%',
+    name: `Cambio de contraseña`,
+    subject: `Change password on %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -259,8 +259,8 @@ export const LANGUAGE_ZHO = {
   }, // end 4
 
   5: {
-    name: 'Registro de newsletter',
-    subject: '%%ecommerceName%% 資訊',
+    name: `Registro de newsletter`,
+    subject: `%%ecommerceName%% 資訊`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -355,8 +355,8 @@ export const LANGUAGE_ZHO = {
   }, // end 5
 
   6: {
-    name: 'Recomendación de wishlist',
-    subject: '%%anonymousName%% 收藏了喜欢的产品',
+    name: `Recomendación de wishlist`,
+    subject: `%%anonymousName%% 收藏了喜欢的产品`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -434,8 +434,8 @@ export const LANGUAGE_ZHO = {
   }, // end 6
 
   7: {
-    name: 'Recomendación de producto',
-    subject: '%%anonymousName%% 产品推荐',
+    name: `Recomendación de producto`,
+    subject: `%%anonymousName%% 产品推荐`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -513,8 +513,8 @@ export const LANGUAGE_ZHO = {
   }, // end 7
 
   8: {
-    name: 'Contacto general',
-    subject: '来自 %%ecommerceName%% 的联系',
+    name: `Contacto general`,
+    subject: `来自 %%ecommerceName%% 的联系`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -526,8 +526,8 @@ export const LANGUAGE_ZHO = {
   }, // end 8
 
   9: {
-    name: 'Consulta de producto',
-    subject: '产品的相关问题 %%ecommerceName%%',
+    name: `Consulta de producto`,
+    subject: `产品的相关问题 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -539,8 +539,8 @@ export const LANGUAGE_ZHO = {
   }, // end 9
 
   10: {
-    name: 'Confirmación de pedido',
-    subject: '訂單確認 - %%orderNumber%% - %%ecommerceName%%',
+    name: `Confirmación de pedido`,
+    subject: `訂單確認 - %%orderNumber%% - %%ecommerceName%%`,
     html: `
 <style type="text/css">
   ul {
@@ -715,8 +715,8 @@ export const LANGUAGE_ZHO = {
   }, // end 10
 
   11: {
-    name: 'Baja de newsletter',
-    subject: '退订资讯 - %%ecommerceName%%',
+    name: `Baja de newsletter`,
+    subject: `退订资讯 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -728,8 +728,8 @@ export const LANGUAGE_ZHO = {
   }, // end 11
 
   12: {
-    name: 'Apadrinamiento',
-    subject: '您的好友要赞助你',
+    name: `Apadrinamiento`,
+    subject: `您的好友要赞助你`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -742,8 +742,8 @@ export const LANGUAGE_ZHO = {
   }, // end 12
 
   13: {
-    name: 'Apadrinamiento completo',
-    subject: '完成募集',
+    name: `Apadrinamiento completo`,
+    subject: `完成募集`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -755,8 +755,8 @@ export const LANGUAGE_ZHO = {
   }, // end 13
 
   14: {
-    name: 'Petición devolución',
-    subject: '退貨請求 %%ecommerceName%%',
+    name: `Petición devolución`,
+    subject: `退貨請求 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -768,8 +768,8 @@ export const LANGUAGE_ZHO = {
   }, // end 14
 
   15: {
-    name: 'Pedido incompleto',
-    subject: '來自的詢問 %%ecommerceName%%',
+    name: `Pedido incompleto`,
+    subject: `來自的詢問 %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, Helvetica, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -832,8 +832,8 @@ export const LANGUAGE_ZHO = {
   }, // end 15
 
   16: {
-    name: 'Notificación transportista',
-    subject: '送貨公告 - %%ecommerceName%%',
+    name: `Notificación transportista`,
+    subject: `送貨公告 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -845,8 +845,8 @@ export const LANGUAGE_ZHO = {
   }, // end 16
 
   17: {
-    name: 'Verificación de correo',
-    subject: '電子郵件驗證 - %%ecommerceName%%',
+    name: `Verificación de correo`,
+    subject: `電子郵件驗證 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -858,8 +858,8 @@ export const LANGUAGE_ZHO = {
   }, // end 17
 
   18: {
-    name: 'Cuenta activada',
-    subject: '帳戶已激活 - %%ecommerceName%%',
+    name: `Cuenta activada`,
+    subject: `帳戶已激活 - %%ecommerceName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -873,14 +873,14 @@ export const LANGUAGE_ZHO = {
   }, // end 18
 
   19: {
-    name: 'Aviso a proveedores',
-    subject: '',
+    name: `Aviso a proveedores`,
+    subject: ``,
     html: ``
   }, // end 19
 
   20: {
-    name: 'Stock disponible',
-    subject: '現貨供應',
+    name: `Stock disponible`,
+    subject: `現貨供應`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -893,8 +893,8 @@ export const LANGUAGE_ZHO = {
   }, // end 20
 
   22: {
-    name: 'Blog - Notificación de Nuevo Artículo',
-    subject: '新帖子 %ecommerceName% blog!',
+    name: `Blog - Notificación de Nuevo Artículo`,
+    subject: `新帖子 %ecommerceName% blog!`,
     html: `
 <!-- %loop% -->
 <tr>
@@ -927,8 +927,8 @@ export const LANGUAGE_ZHO = {
   }, // end 22
 
   23: {
-    name: 'Blog - Notificación de Nuevo Comentario',
-    subject: '新評論 %%postName%% - %%blogName%%',
+    name: `Blog - Notificación de Nuevo Comentario`,
+    subject: `新評論 %%postName%% - %%blogName%%`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 15px;line-height: 20px;text-align:center;">
@@ -957,8 +957,8 @@ export const LANGUAGE_ZHO = {
   }, // end 23
 
   24: {
-    name: 'Blog - Email de Bienvenida',
-    subject: '歡迎來到 %%blogName%%!',
+    name: `Blog - Email de Bienvenida`,
+    subject: `歡迎來到 %%blogName%%!`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -970,8 +970,8 @@ export const LANGUAGE_ZHO = {
   }, // end 24
 
   25: {
-    name: 'Confirmar suscripción de Stock',
-    subject: '認購股票',
+    name: `Confirmar suscripción de Stock`,
+    subject: `認購股票`,
     html: `
 <tr>
   <td style="padding: 20px 20px 20px 20px;color: #000;font-family: Arial, sans-serif;font-size: 18px;line-height: 20px;text-align:center;">
@@ -985,62 +985,62 @@ export const LANGUAGE_ZHO = {
   }, // end 25
 
   26: {
-    name: 'SocialCurrency - Socialización',
-    subject: '',
+    name: `SocialCurrency - Socialización`,
+    subject: ``,
     html: ``
   }, // end 26
 
   27: {
-    name: 'SocialCurrency - Notificación incentivos',
-    subject: '',
+    name: `SocialCurrency - Notificación incentivos`,
+    subject: ``,
     html: ``
   }, // end 27
 
   32: {
-    name: 'Documento de pedido',
-    subject: '',
+    name: `Documento de pedido`,
+    subject: ``,
     html: ``
   }, // end 32
 
   33: {
-    name: 'Documento de albarán de entrega',
-    subject: '',
+    name: `Documento de albarán de entrega`,
+    subject: ``,
     html: ``
   }, // end 33
 
   34: {
-    name: 'Documento de factura',
-    subject: '',
+    name: `Documento de factura`,
+    subject: ``,
     html: ``
   }, // end 34
 
   35: {
-    name: 'Documento de factura rectificativa',
-    subject: '',
+    name: `Documento de factura rectificativa`,
+    subject: ``,
     html: ``
   }, // end 35
 
   36: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 36
 
   37: {
-    name: 'Activación Two Factor Auth',
-    subject: '',
+    name: `Activación Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 37
 
   38: {
-    name: 'Enviar código dispositivo Two Factor Auth',
-    subject: '',
+    name: `Enviar código dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 38
 
   39: {
-    name: 'Notificar Bloqueo de Dispositivo Two Factor Auth',
-    subject: '',
+    name: `Notificar Bloqueo de Dispositivo Two Factor Auth`,
+    subject: ``,
     html: ``
   }, // end 39
 
