@@ -897,7 +897,7 @@ export const LANGUAGE_IT = {
       html: `
 {% set languageSheet = {
   premessage: 'Iscrizione all\\'avviso di disponibilit&agrave; del prodotto <br><a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
-  messageHeader: 'Ciao ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageHeader: 'Ciao ' ~ stockAlert.user.firstName ~ ' ' ~ stockAlert.user.lastName ~ ',',
   messageBody1: "Ti sei iscritto agli avvisi di disponibilit&agrave; del " ~ stockAlert.product.name,
   messageBody2: "Nel caso in cui questo articolo fosse nuovamente disponibile ti avviseremo immediatamente per fare in modo che non ti sfugga.",
   messageSignature: 'Cordiali saluti, il team di ' ~ general.ecommerceName

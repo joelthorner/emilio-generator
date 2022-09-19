@@ -916,7 +916,7 @@ export const LANGUAGE_PT = {
       html: `
 {% set languageSheet = {
   premessage: 'Assinatura de estoque de produtos <br><a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
-  messageHeader: 'Olá ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageHeader: 'Olá ' ~ stockAlert.user.firstName ~ ' ' ~ stockAlert.user.lastName ~ ',',
   messageBody1: "Você se inscreveu nos anúncios de ações da " ~ stockAlert.product.name,
   messageBody2: "Caso recebamos este artigo novamente iremos notificá-lo imediatamente para que ele não escape.",
   product: 'Produto',

@@ -916,7 +916,7 @@ export const LANGUAGE_FR = {
       html: `
 {% set languageSheet = {
   premessage: 'Abonnement au stock de produits <br><a href="' ~ stockAlert.product.productLink ~ '" style="color: #000;">' ~ stockAlert.product.name ~ '</a>',
-  messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
+  messageHeader: 'Bonjour ' ~ stockAlert.user.firstName ~ ' ' ~ stockAlert.user.lastName ~ ',',
   messageBody1: "Vous vous êtes abonné aux alertes boursières de " ~ stockAlert.product.name,
   messageBody2: "Si nous recevons à nouveau cet article, nous vous en informerons immédiatement afin que vous ne le manquiez pas.",
   product: 'Produit',
