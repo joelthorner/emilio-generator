@@ -29,7 +29,7 @@ export const LANGUAGE_RU = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Для получения дополнительной информации ознакомьтесь с нашей <a href="' ~ general.privacyPolicyLink ~ '">политикой конфиденциальности</a> и <a href="' ~ general.termsOfUseLink ~ '">условиями пользования</a>'
+  moreInfo: 'Для получения дополнительной информации ознакомьтесь с нашей <a href="{{privacyPolicyLink}}">политикой конфиденциальности</a> и <a href="{{termsOfUseLink}}">условиями пользования</a>'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -94,7 +94,7 @@ export const LANGUAGE_RU = {
               {% endif %}
               <tr>
                 <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
-                  {{ languageSheet.moreInfo }}
+                  {{ replace(languageSheet.moreInfo, { '{{privacyPolicyLink}}': general.privacyPolicyLink, '{{termsOfUseLink}}': general.termsOfUseLink }) }}
                 </td>
               </tr>
             </table>
@@ -940,7 +940,7 @@ export const LANGUAGE_RU = {
       footer: {
         html: `
 {% set languageSheet = {
-  moreInfo: 'Для получения дополнительной информации ознакомьтесь с нашей <a href="' ~ general.privacyPolicyLink ~ '">политикой конфиденциальности</a> и <a href="' ~ general.termsOfUseLink ~ '">условиями пользования</a>',
+  moreInfo: 'Для получения дополнительной информации ознакомьтесь с нашей <a href="{{privacyPolicyLink}}">политикой конфиденциальности</a> и <a href="{{termsOfUseLink}}">условиями пользования</a>',
   unsubscribe: 'Отписаться от блога'
 } %}
         <tr>
@@ -1006,7 +1006,7 @@ export const LANGUAGE_RU = {
               {% endif %}
               <tr>
                 <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
-                  {{ languageSheet.moreInfo }}
+                  {{ replace(languageSheet.moreInfo, { '{{privacyPolicyLink}}': general.privacyPolicyLink, '{{termsOfUseLink}}': general.termsOfUseLink }) }}
                 </td>
               </tr>
             </table>

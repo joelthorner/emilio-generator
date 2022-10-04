@@ -29,7 +29,7 @@ export const LANGUAGE_ES = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Para obtener más información, lea nuestra <a href="' ~ general.privacyPolicyLink ~ '">política de privacidad</a> y <a href="' ~ general.termsOfUseLink ~ '">términos de uso</a>.'
+  moreInfo: 'Para obtener más información, lea nuestra <a href="{{privacyPolicyLink}}">política de privacidad</a> y <a href="{{termsOfUseLink}}">términos de uso</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -94,7 +94,7 @@ export const LANGUAGE_ES = {
               {% endif %}
               <tr>
                 <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
-                  {{ languageSheet.moreInfo }}
+                  {{ replace(languageSheet.moreInfo, { '{{privacyPolicyLink}}': general.privacyPolicyLink, '{{termsOfUseLink}}': general.termsOfUseLink }) }}
                 </td>
               </tr>
             </table>
@@ -939,7 +939,7 @@ export const LANGUAGE_ES = {
       footer: {
         html: `
 {% set languageSheet = {
-  moreInfo: 'Para obtener más información, lea nuestra <a href="' ~ general.privacyPolicyLink ~ '">política de privacidad</a> y <a href="' ~ general.termsOfUseLink ~ '">términos de uso</a>.',
+  moreInfo: 'Para obtener más información, lea nuestra <a href="{{privacyPolicyLink}}">política de privacidad</a> y <a href="{{termsOfUseLink}}">términos de uso</a>.',
   unsubscribe: 'Darse de baja de la suscripción del Blog'
 } %}
         <tr>
@@ -1005,7 +1005,7 @@ export const LANGUAGE_ES = {
               {% endif %}
               <tr>
                 <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
-                  {{ languageSheet.moreInfo }}
+                  {{ replace(languageSheet.moreInfo, { '{{privacyPolicyLink}}': general.privacyPolicyLink, '{{termsOfUseLink}}': general.termsOfUseLink }) }}
                 </td>
               </tr>
             </table>

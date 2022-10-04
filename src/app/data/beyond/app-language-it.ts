@@ -29,7 +29,7 @@ export const LANGUAGE_IT = {
   footer: {
     html: `
 {% set languageSheet = {
-  moreInfo: 'Per ulteriori informazioni, si prega di leggere la nostra <a href="' ~ general.privacyPolicyLink ~ '">informativa sulla privacy</a> y <a href="' ~ general.termsOfUseLink ~ '">condizioni d\\'uso</a>.'
+  moreInfo: 'Per ulteriori informazioni, si prega di leggere la nostra <a href="{{privacyPolicyLink}}">informativa sulla privacy</a> y <a href="{{termsOfUseLink}}">condizioni d\\'uso</a>.'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -94,7 +94,7 @@ export const LANGUAGE_IT = {
               {% endif %}
               <tr>
                 <td align="center" heigth="50" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #999; height: 20px;">
-                  {{ languageSheet.moreInfo }}
+                  {{ replace(languageSheet.moreInfo, { '{{privacyPolicyLink}}': general.privacyPolicyLink, '{{termsOfUseLink}}': general.termsOfUseLink }) }}
                 </td>
               </tr>
             </table>
