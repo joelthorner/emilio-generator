@@ -499,7 +499,7 @@ export const LANGUAGE_CA = {
   total: 'Total:',
   comment: 'Comentaris:',
   pickup: 'Heu triat el lliurament a la botiga',
-  pickupMessage: 'Us notificarem per correu quan la vostra comanda estigui disponible per recollir -la.',
+  pickupMessage: 'Us notificarem per correu quan la vostra comanda estigui disponible per recollir-la.',
   rewardPoints: 'El total de {{name}} que obtindrà per la seva pròxima compra és de {{value}}'
 } %}
 <tr>
