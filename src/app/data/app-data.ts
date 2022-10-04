@@ -460,8 +460,14 @@ export class AppData {
     // Twig languageSheets
     let beyondLanguageSheets = this.getBeyondLanguageSheets(html);
     Object.keys(beyondLanguageSheets).forEach(function (key) {
+      // Default key print
       html = html.replace(
         new RegExp("\\{\\{\\s?languageSheet\\." + key + "\\s?\\}\\}", "g"),
+        beyondLanguageSheets[key]
+      );
+      // Key print with function replace
+      html = html.replace(
+        new RegExp('\\{{2}\\s?replace\\(languageSheet\\.' + key + ',\\s?\\{(\\s?[\'"]\\{{2}[a-zA-Z]+\\}{2}[\'"]\\s?:\\s?[a-zA-Z0-9\\.]+\\s?\\,?)+\\s?\\}\\)\\s?\\}{2}', "g"),
         beyondLanguageSheets[key]
       );
     });
