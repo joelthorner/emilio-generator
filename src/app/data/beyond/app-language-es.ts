@@ -726,7 +726,7 @@ export const LANGUAGE_ES = {
                 <strong>{{ languageSheet.comment }}</strong><br>{{ sales.comment }}<br><br>
               </p>
             {% endif %}
-            {% if document.rewardPoints|length %}
+            {% if sales.rewardPoints|length %}
               {% for rewardPoint in sales.rewardPoints %}
                 <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
                   <strong>{{ rewardPoint.language.name }}</strong><br>
