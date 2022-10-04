@@ -499,7 +499,8 @@ export const LANGUAGE_RU = {
   total: 'Итого:',
   comment: 'Комментарии:',
   pickup: 'Вы выбрали получение заказа в магазине',
-  pickupMessage: 'Мы оповестим Вас по электронной почте, когда заказ будет готов к получению.'
+  pickupMessage: 'Мы оповестим Вас по электронной почте, когда заказ будет готов к получению.',
+  rewardPoints: 'Общая сумма {{name}}, которую вы получите за следующую покупку, составляет {{value}}.'
 } %}
 <tr>
   <td style="vertical-align: middle;font-family: sans-serif; padding: 20px" align="center">
@@ -712,7 +713,6 @@ export const LANGUAGE_RU = {
     </tr>
   {% endif %}
 {% endif %}
-
 <tr><td>&nbsp;</td></tr>
 <tr>
   <td>
@@ -724,6 +724,16 @@ export const LANGUAGE_RU = {
               <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
                 <strong>{{ languageSheet.comment }}</strong><br>{{ sales.comment }}<br><br>
               </p>
+            {% endif %}
+            {% if sales.rewardPoints|length %}
+              {% for rewardPoint in sales.rewardPoints %}
+                <div style="padding: 10px 12px;border: 1px solid #dee2e6;">
+                  <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
+                    <strong>{{ rewardPoint.language.name }}</strong><br>
+                    {{ replace(languageSheet.rewardPoints, { '{{name}}': rewardPoint.language.name, '{{value}}': rewardPoint.summary.totalEarned }) }}<br><br>
+                  </p>
+                </div>
+              {% endfor %}
             {% endif %}
             <div style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
               {{ languageSheet.messageBody2 }}<br>{{ languageSheet.messageSignature }}
