@@ -499,7 +499,8 @@ export const LANGUAGE_CA = {
   total: 'Total:',
   comment: 'Comentaris:',
   pickup: 'Heu triat el lliurament a la botiga',
-  pickupMessage: 'Us notificarem per correu quan la vostra comanda estigui disponible per recollir -la.'
+  pickupMessage: 'Us notificarem per correu quan la vostra comanda estigui disponible per recollir -la.',
+  rewardPoints: 'El total de {{name}} que obtindrà per la seva pròxima compra és de {{value}}'
 } %}
 <tr>
   <td style="vertical-align: middle;font-family: sans-serif; padding: 20px" align="center">
@@ -724,6 +725,14 @@ export const LANGUAGE_CA = {
               <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
                 <strong>{{ languageSheet.comment }}</strong><br>{{ sales.comment }}<br><br>
               </p>
+            {% endif %}
+            {% if document.rewardPoints|length %}
+              {% for rewardPoint in sales.rewardPoints %}
+                <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
+                  <strong>{{ rewardPoint.language.name }}</strong><br>
+                  {{ replace(languageSheet.rewardPoints, { '{{name}}': rewardPoint.language.name, '{{value}}': rewardPoint.summary.totalEarned }) }}<br><br>
+                </p>
+              {% endfor %}
             {% endif %}
             <div style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
               {{ languageSheet.messageBody2 }}<br>{{ languageSheet.messageSignature }}
