@@ -127,7 +127,7 @@ export const LANGUAGE_PT = {
   messageBody1: 'Temos o prazer de confirmar a criação da sua conta de cliente em <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
   messageBody2: 'Recomendamos-lhe que guarde este e-mail com os seus dados de acesso à nossa loja online, de maneira a que a sua próxima compra seja mais fácil e rápida.',
   messageBody3: "Esperamos vê-lo em breve em " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -137,7 +137,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
       {{ languageSheet.messageBody3 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -151,7 +151,7 @@ export const LANGUAGE_PT = {
   premessage: 'Confirmação da conta eliminada',
   messageHeader: 'Olá ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody: 'Como solicitado durante a sua recente visita a ' ~ general.ecommerceName ~ ", confirmamos que a sua conta " ~ user.email ~ " foi eliminada da nossa base de dados.",
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -159,7 +159,7 @@ export const LANGUAGE_PT = {
     <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -176,7 +176,7 @@ export const LANGUAGE_PT = {
   messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Clique aqui para recuperar a senha</a>',
   messageBody3: 'Este link só será válido por 24 horas após o momento de sua entrega.',
   messageBody4: "Esperamos vê-lo em breve em " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -187,7 +187,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageBody2 }}<br>
       {{ languageSheet.messageBody3 }}<br><br>
       {{ languageSheet.messageBody4 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -203,7 +203,7 @@ export const LANGUAGE_PT = {
   messageBody1: 'Confirmamos que a sua password foi modificada.',
   messageBody2: "Recomendamos-lhe que conserve este email com os seus dados para que a sua futura compra seja mais fácil e rápida.",
   messageBody3: "Esperamos vê-lo em breve em " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -213,7 +213,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
       {{ languageSheet.messageBody3 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -234,7 +234,7 @@ export const LANGUAGE_PT = {
   messageHeader1: 'Olá ' ~ wishlist.toName ~ ',',
   messageHeader2: "O seu amigo " ~ wishlist.user.firstName ~ " " ~ wishlist.user.lastName ~ " (" ~ wishlist.user.email ~ ") envia-lhe os seus produtos preferidos.",
   messageBody: 'Se necessitar de mais informações sobre este produto, pode contactar-nos em <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName,
+  messageSignature: 'A equipa de {{name}}',
   recommendedProducts: 'Produtos recomendados',
   product: 'Produto',
   price: 'Preço',
@@ -247,7 +247,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageHeader1 }}<br><br>
       {{ languageSheet.messageHeader2 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
-      {{ languageSheet.messageSignature }}<br><br>
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}<br><br>
     </span>
   </td>
 </tr>
@@ -319,7 +319,7 @@ export const LANGUAGE_PT = {
   premessage: 'Recomendação de produto',
   messageHeader1: "O seu amigo/a " ~ recommend.name ~ " (" ~ recommend.email ~ ") envia-lhe este produto que pode ser do seu interesse.",
   messageBody: 'Se necessitar de mais informações sobre este produto, pode contactar-nos em <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName,
+  messageSignature: 'A equipa de {{name}}',
   recommendedProducts: 'Produtos recomendados',
   product: 'Produto',
   price: 'Preço',
@@ -331,7 +331,7 @@ export const LANGUAGE_PT = {
     <span style="font-size: 15px;">
       {{ languageSheet.messageHeader1 }}<br><br>
       {{ languageSheet.messageBody }}<br><br>
-      {{ languageSheet.messageSignature }}<br><br>
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}<br><br>
     </span>
   </td>
 </tr>
@@ -402,7 +402,7 @@ export const LANGUAGE_PT = {
   phone: 'Telefone:',
   motive: 'Motivo da consulta:',
   comments: 'Mensagem:',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -424,7 +424,7 @@ export const LANGUAGE_PT = {
         {{ languageSheet.comments }} {{ contact.comments }}<br>
       {% endif %}
       <br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -442,7 +442,7 @@ export const LANGUAGE_PT = {
   comments: 'Mensagem:',
   productName: 'Nome do produto:',
   productSku: 'Referência do produto:',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -467,7 +467,7 @@ export const LANGUAGE_PT = {
         {{ languageSheet.productSku }} {{ data.product.sku }}<br>
       {% endif %}
       <br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -483,8 +483,8 @@ export const LANGUAGE_PT = {
   messageHeader: 'Muito obrigado por confiar em nós. A sua compra foi processada correctamente. Pode encontrar esta encomenda no ficheiro PDF em anexo.',
   messageHeaderReserve: 'Muito obrigado por confiar em nós. Recebemos a sua encomenda, uma vez que temos alguns produtos por encomenda, aguardamos a sua revisão.',
   messageBody1: 'Abaixo encontrará os detalhes da encomenda.',
-  messageBody2: 'Obrigado por fazer compras em <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName,
+  messageBody2: 'Obrigado por fazer compras em <a href="{{url}}" style="color: #000;">{{name}}</a>',
+  messageSignature: 'A equipa de {{name}}',
   orderNumber: 'Número de encomenda:',
   orderDate: 'Data da encomenda:',
   paymentSystem: 'Forma de pagamento:',
@@ -736,7 +736,7 @@ export const LANGUAGE_PT = {
               {% endfor %}
             {% endif %}
             <div style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
-              {{ languageSheet.messageBody2 }}<br>{{ languageSheet.messageSignature }}
+              {{ replace(languageSheet.messageBody2, { '{{url}}': general.ecommerceUrl, '{{name}}': general.ecommerceName }) }}<br>{{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
             </div>
           </td>
         </tr>
@@ -774,7 +774,7 @@ export const LANGUAGE_PT = {
   messageHeader: 'Olá ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
   messageBody1: 'Por favor, note que recebemos o seu pedido de reembolso.',
   messageBody2: 'Se tiver alguma dúvida sobre o seu regresso ou qualquer outro assunto, pode contactar-nos.',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 
 <tr>
@@ -784,7 +784,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -799,7 +799,7 @@ export const LANGUAGE_PT = {
   messageHeader: 'Olá ' ~ abandonedCart.user.firstName ~ ' ' ~ abandonedCart.user.lastName ~ ',',
   messageBody1: 'Na sua última visita à nossa loja, adicionou os seguintes produtos ao seu carrinho de compras, mas não completou a sua encomenda.',
   messageBody2: 'Clique <a target="_blank" href="' ~ abandonedCart.link ~ '" style="color: #000;">aqui</a> recuperar seu carrinho.',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -808,7 +808,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -829,7 +829,7 @@ export const LANGUAGE_PT = {
   messageHeader: 'Olá ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Obrigado por se registar em ' ~ general.ecommerceUrl ~ '. Por favor, active a sua conta, clicando <a href="' ~ user.verifyAccountLink ~ '" style="color: #000;">aqui</a>.',
   messageBody2: "Esperamos vê-lo em breve em " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -838,7 +838,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageHeader }}<br><br>
       {{ languageSheet.messageBody1 }}<br><br>
       {{ languageSheet.messageBody2 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -854,7 +854,7 @@ export const LANGUAGE_PT = {
   messageBody1: 'Temos o prazer de informar que sua conta de cliente em ' ~ general.ecommerceUrl ~ ' foi ativada com sucesso.',
   messageBody2: 'Você pode visualizar e modificar todos os seus detalhes a qualquer momento acessando este painel de controle: <a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">Edite seu perfil</a>',
   messageBody3: "Esperamos vê-lo em breve em " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color: #000;">' ~ general.ecommerceName ~ '</a>',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -864,7 +864,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
       {{ languageSheet.messageBody3 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -886,7 +886,7 @@ export const LANGUAGE_PT = {
   messageBody1: "O artigo que você quer tanto já está disponível!",
   messageBody2: "Gostaríamos de lembrar que este e-mail fornece orientações sobre a disponibilidade deste artigo e depende de muitos fatores (pessoas interessadas, unidades disponíveis).",
   messageBody3: "Enviámos este email a todos os clientes interessados no artigo, pelo que é possível esgotar-se muito em breve.",
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -896,7 +896,7 @@ export const LANGUAGE_PT = {
       {{ languageSheet.messageBody1 }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
       {{ languageSheet.messageBody3 }}<br><br>
-      {{ languageSheet.messageSignature }}
+      {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
     </span>
   </td>
 </tr>`,
@@ -931,7 +931,7 @@ export const LANGUAGE_PT = {
   messageBody2: "Caso recebamos este artigo novamente iremos notificá-lo imediatamente para que ele não escape.",
   product: 'Produto',
   price: 'Preço',
-  messageSignature: 'A equipa de ' ~ general.ecommerceName
+  messageSignature: 'A equipa de {{name}}'
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -979,7 +979,7 @@ export const LANGUAGE_PT = {
         <tr>
           <td style="text-align: center;">
             <br><br>
-            {{ languageSheet.messageSignature }}
+            {{ replace(languageSheet.messageSignature, { '{{name}}': general.ecommerceName }) }}
           </td>
         </tr>
         <tr><td>&nbsp;</td></tr>
