@@ -728,10 +728,12 @@ export const LANGUAGE_DE = {
             {% endif %}
             {% if sales.rewardPoints|length %}
               {% for rewardPoint in sales.rewardPoints %}
-                <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
-                  <strong>{{ rewardPoint.language.name }}</strong><br>
-                  {{ replace(languageSheet.rewardPoints, { '{{name}}': rewardPoint.language.name, '{{value}}': rewardPoint.summary.totalEarned }) }}<br><br>
-                </p>
+                <div style="padding: 10px 12px;border: 1px solid #dee2e6;">
+                  <p style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
+                    <strong>{{ rewardPoint.language.name }}</strong><br>
+                    {{ replace(languageSheet.rewardPoints, { '{{name}}': rewardPoint.language.name, '{{value}}': rewardPoint.summary.totalEarned }) }}<br><br>
+                  </p>
+                </div>
               {% endfor %}
             {% endif %}
             <div style="font-size: 14px; line-height: 22px; font-weight: normal; font-family: Arial, Helvetica, sans-serif; margin: 1em 0;">
