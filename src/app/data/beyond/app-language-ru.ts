@@ -122,11 +122,11 @@ export const LANGUAGE_RU = {
       subject: `{{ general.ecommerceName }} - Благодарим Вас за регистрацию`,
       html: `
 {% set languageSheet = {
-  premessage: 'Добро пожаловать на сайт ' ~ general.ecommerceName ~ '!',
+  premessage: 'Добро пожаловать на сайт '{{ecommerceName}}'!',
   messageHeader: 'Уважаемый (-ая) ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: 'Мы рады подтвердить создание Вашей учетной записи клиента на сайте <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody1: 'Мы рады подтвердить создание Вашей учетной записи клиента на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageBody2: 'В учетной записи клиента вы можете обновлять свой профиль и пароль, проверять историю заказов и другую интересующую вас информацию.',
-  messageBody3: "Надеемся скоро увидеть Вас на сайте " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody3: "Надеемся скоро увидеть Вас на сайте " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>
@@ -150,7 +150,7 @@ export const LANGUAGE_RU = {
 {% set languageSheet = {
   premessage: 'Подтверждение удаления записи',
   messageHeader: 'Уважаемый (-ая) ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody: 'В соответствии с запросом, сделанным во время недавнего посещения сайта ' ~ general.ecommerceName ~ ', подтверждаем, что Ваша учетная запись пользователя ' ~ user.email ~ ' удалена из нашей базы данных.",
+  messageBody: 'В соответствии с запросом, сделанным во время недавнего посещения сайта '{{ecommerceName}}', подтверждаем, что Ваша учетная запись пользователя ' ~ user.email ~ ' удалена из нашей базы данных.",
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>
@@ -175,7 +175,7 @@ export const LANGUAGE_RU = {
   messageBody1: "В соответствии с запросом, сделанным во время недавнего посещения сайта " ~ general.ecommerceName ~ ", отправляем Вам ссылку для перехода на страницу восстановления пароля:",
   messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Нажмите здесь для восстановления пароля</a>',
   messageBody3: 'Ссылка действительна в течение 24 часов с момента отправки.',
-  messageBody4: "Надеемся скоро увидеть Вас на сайте " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
+  messageBody4: "Надеемся скоро увидеть Вас на сайте " ~ '<a href='{{ecommerceUrl}}' style="color:#000">'{{ecommerceName}}'</a>.',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>
@@ -202,7 +202,7 @@ export const LANGUAGE_RU = {
   messageHeader: 'Уважаемый (-ая) ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Подтверждаем, что Ваш пароль успешно изменен.',
   messageBody2: "Сохраните свои учетные данные в надежном месте для их последующего просмотра.",
-  messageBody3: "Надеемся скоро увидеть Вас на сайте " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
+  messageBody3: "Надеемся скоро увидеть Вас на сайте " ~ '<a href='{{ecommerceUrl}}' style="color:#000">'{{ecommerceName}}'</a>.',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>
@@ -233,7 +233,7 @@ export const LANGUAGE_RU = {
   premessage: 'Recomendación de favoritos',
   messageHeader1: 'Уважаемый (-ая) ' ~ wishlist.toName ~ ',',
   messageHeader2: "Ваш друг " ~ wishlist.user.firstName ~ " " ~ wishlist.user.lastName ~ " (" ~ wishlist.user.email ~ ") отправляет Вам эти товары, которые могут Вас заинтересовать.",
-  messageBody: 'Для получения дополнительной информации об этих товарах свяжитесь с нами на сайте <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody: 'Для получения дополнительной информации об этих товарах свяжитесь с нами на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}',
   recommendedProducts: 'Рекомендованные товары',
   product: Товар,
@@ -318,7 +318,7 @@ export const LANGUAGE_RU = {
 {% set languageSheet = {
   premessage: 'Рекомендация товара',
   messageHeader1: "Ваш друг " ~ recommend.name ~ " (" ~ recommend.email ~ ") отправляет Вам этот товар, который может Вас заинтересовать.",
-  messageBody: 'Для получения дополнительной информации об этих товарах свяжитесь с нами на сайте <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody: 'Для получения дополнительной информации об этих товарах свяжитесь с нами на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}',
   recommendedProducts: 'Рекомендованные товары',
   product: Товар,
@@ -828,7 +828,7 @@ export const LANGUAGE_RU = {
   premessage: "Проверка электронной почты",
   messageHeader: 'Уважаемый (-ая) ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Спасибо, что Вы зарегистрировались на сайте ' ~ general.ecommerceUrl ~ '. Для активации Вашей учетной записи нажмите <a href="' ~ user.verifyAccountLink ~ '" style='color: #000;'>здесь</a>.',
-  messageBody2: "Надеемся скоро увидеть Вас на сайте " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody2: "Надеемся скоро увидеть Вас на сайте " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>
@@ -852,8 +852,8 @@ export const LANGUAGE_RU = {
   premessage: 'Активация учетной записи',
   messageHeader: 'Уважаемый (-ая) ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Сообщаем, что Ваша учетная запись на сайте ' ~ general.ecommerceUrl ~ ' успешно активирована.',
-  messageBody2: 'Для просмотра Ваших данных и всей информации, связанной с Вашей учетной записью, выполните вход из панели управления, раздел <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>Редактировать профиль</a>',
-  messageBody3: "Надеемся скоро увидеть Вас на сайте " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody2: 'Для просмотра Ваших данных и всей информации, связанной с Вашей учетной записью, выполните вход из панели управления, раздел <a href='{{ecommerceUrl}}' style='color: #000;'>Редактировать профиль</a>',
+  messageBody3: "Надеемся скоро увидеть Вас на сайте " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>
@@ -923,7 +923,7 @@ export const LANGUAGE_RU = {
 
   messageHeader: 'Уважаемый (-ая) ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Спасибо, что подписались на наш блог. Вскоре вы будете получать по электронной почте новые статьи, информацию о скидках, акциях, подарках и интересующую вас информацию, связанную с деятельностью интернет-магазина.',
-  messageBody2: "Надеемся скоро увидеть Вас на сайте " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody2: "Надеемся скоро увидеть Вас на сайте " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'С уважением, персонал компании {{ecommerceName}}'
 } %}
 <tr>

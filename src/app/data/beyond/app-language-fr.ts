@@ -124,9 +124,9 @@ export const LANGUAGE_FR = {
 {% set languageSheet = {
   premessage: 'Bienvenue à ' ~ general.ecommerceName,
   messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
-  messageBody1: 'Nous avons le plaisir de vous confirmer la création de votre compte client chez <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody1: 'Nous avons le plaisir de vous confirmer la création de votre compte client chez <a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageBody2: 'Grâce à votre compte client, vous pourrez mettre à jour votre profil et votre mot de passe, consulter l\\'historique de vos commandes et d\\'autres informations qui vous intéressent.',
-  messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}'
 } %}
 <tr>
@@ -175,7 +175,7 @@ export const LANGUAGE_FR = {
   messageBody1: "Comme demandé lors de votre récente visite à " ~ general.ecommerceName ~ ", voici votre adresse d\\'accès à la zone de récupération du mot de passe :",
   messageBody2: '<a href="' ~ user.lostPasswordLink ~ '" style="color:#000">Cliquez ici pour récupérer le mot de passe</a>',
   messageBody3: 'Ce lien ne sera valable que pendant 24 heures à compter de son envoi.',
-  messageBody4: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
+  messageBody4: "Nous espérons vous voir bientôt à " ~ '<a href='{{ecommerceUrl}}' style="color:#000">'{{ecommerceName}}'</a>.',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}'
 } %}
 <tr>
@@ -202,7 +202,7 @@ export const LANGUAGE_FR = {
   messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Nous confirmons que votre mot de passe a été modifié.',
   messageBody2: "N\\'oubliez pas de noter vos références dans un endroit sûr pour pouvoir les consulter ultérieurement.",
-  messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style="color:#000">' ~ general.ecommerceName ~ '</a>.',
+  messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href='{{ecommerceUrl}}' style="color:#000">'{{ecommerceName}}'</a>.',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}'
 } %}
 <tr>
@@ -233,7 +233,7 @@ export const LANGUAGE_FR = {
   premessage: 'Recommandation de favoris',
   messageHeader1: 'Bonjour ' ~ wishlist.toName ~ ',',
   messageHeader2: "Votre ami " ~ wishlist.user.firstName ~ " " ~ wishlist.user.lastName ~ " (" ~ wishlist.user.email ~ ") vous envoie ces produits qui peuvent vous intéresser.",
-  messageBody: 'Si vous avez besoin de plus d\\'informations sur ce produit, vous pouvez nous contacter à l\\'adresse suivante <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody: 'Si vous avez besoin de plus d\\'informations sur ce produit, vous pouvez nous contacter à l\\'adresse suivante <a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}',
   recommendedProducts: 'Produits recommandés',
   product: 'Produit',
@@ -318,7 +318,7 @@ export const LANGUAGE_FR = {
 {% set languageSheet = {
   premessage: 'Recommandation de produit',
   messageHeader1: "Votre ami " ~ recommend.name ~ " (" ~ recommend.email ~ ") vous envoie ce produit qui pourrait vous intéresser.",
-  messageBody: 'Si vous avez besoin de plus d\\'informations sur ce produit, vous pouvez nous contacter à l\\'adresse suivante <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody: 'Si vous avez besoin de plus d\\'informations sur ce produit, vous pouvez nous contacter à l\\'adresse suivante <a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}',
   recommendedProducts: 'Produits recommandés',
   product: 'Produit',
@@ -828,7 +828,7 @@ export const LANGUAGE_FR = {
   premessage: "Vérification du courrier",
   messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Merci de vous inscrire à ' ~ general.ecommerceUrl ~ '. Veuillez activer votre compte en cliquant sur <a href="' ~ user.verifyAccountLink ~ '" style='color: #000;'>ici</a>.',
-  messageBody2: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody2: "Nous espérons vous voir bientôt à " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}'
 } %}
 <tr>
@@ -852,8 +852,8 @@ export const LANGUAGE_FR = {
   premessage: 'Activation du compte',
   messageHeader: 'Bonjour ' ~ user.firstName ~ ' ' ~ user.lastName ~ ',',
   messageBody1: 'Nous vous informons que votre compte en ' ~ general.ecommerceUrl ~ ' a été activé correctement.',
-  messageBody2: 'Pour voir vos coordonnées et toutes les informations relatives à votre compte, connectez-vous via le panneau de contrôle: <a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>Modifier votre profil</a>',
-  messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href="' ~ general.ecommerceUrl ~ '" style='color: #000;'>' ~ general.ecommerceName ~ '</a>',
+  messageBody2: 'Pour voir vos coordonnées et toutes les informations relatives à votre compte, connectez-vous via le panneau de contrôle: <a href='{{ecommerceUrl}}' style='color: #000;'>Modifier votre profil</a>',
+  messageBody3: "Nous espérons vous voir bientôt à " ~ '<a href='{{ecommerceUrl}}' style='color: #000;'>'{{ecommerceName}}'</a>',
   messageSignature: 'Sincèrement, l\\'équipe de {{ecommerceName}}'
 } %}
 <tr>
