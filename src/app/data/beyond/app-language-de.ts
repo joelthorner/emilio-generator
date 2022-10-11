@@ -773,7 +773,7 @@ export const LANGUAGE_DE = {
 {% set languageSheet = {
   premessage: 'Informationen über den Rückgabeantrag',
   messageHeader: 'Hallo ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-  messageBody1: 'Bitte beachten Sie, dass wir Ihren Antrag auf Rückerstattung erhalten haben.',
+  messageBody1: 'Bitte beachten Sie, dass wir Ihren Antrag auf Rückerstattung erhalten haben der Bestellung' ~ first(sales.documentParents).documentNumber ~ '.',
   messageBody2: 'Wenn Sie Fragen zu Ihrer Rücksendung oder einem anderen Problem haben, können Sie uns kontaktieren.',
   messageSignature: 'Mit freundlichen Grüßen, das Team von ' ~ general.ecommerceName
 } %}

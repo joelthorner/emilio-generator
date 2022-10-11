@@ -772,7 +772,7 @@ export const LANGUAGE_FR = {
 {% set languageSheet = {
   premessage: 'Informations sur la demande de retour',
   messageHeader: 'Bonjour ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-  messageBody1: 'Veuillez noter que nous avons reçu votre demande de remboursement.',
+  messageBody1: 'Veuillez noter que nous avons reçu votre demande de remboursement de la commande' ~ first(sales.documentParents).documentNumber ~  '.',
   messageBody2: 'Si vous avez des questions concernant votre retour ou tout autre problème, vous pouvez nous contacter.',
   messageSignature: 'Sincèrement, l\\'équipe de ' ~ general.ecommerceName
 } %}

@@ -772,7 +772,7 @@ export const LANGUAGE_RU = {
 {% set languageSheet = {
   premessage: 'Информация касательно запроса о возврате товара',
   messageHeader: 'Уважаемый (-ая) ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-  messageBody1: 'Сообщаем о получении Вашего запроса о возврате товара.',
+  messageBody1: 'Сообщаем вам, что мы получили ваш запрос на возврат заказа ' ~ first(sales.documentParents).documentNumber ~ '.',
   messageBody2: 'Свяжитесь с нами, если у Вас есть вопросы по поводу возврата товара или иные вопросы.',
   messageSignature: 'С уважением, персонал компании ' ~ general.ecommerceName
 } %}

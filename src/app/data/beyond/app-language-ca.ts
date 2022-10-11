@@ -772,7 +772,7 @@ export const LANGUAGE_CA = {
 {% set languageSheet = {
   premessage: 'Informació de la petició de devolució',
   messageHeader: 'Hola ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-  messageBody1: 'T\\'informem que hem rebut la teva petició de devolució.',
+  messageBody1: 'T\\'informem que hem rebut la teva petició de devolució de la comanda ' ~ first(sales.documentParents).documentNumber ~ '.',
   messageBody2: 'Si tens algun dubte sobre la teva devolució o algun altre qüestió, pots posar-te en contacte amb nosaltres.',
   messageSignature: 'Atentament, l\\'equip de ' ~ general.ecommerceName
 } %}
