@@ -772,7 +772,7 @@ export const LANGUAGE_PT = {
 {% set languageSheet = {
   premessage: 'Informação sobre o pedido de devolução',
   messageHeader: 'Olá ' ~ sales.user.billingAddress.firstName ~ ' ' ~ sales.user.billingAddress.lastName ~ ',',
-  messageBody1: 'Por favor, note que recebemos o seu pedido de reembolso.',
+  messageBody1: 'Por favor, note que recebemos o seu pedido de reembolso da encomenda ' ~ first(sales.documentParents).documentNumber ~ '.',
   messageBody2: 'Se tiver alguma dúvida sobre o seu regresso ou qualquer outro assunto, pode contactar-nos.',
   messageSignature: 'A equipa de {{ecommerceName}}'
 } %}
