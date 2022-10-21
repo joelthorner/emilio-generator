@@ -776,7 +776,7 @@ export const LANGUAGE_CA = {
 {% set languageSheet = {
   premessage: "Informació de la petició de devolució",
   messageHeader: "Hola {{firstName}} {{lastName}},",
-  messageBody1: "T'informem que hem rebut la teva petició de devolució.",
+  messageBody1: "T'informem que hem rebut la teva petició de devolució de la comanda {{documentNumber}}.",
   messageBody2: "Si tens algun dubte sobre la teva devolució o algun altre qüestió, pots posar-te en contacte amb nosaltres.",
   messageSignature: "Atentament, l'equip de {{ecommerceName}}"
 } %}
@@ -785,8 +785,8 @@ export const LANGUAGE_CA = {
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
-      {{ replace(languageSheet.messageHeader, { '{{firstName}}': sales.user.billingAddress.firstName, '{{lastName}}': sales.user.billingAddress.lastName }) }}<br><br>
-      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ replace(languageSheet.messageBody1, { '{{documentNumber}}': first(sales.documentParents).documentNumber }) }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
       {{ replace(languageSheet.messageSignature, { '{{ecommerceName}}': general.ecommerceName }) }}
     </span>
