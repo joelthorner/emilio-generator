@@ -772,7 +772,7 @@ export const LANGUAGE_DE = {
 {% set languageSheet = {
   premessage: "Informationen über den Rückgabeantrag",
   messageHeader: "Hallo {{firstName}} {{lastName}},",
-  messageBody1: "Bitte beachten Sie, dass wir Ihren Antrag auf Rückerstattung erhalten haben.",
+  messageBody1: "Bitte beachten Sie, dass wir Ihren Antrag auf Rückerstattung erhalten haben der Bestellung' ~ first(sales.documentParents).documentNumber ~ '.",
   messageBody2: "Wenn Sie Fragen zu Ihrer Rücksendung oder einem anderen Problem haben, können Sie uns kontaktieren.",
   messageSignature: "Mit freundlichen Grüßen, das Team von {{ecommerceName}}"
 } %}
@@ -781,8 +781,8 @@ export const LANGUAGE_DE = {
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
     <strong>{{ languageSheet.premessage }}</strong><br><br>
     <span style="font-size: 15px;">
-      {{ replace(languageSheet.messageHeader, { '{{firstName}}': sales.user.billingAddress.firstName, '{{lastName}}': sales.user.billingAddress.lastName }) }}<br><br>
-      {{ languageSheet.messageBody1 }}<br>
+      {{ languageSheet.messageHeader }}<br><br>
+      {{ replace(languageSheet.messageBody1, { '{{documentNumber}}': first(sales.documentParents).documentNumber }) }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
       {{ replace(languageSheet.messageSignature, { '{{ecommerceName}}': general.ecommerceName }) }}
     </span>
