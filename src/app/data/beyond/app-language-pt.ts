@@ -403,7 +403,7 @@ export const LANGUAGE_PT = {
   premessage: "Formulário de contacto",
   name: "Nome:",
   email: "Email:",
-  phone: "Email:",
+  phone: "Telefone:",
   motive: "Motivo da consulta:",
   comments: "Mensagem:",
   messageSignature: "A equipa de {{ecommerceName}}"
@@ -442,7 +442,7 @@ export const LANGUAGE_PT = {
   premessage: "Dúvida sobre um produto",
   name: "Nome:",
   email: "Email:",
-  phone: "Email:",
+  phone: "Telefone:",
   comments: "Mensagem:",
   productName: "Nome do produto:",
   productSku: "Referência do produto:",
