@@ -944,8 +944,8 @@ export const LANGUAGE_RU = {
       footer: {
         html: `
 {% set languageSheet = {
-  moreInfo: 'Para obtener más información, lea nuestra <a href="{{privacyPolicyLink}}">política de privacidad</a> y <a href="{{termsOfUseLink}}">términos de uso</a>.',
-  unsubscribe: 'Darse de baja de la suscripción del Blog'
+  moreInfo: "Для получения дополнительной информации ознакомьтесь с нашей <a href='{{privacyPolicyLink}}'>политикой конфиденциальности</a> и <a href='{{termsOfUseLink}}'>условиями пользования</a>"
+  unsubscribe: 'Отписаться от блога'
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
