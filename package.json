@@ -1,6 +1,6 @@
 {
   "name": "emilio-generator",
-  "version": "2.1.17",
+  "version": "2.1.18",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
