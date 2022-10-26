@@ -184,7 +184,7 @@ export const LANGUAGE_DE = {
     <span style="font-size: 15px;">
       {{ languageSheet.messageHeader }}<br><br>
       {{ replace(languageSheet.messageBody1, { '{{ecommerceName}}': general.ecommerceName }) }}<br>
-      {{ repalce(languageSheet.messageBody2, { '{{lostPasswordLink}}': user.lostPasswordLink }) }}<br>
+      {{ replace(languageSheet.messageBody2, { '{{lostPasswordLink}}': user.lostPasswordLink }) }}<br>
       {{ languageSheet.messageBody3 }}<br><br>
       {{ replace(languageSheet.messageBody4, { '{{ecommerceName}}': general.ecommerceName, '{{ecommerceUrl}}': general.ecommerceUrl }) }}<br><br>
       {{ replace(languageSheet.messageSignature, { '{{ecommerceName}}': general.ecommerceName }) }}
@@ -203,7 +203,7 @@ export const LANGUAGE_DE = {
   messageBody1: "Wir bestätigen, dass Ihr Passwort geändert worden ist.",
   messageBody2: "Notieren Sie sich Ihre Anmeldedaten an einem sicheren Ort, damit Sie sie bei Bedarf nachlesen können.",
   messageBody3: "Wir hoffen, dass wir Sie bald in <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
-  messageSignature: Mit freundlichen Grüßen, das Team von {{ecommerceName}}"
+  messageSignature: "Mit freundlichen Grüßen, das Team von {{ecommerceName}}"
 } %}
 <tr>
   <td style="padding: 20px 20px 20px 20px; color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 20px; text-align: center;">
@@ -772,7 +772,7 @@ export const LANGUAGE_DE = {
 {% set languageSheet = {
   premessage: "Informationen über den Rückgabeantrag",
   messageHeader: "Hallo {{firstName}} {{lastName}},",
-  messageBody1: "Bitte beachten Sie, dass wir Ihren Antrag auf Rückerstattung erhalten haben der Bestellung' ~ first(sales.documentParents).documentNumber ~ '.",
+  messageBody1: "Bitte beachten Sie, dass wir Ihren Antrag auf Rückerstattung erhalten haben der Bestellung {{documentNumber}}.",
   messageBody2: "Wenn Sie Fragen zu Ihrer Rücksendung oder einem anderen Problem haben, können Sie uns kontaktieren.",
   messageSignature: "Mit freundlichen Grüßen, das Team von {{ecommerceName}}"
 } %}
@@ -828,7 +828,7 @@ export const LANGUAGE_DE = {
   premessage: "Überprüfung per E-Mail",
   messageHeader: "Hallo {{firstName}} {{lastName}},",
   messageBody1: "Vielen Dank für Ihre Anmeldung bei {{ecommerceUrl}}. Bitte aktivieren Sie Ihr Konto, indem Sie auf <a href='{{verifyAccountLink}}' style='color: #000;'>hier</a>.",
-  messageBody2: "Wir hoffen, dass wir Sie bald in <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>',
+  messageBody2: "Wir hoffen, dass wir Sie bald in <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>",
   messageSignature: "Mit freundlichen Grüßen, das Team von {{ecommerceName}}"
 } %}
 <tr>
@@ -925,7 +925,7 @@ export const LANGUAGE_DE = {
       subject: `{{ general.ecommerceName }} - Aktienzeichnung`,
       html: `
 {% set languageSheet = {
-  premessage: "Abonnement des Produktbestands <br><a href='{{productLink}}' style='color: #000;'>{{name}}</a>',
+  premessage: "Abonnement des Produktbestands <br><a href='{{productLink}}' style='color: #000;'>{{name}}</a>",
   messageHeader: "Hallo {{firstName}} {{lastName}},",
   messageBody1: "Sie haben Aktienwarnungen abonniert von {{name}}",
   messageBody2: "Wenn wir diesen Artikel wieder erhalten, werden wir Sie sofort informieren, damit Sie ihn nicht verpassen.",

@@ -122,8 +122,8 @@ export const LANGUAGE_EN = {
       subject: `{{ general.ecommerceName }} - Thank you for signup`,
       html: `
 {% set languageSheet = {
-  premessage: 'Welcome to '{{ecommerceName}}'!',
-  messageHeader: "Hello {{firstName}} {{lastName}} ,",
+  premessage: "Welcome to {{ecommerceName}}!",
+  messageHeader: "Hello {{firstName}} {{lastName}},",
   messageBody1: "We are pleased to inform you that your customer account in <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a> has been successfully created.",
   messageBody2: "Thanks to your customer account now you can update your profile and password, view your order history and other details that may be of your interest.",
   messageBody3: "We hope to see you soon in <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>",
@@ -148,8 +148,8 @@ export const LANGUAGE_EN = {
       subject: `{{ general.ecommerceName }} - Account deleted`,
       html: `
 {% set languageSheet = {
-  premessage: 'Confirmation deleted account',
-  messageHeader: "Hello {{firstName}} {{lastName}} ,",
+  premessage: "Confirmation deleted account",
+  messageHeader: "Hello {{firstName}} {{lastName}},",
   messageBody: "As requested during your recent visit to {{ecommerceName}}, we confirm that your user account {{userEmail}} has been removed from our database.",
   messageSignature: "The {{ecommerceName}} Team"
 } %}
@@ -170,8 +170,8 @@ export const LANGUAGE_EN = {
       subject: `{{ general.ecommerceName }} - Password recovery`,
       html: `
 {% set languageSheet = {
-  premessage: 'Password recovery',
-  messageHeader: "Hello {{firstName}} {{lastName}} ,",
+  premessage: "Password recovery",
+  messageHeader: "Hello {{firstName}} {{lastName}},",
   messageBody1: "As requested during your recent visit to {{ecommerceName}}, here's your address to access the password recovery zone:",
   messageBody2: "<a href='{{lostPasswordLink}}' style='color:#000'>Click here</a>",
   messageBody3: "This link will only be valid for 24 hours from the time it is sent.",
@@ -199,7 +199,7 @@ export const LANGUAGE_EN = {
       html: `
 {% set languageSheet = {
   premessage: "Password change",
-  messageHeader: "Hello {{firstName}} {{lastName}} ,",
+  messageHeader: "Hello {{firstName}} {{lastName}},",
   messageBody1: "This email is to inform you that your customer account password has been changed.",
   messageBody2: "Be sure to note your credentials in a safe place for future reference.",
   messageBody3: "We hope to see you soon in <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
@@ -830,7 +830,7 @@ export const LANGUAGE_EN = {
       html: `
 {% set languageSheet = {
   premessage: "Email verification",
-  messageHeader: "Hello {{firstName}} {{lastName}} ,",
+  messageHeader: "Hello {{firstName}} {{lastName}},",
   messageBody1: "Thanks for registering on {{ecommerceUrl}}. Please, follow the link in order to verify your e-mail account: <a href='{{verifyAccountLink}}' style='color: #000;'>Click here</a>.",
   messageBody2: "We hope to see you soon in <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
   messageSignature: "The {{ecommerceName}} Team"
@@ -854,7 +854,7 @@ export const LANGUAGE_EN = {
       html: `
 {% set languageSheet = {
   premessage: "Account activation",
-  messageHeader: "Hello {{firstName}} {{lastName}} ,",
+  messageHeader: "Hello {{firstName}} {{lastName}},",
   messageBody1: "We are pleased to inform you that your customer account in {{general.ecommerceUrl}} has been successfully activated",
   messageBody2: "You can view and modify all your details at any time by accessing this control panel: <a href='{{ecommerceUrl}}' style='color: #000;'>Edit your profile</a>",
   messageBody3: "We hope to see you soon in <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
@@ -942,7 +942,7 @@ export const LANGUAGE_EN = {
     <strong>{{ replace(languageSheet.premessage, { '{{productLink}}': stockAlert.product.productLink, '{{name}}': stockAlert.product.name }) }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ replace(languageSheet.messageHeader, { '{{firstName}}': stockAlert.user.firstName, '{{lastName}}': stockAlert.user.lastName }) }}<br><br>
-      {{ replace(languageSheet.messageBody1. { '{{name}}': stockAlert.product.name }) }}<br>
+      {{ replace(languageSheet.messageBody1, { '{{name}}': stockAlert.product.name }) }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
     </span>
   </td>
