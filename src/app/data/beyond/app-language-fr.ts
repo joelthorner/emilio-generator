@@ -929,7 +929,7 @@ export const LANGUAGE_FR = {
       subject: `{{ general.ecommerceName }} - Souscription d\\'actions`,
       html: `
 {% set languageSheet = {
-  premessage: "Abonnement au stock de produits <br><a href='{{productLink}}' style='color: #000;'>{{name}}</a>,
+  premessage: "Abonnement au stock de produits <br><a href='{{productLink}}' style='color: #000;'>{{name}}</a>",
   messageHeader: "Bonjour {{firstName}} {{lastName}},",
   messageBody1: "Vous vous êtes abonné aux alertes boursières de {{name}}",
   messageBody2: "Si nous recevons à nouveau cet article, nous vous en informerons immédiatement afin que vous ne le manquiez pas.",
@@ -942,7 +942,7 @@ export const LANGUAGE_FR = {
     <strong>{{ replace(languageSheet.premessage, { '{{productLink}}': stockAlert.product.productLink, '{{name}}': stockAlert.product.name }) }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ replace(languageSheet.messageHeader, { '{{firstName}}': stockAlert.user.firstName, '{{lastName}}': stockAlert.user.lastName }) }}<br><br>
-      {{ replace(languageSheet.messageBody1. { '{{name}}': stockAlert.product.name }) }}<br>
+      {{ replace(languageSheet.messageBody1, { '{{name}}': stockAlert.product.name }) }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
     </span>
   </td>

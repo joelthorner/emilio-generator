@@ -149,7 +149,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: "Подтверждение удаления записи",
-  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},"
+  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},",
   messageBody: "В соответствии с запросом, сделанным во время недавнего посещения сайта {{ecommerceName}}, подтверждаем, что Ваша учетная запись пользователя {{email}} удалена из нашей базы данных.",
   messageSignature: "С уважением, персонал компании {{ecommerceName}}"
 } %}
@@ -171,7 +171,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: 'Напомнить пароль',
-  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},"
+  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},",
   messageBody1: "В соответствии с запросом, сделанным во время недавнего посещения сайта {{ecommerceName}}, отправляем Вам ссылку для перехода на страницу восстановления пароля:",
   messageBody2: "<a href='{{lostPasswordLink}}' style='color:#000'>Нажмите здесь для восстановления пароля</a>",
   messageBody3: "Ссылка действительна в течение 24 часов с момента отправки.",
@@ -199,7 +199,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: "Смена пароля",
-  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},"
+  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},",
   messageBody1: "Подтверждаем, что Ваш пароль успешно изменен.",
   messageBody2: "Сохраните свои учетные данные в надежном месте для их последующего просмотра.",
   messageBody3: "Надеемся скоро увидеть Вас на сайте <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
@@ -231,7 +231,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: "Рекомендации по выбору",
-  messageHeader1: "Уважаемый (-ая) {{toName}},',
+  messageHeader1: "Уважаемый (-ая) {{toName}},",
   messageHeader2: "Ваш друг {{firstName}} {{lastName}} ({{email}}) отправляет Вам эти товары, которые могут Вас заинтересовать.",
   messageBody: "Для получения дополнительной информации об этих товарах свяжитесь с нами на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>",
   messageSignature: "С уважением, персонал компании {{ecommerceName}}",
@@ -830,7 +830,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: "Проверка электронной почты",
-  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},"
+  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},",
   messageBody1: "Спасибо, что Вы зарегистрировались на сайте {{ecommerceUrl}}. Для активации Вашей учетной записи нажмите <a href='{{verifyAccountLink}}' style='color: #000;'>здесь</a>.",
   messageBody2: "Надеемся скоро увидеть Вас на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>",
   messageSignature: "С уважением, персонал компании {{ecommerceName}}"
@@ -854,7 +854,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: "Активация учетной записи",
-  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},"
+  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},",
   messageBody1: "Сообщаем, что Ваша учетная запись на сайте {{ecommerceUrl}} успешно активирована.",
   messageBody2: "Для просмотра Ваших данных и всей информации, связанной с Вашей учетной записью, выполните вход из панели управления, раздел <a href='{{ecommerceUrl}}' style='color: #000;'>Редактировать профиль</a>",
   messageBody3: "Надеемся скоро увидеть Вас на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>",
@@ -924,8 +924,7 @@ export const LANGUAGE_RU = {
       html: `
 {% set languageSheet = {
   premessage: "Добро пожаловать в <a href='{{blogLink}}' style='color: #000;'>{{blogName}}</a>!",
-
-  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},"
+  messageHeader: "Уважаемый (-ая) {{firstName}} {{lastName}},",
   messageBody1: "Спасибо, что подписались на наш блог. Вскоре вы будете получать по электронной почте новые статьи, информацию о скидках, акциях, подарках и интересующую вас информацию, связанную с деятельностью интернет-магазина.",
   messageBody2: "Надеемся скоро увидеть Вас на сайте <a href='{{ecommerceUrl}}' style='color: #000;'>{{ecommerceName}}</a>",
   messageSignature: "С уважением, персонал компании {{ecommerceName}}"
@@ -944,8 +943,8 @@ export const LANGUAGE_RU = {
       footer: {
         html: `
 {% set languageSheet = {
-  moreInfo: "Для получения дополнительной информации ознакомьтесь с нашей <a href='{{privacyPolicyLink}}'>политикой конфиденциальности</a> и <a href='{{termsOfUseLink}}'>условиями пользования</a>"
-  unsubscribe: 'Отписаться от блога'
+  moreInfo: "Для получения дополнительной информации ознакомьтесь с нашей <a href='{{privacyPolicyLink}}'>политикой конфиденциальности</a> и <a href='{{termsOfUseLink}}'>условиями пользования</a>",
+  unsubscribe: "Отписаться от блога"
 } %}
         <tr>
           <td bgcolor="#fff" style="background-color: #fff; padding: 20px 20px 20px 20px;">
@@ -1061,7 +1060,7 @@ export const LANGUAGE_RU = {
     <strong>{{ replace(languageSheet.premessage, { '{{productLink}}': stockAlert.product.productLink, '{{name}}': stockAlert.product.name }) }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ replace(languageSheet.messageHeader, { '{{firstName}}': stockAlert.user.firstName, '{{lastName}}': stockAlert.user.lastName }) }}<br><br>
-      {{ replace(languageSheet.messageBody1. { '{{name}}': stockAlert.product.name }) }}<br>
+      {{ replace(languageSheet.messageBody1, { '{{name}}': stockAlert.product.name }) }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
     </span>
   </td>
