@@ -175,7 +175,7 @@ export const LANGUAGE_PT = {
   messageBody1: "Como solicitado durante a sua recente visita a {{ecommerceName}}, aqui está o seu endereço de acesso à área de recuperação de senha:",
   messageBody2: "<a href='{{lostPasswordLink}}'style='color:#000'>Clique aqui para recuperar a senha</a>",
   messageBody3: "Este link só será válido por 24 horas após o momento de sua entrega.",
-  messageBody4: "Esperamos vê-lo em breve em <a href='{{ecommerceUrl}}' style='color:#000'>"{{ecommerceName}}"</a>.",
+  messageBody4: "Esperamos vê-lo em breve em <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
   messageSignature: "A equipa de {{ecommerceName}}"
 } %}
 <tr>
@@ -202,7 +202,7 @@ export const LANGUAGE_PT = {
   messageHeader: "Olá {{firstName}} {{lastName}},",
   messageBody1: "Confirmamos que a sua password foi modificada.",
   messageBody2: "Recomendamos-lhe que conserve este email com os seus dados para que a sua futura compra seja mais fácil e rápida.",
-  messageBody3: "Esperamos vê-lo em breve em <a href='{{ecommerceUrl}}' style='color:#000'>"{{ecommerceName}}"</a>.",
+  messageBody3: "Esperamos vê-lo em breve em <a href='{{ecommerceUrl}}' style='color:#000'>{{ecommerceName}}</a>.",
   messageSignature: "A equipa de {{ecommerceName}}"
 } %}
 <tr>
@@ -930,7 +930,7 @@ export const LANGUAGE_PT = {
       html: `
 {% set languageSheet = {
   premessage: "Assinatura de estoque de produtos <br><a href='{{productLink}}' style='color: #000;'>{{name}}</a>",
-  messageHeader: 'Olá {{firstName}} {{lastName}},',
+  messageHeader: "Olá {{firstName}} {{lastName}},",
   messageBody1: "Você se inscreveu nos anúncios de ações da {{name}}",
   messageBody2: "Caso recebamos este artigo novamente iremos notificá-lo imediatamente para que ele não escape.",
   product: "Produto",
@@ -942,7 +942,7 @@ export const LANGUAGE_PT = {
     <strong>{{ replace(languageSheet.premessage, { '{{productLink}}': stockAlert.product.productLink, '{{name}}': stockAlert.product.name }) }}</strong><br><br>
     <span style="font-size: 15px;">
       {{ replace(languageSheet.messageHeader, { '{{firstName}}': stockAlert.user.firstName, '{{lastName}}': stockAlert.user.lastName }) }}<br><br>
-      {{ replace(languageSheet.messageBody1. { '{{name}}': stockAlert.product.name }) }}<br>
+      {{ replace(languageSheet.messageBody1, { '{{name}}': stockAlert.product.name }) }}<br>
       {{ languageSheet.messageBody2 }}<br><br>
     </span>
   </td>
