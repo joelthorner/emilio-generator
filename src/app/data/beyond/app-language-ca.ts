@@ -629,7 +629,7 @@ export const LANGUAGE_CA = {
                           </td>
                           <td style="padding: 10px 0px 0px 10px;">
                             <a href="{{ bundleItem.link }}" title="{{ bundleItem.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
-                              <span style="color: #454545; text-decoration: none">{{ bundleItem.name }}</b></span>
+                              <span style="color: #454545; text-decoration: none"><b>{{ bundleItem.name }}</b></span>
                             </a>
                             {% if bundleItem.options|length %}
                               <div style="font-size: 14px; line-height: 20px; color: #666;">
@@ -660,7 +660,7 @@ export const LANGUAGE_CA = {
                         </td>
                         <td style="padding: 10px 0px 0px 10px;">
                           <a href="{{ item.link }}" title="{{ item.name }}" target="_blank" rel="noreferrer" style="text-decoration:none;">
-                            <span style="color: #454545; text-decoration: none">{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
+                            <span style="color: #454545; text-decoration: none"><b>{{ item.name }}</b>{% if item.type == "GIFT" %} ({{ languageSheet.gift }}){% endif %}</span>
                           </a>
                           {% if item.options|length %}
                             <div style="font-size: 14px; line-height: 20px; color: #666;">
