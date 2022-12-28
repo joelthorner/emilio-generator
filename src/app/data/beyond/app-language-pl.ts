@@ -943,7 +943,7 @@ export const LANGUAGE_PL = {
       footer: {
         html: `
 {% set languageSheet = {
-  moreInfo: 'Aby uzyskać więcej informacji, proszę przeczytać naszą <a href='{{privacyPolicyLink}}'>Polityka prywatności</a> i <a href='{{termsOfUseLink}}'>Warunki korzystania</a>.',
+  moreInfo: "Aby uzyskać więcej informacji, proszę przeczytać naszą <a href='{{privacyPolicyLink}}'>Polityka prywatności</a> i <a href='{{termsOfUseLink}}'>Warunki korzystania</a>.",
   unsubscribe: 'Wypisać się z bloga'
 } %}
         <tr>
